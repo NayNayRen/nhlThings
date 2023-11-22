@@ -195,13 +195,17 @@
               <ul class="league-regular-season owl-carousel owl-theme league-carousel">
                 @for ($i = 0; $i < count($dailyGames[0]); $i++)
                   @php
-                    $formattedGameDate = Carbon\Carbon::create($dailyGames[0][$i]['startTimeUTC'])->toFormattedDateString();
+                    $formattedGameDate = Carbon\Carbon::create($dailyGames[0][$i]['startTimeUTC'])
+                        ->subDay()
+                        ->toFormattedDateString();
+                    $formattedGameTime = $dailyGames[0][$i]['easternUTCOffset'];
                   @endphp
                   {{-- GAME CARDS --}}
                   <li class="league-game-card">
                     <div class="game-date-location">
                       <p class='game-date'> {{ $formattedGameDate }}
                       </p>
+                      <p class='game-time'>{{ $formattedGameTime }} EST</p>
                       <p class="game-location">{{ $dailyGames[0][$i]['venue']['default'] }}</p>
                     </div>
                     {{-- AWAY TEAM --}}
@@ -215,6 +219,7 @@
                             height="100">
                         </span>
                       </p>
+                      <p class='game-team-record'>{{ $linescores[$i]['awayTeam']['record'] }}</p>
                     </div>
                     {{-- HOME TEAM --}}
                     <div class="game-team-container">
@@ -227,6 +232,7 @@
                             height="100">
                         </span>
                       </p>
+                      <p class='game-team-record'>{{ $linescores[$i]['homeTeam']['record'] }}</p>
                     </div>
                     {{-- GAME BROADCASTS --}}
                     <p class="game-broadcast">

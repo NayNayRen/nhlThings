@@ -29,40 +29,6 @@
     right: calc(50% - 75px);
 }
 
-.game-team-logo {
-    -webkit-transform: translateY(-50%);
-    height: auto;
-    left: calc(100% + 20px);
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 60px;
-}
-
-.game-team-logo img {
-    /* -webkit-filter: drop-shadow(0 2px 1px rgba(0, 0, 0, 0.75));
-  filter: drop-shadow(0 2px 1px rgba(0, 0, 0, 0.75)); */
-    height: auto;
-    width: 100%;
-}
-
-.game-team-name {
-    font-weight: bold;
-    position: relative;
-    width: -moz-fit-content;
-    width: -webkit-fit-content;
-    width: fit-content;
-    /* outline: solid 1px blue; */
-}
-
-.game-away-team-record,
-.game-home-team-record {
-    border-bottom: solid 1px #000;
-    color: #000;
-    font-size: 14px;
-    margin-bottom: 5px;
-}
-
 .game-broadcast {
     padding: 0 0 0 10px;
     width: auto;
@@ -667,6 +633,40 @@
 .game-team-container p:first-of-type {
     color: #b22222;
     font-weight: bold;
+}
+
+.game-team-logo {
+    /* -webkit-transform: translateY(-50%); */
+    bottom: 0;
+    height: auto;
+    left: calc(100% + 20px);
+    position: absolute;
+    /* top: 50%;
+    transform: translateY(-50%); */
+    width: 60px;
+}
+
+.game-team-logo img {
+    -webkit-filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.75));
+    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.75));
+    height: auto;
+    width: 100%;
+}
+
+.game-team-name {
+    font-weight: bold;
+    position: relative;
+    width: -moz-fit-content;
+    width: -webkit-fit-content;
+    width: fit-content;
+    /* outline: solid 1px blue; */
+}
+
+.game-team-record {
+    border-bottom: solid 1px #000;
+    color: #000;
+    font-size: 16px;
+    margin-bottom: 5px;
 }
 
 .league-game-card {
