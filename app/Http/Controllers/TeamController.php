@@ -10,17 +10,20 @@ class TeamController extends Controller
   public function team($teamAbbr)
   {
     $team = [];
+    $teamSchedule = [];
     $allTeams = ApiController::getAllTeams();
     $sortedTeamsByName = collect($allTeams)->sortBy('teamName');
     for ($i = 0; $i < count($allTeams); $i++) {
       if ($allTeams[$i]['teamAbbrev']['default'] === $teamAbbr) {
         $team[] = $allTeams[$i];
+        $teamSchedule[] = ApiController::getFullSchedule(($teamAbbr));
       }
     }
-    // dd($team);
+    // dd($teamSchedule);
     return view('team', [
       'title' => $team[0]['teamName']['default'],
-      'team' => $team,
+      'team' => $team[0],
+      'teamSchedule' => $teamSchedule[0]['games'],
       'sortedTeamsByName' => $sortedTeamsByName
     ]);
   }

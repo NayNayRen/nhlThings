@@ -17,7 +17,7 @@
                     @endforeach
                 @endif
             @endforeach --}}
-      @if (count($dailyGames[0]) < 1)
+      @if (count($dailyGames) < 1)
         <div class="league-regular-season-container">
           <ul class="league-regular-season owl-carousel owl-theme league-carousel">
             <li class="league-game-card">
@@ -33,12 +33,12 @@
       @else
         <div class="league-regular-season-container">
           <ul class="league-regular-season owl-carousel owl-theme league-carousel">
-            @for ($i = 0; $i < count($dailyGames[0]); $i++)
+            @for ($i = 0; $i < count($dailyGames); $i++)
               @php
-                $formattedGameDate = Carbon\Carbon::create($dailyGames[0][$i]['startTimeUTC'])
+                $formattedGameDate = Carbon\Carbon::create($dailyGames[$i]['startTimeUTC'])
                     ->subDay()
                     ->toFormattedDateString();
-                $formattedGameTime = $dailyGames[0][$i]['easternUTCOffset'];
+                $formattedGameTime = $dailyGames[$i]['easternUTCOffset'];
               @endphp
               {{-- GAME CARDS --}}
               <li class="league-game-card">
@@ -46,16 +46,16 @@
                   <p class='game-date'> {{ $formattedGameDate }}
                   </p>
                   <p class='game-time'>{{ $formattedGameTime }} EST</p>
-                  <p class="game-location">{{ $dailyGames[0][$i]['venue']['default'] }}</p>
+                  <p class="game-location">{{ $dailyGames[$i]['venue']['default'] }}</p>
                 </div>
                 {{-- AWAY TEAM --}}
                 <div class="game-team-container">
                   <p>Away :</p>
                   <p class='game-team-name'>
-                    {{ $dailyGames[0][$i]['awayTeam']['placeName']['default'] }}
+                    {{ $dailyGames[$i]['awayTeam']['placeName']['default'] }}
                     <span class="game-team-logo">
-                      <img src={{ $dailyGames[0][$i]['awayTeam']['logo'] }}
-                        alt={{ $dailyGames[0][$i]['awayTeam']['placeName']['default'] }} width="100" height="100">
+                      <img src={{ $dailyGames[$i]['awayTeam']['logo'] }}
+                        alt={{ $dailyGames[$i]['awayTeam']['placeName']['default'] }} width="100" height="100">
                     </span>
                   </p>
                   {{-- <p class='game-team-record'>{{ $linescores[$i]['awayTeam']['record'] }}</p> --}}
@@ -64,35 +64,36 @@
                 <div class="game-team-container">
                   <p>Home :</p>
                   <p class='game-team-name'>
-                    {{ $dailyGames[0][$i]['homeTeam']['placeName']['default'] }}
+                    {{ $dailyGames[$i]['homeTeam']['placeName']['default'] }}
                     <span class="game-team-logo">
-                      <img src={{ $dailyGames[0][$i]['homeTeam']['logo'] }}
-                        alt={{ $dailyGames[0][$i]['homeTeam']['placeName']['default'] }} width="100" height="100">
+                      <img src={{ $dailyGames[$i]['homeTeam']['logo'] }}
+                        alt={{ $dailyGames[$i]['homeTeam']['placeName']['default'] }} width="100" height="100">
                     </span>
                   </p>
                   {{-- <p class='game-team-record'>{{ $linescores[$i]['homeTeam']['record'] }}</p> --}}
                 </div>
                 {{-- GAME BROADCASTS --}}
                 <p class="game-broadcast">
-                  @if (count($dailyGames[0][$i]['tvBroadcasts']) < 1)
+                  @if (count($dailyGames[$i]['tvBroadcasts']) < 1)
                     <span>Watch :</span>
                     <span>Check Listings</span>
                   @else
                     <span>Watch :</span>
-                    @foreach ($dailyGames[0][$i]['tvBroadcasts'] as $tvBroadcast)
+                    @foreach ($dailyGames[$i]['tvBroadcasts'] as $tvBroadcast)
                       <span>{{ $tvBroadcast['network'] }}</span>
                     @endforeach
                   @endif
                 </p>
                 <span class='game-number'>{{ $i + 1 }} of
-                  {{ count($dailyGames[0]) }}</span>
+                  {{ count($dailyGames) }}</span>
               </li>
             @endfor
           </ul>
         </div>
       @endif
     </div>
+
   </div>
 </main>
-<script src="{{ asset('js/owl.js') }}"></script>
+<script src="{{ asset('js/leagueCarousel.js') }}"></script>
 @include('includes._footer')

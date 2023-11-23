@@ -1,7 +1,86 @@
 @include('includes._header')
 <main class="main">
   <div class="main-container">
-    <h1>{{ $team[0]['teamName']['default'] }}</h1>
+    <div class="league-schedule-container">
+      <div class="league-schedule-heading-container">
+        <h2>{{ $team['teamName']['default'] }}</h2>
+      </div>
+      @if (count($teamSchedule) < 1)
+        <div class="league-regular-season-container">
+          <ul class="league-regular-season owl-carousel owl-theme team-carousel">
+            <li class="league-game-card">
+              <div class="game-date-location">
+                {{ $currentDate }}
+              </div>
+              <div class="game-team-container">
+                <p>No games today...</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      @else
+        <div class="league-regular-season-container">
+          <ul class="league-regular-season owl-carousel owl-theme team-carousel">
+            @for ($i = 0; $i < count($teamSchedule); $i++)
+              @php
+                $formattedGameDate = Carbon\Carbon::create($teamSchedule[$i]['startTimeUTC'])
+                    ->subDay()
+                    ->toFormattedDateString();
+                $formattedGameTime = $teamSchedule[$i]['easternUTCOffset'];
+              @endphp
+              {{-- GAME CARDS --}}
+              <li class="league-game-card">
+                <div class="game-date-location">
+                  <p class='game-date'> {{ $formattedGameDate }}
+                  </p>
+                  <p class='game-time'>{{ $formattedGameTime }} EST</p>
+                  <p class="game-location">{{ $teamSchedule[$i]['venue']['default'] }}</p>
+                </div>
+                {{-- AWAY TEAM --}}
+                <div class="game-team-container">
+                  <p>Away :</p>
+                  <p class='game-team-name'>
+                    {{ $teamSchedule[$i]['awayTeam']['placeName']['default'] }}
+                    <span class="game-team-logo">
+                      <img src={{ $teamSchedule[$i]['awayTeam']['logo'] }}
+                        alt={{ $teamSchedule[$i]['awayTeam']['placeName']['default'] }} width="100" height="100">
+                    </span>
+                  </p>
+                  {{-- <p class='game-team-record'>{{ $linescores[$i]['awayTeam']['record'] }}</p> --}}
+                </div>
+                {{-- HOME TEAM --}}
+                <div class="game-team-container">
+                  <p>Home :</p>
+                  <p class='game-team-name'>
+                    {{ $teamSchedule[$i]['homeTeam']['placeName']['default'] }}
+                    <span class="game-team-logo">
+                      <img src={{ $teamSchedule[$i]['homeTeam']['logo'] }}
+                        alt={{ $teamSchedule[$i]['homeTeam']['placeName']['default'] }} width="100" height="100">
+                    </span>
+                  </p>
+                  {{-- <p class='game-team-record'>{{ $linescores[$i]['homeTeam']['record'] }}</p> --}}
+                </div>
+                {{-- GAME BROADCASTS --}}
+                <p class="game-broadcast">
+                  @if (count($teamSchedule[$i]['tvBroadcasts']) < 1)
+                    <span>Watch :</span>
+                    <span>Check Listings</span>
+                  @else
+                    <span>Watch :</span>
+                    @foreach ($teamSchedule[$i]['tvBroadcasts'] as $tvBroadcast)
+                      <span>{{ $tvBroadcast['network'] }}</span>
+                    @endforeach
+                  @endif
+                </p>
+                <span class='game-number'>{{ $i + 1 }} of
+                  {{ count($teamSchedule) }}</span>
+              </li>
+            @endfor
+          </ul>
+        </div>
+      @endif
+    </div>
   </div>
 </main>
+<script src="{{ asset('js/teamCarousel.js') }}"></script>
 @include('includes._footer')

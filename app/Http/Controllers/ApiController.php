@@ -7,20 +7,24 @@ use Illuminate\Support\Facades\Http;
 
 class ApiController extends Controller
 {
-  public static function getWeeklyGames()
+  public static function getWeeklySchedule()
   {
-    // $weeklyGames = Http::get('https://api-web.nhle.com/v1/schedule/now')['gameWeek'];
-    // return $weeklyGames;
     $client = new \GuzzleHttp\Client();
     $request = $client->get('https://api-web.nhle.com/v1/schedule/now');
     $weeklyGames = json_decode($request->getBody()->getContents(), true);
     return $weeklyGames['gameWeek'];
   }
 
+  public static function getFullSchedule($team)
+  {
+    $client = new \GuzzleHttp\Client();
+    $request = $client->get('https://api-web.nhle.com/v1/club-schedule-season/' . $team . '/now');
+    $fullSchedule = json_decode($request->getBody()->getContents(), true);
+    return $fullSchedule;
+  }
+
   public static function getLinescores()
   {
-    // $linescores = Http::get('https://api-web.nhle.com/v1/score/now')['games'];
-    // return $linescores;
     $client = new \GuzzleHttp\Client();
     $request = $client->get('https://api-web.nhle.com/v1/score/now');
     $linescores = json_decode($request->getBody()->getContents(), true);
