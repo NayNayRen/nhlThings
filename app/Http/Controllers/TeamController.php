@@ -19,7 +19,7 @@ class TeamController extends Controller
         $teamSchedule[] = ApiController::getFullSchedule(($teamAbbr));
       }
     }
-    // dd($teamSchedule);
+    // dd($team[0]);
     return view('team', [
       'title' => $team[0]['teamName']['default'],
       'team' => $team[0],

@@ -4,6 +4,9 @@
     <div class="league-schedule-container">
       <div class="league-schedule-heading-container">
         <h2>{{ $team['teamName']['default'] }}</h2>
+        <div class="main-header-logo">
+          <img src={{ $team['teamLogo'] }} alt="{{ $team['teamName']['default'] }} Logo" width="100" height="100">
+        </div>
       </div>
       @if (count($teamSchedule) < 1)
         <div class="league-regular-season-container">
@@ -74,6 +77,7 @@
                 </p>
                 <span class='game-number'>{{ $i + 1 }} of
                   {{ count($teamSchedule) }}</span>
+                <span class="game-home-team-indicator"></span>
               </li>
             @endfor
           </ul>
