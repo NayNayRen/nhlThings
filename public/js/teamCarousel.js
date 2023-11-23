@@ -1,4 +1,6 @@
 function loadCarousel() {
+  const headerName = document.querySelector('.main-header-name');
+  const homeTeamLogo = document.querySelectorAll('.home-team-logo');
   const $teamCarousel = $('.team-carousel');
 
   const carouselOptions = {
@@ -92,6 +94,10 @@ function loadCarousel() {
     owl.options.responsive[1400].items = 3;
     $teamCarousel.trigger('refresh.owl.carousel');
   }
+  console.log(headerName.innerText);
+  homeTeamLogo.forEach((logo) => {
+    console.log(logo.lastElementChild.getAttribute('alt'));
+  })
 }
 
 window.addEventListener('load', () => {

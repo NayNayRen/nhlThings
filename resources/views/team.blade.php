@@ -3,7 +3,7 @@
   <div class="main-container">
     <div class="league-schedule-container">
       <div class="league-schedule-heading-container">
-        <h2>{{ $team['teamName']['default'] }}</h2>
+        <h2 class="main-header-name">{{ $team['teamName']['default'] }}</h2>
         <div class="main-header-logo">
           <img src={{ $team['teamLogo'] }} alt="{{ $team['teamName']['default'] }} Logo" width="100" height="100">
         </div>
@@ -56,7 +56,7 @@
                   <p>Home :</p>
                   <p class='game-team-name'>
                     {{ $teamSchedule[$i]['homeTeam']['placeName']['default'] }}
-                    <span class="game-team-logo">
+                    <span class="game-team-logo home-team-logo">
                       <img src={{ $teamSchedule[$i]['homeTeam']['logo'] }}
                         alt={{ $teamSchedule[$i]['homeTeam']['placeName']['default'] }} width="100" height="100">
                     </span>
