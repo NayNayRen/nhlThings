@@ -12,10 +12,14 @@ class TeamController extends Controller
     $team = [];
     $currentStandings = ApiController::getCurrentStandings();
     $sortedStandingsByName = collect($currentStandings)->sortBy('teamName');
-    // $team = ApiController::getTeam($teamAbbr);
-    // dd($currentStandings);
+    for ($i = 0; $i < count($currentStandings); $i++) {
+      if ($currentStandings[$i]['teamAbbrev']['default'] === $teamAbbr) {
+        $team[] = $currentStandings[$i];
+      }
+    }
+    // dd($team);
     return view('team', [
-      'title' => 'Team Name',
+      'title' => $team[0]['teamName']['default'],
       'team' => $team,
       'sortedStandingsByName' => $sortedStandingsByName
     ]);
