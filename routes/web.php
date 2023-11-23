@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\LeagueController;
+use App\Http\Controllers\TeamController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,4 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [LeagueController::class, 'index'])->name('index');
+Route::get('/', [LeagueController::class, 'index'])->name('league.index');
+
+Route::get('/teams/{team}', [TeamController::class, 'team'])->name('teams.team');
+
+Route::get('/players/{player}', [PlayerController::class, 'player'])->name('players.player');

@@ -12,13 +12,13 @@ class LeagueController extends Controller
   {
     $dailyGames = [];
     $boxscores = [];
-    $today = Carbon::today();
+    $today = Carbon::today()->subDay();
     $currentDate = Carbon::create($today)->toFormattedDateString();
     $linescores = ApiController::getLinescores();
     $weeklyGames = ApiController::getWeeklyGames();
     $currentStandings = ApiController::getCurrentStandings();
     $sortedStandingsByName = collect($currentStandings)->sortBy('teamName');
-    // dd($weeklyGames);
+    // dd($sortedStandingsByName[19]);
     for ($i = 0; $i < count($weeklyGames); $i++) {
       if ($weeklyGames[$i]['date'] === $today->toDateString()) {
         $dailyGames[] = $weeklyGames[$i]['games'];
@@ -27,8 +27,9 @@ class LeagueController extends Controller
         }
       }
     }
-    // dd($linescores);
+    // dd($currentStandings);
     return view('index', [
+      'title' => 'NHL Teams, Stats & Things',
       'currentDate' => $currentDate,
       'linescores' => $linescores,
       'boxscores' => $boxscores,

@@ -30,4 +30,10 @@ class ApiController extends Controller
     $boxscores = Http::get('https://api-web.nhle.com/v1/gamecenter/' . $id . '/boxscore')->json();
     return $boxscores;
   }
+
+  // public static function getTeam($teamAbbr)
+  // {
+  //   $team = Http::get('https://api-web.nhle.com/v1/club-stats-season/' . $teamAbbr)->json();
+  //   return $team;
+  // }
 }

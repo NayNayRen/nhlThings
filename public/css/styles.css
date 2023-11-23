@@ -596,7 +596,7 @@ header h1 {
     width: 100%;
 }
 
-.teams-dropdown-list li {
+.teams-dropdown-list li a {
     -ms-flex-align: center;
     -ms-flex-direction: row;
     -ms-flex-pack: justify;
@@ -606,6 +606,7 @@ header h1 {
     -webkit-box-pack: justify;
     -webkit-transition: background-color 150ms ease;
     align-items: center;
+    color: #000;
     cursor: pointer;
     display: -ms-flexbox;
     display: -webkit-box;
@@ -614,6 +615,7 @@ header h1 {
     font-size: 16px;
     justify-content: space-between;
     padding: 0 10px 0 0;
+    text-decoration: none;
     transition: background-color 150ms ease;
     /* outline: solid 1px blue; */
 }
