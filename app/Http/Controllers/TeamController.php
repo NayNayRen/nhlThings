@@ -10,18 +10,18 @@ class TeamController extends Controller
   public function team($teamAbbr)
   {
     $team = [];
-    $currentStandings = ApiController::getCurrentStandings();
-    $sortedStandingsByName = collect($currentStandings)->sortBy('teamName');
-    for ($i = 0; $i < count($currentStandings); $i++) {
-      if ($currentStandings[$i]['teamAbbrev']['default'] === $teamAbbr) {
-        $team[] = $currentStandings[$i];
+    $allTeams = ApiController::getAllTeams();
+    $sortedTeamsByName = collect($allTeams)->sortBy('teamName');
+    for ($i = 0; $i < count($allTeams); $i++) {
+      if ($allTeams[$i]['teamAbbrev']['default'] === $teamAbbr) {
+        $team[] = $allTeams[$i];
       }
     }
     // dd($team);
     return view('team', [
       'title' => $team[0]['teamName']['default'],
       'team' => $team,
-      'sortedStandingsByName' => $sortedStandingsByName
+      'sortedTeamsByName' => $sortedTeamsByName
     ]);
   }
 }

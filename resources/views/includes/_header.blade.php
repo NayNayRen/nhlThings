@@ -44,7 +44,7 @@
             <i class="fa-solid fa-caret-up" aria-hidden="true"></i>
             <input type="button" class="teams-dropdown-button" value="Teams..." /><br />
             <ul class="teams-dropdown-list">
-              @foreach ($sortedStandingsByName as $team)
+              @foreach ($sortedTeamsByName as $team)
                 <li>
                   <a href="{{ route('teams.team', $team['teamAbbrev']['default']) }}" target="_blank">
                     <span class='teams-dropdown-name'>
