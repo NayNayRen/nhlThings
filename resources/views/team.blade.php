@@ -1,10 +1,10 @@
 @include('includes._header')
 <main class="main">
   <div class="main-container">
-    <div class="league-schedule-container">
-      <div class="league-schedule-heading-container">
-        <h2 class="main-header-name">{{ $team['teamName']['default'] }}</h2>
-        <div class="main-header-logo">
+    <div class="schedule-container">
+      <div class="schedule-heading-container">
+        <h2 id="home-team-name">{{ $team['teamName']['default'] }}</h2>
+        <div class="schedule-heading-logo">
           <img src={{ $team['teamLogo'] }} alt="{{ $team['teamName']['default'] }} Logo" width="100" height="100">
         </div>
       </div>
@@ -41,15 +41,15 @@
                 {{-- AWAY TEAM --}}
                 <div class="game-team-container">
                   <p>Away :</p>
-                  <p class='game-team-name'>
-                    {{ $teamSchedule[$i]['awayTeam']['placeName']['default'] }}
-                    <span class="game-team-logo">
-                      <img src={{ $teamSchedule[$i]['awayTeam']['logo'] }}
-                        alt={{ $teamSchedule[$i]['awayTeam']['placeName']['default'] }} width="100" height="100">
-                    </span>
-                  </p>
                   @foreach ($allTeams as $team)
                     @if ($teamSchedule[$i]['awayTeam']['abbrev'] === $team['teamAbbrev']['default'])
+                      <p class='game-team-name'>
+                        {{ $team['teamName']['default'] }}
+                        <span class="game-team-logo">
+                          <img src={{ $teamSchedule[$i]['awayTeam']['logo'] }} alt='{{ $team['teamName']['default'] }}'
+                            width="100" height="100">
+                        </span>
+                      </p>
                       <p class='game-team-record'>{{ $team['wins'] }}-{{ $team['losses'] }}-{{ $team['otLosses'] }}
                       </p>
                     @endif
@@ -58,15 +58,15 @@
                 {{-- HOME TEAM --}}
                 <div class="game-team-container">
                   <p>Home :</p>
-                  <p class='game-team-name'>
-                    {{ $teamSchedule[$i]['homeTeam']['placeName']['default'] }}
-                    <span class="game-team-logo home-team-logo">
-                      <img src={{ $teamSchedule[$i]['homeTeam']['logo'] }}
-                        alt={{ $teamSchedule[$i]['homeTeam']['placeName']['default'] }} width="100" height="100">
-                    </span>
-                  </p>
                   @foreach ($allTeams as $team)
                     @if ($teamSchedule[$i]['homeTeam']['abbrev'] === $team['teamAbbrev']['default'])
+                      <p class='game-team-name'>
+                        {{ $team['teamName']['default'] }}
+                        <span class="game-team-logo home-team-logo">
+                          <img src={{ $teamSchedule[$i]['homeTeam']['logo'] }}
+                            alt='{{ $team['teamName']['default'] }}' width="100" height="100">
+                        </span>
+                      </p>
                       <p class='game-team-record'>{{ $team['wins'] }}-{{ $team['losses'] }}-{{ $team['otLosses'] }}
                       </p>
                     @endif

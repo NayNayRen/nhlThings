@@ -1,5 +1,5 @@
 function loadCarousel() {
-  const headerName = document.querySelector('.main-header-name');
+  const headerName = document.querySelector('#home-team-name');
   const homeTeamLogo = document.querySelectorAll('.home-team-logo');
   const $teamCarousel = $('.team-carousel');
 
@@ -95,9 +95,9 @@ function loadCarousel() {
     $teamCarousel.trigger('refresh.owl.carousel');
   }
   console.log(headerName.innerText);
-  homeTeamLogo.forEach((logo) => {
-    console.log(logo.lastElementChild.getAttribute('alt'));
-  })
+  // homeTeamLogo.forEach((logo) => {
+  //   console.log(logo.lastElementChild.getAttribute('alt'));
+  // });
 }
 
 window.addEventListener('load', () => {

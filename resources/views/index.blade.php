@@ -1,22 +1,13 @@
 @include('includes._header')
 <main class="main">
   <div class="main-container">
-    <div class="league-schedule-container">
-      <div class="league-schedule-heading-container">
+    <div class="schedule-container">
+      <div class="schedule-heading-container">
         <h2>Game Dates</h2>
+        <div class="schedule-heading-logo">
+          <img src={{ asset('img/nhl-logo.png') }} alt="NHL Logo" width="100" height="100">
+        </div>
       </div>
-      {{-- <p>{{ count($weeklyGames['gameWeek']) }}</p> --}}
-      {{-- @foreach ($weeklyGames as $weeklyGame)
-                <h3>Date : {{ $weeklyGame['dayAbbrev'] }} {{ $weeklyGame['date'] }}</h3>
-                @if (count($weeklyGame['games']) < 1)
-                    <span>No games today...</span>
-                @else
-                    @foreach ($weeklyGame['games'] as $game)
-                        <p>Venue :</p>
-                        <span>{{ $game['venue']['default'] }}</span><br>
-                    @endforeach
-                @endif
-            @endforeach --}}
       @if (count($dailyGames) < 1)
         <div class="league-regular-season-container">
           <ul class="league-regular-season owl-carousel owl-theme league-carousel">
@@ -50,16 +41,15 @@
                 {{-- AWAY TEAM --}}
                 <div class="game-team-container">
                   <p>Away :</p>
-                  <p class='game-team-name'>
-                    {{ $dailyGames[$i]['awayTeam']['placeName']['default'] }}
-                    {{ $linescores[$i]['awayTeam']['name']['default'] }}
-                    <span class="game-team-logo">
-                      <img src={{ $dailyGames[$i]['awayTeam']['logo'] }}
-                        alt={{ $dailyGames[$i]['awayTeam']['placeName']['default'] }} width="100" height="100">
-                    </span>
-                  </p>
                   @foreach ($allTeams as $team)
                     @if ($dailyGames[$i]['awayTeam']['abbrev'] === $team['teamAbbrev']['default'])
+                      <p class='game-team-name'>
+                        {{ $team['teamName']['default'] }}
+                        <span class="game-team-logo">
+                          <img src={{ $dailyGames[$i]['awayTeam']['logo'] }} alt='{{ $team['teamName']['default'] }}'
+                            width="100" height="100">
+                        </span>
+                      </p>
                       <p class='game-team-record'>{{ $team['wins'] }}-{{ $team['losses'] }}-{{ $team['otLosses'] }}</p>
                     @endif
                   @endforeach
@@ -67,16 +57,15 @@
                 {{-- HOME TEAM --}}
                 <div class="game-team-container">
                   <p>Home :</p>
-                  <p class='game-team-name'>
-                    {{ $dailyGames[$i]['homeTeam']['placeName']['default'] }}
-                    {{ $linescores[$i]['homeTeam']['name']['default'] }}
-                    <span class="game-team-logo">
-                      <img src={{ $dailyGames[$i]['homeTeam']['logo'] }}
-                        alt={{ $dailyGames[$i]['homeTeam']['placeName']['default'] }} width="100" height="100">
-                    </span>
-                  </p>
                   @foreach ($allTeams as $team)
                     @if ($dailyGames[$i]['homeTeam']['abbrev'] === $team['teamAbbrev']['default'])
+                      <p class='game-team-name'>
+                        {{ $team['teamName']['default'] }}
+                        <span class="game-team-logo">
+                          <img src={{ $dailyGames[$i]['homeTeam']['logo'] }} alt='{{ $team['teamName']['default'] }}'
+                            width="100" height="100">
+                        </span>
+                      </p>
                       <p class='game-team-record'>{{ $team['wins'] }}-{{ $team['losses'] }}-{{ $team['otLosses'] }}
                       </p>
                     @endif
@@ -99,6 +88,18 @@
               </li>
             @endfor
           </ul>
+          {{-- <p>{{ count($weeklyGames['gameWeek']) }}</p> --}}
+          {{-- @foreach ($weeklyGames as $weeklyGame)
+                <h3>Date : {{ $weeklyGame['dayAbbrev'] }} {{ $weeklyGame['date'] }}</h3>
+                @if (count($weeklyGame['games']) < 1)
+                    <span>No games today...</span>
+                @else
+                    @foreach ($weeklyGame['games'] as $game)
+                        <p>Venue :</p>
+                        <span>{{ $game['venue']['default'] }}</span><br>
+                    @endforeach
+                @endif
+            @endforeach --}}
         </div>
       @endif
     </div>

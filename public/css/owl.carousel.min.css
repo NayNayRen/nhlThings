@@ -704,50 +704,6 @@
     padding: 5px 0 0 15px;
 }
 
-.league-schedule-container {
-    -webkit-transition: opacity 2000ms ease;
-    height: auto;
-    margin: 0 auto;
-    min-height: 675px;
-    /* opacity: 0; */
-    opacity: 1;
-    overflow: hidden;
-    /* padding: 0 0 15px 0; */
-    transition: opacity 2000ms ease;
-    width: 100%;
-    /* outline: solid 1px blue; */
-}
-
-.league-schedule-heading-container {
-    -webkit-box-shadow: 0 0 10px #808080;
-    background-color: #dcdcdc;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    box-shadow: 0 0 10px #808080;
-    padding: 10px 0 20px 15px;
-    position: relative;
-}
-
-.league-schedule-heading-container h2 {
-    color: #000;
-    font-size: 26px;
-}
-
-.league-schedule-shield-logo {
-    height: auto;
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    width: 75px;
-}
-
-.league-schedule-shield-logo img {
-    /* -webkit-filter: drop-shadow(0 2px 2px #000);
-  filter: drop-shadow(0 2px 2px #000); */
-    height: auto;
-    width: 100%;
-}
-
 .owl-carousel .owl-item {
     -webkit-tap-highlight-color: transparent;
     padding: 5px 0 15px 0;
@@ -1111,65 +1067,6 @@
     /* outline: solid 1px blue; */
 }
 
-.team-schedule-heading-container {
-    -ms-flex-align: center;
-    -ms-flex-direction: row;
-    -ms-flex-pack: start;
-    -webkit-box-align: center;
-    -webkit-box-direction: normal;
-    -webkit-box-orient: horizontal;
-    -webkit-box-pack: start;
-    align-items: center;
-    display: -ms-flexbox;
-    display: -webkit-box;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    padding: 10px 0 10px 0;
-    text-align: left;
-    /* outline: solid 1px blue; */
-}
-
-.team-schedule-heading-container div:first-of-type div:first-of-type {
-    -ms-flex-align: center;
-    -ms-flex-direction: row;
-    -ms-flex-pack: start;
-    -webkit-box-align: center;
-    -webkit-box-direction: normal;
-    -webkit-box-orient: horizontal;
-    -webkit-box-pack: start;
-    align-items: center;
-    display: -ms-flexbox;
-    display: -webkit-box;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-}
-
-.team-schedule-heading-container div:first-of-type div:first-of-type div {
-    background-color: #1e90ff;
-    border-radius: 50%;
-    display: inline;
-    height: 10px;
-    margin-right: 5px;
-    width: 10px;
-}
-
-.team-schedule-heading-container div:first-of-type span {
-    font-size: 14px;
-}
-
-.team-schedule-heading-container h2 {
-    color: #000;
-    font-size: 26px;
-}
-
-.team-schedule-heading-container p {
-    color: #b22222;
-    font-size: 18px;
-    font-weight: bold;
-}
-
 @media (max-width: 700px) {
     .game-slideout-hide-button:hover,
     .game-slideout-show-button:hover {
@@ -1177,27 +1074,8 @@
         box-shadow: none;
     }
 
-    .league-schedule-heading-container {
-        border-top-left-radius: 0;
-        border-top-right-radius: 0;
-        padding: 25px 0 20px 15px;
-    }
-
-    .league-regular-season-container h2,
-    .league-schedule-heading-container h2,
-    .team-schedule-heading-container h2 {
-        font-size: 24px;
-    }
-
     .team-regular-season-container {
         border-radius: 0;
-    }
-
-    .team-schedule-heading-container {
-        -ms-flex-pack: justify;
-        -webkit-box-pack: justify;
-        justify-content: space-between;
-        padding: 10px 15px 10px 15px;
     }
 }
 
@@ -1207,20 +1085,6 @@
     .team-regular-season-card {
         max-width: 100%;
         min-width: 250px;
-    }
-
-    .league-regular-season-container h2,
-    .league-schedule-heading-container h2,
-    .team-schedule-heading-container h2 {
-        font-size: 22px;
-    }
-
-    .league-schedule-shield-logo {
-        width: 65px;
-    }
-
-    .team-schedule-heading-container p {
-        font-size: 16px;
     }
 
     .owl-carousel {
