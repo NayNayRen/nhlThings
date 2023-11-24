@@ -48,7 +48,12 @@
                         alt={{ $teamSchedule[$i]['awayTeam']['placeName']['default'] }} width="100" height="100">
                     </span>
                   </p>
-                  {{-- <p class='game-team-record'>{{ $linescores[$i]['awayTeam']['record'] }}</p> --}}
+                  @foreach ($allTeams as $team)
+                    @if ($teamSchedule[$i]['awayTeam']['abbrev'] === $team['teamAbbrev']['default'])
+                      <p class='game-team-record'>{{ $team['wins'] }}-{{ $team['losses'] }}-{{ $team['otLosses'] }}
+                      </p>
+                    @endif
+                  @endforeach
                 </div>
                 {{-- HOME TEAM --}}
                 <div class="game-team-container">
@@ -60,7 +65,12 @@
                         alt={{ $teamSchedule[$i]['homeTeam']['placeName']['default'] }} width="100" height="100">
                     </span>
                   </p>
-                  {{-- <p class='game-team-record'>{{ $linescores[$i]['homeTeam']['record'] }}</p> --}}
+                  @foreach ($allTeams as $team)
+                    @if ($teamSchedule[$i]['homeTeam']['abbrev'] === $team['teamAbbrev']['default'])
+                      <p class='game-team-record'>{{ $team['wins'] }}-{{ $team['losses'] }}-{{ $team['otLosses'] }}
+                      </p>
+                    @endif
+                  @endforeach
                 </div>
                 {{-- GAME BROADCASTS --}}
                 <p class="game-broadcast">

@@ -11,19 +11,23 @@ class TeamController extends Controller
   {
     $team = [];
     $teamSchedule = [];
+    $teamRoster = [];
     $allTeams = ApiController::getAllTeams();
     $sortedTeamsByName = collect($allTeams)->sortBy('teamName');
     for ($i = 0; $i < count($allTeams); $i++) {
       if ($allTeams[$i]['teamAbbrev']['default'] === $teamAbbr) {
         $team[] = $allTeams[$i];
-        $teamSchedule[] = ApiController::getFullSchedule(($teamAbbr));
+        $teamSchedule[] = ApiController::getTeamSchedule($teamAbbr);
+        $teamRoster[] = ApiController::getTeamRoster($teamAbbr);
       }
     }
-    // dd($team[0]);
+    // dd($teamRoster);
     return view('team', [
       'title' => $team[0]['teamName']['default'],
       'team' => $team[0],
       'teamSchedule' => $teamSchedule[0]['games'],
+      'teamRoster' => $teamRoster[0],
+      'allTeams' => $allTeams,
       'sortedTeamsByName' => $sortedTeamsByName
     ]);
   }

@@ -15,14 +15,6 @@ class ApiController extends Controller
     return $weeklyGames['gameWeek'];
   }
 
-  public static function getFullSchedule($team)
-  {
-    $client = new \GuzzleHttp\Client();
-    $request = $client->get('https://api-web.nhle.com/v1/club-schedule-season/' . $team . '/now');
-    $fullSchedule = json_decode($request->getBody()->getContents(), true);
-    return $fullSchedule;
-  }
-
   public static function getLinescores()
   {
     $client = new \GuzzleHttp\Client();
@@ -33,21 +25,33 @@ class ApiController extends Controller
 
   public static function getBoxscores($id)
   {
-    // $boxscores = Http::get('https://api-web.nhle.com/v1/gamecenter/' . $id . '/boxscore')->json();
-    // return $boxscores;
     $client = new \GuzzleHttp\Client();
     $request = $client->get('https://api-web.nhle.com/v1/gamecenter/' . $id . '/boxscore');
     $boxscores = json_decode($request->getBody()->getContents(), true);
     return $boxscores;
   }
-
+  // gets all teams and their stats
   public static function getAllTeams()
   {
-    // $currentStandings = Http::get('https://api-web.nhle.com/v1/standings/now')['standings'];
-    // return $currentStandings;
     $client = new \GuzzleHttp\Client();
     $request = $client->get('https://api-web.nhle.com/v1/standings/now');
     $allTeams = json_decode($request->getBody()->getContents(), true);
     return $allTeams['standings'];
+  }
+
+  public static function getTeamSchedule($team)
+  {
+    $client = new \GuzzleHttp\Client();
+    $request = $client->get('https://api-web.nhle.com/v1/club-schedule-season/' . $team . '/now');
+    $teamSchedule = json_decode($request->getBody()->getContents(), true);
+    return $teamSchedule;
+  }
+
+  public static function getTeamRoster($team)
+  {
+    $client = new \GuzzleHttp\Client();
+    $request = $client->get('https://api-web.nhle.com/v1/club-stats/' . $team  . '/now');
+    $teamStats = json_decode($request->getBody()->getContents(), true);
+    return $teamStats;
   }
 }

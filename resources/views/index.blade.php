@@ -52,24 +52,35 @@
                   <p>Away :</p>
                   <p class='game-team-name'>
                     {{ $dailyGames[$i]['awayTeam']['placeName']['default'] }}
+                    {{ $linescores[$i]['awayTeam']['name']['default'] }}
                     <span class="game-team-logo">
                       <img src={{ $dailyGames[$i]['awayTeam']['logo'] }}
                         alt={{ $dailyGames[$i]['awayTeam']['placeName']['default'] }} width="100" height="100">
                     </span>
                   </p>
-                  {{-- <p class='game-team-record'>{{ $linescores[$i]['awayTeam']['record'] }}</p> --}}
+                  @foreach ($allTeams as $team)
+                    @if ($dailyGames[$i]['awayTeam']['abbrev'] === $team['teamAbbrev']['default'])
+                      <p class='game-team-record'>{{ $team['wins'] }}-{{ $team['losses'] }}-{{ $team['otLosses'] }}</p>
+                    @endif
+                  @endforeach
                 </div>
                 {{-- HOME TEAM --}}
                 <div class="game-team-container">
                   <p>Home :</p>
                   <p class='game-team-name'>
                     {{ $dailyGames[$i]['homeTeam']['placeName']['default'] }}
+                    {{ $linescores[$i]['homeTeam']['name']['default'] }}
                     <span class="game-team-logo">
                       <img src={{ $dailyGames[$i]['homeTeam']['logo'] }}
                         alt={{ $dailyGames[$i]['homeTeam']['placeName']['default'] }} width="100" height="100">
                     </span>
                   </p>
-                  {{-- <p class='game-team-record'>{{ $linescores[$i]['homeTeam']['record'] }}</p> --}}
+                  @foreach ($allTeams as $team)
+                    @if ($dailyGames[$i]['homeTeam']['abbrev'] === $team['teamAbbrev']['default'])
+                      <p class='game-team-record'>{{ $team['wins'] }}-{{ $team['losses'] }}-{{ $team['otLosses'] }}
+                      </p>
+                    @endif
+                  @endforeach
                 </div>
                 {{-- GAME BROADCASTS --}}
                 <p class="game-broadcast">
