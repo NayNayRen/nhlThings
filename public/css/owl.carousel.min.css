@@ -323,17 +323,6 @@
     /* outline: solid 1px blue; */
 }
 
-.game-home-team-indicator {
-    background-color: #1e90ff;
-    border-radius: 50%;
-    bottom: 10px;
-    /* display: none; */
-    height: 15px;
-    position: absolute;
-    right: 20px;
-    width: 15px;
-}
-
 .game-lineup-away-button,
 .game-lineup-home-button {
     -webkit-box-shadow: 0 2px 2px #000;
@@ -667,6 +656,17 @@
     color: #000;
     font-size: 16px;
     margin-bottom: 5px;
+}
+
+.home-team-indicator {
+    background-color: #1e90ff;
+    border-radius: 50%;
+    bottom: 10px;
+    /* display: none; */
+    height: 15px;
+    position: absolute;
+    right: 20px;
+    width: 15px;
 }
 
 .league-game-card {

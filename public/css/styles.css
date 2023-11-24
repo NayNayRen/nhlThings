@@ -572,13 +572,19 @@ header h1 {
 }
 
 .schedule-heading-logo {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     height: auto;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     margin-right: 10px;
     width: 100px;
-    outline: solid 1px blue;
+    /* outline: solid 1px blue; */
 }
 
 .schedule-heading-logo img {
