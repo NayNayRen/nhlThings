@@ -35,10 +35,9 @@
           <ul class="league-regular-season owl-carousel owl-theme league-carousel">
             @for ($i = 0; $i < count($dailyGames); $i++)
               @php
-                $formattedGameDate = Carbon\Carbon::create($dailyGames[$i]['startTimeUTC'])
-                    ->subDay()
-                    ->toFormattedDateString();
-                $formattedGameTime = $dailyGames[$i]['easternUTCOffset'];
+                $gameDateTime = Carbon\Carbon::create($dailyGames[$i]['startTimeUTC'])->tz('America/New_York');
+                $formattedGameDate = $gameDateTime->toFormattedDateString();
+                $formattedGameTime = $gameDateTime->format('h:i A');
               @endphp
               {{-- GAME CARDS --}}
               <li class="league-game-card">

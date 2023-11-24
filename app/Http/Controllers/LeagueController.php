@@ -27,7 +27,7 @@ class LeagueController extends Controller
         }
       }
     }
-    // dd($linescores);
+    // dd($dailyGames);
     return view('index', [
       'title' => 'NHL Teams, Stats & Things',
       'currentDate' => $currentDate,
