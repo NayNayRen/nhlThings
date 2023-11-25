@@ -27,7 +27,7 @@
     @if ($game['homeTeam']['abbrev'] === $team['teamAbbrev']['default'])
       <p class='game-team-name'>
         {{ $team['teamName']['default'] }}
-        <span class="game-team-logo home-team-logo">
+        <span class="game-team-logo">
           <img src={{ $game['homeTeam']['logo'] }} alt='{{ $team['teamName']['default'] }}' width="100"
             height="100">
         </span>

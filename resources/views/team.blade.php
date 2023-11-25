@@ -10,7 +10,8 @@
         </div>
       </div>
       @if (count($regularSeason) < 1)
-        <div class="league-regular-season-container">
+        <div class="regular-season-container">
+          <h2>Regular Season Games</h2>
           <ul class="league-regular-season owl-carousel owl-theme team-carousel">
             <li class="league-game-card">
               <div class="game-date-location">
@@ -23,7 +24,8 @@
           </ul>
         </div>
       @else
-        <div class="league-regular-season-container">
+        <div class="regular-season-container">
+          <h2>Regular Season Games</h2>
           <ul class="league-regular-season owl-carousel owl-theme team-carousel">
             @foreach ($regularSeason as $key => $game)
               @php
@@ -40,6 +42,27 @@
               </li>
             @endforeach
           </ul>
+        </div>
+        <div class="horizontal-scrolling-container preseason-scrolling-container">
+          <div class="team-preseason-container">
+            <h2>Preseason Games</h2>
+            <ul class="team-preseason">
+              @foreach ($preseason as $key => $game)
+                @php
+                  $gameDateTime = Carbon\Carbon::create($game['startTimeUTC'])->tz('America/New_York');
+                  $formattedGameDate = $gameDateTime->toFormattedDateString();
+                  $formattedGameTime = $gameDateTime->format('h:i A');
+                @endphp
+                {{-- GAME CARDS --}}
+                <li class="team-preseason-card">
+                  @include('includes._gameCard')
+                  <span class='game-number'>
+                    {{ $key + 1 }} of {{ count($preseason) }}
+                  </span>
+                </li>
+              @endforeach
+            </ul>
+          </div>
         </div>
       @endif
     </div>

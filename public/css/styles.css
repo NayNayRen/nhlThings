@@ -394,6 +394,17 @@ header h1 {
     /* outline: solid 1px blue; */
 }
 
+/* surrounds player stats and team history tables */
+.horizontal-scrolling-container {
+    display: -ms-grid;
+    display: grid;
+    grid-auto-flow: row;
+    overflow-x: auto;
+    padding: 20px 25px 20px 25px;
+    scroll-behavior: smooth;
+    /* outline: solid 1px blue; */
+}
+
 .main {
     -ms-flex-align: center;
     -ms-flex-direction: column;
@@ -457,6 +468,7 @@ header h1 {
     background-size: contain;
     box-shadow: 0 0 20px #000;
     height: 100%;
+    overflow: hidden;
     outline: solid 1px #000;
     padding: 0 0 20px 0;
     transition: height ease;
@@ -492,6 +504,10 @@ header h1 {
     text-align: center;
     width: 400px;
     /* outline: solid 1px blue; */
+}
+
+.preseason-scrolling-container {
+    padding: 20px 0;
 }
 
 .roster-dropdown-container {
@@ -588,6 +604,8 @@ header h1 {
 }
 
 .schedule-heading-logo img {
+    -webkit-filter: drop-shadow(0 2px 2px #808080);
+    filter: drop-shadow(0 2px 2px #808080);
     height: auto;
     width: 100%;
 }
@@ -611,8 +629,8 @@ header h1 {
 }
 
 .shield-logo img {
-    /* -webkit-filter: drop-shadow(0 2px 2px #000);
-filter: drop-shadow(0 2px 2px #000); */
+    -webkit-filter: drop-shadow(0 2px 2px #808080);
+    filter: drop-shadow(0 2px 2px #808080);
     height: auto;
     width: 100%;
 }
@@ -726,6 +744,8 @@ filter: drop-shadow(0 2px 2px #000); */
 }
 
 .team-summary-logo img {
+    -webkit-filter: drop-shadow(0 2px 2px #808080);
+    filter: drop-shadow(0 2px 2px #808080);
     height: auto;
     width: 100%;
 }
@@ -781,8 +801,8 @@ filter: drop-shadow(0 2px 2px #000); */
 }
 
 .teams-dropdown-logo img {
-    /* -webkit-filter: drop-shadow(0 3px 1px rgba(0, 0, 0, 0.75));
-    filter: drop-shadow(0 3px 1px rgba(0, 0, 0, 0.75)); */
+    -webkit-filter: drop-shadow(0 2px 2px #808080);
+    filter: drop-shadow(0 2px 2px #808080);
     height: auto;
     width: 100%;
 }
@@ -901,12 +921,6 @@ filter: drop-shadow(0 2px 2px #000); */
         padding: 25px 35px 120px 0;
     }
 
-    .league-regular-season-container h2,
-    .schedule-heading-container h2,
-    .team-schedule-heading-container h2 {
-        font-size: 24px;
-    }
-
     .league-data-container,
     .team-data-container {
         border-radius: 0;
@@ -1004,6 +1018,11 @@ filter: drop-shadow(0 2px 2px #000); */
         padding: 25px 0 20px 15px;
     }
 
+    .schedule-heading-container h2,
+    .team-schedule-heading-container h2 {
+        font-size: 24px;
+    }
+
     .schedule-heading-logo {
         margin-right: 10px;
         width: 65px;
@@ -1026,7 +1045,6 @@ filter: drop-shadow(0 2px 2px #000); */
         font-size: 16px;
     }
 
-    .league-regular-season-container h2,
     .schedule-heading-container h2,
     .team-schedule-heading-container h2 {
         font-size: 22px;

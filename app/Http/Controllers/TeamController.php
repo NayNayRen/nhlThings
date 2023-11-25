@@ -22,7 +22,7 @@ class TeamController extends Controller
       }
     }
 
-    // dd($teamSchedule);
+    dd($teamSchedule[0][0]);
     return view('team', [
       'title' => $team[0]['teamName']['default'],
       'soloTeam' => $team[0],

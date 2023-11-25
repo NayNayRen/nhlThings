@@ -296,8 +296,8 @@
 }
 
 .game-dropdown-team-logo img {
-    /* -webkit-filter: drop-shadow(0 2px 1px rgba(0, 0, 0, 0.75));
-  filter: drop-shadow(0 2px 1px rgba(0, 0, 0, 0.75)); */
+    -webkit-filter: drop-shadow(0 2px 2px #808080);
+    filter: drop-shadow(0 2px 2px #808080);
     height: auto;
     width: 100%;
 }
@@ -625,19 +625,18 @@
 }
 
 .game-team-logo {
-    /* -webkit-transform: translateY(-50%); */
-    bottom: 0;
+    -webkit-transform: translateY(-50%);
     height: auto;
     left: calc(100% + 20px);
     position: absolute;
-    /* top: 50%;
-    transform: translateY(-50%); */
-    width: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 70px;
 }
 
 .game-team-logo img {
-    -webkit-filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.75));
-    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.75));
+    -webkit-filter: drop-shadow(0 2px 2px #808080);
+    filter: drop-shadow(0 2px 2px #808080);
     height: auto;
     width: 100%;
 }
@@ -656,6 +655,7 @@
     color: #000;
     font-size: 16px;
     margin-bottom: 5px;
+    width: 85%;
 }
 
 .home-game-indicator {
@@ -696,12 +696,6 @@
     padding: 0 0 40px 0;
     position: relative;
     width: 315px;
-}
-
-.league-regular-season-container h2 {
-    color: #000;
-    font-size: 26px;
-    padding: 5px 0 0 15px;
 }
 
 .owl-carousel .owl-item {
@@ -965,11 +959,21 @@
     width: 100%;
     z-index: 1;
 } */
+.regular-season-container h2 {
+    border-bottom: solid 1px #000;
+    color: #b22222;
+    display: inline-block;
+    font-size: 18px;
+    margin-left: 20px;
+    padding: 10px 25px 0 0;
+    width: auto;
+    /* outline: solid 1px blue; */
+}
 
 .team-preseason-container {
     background-color: #dcdcdc;
     border-radius: 5px;
-    margin: 20px auto 0 auto;
+    margin: 10px auto 0 auto;
     padding: 0 20px 20px 20px;
     position: relative;
     width: 100%;
@@ -1003,11 +1007,6 @@
 }
 
 .team-preseason-card {
-    margin: 10px;
-}
-
-.team-preseason-card,
-.team-regular-season-card {
     -ms-flex-align: start;
     -ms-flex-direction: column;
     -ms-flex-pack: start;
@@ -1027,6 +1026,7 @@
     font-size: 16px;
     height: auto;
     justify-content: flex-start;
+    margin: 10px;
     min-height: 200px;
     overflow: hidden;
     outline: solid 1px #000;
@@ -1043,46 +1043,17 @@
     margin: 0 0 0 10px;
 }
 
-.team-regular-season-card {
-    margin: 10px auto;
-}
-
-.team-regular-season-container {
-    background-color: #dcdcdc;
-    border-radius: 5px;
-    margin: 20px auto 0 auto;
-    overflow: hidden;
-    padding: 0 0 20px 0;
-    width: 100%;
-}
-
-.team-regular-season-container h2 {
-    border-bottom: solid 1px #000;
-    color: #b22222;
-    display: inline-block;
-    font-size: 18px;
-    margin-left: 20px;
-    padding: 10px 25px 0 0;
-    width: auto;
-    /* outline: solid 1px blue; */
-}
-
 @media (max-width: 700px) {
     .game-slideout-hide-button:hover,
     .game-slideout-show-button:hover {
         -webkit-box-shadow: none;
         box-shadow: none;
     }
-
-    .team-regular-season-container {
-        border-radius: 0;
-    }
 }
 
 @media (max-width: 400px) {
     .league-game-card,
-    .team-preseason-card,
-    .team-regular-season-card {
+    .team-preseason-card {
         max-width: 100%;
         min-width: 250px;
     }

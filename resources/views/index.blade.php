@@ -3,13 +3,14 @@
   <div class="main-container">
     <div class="schedule-container">
       <div class="schedule-heading-container">
-        <h2>Game Dates</h2>
+        <h2>Games</h2>
         <div class="shield-logo">
           <img src={{ asset('img/nhl-shield.png') }} alt="NHL Logo" width="100" height="100">
         </div>
       </div>
       @if (count($dailyGames) < 1)
-        <div class="league-regular-season-container">
+        <div class="regular-season-container">
+          <h2>Today's Games</h2>
           <ul class="league-regular-season owl-carousel owl-theme league-carousel">
             <li class="league-game-card">
               <div class="game-date-location">
@@ -22,7 +23,8 @@
           </ul>
         </div>
       @else
-        <div class="league-regular-season-container">
+        <div class="regular-season-container">
+          <h2>Today's Games</h2>
           <ul class="league-regular-season owl-carousel owl-theme league-carousel">
             @foreach ($dailyGames as $key => $game)
               @php
