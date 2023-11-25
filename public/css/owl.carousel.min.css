@@ -669,6 +669,39 @@
     width: 15px;
 }
 
+.home-game-indicator-message {
+    -ms-flex-align: center;
+    -ms-flex-direction: row;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -webkit-box-pack: center;
+    align-items: center;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 5px;
+    width: -moz-fit-content;
+    width: -webkit-fit-content;
+    width: fit-content;
+    /* outline: solid 1px blue; */
+}
+
+.home-game-indicator-message p {
+    font-size: 16px;
+    margin-right: 15px;
+}
+
+.home-game-indicator-message span {
+    background-color: #1e90ff;
+    border-radius: 50%;
+    height: 15px;
+    width: 15px;
+}
+
 .league-game-card {
     -ms-flex-align: start;
     -ms-flex-direction: column;

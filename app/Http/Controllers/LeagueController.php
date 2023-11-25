@@ -12,6 +12,7 @@ class LeagueController extends Controller
   {
     $dailyGames = [];
     $boxscores = [];
+    $teamRoster = [];
     $today = Carbon::today();
     $currentDate = Carbon::create($today)->toFormattedDateString();
     $weeklyGames = ApiController::getWeeklySchedule();
@@ -36,6 +37,7 @@ class LeagueController extends Controller
       'dailyGames' => $dailyGames[0],
       'weeklyGames' => $weeklyGames,
       'allTeams' => $allTeams,
+      'teamRoster' => $teamRoster,
       'sortedTeamsByName' => $sortedTeamsByName
     ]);
   }

@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\LeagueController;
-use App\Http\Controllers\TeamController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TeamController;
+use App\Http\Controllers\LeagueController;
+use App\Http\Controllers\PlayerController;
 
 /*
 |--------------------------------------------------------------------------

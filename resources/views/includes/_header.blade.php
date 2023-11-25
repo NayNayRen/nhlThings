@@ -63,10 +63,33 @@
             <i class="fa-solid fa-caret-up" aria-hidden="true"></i>
             <input type="button" class="roster-dropdown-button" value="Team Roster..." /><br />
             <ul class="roster-dropdown-list">
-              <li>
-                <span class="roster-dropdown-name">Select a team first...</span>
-              </li>
-              <!-- added dynamically -->
+              @if (count($teamRoster) === 0 || $teamRoster === null)
+                <li>
+                  <span class="roster-dropdown-name">Select a team first...</span>
+                </li>
+              @else
+                @foreach ($teamRoster['goalies'] as $goalie)
+                  <li>
+                    {{-- <a href="{{ route('players.player', $goalie['playerId']) }}" target="_blank"> --}}
+                    <span class="roster-dropdown-name">{{ $goalie['firstName']['default'] }}
+                      {{ $goalie['lastName']['default'] }}</span>
+                    <span class='roster-dropdown-position'>G</span>
+                    {{-- <span class='roster-dropdown-number'></span> --}}
+                    {{-- </a> --}}
+                  </li>
+                @endforeach
+                @foreach ($teamRoster['skaters'] as $skater)
+                  <li>
+                    {{-- <a href="{{ route('players.player', $skater['playerId']) }}" target="_blank"> --}}
+                    <span class="roster-dropdown-name">{{ $skater['firstName']['default'] }}
+                      {{ $skater['lastName']['default'] }}</span>
+                    <span class='roster-dropdown-position'>{{ $skater['positionCode'] }}</span>
+                    {{-- <span class='roster-dropdown-number'></span> --}}
+                    {{-- </a> --}}
+                  </li>
+                @endforeach
+              @endif
+
             </ul>
           </div>
           <div class="team-summary-dropdown-container">

@@ -8,6 +8,10 @@
           <img src={{ $soloTeam['teamLogo'] }} alt="{{ $soloTeam['teamName']['default'] }} Logo" width="100"
             height="100">
         </div>
+        <div class="home-game-indicator-message">
+          <p>Home Game :</p>
+          <span></span>
+        </div>
       </div>
       @if (count($regularSeason) < 1)
         <div class="regular-season-container">

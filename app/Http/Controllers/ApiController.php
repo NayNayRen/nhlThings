@@ -64,4 +64,12 @@ class ApiController extends Controller
     $teamStats = json_decode($request->getBody()->getContents(), true);
     return $teamStats;
   }
+
+  public static function getPlayer($id)
+  {
+    $client = new \GuzzleHttp\Client();
+    $request = $client->get('https://api-web.nhle.com/v1/player/' . $id . '/landing');
+    $player = json_decode($request->getBody()->getContents(), true);
+    return $player;
+  }
 }

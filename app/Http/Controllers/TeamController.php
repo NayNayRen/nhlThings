@@ -29,7 +29,7 @@ class TeamController extends Controller
     for ($i = 0; $i < count($teamSchedule[0][1]); $i++) {
       $psBoxscores[] = ApiController::getBoxscores($teamSchedule[0][1][$i]['id']);
     }
-    // dd($team[0]);
+    // dd($teamRoster[0]);
     return view('team', [
       'title' => $team[0]['teamName']['default'],
       'soloTeam' => $team[0],
