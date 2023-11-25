@@ -4,8 +4,8 @@
     <div class="schedule-container">
       <div class="schedule-heading-container">
         <h2>Game Dates</h2>
-        <div class="schedule-heading-logo">
-          <img src={{ asset('img/nhl-logo.png') }} alt="NHL Logo" width="100" height="100">
+        <div class="shield-logo">
+          <img src={{ asset('img/nhl-shield.png') }} alt="NHL Logo" width="100" height="100">
         </div>
       </div>
       @if (count($dailyGames) < 1)

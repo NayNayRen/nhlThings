@@ -8,7 +8,7 @@
           <img src={{ $team['teamLogo'] }} alt="{{ $team['teamName']['default'] }} Logo" width="100" height="100">
         </div>
       </div>
-      @if (count($teamSchedule) < 1)
+      @if (count($teamSchedule['games']) < 1)
         <div class="league-regular-season-container">
           <ul class="league-regular-season owl-carousel owl-theme team-carousel">
             <li class="league-game-card">
@@ -24,9 +24,9 @@
       @else
         <div class="league-regular-season-container">
           <ul class="league-regular-season owl-carousel owl-theme team-carousel">
-            @for ($i = 0; $i < count($teamSchedule); $i++)
+            @for ($i = 0; $i < count($teamSchedule['games']); $i++)
               @php
-                $gameDateTime = Carbon\Carbon::create($teamSchedule[$i]['startTimeUTC'])->tz('America/New_York');
+                $gameDateTime = Carbon\Carbon::create($teamSchedule['games'][$i]['startTimeUTC'])->tz('America/New_York');
                 $formattedGameDate = $gameDateTime->toFormattedDateString();
                 $formattedGameTime = $gameDateTime->format('h:i A');
               @endphp
@@ -36,18 +36,18 @@
                   <p class='game-date'> {{ $formattedGameDate }}
                   </p>
                   <p class='game-time'>{{ $formattedGameTime }} EST</p>
-                  <p class="game-location">{{ $teamSchedule[$i]['venue']['default'] }}</p>
+                  <p class="game-location">{{ $teamSchedule['games'][$i]['venue']['default'] }}</p>
                 </div>
                 {{-- AWAY TEAM --}}
                 <div class="game-team-container">
                   <p>Away :</p>
                   @foreach ($allTeams as $team)
-                    @if ($teamSchedule[$i]['awayTeam']['abbrev'] === $team['teamAbbrev']['default'])
+                    @if ($teamSchedule['games'][$i]['awayTeam']['abbrev'] === $team['teamAbbrev']['default'])
                       <p class='game-team-name'>
                         {{ $team['teamName']['default'] }}
                         <span class="game-team-logo">
-                          <img src={{ $teamSchedule[$i]['awayTeam']['logo'] }} alt='{{ $team['teamName']['default'] }}'
-                            width="100" height="100">
+                          <img src={{ $teamSchedule['games'][$i]['awayTeam']['logo'] }}
+                            alt='{{ $team['teamName']['default'] }}' width="100" height="100">
                         </span>
                       </p>
                       <p class='game-team-record'>{{ $team['wins'] }}-{{ $team['losses'] }}-{{ $team['otLosses'] }}
@@ -59,11 +59,11 @@
                 <div class="game-team-container">
                   <p>Home :</p>
                   @foreach ($allTeams as $team)
-                    @if ($teamSchedule[$i]['homeTeam']['abbrev'] === $team['teamAbbrev']['default'])
+                    @if ($teamSchedule['games'][$i]['homeTeam']['abbrev'] === $team['teamAbbrev']['default'])
                       <p class='game-team-name'>
                         {{ $team['teamName']['default'] }}
                         <span class="game-team-logo home-team-logo">
-                          <img src={{ $teamSchedule[$i]['homeTeam']['logo'] }}
+                          <img src={{ $teamSchedule['games'][$i]['homeTeam']['logo'] }}
                             alt='{{ $team['teamName']['default'] }}' width="100" height="100">
                         </span>
                       </p>
@@ -74,19 +74,21 @@
                 </div>
                 {{-- GAME BROADCASTS --}}
                 <p class="game-broadcast">
-                  @if (count($teamSchedule[$i]['tvBroadcasts']) < 1)
+                  @if (count($teamSchedule['games'][$i]['tvBroadcasts']) < 1)
                     <span>Watch :</span>
                     <span>Check Listings</span>
                   @else
                     <span>Watch :</span>
-                    @foreach ($teamSchedule[$i]['tvBroadcasts'] as $tvBroadcast)
+                    @foreach ($teamSchedule['games'][$i]['tvBroadcasts'] as $tvBroadcast)
                       <span>{{ $tvBroadcast['network'] }}</span>
                     @endforeach
                   @endif
                 </p>
                 <span class='game-number'>{{ $i + 1 }} of
-                  {{ count($teamSchedule) }}</span>
-                <span class="game-home-team-indicator"></span>
+                  {{ count($teamSchedule['games']) }}</span>
+                {{-- @if ($teamSchedule['games'][$i]['homeTeam']['abbrev'] === $team['teamAbbrev']['default'])
+                  <span class="home-game-indicator"></span>
+                @endif --}}
               </li>
             @endfor
           </ul>

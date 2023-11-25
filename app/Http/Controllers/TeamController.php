@@ -21,11 +21,11 @@ class TeamController extends Controller
         $teamRoster[] = ApiController::getTeamRoster($teamAbbr);
       }
     }
-    // dd($allTeams);
+    // dd($teamSchedule[0]);
     return view('team', [
       'title' => $team[0]['teamName']['default'],
       'team' => $team[0],
-      'teamSchedule' => $teamSchedule[0]['games'],
+      'teamSchedule' => $teamSchedule[0],
       'teamRoster' => $teamRoster[0],
       'allTeams' => $allTeams,
       'sortedTeamsByName' => $sortedTeamsByName
