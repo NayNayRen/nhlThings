@@ -39,6 +39,9 @@
                 <span class='game-number'>
                   {{ $key + 1 }} of {{ count($regularSeason) }}
                 </span>
+                @if ($game['homeTeam']['abbrev'] === $soloTeam['teamAbbrev']['default'])
+                  <span class="home-game-indicator"></span>
+                @endif
               </li>
             @endforeach
           </ul>
@@ -59,6 +62,9 @@
                   <span class='game-number'>
                     {{ $key + 1 }} of {{ count($preseason) }}
                   </span>
+                  @if ($game['homeTeam']['abbrev'] === $soloTeam['teamAbbrev']['default'])
+                    <span class="home-game-indicator"></span>
+                  @endif
                 </li>
               @endforeach
             </ul>

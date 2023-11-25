@@ -662,7 +662,7 @@
     background-color: #1e90ff;
     border-radius: 50%;
     bottom: 10px;
-    /* display: none; */
+    display: inline;
     height: 15px;
     position: absolute;
     right: 20px;
