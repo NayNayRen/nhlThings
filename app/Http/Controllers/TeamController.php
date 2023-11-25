@@ -12,6 +12,8 @@ class TeamController extends Controller
     $team = [];
     $teamSchedule = [];
     $teamRoster = [];
+    $rsBoxscores = [];
+    $psBoxscores = [];
     $allTeams = ApiController::getAllTeams();
     $sortedTeamsByName = collect($allTeams)->sortBy('teamName');
     for ($i = 0; $i < count($allTeams); $i++) {
@@ -21,8 +23,13 @@ class TeamController extends Controller
         $teamRoster[] = ApiController::getTeamRoster($teamAbbr);
       }
     }
-
-    dd($teamSchedule[0][0]);
+    for ($i = 0; $i < count($teamSchedule[0][0]); $i++) {
+      $rsBoxscores[] = ApiController::getBoxscores($teamSchedule[0][0][$i]['id']);
+    }
+    for ($i = 0; $i < count($teamSchedule[0][1]); $i++) {
+      $psBoxscores[] = ApiController::getBoxscores($teamSchedule[0][1][$i]['id']);
+    }
+    // dd($psBoxscores);
     return view('team', [
       'title' => $team[0]['teamName']['default'],
       'soloTeam' => $team[0],
