@@ -405,6 +405,41 @@ header h1 {
     /* outline: solid 1px blue; */
 }
 
+.league-container,
+.player-container,
+.team-container {
+    -webkit-transition: opacity 2000ms ease;
+    height: auto;
+    margin: 0 auto;
+    min-height: 675px;
+    /* opacity: 0; */
+    opacity: 1;
+    overflow: hidden;
+    /* padding: 0 0 15px 0; */
+    transition: opacity 2000ms ease;
+    width: 100%;
+    /* outline: solid 1px blue; */
+}
+
+.league-heading-container,
+.player-heading-container,
+.team-heading-container {
+    -webkit-box-shadow: 0 0 10px #808080;
+    background-color: #dcdcdc;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    box-shadow: 0 0 10px #808080;
+    padding: 10px 0 10px 15px;
+    position: relative;
+}
+
+.league-heading-container h2,
+.player-heading-container h2,
+.team-heading-container h2 {
+    color: #000;
+    font-size: 26px;
+}
+
 .main {
     -ms-flex-align: center;
     -ms-flex-direction: column;
@@ -504,6 +539,60 @@ header h1 {
     text-align: center;
     width: 500px;
     /* outline: solid 1px blue; */
+}
+
+.player-heading-logo,
+.team-heading-logo {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: auto;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin-right: 10px;
+    width: 100px;
+    /* outline: solid 1px blue; */
+}
+
+.player-heading-logo img,
+.team-heading-logo img {
+    -webkit-filter: drop-shadow(0 2px 2px #808080);
+    filter: drop-shadow(0 2px 2px #808080);
+    height: auto;
+    width: 100%;
+}
+
+.player-number-position-container {
+    -ms-flex-align: center;
+    -ms-flex-direction: row;
+    -ms-flex-pack: space-evenly;
+    -webkit-box-align: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -webkit-box-pack: space-evenly;
+    align-items: center;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    flex-direction: row;
+    font-size: 24px;
+    justify-content: space-evenly;
+    width: 100px;
+    /* outline: solid 1px blue; */
+}
+
+.player-number {
+    color: #000;
+    margin: 0;
+}
+
+.player-position {
+    color: #b22222;
+    margin: 0;
 }
 
 .preseason-scrolling-container {
@@ -623,58 +712,6 @@ header h1 {
     font-weight: bold;
 }
 
-.schedule-container {
-    -webkit-transition: opacity 2000ms ease;
-    height: auto;
-    margin: 0 auto;
-    min-height: 675px;
-    /* opacity: 0; */
-    opacity: 1;
-    overflow: hidden;
-    /* padding: 0 0 15px 0; */
-    transition: opacity 2000ms ease;
-    width: 100%;
-    /* outline: solid 1px blue; */
-}
-
-.schedule-heading-container {
-    -webkit-box-shadow: 0 0 10px #808080;
-    background-color: #dcdcdc;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    box-shadow: 0 0 10px #808080;
-    padding: 10px 0 20px 15px;
-    position: relative;
-}
-
-.schedule-heading-container h2 {
-    color: #000;
-    font-size: 26px;
-}
-
-.schedule-heading-logo {
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    height: auto;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    margin-right: 10px;
-    width: 100px;
-    /* outline: solid 1px blue; */
-}
-
-.schedule-heading-logo img {
-    -webkit-filter: drop-shadow(0 2px 2px #808080);
-    filter: drop-shadow(0 2px 2px #808080);
-    height: auto;
-    width: 100%;
-}
-
 .shield-logo {
     -webkit-box-align: center;
     -ms-flex-align: center;
@@ -711,65 +748,6 @@ header h1 {
     position: relative;
     width: 90%;
     z-index: 1;
-}
-
-.team-schedule-heading-container {
-    -ms-flex-align: center;
-    -ms-flex-direction: row;
-    -ms-flex-pack: start;
-    -webkit-box-align: center;
-    -webkit-box-direction: normal;
-    -webkit-box-orient: horizontal;
-    -webkit-box-pack: start;
-    align-items: center;
-    display: -ms-flexbox;
-    display: -webkit-box;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    padding: 10px 0 10px 0;
-    text-align: left;
-    /* outline: solid 1px blue; */
-}
-
-.team-schedule-heading-container div:first-of-type div:first-of-type {
-    -ms-flex-align: center;
-    -ms-flex-direction: row;
-    -ms-flex-pack: start;
-    -webkit-box-align: center;
-    -webkit-box-direction: normal;
-    -webkit-box-orient: horizontal;
-    -webkit-box-pack: start;
-    align-items: center;
-    display: -ms-flexbox;
-    display: -webkit-box;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-}
-
-.team-schedule-heading-container div:first-of-type div:first-of-type div {
-    background-color: #1e90ff;
-    border-radius: 50%;
-    display: inline;
-    height: 10px;
-    margin-right: 5px;
-    width: 10px;
-}
-
-.team-schedule-heading-container div:first-of-type span {
-    font-size: 14px;
-}
-
-.team-schedule-heading-container h2 {
-    color: #000;
-    font-size: 26px;
-}
-
-.team-schedule-heading-container p {
-    color: #b22222;
-    font-size: 18px;
-    font-weight: bold;
 }
 
 .team-site a {
@@ -1000,12 +978,25 @@ header h1 {
         margin: 0 0 5px 0;
     }
 
+    .league-heading-container,
+    .player-heading-container,
+    .team-heading-container {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        padding: 25px 0 10px 15px;
+    }
+
+    .league-heading-container h2,
+    .player-heading-container h2,
+    .team-heading-container h2 {
+        font-size: 24px;
+    }
+
     .league-standings-selection-container {
         padding: 15px 0 15px 10px;
     }
 
     .league-standings-heading-container h2,
-    .player-name,
     .team-stats-season-container h2 {
         font-size: 24px;
     }
@@ -1018,22 +1009,8 @@ header h1 {
         border-radius: 0;
     }
 
-    .main-header-league-logo {
-        -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-        justify-content: space-between;
-    }
-
-    .main-header-league-logo h1 {
-        font-size: 22px;
-    }
-
     .nhl-copyright-container {
         width: 400px;
-    }
-
-    .player-close-button {
-        right: 15px;
     }
 
     .player-data-container {
@@ -1043,45 +1020,19 @@ header h1 {
         width: 100%;
     }
 
-    .player-number,
-    .player-position {
-        font-size: 18px;
+    .player-heading-logo,
+    .team-heading-logo {
+        margin-right: 10px;
+        width: 75px;
     }
 
-    .player-profile {
-        width: 65px;
+    .player-number-position-container {
+        width: 75px;
     }
 
     .roster-dropdown-list li:hover,
     .teams-dropdown-list li:hover {
         background-color: #fff;
-    }
-
-    .schedule-heading-container {
-        border-top-left-radius: 0;
-        border-top-right-radius: 0;
-        padding: 25px 0 20px 15px;
-    }
-
-    .schedule-heading-container h2,
-    .team-schedule-heading-container h2 {
-        font-size: 24px;
-    }
-
-    .schedule-heading-logo {
-        margin-right: 10px;
-        width: 65px;
-    }
-
-    .team-schedule-container {
-        padding: 0;
-    }
-
-    .team-schedule-heading-container {
-        -ms-flex-pack: justify;
-        -webkit-box-pack: justify;
-        justify-content: space-between;
-        padding: 10px 15px 10px 15px;
     }
 }
 
@@ -1090,8 +1041,9 @@ header h1 {
         font-size: 16px;
     }
 
-    .schedule-heading-container h2,
-    .team-schedule-heading-container h2 {
+    .league-heading-container h2,
+    .player-heading-container h2,
+    .team-heading-container h2 {
         font-size: 22px;
     }
 
@@ -1104,7 +1056,6 @@ header h1 {
     }
 
     .league-standings-heading-container h2,
-    .player-name,
     .team-stats-season-container h2 {
         font-size: 18px;
     }
@@ -1115,14 +1066,5 @@ header h1 {
 
     .nhl-copyright-container {
         width: 100%;
-    }
-
-    #players,
-    #teams {
-        top: -125px;
-    }
-
-    .team-schedule-heading-container p {
-        font-size: 16px;
     }
 }

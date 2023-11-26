@@ -21,7 +21,7 @@ class PlayerController extends Controller
         $teamRoster[] = ApiController::getTeamRoster($player['currentTeamAbbrev']);
       }
     }
-    // dd($sortedTeamsByName);
+    // dd($player);
     return view('player', [
       'title' => $playerName,
       'player' => $player,

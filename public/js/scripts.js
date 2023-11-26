@@ -1,7 +1,6 @@
 function loadScript() {
   const burgerMenu = document.querySelector(".burger-menu");
   const upArrow = document.querySelector(".up-arrow");
-  const nhlCopyright = document.querySelector('.nhl-copyright');
   const currentDate = document.querySelector('.current-date');
   const currentTime = document.querySelector('.current-time');
 

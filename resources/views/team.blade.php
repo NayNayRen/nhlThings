@@ -1,10 +1,10 @@
 @include('includes._header')
 <main class="main">
   <div class="main-container">
-    <div class="schedule-container">
-      <div class="schedule-heading-container">
-        <h2 id="home-team-name">{{ $soloTeam['teamName']['default'] }}</h2>
-        <div class="schedule-heading-logo">
+    <div class="team-container">
+      <div class="team-heading-container">
+        <h2>{{ $soloTeam['teamName']['default'] }}</h2>
+        <div class="team-heading-logo">
           <img src={{ $soloTeam['teamLogo'] }} alt="{{ $soloTeam['teamName']['default'] }} Logo" width="100"
             height="100">
         </div>

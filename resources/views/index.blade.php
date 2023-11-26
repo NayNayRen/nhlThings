@@ -1,9 +1,9 @@
 @include('includes._header')
 <main class="main">
   <div class="main-container">
-    <div class="schedule-container">
-      <div class="schedule-heading-container">
-        <h2>Games</h2>
+    <div class="league-container">
+      <div class="league-heading-container">
+        <h2>NHL Games</h2>
         <div class="shield-logo">
           <img src={{ asset('img/nhl-shield.png') }} alt="NHL Logo" width="100" height="100">
         </div>
