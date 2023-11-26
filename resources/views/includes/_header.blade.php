@@ -46,7 +46,7 @@
             <ul class="teams-dropdown-list">
               @foreach ($sortedTeamsByName as $team)
                 <li>
-                  <a href="{{ route('teams.team', $team['teamAbbrev']['default']) }}" target="_blank">
+                  <a href="{{ route('league.team', $team['teamAbbrev']['default']) }}" target="_blank">
                     <span class='teams-dropdown-name'>
                       {{ $team['teamName']['default'] }}
                     </span>
@@ -70,7 +70,7 @@
               @else
                 @foreach ($teamRoster['goalies'] as $goalie)
                   <li>
-                    {{-- <a href="{{ route('players.player', $goalie['playerId']) }}" target="_blank"> --}}
+                    {{-- <a href="{{ route('team.player', $goalie['playerId']) }}" target="_blank"> --}}
                     <span class="roster-dropdown-name">{{ $goalie['firstName']['default'] }}
                       {{ $goalie['lastName']['default'] }}</span>
                     <span class='roster-dropdown-position'>G</span>
@@ -80,7 +80,7 @@
                 @endforeach
                 @foreach ($teamRoster['skaters'] as $skater)
                   <li>
-                    {{-- <a href="{{ route('players.player', $skater['playerId']) }}" target="_blank"> --}}
+                    {{-- <a href="{{ route('team.player', $skater['playerId']) }}" target="_blank"> --}}
                     <span class="roster-dropdown-name">{{ $skater['firstName']['default'] }}
                       {{ $skater['lastName']['default'] }}</span>
                     <span class='roster-dropdown-position'>{{ $skater['positionCode'] }}</span>

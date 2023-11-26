@@ -18,6 +18,6 @@ use App\Http\Controllers\PlayerController;
 
 Route::get('/', [LeagueController::class, 'index'])->name('league.index');
 
-Route::get('/teams/{team}', [TeamController::class, 'team'])->name('teams.team');
+Route::get('/league/{team}', [TeamController::class, 'team'])->name('league.team');
 
-Route::get('/players/{player}', [PlayerController::class, 'player'])->name('players.player');
+Route::get('/team/{player}', [PlayerController::class, 'player'])->name('team.player');
