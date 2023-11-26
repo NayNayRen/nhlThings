@@ -23,12 +23,12 @@ class TeamController extends Controller
         $teamRoster[] = ApiController::getTeamRoster($teamAbbr);
       }
     }
-    for ($i = 0; $i < count($teamSchedule[0][0]); $i++) {
-      $rsBoxscores[] = ApiController::getBoxscores($teamSchedule[0][0][$i]['id']);
-    }
-    for ($i = 0; $i < count($teamSchedule[0][1]); $i++) {
-      $psBoxscores[] = ApiController::getBoxscores($teamSchedule[0][1][$i]['id']);
-    }
+    // for ($i = 0; $i < count($teamSchedule[0][0]); $i++) {
+    //   $rsBoxscores[] = ApiController::getBoxscores($teamSchedule[0][0][$i]['id']);
+    // }
+    // for ($i = 0; $i < count($teamSchedule[0][1]); $i++) {
+    //   $psBoxscores[] = ApiController::getBoxscores($teamSchedule[0][1][$i]['id']);
+    // }
     // dd($teamRoster[0]);
     return view('team', [
       'title' => $team[0]['teamName']['default'],
