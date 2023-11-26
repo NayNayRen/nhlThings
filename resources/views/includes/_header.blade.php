@@ -70,22 +70,22 @@
               @else
                 @foreach ($teamRoster['goalies'] as $goalie)
                   <li>
-                    {{-- <a href="{{ route('team.player', $goalie['playerId']) }}" target="_blank"> --}}
-                    <span class="roster-dropdown-name">{{ $goalie['firstName']['default'] }}
-                      {{ $goalie['lastName']['default'] }}</span>
-                    <span class='roster-dropdown-position'>G</span>
-                    {{-- <span class='roster-dropdown-number'></span> --}}
-                    {{-- </a> --}}
+                    <a href="{{ route('team.player', $goalie['playerId']) }}" target="_blank">
+                      <span class="roster-dropdown-name">{{ $goalie['firstName']['default'] }}
+                        {{ $goalie['lastName']['default'] }}</span>
+                      <span class='roster-dropdown-position'>G</span>
+                      {{-- <span class='roster-dropdown-number'></span> --}}
+                    </a>
                   </li>
                 @endforeach
                 @foreach ($teamRoster['skaters'] as $skater)
                   <li>
-                    {{-- <a href="{{ route('team.player', $skater['playerId']) }}" target="_blank"> --}}
-                    <span class="roster-dropdown-name">{{ $skater['firstName']['default'] }}
-                      {{ $skater['lastName']['default'] }}</span>
-                    <span class='roster-dropdown-position'>{{ $skater['positionCode'] }}</span>
-                    {{-- <span class='roster-dropdown-number'></span> --}}
-                    {{-- </a> --}}
+                    <a href="{{ route('team.player', $skater['playerId']) }}" target="_blank">
+                      <span class="roster-dropdown-name">{{ $skater['firstName']['default'] }}
+                        {{ $skater['lastName']['default'] }}</span>
+                      <span class='roster-dropdown-position'>{{ $skater['positionCode'] }}</span>
+                      {{-- <span class='roster-dropdown-number'></span> --}}
+                    </a>
                   </li>
                 @endforeach
               @endif
