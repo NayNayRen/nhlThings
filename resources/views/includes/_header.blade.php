@@ -47,9 +47,9 @@
               @foreach ($sortedTeamsByName as $team)
                 <li>
                   <a href="{{ route('league.team', $team['teamAbbrev']['default']) }}" target="_blank">
-                    <span class='teams-dropdown-name'>
+                    <p class='teams-dropdown-name'>
                       {{ $team['teamName']['default'] }}
-                    </span>
+                    </p>
                     <div class="teams-dropdown-logo">
                       <img src={{ $team['teamLogo'] }} alt={{ $team['teamName']['default'] }} width="100"
                         height="100">
@@ -59,32 +59,52 @@
               @endforeach
             </ul>
           </div>
+          {{-- ROSTER --}}
           <div class="roster-dropdown-container">
             <i class="fa-solid fa-caret-up" aria-hidden="true"></i>
             <input type="button" class="roster-dropdown-button" value="Team Roster..." /><br />
             <ul class="roster-dropdown-list">
               @if (count($teamRoster) === 0 || $teamRoster === null)
                 <li>
-                  <span class="roster-dropdown-name">Select a team first...</span>
+                  <p class="roster-dropdown-name">Select a team first...</p>
                 </li>
               @else
+                {{-- GOALIES --}}
+                <ul class="roster-dropdown-player-type">
+                  <li>
+                    <p>Goalies</p>
+                  </li>
+                </ul>
                 @foreach ($teamRoster['goalies'] as $goalie)
                   <li>
                     <a href="{{ route('team.player', $goalie['playerId']) }}" target="_blank">
-                      <span class="roster-dropdown-name">{{ $goalie['firstName']['default'] }}
-                        {{ $goalie['lastName']['default'] }}</span>
+                      <p class="roster-dropdown-name">{{ $goalie['firstName']['default'] }}
+                        {{ $goalie['lastName']['default'] }}</p>
                       <span class='roster-dropdown-position'>G</span>
-                      {{-- <span class='roster-dropdown-number'></span> --}}
+                      <div class="roster-dropdown-photo-container">
+                        <img src={{ $goalie['headshot'] }}
+                          alt="{{ $goalie['firstName']['default'] }} {{ $goalie['lastName']['default'] }}">
+                      </div>
                     </a>
                   </li>
                 @endforeach
+                {{-- SKATERS --}}
+                <ul class="roster-dropdown-player-type">
+                  <li>
+                    <p>Skaters</p>
+                  </li>
+                </ul>
                 @foreach ($teamRoster['skaters'] as $skater)
                   <li>
                     <a href="{{ route('team.player', $skater['playerId']) }}" target="_blank">
-                      <span class="roster-dropdown-name">{{ $skater['firstName']['default'] }}
-                        {{ $skater['lastName']['default'] }}</span>
+                      <p class="roster-dropdown-name">{{ $skater['firstName']['default'] }}
+                        {{ $skater['lastName']['default'] }}</p>
                       <span class='roster-dropdown-position'>{{ $skater['positionCode'] }}</span>
-                      {{-- <span class='roster-dropdown-number'></span> --}}
+                      <div class="roster-dropdown-photo-container">
+                        <img src={{ $skater['headshot'] }}
+                          alt="{{ $skater['firstName']['default'] }} {{ $skater['lastName']['default'] }}">
+                      </div>
+
                     </a>
                   </li>
                 @endforeach
@@ -92,14 +112,13 @@
 
             </ul>
           </div>
-          <div class="team-summary-dropdown-container">
+          {{-- <div class="team-summary-dropdown-container">
             <i class="fa-solid fa-caret-up" aria-hidden="true"></i>
             <input type="button" class="team-summary-dropdown-button" value="Team Summary..." /><br />
             <div class="team-summary-dropdown-list">
-              <!-- added dynamically -->
               <p class="roster-dropdown-name">Select a team first...</p>
             </div>
-          </div>
+          </div> --}}
 
           <div class="how-to-dropdown-container">
             <i class="fa-solid fa-caret-up" aria-hidden="true"></i>

@@ -502,7 +502,7 @@ header h1 {
     margin: 0 auto 10px auto;
     padding: 0 10px 10px 10px;
     text-align: center;
-    width: 400px;
+    width: 500px;
     /* outline: solid 1px blue; */
 }
 
@@ -533,6 +533,7 @@ header h1 {
     justify-content: space-between;
     padding: 0 10px 0 0;
     transition: background-color 150ms ease;
+    width: 100%;
     /* outline: solid 1px blue; */
 }
 
@@ -560,9 +561,11 @@ header h1 {
     flex-direction: row;
     font-size: 16px;
     justify-content: space-between;
+    overflow: hidden;
     padding: 0 10px 0 0;
     text-decoration: none;
     transition: background-color 150ms ease;
+    width: 100%;
     /* outline: solid 1px blue; */
 }
 
@@ -573,14 +576,51 @@ header h1 {
     /* outline: solid 1px red; */
 }
 
-.roster-dropdown-number {
-    color: #b22222;
-    /* font-family: "Orbitron", sans-serif; */
-    padding-left: 5px;
+.roster-dropdown-photo-container {
+    -ms-flex-align: baseline;
+    -ms-flex-direction: row;
+    -ms-flex-pack: end;
+    -webkit-box-align: baseline;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -webkit-box-pack: end;
+    align-items: baseline;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    justify-content: flex-end;
+    margin-left: 10px;
+    width: 55px;
+    /* outline: solid 1px red; */
+}
+
+.roster-dropdown-photo-container img {
+    -webkit-filter: drop-shadow(0 2px 2px #808080);
+    filter: drop-shadow(0 2px 2px #808080);
+    height: auto;
+    width: 100%;
+}
+
+.roster-dropdown-player-type li:hover {
+    background-color: #fff;
+    cursor: default;
+}
+
+.roster-dropdown-player-type p {
+    border-bottom: solid 1px #1e90ff;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0 auto;
+    padding: 5px 0;
+    text-align: center;
+    width: 60%;
 }
 
 .roster-dropdown-position {
-    color: #000;
+    color: #b22222;
+    font-weight: bold;
 }
 
 .schedule-container {
@@ -988,6 +1028,10 @@ header h1 {
         font-size: 22px;
     }
 
+    .nhl-copyright-container {
+        width: 400px;
+    }
+
     .player-close-button {
         right: 15px;
     }
@@ -1070,7 +1114,7 @@ header h1 {
     }
 
     .nhl-copyright-container {
-        width: 90%;
+        width: 100%;
     }
 
     #players,

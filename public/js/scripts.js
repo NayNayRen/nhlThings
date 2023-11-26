@@ -16,9 +16,9 @@ function loadScript() {
   const rosterDropdownList = document.querySelector('.roster-dropdown-list');
 
   // team summary dropdown containers
-  const teamSummaryDropdownContainer = document.querySelector('.team-summary-dropdown-container');
-  const teamSummaryDropdownButton = document.querySelector('.team-summary-dropdown-button');
-  const teamSummaryDropdownList = document.querySelector('.team-summary-dropdown-list');
+  // const teamSummaryDropdownContainer = document.querySelector('.team-summary-dropdown-container');
+  // const teamSummaryDropdownButton = document.querySelector('.team-summary-dropdown-button');
+  // const teamSummaryDropdownList = document.querySelector('.team-summary-dropdown-list');
 
   // about dropdown containers
   const aboutDropdownContainer = document.querySelector('.about-dropdown-container');
@@ -79,10 +79,10 @@ function loadScript() {
     rosterDropdownContainer.children[0].classList.toggle('rotate');
     rosterDropdownList.classList.toggle('dropdown-list-toggle');
   });
-  teamSummaryDropdownButton.addEventListener('click', () => {
-    teamSummaryDropdownContainer.children[0].classList.toggle('rotate');
-    teamSummaryDropdownList.classList.toggle('dropdown-list-toggle');
-  });
+  // teamSummaryDropdownButton.addEventListener('click', () => {
+  //   teamSummaryDropdownContainer.children[0].classList.toggle('rotate');
+  //   teamSummaryDropdownList.classList.toggle('dropdown-list-toggle');
+  // });
   howToDropdownButton.addEventListener('click', () => {
     howToDropdownContainer.children[0].classList.toggle('rotate');
     howToDropdownList.classList.toggle('dropdown-list-toggle');

@@ -4,7 +4,12 @@
 <!-- FOOTER -->
 <footer>
   <div class="nhl-copyright-container">
-    <p class="nhl-copyright"></p>
+    <p class="nhl-copyright"> All NHL logos and marks and
+      NHL team logos and marks depicted herein are the property of the NHL and the respective teams and may not be
+      reproduced without the prior written consent of NHL Enterprises, L.P. © NHL 2023. All Rights Reserved. All NHL
+      team jerseys customized with NHL players' names and numbers are officially licensed by the NHL and the NHLPA. All
+      Rights Reserved. Any other third party trademarks or
+      copyrights are the property of their respective owners. All rights reserved. </p>
   </div>
   <span>&copy; Nov 2023</span>
   <div class="footer-logo">
