@@ -1,5 +1,6 @@
 function loadCarousel() {
-  const $teamCarousel = $('.team-carousel');
+  const $upcomingGames = $('.upcoming-games');
+  const $finishedGames = $('.finished-games');
 
   const carouselOptions = {
     loop: false,
@@ -39,58 +40,47 @@ function loadCarousel() {
       },
     },
   };
+  // upcoming games
+  $upcomingGames.trigger('destroy.owl.carousel');
+  $upcomingGames.html($upcomingGames.find('.owl-stage-outer').html()).removeClass('owl-loaded');
+  $upcomingGames.owlCarousel(carouselOptions);
+  let upcomingGamesData = $upcomingGames.data('owl.carousel');
+  // console.log(upcomingGamesData);
+  if (upcomingGamesData._items.length === 1) {
+    upcomingGamesData.options.center = true;
+    $upcomingGames.trigger('refresh.owl.carousel');
+  }
+  if (upcomingGamesData._items.length === 2) {
+    upcomingGamesData.options.responsive[1400].items = 2;
+    $upcomingGames.trigger('refresh.owl.carousel');
+  }
+  if (upcomingGamesData._items.length >= 3) {
+    upcomingGamesData.options.responsive[1400].items = 3;
+    $upcomingGames.trigger('refresh.owl.carousel');
+  }
 
-  const limitedCarouselOptions = {
-    center: false,
-    loop: false,
-    autoplay: false,
-    autoplayTimeout: 3000,
-    smartSpeed: 500,
-    autoplayHoverPause: false,
-    dots: true,
-    touchDrag: false,
-    mouseDrag: false,
-    responsive: {
-      0: {
-        // < 700
-        items: 1,
-      },
-      700: {
-        // 700 - 1000
-        items: 2,
-      },
-      1000: {
-        // > 1000 - 1300
-        items: 2,
-      },
-      1300: {
-        // > 1300
-        items: 3,
-      },
-    },
-  };
-
-  $teamCarousel.trigger('destroy.owl.carousel');
-  $teamCarousel.html($teamCarousel.find('.owl-stage-outer').html()).removeClass('owl-loaded');
-  $teamCarousel.owlCarousel(carouselOptions);
-  let owl = $teamCarousel.data('owl.carousel');
-  // console.log(owl);
   let owlDots = document.querySelectorAll('.owl-dot');
   for (let i = 0; i < owlDots.length; i++) {
     owlDots[i].setAttribute('aria-label', 'Carousel to next item.');
     owlDots[i].setAttribute('value', i + 1);
   }
-  if (owl._items.length === 1) {
-    owl.options.center = true;
-    $teamCarousel.trigger('refresh.owl.carousel');
+  // finished games
+  $finishedGames.trigger('destroy.owl.carousel');
+  $finishedGames.html($finishedGames.find('.owl-stage-outer').html()).removeClass('owl-loaded');
+  $finishedGames.owlCarousel(carouselOptions);
+  let finishedGamesData = $finishedGames.data('owl.carousel');
+  // console.log(finishedGamesData);
+  if (finishedGamesData._items.length === 1) {
+    finishedGamesData.options.center = true;
+    $finishedGames.trigger('refresh.owl.carousel');
   }
-  if (owl._items.length === 2) {
-    owl.options.responsive[1400].items = 2;
-    $teamCarousel.trigger('refresh.owl.carousel');
+  if (finishedGamesData._items.length === 2) {
+    finishedGamesData.options.responsive[1400].items = 2;
+    $finishedGames.trigger('refresh.owl.carousel');
   }
-  if (owl._items.length >= 3) {
-    owl.options.responsive[1400].items = 3;
-    $teamCarousel.trigger('refresh.owl.carousel');
+  if (finishedGamesData._items.length >= 3) {
+    finishedGamesData.options.responsive[1400].items = 3;
+    $finishedGames.trigger('refresh.owl.carousel');
   }
 }
 

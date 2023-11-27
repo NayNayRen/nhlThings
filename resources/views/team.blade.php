@@ -13,10 +13,11 @@
           <span></span>
         </div>
       </div>
-      @if (count($regularSeason) < 1)
+      {{-- UPCOMING GAMES --}}
+      @if (count($upcomingGames) < 1)
         <div class="regular-season-container">
-          <h2>Regular Season Games</h2>
-          <ul class="league-regular-season owl-carousel owl-theme team-carousel">
+          <h2>Upcoming Games</h2>
+          <ul class="league-regular-season owl-carousel upcoming owl-theme upcoming-games">
             <li class="league-game-card">
               <div class="game-date-location">
                 {{ $currentDate }}
@@ -29,9 +30,9 @@
         </div>
       @else
         <div class="regular-season-container">
-          <h2>Regular Season Games</h2>
-          <ul class="league-regular-season owl-carousel owl-theme team-carousel">
-            @foreach ($regularSeason as $key => $game)
+          <h2>Upcoming Games</h2>
+          <ul class="league-regular-season owl-carousel owl-theme upcoming-games">
+            @foreach ($upcomingGames as $key => $game)
               @php
                 $gameDateTime = Carbon\Carbon::create($game['startTimeUTC'])->tz('America/New_York');
                 $formattedGameDate = $gameDateTime->toFormattedDateString();
@@ -41,7 +42,7 @@
               <li class="league-game-card">
                 @include('includes._gameCard')
                 <span class='game-number'>
-                  {{ $key + 1 }} of {{ count($regularSeason) }}
+                  {{ count($finishedGames) + 1 + $key }} of {{ count($upcomingGames) + count($finishedGames) }}
                 </span>
                 @if ($game['homeTeam']['abbrev'] === $soloTeam['teamAbbrev']['default'])
                   <span class="home-game-indicator"></span>
@@ -50,28 +51,86 @@
             @endforeach
           </ul>
         </div>
+      @endif
+      {{-- FINISHED GAMES --}}
+      @if (count($finishedGames) < 1)
+        <div class="regular-season-container">
+          <h2>Finished Games</h2>
+          <ul class="league-regular-season owl-carousel owl-theme finished-games">
+            <li class="league-game-card">
+              <div class="game-date-location">
+                {{ $currentDate }}
+              </div>
+              <div class="game-team-container">
+                <p>No games today...</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      @else
+        <div class="regular-season-container">
+          <h2>Finished Games</h2>
+          <ul class="league-regular-season owl-carousel owl-theme finished-games">
+            @foreach ($finishedGames as $key => $game)
+              @php
+                $gameDateTime = Carbon\Carbon::create($game['startTimeUTC'])->tz('America/New_York');
+                $formattedGameDate = $gameDateTime->toFormattedDateString();
+                $formattedGameTime = $gameDateTime->format('h:i A');
+              @endphp
+              {{-- GAME CARDS --}}
+              <li class="league-game-card">
+                @include('includes._gameCard')
+                <span class='game-number'>
+                  {{ count($finishedGames) - $key }} of {{ count($upcomingGames) + count($finishedGames) }}
+                </span>
+                @if ($game['homeTeam']['abbrev'] === $soloTeam['teamAbbrev']['default'])
+                  <span class="home-game-indicator"></span>
+                @endif
+              </li>
+            @endforeach
+          </ul>
+        </div>
+      @endif
+      {{-- PRESEASON GAMES --}}
+      @if (count($preseason) < 1)
         <div class="horizontal-scrolling-container preseason-scrolling-container">
           <div class="team-preseason-container">
             <h2>Preseason Games</h2>
             <ul class="team-preseason">
-              @foreach ($preseason as $key => $game)
-                @php
-                  $gameDateTime = Carbon\Carbon::create($game['startTimeUTC'])->tz('America/New_York');
-                  $formattedGameDate = $gameDateTime->toFormattedDateString();
-                  $formattedGameTime = $gameDateTime->format('h:i A');
-                @endphp
-                {{-- GAME CARDS --}}
-                <li class="team-preseason-card">
-                  @include('includes._gameCard')
-                  <span class='game-number'>
-                    {{ $key + 1 }} of {{ count($preseason) }}
-                  </span>
-                  @if ($game['homeTeam']['abbrev'] === $soloTeam['teamAbbrev']['default'])
-                    <span class="home-game-indicator"></span>
-                  @endif
-                </li>
-              @endforeach
+              <li class="team-preseason">
+                <div class="game-date-location">
+                  {{ $currentDate }}
+                </div>
+                <div class="game-team-container">
+                  <p>No games today...</p>
+                </div>
+              </li>
             </ul>
+          </div>
+        @else
+          <div class="horizontal-scrolling-container preseason-scrolling-container">
+            <div class="team-preseason-container">
+              <h2>Preseason Games</h2>
+              <ul class="team-preseason">
+                @foreach ($preseason as $key => $game)
+                  @php
+                    $gameDateTime = Carbon\Carbon::create($game['startTimeUTC'])->tz('America/New_York');
+                    $formattedGameDate = $gameDateTime->toFormattedDateString();
+                    $formattedGameTime = $gameDateTime->format('h:i A');
+                  @endphp
+                  {{-- GAME CARDS --}}
+                  <li class="team-preseason-card">
+                    @include('includes._gameCard')
+                    <span class='game-number'>
+                      {{ $key + 1 }} of {{ count($preseason) }}
+                    </span>
+                    @if ($game['homeTeam']['abbrev'] === $soloTeam['teamAbbrev']['default'])
+                      <span class="home-game-indicator"></span>
+                    @endif
+                  </li>
+                @endforeach
+              </ul>
+            </div>
           </div>
         </div>
       @endif

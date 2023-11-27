@@ -29,12 +29,13 @@ class TeamController extends Controller
     // for ($i = 0; $i < count($teamSchedule[0][1]); $i++) {
     //   $psBoxscores[] = ApiController::getBoxscores($teamSchedule[0][1][$i]['id']);
     // }
-    // dd($teamRoster[0]);
+    // dd($teamSchedule[0][0]);
     return view('team', [
       'title' => $team[0]['teamName']['default'],
       'soloTeam' => $team[0],
-      'regularSeason' => $teamSchedule[0][0],
-      'preseason' => $teamSchedule[0][1],
+      'upcomingGames' => $teamSchedule[0][0],
+      'finishedGames' => array_reverse($teamSchedule[0][1]),
+      'preseason' => $teamSchedule[0][2],
       'teamRoster' => $teamRoster[0],
       'allTeams' => $allTeams,
       'sortedTeamsByName' => $sortedTeamsByName

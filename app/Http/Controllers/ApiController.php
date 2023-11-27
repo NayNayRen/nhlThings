@@ -41,20 +41,26 @@ class ApiController extends Controller
 
   public static function getTeamSchedule($team)
   {
-    $regularSeason = [];
+    $upcoming = [];
+    $finished = [];
     $preseason = [];
     $client = new \GuzzleHttp\Client();
     $request = $client->get('https://api-web.nhle.com/v1/club-schedule-season/' . $team . '/now');
     $response = json_decode($request->getBody()->getContents(), true);
     for ($i = 0; $i < count($response['games']); $i++) {
-      if ($response['games'][$i]['gameType'] != 1) {
-        $regularSeason[] = $response['games'][$i];
+      if ($response['games'][$i]['gameType'] === 2) {
+        if ($response['games'][$i]['gameState'] === 'OFF') {
+          $finished[] = $response['games'][$i];
+        }
+        if ($response['games'][$i]['gameState'] === 'FUT') {
+          $upcoming[] = $response['games'][$i];
+        }
       } else if ($response['games'][$i]['gameType'] === 1) {
         $preseason[] = $response['games'][$i];
       }
     }
-    // dd($preseason);
-    return array($regularSeason, $preseason);
+    // dd($upcoming);
+    return array($upcoming, $finished, $preseason);
   }
 
   public static function getTeamRoster($team)
