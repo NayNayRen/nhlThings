@@ -422,7 +422,6 @@ header h1 {
 }
 
 .league-game-dates-dropdown-container {
-    font-size: 18px;
     margin: 0 10px 0 0;
     padding-bottom: 5px;
     position: relative;
@@ -451,6 +450,7 @@ header h1 {
     box-shadow: 0 2px 2px #000;
     color: #000;
     cursor: pointer;
+    font-size: 18px;
     font-weight: bold;
     outline: solid 1px #000;
     padding: 8px 10px;
@@ -481,16 +481,37 @@ header h1 {
     width: 100%;
 }
 
-.league-game-dates-dropdown-list li {
+/* .league-game-dates-dropdown-list li {
     -webkit-transition: background-color 150ms ease;
     color: #000;
     cursor: pointer;
     padding: 10px;
     transition: background-color 150ms ease;
-    /* outline: solid 1px blue; */
+} */
+
+.league-game-dates-dropdown-list li button {
+    -webkit-transition: background-color 150ms ease;
+    background-color: #fff;
+    border: none;
+    border-radius: 0;
+    color: #000;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 5px 5px 5px 10px;
+    text-align: left;
+    transition: background-color 150ms ease;
+    width: 100%;
 }
 
-.league-game-dates-dropdown-list li:hover {
+.league-game-dates-dropdown-list li button p:first-of-type {
+    font-weight: bold;
+}
+
+.league-game-dates-dropdown-list li button p:last-of-type {
+    color: #b22222;
+}
+
+.league-game-dates-dropdown-list li button:hover {
     background-color: #d8d8d8;
 }
 
@@ -791,21 +812,24 @@ header h1 {
 }
 
 .shield-logo {
-    -webkit-box-align: center;
     -ms-flex-align: center;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    -webkit-transform: translateY(-50%);
     align-items: center;
-    display: -webkit-box;
     display: -ms-flexbox;
+    display: -webkit-box;
     display: flex;
     height: auto;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center;
     margin-right: 10px;
-    /* position: absolute;
-    right: 20px;
-    top: 20px; */
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
     width: 75px;
+    /* outline: solid 1px red; */
 }
 
 .shield-logo img {
@@ -1047,7 +1071,7 @@ header h1 {
     }
 
     .league-finished-game-dates-dropdown-list li:hover,
-    .league-game-dates-dropdown-list li:hover,
+    .league-game-dates-dropdown-list li button:hover,
     .team-season-dropdown-list li:hover {
         background-color: #fff;
     }

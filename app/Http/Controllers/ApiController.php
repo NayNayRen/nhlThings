@@ -7,10 +7,10 @@ use Illuminate\Support\Facades\Http;
 
 class ApiController extends Controller
 {
-  public static function getWeeklySchedule()
+  public static function getWeeklySchedule($date)
   {
     $client = new \GuzzleHttp\Client();
-    $request = $client->get('https://api-web.nhle.com/v1/schedule/now');
+    $request = $client->get('https://api-web.nhle.com/v1/schedule/' . $date);
     $weeklyGames = json_decode($request->getBody()->getContents(), true);
     return $weeklyGames['gameWeek'];
   }

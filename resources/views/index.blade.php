@@ -9,13 +9,18 @@
         </div>
         <div class="league-game-dates-dropdown-container">
           <i class="fa-solid fa-caret-up" aria-hidden="true"></i>
-          <input type="button" class="league-game-dates-dropdown-button" value="Current Dates..." /><br />
+          <input type="button" class="league-game-dates-dropdown-button" value="Weekly Dates..." /><br />
           <ul class="league-game-dates-dropdown-list">
             @foreach ($weeklyGames as $weeklyGame)
               <li>
-                <p>{{ $weeklyGame['dayAbbrev'] }}
-                  {{ \Carbon\Carbon::parse($weeklyGame['date'])->toFormattedDateString() }}</p>
-                <p>Games : {{ $weeklyGame['numberOfGames'] }}</p>
+                <form action={{ route('league.index') }} method="get">
+                  <input type="hidden" name="date" value="{{ $weeklyGame['date'] }}" />
+                  <button type="submit">
+                    <p>{{ $weeklyGame['dayAbbrev'] }}
+                      {{ \Carbon\Carbon::parse($weeklyGame['date'])->toFormattedDateString() }}</p>
+                    <p>Games : {{ $weeklyGame['numberOfGames'] }}</p>
+                  </button>
+                </form>
               </li>
             @endforeach
           </ul>
@@ -37,7 +42,7 @@
         </div>
       @else
         <div class="regular-season-container">
-          <h2>Today's Games</h2>
+          <h2>Games on {{ $currentDate }}</h2>
           <ul class="league-regular-season owl-carousel owl-theme league-carousel">
             @foreach ($dailyGames as $key => $game)
               @php
