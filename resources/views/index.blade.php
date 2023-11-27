@@ -7,6 +7,19 @@
         <div class="shield-logo">
           <img src={{ asset('img/nhl-shield.png') }} alt="NHL Logo" width="100" height="100">
         </div>
+        <div class="league-game-dates-dropdown-container">
+          <i class="fa-solid fa-caret-up" aria-hidden="true"></i>
+          <input type="button" class="league-game-dates-dropdown-button" value="Current Dates..." /><br />
+          <ul class="league-game-dates-dropdown-list">
+            @foreach ($weeklyGames as $weeklyGame)
+              <li>
+                <p>{{ $weeklyGame['dayAbbrev'] }}
+                  {{ \Carbon\Carbon::parse($weeklyGame['date'])->toFormattedDateString() }}</p>
+                <p>Games : {{ $weeklyGame['numberOfGames'] }}</p>
+              </li>
+            @endforeach
+          </ul>
+        </div>
       </div>
       @if (count($dailyGames) < 1)
         <div class="regular-season-container">
@@ -59,5 +72,5 @@
 
   </div>
 </main>
-<script src="{{ asset('js/leagueCarousel.js') }}"></script>
+<script src="{{ asset('js/leagueScript.js') }}"></script>
 @include('includes._footer')

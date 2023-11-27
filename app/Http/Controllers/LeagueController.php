@@ -23,17 +23,17 @@ class LeagueController extends Controller
     for ($i = 0; $i < count($weeklyGames); $i++) {
       if ($weeklyGames[$i]['date'] === $today->toDateString()) {
         $dailyGames[] = $weeklyGames[$i]['games'];
-        for ($x = 0; $x < count($weeklyGames[$i]['games']); $x++) {
-          $boxscores[] = ApiController::getBoxscores($weeklyGames[$i]['games'][$x]['id']);
-        }
+        // for ($x = 0; $x < count($weeklyGames[$i]['games']); $x++) {
+        //   $boxscores[] = ApiController::getBoxscores($weeklyGames[$i]['games'][$x]['id']);
+        // }
       }
     }
-    // dd($dailyGames);
+    // dd($weeklyGames);
     return view('index', [
       'title' => 'NHL Teams, Stats & Things',
       'currentDate' => $currentDate,
       'linescores' => $linescores,
-      'boxscores' => $boxscores,
+      // 'boxscores' => $boxscores,
       'dailyGames' => $dailyGames[0],
       'weeklyGames' => $weeklyGames,
       'allTeams' => $allTeams,

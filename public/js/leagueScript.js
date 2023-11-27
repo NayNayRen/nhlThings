@@ -1,4 +1,7 @@
-function loadCarousel() {
+function loadLeagueScript() {
+  const leagueGameDatesDropdownContainer = document.querySelector('.league-game-dates-dropdown-container');
+  const leagueGameDatesDropdownButton = document.querySelector('.league-game-dates-dropdown-button');
+  const leagueGameDatesDropdownList = document.querySelector('.league-game-dates-dropdown-list');
   const $leagueCarousel = $('.league-carousel');
 
   const carouselOptions = {
@@ -91,8 +94,14 @@ function loadCarousel() {
     owl.options.responsive[1300].items = 3;
     $leagueCarousel.trigger('refresh.owl.carousel');
   }
+
+  // GAME UPCOMING DATES DROPDOWN
+  leagueGameDatesDropdownButton.addEventListener('click', () => {
+    leagueGameDatesDropdownContainer.children[0].classList.toggle('rotate');
+    leagueGameDatesDropdownList.classList.toggle('league-team-dropdown-list-toggle');
+  });
 }
 
 window.addEventListener('load', () => {
-  loadCarousel();
+  loadLeagueScript();
 });
