@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/page-reset.css') }}">
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
-    <link rel="shortcut icon" href="{{ asset('img/nhl-shield.webp') }}" type="image/x-icon">
+    <link rel="shortcut icon" href={{ $favIcon }} type="image/x-icon" sizes="16x16 32x32 48x48">
     <title>{{ $title }}</title>
   </head>
 

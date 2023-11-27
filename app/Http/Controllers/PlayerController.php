@@ -23,6 +23,7 @@ class PlayerController extends Controller
     }
     // dd($player);
     return view('player', [
+      'favIcon' => $team[0]['teamLogo'],
       'title' => $playerName,
       'player' => $player,
       'teamRoster' => $teamRoster[0],

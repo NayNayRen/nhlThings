@@ -40,6 +40,7 @@ class LeagueController extends Controller
       }
       // dd($selectedGames);
       return view('index', [
+        'favIcon' => '../img/nhl-shield.png',
         'title' => 'NHL Teams, Stats & Things',
         'currentDate' => Carbon::parse($selectedDate)->toFormattedDateString(),
         'linescores' => $linescores,
@@ -52,6 +53,7 @@ class LeagueController extends Controller
       ]);
     } else {
       return view('index', [
+        'favIcon' => '../img/nhl-shield.png',
         'title' => 'NHL Teams, Stats & Things',
         'currentDate' => $currentDate,
         'linescores' => $linescores,
