@@ -19,16 +19,16 @@ class LeagueController extends Controller
     $currentDate = Carbon::create($today)->toFormattedDateString();
     $allTeams = ApiController::getAllTeams();
     $weeklyGames = ApiController::getWeeklyGames('now');
-    // $linescores = ApiController::getLinescores();
+    $linescores = ApiController::getLinescores();
     $sortedTeamsByName = collect($allTeams)->sortBy('teamName');
     for ($i = 0; $i < count($weeklyGames); $i++) {
       if ($weeklyGames[$i]['date'] === $today->toDateString()) {
         $dailyGames[] = $weeklyGames[$i]['games'];
-        // for ($x = 0; $x < count($weeklyGames[$i]['games']); $x++) {
-        //   $dailyBoxscores[] = ApiController::getBoxscores($weeklyGames[$i]['games'][$x]['id']);
-        // }
       }
     }
+    // for ($i = 0; $i < count($dailyGames[0]); $i++) {
+    //   $dailyBoxscores[] = ApiController::getBoxscores($dailyGames[0][$i]['id']);
+    // }
     if ($selectedDate) {
       for ($i = 0; $i < count($weeklyGames); $i++) {
         if ($weeklyGames[$i]['date'] === $selectedDate) {
@@ -47,7 +47,7 @@ class LeagueController extends Controller
         'sortedTeamsByName' => $sortedTeamsByName
       ]);
     } else {
-      // dd($dailyGames[0]);
+      // dd($linescores);
       return view('index', [
         'favIcon' => '../img/nhl-shield.png',
         'title' => 'NHL Teams, Stats & Things',
