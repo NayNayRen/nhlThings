@@ -45,7 +45,7 @@
                 </div>
                 {{-- dropdown menu --}}
                 <div class="game-dropdown-container">
-                  <p>hello</p>
+                  <p>i changed the home page text too</p>
                 </div>
                 @include('includes._gameCard')
                 <span class='game-number'>
@@ -91,7 +91,7 @@
                 </div>
                 {{-- dropdown menu --}}
                 <div class="game-dropdown-container">
-                  <p>hello</p>
+                  <p>and the third text changed for testing</p>
                 </div>
                 @include('includes._gameCard')
                 <span class='game-number'>

@@ -57,7 +57,7 @@
                 </div>
                 {{-- dropdown menu --}}
                 <div class="game-dropdown-container">
-                  <p>hello</p>
+                  <p>testing to see if auto update is working</p>
                 </div>
                 @include('includes._gameCard')
                 <span class='game-number'>
