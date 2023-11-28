@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Http;
 
 class ApiController extends Controller
 {
-  public static function getWeeklySchedule($date)
+  public static function getWeeklyGames($date)
   {
     $client = new \GuzzleHttp\Client();
     $request = $client->get('https://api-web.nhle.com/v1/schedule/' . $date);
@@ -27,14 +27,6 @@ class ApiController extends Controller
   {
     $client = new \GuzzleHttp\Client();
     $request = $client->get('https://api-web.nhle.com/v1/gamecenter/' . $id . '/boxscore');
-    $boxscores = json_decode($request->getBody()->getContents(), true);
-    return $boxscores;
-  }
-
-  public static function getScoreboard($date)
-  {
-    $client = new \GuzzleHttp\Client();
-    $request = $client->get('https://api-web.nhle.com/v1/score/' . $date);
     $boxscores = json_decode($request->getBody()->getContents(), true);
     return $boxscores;
   }
