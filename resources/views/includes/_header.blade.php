@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/page-reset.css') }}">
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
-    <link rel="shortcut icon" href={{ $favIcon }} type="image/x-icon" sizes="16x16 32x32 48x48">
+    <link rel="shortcut icon" href={{ $favIcon }} type="image/x-icon" sizes="any">
     <title>{{ $title }}</title>
   </head>
 
@@ -46,13 +46,13 @@
             <ul class="teams-dropdown-list">
               @foreach ($sortedTeamsByName as $team)
                 <li>
-                  <a href="{{ route('league.team', $team['teamAbbrev']['default']) }}" target="_blank">
+                  <a href="{{ route('teams.team', $team['teamAbbrev']['default']) }}" target="_blank">
                     <p class='teams-dropdown-name'>
                       {{ $team['teamName']['default'] }}
                     </p>
                     <div class="teams-dropdown-logo">
-                      <img src={{ $team['teamLogo'] }} alt={{ $team['teamName']['default'] }} width="100"
-                        height="100">
+                      <img src={{ $team['teamLogo'] }} alt={{ $team['teamName']['default'] }} width="75"
+                        height="75">
                     </div>
                   </a>
                 </li>
@@ -77,13 +77,14 @@
                 </ul>
                 @foreach ($teamRoster['goalies'] as $goalie)
                   <li>
-                    <a href="{{ route('team.player', $goalie['playerId']) }}" target="_blank">
+                    <a href="{{ route('players.player', $goalie['playerId']) }}" target="_blank">
                       <p class="roster-dropdown-name">{{ $goalie['firstName']['default'] }}
                         {{ $goalie['lastName']['default'] }}</p>
                       <span class='roster-dropdown-position'>G</span>
                       <div class="roster-dropdown-photo-container">
                         <img src={{ $goalie['headshot'] }}
-                          alt="{{ $goalie['firstName']['default'] }} {{ $goalie['lastName']['default'] }}">
+                          alt="{{ $goalie['firstName']['default'] }} {{ $goalie['lastName']['default'] }}"
+                          width="75" height="75">
                       </div>
                     </a>
                   </li>
@@ -96,13 +97,14 @@
                 </ul>
                 @foreach ($teamRoster['skaters'] as $skater)
                   <li>
-                    <a href="{{ route('team.player', $skater['playerId']) }}" target="_blank">
+                    <a href="{{ route('players.player', $skater['playerId']) }}" target="_blank">
                       <p class="roster-dropdown-name">{{ $skater['firstName']['default'] }}
                         {{ $skater['lastName']['default'] }}</p>
                       <span class='roster-dropdown-position'>{{ $skater['positionCode'] }}</span>
                       <div class="roster-dropdown-photo-container">
                         <img src={{ $skater['headshot'] }}
-                          alt="{{ $skater['firstName']['default'] }} {{ $skater['lastName']['default'] }}">
+                          alt="{{ $skater['firstName']['default'] }} {{ $skater['lastName']['default'] }}"
+                          width="75" height="75">
                       </div>
 
                     </a>

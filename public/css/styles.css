@@ -797,7 +797,7 @@ header h1 {
 }
 
 .roster-dropdown-player-type p {
-    border-bottom: solid 1px #1e90ff;
+    border-bottom: solid 1px #000;
     font-size: 20px;
     font-weight: bold;
     margin: 0 auto;
