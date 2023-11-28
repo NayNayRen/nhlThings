@@ -10,22 +10,24 @@ class LeagueController extends Controller
 {
   public function index(Request $request)
   {
-    $selectedDate = $request->input('date');
     $dailyGames = [];
+    $dailyScoreboard = [];
     $selectedGames = [];
-    $boxscores = [];
+    $selectedScoreboard = [];
     $teamRoster = [];
+    $selectedDate = $request->input('date');
     $today = Carbon::today();
     $currentDate = Carbon::create($today)->toFormattedDateString();
-    $weeklyGames = ApiController::getWeeklySchedule('now');
     $allTeams = ApiController::getAllTeams();
-    $linescores = ApiController::getLinescores();
+    $weeklyGames = ApiController::getWeeklySchedule('now');
+    // $linescores = ApiController::getLinescores();
     $sortedTeamsByName = collect($allTeams)->sortBy('teamName');
     for ($i = 0; $i < count($weeklyGames); $i++) {
       if ($weeklyGames[$i]['date'] === $today->toDateString()) {
         $dailyGames[] = $weeklyGames[$i]['games'];
+        $dailyScoreboard[] = ApiController::getScoreboard($weeklyGames[$i]['date']);
         // for ($x = 0; $x < count($weeklyGames[$i]['games']); $x++) {
-        //   $boxscores[] = ApiController::getBoxscores($weeklyGames[$i]['games'][$x]['id']);
+        //   $dailyBoxscores[] = ApiController::getBoxscores($weeklyGames[$i]['games'][$x]['id']);
         // }
       }
     }
@@ -33,8 +35,9 @@ class LeagueController extends Controller
       for ($i = 0; $i < count($weeklyGames); $i++) {
         if ($weeklyGames[$i]['date'] === $selectedDate) {
           $selectedGames[] = $weeklyGames[$i]['games'];
+          $selectedScoreboard[] = ApiController::getScoreboard($weeklyGames[$i]['date']);
           // for ($x = 0; $x < count($weeklyGames[$i]['games']); $x++) {
-          //   $boxscores[] = ApiController::getBoxscores($weeklyGames[$i]['games'][$x]['id']);
+          //   $selectedBoxscores[] = ApiController::getBoxscores($weeklyGames[$i]['games'][$x]['id']);
           // }
         }
       }
@@ -43,8 +46,8 @@ class LeagueController extends Controller
         'favIcon' => '../img/nhl-shield.png',
         'title' => 'NHL Teams, Stats & Things',
         'currentDate' => Carbon::parse($selectedDate)->toFormattedDateString(),
-        'linescores' => $linescores,
-        // 'boxscores' => $boxscores,
+        // 'linescores' => $linescores,
+        // 'scoreboard' => $selectedScoreboard,
         'dailyGames' => $selectedGames[0],
         'weeklyGames' => $weeklyGames,
         'allTeams' => $allTeams,
@@ -52,13 +55,13 @@ class LeagueController extends Controller
         'sortedTeamsByName' => $sortedTeamsByName
       ]);
     } else {
-      // dd($dailyGames[0]);
+      // dd($dailyScoreboard);
       return view('index', [
         'favIcon' => '../img/nhl-shield.png',
         'title' => 'NHL Teams, Stats & Things',
         'currentDate' => $currentDate,
-        'linescores' => $linescores,
-        // 'boxscores' => $boxscores,
+        // 'linescores' => $linescores,
+        // 'scoreboard' => $dailyScoreboard,
         'dailyGames' => $dailyGames[0],
         'weeklyGames' => $weeklyGames,
         'allTeams' => $allTeams,

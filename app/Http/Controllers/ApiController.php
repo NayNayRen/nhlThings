@@ -30,6 +30,15 @@ class ApiController extends Controller
     $boxscores = json_decode($request->getBody()->getContents(), true);
     return $boxscores;
   }
+
+  public static function getScoreboard($date)
+  {
+    $client = new \GuzzleHttp\Client();
+    $request = $client->get('https://api-web.nhle.com/v1/score/' . $date);
+    $boxscores = json_decode($request->getBody()->getContents(), true);
+    return $boxscores;
+  }
+
   // gets all teams and their stats
   public static function getAllTeams()
   {
@@ -59,7 +68,6 @@ class ApiController extends Controller
         $preseason[] = $response['games'][$i];
       }
     }
-    // dd($upcoming);
     return array($upcoming, $finished, $preseason);
   }
 

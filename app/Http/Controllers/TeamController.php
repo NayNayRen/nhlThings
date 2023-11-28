@@ -12,8 +12,8 @@ class TeamController extends Controller
     $team = [];
     $teamSchedule = [];
     $teamRoster = [];
-    $upcomingBoxscores = [];
-    $finishedBoxscores = [];
+    $upcomingScoreboard = [];
+    $finishedScoreboard = [];
     $allTeams = ApiController::getAllTeams();
     $sortedTeamsByName = collect($allTeams)->sortBy('teamName');
     for ($i = 0; $i < count($allTeams); $i++) {
