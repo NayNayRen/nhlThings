@@ -650,6 +650,21 @@
     /* outline: solid 1px blue; */
 }
 
+.game-team-radio-link {
+    color: #1e90ff;
+    font-size: 22px;
+    margin-left: 10px;
+}
+
+.game-team-radio-link i {
+    cursor: not-allowed;
+}
+
+.game-team-radio-link a {
+    color: #1e90ff;
+    text-decoration: none;
+}
+
 .game-team-record {
     border-bottom: solid 1px #000;
     color: #000;
@@ -726,7 +741,7 @@
     min-height: 200px;
     outline: solid 1px #000;
     overflow: hidden;
-    padding: 0 0 40px 0;
+    padding: 0 0 55px 0;
     position: relative;
     width: 315px;
 }

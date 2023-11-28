@@ -7,6 +7,7 @@
 {{-- AWAY TEAM --}}
 <div class="game-team-container">
   <p>Away :</p>
+  {{-- used allTeams to get the team record --}}
   @foreach ($allTeams as $team)
     @if ($game['awayTeam']['abbrev'] === $team['teamAbbrev']['default'])
       <p class='game-team-name'>
@@ -16,6 +17,12 @@
         </span>
       </p>
       <p class='game-team-record'>{{ $team['wins'] }}-{{ $team['losses'] }}-{{ $team['otLosses'] }}
+        <span class="game-team-radio-link">
+          {{-- <a href={{ $game['awayTeam']['radioLink'] }} aria-label='Away team radio link.' title="Away team radio link."
+            target="_blank"> --}}
+          <i class="fa-solid fa-radio" aria-hidden="false" title="Link under construction."></i>
+          {{-- </a> --}}
+        </span>
       </p>
     @endif
   @endforeach
@@ -23,6 +30,7 @@
 {{-- HOME TEAM --}}
 <div class="game-team-container">
   <p>Home :</p>
+  {{-- used allTeams to get the team record --}}
   @foreach ($allTeams as $team)
     @if ($game['homeTeam']['abbrev'] === $team['teamAbbrev']['default'])
       <p class='game-team-name'>
@@ -33,6 +41,12 @@
         </span>
       </p>
       <p class='game-team-record'>{{ $team['wins'] }}-{{ $team['losses'] }}-{{ $team['otLosses'] }}
+        <span class="game-team-radio-link">
+          {{-- <a href={{ $game['homeTeam']['radioLink'] }} aria-label='Home team radio link.' title="Home team radio link."
+            target="_blank"> --}}
+          <i class="fa-solid fa-radio" aria-hidden="false" title="Link under construction."></i>
+          {{-- </a> --}}
+        </span>
       </p>
     @endif
   @endforeach
