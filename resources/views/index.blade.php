@@ -52,6 +52,13 @@
               @endphp
               {{-- GAME CARDS --}}
               <li class="league-game-card">
+                <div class="game-dropdown-button">
+                  <i class="fa-solid fa-caret-up" aria-hidden="true"></i>
+                </div>
+                {{-- dropdown menu --}}
+                <div class="game-dropdown-container">
+                  <p>hello</p>
+                </div>
                 @include('includes._gameCard')
                 <span class='game-number'>
                   {{ $key + 1 }} of {{ count($dailyGames) }}

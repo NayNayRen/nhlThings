@@ -82,6 +82,12 @@ function loadCarousel() {
     finishedGamesData.options.responsive[1400].items = 3;
     $finishedGames.trigger('refresh.owl.carousel');
   }
+
+  $(document).on('click', '.game-dropdown-button', function () {
+    // console.log($(this)[0].parentElement.childNodes);
+    $(this)[0].lastElementChild.classList.toggle('rotate');
+    $(this)[0].parentElement.childNodes[3].classList.toggle('game-dropdown-toggle');
+  });
 }
 
 window.addEventListener('load', () => {

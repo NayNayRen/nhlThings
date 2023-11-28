@@ -55,27 +55,6 @@
     width: 100%;
 }
 
-/* entire schedule dropdown wrapper */
-.game-details-dropdown {
-    -webkit-transition: bottom 500ms ease, opacity 500ms ease;
-    background-color: #fff;
-    border-radius: 5px;
-    bottom: 100%;
-    height: 100%;
-    left: 0;
-    overflow: hidden;
-    opacity: 1;
-    position: absolute;
-    transition: bottom 500ms ease, opacity 500ms ease;
-    width: 100%;
-    z-index: 1;
-}
-
-.game-dropdown-toggle {
-    bottom: 0;
-    opacity: 1;
-}
-
 .game-dropdown-button {
     -ms-flex-align: center;
     -ms-flex-pack: center;
@@ -107,8 +86,29 @@
     transition: transform 250ms ease;
 }
 
-/* 2nd inner dropdown container */
+/* entire schedule dropdown wrapper */
 .game-dropdown-container {
+    -webkit-transition: bottom 500ms ease, opacity 500ms ease;
+    background-color: #fff;
+    border-radius: 5px;
+    bottom: 100%;
+    height: 100%;
+    left: 0;
+    overflow: hidden;
+    opacity: 1;
+    position: absolute;
+    transition: bottom 500ms ease, opacity 500ms ease;
+    width: 100%;
+    z-index: 1;
+}
+
+.game-dropdown-toggle {
+    bottom: 0;
+    opacity: 1;
+}
+
+/* 2nd inner dropdown container */
+.game-dropdown-details {
     height: 100%;
     padding: 0 10px 10px 10px;
     position: relative;

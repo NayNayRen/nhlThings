@@ -100,6 +100,11 @@ function loadLeagueScript() {
     leagueGameDatesDropdownContainer.children[0].classList.toggle('rotate');
     leagueGameDatesDropdownList.classList.toggle('league-team-dropdown-list-toggle');
   });
+  $(document).on('click', '.game-dropdown-button', function () {
+    // console.log($(this)[0].parentElement.childNodes);
+    $(this)[0].lastElementChild.classList.toggle('rotate');
+    $(this)[0].parentElement.childNodes[3].classList.toggle('game-dropdown-toggle');
+  });
 }
 
 window.addEventListener('load', () => {
