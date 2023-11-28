@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Http;
 
 class ApiController extends Controller
 {
+  // 2023020327
+  // 2023-11-26
   public static function getWeeklyGames($date)
   {
     $client = new \GuzzleHttp\Client();
@@ -15,6 +17,8 @@ class ApiController extends Controller
     return $weeklyGames['gameWeek'];
   }
 
+  // gameday team leaders by category
+  // for finished game goal and scored by stats when date added
   public static function getLinescores()
   {
     $client = new \GuzzleHttp\Client();
@@ -23,6 +27,8 @@ class ApiController extends Controller
     return $linescores['games'];
   }
 
+  // for specific game, officials, players and coaches, only good for a finished game
+  // if upcoming game, there is no boxscore object with data
   public static function getBoxscores($id)
   {
     $client = new \GuzzleHttp\Client();
@@ -31,7 +37,25 @@ class ApiController extends Controller
     return $boxscores;
   }
 
-  // gets all teams and their stats
+  // gameday head to head stats, officials, players and coaches
+  public static function getGameMatchup($id)
+  {
+    $client = new \GuzzleHttp\Client();
+    $request = $client->get('https://api-web.nhle.com/v1/gamecenter/' . $id . '/landing');
+    $matchup = json_decode($request->getBody()->getContents(), true);
+    return $matchup;
+  }
+
+  // everything from shot time and coordinates to hit time and coordinates
+  public static function getPlayByPlay($id)
+  {
+    $client = new \GuzzleHttp\Client();
+    $request = $client->get('https://api-web.nhle.com/v1/gamecenter/' . $id . '/play-by-play');
+    $playByPlay = json_decode($request->getBody()->getContents(), true);
+    return $playByPlay;
+  }
+
+  // gets all teams and stats, current standings, goals, wins, losses, %
   public static function getAllTeams()
   {
     $client = new \GuzzleHttp\Client();

@@ -394,6 +394,15 @@ header h1 {
     /* outline: solid 1px blue; */
 }
 
+.home-link {
+    bottom: 10px;
+    color: #1e90ff;
+    font-size: 22px;
+    left: 65px;
+    position: absolute;
+    text-decoration: none;
+}
+
 /* surrounds player stats and team history tables */
 .horizontal-scrolling-container {
     display: -ms-grid;

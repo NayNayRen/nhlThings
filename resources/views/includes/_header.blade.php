@@ -32,6 +32,9 @@
         <p class="current-date"></p>
         <p class="current-time"></p>
       </div>
+      <a href="{{ route('league.index') }}" class="home-link" title="Home" aria-label="Home Link">
+        <i class="fa-solid fa-house-crack" aria-hidden="false"></i>
+      </a>
       <div class="header-container">
         <!-- BURGER BUTTON -->
         <div class="burger-menu">
@@ -46,7 +49,7 @@
             <ul class="teams-dropdown-list">
               @foreach ($sortedTeamsByName as $team)
                 <li>
-                  <a href="{{ route('teams.team', $team['teamAbbrev']['default']) }}" target="_blank">
+                  <a href="{{ route('teams.team', $team['teamAbbrev']['default']) }}">
                     <p class='teams-dropdown-name'>
                       {{ $team['teamName']['default'] }}
                     </p>

@@ -13,6 +13,7 @@ class TeamController extends Controller
     $teamSchedule = [];
     $teamRoster = [];
     $allTeams = ApiController::getAllTeams();
+    $linescores = ApiController::getLinescores();
     $sortedTeamsByName = collect($allTeams)->sortBy('teamName');
     for ($i = 0; $i < count($allTeams); $i++) {
       if ($allTeams[$i]['teamAbbrev']['default'] === $teamAbbr) {
@@ -24,6 +25,7 @@ class TeamController extends Controller
     return view('team', [
       'favIcon' => $team[0]['teamLogo'],
       'title' => $team[0]['teamName']['default'],
+      'linescores' => $linescores,
       'soloTeam' => $team[0],
       'upcomingGames' => $teamSchedule[0][0],
       'finishedGames' => array_reverse($teamSchedule[0][1]),
