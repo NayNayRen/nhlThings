@@ -35,7 +35,7 @@
             @foreach ($upcomingGames as $key => $game)
               @php
                 $gameDateTime = Carbon\Carbon::create($game['startTimeUTC'])->tz('America/New_York');
-                $formattedGameDate = $gameDateTime->toFormattedDateString();
+                $formattedGameDate = $gameDateTime->format('D M j, Y');
                 $formattedGameTime = $gameDateTime->format('h:i A');
               @endphp
               {{-- GAME CARDS --}}
@@ -81,7 +81,7 @@
             @foreach ($finishedGames as $key => $game)
               @php
                 $gameDateTime = Carbon\Carbon::create($game['startTimeUTC'])->tz('America/New_York');
-                $formattedGameDate = $gameDateTime->toFormattedDateString();
+                $formattedGameDate = $gameDateTime->format('D M j, Y');
                 $formattedGameTime = $gameDateTime->format('h:i A');
               @endphp
               {{-- GAME CARDS --}}
@@ -129,7 +129,7 @@
                 @foreach ($preseason as $key => $game)
                   @php
                     $gameDateTime = Carbon\Carbon::create($game['startTimeUTC'])->tz('America/New_York');
-                    $formattedGameDate = $gameDateTime->toFormattedDateString();
+                    $formattedGameDate = $gameDateTime->format('D M j, Y');
                     $formattedGameTime = $gameDateTime->format('h:i A');
                   @endphp
                   {{-- GAME CARDS --}}

@@ -33,7 +33,7 @@
     color: #000;
     margin-bottom: 5px;
     position: relative;
-    width: 275px;
+    width: 300px;
     /* outline: solid 1px red; */
 }
 
@@ -221,7 +221,7 @@ body {
     height: 30px;
     justify-content: center;
     position: absolute;
-    left: 10px;
+    left: 55px;
     bottom: 10px;
     width: 45px;
     z-index: 2;
@@ -355,7 +355,7 @@ header h1 {
     background-color: #000;
     font-size: 30px;
     margin: 0 auto;
-    padding: 25px 30px 20px 30px;
+    padding: 25px 35px 20px 35px;
     width: 100%;
     /* outline: solid 1px blue; */
 }
@@ -398,7 +398,7 @@ header h1 {
     bottom: 10px;
     color: #1e90ff;
     font-size: 22px;
-    left: 65px;
+    left: 15px;
     position: absolute;
     text-decoration: none;
 }
@@ -800,18 +800,22 @@ header h1 {
     width: 100%;
 }
 
+.roster-dropdown-player-type li {
+    cursor: default;
+    padding: 0 10px;
+}
+
 .roster-dropdown-player-type li:hover {
     background-color: #fff;
-    cursor: default;
 }
 
 .roster-dropdown-player-type p {
     border-bottom: solid 1px #000;
-    font-size: 20px;
+    color: #b22222;
+    font-size: 18px;
     font-weight: bold;
-    margin: 0 auto;
     padding: 5px 0;
-    text-align: center;
+    text-align: left;
     width: 60%;
 }
 
@@ -1016,7 +1020,7 @@ header h1 {
     .teams-dropdown-container,
     .team-summary-dropdown-container {
         margin-right: 0;
-        width: 265px;
+        width: 275px;
         /* outline: solid 1px red; */
     }
 

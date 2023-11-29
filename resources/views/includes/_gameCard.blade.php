@@ -20,7 +20,7 @@
         <span class="game-team-radio-link">
           {{-- <a href={{ $game['awayTeam']['radioLink'] }} aria-label='Away team radio link.' title="Away team radio link."
             target="_blank"> --}}
-          <i class="fa-solid fa-radio" aria-hidden="false" title="Link under construction."></i>
+          <i class="fa-solid fa-headphones" aria-hidden="false" title="Link under construction."></i>
           {{-- </a> --}}
         </span>
       </p>
@@ -44,7 +44,7 @@
         <span class="game-team-radio-link">
           {{-- <a href={{ $game['homeTeam']['radioLink'] }} aria-label='Home team radio link.' title="Home team radio link."
             target="_blank"> --}}
-          <i class="fa-solid fa-radio" aria-hidden="false" title="Link under construction."></i>
+          <i class="fa-solid fa-headphones" aria-hidden="false" title="Link under construction."></i>
           {{-- </a> --}}
         </span>
       </p>

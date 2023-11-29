@@ -33,7 +33,7 @@
         <p class="current-time"></p>
       </div>
       <a href="{{ route('league.index') }}" class="home-link" title="Home" aria-label="Home Link">
-        <i class="fa-solid fa-house-crack" aria-hidden="false"></i>
+        <i class="fa-solid fa-house" aria-hidden="false"></i>
       </a>
       <div class="header-container">
         <!-- BURGER BUTTON -->

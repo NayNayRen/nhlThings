@@ -47,7 +47,7 @@
             @foreach ($dailyGames as $key => $game)
               @php
                 $gameDateTime = Carbon\Carbon::create($game['startTimeUTC'])->tz('America/New_York');
-                $formattedGameDate = $gameDateTime->toFormattedDateString();
+                $formattedGameDate = $gameDateTime->format('D M j, Y');
                 $formattedGameTime = $gameDateTime->format('h:i A');
               @endphp
               {{-- GAME CARDS --}}

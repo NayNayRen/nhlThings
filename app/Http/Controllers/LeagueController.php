@@ -47,7 +47,7 @@ class LeagueController extends Controller
         'sortedTeamsByName' => $sortedTeamsByName
       ]);
     } else {
-      // dd($dailyBoxscores);
+      // dd($dailyGames[0]);
       return view('index', [
         'favIcon' => '../img/nhl-shield.png',
         'title' => 'NHL Teams, Stats & Things',
