@@ -91,7 +91,32 @@
                 </div>
                 {{-- dropdown menu --}}
                 <div class="game-dropdown-container">
-                  <p>and the third text changed for testing</p>
+                  <ul class="game-dropdown-details">
+                    <li class='game-dropdown-header'>
+                      <div class='game-finished-date'>
+                        <p>{{ $formattedGameDate }}</p>
+                      </div>
+                      <div class="game-dropdown-team-logo">
+                        <img src={{ $game['awayTeam']['logo'] }}
+                          alt='{{ $game['awayTeam']['placeName']['default'] }} Logo' width="75" height="75">
+                      </div>
+                      <div>
+                        <h3>FINAL</h3>
+                        <span>00:00</span>
+                      </div>
+                      <div class="game-dropdown-team-logo">
+                        <img src={{ $game['homeTeam']['logo'] }}
+                          alt='{{ $game['homeTeam']['placeName']['default'] }} Logo' width="75" height="75">
+                      </div>
+                    </li>
+                    <li class='game-dropdown-goals'>
+                      <div>
+                        <p>{{ $game['awayTeam']['score'] }}</p>
+                        <h3>Goals</h3>
+                        <p>{{ $game['homeTeam']['score'] }}</p>
+                      </div>
+                    </li>
+                  </ul>
                 </div>
                 @include('includes._gameCard')
                 <span class='game-number'>
@@ -100,6 +125,8 @@
                 @if ($game['homeTeam']['abbrev'] === $soloTeam['teamAbbrev']['default'])
                   <span class="home-game-indicator"></span>
                 @endif
+                {{-- to auto open finished games --}}
+                <div class="finished-game-state" hidden>{{ $game['gameState'] }}</div>
               </li>
             @endforeach
           </ul>

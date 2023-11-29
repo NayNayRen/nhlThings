@@ -1,6 +1,7 @@
 function loadCarousel() {
   const $upcomingGames = $('.upcoming-games');
   const $finishedGames = $('.finished-games');
+  let finishedGameState = document.querySelectorAll('.finished-game-state');
 
   const carouselOptions = {
     loop: false,
@@ -82,6 +83,25 @@ function loadCarousel() {
     finishedGamesData.options.responsive[1400].items = 3;
     $finishedGames.trigger('refresh.owl.carousel');
   }
+
+  // finishedState.parentElement is the entire game card
+  finishedGameState.forEach((finishedState) => {
+    if (finishedState.innerText === 'OFF') {
+      // console.log(finishedState.parentElement.childNodes);
+      finishedState.parentElement.childNodes[3].classList.add('game-dropdown-toggle');
+      finishedState.parentElement.childNodes[1].childNodes[1].classList.add('rotate');
+      // colors away team winner
+      if (finishedState.parentElement.childNodes[3].childNodes[1].childNodes[3].childNodes[1].childNodes[1].innerText > finishedState.parentElement.childNodes[3].childNodes[1].childNodes[3].childNodes[1].childNodes[5].innerText) {
+        finishedState.parentElement.childNodes[3].childNodes[1].childNodes[3].childNodes[1].childNodes[1].style.backgroundColor = '#1e90ff';
+        finishedState.parentElement.childNodes[3].childNodes[1].childNodes[3].childNodes[1].childNodes[1].style.color = '#fff';
+      }
+      // colors home team winner
+      if (finishedState.parentElement.childNodes[3].childNodes[1].childNodes[3].childNodes[1].childNodes[1].innerText < finishedState.parentElement.childNodes[3].childNodes[1].childNodes[3].childNodes[1].childNodes[5].innerText) {
+        finishedState.parentElement.childNodes[3].childNodes[1].childNodes[3].childNodes[1].childNodes[5].style.backgroundColor = '#1e90ff';
+        finishedState.parentElement.childNodes[3].childNodes[1].childNodes[3].childNodes[1].childNodes[5].style.color = '#fff';
+      }
+    }
+  });
 
   $(document).on('click', '.game-dropdown-button', function () {
     // console.log($(this)[0].parentElement.childNodes);

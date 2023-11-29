@@ -13,7 +13,8 @@
       <p class='game-team-name'>
         {{ $team['teamName']['default'] }}
         <span class="game-team-logo">
-          <img src={{ $game['awayTeam']['logo'] }} alt='{{ $team['teamName']['default'] }}' width="75" height="75">
+          <img src={{ $game['awayTeam']['logo'] }} alt='{{ $team['teamName']['default'] }} Logo' width="75"
+            height="75">
         </span>
       </p>
       <p class='game-team-record'>{{ $team['wins'] }}-{{ $team['losses'] }}-{{ $team['otLosses'] }}
@@ -36,7 +37,7 @@
       <p class='game-team-name'>
         {{ $team['teamName']['default'] }}
         <span class="game-team-logo">
-          <img src={{ $game['homeTeam']['logo'] }} alt='{{ $team['teamName']['default'] }}' width="75"
+          <img src={{ $game['homeTeam']['logo'] }} alt='{{ $team['teamName']['default'] }} Logo' width="75"
             height="75">
         </span>
       </p>

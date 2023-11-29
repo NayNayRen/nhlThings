@@ -305,13 +305,12 @@
 .game-finished-date {
     -webkit-transform: translateX(-50%);
     border-bottom: solid 1px #1e90ff;
-    display: none;
     font-size: 14px;
     font-weight: bold;
     left: 50%;
     padding: 0 5px 2px 5px;
     position: absolute;
-    top: 2px;
+    top: 5px;
     transform: translateX(-50%);
     z-index: 2;
 }
@@ -756,7 +755,7 @@
 .owl-carousel {
     display: none;
     height: auto;
-    /* max-height: 460px; */
+    /* min-height: 400px; */
     padding: 0 20px;
     position: relative;
     width: 100%;

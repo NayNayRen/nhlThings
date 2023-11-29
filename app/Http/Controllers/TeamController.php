@@ -22,6 +22,7 @@ class TeamController extends Controller
         $teamRoster[] = ApiController::getTeamRoster($teamAbbr);
       }
     }
+    // dd($teamSchedule[0][1]);
     return view('team', [
       'favIcon' => $team[0]['teamLogo'],
       'title' => $team[0]['teamName']['default'],
