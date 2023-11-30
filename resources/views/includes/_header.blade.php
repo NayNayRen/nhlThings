@@ -131,33 +131,23 @@
             <div class="how-to-dropdown-list">
               <p>
                 <span>Games :</span>
-                - Daily games are available at the top of the app. The dropdowns
-                of dates are of upcoming and previous current regular season
-                games. Just below the Daily section you can view League,
-                Conference, and Division stats too.
+                - Daily games are what loads by default. The dropdown
+                of dates is a weekly schedule provided via the NHL api. The dates are auto-updated by the NHL, so the
+                dropdown updates from that. I slimmed it down to weekly games to limit the amount of data requested.
+                Just
+                below the game's section you can view League,
+                Conference, and Division standings.
               </p>
               <p>
                 <span>Teams :</span>
-                - Select a team from above and you're then able to see that
-                team's regular and preseason schedules. The dropdown of dates
-                for that team has season stats dating back to their first year
-                of play. The Roster and Summary dropdowns above are then
-                available for use.
+                - Select a team from above and you'll be redirected to see that
+                team's regular and preseason schedules. Day of and upcoming games are on top. Finished games are below
+                and will have the dropdown summary visible. Preseason games and team stats below that.
               </p>
               <p>
                 <span>Players :</span>
-                - You can now choose a current rostered player, and optionally
-                take a peak at their playing history. If you happen to close a
-                player's information, you can use the roster menu and select
-                them again, or another player.
-              </p>
-              <p>
-                <span>Cards :</span>
-                - Each game's card has a dropdown that contains period,
-                intermission and power play times, along with shots and goals
-                for each period and their totals. The Box Score buttons hide
-                extra game stats, the game's officials, and a dropdown of each
-                team's game lineup.
+                - Once a team is chosen, a current rostered player is available. Select a player and be redirected to
+                their stats, including this season and playing history.
               </p>
             </div>
           </div>
@@ -171,16 +161,13 @@
                 - My name is Nate, I'm a Junior Web Developer of a little more
                 than two years. I thought I would build this app out as a means
                 of api and coding practice. I'm also a fan of hockey, namely the
-                Lightning & Rangers. It's built using HTML, CSS, JavaScript,
+                Lightning & Rangers. It's built using Laravel, HTML, CSS, JavaScript,
                 some jQuery, and Owl Carousel for the game displays.
               </p>
               <p>
                 <span>NHL API :</span>
-                - The app is basically what the heading says :
-                <strong>a collection of NHL teams, their schedules and rosters, team
-                  and player stats, and daily games with upcoming and previous
-                  dates</strong>. There's also endpoints for awards, draft picks and more, but
-                I didn't get into those just yet.
+                - The NHL surprised us all and built a new API and endpoints of data. All the content, information,
+                logos and headshots are provided by the API and owned by the NHL. I, as a fan, simply put it on display.
               </p>
               <ul>
                 <span>Creators :</span>
