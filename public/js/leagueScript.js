@@ -3,6 +3,7 @@ function loadLeagueScript() {
   const leagueGameDatesDropdownButton = document.querySelector('.league-game-dates-dropdown-button');
   const leagueGameDatesDropdownList = document.querySelector('.league-game-dates-dropdown-list');
   const $leagueCarousel = $('.league-carousel');
+  let checkGameState = document.querySelectorAll('.game-state');
 
   const carouselOptions = {
     loop: false,
@@ -94,12 +95,30 @@ function loadLeagueScript() {
     owl.options.responsive[1300].items = 3;
     $leagueCarousel.trigger('refresh.owl.carousel');
   }
-
   // GAME UPCOMING DATES DROPDOWN
   leagueGameDatesDropdownButton.addEventListener('click', () => {
     leagueGameDatesDropdownContainer.children[0].classList.toggle('rotate');
     leagueGameDatesDropdownList.classList.toggle('league-team-dropdown-list-toggle');
   });
+  // gameState.parentElement is the entire game card
+  checkGameState.forEach((gameState) => {
+    if (gameState.innerText === 'OFF' || gameState.innerText === 'FINAL') {
+      // console.log(gameState.parentElement.childNodes);
+      gameState.parentElement.childNodes[3].classList.add('game-dropdown-toggle');
+      gameState.parentElement.childNodes[1].childNodes[1].classList.add('rotate');
+      // colors away team winner
+      if (gameState.parentElement.childNodes[3].childNodes[1].childNodes[3].childNodes[1].childNodes[1].innerText > gameState.parentElement.childNodes[3].childNodes[1].childNodes[3].childNodes[1].childNodes[5].innerText) {
+        gameState.parentElement.childNodes[3].childNodes[1].childNodes[3].childNodes[1].childNodes[1].style.backgroundColor = '#1e90ff';
+        gameState.parentElement.childNodes[3].childNodes[1].childNodes[3].childNodes[1].childNodes[1].style.color = '#fff';
+      }
+      // colors home team winner
+      if (gameState.parentElement.childNodes[3].childNodes[1].childNodes[3].childNodes[1].childNodes[1].innerText < gameState.parentElement.childNodes[3].childNodes[1].childNodes[3].childNodes[1].childNodes[5].innerText) {
+        gameState.parentElement.childNodes[3].childNodes[1].childNodes[3].childNodes[1].childNodes[5].style.backgroundColor = '#1e90ff';
+        gameState.parentElement.childNodes[3].childNodes[1].childNodes[3].childNodes[1].childNodes[5].style.color = '#fff';
+      }
+    }
+  });
+  // each games dropdown button
   $(document).on('click', '.game-dropdown-button', function () {
     // console.log($(this)[0].parentElement.childNodes);
     $(this)[0].lastElementChild.classList.toggle('rotate');

@@ -126,7 +126,7 @@
                   <span class="home-game-indicator"></span>
                 @endif
                 {{-- to auto open finished games --}}
-                <div class="finished-game-state" hidden>{{ $game['gameState'] }}</div>
+                <div class="game-state" hidden>{{ $game['gameState'] }}</div>
               </li>
             @endforeach
           </ul>

@@ -1,7 +1,7 @@
 function loadCarousel() {
   const $upcomingGames = $('.upcoming-games');
   const $finishedGames = $('.finished-games');
-  let finishedGameState = document.querySelectorAll('.finished-game-state');
+  let checkGameState = document.querySelectorAll('.game-state');
 
   const carouselOptions = {
     loop: false,
@@ -84,25 +84,25 @@ function loadCarousel() {
     $finishedGames.trigger('refresh.owl.carousel');
   }
 
-  // finishedState.parentElement is the entire game card
-  finishedGameState.forEach((finishedState) => {
-    if (finishedState.innerText === 'OFF') {
-      // console.log(finishedState.parentElement.childNodes);
-      finishedState.parentElement.childNodes[3].classList.add('game-dropdown-toggle');
-      finishedState.parentElement.childNodes[1].childNodes[1].classList.add('rotate');
+  // gameState.parentElement is the entire game card
+  checkGameState.forEach((gameState) => {
+    if (gameState.innerText === 'OFF' || gameState.innerText === 'FINAL') {
+      // console.log(gameState.parentElement.childNodes);
+      gameState.parentElement.childNodes[3].classList.add('game-dropdown-toggle');
+      gameState.parentElement.childNodes[1].childNodes[1].classList.add('rotate');
       // colors away team winner
-      if (finishedState.parentElement.childNodes[3].childNodes[1].childNodes[3].childNodes[1].childNodes[1].innerText > finishedState.parentElement.childNodes[3].childNodes[1].childNodes[3].childNodes[1].childNodes[5].innerText) {
-        finishedState.parentElement.childNodes[3].childNodes[1].childNodes[3].childNodes[1].childNodes[1].style.backgroundColor = '#1e90ff';
-        finishedState.parentElement.childNodes[3].childNodes[1].childNodes[3].childNodes[1].childNodes[1].style.color = '#fff';
+      if (gameState.parentElement.childNodes[3].childNodes[1].childNodes[3].childNodes[1].childNodes[1].innerText > gameState.parentElement.childNodes[3].childNodes[1].childNodes[3].childNodes[1].childNodes[5].innerText) {
+        gameState.parentElement.childNodes[3].childNodes[1].childNodes[3].childNodes[1].childNodes[1].style.backgroundColor = '#1e90ff';
+        gameState.parentElement.childNodes[3].childNodes[1].childNodes[3].childNodes[1].childNodes[1].style.color = '#fff';
       }
       // colors home team winner
-      if (finishedState.parentElement.childNodes[3].childNodes[1].childNodes[3].childNodes[1].childNodes[1].innerText < finishedState.parentElement.childNodes[3].childNodes[1].childNodes[3].childNodes[1].childNodes[5].innerText) {
-        finishedState.parentElement.childNodes[3].childNodes[1].childNodes[3].childNodes[1].childNodes[5].style.backgroundColor = '#1e90ff';
-        finishedState.parentElement.childNodes[3].childNodes[1].childNodes[3].childNodes[1].childNodes[5].style.color = '#fff';
+      if (gameState.parentElement.childNodes[3].childNodes[1].childNodes[3].childNodes[1].childNodes[1].innerText < gameState.parentElement.childNodes[3].childNodes[1].childNodes[3].childNodes[1].childNodes[5].innerText) {
+        gameState.parentElement.childNodes[3].childNodes[1].childNodes[3].childNodes[1].childNodes[5].style.backgroundColor = '#1e90ff';
+        gameState.parentElement.childNodes[3].childNodes[1].childNodes[3].childNodes[1].childNodes[5].style.color = '#fff';
       }
     }
   });
-
+  // each games dropdown button
   $(document).on('click', '.game-dropdown-button', function () {
     // console.log($(this)[0].parentElement.childNodes);
     $(this)[0].lastElementChild.classList.toggle('rotate');

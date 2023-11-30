@@ -187,7 +187,7 @@
                   {{ $key + 1 }} of {{ count($dailyGames) }}
                 </span>
                 {{-- to auto open finished games --}}
-                <div class="finished-game-state">{{ $game['gameState'] }}</div>
+                <div class="game-state">{{ $game['gameState'] }}</div>
               </li>
             @endforeach
           </ul>
