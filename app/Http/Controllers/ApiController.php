@@ -17,17 +17,8 @@ class ApiController extends Controller
     return $weeklyGames['gameWeek'];
   }
 
-  // gameday team leaders by category
-  // for finished game goal and scored by stats when date added
-  public static function getLinescores()
-  {
-    $client = new \GuzzleHttp\Client();
-    $request = $client->get('https://api-web.nhle.com/v1/score/now');
-    $linescores = json_decode($request->getBody()->getContents(), true);
-    return $linescores['games'];
-  }
-
-  // for specific game, officials, players and coaches, only good for a finished game
+  // better for finished game
+  // finished games have player game stats
   // if upcoming game, there is no boxscore object with data
   public static function getBoxscores($id)
   {
@@ -37,7 +28,8 @@ class ApiController extends Controller
     return $boxscores;
   }
 
-  // gameday head to head stats, officials, players and coaches
+  // gameday head to head stats, each teams category leaders
+  // better for upcoming/live games
   public static function getGameMatchup($id)
   {
     $client = new \GuzzleHttp\Client();
@@ -55,7 +47,7 @@ class ApiController extends Controller
     return $playByPlay;
   }
 
-  // gets all teams and stats, current standings, goals, wins, losses, %
+  // gets all teams and their stats, current standings, goals, wins, losses etc.
   public static function getAllTeams()
   {
     $client = new \GuzzleHttp\Client();

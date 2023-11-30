@@ -46,6 +46,7 @@
           <ul class="league-regular-season owl-carousel owl-theme league-carousel">
             @foreach ($dailyGames as $key => $game)
               @php
+                $gameBoxscore = App\Http\Controllers\ApiController::getBoxscores($game['id']);
                 $gameDateTime = Carbon\Carbon::create($game['startTimeUTC'])->tz('America/New_York');
                 $formattedGameDate = $gameDateTime->format('D M j, Y');
                 $formattedGameTime = $gameDateTime->format('h:i A');
@@ -187,7 +188,7 @@
                   {{ $key + 1 }} of {{ count($dailyGames) }}
                 </span>
                 {{-- to auto open finished games --}}
-                <div class="game-state">{{ $game['gameState'] }}</div>
+                <div class="game-state" hidden>{{ $game['gameState'] }}</div>
               </li>
             @endforeach
           </ul>
