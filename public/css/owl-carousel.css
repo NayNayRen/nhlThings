@@ -235,7 +235,6 @@
     /* outline: solid 1px blue; */
 }
 
-.game-dropdown-header div:nth-of-type(2),
 .game-slideout-header div:nth-of-type(2) {
     width: 60px;
     /* outline: solid 1px blue; */
@@ -245,6 +244,7 @@
     color: #b22222;
     font-size: 16px;
     font-weight: bold;
+    margin: 0;
     width: 100%;
     /* outline: solid 1px blue; */
 }

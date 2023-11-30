@@ -17,7 +17,7 @@ class ApiController extends Controller
     return $weeklyGames['gameWeek'];
   }
 
-  // better for finished game
+  // good for finished game
   // finished games have player game stats
   // if upcoming game, there is no boxscore object with data
   public static function getBoxscores($id)
@@ -28,8 +28,8 @@ class ApiController extends Controller
     return $boxscores;
   }
 
+  // good for all games
   // gameday head to head stats, each teams category leaders
-  // better for upcoming/live games
   public static function getGameMatchup($id)
   {
     $client = new \GuzzleHttp\Client();

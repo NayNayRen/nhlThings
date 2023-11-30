@@ -11,7 +11,6 @@ class LeagueController extends Controller
   public function index(Request $request)
   {
     $dailyGames = [];
-    $dailyBoxscores = [];
     $selectedGames = [];
     $teamRoster = [];
     $selectedDate = $request->input('date');
@@ -25,9 +24,6 @@ class LeagueController extends Controller
         $dailyGames[] = $weeklyGames[$i]['games'];
       }
     }
-    // for ($i = 0; $i < count($dailyGames[0]); $i++) {
-    //   $dailyBoxscores[] = ApiController::getBoxscores($dailyGames[0][$i]['id']);
-    // }
     if ($selectedDate) {
       for ($i = 0; $i < count($weeklyGames); $i++) {
         if ($weeklyGames[$i]['date'] === $selectedDate) {

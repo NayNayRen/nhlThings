@@ -46,7 +46,7 @@
           <ul class="league-regular-season owl-carousel owl-theme league-carousel">
             @foreach ($dailyGames as $key => $game)
               @php
-                $gameBoxscore = App\Http\Controllers\ApiController::getBoxscores($game['id']);
+                $gameData = App\Http\Controllers\ApiController::getGameMatchup($game['id']);
                 $gameDateTime = Carbon\Carbon::create($game['startTimeUTC'])->tz('America/New_York');
                 $formattedGameDate = $gameDateTime->format('D M j, Y');
                 $formattedGameTime = $gameDateTime->format('h:i A');
@@ -70,7 +70,7 @@
                         </div>
                         <div>
                           <h3>FINAL</h3>
-                          <span>00:00</span>
+                          <span>{{ $gameData['clock']['timeRemaining'] }}</span>
                         </div>
                         <div class="game-dropdown-team-logo">
                           <img src={{ $game['homeTeam']['logo'] }}
@@ -79,11 +79,35 @@
                       </li>
                       <li class='game-dropdown-goals'>
                         <div>
-                          <p>{{ $game['awayTeam']['score'] }}</p>
+                          <p>{{ $gameData['awayTeam']['score'] }}</p>
                           <h3>Goals</h3>
-                          <p>{{ $game['homeTeam']['score'] }}</p>
+                          <p>{{ $gameData['homeTeam']['score'] }}</p>
                         </div>
+                        @foreach ($gameData['summary']['linescore']['byPeriod'] as $goals)
+                          <div>
+                            <p>{{ $goals['away'] }}</p>
+                            <span>{{ $goals['period'] }}</span>
+                            <p>{{ $goals['home'] }}</p>
+                          </div>
+                        @endforeach
                       </li>
+                      <li class='game-dropdown-shots'>
+                        <div>
+                          <p>{{ $gameData['awayTeam']['sog'] }}</p>
+                          <h3>Shots</h3>
+                          <p>{{ $gameData['homeTeam']['sog'] }}</p>
+                        </div>
+                        @foreach ($gameData['summary']['shotsByPeriod'] as $shots)
+                          <div>
+                            <p>{{ $shots['away'] }}</p>
+                            <span>{{ $shots['period'] }}</span>
+                            <p>{{ $shots['home'] }}</p>
+                          </div>
+                        @endforeach
+                      </li>
+                      <button type='button' class='game-slideout-show-button'>
+                        Box Score <i class='fa fa-arrow-right' aria-hidden='true'></i>
+                      </button>
                     </ul>
                   </div>
                 @endif
@@ -99,8 +123,8 @@
                             alt='{{ $game['awayTeam']['placeName']['default'] }} Logo' width="75" height="75">
                         </div>
                         <div>
-                          <h3>LIVE</h3>
-                          <span>00:00</span>
+                          <h3>{{ $game['periodDescriptor']['number'] }}</h3>
+                          <span>{{ $gameData['clock']['timeRemaining'] }}</span>
                         </div>
                         <div class="game-dropdown-team-logo">
                           <img src={{ $game['homeTeam']['logo'] }}
@@ -109,13 +133,35 @@
                       </li>
                       <li class='game-dropdown-goals'>
                         <div>
-                          <p>Coming...</p>
-                          {{-- <p>{{ $game['awayTeam']['score'] }}</p> --}}
+                          <p>{{ $gameData['awayTeam']['score'] }}</p>
                           <h3>Goals</h3>
-                          <p>Coming...</p>
-                          {{-- <p>{{ $game['homeTeam']['score'] }}</p> --}}
+                          <p>{{ $gameData['homeTeam']['score'] }}</p>
                         </div>
+                        @foreach ($gameData['summary']['linescore']['byPeriod'] as $goals)
+                          <div>
+                            <p>{{ $goals['away'] }}</p>
+                            <span>{{ $goals['period'] }}</span>
+                            <p>{{ $goals['home'] }}</p>
+                          </div>
+                        @endforeach
                       </li>
+                      <li class='game-dropdown-shots'>
+                        <div>
+                          <p>{{ $gameData['awayTeam']['sog'] }}</p>
+                          <h3>Shots</h3>
+                          <p>{{ $gameData['homeTeam']['sog'] }}</p>
+                        </div>
+                        @foreach ($gameData['summary']['shotsByPeriod'] as $shots)
+                          <div>
+                            <p>{{ $shots['away'] }}</p>
+                            <span>{{ $shots['period'] }}</span>
+                            <p>{{ $shots['home'] }}</p>
+                          </div>
+                        @endforeach
+                      </li>
+                      <button type='button' class='game-slideout-show-button'>
+                        Box Score <i class='fa fa-arrow-right' aria-hidden='true'></i>
+                      </button>
                     </ul>
                   </div>
                 @endif
@@ -132,7 +178,7 @@
                         </div>
                         <div>
                           <h3>PREGAME</h3>
-                          <span>00:00</span>
+                          <span>{{ $gameData['clock']['timeRemaining'] }}</span>
                         </div>
                         <div class="game-dropdown-team-logo">
                           <img src={{ $game['homeTeam']['logo'] }}
