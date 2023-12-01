@@ -102,7 +102,7 @@ function loadLeagueScript() {
   });
   // gameState.parentElement is the entire game card
   checkGameState.forEach((gameState) => {
-    if (gameState.innerText === 'OFF' || gameState.innerText === 'FINAL') {
+    if (gameState.innerText === 'OFF' || gameState.innerText === 'FINAL' || gameState.innerText === 'CRIT' || gameState.innerText === 'LIVE') {
       // console.log(gameState.parentElement.childNodes);
       gameState.parentElement.childNodes[3].classList.add('game-dropdown-toggle');
       gameState.parentElement.childNodes[1].childNodes[1].classList.add('rotate');

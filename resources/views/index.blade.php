@@ -56,7 +56,7 @@
                 <div class="game-dropdown-button">
                   <i class="fa-solid fa-caret-up" aria-hidden="true"></i>
                 </div>
-                {{-- dropdown menu --}}
+                {{-- finished games dropdown menu --}}
                 @if ($game['gameState'] === 'OFF' || $game['gameState'] === 'FINAL')
                   <div class="game-dropdown-container">
                     <ul class="game-dropdown-details">
@@ -111,6 +111,62 @@
                     </ul>
                   </div>
                 @endif
+                {{-- critical time games dropdown menu --}}
+                @if ($game['gameState'] === 'CRIT')
+                  <div class="game-dropdown-container">
+                    <ul class="game-dropdown-details">
+                      <li class='game-dropdown-header'>
+                        <div class='game-finished-date'>
+                          <p>{{ $formattedGameDate }}</p>
+                        </div>
+                        <div class="game-dropdown-team-logo">
+                          <img src={{ $game['awayTeam']['logo'] }}
+                            alt='{{ $game['awayTeam']['placeName']['default'] }} Logo' width="75" height="75">
+                        </div>
+                        <div>
+                          <h3>{{ $game['periodDescriptor']['number'] }}</h3>
+                          <span>{{ $gameData['clock']['timeRemaining'] }}</span>
+                        </div>
+                        <div class="game-dropdown-team-logo">
+                          <img src={{ $game['homeTeam']['logo'] }}
+                            alt='{{ $game['homeTeam']['placeName']['default'] }} Logo' width="75" height="75">
+                        </div>
+                      </li>
+                      <li class='game-dropdown-goals'>
+                        <div>
+                          <p>{{ $gameData['awayTeam']['score'] }}</p>
+                          <h3>Goals</h3>
+                          <p>{{ $gameData['homeTeam']['score'] }}</p>
+                        </div>
+                        @foreach ($gameData['summary']['linescore']['byPeriod'] as $goals)
+                          <div>
+                            <p>{{ $goals['away'] }}</p>
+                            <span>{{ $goals['period'] }}</span>
+                            <p>{{ $goals['home'] }}</p>
+                          </div>
+                        @endforeach
+                      </li>
+                      <li class='game-dropdown-shots'>
+                        <div>
+                          <p>{{ $gameData['awayTeam']['sog'] }}</p>
+                          <h3>Shots</h3>
+                          <p>{{ $gameData['homeTeam']['sog'] }}</p>
+                        </div>
+                        @foreach ($gameData['summary']['shotsByPeriod'] as $shots)
+                          <div>
+                            <p>{{ $shots['away'] }}</p>
+                            <span>{{ $shots['period'] }}</span>
+                            <p>{{ $shots['home'] }}</p>
+                          </div>
+                        @endforeach
+                      </li>
+                      <button type='button' class='game-slideout-show-button'>
+                        Box Score <i class='fa fa-arrow-right' aria-hidden='true'></i>
+                      </button>
+                    </ul>
+                  </div>
+                @endif
+                {{-- live games dropdown menu --}}
                 @if ($game['gameState'] === 'LIVE')
                   <div class="game-dropdown-container">
                     <ul class="game-dropdown-details">
@@ -165,6 +221,7 @@
                     </ul>
                   </div>
                 @endif
+                {{-- pregame dropdown menu --}}
                 @if ($game['gameState'] === 'PRE')
                   <div class="game-dropdown-container">
                     <ul class="game-dropdown-details">
@@ -197,6 +254,7 @@
                     </ul>
                   </div>
                 @endif
+                {{-- upcoming games dropdown menu --}}
                 @if ($game['gameState'] === 'FUT')
                   <div class="game-dropdown-container">
                     <ul class="game-dropdown-details">
@@ -206,7 +264,8 @@
                         </div>
                         <div class="game-dropdown-team-logo">
                           <img src={{ $game['awayTeam']['logo'] }}
-                            alt='{{ $game['awayTeam']['placeName']['default'] }} Logo' width="75" height="75">
+                            alt='{{ $game['awayTeam']['placeName']['default'] }} Logo' width="75"
+                            height="75">
                         </div>
                         <div>
                           <h3>UPCOMING</h3>
@@ -214,7 +273,8 @@
                         </div>
                         <div class="game-dropdown-team-logo">
                           <img src={{ $game['homeTeam']['logo'] }}
-                            alt='{{ $game['homeTeam']['placeName']['default'] }} Logo' width="75" height="75">
+                            alt='{{ $game['homeTeam']['placeName']['default'] }} Logo' width="75"
+                            height="75">
                         </div>
                       </li>
                       <li class='game-dropdown-goals'>
