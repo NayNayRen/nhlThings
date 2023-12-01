@@ -178,7 +178,7 @@
                         </div>
                         <div>
                           <h3>PREGAME</h3>
-                          <span>{{ $gameData['clock']['timeRemaining'] }}</span>
+                          {{-- <span>{{ $gameData['clock']['timeRemaining'] }}</span> --}}
                         </div>
                         <div class="game-dropdown-team-logo">
                           <img src={{ $game['homeTeam']['logo'] }}
