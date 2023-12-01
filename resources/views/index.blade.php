@@ -53,9 +53,9 @@
               @endphp
               {{-- GAME CARDS --}}
               <li class="league-game-card">
-                <div class="game-dropdown-button">
+                {{-- <div class="game-dropdown-button">
                   <i class="fa-solid fa-caret-up" aria-hidden="true"></i>
-                </div>
+                </div> --}}
                 {{-- dropdown menus --}}
                 @include('includes._gameCardDropdown')
                 {{-- game card --}}
