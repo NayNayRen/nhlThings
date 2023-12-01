@@ -41,9 +41,9 @@
               @endphp
               {{-- GAME CARDS --}}
               <li class="league-game-card">
-                <div class="game-dropdown-button">
+                {{-- <div class="game-dropdown-button">
                   <i class="fa-solid fa-caret-up" aria-hidden="true"></i>
-                </div>
+                </div> --}}
                 {{-- dropdown menus --}}
                 @include('includes._gameCardDropdown')
                 {{-- game card --}}
@@ -89,9 +89,9 @@
               @endphp
               {{-- GAME CARDS --}}
               <li class="league-game-card">
-                <div class="game-dropdown-button">
+                {{-- <div class="game-dropdown-button">
                   <i class="fa-solid fa-caret-up" aria-hidden="true"></i>
-                </div>
+                </div> --}}
                 {{-- dropdown menu --}}
                 @include('includes._gameCardDropdown')
                 {{-- game card --}}
@@ -110,7 +110,7 @@
         </div>
       @endif
       {{-- PRESEASON GAMES --}}
-      @if (count($preseason) < 1)
+      {{-- @if (count($preseason) < 1)
         <div class="horizontal-scrolling-container preseason-scrolling-container">
           <div class="team-preseason-container">
             <h2>Preseason Games</h2>
@@ -136,7 +136,6 @@
                     $formattedGameDate = $gameDateTime->format('D M j, Y');
                     $formattedGameTime = $gameDateTime->format('h:i A');
                   @endphp
-                  {{-- GAME CARDS --}}
                   <li class="team-preseason-card">
                     @include('includes._gameCard')
                     <span class='game-number'>
@@ -151,7 +150,7 @@
             </div>
           </div>
         </div>
-      @endif
+      @endif --}}
     </div>
   </div>
 </main>
