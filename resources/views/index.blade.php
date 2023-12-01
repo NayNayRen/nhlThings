@@ -86,7 +86,21 @@
                         @foreach ($gameData['summary']['linescore']['byPeriod'] as $goals)
                           <div>
                             <p>{{ $goals['away'] }}</p>
-                            <span>{{ $goals['period'] }}</span>
+                            @if ($goals['period'] === 1)
+                              <span>{{ $goals['period'] }}st</span>
+                            @endif
+                            @if ($goals['period'] === 2)
+                              <span>{{ $goals['period'] }}nd</span>
+                            @endif
+                            @if ($goals['period'] === 3)
+                              <span>{{ $goals['period'] }}rd</span>
+                            @endif
+                            @if ($goals['period'] === 4)
+                              <p>OT</p>
+                            @endif
+                            @if ($goals['period'] >= 5)
+                              <p>SO</p>
+                            @endif
                             <p>{{ $goals['home'] }}</p>
                           </div>
                         @endforeach
@@ -99,9 +113,29 @@
                         </div>
                         @foreach ($gameData['summary']['shotsByPeriod'] as $shots)
                           <div>
-                            <p>{{ $shots['away'] }}</p>
-                            <span>{{ $shots['period'] }}</span>
-                            <p>{{ $shots['home'] }}</p>
+                            @if ($shots['period'] === 1)
+                              <p>{{ $shots['away'] }}</p>
+                              <span>{{ $shots['period'] }}st</span>
+                              <p>{{ $shots['home'] }}</p>
+                            @endif
+                            @if ($shots['period'] === 2)
+                              <p>{{ $shots['away'] }}</p>
+                              <span>{{ $shots['period'] }}nd</span>
+                              <p>{{ $shots['home'] }}</p>
+                            @endif
+                            @if ($shots['period'] === 3)
+                              <p>{{ $shots['away'] }}</p>
+                              <span>{{ $shots['period'] }}rd</span>
+                              <p>{{ $shots['home'] }}</p>
+                            @endif
+                            @if ($shots['period'] === 4)
+                              <p>{{ $shots['away'] }}</p>
+                              <p>OT</p>
+                              <p>{{ $shots['home'] }}</p>
+                            @endif
+                            @if ($shots['period'] >= 5)
+                              <p></p>
+                            @endif
                           </div>
                         @endforeach
                       </li>
@@ -141,7 +175,21 @@
                         @foreach ($gameData['summary']['linescore']['byPeriod'] as $goals)
                           <div>
                             <p>{{ $goals['away'] }}</p>
-                            <span>{{ $goals['period'] }}</span>
+                            @if ($goals['period'] === 1)
+                              <span>{{ $goals['period'] }}st</span>
+                            @endif
+                            @if ($goals['period'] === 2)
+                              <span>{{ $goals['period'] }}nd</span>
+                            @endif
+                            @if ($goals['period'] === 3)
+                              <span>{{ $goals['period'] }}rd</span>
+                            @endif
+                            @if ($goals['period'] === 4)
+                              <p>OT</p>
+                            @endif
+                            @if ($goals['period'] >= 5)
+                              <p>SO</p>
+                            @endif
                             <p>{{ $goals['home'] }}</p>
                           </div>
                         @endforeach
@@ -154,9 +202,29 @@
                         </div>
                         @foreach ($gameData['summary']['shotsByPeriod'] as $shots)
                           <div>
-                            <p>{{ $shots['away'] }}</p>
-                            <span>{{ $shots['period'] }}</span>
-                            <p>{{ $shots['home'] }}</p>
+                            @if ($shots['period'] === 1)
+                              <p>{{ $shots['away'] }}</p>
+                              <span>{{ $shots['period'] }}st</span>
+                              <p>{{ $shots['home'] }}</p>
+                            @endif
+                            @if ($shots['period'] === 2)
+                              <p>{{ $shots['away'] }}</p>
+                              <span>{{ $shots['period'] }}nd</span>
+                              <p>{{ $shots['home'] }}</p>
+                            @endif
+                            @if ($shots['period'] === 3)
+                              <p>{{ $shots['away'] }}</p>
+                              <span>{{ $shots['period'] }}rd</span>
+                              <p>{{ $shots['home'] }}</p>
+                            @endif
+                            @if ($shots['period'] === 4)
+                              <p>{{ $shots['away'] }}</p>
+                              <p>OT</p>
+                              <p>{{ $shots['home'] }}</p>
+                            @endif
+                            @if ($shots['period'] >= 5)
+                              <p></p>
+                            @endif
                           </div>
                         @endforeach
                       </li>
@@ -196,7 +264,21 @@
                         @foreach ($gameData['summary']['linescore']['byPeriod'] as $goals)
                           <div>
                             <p>{{ $goals['away'] }}</p>
-                            <span>{{ $goals['period'] }}</span>
+                            @if ($goals['period'] === 1)
+                              <span>{{ $goals['period'] }}st</span>
+                            @endif
+                            @if ($goals['period'] === 2)
+                              <span>{{ $goals['period'] }}nd</span>
+                            @endif
+                            @if ($goals['period'] === 3)
+                              <span>{{ $goals['period'] }}rd</span>
+                            @endif
+                            @if ($goals['period'] === 4)
+                              <p>OT</p>
+                            @endif
+                            @if ($goals['period'] >= 5)
+                              <p>SO</p>
+                            @endif
                             <p>{{ $goals['home'] }}</p>
                           </div>
                         @endforeach
@@ -209,9 +291,29 @@
                         </div>
                         @foreach ($gameData['summary']['shotsByPeriod'] as $shots)
                           <div>
-                            <p>{{ $shots['away'] }}</p>
-                            <span>{{ $shots['period'] }}</span>
-                            <p>{{ $shots['home'] }}</p>
+                            @if ($shots['period'] === 1)
+                              <p>{{ $shots['away'] }}</p>
+                              <span>{{ $shots['period'] }}st</span>
+                              <p>{{ $shots['home'] }}</p>
+                            @endif
+                            @if ($shots['period'] === 2)
+                              <p>{{ $shots['away'] }}</p>
+                              <span>{{ $shots['period'] }}nd</span>
+                              <p>{{ $shots['home'] }}</p>
+                            @endif
+                            @if ($shots['period'] === 3)
+                              <p>{{ $shots['away'] }}</p>
+                              <span>{{ $shots['period'] }}rd</span>
+                              <p>{{ $shots['home'] }}</p>
+                            @endif
+                            @if ($shots['period'] === 4)
+                              <p>{{ $shots['away'] }}</p>
+                              <p>OT</p>
+                              <p>{{ $shots['home'] }}</p>
+                            @endif
+                            @if ($shots['period'] >= 5)
+                              <p></p>
+                            @endif
                           </div>
                         @endforeach
                       </li>
