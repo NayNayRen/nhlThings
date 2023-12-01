@@ -34,6 +34,7 @@
           <ul class="league-regular-season owl-carousel owl-theme upcoming-games">
             @foreach ($upcomingGames as $key => $game)
               @php
+                $gameData = App\Http\Controllers\ApiController::getGameMatchup($game['id']);
                 $gameDateTime = Carbon\Carbon::create($game['startTimeUTC'])->tz('America/New_York');
                 $formattedGameDate = $gameDateTime->format('D M j, Y');
                 $formattedGameTime = $gameDateTime->format('h:i A');
@@ -43,10 +44,9 @@
                 <div class="game-dropdown-button">
                   <i class="fa-solid fa-caret-up" aria-hidden="true"></i>
                 </div>
-                {{-- dropdown menu --}}
-                <div class="game-dropdown-container">
-                  <p>i changed the home page text too</p>
-                </div>
+                {{-- dropdown menus --}}
+                @include('includes._gameCardDropdown')
+                {{-- game card --}}
                 @include('includes._gameCard')
                 <span class='game-number'>
                   {{ count($finishedGames) + 1 + $key }} of {{ count($upcomingGames) + count($finishedGames) }}
@@ -54,6 +54,8 @@
                 @if ($game['homeTeam']['abbrev'] === $soloTeam['teamAbbrev']['default'])
                   <span class="home-game-indicator"></span>
                 @endif
+                {{-- used to auto open dropdowns --}}
+                <div class="game-state" hidden>{{ $game['gameState'] }}</div>
               </li>
             @endforeach
           </ul>
@@ -80,6 +82,7 @@
           <ul class="league-regular-season owl-carousel owl-theme finished-games">
             @foreach ($finishedGames as $key => $game)
               @php
+                $gameData = App\Http\Controllers\ApiController::getGameMatchup($game['id']);
                 $gameDateTime = Carbon\Carbon::create($game['startTimeUTC'])->tz('America/New_York');
                 $formattedGameDate = $gameDateTime->format('D M j, Y');
                 $formattedGameTime = $gameDateTime->format('h:i A');
@@ -90,34 +93,8 @@
                   <i class="fa-solid fa-caret-up" aria-hidden="true"></i>
                 </div>
                 {{-- dropdown menu --}}
-                <div class="game-dropdown-container">
-                  <ul class="game-dropdown-details">
-                    <li class='game-dropdown-header'>
-                      <div class='game-finished-date'>
-                        <p>{{ $formattedGameDate }}</p>
-                      </div>
-                      <div class="game-dropdown-team-logo">
-                        <img src={{ $game['awayTeam']['logo'] }}
-                          alt='{{ $game['awayTeam']['placeName']['default'] }} Logo' width="75" height="75">
-                      </div>
-                      <div>
-                        <h3>FINAL</h3>
-                        <span>00:00</span>
-                      </div>
-                      <div class="game-dropdown-team-logo">
-                        <img src={{ $game['homeTeam']['logo'] }}
-                          alt='{{ $game['homeTeam']['placeName']['default'] }} Logo' width="75" height="75">
-                      </div>
-                    </li>
-                    <li class='game-dropdown-goals'>
-                      <div>
-                        <p>{{ $game['awayTeam']['score'] }}</p>
-                        <h3>Goals</h3>
-                        <p>{{ $game['homeTeam']['score'] }}</p>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
+                @include('includes._gameCardDropdown')
+                {{-- game card --}}
                 @include('includes._gameCard')
                 <span class='game-number'>
                   {{ count($finishedGames) - $key }} of {{ count($upcomingGames) + count($finishedGames) }}
@@ -125,7 +102,7 @@
                 @if ($game['homeTeam']['abbrev'] === $soloTeam['teamAbbrev']['default'])
                   <span class="home-game-indicator"></span>
                 @endif
-                {{-- to auto open finished games --}}
+                {{-- used to auto open dropdowns --}}
                 <div class="game-state" hidden>{{ $game['gameState'] }}</div>
               </li>
             @endforeach
