@@ -121,7 +121,7 @@
           @if ($game['periodDescriptor']['number'] >= 5)
             <h3>SO</h3>
           @endif
-          <span>{{ $game['clock']['timeRemaining'] }}</span>
+          <span>N/A</span>
         </div>
         <div class="game-dropdown-team-logo">
           <img src={{ $game['homeTeam']['logo'] }} alt='{{ $game['homeTeam']['placeName']['default'] }} Logo'
