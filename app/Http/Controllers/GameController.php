@@ -20,6 +20,8 @@ class GameController extends Controller
     return view('game', [
       'favIcon' => '../img/nhl-shield.png',
       'title' => $gameMatchup['awayTeam']['abbrev'] . ' vs ' . $gameMatchup['homeTeam']['abbrev'],
+      'gameBoxscores' => $gameBoxscores,
+      'gameMatchup' => $gameMatchup,
       'currentDate' => $currentDate,
       'teamRoster' => $teamRoster,
       'sortedTeamsByName' => $sortedTeamsByName

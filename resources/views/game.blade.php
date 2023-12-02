@@ -3,7 +3,7 @@
   <div class="main-container">
     <div class="game-container">
       <div class="game-heading-container">
-        <h2>Game Stats</h2>
+        <h2>{{ $gameMatchup['awayTeam']['abbrev'] }} vs {{ $gameMatchup['homeTeam']['abbrev'] }}</h2>
       </div>
     </div>
   </div>
