@@ -10,25 +10,25 @@
           <p>{{ $formattedGameDate }}</p>
         </div>
         <div class="game-dropdown-team-logo">
-          <img src={{ $game['awayTeam']['logo'] }} alt='{{ $game['awayTeam']['placeName']['default'] }} Logo'
-            width="75" height="75">
+          <img src={{ $game['awayTeam']['logo'] }} alt='{{ $game['awayTeam']['name']['default'] }} Logo' width="75"
+            height="75">
         </div>
         <div>
           <h3>FINAL</h3>
-          <span>{{ $gameData['clock']['timeRemaining'] }}</span>
+          <span>{{ $game['clock']['timeRemaining'] }}</span>
         </div>
         <div class="game-dropdown-team-logo">
-          <img src={{ $game['homeTeam']['logo'] }} alt='{{ $game['homeTeam']['placeName']['default'] }} Logo'
-            width="75" height="75">
+          <img src={{ $game['homeTeam']['logo'] }} alt='{{ $game['homeTeam']['name']['default'] }} Logo' width="75"
+            height="75">
         </div>
       </li>
       <li class='game-dropdown-goals'>
         <div>
-          <p>{{ $gameData['awayTeam']['score'] }}</p>
+          <p>{{ $game['awayTeam']['score'] }}</p>
           <h3>Goals</h3>
-          <p>{{ $gameData['homeTeam']['score'] }}</p>
+          <p>{{ $game['homeTeam']['score'] }}</p>
         </div>
-        @foreach ($gameData['summary']['linescore']['byPeriod'] as $goals)
+        {{-- @foreach ($gameData['summary']['linescore']['byPeriod'] as $goals)
           <div>
             <p>{{ $goals['away'] }}</p>
             @if ($goals['period'] === 1)
@@ -48,15 +48,15 @@
             @endif
             <p>{{ $goals['home'] }}</p>
           </div>
-        @endforeach
+        @endforeach --}}
       </li>
       <li class='game-dropdown-shots'>
         <div>
-          <p>{{ $gameData['awayTeam']['sog'] }}</p>
+          <p>{{ $game['awayTeam']['sog'] }}</p>
           <h3>Shots</h3>
-          <p>{{ $gameData['homeTeam']['sog'] }}</p>
+          <p>{{ $game['homeTeam']['sog'] }}</p>
         </div>
-        @foreach ($gameData['summary']['shotsByPeriod'] as $shots)
+        {{-- @foreach ($gameData['summary']['shotsByPeriod'] as $shots)
           <div>
             @if ($shots['period'] === 1)
               <p>{{ $shots['away'] }}</p>
@@ -82,7 +82,7 @@
               <p></p>
             @endif
           </div>
-        @endforeach
+        @endforeach --}}
       </li>
       <button type='button' class='game-slideout-show-button'>
         Box Score <i class='fa fa-arrow-right' aria-hidden='true'></i>
@@ -102,7 +102,7 @@
           <p>{{ $formattedGameDate }}</p>
         </div>
         <div class="game-dropdown-team-logo">
-          <img src={{ $game['awayTeam']['logo'] }} alt='{{ $game['awayTeam']['placeName']['default'] }} Logo'
+          <img src={{ $game['awayTeam']['logo'] }} alt='{{ $game['awayTeam']['name']['default'] }} Logo'
             width="75" height="75">
         </div>
         <div>
@@ -121,20 +121,20 @@
           @if ($game['periodDescriptor']['number'] >= 5)
             <h3>SO</h3>
           @endif
-          <span>{{ $gameData['clock']['timeRemaining'] }}</span>
+          <span>{{ $game['clock']['timeRemaining'] }}</span>
         </div>
         <div class="game-dropdown-team-logo">
-          <img src={{ $game['homeTeam']['logo'] }} alt='{{ $game['homeTeam']['placeName']['default'] }} Logo'
+          <img src={{ $game['homeTeam']['logo'] }} alt='{{ $game['homeTeam']['name']['default'] }} Logo'
             width="75" height="75">
         </div>
       </li>
       <li class='game-dropdown-goals'>
         <div>
-          <p>{{ $gameData['awayTeam']['score'] }}</p>
+          <p>{{ $game['awayTeam']['score'] }}</p>
           <h3>Goals</h3>
-          <p>{{ $gameData['homeTeam']['score'] }}</p>
+          <p>{{ $game['homeTeam']['score'] }}</p>
         </div>
-        @foreach ($gameData['summary']['linescore']['byPeriod'] as $goals)
+        {{-- @foreach ($gameData['summary']['linescore']['byPeriod'] as $goals)
           <div>
             <p>{{ $goals['away'] }}</p>
             @if ($goals['period'] === 1)
@@ -154,15 +154,15 @@
             @endif
             <p>{{ $goals['home'] }}</p>
           </div>
-        @endforeach
+        @endforeach --}}
       </li>
       <li class='game-dropdown-shots'>
         <div>
-          <p>{{ $gameData['awayTeam']['sog'] }}</p>
+          <p>{{ $game['awayTeam']['sog'] }}</p>
           <h3>Shots</h3>
-          <p>{{ $gameData['homeTeam']['sog'] }}</p>
+          <p>{{ $game['homeTeam']['sog'] }}</p>
         </div>
-        @foreach ($gameData['summary']['shotsByPeriod'] as $shots)
+        {{-- @foreach ($gameData['summary']['shotsByPeriod'] as $shots)
           <div>
             @if ($shots['period'] === 1)
               <p>{{ $shots['away'] }}</p>
@@ -188,7 +188,7 @@
               <p></p>
             @endif
           </div>
-        @endforeach
+        @endforeach --}}
       </li>
       <button type='button' class='game-slideout-show-button'>
         Box Score <i class='fa fa-arrow-right' aria-hidden='true'></i>
@@ -205,7 +205,7 @@
           <p>{{ $formattedGameDate }}</p>
         </div>
         <div class="game-dropdown-team-logo">
-          <img src={{ $game['awayTeam']['logo'] }} alt='{{ $game['awayTeam']['placeName']['default'] }} Logo'
+          <img src={{ $game['awayTeam']['logo'] }} alt='{{ $game['awayTeam']['name']['default'] }} Logo'
             width="75" height="75">
         </div>
         <div>
@@ -213,17 +213,15 @@
           <span>00:00</span>
         </div>
         <div class="game-dropdown-team-logo">
-          <img src={{ $game['homeTeam']['logo'] }} alt='{{ $game['homeTeam']['placeName']['default'] }} Logo'
+          <img src={{ $game['homeTeam']['logo'] }} alt='{{ $game['homeTeam']['name']['default'] }} Logo'
             width="75" height="75">
         </div>
       </li>
       <li class='game-dropdown-goals'>
         <div>
           <p>Coming...</p>
-          {{-- <p>{{ $game['awayTeam']['score'] }}</p> --}}
           <h3>Goals</h3>
           <p>Coming...</p>
-          {{-- <p>{{ $game['homeTeam']['score'] }}</p> --}}
         </div>
       </li>
     </ul>

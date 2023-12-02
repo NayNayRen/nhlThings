@@ -9,6 +9,14 @@ class ApiController extends Controller
 {
   // 2023020327
   // 2023-11-26
+  public static function getDailyGames($date)
+  {
+    $client = new \GuzzleHttp\Client();
+    $request = $client->get('https://api-web.nhle.com/v1/score/' . $date);
+    $dailyGames = json_decode($request->getBody()->getContents(), true);
+    return $dailyGames;
+  }
+
   public static function getWeeklyGames($date)
   {
     $client = new \GuzzleHttp\Client();

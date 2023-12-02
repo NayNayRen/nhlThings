@@ -46,16 +46,12 @@
           <ul class="league-regular-season owl-carousel owl-theme league-carousel">
             @foreach ($dailyGames as $key => $game)
               @php
-                $gameData = App\Http\Controllers\ApiController::getGameMatchup($game['id']);
                 $gameDateTime = Carbon\Carbon::create($game['startTimeUTC'])->tz('America/New_York');
                 $formattedGameDate = $gameDateTime->format('D M j, Y');
                 $formattedGameTime = $gameDateTime->format('h:i A');
               @endphp
               {{-- GAME CARDS --}}
               <li class="league-game-card">
-                {{-- <div class="game-dropdown-button">
-                  <i class="fa-solid fa-caret-up" aria-hidden="true"></i>
-                </div> --}}
                 {{-- dropdown menus --}}
                 @include('includes._gameCardDropdown')
                 {{-- game card --}}
