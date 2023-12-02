@@ -10,16 +10,16 @@
           <p>{{ $formattedGameDate }}</p>
         </div>
         <div class="game-dropdown-team-logo">
-          <img src={{ $game['awayTeam']['logo'] }} alt='{{ $game['awayTeam']['name']['default'] }} Logo' width="75"
-            height="75">
+          <img src={{ $game['awayTeam']['logo'] }} alt='{{ $game['awayTeam']['placeName']['default'] }} Logo'
+            width="75" height="75">
         </div>
         <div>
           <h3>FINAL</h3>
-          <span>{{ $game['clock']['timeRemaining'] }}</span>
+          <span>00:00</span>
         </div>
         <div class="game-dropdown-team-logo">
-          <img src={{ $game['homeTeam']['logo'] }} alt='{{ $game['homeTeam']['name']['default'] }} Logo' width="75"
-            height="75">
+          <img src={{ $game['homeTeam']['logo'] }} alt='{{ $game['homeTeam']['placeName']['default'] }} Logo'
+            width="75" height="75">
         </div>
       </li>
       <li class='game-dropdown-goals'>
@@ -50,13 +50,13 @@
           </div>
         @endforeach --}}
       </li>
-      <li class='game-dropdown-shots'>
+      {{-- <li class='game-dropdown-shots'>
         <div>
           <p>{{ $game['awayTeam']['sog'] }}</p>
           <h3>Shots</h3>
           <p>{{ $game['homeTeam']['sog'] }}</p>
-        </div>
-        {{-- @foreach ($gameData['summary']['shotsByPeriod'] as $shots)
+        </div> --}}
+      {{-- @foreach ($gameData['summary']['shotsByPeriod'] as $shots)
           <div>
             @if ($shots['period'] === 1)
               <p>{{ $shots['away'] }}</p>
@@ -83,9 +83,9 @@
             @endif
           </div>
         @endforeach --}}
-      </li>
+      {{-- </li> --}}
       <button type='button' class='game-slideout-show-button'>
-        Box Score <i class='fa fa-arrow-right' aria-hidden='true'></i>
+        Final Stats <i class='fa fa-arrow-right' aria-hidden='true'></i>
       </button>
     </ul>
   </div>
@@ -102,7 +102,7 @@
           <p>{{ $formattedGameDate }}</p>
         </div>
         <div class="game-dropdown-team-logo">
-          <img src={{ $game['awayTeam']['logo'] }} alt='{{ $game['awayTeam']['name']['default'] }} Logo'
+          <img src={{ $game['awayTeam']['logo'] }} alt='{{ $game['awayTeam']['placeName']['default'] }} Logo'
             width="75" height="75">
         </div>
         <div>
@@ -124,7 +124,7 @@
           <span>{{ $game['clock']['timeRemaining'] }}</span>
         </div>
         <div class="game-dropdown-team-logo">
-          <img src={{ $game['homeTeam']['logo'] }} alt='{{ $game['homeTeam']['name']['default'] }} Logo'
+          <img src={{ $game['homeTeam']['logo'] }} alt='{{ $game['homeTeam']['placeName']['default'] }} Logo'
             width="75" height="75">
         </div>
       </li>
@@ -156,13 +156,13 @@
           </div>
         @endforeach --}}
       </li>
-      <li class='game-dropdown-shots'>
+      {{-- <li class='game-dropdown-shots'>
         <div>
           <p>{{ $game['awayTeam']['sog'] }}</p>
           <h3>Shots</h3>
           <p>{{ $game['homeTeam']['sog'] }}</p>
-        </div>
-        {{-- @foreach ($gameData['summary']['shotsByPeriod'] as $shots)
+        </div> --}}
+      {{-- @foreach ($gameData['summary']['shotsByPeriod'] as $shots)
           <div>
             @if ($shots['period'] === 1)
               <p>{{ $shots['away'] }}</p>
@@ -189,7 +189,7 @@
             @endif
           </div>
         @endforeach --}}
-      </li>
+      {{-- </li> --}}
       <button type='button' class='game-slideout-show-button'>
         Box Score <i class='fa fa-arrow-right' aria-hidden='true'></i>
       </button>
@@ -198,6 +198,9 @@
 @endif
 {{-- pregame dropdown menu --}}
 @if ($game['gameState'] === 'PRE')
+  <div class="game-dropdown-button">
+    <i class="fa-solid fa-caret-up" aria-hidden="true"></i>
+  </div>
   <div class="game-dropdown-container">
     <ul class="game-dropdown-details">
       <li class='game-dropdown-header'>
@@ -205,15 +208,15 @@
           <p>{{ $formattedGameDate }}</p>
         </div>
         <div class="game-dropdown-team-logo">
-          <img src={{ $game['awayTeam']['logo'] }} alt='{{ $game['awayTeam']['name']['default'] }} Logo'
+          <img src={{ $game['awayTeam']['logo'] }} alt='{{ $game['awayTeam']['placeName']['default'] }} Logo'
             width="75" height="75">
         </div>
         <div>
-          <h3>PREGAME</h3>
+          <h3>SOON...</h3>
           <span>00:00</span>
         </div>
         <div class="game-dropdown-team-logo">
-          <img src={{ $game['homeTeam']['logo'] }} alt='{{ $game['homeTeam']['name']['default'] }} Logo'
+          <img src={{ $game['homeTeam']['logo'] }} alt='{{ $game['homeTeam']['placeName']['default'] }} Logo'
             width="75" height="75">
         </div>
       </li>
@@ -224,6 +227,9 @@
           <p>Coming...</p>
         </div>
       </li>
+      <button type='button' class='game-slideout-show-button'>
+        Match Up <i class='fa fa-arrow-right' aria-hidden='true'></i>
+      </button>
     </ul>
   </div>
 @endif

@@ -38,16 +38,16 @@ class TeamController extends Controller
     //     }
     //   }
     // }
-    for ($i = 0; $i < count($teamSchedule[0][1]); $i++) {
-      $finishedDates[] = ApiController::getDailyGames($teamSchedule[0][1][$i]['gameDate']);
-    }
-    for ($i = 0; $i < count($finishedDates); $i++) {
-      for ($x = 0; $x < count($finishedDates[$i]['games']); $x++) {
-        if ($finishedDates[$i]['games'][$x]['awayTeam']['abbrev'] === $teamAbbr || $finishedDates[$i]['games'][$x]['homeTeam']['abbrev'] === $teamAbbr) {
-          $finishedGames[] = $finishedDates[$i]['games'][$x];
-        }
-      }
-    }
+    // for ($i = 0; $i < count($teamSchedule[0][1]); $i++) {
+    //   $finishedDates[] = ApiController::getDailyGames($teamSchedule[0][1][$i]['gameDate']);
+    // }
+    // for ($i = 0; $i < count($finishedDates); $i++) {
+    //   for ($x = 0; $x < count($finishedDates[$i]['games']); $x++) {
+    //     if ($finishedDates[$i]['games'][$x]['awayTeam']['abbrev'] === $teamAbbr || $finishedDates[$i]['games'][$x]['homeTeam']['abbrev'] === $teamAbbr) {
+    //       $finishedGames[] = $finishedDates[$i]['games'][$x];
+    //     }
+    //   }
+    // }
     // dd($teamSchedule[0][1]);
     return view('team', [
       'currentDate' => $currentDate,
@@ -55,7 +55,7 @@ class TeamController extends Controller
       'title' => $team[0]['teamName']['default'],
       'soloTeam' => $team[0],
       'upcomingGames' => $teamSchedule[0][0],
-      'finishedGames' => array_reverse($finishedGames),
+      'finishedGames' => array_reverse($teamSchedule[0][1]),
       'preseason' => $teamSchedule[0][2],
       'teamRoster' => $teamRoster[0],
       'allTeams' => $allTeams,
