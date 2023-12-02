@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GameController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\LeagueController;
@@ -21,3 +22,5 @@ Route::get('/', [LeagueController::class, 'index'])->name('league.index');
 Route::get('/teams/{team}', [TeamController::class, 'team'])->name('teams.team');
 
 Route::get('/players/{player}', [PlayerController::class, 'player'])->name('players.player');
+
+Route::get('/games/{game}', [GameController::class, 'game'])->name('games.game');

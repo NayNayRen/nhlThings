@@ -84,9 +84,9 @@
           </div>
         @endforeach --}}
       {{-- </li> --}}
-      <button type='button' class='game-slideout-show-button'>
+      <a href="{{ route('games.game', $game['id']) }}" class="game-stats-button" target="_blank">
         Final Stats <i class='fa fa-arrow-right' aria-hidden='true'></i>
-      </button>
+      </a>
     </ul>
   </div>
 @endif
@@ -190,9 +190,9 @@
           </div>
         @endforeach --}}
       {{-- </li> --}}
-      <button type='button' class='game-slideout-show-button'>
+      <a href="{{ route('games.game', $game['id']) }}" class="game-stats-button" target="_blank">
         Box Score <i class='fa fa-arrow-right' aria-hidden='true'></i>
-      </button>
+      </a>
     </ul>
   </div>
 @endif
@@ -227,9 +227,9 @@
           <p>Coming...</p>
         </div>
       </li>
-      <button type='button' class='game-slideout-show-button'>
+      <a href="{{ route('games.game', $game['id']) }}" class="game-stats-button" target="_blank">
         Match Up <i class='fa fa-arrow-right' aria-hidden='true'></i>
-      </button>
+      </a>
     </ul>
   </div>
 @endif
