@@ -414,6 +414,7 @@ header h1 {
     /* outline: solid 1px blue; */
 }
 
+.game-container,
 .league-container,
 .player-container,
 .team-container {
@@ -428,6 +429,27 @@ header h1 {
     transition: opacity 2000ms ease;
     width: 100%;
     /* outline: solid 1px blue; */
+}
+
+.game-heading-container,
+.league-heading-container,
+.player-heading-container,
+.team-heading-container {
+    -webkit-box-shadow: 0 0 10px #808080;
+    background-color: #dcdcdc;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    box-shadow: 0 0 10px #808080;
+    padding: 10px 0 10px 15px;
+    position: relative;
+}
+
+.game-heading-container h2,
+.league-heading-container h2,
+.player-heading-container h2,
+.team-heading-container h2 {
+    color: #000;
+    font-size: 26px;
 }
 
 .league-game-dates-dropdown-container {
@@ -527,25 +549,6 @@ header h1 {
 .league-team-dropdown-list-toggle {
     height: 225px;
     opacity: 1;
-}
-
-.league-heading-container,
-.player-heading-container,
-.team-heading-container {
-    -webkit-box-shadow: 0 0 10px #808080;
-    background-color: #dcdcdc;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    box-shadow: 0 0 10px #808080;
-    padding: 10px 0 10px 15px;
-    position: relative;
-}
-
-.league-heading-container h2,
-.player-heading-container h2,
-.team-heading-container h2 {
-    color: #000;
-    font-size: 26px;
 }
 
 .main {
@@ -1051,6 +1054,22 @@ header h1 {
         justify-content: center;
     }
 
+    .game-heading-container,
+    .league-heading-container,
+    .player-heading-container,
+    .team-heading-container {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        padding: 25px 0 10px 15px;
+    }
+
+    .game-heading-container h2,
+    .league-heading-container h2,
+    .player-heading-container h2,
+    .team-heading-container h2 {
+        font-size: 24px;
+    }
+
     .header-nav {
         padding: 25px 35px 120px 0;
     }
@@ -1091,20 +1110,6 @@ header h1 {
 
     .league-game-dates-dropdown-container {
         margin: 0 0 5px 0;
-    }
-
-    .league-heading-container,
-    .player-heading-container,
-    .team-heading-container {
-        border-top-left-radius: 0;
-        border-top-right-radius: 0;
-        padding: 25px 0 10px 15px;
-    }
-
-    .league-heading-container h2,
-    .player-heading-container h2,
-    .team-heading-container h2 {
-        font-size: 24px;
     }
 
     .league-standings-selection-container {
@@ -1156,6 +1161,7 @@ header h1 {
         font-size: 16px;
     }
 
+    .game-heading-container h2,
     .league-heading-container h2,
     .player-heading-container h2,
     .team-heading-container h2 {

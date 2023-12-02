@@ -77,7 +77,7 @@ class ApiController extends Controller
         if ($response['games'][$i]['gameState'] === 'OFF') {
           $finished[] = $response['games'][$i];
         }
-        if ($response['games'][$i]['gameState'] === 'FUT') {
+        if ($response['games'][$i]['gameState'] === 'FUT' || $response['games'][$i]['gameState'] === 'PRE' || $response['games'][$i]['gameState'] === 'LIVE' || $response['games'][$i]['gameState'] === 'CRIT' || $response['games'][$i]['gameState'] === 'FINAL') {
           $upcoming[] = $response['games'][$i];
         }
       } else if ($response['games'][$i]['gameType'] === 1) {
