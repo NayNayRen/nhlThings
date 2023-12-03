@@ -584,6 +584,11 @@ header h1 {
     text-align: left;
 }
 
+.league-standings-points {
+    color: #b22222;
+    font-weight: bold;
+}
+
 .league-standings-selection-container {
     -ms-flex-align: start;
     -ms-flex-direction: column;

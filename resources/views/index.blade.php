@@ -133,7 +133,7 @@
                   <p>{{ $team['regulationWins'] }}</p>
                   <p>{{ $team['shootoutWins'] }}</p>
                   <p>{{ $team['shootoutLosses'] }}</p>
-                  <p>{{ $team['points'] }}</p>
+                  <p class='league-standings-points'>{{ $team['points'] }}</p>
                   <p>{{ $team['pointPctg'] }}</p>
                   <p>{{ $team['goalFor'] }}</p>
                   <p>{{ $team['goalAgainst'] }}</p>

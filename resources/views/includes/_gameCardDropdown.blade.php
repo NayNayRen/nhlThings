@@ -1,8 +1,8 @@
 {{-- finished games dropdown menu --}}
 @if ($game['gameState'] === 'OFF' || $game['gameState'] === 'FINAL')
-  {{-- @php
+  @php
     $gameData = App\Http\Controllers\ApiController::getGameMatchup($game['id']);
-  @endphp --}}
+  @endphp
   <div class="game-dropdown-button">
     <i class="fa-solid fa-caret-up" aria-hidden="true"></i>
   </div>
@@ -31,7 +31,7 @@
           <h3>Goals</h3>
           <p>{{ $game['homeTeam']['score'] }}</p>
         </div>
-        {{-- @foreach ($gameData['summary']['linescore']['byPeriod'] as $goals)
+        @foreach ($gameData['summary']['linescore']['byPeriod'] as $goals)
           <div>
             <p>{{ $goals['away'] }}</p>
             @if ($goals['period'] === 1)
@@ -51,10 +51,10 @@
             @endif
             <p>{{ $goals['home'] }}</p>
           </div>
-        @endforeach --}}
+        @endforeach
       </li>
       <li class='game-dropdown-shots'>
-        {{-- <div>
+        <div>
           <p>{{ $gameData['awayTeam']['sog'] }}</p>
           <h3>Shots</h3>
           <p>{{ $gameData['homeTeam']['sog'] }}</p>
@@ -85,7 +85,7 @@
               <p></p>
             @endif
           </div>
-        @endforeach --}}
+        @endforeach
       </li>
       <a href="{{ route('games.game', $game['id']) }}" class="game-stats-button" target="_blank">
         Final Stats <i class='fa fa-arrow-right' aria-hidden='true'></i>
@@ -96,7 +96,8 @@
 {{-- critical time games dropdown menu --}}
 @if ($game['gameState'] === 'CRIT' || $game['gameState'] === 'LIVE')
   @php
-    $gameData = App\Http\Controllers\ApiController::getBoxscores($game['id']);
+    $gameClock = App\Http\Controllers\ApiController::getBoxscores($game['id']);
+    $gameData = App\Http\Controllers\ApiController::getGameMatchup($game['id']);
   @endphp
   <div class="game-dropdown-button">
     <i class="fa-solid fa-caret-up" aria-hidden="true"></i>
@@ -127,7 +128,7 @@
           @if ($game['periodDescriptor']['number'] >= 5)
             <h3>SO</h3>
           @endif --}}
-          <span>00:00</span>
+          <span>{{ $gameClock['clock']['timeRemaining'] }}</span>
         </div>
         <div class="game-dropdown-team-logo">
           <img src={{ $game['homeTeam']['logo'] }} alt='{{ $game['homeTeam']['placeName']['default'] }} Logo'
@@ -140,7 +141,7 @@
           <h3>Goals</h3>
           <p>{{ $game['homeTeam']['score'] }}</p>
         </div>
-        {{-- @foreach ($gameData['summary']['linescore']['byPeriod'] as $goals)
+        @foreach ($gameData['summary']['linescore']['byPeriod'] as $goals)
           <div>
             <p>{{ $goals['away'] }}</p>
             @if ($goals['period'] === 1)
@@ -160,10 +161,10 @@
             @endif
             <p>{{ $goals['home'] }}</p>
           </div>
-        @endforeach --}}
+        @endforeach
       </li>
       <li class='game-dropdown-shots'>
-        {{-- <div>
+        <div>
           <p>{{ $gameData['awayTeam']['sog'] }}</p>
           <h3>Shots</h3>
           <p>{{ $gameData['homeTeam']['sog'] }}</p>
@@ -194,7 +195,7 @@
               <p></p>
             @endif
           </div>
-        @endforeach --}}
+        @endforeach
       </li>
       <a href="{{ route('games.game', $game['id']) }}" class="game-stats-button" target="_blank">
         Box Score <i class='fa fa-arrow-right' aria-hidden='true'></i>
