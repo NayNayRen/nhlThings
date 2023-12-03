@@ -114,14 +114,14 @@
                 <h3 title="Games Played">GP</h3>
                 <h3 title="Wins">W</h3>
                 <h3 title="Losses">L</h3>
-                <h3 title="Overtime">OT</h3>
+                <h3 title="Overtime Losses">OTL</h3>
                 <h3 title="Regulation Wins">RW</h3>
+                <h3 title="Shoot Out Wins">SOW</h3>
+                <h3 title="Shoot Out Losses">SOL</h3>
                 <h3 title="Points">PTS</h3>
                 <h3 title="Point %">PT%</h3>
                 <h3 title="Goals For">GF</h3>
                 <h3 title="Goals Against">GA</h3>
-                <h3 title="Shoot Out Wins">SOW</h3>
-                <h3 title="Shoot Out Losses">SOL</h3>
               </li>
               @foreach ($allTeams as $key => $team)
                 <li class="league-standings-row">
@@ -131,12 +131,12 @@
                   <p>{{ $team['losses'] }}</p>
                   <p>{{ $team['otLosses'] }}</p>
                   <p>{{ $team['regulationWins'] }}</p>
+                  <p>{{ $team['shootoutWins'] }}</p>
+                  <p>{{ $team['shootoutLosses'] }}</p>
                   <p>{{ $team['points'] }}</p>
                   <p>{{ $team['pointPctg'] }}</p>
                   <p>{{ $team['goalFor'] }}</p>
                   <p>{{ $team['goalAgainst'] }}</p>
-                  <p>{{ $team['shootoutWins'] }}</p>
-                  <p>{{ $team['shootoutLosses'] }}</p>
                 </li>
               @endforeach
             </ul>
