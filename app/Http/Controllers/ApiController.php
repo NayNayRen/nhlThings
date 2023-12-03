@@ -13,8 +13,8 @@ class ApiController extends Controller
   {
     $client = new \GuzzleHttp\Client();
     $request = $client->get('https://api-web.nhle.com/v1/score/' . $date);
-    $dailyGames = json_decode($request->getBody()->getContents(), true);
-    return $dailyGames;
+    $gamesByDate = json_decode($request->getBody()->getContents(), true);
+    return $gamesByDate;
   }
 
   public static function getWeeklyGames($date)

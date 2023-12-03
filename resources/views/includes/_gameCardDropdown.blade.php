@@ -95,9 +95,9 @@
 @endif
 {{-- critical time games dropdown menu --}}
 @if ($game['gameState'] === 'CRIT' || $game['gameState'] === 'LIVE')
-  {{-- @php
-    $gameData = App\Http\Controllers\ApiController::getGameMatchup($game['id']);
-  @endphp --}}
+  @php
+    $gameData = App\Http\Controllers\ApiController::getBoxscores($game['id']);
+  @endphp
   <div class="game-dropdown-button">
     <i class="fa-solid fa-caret-up" aria-hidden="true"></i>
   </div>
@@ -112,7 +112,7 @@
             width="75" height="75">
         </div>
         <div>
-          @if ($game['periodDescriptor']['number'] === 1)
+          {{-- @if ($game['periodDescriptor']['number'] === 1)
             <h3>{{ $game['periodDescriptor']['number'] }}st</h3>
           @endif
           @if ($game['periodDescriptor']['number'] === 2)
@@ -126,7 +126,7 @@
           @endif
           @if ($game['periodDescriptor']['number'] >= 5)
             <h3>SO</h3>
-          @endif
+          @endif --}}
           <span>00:00</span>
         </div>
         <div class="game-dropdown-team-logo">
