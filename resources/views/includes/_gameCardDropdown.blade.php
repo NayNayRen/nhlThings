@@ -113,21 +113,23 @@
             width="75" height="75">
         </div>
         <div>
-          @if ($gameClock['periodDescriptor']['number'] === 1)
-            <h3>{{ $game['periodDescriptor']['number'] }}st</h3>
-          @endif
-          @if ($game['periodDescriptor']['number'] === 2)
-            <h3>{{ $game['periodDescriptor']['number'] }}nd</h3>
-          @endif
-          @if ($game['periodDescriptor']['number'] === 3)
-            <h3>{{ $game['periodDescriptor']['number'] }}rd</h3>
-          @endif
-          @if ($game['periodDescriptor']['number'] === 4)
-            <h3>OT</h3>
-          @endif
-          @if ($game['periodDescriptor']['number'] >= 5)
-            <h3>SO</h3>
-          @endif
+          @foreach ($gameData['summary']['linescore']['byPeriod'] as $period)
+            @if ($period['period'] >= 5)
+              <h3>SO</h3>
+            @endif
+            @if ($period['period'] === 4)
+              <h3>OT</h3>
+            @endif
+            @if ($period['period'] === 3)
+              <h3>3rd</h3>
+            @endif
+            @if ($period['period'] === 2)
+              <h3>2nd</h3>
+            @endif
+            @if ($period['period'] === 1)
+              <h3>1st</h3>
+            @endif
+          @endforeach
           <span>{{ $gameClock['clock']['timeRemaining'] }}</span>
         </div>
         <div class="game-dropdown-team-logo">
