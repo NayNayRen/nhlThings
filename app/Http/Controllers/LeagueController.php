@@ -19,14 +19,12 @@ class LeagueController extends Controller
     $allTeams = ApiController::getAllTeams();
     $weeklyGames = ApiController::getWeeklyGames('now');
     $sortedTeamsByName = collect($allTeams)->sortBy('teamName');
-    // $dailyGames[] = ApiController::getDailyGames('now');
     for ($i = 0; $i < count($weeklyGames); $i++) {
       if ($weeklyGames[$i]['date'] === $today->toDateString()) {
         $dailyGames[] = $weeklyGames[$i]['games'];
       }
     }
     if ($selectedDate) {
-      // $selectedGames[] = ApiController::getDailyGames($selectedDate);
       for ($i = 0; $i < count($weeklyGames); $i++) {
         if ($weeklyGames[$i]['date'] === $selectedDate) {
           $selectedGames[] = $weeklyGames[$i]['games'];

@@ -13,10 +13,6 @@ class TeamController extends Controller
     $team = [];
     $teamSchedule = [];
     $teamRoster = [];
-    $upcomingGames = [];
-    $upcomingDates = [];
-    $finishedGames = [];
-    $finishedDates = [];
     $today = Carbon::today();
     $currentDate = Carbon::create($today)->toFormattedDateString();
     $allTeams = ApiController::getAllTeams();
@@ -28,27 +24,7 @@ class TeamController extends Controller
         $teamRoster[] = ApiController::getTeamRoster($teamAbbr);
       }
     }
-    // for ($i = 0; $i < count($teamSchedule[0][0]); $i++) {
-    //   $upcomingDates[] = ApiController::getDailyGames($teamSchedule[0][0][$i]['gameDate']);
-    // }
-    // for ($i = 0; $i < count($upcomingDates); $i++) {
-    //   for ($x = 0; $x < count($upcomingDates[$i]['games']); $x++) {
-    //     if ($upcomingDates[$i]['games'][$x]['awayTeam']['abbrev'] === $teamAbbr || $upcomingDates[$i]['games'][$x]['homeTeam']['abbrev'] === $teamAbbr) {
-    //       $upcomingGames[] = $upcomingDates[$i]['games'][$x];
-    //     }
-    //   }
-    // }
-    // for ($i = 0; $i < count($teamSchedule[0][1]); $i++) {
-    //   $finishedDates[] = ApiController::getDailyGames($teamSchedule[0][1][$i]['gameDate']);
-    // }
-    // for ($i = 0; $i < count($finishedDates); $i++) {
-    //   for ($x = 0; $x < count($finishedDates[$i]['games']); $x++) {
-    //     if ($finishedDates[$i]['games'][$x]['awayTeam']['abbrev'] === $teamAbbr || $finishedDates[$i]['games'][$x]['homeTeam']['abbrev'] === $teamAbbr) {
-    //       $finishedGames[] = $finishedDates[$i]['games'][$x];
-    //     }
-    //   }
-    // }
-    // dd($teamSchedule[0][1]);
+    // dd($teamSchedule[0][0]);
     return view('team', [
       'currentDate' => $currentDate,
       'favIcon' => $team[0]['teamLogo'],

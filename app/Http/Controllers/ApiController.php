@@ -9,7 +9,7 @@ class ApiController extends Controller
 {
   // 2023020327
   // 2023-11-26
-  public static function getDailyGames($date)
+  public static function getGamesByDate($date)
   {
     $client = new \GuzzleHttp\Client();
     $request = $client->get('https://api-web.nhle.com/v1/score/' . $date);
@@ -90,7 +90,7 @@ class ApiController extends Controller
   public static function getTeamRoster($team)
   {
     $client = new \GuzzleHttp\Client();
-    $request = $client->get('https://api-web.nhle.com/v1/club-stats/' . $team  . '/now');
+    $request = $client->get('https://api-web.nhle.com/v1/roster/' . $team  . '/current');
     $teamStats = json_decode($request->getBody()->getContents(), true);
     return $teamStats;
   }

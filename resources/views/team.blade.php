@@ -78,6 +78,7 @@
           <ul class="league-regular-season owl-carousel owl-theme finished-games">
             @foreach ($finishedGames as $key => $game)
               @php
+                $gameData = App\Http\Controllers\ApiController::getBoxscores($game['id']);
                 $gameDateTime = Carbon\Carbon::create($game['startTimeUTC'])->tz('America/New_York');
                 $formattedGameDate = $gameDateTime->format('D M j, Y');
                 $formattedGameTime = $gameDateTime->format('h:i A');

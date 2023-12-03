@@ -78,12 +78,12 @@
                     <p>Goalies</p>
                   </li>
                 </ul>
-                @foreach ($teamRoster['goalies'] as $goalie)
+                @foreach (collect($teamRoster['goalies'])->sortBy('sweaterNumber') as $goalie)
                   <li>
-                    <a href="{{ route('players.player', $goalie['playerId']) }}" target="_blank">
+                    <a href="{{ route('players.player', $goalie['id']) }}" target="_blank">
                       <p class="roster-dropdown-name">{{ $goalie['firstName']['default'] }}
                         {{ $goalie['lastName']['default'] }}</p>
-                      <span class='roster-dropdown-position'>G</span>
+                      <span class='roster-dropdown-position'>{{ $goalie['sweaterNumber'] }}</span>
                       <div class="roster-dropdown-photo-container">
                         <img src={{ $goalie['headshot'] }}
                           alt="{{ $goalie['firstName']['default'] }} {{ $goalie['lastName']['default'] }}"
@@ -92,29 +92,47 @@
                     </a>
                   </li>
                 @endforeach
-                {{-- SKATERS --}}
+                {{-- FORWARDS --}}
                 <ul class="roster-dropdown-player-type">
                   <li>
-                    <p>Skaters</p>
+                    <p>Forwards</p>
                   </li>
                 </ul>
-                @foreach ($teamRoster['skaters'] as $skater)
+                @foreach (collect($teamRoster['forwards'])->sortBy('sweaterNumber') as $forward)
                   <li>
-                    <a href="{{ route('players.player', $skater['playerId']) }}" target="_blank">
-                      <p class="roster-dropdown-name">{{ $skater['firstName']['default'] }}
-                        {{ $skater['lastName']['default'] }}</p>
-                      <span class='roster-dropdown-position'>{{ $skater['positionCode'] }}</span>
+                    <a href="{{ route('players.player', $forward['id']) }}" target="_blank">
+                      <p class="roster-dropdown-name">{{ $forward['firstName']['default'] }}
+                        {{ $forward['lastName']['default'] }}</p>
+                      <span class='roster-dropdown-position'>{{ $forward['sweaterNumber'] }}</span>
                       <div class="roster-dropdown-photo-container">
-                        <img src={{ $skater['headshot'] }}
-                          alt="{{ $skater['firstName']['default'] }} {{ $skater['lastName']['default'] }}"
+                        <img src={{ $forward['headshot'] }}
+                          alt="{{ $forward['firstName']['default'] }} {{ $forward['lastName']['default'] }}"
                           width="75" height="75">
                       </div>
-
+                    </a>
+                  </li>
+                @endforeach
+                {{-- DEFENSE --}}
+                <ul class="roster-dropdown-player-type">
+                  <li>
+                    <p>Defense</p>
+                  </li>
+                </ul>
+                @foreach (collect($teamRoster['defensemen'])->sortBy('sweaterNumber') as $defensemen)
+                  <li>
+                    <a href="{{ route('players.player', $defensemen['id']) }}" target="_blank">
+                      <p class="roster-dropdown-name">{{ $defensemen['firstName']['default'] }}
+                        {{ $defensemen['lastName']['default'] }}</p>
+                      <span class='roster-dropdown-position'>{{ $defensemen['sweaterNumber'] }}</span>
+                      <div class="roster-dropdown-photo-container">
+                        <img src={{ $defensemen['headshot'] }}
+                          alt="{{ $defensemen['firstName']['default'] }} {{ $defensemen['lastName']['default'] }}"
+                          width="75" height="75">
+                      </div>
                     </a>
                   </li>
                 @endforeach
               @endif
-
             </ul>
           </div>
           {{-- <div class="team-summary-dropdown-container">
