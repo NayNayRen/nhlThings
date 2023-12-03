@@ -103,7 +103,7 @@ function loadLeagueScript() {
   // gameState.parentElement is the entire game card
   checkGameState.forEach((gameState) => {
     // console.log(gameState.parentElement.childNodes);
-    if (gameState.innerText === 'OFF' || gameState.innerText === 'FINAL' || gameState.innerText === 'CRIT' || gameState.innerText === 'LIVE') {
+    if (gameState.innerText === 'OFF' || gameState.innerText === 'FINAL' || gameState.innerText === 'CRIT' || gameState.innerText === 'LIVE' || gameState.innerText === 'PRE') {
       gameState.parentElement.childNodes[3].classList.add('game-dropdown-toggle');
       gameState.parentElement.childNodes[1].childNodes[1].classList.add('rotate');
       // colors away team winner

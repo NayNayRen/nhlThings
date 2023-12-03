@@ -113,7 +113,7 @@
             width="75" height="75">
         </div>
         <div>
-          {{-- @if ($game['periodDescriptor']['number'] === 1)
+          @if ($gameClock['periodDescriptor']['number'] === 1)
             <h3>{{ $game['periodDescriptor']['number'] }}st</h3>
           @endif
           @if ($game['periodDescriptor']['number'] === 2)
@@ -127,7 +127,7 @@
           @endif
           @if ($game['periodDescriptor']['number'] >= 5)
             <h3>SO</h3>
-          @endif --}}
+          @endif
           <span>{{ $gameClock['clock']['timeRemaining'] }}</span>
         </div>
         <div class="game-dropdown-team-logo">
@@ -154,10 +154,10 @@
               <span>{{ $goals['period'] }}rd</span>
             @endif
             @if ($goals['period'] === 4)
-              <p>OT</p>
+              <span>OT</span>
             @endif
             @if ($goals['period'] >= 5)
-              <p>SO</p>
+              <span>SO</span>
             @endif
             <p>{{ $goals['home'] }}</p>
           </div>
@@ -188,7 +188,7 @@
             @endif
             @if ($shots['period'] === 4)
               <p>{{ $shots['away'] }}</p>
-              <p>OT</p>
+              <span>OT</span>
               <p>{{ $shots['home'] }}</p>
             @endif
             @if ($shots['period'] >= 5)
@@ -205,9 +205,9 @@
 @endif
 {{-- pregame dropdown menu --}}
 @if ($game['gameState'] === 'PRE')
-  {{-- @php
+  @php
     $gameData = App\Http\Controllers\ApiController::getGameMatchup($game['id']);
-  @endphp --}}
+  @endphp
   <div class="game-dropdown-button">
     <i class="fa-solid fa-caret-up" aria-hidden="true"></i>
   </div>
@@ -222,8 +222,8 @@
             width="75" height="75">
         </div>
         <div>
-          <h3>SOON...</h3>
-          <span>00:00</span>
+          <h3>SOON</h3>
+          <span>Stats Leaders</span>
         </div>
         <div class="game-dropdown-team-logo">
           <img src={{ $game['homeTeam']['logo'] }} alt='{{ $game['homeTeam']['placeName']['default'] }} Logo'
@@ -232,9 +232,38 @@
       </li>
       <li class='game-dropdown-goals'>
         <div>
-          <p>Coming...</p>
+          <p>{{ $gameData['matchup']['teamLeadersL5'][0]['awayLeader']['value'] }}</p>
+          <h3>Points</h3>
+          <p>{{ $gameData['matchup']['teamLeadersL5'][0]['homeLeader']['value'] }}</p>
+        </div>
+        <div>
+          <p>{{ $gameData['matchup']['teamLeadersL5'][0]['awayLeader']['name']['default'] }}</p>
+          <span></span>
+          <p>{{ $gameData['matchup']['teamLeadersL5'][0]['homeLeader']['name']['default'] }}</p>
+        </div>
+      </li>
+      <li class='game-dropdown-goals'>
+        <div>
+          <p>{{ $gameData['matchup']['teamLeadersL5'][1]['awayLeader']['value'] }}</p>
           <h3>Goals</h3>
-          <p>Coming...</p>
+          <p>{{ $gameData['matchup']['teamLeadersL5'][1]['homeLeader']['value'] }}</p>
+        </div>
+        <div>
+          <p>{{ $gameData['matchup']['teamLeadersL5'][1]['awayLeader']['name']['default'] }}</p>
+          <span></span>
+          <p>{{ $gameData['matchup']['teamLeadersL5'][1]['homeLeader']['name']['default'] }}</p>
+        </div>
+      </li>
+      <li class='game-dropdown-goals'>
+        <div>
+          <p>{{ $gameData['matchup']['teamLeadersL5'][2]['awayLeader']['value'] }}</p>
+          <h3>Assists</h3>
+          <p>{{ $gameData['matchup']['teamLeadersL5'][2]['homeLeader']['value'] }}</p>
+        </div>
+        <div>
+          <p>{{ $gameData['matchup']['teamLeadersL5'][2]['awayLeader']['name']['default'] }}</p>
+          <span></span>
+          <p>{{ $gameData['matchup']['teamLeadersL5'][2]['homeLeader']['name']['default'] }}</p>
         </div>
       </li>
       <a href="{{ route('games.game', $game['id']) }}" class="game-stats-button" target="_blank">
