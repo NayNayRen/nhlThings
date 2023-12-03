@@ -551,6 +551,182 @@ header h1 {
     opacity: 1;
 }
 
+.league-standings-heading-container {
+    -ms-flex-align: start;
+    -ms-flex-direction: column;
+    -ms-flex-pack: end;
+    -webkit-box-align: start;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-box-pack: end;
+    -webkit-box-shadow: 0 0 10px #808080;
+    align-items: flex-start;
+    background-color: #dcdcdc;
+    box-shadow: 0 0 10px #808080;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 10px 0 10px 15px;
+}
+
+.league-standings-heading-container p {
+    color: #b22222;
+    /* color: #fff; */
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.league-standings-heading-container h2 {
+    color: #000;
+    font-size: 26px;
+    text-align: left;
+}
+
+.league-standings-selection-container {
+    -ms-flex-align: start;
+    -ms-flex-direction: column;
+    -ms-flex-pack: start;
+    -ms-flex-wrap: wrap;
+    -webkit-box-align: start;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-box-pack: start;
+    align-items: flex-start;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 15px 0 15px 20px;
+    /* outline: solid 1px blue; */
+}
+
+.league-standings-selection-container p {
+    color: #b22222;
+    font-weight: bold;
+    font-size: 14px;
+    padding-left: 5px;
+    text-align: left;
+}
+
+.league-standings-table,
+.player-stats,
+.player-team-history,
+.team-stats {
+    -ms-flex-align: start;
+    -ms-flex-direction: column;
+    -ms-flex-pack: start;
+    -webkit-box-align: start;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-box-pack: start;
+    align-items: flex-start;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 5px;
+    cursor: default;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0;
+    width: 100%;
+}
+
+.league-standings-table h3:first-of-type {
+    min-width: 220px;
+}
+
+.league-standings-table li,
+.player-stats li,
+.player-team-history li,
+.team-stats li {
+    -ms-flex-align: center;
+    -ms-flex-direction: row;
+    -ms-flex-pack: start;
+    -webkit-box-align: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -webkit-box-pack: start;
+    align-items: center;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    position: relative;
+    width: 100%;
+    /* outline: solid 1px blue; */
+}
+
+.league-standings-table p,
+.player-stats p,
+.player-team-history p,
+.team-stats p {
+    border-right: 1px solid #000;
+    border-top: 1px solid #000;
+    font-size: 14px;
+    height: 100%;
+    min-width: 75px;
+    padding: 3px 2px;
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+.league-standings-table p i,
+.player-stats p i,
+.player-team-history p i,
+.team-stats p i {
+    font-size: 12px;
+}
+
+.league-standings-table p:first-of-type {
+    background-color: rgba(220, 220, 220, 0.5);
+    color: #000;
+    font-weight: bold;
+    min-width: 220px;
+    padding: 3px 5px;
+    width: auto;
+}
+
+.league-standings-table p:last-of-type,
+.player-stats p:last-of-type,
+.player-team-history p:last-of-type,
+.team-stats p:last-of-type {
+    border-right: none;
+}
+
+.league-standings-table li span,
+.player-team-history li span {
+    -webkit-transform: translateY(-50%);
+    color: #b22222;
+    font-size: 14px;
+    /* font-weight: bold; */
+    left: 6px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.league-standings-table h3,
+.player-stats h3,
+.player-team-history h3,
+.team-stats h3 {
+    background-color: #000;
+    color: #fff;
+    font-size: 14px;
+    min-width: 75px;
+    padding: 3px 2px;
+    text-align: center;
+    width: 100%;
+}
+
 .main {
     -ms-flex-align: center;
     -ms-flex-direction: column;
@@ -620,6 +796,13 @@ header h1 {
     transition: height ease;
     width: 85%;
     /* outline: solid 1px red; */
+}
+
+.main-data-container {
+    height: auto;
+    width: 100%;
+    margin: 0 auto 0 auto;
+    position: relative;
 }
 
 .navigation-links-toggle {
