@@ -89,7 +89,7 @@
             </div>
           </div>
         </div>
-
+        <span class="current-season" hidden>{{ $season }}</span>
         <!-- league stats -->
         <div class="league-data-container">
           <div class="league-standings-heading-container">

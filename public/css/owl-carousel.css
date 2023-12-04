@@ -1027,6 +1027,11 @@
     width: 100%;
     z-index: 1;
 } */
+.regular-season-container {
+    min-height: 475px;
+    /* outline: solid 1px blue; */
+}
+
 .regular-season-container h2 {
     border-bottom: solid 1px #000;
     color: #b22222;

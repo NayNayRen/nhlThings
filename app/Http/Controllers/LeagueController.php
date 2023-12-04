@@ -33,6 +33,7 @@ class LeagueController extends Controller
       return view('index', [
         'favIcon' => '../img/nhl-shield.png',
         'title' => 'NHL Teams, Stats & Things',
+        'season' => $dailyGames[0][0]['season'],
         'currentDate' => Carbon::parse($selectedDate)->toFormattedDateString(),
         'dailyGames' => $selectedGames[0],
         'weeklyGames' => $weeklyGames,
@@ -45,6 +46,7 @@ class LeagueController extends Controller
       return view('index', [
         'favIcon' => '../img/nhl-shield.png',
         'title' => 'NHL Teams, Stats & Things',
+        'season' => $dailyGames[0][0]['season'],
         'currentDate' => $currentDate,
         'dailyGames' => $dailyGames[0],
         'weeklyGames' => $weeklyGames,

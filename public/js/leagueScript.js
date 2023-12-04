@@ -2,6 +2,21 @@ function loadLeagueScript() {
   const leagueGameDatesDropdownContainer = document.querySelector('.league-game-dates-dropdown-container');
   const leagueGameDatesDropdownButton = document.querySelector('.league-game-dates-dropdown-button');
   const leagueGameDatesDropdownList = document.querySelector('.league-game-dates-dropdown-list');
+  const season = document.querySelector('.current-season').innerText;
+  const firstHalfSeason = season.slice(0, 4);
+  const secondHalfSeason = season.slice(4);
+
+  // selection buttons
+  const leagueButton = document.querySelector('.league-button');
+  const eastButton = document.querySelector('.east-button');
+  const westButton = document.querySelector('.west-button');
+  const metroButton = document.querySelector('.metro-button');
+  const atlanticButton = document.querySelector('.atlantic-button');
+  const centralButton = document.querySelector('.central-button');
+  const pacificButton = document.querySelector('.pacific-button');
+  const leagueSelectionButtons = document.querySelectorAll('div.league-standings-selection-container button');
+  const leagueStandingsHeadingContainer = document.querySelector('.league-standings-heading-container');
+
   const $leagueCarousel = $('.league-carousel');
   let checkGameState = document.querySelectorAll('.game-state');
 
@@ -128,6 +143,83 @@ function loadLeagueScript() {
       }
     }
   });
+
+  leagueSelectionButtons.forEach((button) => {
+    leagueButton.addEventListener('click', () => {
+      leagueStandingsHeadingContainer.innerHTML = `
+        <h2>League Standings</h2>
+        <p>${firstHalfSeason}/${secondHalfSeason}</p>
+      `;
+      if (button.classList.contains('active-standings-selection')) {
+        button.classList.remove('active-standings-selection');
+      }
+      leagueButton.classList.add('active-standings-selection');
+    });
+    eastButton.addEventListener('click', () => {
+      leagueStandingsHeadingContainer.innerHTML = `
+        <h2>Eastern Standings</h2>
+        <p>${firstHalfSeason}/${secondHalfSeason}</p>
+        `;
+      if (button.classList.contains('active-standings-selection')) {
+        button.classList.remove('active-standings-selection');
+      }
+      eastButton.classList.add('active-standings-selection');
+    });
+    westButton.addEventListener('click', () => {
+      leagueStandingsHeadingContainer.innerHTML = `
+        <h2>Western Standings</h2>
+        <p>${firstHalfSeason}/${secondHalfSeason}</p>
+      `;
+      if (button.classList.contains('active-standings-selection')) {
+        button.classList.remove('active-standings-selection');
+      }
+      westButton.classList.add('active-standings-selection');
+    });
+    metroButton.addEventListener('click', () => {
+      leagueStandingsHeadingContainer.innerHTML = `
+        <h2>Metro Standings</h2>
+        <p>${firstHalfSeason}/${secondHalfSeason}</p>
+      `;
+      if (button.classList.contains('active-standings-selection')) {
+        button.classList.remove('active-standings-selection');
+      }
+      metroButton.classList.add('active-standings-selection');
+    });
+    atlanticButton.addEventListener('click', () => {
+      leagueStandingsHeadingContainer.innerHTML = `
+        <h2>Atlantic Standings</h2>
+        <p>${firstHalfSeason}/${secondHalfSeason}</p>
+      `;
+      if (button.classList.contains('active-standings-selection')) {
+        button.classList.remove('active-standings-selection');
+      }
+      atlanticButton.classList.add('active-standings-selection');
+    });
+    centralButton.addEventListener('click', () => {
+      leagueStandingsHeadingContainer.innerHTML = `
+        <h2>Central Standings</h2>
+        <p>${firstHalfSeason}/${secondHalfSeason}</p>
+      `;
+      if (button.classList.contains('active-standings-selection')) {
+        button.classList.remove('active-standings-selection');
+      }
+      centralButton.classList.add('active-standings-selection');
+    });
+    pacificButton.addEventListener('click', () => {
+      leagueStandingsHeadingContainer.innerHTML = `
+        <h2>Pacific Standings</h2>
+        <p>${firstHalfSeason}/${secondHalfSeason}</p>
+      `;
+      if (button.classList.contains('active-standings-selection')) {
+        button.classList.remove('active-standings-selection');
+      }
+      pacificButton.classList.add('active-standings-selection');
+    });
+  });
+  leagueStandingsHeadingContainer.innerHTML = `
+        <h2>League Standings</h2>
+        <p>${firstHalfSeason}/${secondHalfSeason}</p>
+      `;
   // each games dropdown button
   $(document).on('click', '.game-dropdown-button', function () {
     // console.log($(this)[0].parentElement.childNodes);
