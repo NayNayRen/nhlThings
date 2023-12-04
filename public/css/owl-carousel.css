@@ -671,12 +671,25 @@
     width: 85%;
 }
 
-.game-winning-goalie h3,
+.game-winning-goalie h3 {
+    border-bottom: solid 1px #1e90ff;
+    font-size: 16px;
+    margin: 10px auto 0 auto;
+    padding: 0 10px;
+    text-align: center;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    /* outline: solid 1px blue; */
+}
+
 .game-winning-goalie p {
     font-size: 16px;
+    margin: auto;
     text-align: center;
-    width: 100%;
-    /* outline: solid 1px blue; */
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
 }
 
 .home-game-indicator {

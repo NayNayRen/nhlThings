@@ -34,6 +34,16 @@
         <p>{{ $game['winningGoalie']['firstInitial']['default'] }} {{ $game['winningGoalie']['lastName']['default'] }}
         </p>
       </li>
+      <li class="game-winning-goalie">
+        <h3>Winning Goal Scorer</h3>
+        @if (array_key_exists('winningGoalScorer', $game))
+          <p>{{ $game['winningGoalScorer']['firstInitial']['default'] }}
+            {{ $game['winningGoalScorer']['lastName']['default'] }}
+          </p>
+        @else
+          <p>No Data</p>
+        @endif
+      </li>
       <a href="{{ route('games.game', $game['id']) }}" class="game-stats-button" target="_blank">
         Final Stats <i class='fa fa-arrow-right' aria-hidden='true'></i>
       </a>
@@ -60,6 +70,19 @@
             width="75" height="75">
         </div>
         <div>
+          @foreach ($gameData['summary']['linescore']['byPeriod'] as $period)
+            @if ($period['period'] >= 5)
+              <h3 class="game-period">SO</h3>
+            @elseif ($period['period'] === 4)
+              <h3 class="game-period">OT</h3>
+            @elseif ($period['period'] === 3)
+              <h3 class="game-period">3rd</h3>
+            @elseif ($period['period'] === 2)
+              <h3 class="game-period">2nd</h3>
+            @elseif ($period['period'] === 1)
+              <h3 class="game-period">1st</h3>
+            @endif
+          @endforeach
           {{-- @if ($gameData['summary']['linescore']['byPeriod'][4]['period'] >= 5)
             <h3>SO</h3>
           @elseif ($gameData['summary']['linescore']['byPeriod'][3]['period'] === 4)
@@ -165,7 +188,7 @@
             width="75" height="75">
         </div>
         <div>
-          <h3>SOON</h3>
+          <h3>{{ $formattedGameTime }} EST</h3>
           <span>Stats Leaders</span>
         </div>
         <div class="game-dropdown-team-logo">

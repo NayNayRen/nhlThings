@@ -64,18 +64,6 @@
               </li>
             @endforeach
           </ul>
-          {{-- <p>{{ count($weeklyGames['gameWeek']) }}</p> --}}
-          {{-- @foreach ($weeklyGames as $weeklyGame)
-                <h3>Date : {{ $weeklyGame['dayAbbrev'] }} {{ $weeklyGame['date'] }}</h3>
-                @if (count($weeklyGame['games']) < 1)
-                    <span>No games today...</span>
-                @else
-                    @foreach ($weeklyGame['games'] as $game)
-                        <p>Venue :</p>
-                        <span>{{ $game['venue']['default'] }}</span><br>
-                    @endforeach
-                @endif
-            @endforeach --}}
         </div>
       @endif
       <!-- container with league stats -->
