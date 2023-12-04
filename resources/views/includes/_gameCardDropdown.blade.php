@@ -1,8 +1,5 @@
 {{-- finished games dropdown menu --}}
 @if ($game['gameState'] === 'OFF' || $game['gameState'] === 'FINAL')
-  @php
-    $gameData = App\Http\Controllers\ApiController::getGameMatchup($game['id']);
-  @endphp
   <div class="game-dropdown-button">
     <i class="fa-solid fa-caret-up" aria-hidden="true"></i>
   </div>
@@ -31,61 +28,11 @@
           <h3>Goals</h3>
           <p>{{ $game['homeTeam']['score'] }}</p>
         </div>
-        @foreach ($gameData['summary']['linescore']['byPeriod'] as $goals)
-          <div>
-            <p>{{ $goals['away'] }}</p>
-            @if ($goals['period'] === 1)
-              <span>{{ $goals['period'] }}st</span>
-            @endif
-            @if ($goals['period'] === 2)
-              <span>{{ $goals['period'] }}nd</span>
-            @endif
-            @if ($goals['period'] === 3)
-              <span>{{ $goals['period'] }}rd</span>
-            @endif
-            @if ($goals['period'] === 4)
-              <p>OT</p>
-            @endif
-            @if ($goals['period'] >= 5)
-              <p>SO</p>
-            @endif
-            <p>{{ $goals['home'] }}</p>
-          </div>
-        @endforeach
       </li>
-      <li class='game-dropdown-shots'>
-        <div>
-          <p>{{ $gameData['awayTeam']['sog'] }}</p>
-          <h3>Shots</h3>
-          <p>{{ $gameData['homeTeam']['sog'] }}</p>
-        </div>
-        @foreach ($gameData['summary']['shotsByPeriod'] as $shots)
-          <div>
-            @if ($shots['period'] === 1)
-              <p>{{ $shots['away'] }}</p>
-              <span>{{ $shots['period'] }}st</span>
-              <p>{{ $shots['home'] }}</p>
-            @endif
-            @if ($shots['period'] === 2)
-              <p>{{ $shots['away'] }}</p>
-              <span>{{ $shots['period'] }}nd</span>
-              <p>{{ $shots['home'] }}</p>
-            @endif
-            @if ($shots['period'] === 3)
-              <p>{{ $shots['away'] }}</p>
-              <span>{{ $shots['period'] }}rd</span>
-              <p>{{ $shots['home'] }}</p>
-            @endif
-            @if ($shots['period'] === 4)
-              <p>{{ $shots['away'] }}</p>
-              <p>OT</p>
-              <p>{{ $shots['home'] }}</p>
-            @endif
-            @if ($shots['period'] >= 5)
-              <p></p>
-            @endif
-          </div>
-        @endforeach
+      <li class="game-winning-goalie">
+        <h3>Winning Goalie</h3>
+        <p>{{ $game['winningGoalie']['firstInitial']['default'] }} {{ $game['winningGoalie']['lastName']['default'] }}
+        </p>
       </li>
       <a href="{{ route('games.game', $game['id']) }}" class="game-stats-button" target="_blank">
         Final Stats <i class='fa fa-arrow-right' aria-hidden='true'></i>
@@ -93,7 +40,7 @@
     </ul>
   </div>
 @endif
-{{-- critical time games dropdown menu --}}
+{{-- critical and live time games dropdown menu --}}
 @if ($game['gameState'] === 'CRIT' || $game['gameState'] === 'LIVE')
   @php
     $gameClock = App\Http\Controllers\ApiController::getBoxscores($game['id']);
@@ -113,23 +60,17 @@
             width="75" height="75">
         </div>
         <div>
-          @foreach ($gameData['summary']['linescore']['byPeriod'] as $period)
-            @if ($period['period'] >= 5)
-              <h3>SO</h3>
-            @endif
-            @if ($period['period'] === 4)
-              <h3>OT</h3>
-            @endif
-            @if ($period['period'] === 3)
-              <h3>3rd</h3>
-            @endif
-            @if ($period['period'] === 2)
-              <h3>2nd</h3>
-            @endif
-            @if ($period['period'] === 1)
-              <h3>1st</h3>
-            @endif
-          @endforeach
+          {{-- @if ($gameData['summary']['linescore']['byPeriod'][4]['period'] >= 5)
+            <h3>SO</h3>
+          @elseif ($gameData['summary']['linescore']['byPeriod'][3]['period'] === 4)
+            <h3>OT</h3>
+          @elseif ($gameData['summary']['linescore']['byPeriod'][2]['period'] === 3)
+            <h3>3rd</h3>
+          @elseif ($gameData['summary']['linescore']['byPeriod'][1]['period'] === 2)
+            <h3>2nd</h3>
+          @elseif ($gameData['summary']['linescore']['byPeriod'][0]['period'] === 1)
+            <h3>1st</h3>
+          @endif --}}
           <span>{{ $gameClock['clock']['timeRemaining'] }}</span>
         </div>
         <div class="game-dropdown-team-logo">

@@ -671,6 +671,14 @@
     width: 85%;
 }
 
+.game-winning-goalie h3,
+.game-winning-goalie p {
+    font-size: 16px;
+    text-align: center;
+    width: 100%;
+    /* outline: solid 1px blue; */
+}
+
 .home-game-indicator {
     background-color: #1e90ff;
     border-radius: 50%;
