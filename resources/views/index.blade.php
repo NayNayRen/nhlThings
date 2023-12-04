@@ -93,7 +93,13 @@
         <!-- league stats -->
         <div class="league-data-container">
           <div class="league-standings-heading-container">
-            <h2>League Standings</h2>
+            <div>
+              <h2>League Standings</h2>
+              <p>2023/2024</p>
+            </div>
+            <div>
+              <img src={{ asset('img/nhl-logo.png') }} alt="NHL Logo" width="100" height="100">
+            </div>
           </div>
           <div class="horizontal-scrolling-container">
             <ul class="league-standings-table">

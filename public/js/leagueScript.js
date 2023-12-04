@@ -147,8 +147,13 @@ function loadLeagueScript() {
   leagueSelectionButtons.forEach((button) => {
     leagueButton.addEventListener('click', () => {
       leagueStandingsHeadingContainer.innerHTML = `
+      <div>
         <h2>League Standings</h2>
         <p>${firstHalfSeason}/${secondHalfSeason}</p>
+      </div>
+      <div>
+        <img src='../img/nhl-logo.webp' alt="NHL Logo" width="100" height="100">
+      </div>
       `;
       if (button.classList.contains('active-standings-selection')) {
         button.classList.remove('active-standings-selection');
@@ -157,9 +162,14 @@ function loadLeagueScript() {
     });
     eastButton.addEventListener('click', () => {
       leagueStandingsHeadingContainer.innerHTML = `
-        <h2>Eastern Standings</h2>
-        <p>${firstHalfSeason}/${secondHalfSeason}</p>
-        `;
+        <div>
+          <h2>Eastern Standings</h2>
+          <p>${firstHalfSeason}/${secondHalfSeason}</p>
+        </div>
+        <div>
+          <img src='../img/eastern-logo.webp' alt="Eastern Conf. Logo" width="100" height="100">
+        </div>
+      `;
       if (button.classList.contains('active-standings-selection')) {
         button.classList.remove('active-standings-selection');
       }
@@ -167,8 +177,13 @@ function loadLeagueScript() {
     });
     westButton.addEventListener('click', () => {
       leagueStandingsHeadingContainer.innerHTML = `
-        <h2>Western Standings</h2>
-        <p>${firstHalfSeason}/${secondHalfSeason}</p>
+        <div>
+          <h2>Western Standings</h2>
+          <p>${firstHalfSeason}/${secondHalfSeason}</p>
+        </div>
+        <div>
+          <img src='../img/western-logo.webp' alt="Western Conf. Logo" width="100" height="100">
+        </div>
       `;
       if (button.classList.contains('active-standings-selection')) {
         button.classList.remove('active-standings-selection');
@@ -177,8 +192,13 @@ function loadLeagueScript() {
     });
     metroButton.addEventListener('click', () => {
       leagueStandingsHeadingContainer.innerHTML = `
-        <h2>Metro Standings</h2>
-        <p>${firstHalfSeason}/${secondHalfSeason}</p>
+        <div>
+          <h2>Metro Standings</h2>
+          <p>${firstHalfSeason}/${secondHalfSeason}</p>
+        </div>
+        <div>
+          <img src='../img/metro-logo.webp' alt="Metro Dev. Logo" width="100" height="100">
+        </div>
       `;
       if (button.classList.contains('active-standings-selection')) {
         button.classList.remove('active-standings-selection');
@@ -187,8 +207,13 @@ function loadLeagueScript() {
     });
     atlanticButton.addEventListener('click', () => {
       leagueStandingsHeadingContainer.innerHTML = `
-        <h2>Atlantic Standings</h2>
-        <p>${firstHalfSeason}/${secondHalfSeason}</p>
+        <div>
+          <h2>Atlantic Standings</h2>
+          <p>${firstHalfSeason}/${secondHalfSeason}</p>
+        </div>
+        <div>
+          <img src='../img/atlantic-logo.webp' alt="Atlantic Dev. Logo" width="100" height="100">
+        </div>
       `;
       if (button.classList.contains('active-standings-selection')) {
         button.classList.remove('active-standings-selection');
@@ -197,8 +222,13 @@ function loadLeagueScript() {
     });
     centralButton.addEventListener('click', () => {
       leagueStandingsHeadingContainer.innerHTML = `
-        <h2>Central Standings</h2>
-        <p>${firstHalfSeason}/${secondHalfSeason}</p>
+      <div>
+      <h2>Central Standings</h2>
+      <p>${firstHalfSeason}/${secondHalfSeason}</p>
+      </div>
+      <div>
+          <img src='../img/central-logo.webp' alt="Central Dev. Logo" width="100" height="100">
+        </div>
       `;
       if (button.classList.contains('active-standings-selection')) {
         button.classList.remove('active-standings-selection');
@@ -207,8 +237,13 @@ function loadLeagueScript() {
     });
     pacificButton.addEventListener('click', () => {
       leagueStandingsHeadingContainer.innerHTML = `
-        <h2>Pacific Standings</h2>
-        <p>${firstHalfSeason}/${secondHalfSeason}</p>
+        <div>
+          <h2>Pacific Standings</h2>
+          <p>${firstHalfSeason}/${secondHalfSeason}</p>
+        </div>
+        <div>
+          <img src='../img/pacific-logo.webp' alt="Pacific Dev. Logo" width="100" height="100">
+        </div>
       `;
       if (button.classList.contains('active-standings-selection')) {
         button.classList.remove('active-standings-selection');
@@ -217,9 +252,14 @@ function loadLeagueScript() {
     });
   });
   leagueStandingsHeadingContainer.innerHTML = `
-        <h2>League Standings</h2>
-        <p>${firstHalfSeason}/${secondHalfSeason}</p>
-      `;
+    <div>
+      <h2>League Standings</h2>
+      <p>${firstHalfSeason}/${secondHalfSeason}</p>
+    </div>
+    <div>
+      <img src='../img/nhl-logo.webp' alt="NHL Logo" width="100" height="100">
+    </div>
+  `;
   // each games dropdown button
   $(document).on('click', '.game-dropdown-button', function () {
     // console.log($(this)[0].parentElement.childNodes);

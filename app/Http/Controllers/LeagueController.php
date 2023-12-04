@@ -13,6 +13,12 @@ class LeagueController extends Controller
     $dailyGames = [];
     $selectedGames = [];
     $teamRoster = [];
+    $east = [];
+    $west = [];
+    $metro = [];
+    $atlantic = [];
+    $central = [];
+    $pacific = [];
     $selectedDate = $request->input('date');
     $today = Carbon::today();
     $currentDate = Carbon::create($today)->toFormattedDateString();

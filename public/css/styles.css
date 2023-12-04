@@ -553,23 +553,52 @@ header h1 {
 }
 
 .league-standings-heading-container {
-    -ms-flex-align: start;
-    -ms-flex-direction: column;
-    -ms-flex-pack: end;
-    -webkit-box-align: start;
+    -ms-flex-align: center;
+    -ms-flex-direction: row;
+    -ms-flex-pack: start;
+    -webkit-box-align: center;
     -webkit-box-direction: normal;
-    -webkit-box-orient: vertical;
-    -webkit-box-pack: end;
+    -webkit-box-orient: horizontal;
+    -webkit-box-pack: start;
     -webkit-box-shadow: 0 0 10px #808080;
-    align-items: flex-start;
+    align-items: center;
     background-color: #dcdcdc;
     box-shadow: 0 0 10px #808080;
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    flex-direction: row;
+    justify-content: flex-start;
+    min-height: 125px;
     padding: 10px 0 10px 15px;
+}
+
+.league-standings-heading-container div:first-of-type {
+    -ms-flex-align: start;
+    -ms-flex-direction: column;
+    -ms-flex-pack: start;
+    -webkit-box-align: start;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-box-pack: start;
+    align-items: flex-start;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* outline: solid 1px blue; */
+}
+
+.league-standings-heading-container div:last-of-type {
+    height: 100%;
+    margin-left: 25px;
+    width: 100px;
+}
+
+.league-standings-heading-container div:last-of-type img {
+    height: auto;
+    width: 100%;
 }
 
 .league-standings-heading-container p {
@@ -1310,6 +1339,19 @@ header h1 {
         font-size: 24px;
     }
 
+    .league-standings-heading-container {
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        min-height: 110px;
+    }
+
+    .league-standings-heading-container div:last-of-type {
+        margin-left: 0;
+        margin-right: 10px;
+        width: 80px;
+    }
+
     .main {
         padding: 75px 0 0 0;
     }
@@ -1365,10 +1407,10 @@ header h1 {
         padding: 10px 0 10px 5px;
     }
 
-    .league-standings-heading-container h2,
+    /* .league-standings-heading-container h2,
     .team-stats-season-container h2 {
-        font-size: 18px;
-    }
+        font-size: 20px;
+    } */
 
     .main {
         padding: 115px 0 0 0;
