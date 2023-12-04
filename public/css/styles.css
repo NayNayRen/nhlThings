@@ -194,6 +194,7 @@
 
 .active-standings-selection {
     background-color: #1e90ff;
+    color: #fff;
 }
 
 .active-standings-selection:hover {
