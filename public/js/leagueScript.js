@@ -2,11 +2,12 @@ function loadLeagueScript() {
   const leagueGameDatesDropdownContainer = document.querySelector('.league-game-dates-dropdown-container');
   const leagueGameDatesDropdownButton = document.querySelector('.league-game-dates-dropdown-button');
   const leagueGameDatesDropdownList = document.querySelector('.league-game-dates-dropdown-list');
+  // gets and formats the season
   const season = document.querySelector('.current-season').innerText;
   const firstHalfSeason = season.slice(0, 4);
   const secondHalfSeason = season.slice(4);
-
-  // selection buttons
+  const periods = document.querySelectorAll('.game-periods');
+  // standings selection buttons
   const leagueButton = document.querySelector('.league-button');
   const eastButton = document.querySelector('.east-button');
   const westButton = document.querySelector('.west-button');
@@ -14,11 +15,13 @@ function loadLeagueScript() {
   const atlanticButton = document.querySelector('.atlantic-button');
   const centralButton = document.querySelector('.central-button');
   const pacificButton = document.querySelector('.pacific-button');
+  // used to clear the active standings selection
   const leagueSelectionButtons = document.querySelectorAll('div.league-standings-selection-container button');
+  // standings heading container
   const leagueStandingsHeadingContainer = document.querySelector('.league-standings-heading-container');
-
-  const $leagueCarousel = $('.league-carousel');
+  // used to control the dropdowns
   let checkGameState = document.querySelectorAll('.game-state');
+  const $leagueCarousel = $('.league-carousel');
 
   const carouselOptions = {
     loop: false,
@@ -143,7 +146,7 @@ function loadLeagueScript() {
       }
     }
   });
-
+  // standings buttons and heading change
   leagueSelectionButtons.forEach((button) => {
     leagueButton.addEventListener('click', () => {
       leagueStandingsHeadingContainer.innerHTML = `
@@ -260,6 +263,28 @@ function loadLeagueScript() {
       <img src='../img/nhl-logo.webp' alt="NHL Logo" width="100" height="100">
     </div>
   `;
+  // shows periods for each game
+  periods.forEach((period) => {
+    // console.log(periodz.childNodes.length);
+    if (period.childNodes.length === 15) {
+      period.childNodes[1].style.display = 'none';
+      period.childNodes[3].style.display = 'none';
+      period.childNodes[5].style.display = 'none';
+      period.childNodes[7].style.display = 'none';
+    }
+    else if (period.childNodes.length === 12) {
+      period.childNodes[1].style.display = 'none';
+      period.childNodes[3].style.display = 'none';
+      period.childNodes[5].style.display = 'none';
+    }
+    else if (period.childNodes.length === 9) {
+      period.childNodes[1].style.display = 'none';
+      period.childNodes[3].style.display = 'none';
+    }
+    else if (period.childNodes.length === 6) {
+      period.childNodes[1].style.display = 'none';
+    }
+  });
   // each games dropdown button
   $(document).on('click', '.game-dropdown-button', function () {
     // console.log($(this)[0].parentElement.childNodes);

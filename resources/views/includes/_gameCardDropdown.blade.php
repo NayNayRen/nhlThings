@@ -69,7 +69,7 @@
           <img src={{ $game['awayTeam']['logo'] }} alt='{{ $game['awayTeam']['placeName']['default'] }} Logo'
             width="75" height="75">
         </div>
-        <div>
+        <div class="game-periods">
           @foreach ($gameData['summary']['linescore']['byPeriod'] as $period)
             @if ($period['period'] >= 5)
               <h3 class="game-period">SO</h3>

@@ -2,6 +2,7 @@ function loadCarousel() {
   const $upcomingGames = $('.upcoming-games');
   const $finishedGames = $('.finished-games');
   let checkGameState = document.querySelectorAll('.game-state');
+  const periods = document.querySelectorAll('.game-periods');
 
   const carouselOptions = {
     loop: false,
@@ -110,6 +111,28 @@ function loadCarousel() {
         gameState.parentElement.childNodes[3].childNodes[1].childNodes[3].childNodes[1].childNodes[1].style.backgroundColor = '#1e90ff';
         gameState.parentElement.childNodes[3].childNodes[1].childNodes[3].childNodes[1].childNodes[1].style.color = '#fff';
       }
+    }
+  });
+  // shows periods for each game
+  periods.forEach((period) => {
+    // console.log(period.childNodes.length);
+    if (period.childNodes.length === 15) {
+      period.childNodes[1].style.display = 'none';
+      period.childNodes[3].style.display = 'none';
+      period.childNodes[5].style.display = 'none';
+      period.childNodes[7].style.display = 'none';
+    }
+    else if (period.childNodes.length === 12) {
+      period.childNodes[1].style.display = 'none';
+      period.childNodes[3].style.display = 'none';
+      period.childNodes[5].style.display = 'none';
+    }
+    else if (period.childNodes.length === 9) {
+      period.childNodes[1].style.display = 'none';
+      period.childNodes[3].style.display = 'none';
+    }
+    else if (period.childNodes.length === 6) {
+      period.childNodes[1].style.display = 'none';
     }
   });
   // each games dropdown button
