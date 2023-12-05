@@ -29,7 +29,7 @@
           <p>{{ $game['homeTeam']['score'] }}</p>
         </div>
       </li>
-      <li class="game-winning-goalie">
+      <li class="game-winning-player">
         <h3>Winning Goalie</h3>
         @if (array_key_exists('winningGoalie', $game))
           <p>{{ $game['winningGoalie']['firstInitial']['default'] }}
@@ -39,7 +39,7 @@
           <p>No Data</p>
         @endif
       </li>
-      <li class="game-winning-goalie">
+      <li class="game-winning-player">
         <h3>Winning Goal Scorer</h3>
         @if (array_key_exists('winningGoalScorer', $game))
           <p>{{ $game['winningGoalScorer']['firstInitial']['default'] }}
@@ -88,17 +88,6 @@
               <h3 class="game-period">1st</h3>
             @endif
           @endforeach
-          {{-- @if ($gameData['summary']['linescore']['byPeriod'][4]['period'] >= 5)
-            <h3>SO</h3>
-          @elseif ($gameData['summary']['linescore']['byPeriod'][3]['period'] === 4)
-            <h3>OT</h3>
-          @elseif ($gameData['summary']['linescore']['byPeriod'][2]['period'] === 3)
-            <h3>3rd</h3>
-          @elseif ($gameData['summary']['linescore']['byPeriod'][1]['period'] === 2)
-            <h3>2nd</h3>
-          @elseif ($gameData['summary']['linescore']['byPeriod'][0]['period'] === 1)
-            <h3>1st</h3>
-          @endif --}}
           <span>{{ $gameClock['clock']['timeRemaining'] }}</span>
         </div>
         <div class="game-dropdown-team-logo">

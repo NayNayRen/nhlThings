@@ -115,14 +115,14 @@ function loadCarousel() {
   });
   // shows periods for each game
   periods.forEach((period) => {
-    // console.log(period.childNodes.length);
-    if (period.childNodes.length === 15) {
+    // console.log(period.childNodes);
+    if (period.childNodes.length === 13) {
       period.childNodes[1].style.display = 'none';
       period.childNodes[3].style.display = 'none';
       period.childNodes[5].style.display = 'none';
       period.childNodes[7].style.display = 'none';
     }
-    else if (period.childNodes.length === 12) {
+    else if (period.childNodes.length === 11) {
       period.childNodes[1].style.display = 'none';
       period.childNodes[3].style.display = 'none';
       period.childNodes[5].style.display = 'none';
@@ -131,7 +131,7 @@ function loadCarousel() {
       period.childNodes[1].style.display = 'none';
       period.childNodes[3].style.display = 'none';
     }
-    else if (period.childNodes.length === 6) {
+    else if (period.childNodes.length === 7) {
       period.childNodes[1].style.display = 'none';
     }
   });

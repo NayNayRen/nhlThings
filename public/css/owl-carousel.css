@@ -671,7 +671,7 @@
     width: 85%;
 }
 
-.game-winning-goalie h3 {
+.game-winning-player h3 {
     border-bottom: solid 1px #1e90ff;
     font-size: 16px;
     margin: 10px auto 0 auto;
@@ -683,7 +683,8 @@
     /* outline: solid 1px blue; */
 }
 
-.game-winning-goalie p {
+.game-winning-player p {
+    color: #b22222;
     font-size: 16px;
     margin: auto;
     text-align: center;
