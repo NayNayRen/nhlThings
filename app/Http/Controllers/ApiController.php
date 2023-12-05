@@ -64,6 +64,14 @@ class ApiController extends Controller
     return $allTeams['standings'];
   }
 
+  public static function getTeamRoster($team)
+  {
+    $client = new \GuzzleHttp\Client();
+    $request = $client->get('https://api-web.nhle.com/v1/roster/' . $team  . '/current');
+    $teamStats = json_decode($request->getBody()->getContents(), true);
+    return $teamStats;
+  }
+
   public static function getTeamSchedule($team)
   {
     $upcoming = [];
@@ -85,14 +93,6 @@ class ApiController extends Controller
       }
     }
     return array($upcoming, $finished, $preseason);
-  }
-
-  public static function getTeamRoster($team)
-  {
-    $client = new \GuzzleHttp\Client();
-    $request = $client->get('https://api-web.nhle.com/v1/roster/' . $team  . '/current');
-    $teamStats = json_decode($request->getBody()->getContents(), true);
-    return $teamStats;
   }
 
   public static function getPlayer($id)
