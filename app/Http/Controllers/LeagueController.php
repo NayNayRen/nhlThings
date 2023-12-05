@@ -19,12 +19,17 @@ class LeagueController extends Controller
     $central = [];
     $metro = [];
     $pacific = [];
+    $firstHalfSeason = [];
+    $secondHalfSeason = [];
     $selectedDate = $request->input('date');
     $today = Carbon::today();
     $currentDate = Carbon::create($today)->toFormattedDateString();
     $allTeams = ApiController::getAllTeams();
     $weeklyGames = ApiController::getWeeklyGames('now');
     $sortedTeamsByName = collect($allTeams)->sortBy('teamName');
+    $season = (string)$allTeams[0]['seasonId'];
+    $firstHalfSeason[] = $season[0] . $season[1] . $season[2] . $season[3];
+    $secondHalfSeason[] = $season[4] . $season[5] . $season[6] . $season[7];
     for ($i = 0; $i < count($weeklyGames); $i++) {
       if ($weeklyGames[$i]['date'] === $today->toDateString()) {
         $dailyGames[] = $weeklyGames[$i]['games'];
@@ -59,7 +64,8 @@ class LeagueController extends Controller
       return view('index', [
         'favIcon' => '../img/nhl-shield.png',
         'title' => 'NHL Teams, Stats & Things',
-        'season' => $dailyGames[0][0]['season'],
+        'season' => $season,
+        'formattedSeason' => $firstHalfSeason[0] . '/' . $secondHalfSeason[0],
         'currentDate' => Carbon::parse($selectedDate)->toFormattedDateString(),
         'dailyGames' => $selectedGames[0],
         'weeklyGames' => $weeklyGames,
@@ -74,11 +80,12 @@ class LeagueController extends Controller
         'pacific' => $pacific
       ]);
     } else {
-      // dd($allTeams);
+      // dd($firstHalfSeason);
       return view('index', [
         'favIcon' => '../img/nhl-shield.png',
         'title' => 'NHL Teams, Stats & Things',
-        'season' => $dailyGames[0][0]['season'],
+        'season' => $season,
+        'formattedSeason' => $firstHalfSeason[0] . '/' . $secondHalfSeason[0],
         'currentDate' => $currentDate,
         'dailyGames' => $dailyGames[0],
         'weeklyGames' => $weeklyGames,

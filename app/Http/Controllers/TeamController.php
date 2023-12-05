@@ -13,10 +13,15 @@ class TeamController extends Controller
     $team = [];
     $teamSchedule = [];
     $teamRoster = [];
+    $firstHalfSeason = [];
+    $secondHalfSeason = [];
     $today = Carbon::today();
     $currentDate = Carbon::create($today)->toFormattedDateString();
     $allTeams = ApiController::getAllTeams();
     $sortedTeamsByName = collect($allTeams)->sortBy('teamName');
+    $season = (string)$allTeams[0]['seasonId'];
+    $firstHalfSeason[] = $season[0] . $season[1] . $season[2] . $season[3];
+    $secondHalfSeason[] = $season[4] . $season[5] . $season[6] . $season[7];
     for ($i = 0; $i < count($allTeams); $i++) {
       if ($allTeams[$i]['teamAbbrev']['default'] === $teamAbbr) {
         $team[] = $allTeams[$i];
@@ -29,6 +34,7 @@ class TeamController extends Controller
       'currentDate' => $currentDate,
       'favIcon' => $team[0]['teamLogo'],
       'title' => $team[0]['teamName']['default'],
+      'formattedSeason' => $firstHalfSeason[0] . '/' . $secondHalfSeason[0],
       'soloTeam' => $team[0],
       'upcomingGames' => $teamSchedule[0][0],
       'finishedGames' => array_reverse($teamSchedule[0][1]),
