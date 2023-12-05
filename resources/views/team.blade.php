@@ -41,9 +41,9 @@
               {{-- GAME CARDS --}}
               <li class="league-game-card">
                 {{-- dropdown menus --}}
-                @include('includes._gameCardDropdown')
+                @include('includes._game_card_dropdown')
                 {{-- game card --}}
-                @include('includes._gameCard')
+                @include('includes._game_card')
                 <span class='game-number'>
                   {{ count($finishedGames) + 1 + $key }} of {{ count($upcomingGames) + count($finishedGames) }}
                 </span>
@@ -85,9 +85,9 @@
               {{-- GAME CARDS --}}
               <li class="league-game-card">
                 {{-- dropdown menu --}}
-                @include('includes._gameCardDropdown')
+                @include('includes._game_card_dropdown')
                 {{-- game card --}}
-                @include('includes._gameCard')
+                @include('includes._game_card')
                 <span class='game-number'>
                   {{ count($finishedGames) - $key }} of {{ count($upcomingGames) + count($finishedGames) }}
                 </span>
@@ -129,7 +129,7 @@
                     $formattedGameTime = $gameDateTime->format('h:i A');
                   @endphp
                   <li class="team-preseason-card">
-                    @include('includes._gameCard')
+                    @include('includes._game_card')
                     <span class='game-number'>
                       {{ $key + 1 }} of {{ count($preseason) }}
                     </span>
