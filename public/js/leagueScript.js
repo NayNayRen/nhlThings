@@ -15,6 +15,14 @@ function loadLeagueScript() {
   const atlanticButton = document.querySelector('.atlantic-button');
   const centralButton = document.querySelector('.central-button');
   const pacificButton = document.querySelector('.pacific-button');
+  // standings tables
+  const leagueTable = document.querySelector('.league-table');
+  const eastTable = document.querySelector('.east-table');
+  const westTable = document.querySelector('.west-table');
+  const atlanticTable = document.querySelector('.atlantic-table');
+  const centralTable = document.querySelector('.central-table');
+  const metroTable = document.querySelector('.metro-table');
+  const pacificTable = document.querySelector('.pacific-table');
   // used to clear the active standings selection
   const leagueSelectionButtons = document.querySelectorAll('div.league-standings-selection-container button');
   // standings heading container
@@ -162,6 +170,13 @@ function loadLeagueScript() {
         button.classList.remove('active-standings-selection');
       }
       leagueButton.classList.add('active-standings-selection');
+      leagueTable.style.display = 'flex';
+      eastTable.style.display = 'none';
+      westTable.style.display = 'none';
+      atlanticTable.style.display = 'none';
+      centralTable.style.display = 'none';
+      metroTable.style.display = 'none';
+      pacificTable.style.display = 'none';
     });
     eastButton.addEventListener('click', () => {
       leagueStandingsHeadingContainer.innerHTML = `
@@ -177,6 +192,13 @@ function loadLeagueScript() {
         button.classList.remove('active-standings-selection');
       }
       eastButton.classList.add('active-standings-selection');
+      eastTable.style.display = 'flex';
+      leagueTable.style.display = 'none';
+      westTable.style.display = 'none';
+      atlanticTable.style.display = 'none';
+      centralTable.style.display = 'none';
+      metroTable.style.display = 'none';
+      pacificTable.style.display = 'none';
     });
     westButton.addEventListener('click', () => {
       leagueStandingsHeadingContainer.innerHTML = `
@@ -192,21 +214,13 @@ function loadLeagueScript() {
         button.classList.remove('active-standings-selection');
       }
       westButton.classList.add('active-standings-selection');
-    });
-    metroButton.addEventListener('click', () => {
-      leagueStandingsHeadingContainer.innerHTML = `
-        <div>
-          <h2>Metro Standings</h2>
-          <p>${firstHalfSeason}/${secondHalfSeason}</p>
-        </div>
-        <div>
-          <img src='../img/metro-logo.webp' alt="Metro Dev. Logo" width="100" height="100">
-        </div>
-      `;
-      if (button.classList.contains('active-standings-selection')) {
-        button.classList.remove('active-standings-selection');
-      }
-      metroButton.classList.add('active-standings-selection');
+      westTable.style.display = 'flex';
+      leagueTable.style.display = 'none';
+      eastTable.style.display = 'none';
+      atlanticTable.style.display = 'none';
+      centralTable.style.display = 'none';
+      metroTable.style.display = 'none';
+      pacificTable.style.display = 'none';
     });
     atlanticButton.addEventListener('click', () => {
       leagueStandingsHeadingContainer.innerHTML = `
@@ -222,14 +236,21 @@ function loadLeagueScript() {
         button.classList.remove('active-standings-selection');
       }
       atlanticButton.classList.add('active-standings-selection');
+      atlanticTable.style.display = 'flex';
+      leagueTable.style.display = 'none';
+      eastTable.style.display = 'none';
+      westTable.style.display = 'none';
+      centralTable.style.display = 'none';
+      metroTable.style.display = 'none';
+      pacificTable.style.display = 'none';
     });
     centralButton.addEventListener('click', () => {
       leagueStandingsHeadingContainer.innerHTML = `
-      <div>
-      <h2>Central Standings</h2>
-      <p>${firstHalfSeason}/${secondHalfSeason}</p>
-      </div>
-      <div>
+        <div>
+          <h2>Central Standings</h2>
+          <p>${firstHalfSeason}/${secondHalfSeason}</p>
+        </div>
+        <div>
           <img src='../img/central-logo.webp' alt="Central Dev. Logo" width="100" height="100">
         </div>
       `;
@@ -237,6 +258,35 @@ function loadLeagueScript() {
         button.classList.remove('active-standings-selection');
       }
       centralButton.classList.add('active-standings-selection');
+      centralTable.style.display = 'flex';
+      leagueTable.style.display = 'none';
+      eastTable.style.display = 'none';
+      westTable.style.display = 'none';
+      atlanticTable.style.display = 'none';
+      metroTable.style.display = 'none';
+      pacificTable.style.display = 'none';
+    });
+    metroButton.addEventListener('click', () => {
+      leagueStandingsHeadingContainer.innerHTML = `
+        <div>
+          <h2>Metro Standings</h2>
+          <p>${firstHalfSeason}/${secondHalfSeason}</p>
+        </div>
+        <div>
+          <img src='../img/metro-logo.webp' alt="Metro Dev. Logo" width="100" height="100">
+        </div>
+      `;
+      if (button.classList.contains('active-standings-selection')) {
+        button.classList.remove('active-standings-selection');
+      }
+      metroButton.classList.add('active-standings-selection');
+      metroTable.style.display = 'flex';
+      leagueTable.style.display = 'none';
+      eastTable.style.display = 'none';
+      westTable.style.display = 'none';
+      atlanticTable.style.display = 'none';
+      centralTable.style.display = 'none';
+      pacificTable.style.display = 'none';
     });
     pacificButton.addEventListener('click', () => {
       leagueStandingsHeadingContainer.innerHTML = `
@@ -252,6 +302,13 @@ function loadLeagueScript() {
         button.classList.remove('active-standings-selection');
       }
       pacificButton.classList.add('active-standings-selection');
+      pacificTable.style.display = 'flex';
+      leagueTable.style.display = 'none';
+      eastTable.style.display = 'none';
+      westTable.style.display = 'none';
+      atlanticTable.style.display = 'none';
+      centralTable.style.display = 'none';
+      metroTable.style.display = 'none';
     });
   });
   leagueStandingsHeadingContainer.innerHTML = `

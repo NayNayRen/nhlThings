@@ -511,14 +511,6 @@ header h1 {
     width: 100%;
 }
 
-/* .league-game-dates-dropdown-list li {
-    -webkit-transition: background-color 150ms ease;
-    color: #000;
-    cursor: pointer;
-    padding: 10px;
-    transition: background-color 150ms ease;
-} */
-
 .league-game-dates-dropdown-list li button {
     -webkit-transition: background-color 150ms ease;
     background-color: #fff;
@@ -670,6 +662,15 @@ header h1 {
     justify-content: flex-start;
     padding: 0;
     width: 100%;
+}
+
+.atlantic-table,
+.central-table,
+.east-table,
+.metro-table,
+.pacific-table,
+.west-table {
+    display: none;
 }
 
 .league-standings-table h3:first-of-type {

@@ -15,9 +15,9 @@ class LeagueController extends Controller
     $teamRoster = [];
     $east = [];
     $west = [];
-    $metro = [];
     $atlantic = [];
     $central = [];
+    $metro = [];
     $pacific = [];
     $selectedDate = $request->input('date');
     $today = Carbon::today();
@@ -28,6 +28,26 @@ class LeagueController extends Controller
     for ($i = 0; $i < count($weeklyGames); $i++) {
       if ($weeklyGames[$i]['date'] === $today->toDateString()) {
         $dailyGames[] = $weeklyGames[$i]['games'];
+      }
+    }
+    for ($i = 0; $i < count($allTeams); $i++) {
+      if ($allTeams[$i]['conferenceName'] === 'Eastern') {
+        $east[] = $allTeams[$i];
+      }
+      if ($allTeams[$i]['conferenceName'] === 'Western') {
+        $west[] = $allTeams[$i];
+      }
+      if ($allTeams[$i]['divisionName'] === 'Atlantic') {
+        $atlantic[] = $allTeams[$i];
+      }
+      if ($allTeams[$i]['divisionName'] === 'Central') {
+        $central[] = $allTeams[$i];
+      }
+      if ($allTeams[$i]['divisionName'] === 'Metropolitan') {
+        $metro[] = $allTeams[$i];
+      }
+      if ($allTeams[$i]['divisionName'] === 'Pacific') {
+        $pacific[] = $allTeams[$i];
       }
     }
     if ($selectedDate) {
@@ -45,10 +65,16 @@ class LeagueController extends Controller
         'weeklyGames' => $weeklyGames,
         'allTeams' => $allTeams,
         'teamRoster' => $teamRoster,
-        'sortedTeamsByName' => $sortedTeamsByName
+        'sortedTeamsByName' => $sortedTeamsByName,
+        'east' => $east,
+        'west' => $west,
+        'atlantic' => $atlantic,
+        'central' => $central,
+        'metro' => $metro,
+        'pacific' => $pacific
       ]);
     } else {
-      // dd($dailyGames[0]);
+      // dd($allTeams);
       return view('index', [
         'favIcon' => '../img/nhl-shield.png',
         'title' => 'NHL Teams, Stats & Things',
@@ -58,7 +84,13 @@ class LeagueController extends Controller
         'weeklyGames' => $weeklyGames,
         'allTeams' => $allTeams,
         'teamRoster' => $teamRoster,
-        'sortedTeamsByName' => $sortedTeamsByName
+        'sortedTeamsByName' => $sortedTeamsByName,
+        'east' => $east,
+        'west' => $west,
+        'atlantic' => $atlantic,
+        'central' => $central,
+        'metro' => $metro,
+        'pacific' => $pacific
       ]);
     }
   }

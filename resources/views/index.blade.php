@@ -84,9 +84,9 @@
           <div class="division-button-container">
             <p>Division</p>
             <div>
-              <button type="button" class="metro-button">Metro</button>
               <button type="button" class="atlantic-button">Atlantic</button>
               <button type="button" class="central-button">Central</button>
+              <button type="button" class="metro-button">Metro</button>
               <button type="button" class="pacific-button">Pacific</button>
             </div>
           </div>
@@ -104,7 +104,7 @@
             </div>
           </div>
           <div class="horizontal-scrolling-container">
-            <ul class="league-standings-table">
+            <ul class="league-standings-table league-table">
               <li class="league-standings-table-heading">
                 <h3 title="Team">Team</h3>
                 <h3 title="Games Played">GP</h3>
@@ -136,6 +136,205 @@
                 </li>
               @endforeach
             </ul>
+
+            <ul class="league-standings-table east-table">
+              <li class="league-standings-table-heading">
+                <h3 title="Team">Team</h3>
+                <h3 title="Games Played">GP</h3>
+                <h3 title="Wins">W</h3>
+                <h3 title="Losses">L</h3>
+                <h3 title="Overtime Losses">OTL</h3>
+                <h3 title="Regulation Wins">RW</h3>
+                <h3 title="Shoot Out Wins">SOW</h3>
+                <h3 title="Shoot Out Losses">SOL</h3>
+                <h3 title="Points">PTS</h3>
+                <h3 title="Point %">PT%</h3>
+                <h3 title="Goals For">GF</h3>
+                <h3 title="Goals Against">GA</h3>
+              </li>
+              @foreach ($east as $key => $team)
+                <li class="league-standings-row">
+                  <p><span>{{ $key + 1 }}.</span>{{ $team['teamName']['default'] }}</p>
+                  <p>{{ $team['gamesPlayed'] }}</p>
+                  <p>{{ $team['wins'] }}</p>
+                  <p>{{ $team['losses'] }}</p>
+                  <p>{{ $team['otLosses'] }}</p>
+                  <p>{{ $team['regulationWins'] }}</p>
+                  <p>{{ $team['shootoutWins'] }}</p>
+                  <p>{{ $team['shootoutLosses'] }}</p>
+                  <p class='league-standings-points'>{{ $team['points'] }}</p>
+                  <p>{{ $team['pointPctg'] }}</p>
+                  <p>{{ $team['goalFor'] }}</p>
+                  <p>{{ $team['goalAgainst'] }}</p>
+                </li>
+              @endforeach
+            </ul>
+
+            <ul class="league-standings-table west-table">
+              <li class="league-standings-table-heading">
+                <h3 title="Team">Team</h3>
+                <h3 title="Games Played">GP</h3>
+                <h3 title="Wins">W</h3>
+                <h3 title="Losses">L</h3>
+                <h3 title="Overtime Losses">OTL</h3>
+                <h3 title="Regulation Wins">RW</h3>
+                <h3 title="Shoot Out Wins">SOW</h3>
+                <h3 title="Shoot Out Losses">SOL</h3>
+                <h3 title="Points">PTS</h3>
+                <h3 title="Point %">PT%</h3>
+                <h3 title="Goals For">GF</h3>
+                <h3 title="Goals Against">GA</h3>
+              </li>
+              @foreach ($west as $key => $team)
+                <li class="league-standings-row">
+                  <p><span>{{ $key + 1 }}.</span>{{ $team['teamName']['default'] }}</p>
+                  <p>{{ $team['gamesPlayed'] }}</p>
+                  <p>{{ $team['wins'] }}</p>
+                  <p>{{ $team['losses'] }}</p>
+                  <p>{{ $team['otLosses'] }}</p>
+                  <p>{{ $team['regulationWins'] }}</p>
+                  <p>{{ $team['shootoutWins'] }}</p>
+                  <p>{{ $team['shootoutLosses'] }}</p>
+                  <p class='league-standings-points'>{{ $team['points'] }}</p>
+                  <p>{{ $team['pointPctg'] }}</p>
+                  <p>{{ $team['goalFor'] }}</p>
+                  <p>{{ $team['goalAgainst'] }}</p>
+                </li>
+              @endforeach
+            </ul>
+
+            <ul class="league-standings-table atlantic-table">
+              <li class="league-standings-table-heading">
+                <h3 title="Team">Team</h3>
+                <h3 title="Games Played">GP</h3>
+                <h3 title="Wins">W</h3>
+                <h3 title="Losses">L</h3>
+                <h3 title="Overtime Losses">OTL</h3>
+                <h3 title="Regulation Wins">RW</h3>
+                <h3 title="Shoot Out Wins">SOW</h3>
+                <h3 title="Shoot Out Losses">SOL</h3>
+                <h3 title="Points">PTS</h3>
+                <h3 title="Point %">PT%</h3>
+                <h3 title="Goals For">GF</h3>
+                <h3 title="Goals Against">GA</h3>
+              </li>
+              @foreach ($atlantic as $key => $team)
+                <li class="league-standings-row">
+                  <p><span>{{ $key + 1 }}.</span>{{ $team['teamName']['default'] }}</p>
+                  <p>{{ $team['gamesPlayed'] }}</p>
+                  <p>{{ $team['wins'] }}</p>
+                  <p>{{ $team['losses'] }}</p>
+                  <p>{{ $team['otLosses'] }}</p>
+                  <p>{{ $team['regulationWins'] }}</p>
+                  <p>{{ $team['shootoutWins'] }}</p>
+                  <p>{{ $team['shootoutLosses'] }}</p>
+                  <p class='league-standings-points'>{{ $team['points'] }}</p>
+                  <p>{{ $team['pointPctg'] }}</p>
+                  <p>{{ $team['goalFor'] }}</p>
+                  <p>{{ $team['goalAgainst'] }}</p>
+                </li>
+              @endforeach
+            </ul>
+
+            <ul class="league-standings-table central-table">
+              <li class="league-standings-table-heading">
+                <h3 title="Team">Team</h3>
+                <h3 title="Games Played">GP</h3>
+                <h3 title="Wins">W</h3>
+                <h3 title="Losses">L</h3>
+                <h3 title="Overtime Losses">OTL</h3>
+                <h3 title="Regulation Wins">RW</h3>
+                <h3 title="Shoot Out Wins">SOW</h3>
+                <h3 title="Shoot Out Losses">SOL</h3>
+                <h3 title="Points">PTS</h3>
+                <h3 title="Point %">PT%</h3>
+                <h3 title="Goals For">GF</h3>
+                <h3 title="Goals Against">GA</h3>
+              </li>
+              @foreach ($central as $key => $team)
+                <li class="league-standings-row">
+                  <p><span>{{ $key + 1 }}.</span>{{ $team['teamName']['default'] }}</p>
+                  <p>{{ $team['gamesPlayed'] }}</p>
+                  <p>{{ $team['wins'] }}</p>
+                  <p>{{ $team['losses'] }}</p>
+                  <p>{{ $team['otLosses'] }}</p>
+                  <p>{{ $team['regulationWins'] }}</p>
+                  <p>{{ $team['shootoutWins'] }}</p>
+                  <p>{{ $team['shootoutLosses'] }}</p>
+                  <p class='league-standings-points'>{{ $team['points'] }}</p>
+                  <p>{{ $team['pointPctg'] }}</p>
+                  <p>{{ $team['goalFor'] }}</p>
+                  <p>{{ $team['goalAgainst'] }}</p>
+                </li>
+              @endforeach
+            </ul>
+
+            <ul class="league-standings-table metro-table">
+              <li class="league-standings-table-heading">
+                <h3 title="Team">Team</h3>
+                <h3 title="Games Played">GP</h3>
+                <h3 title="Wins">W</h3>
+                <h3 title="Losses">L</h3>
+                <h3 title="Overtime Losses">OTL</h3>
+                <h3 title="Regulation Wins">RW</h3>
+                <h3 title="Shoot Out Wins">SOW</h3>
+                <h3 title="Shoot Out Losses">SOL</h3>
+                <h3 title="Points">PTS</h3>
+                <h3 title="Point %">PT%</h3>
+                <h3 title="Goals For">GF</h3>
+                <h3 title="Goals Against">GA</h3>
+              </li>
+              @foreach ($metro as $key => $team)
+                <li class="league-standings-row">
+                  <p><span>{{ $key + 1 }}.</span>{{ $team['teamName']['default'] }}</p>
+                  <p>{{ $team['gamesPlayed'] }}</p>
+                  <p>{{ $team['wins'] }}</p>
+                  <p>{{ $team['losses'] }}</p>
+                  <p>{{ $team['otLosses'] }}</p>
+                  <p>{{ $team['regulationWins'] }}</p>
+                  <p>{{ $team['shootoutWins'] }}</p>
+                  <p>{{ $team['shootoutLosses'] }}</p>
+                  <p class='league-standings-points'>{{ $team['points'] }}</p>
+                  <p>{{ $team['pointPctg'] }}</p>
+                  <p>{{ $team['goalFor'] }}</p>
+                  <p>{{ $team['goalAgainst'] }}</p>
+                </li>
+              @endforeach
+            </ul>
+
+            <ul class="league-standings-table pacific-table">
+              <li class="league-standings-table-heading">
+                <h3 title="Team">Team</h3>
+                <h3 title="Games Played">GP</h3>
+                <h3 title="Wins">W</h3>
+                <h3 title="Losses">L</h3>
+                <h3 title="Overtime Losses">OTL</h3>
+                <h3 title="Regulation Wins">RW</h3>
+                <h3 title="Shoot Out Wins">SOW</h3>
+                <h3 title="Shoot Out Losses">SOL</h3>
+                <h3 title="Points">PTS</h3>
+                <h3 title="Point %">PT%</h3>
+                <h3 title="Goals For">GF</h3>
+                <h3 title="Goals Against">GA</h3>
+              </li>
+              @foreach ($pacific as $key => $team)
+                <li class="league-standings-row">
+                  <p><span>{{ $key + 1 }}.</span>{{ $team['teamName']['default'] }}</p>
+                  <p>{{ $team['gamesPlayed'] }}</p>
+                  <p>{{ $team['wins'] }}</p>
+                  <p>{{ $team['losses'] }}</p>
+                  <p>{{ $team['otLosses'] }}</p>
+                  <p>{{ $team['regulationWins'] }}</p>
+                  <p>{{ $team['shootoutWins'] }}</p>
+                  <p>{{ $team['shootoutLosses'] }}</p>
+                  <p class='league-standings-points'>{{ $team['points'] }}</p>
+                  <p>{{ $team['pointPctg'] }}</p>
+                  <p>{{ $team['goalFor'] }}</p>
+                  <p>{{ $team['goalAgainst'] }}</p>
+                </li>
+              @endforeach
+            </ul>
+
           </div>
         </div>
       </div>
