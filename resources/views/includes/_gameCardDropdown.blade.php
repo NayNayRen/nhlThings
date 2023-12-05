@@ -31,8 +31,13 @@
       </li>
       <li class="game-winning-goalie">
         <h3>Winning Goalie</h3>
-        <p>{{ $game['winningGoalie']['firstInitial']['default'] }} {{ $game['winningGoalie']['lastName']['default'] }}
-        </p>
+        @if (array_key_exists('winningGoalie', $game))
+          <p>{{ $game['winningGoalie']['firstInitial']['default'] }}
+            {{ $game['winningGoalie']['lastName']['default'] }}
+          </p>
+        @else
+          <p>No Data</p>
+        @endif
       </li>
       <li class="game-winning-goalie">
         <h3>Winning Goal Scorer</h3>

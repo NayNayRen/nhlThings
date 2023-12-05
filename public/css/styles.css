@@ -433,7 +433,6 @@ header h1 {
 }
 
 .game-heading-container,
-.league-heading-container,
 .player-heading-container,
 .team-heading-container {
     -webkit-box-shadow: 0 0 10px #808080;
@@ -446,7 +445,6 @@ header h1 {
 }
 
 .game-heading-container h2,
-.league-heading-container h2,
 .player-heading-container h2,
 .team-heading-container h2 {
     color: #000;
@@ -552,6 +550,7 @@ header h1 {
     opacity: 1;
 }
 
+.league-heading-container,
 .league-standings-heading-container {
     -ms-flex-align: center;
     -ms-flex-direction: row;
@@ -569,10 +568,11 @@ header h1 {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    min-height: 125px;
+    min-height: 130px;
     padding: 10px 0 10px 15px;
 }
 
+.league-heading-logo-dropdown-container,
 .league-standings-heading-container div:first-of-type {
     -ms-flex-align: start;
     -ms-flex-direction: column;
@@ -603,11 +603,11 @@ header h1 {
 
 .league-standings-heading-container p {
     color: #b22222;
-    /* color: #fff; */
     font-size: 18px;
     font-weight: bold;
 }
 
+.league-heading-container h2,
 .league-standings-heading-container h2 {
     color: #000;
     font-size: 26px;
@@ -1050,18 +1050,13 @@ header h1 {
     -ms-flex-pack: center;
     -webkit-box-align: center;
     -webkit-box-pack: center;
-    -webkit-transform: translateY(-50%);
     align-items: center;
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
     height: auto;
     justify-content: center;
-    margin-right: 10px;
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
+    margin-left: 25px;
     width: 75px;
     /* outline: solid 1px red; */
 }
@@ -1273,7 +1268,6 @@ header h1 {
     }
 
     .game-heading-container,
-    .league-heading-container,
     .player-heading-container,
     .team-heading-container {
         border-top-left-radius: 0;
@@ -1282,7 +1276,6 @@ header h1 {
     }
 
     .game-heading-container h2,
-    .league-heading-container h2,
     .player-heading-container h2,
     .team-heading-container h2 {
         font-size: 24px;
@@ -1334,16 +1327,18 @@ header h1 {
         padding: 15px 0 15px 10px;
     }
 
-    .league-standings-heading-container h2,
-    .team-stats-season-container h2 {
-        font-size: 24px;
-    }
-
+    .league-heading-container,
     .league-standings-heading-container {
         -webkit-box-pack: justify;
         -ms-flex-pack: justify;
         justify-content: space-between;
-        min-height: 110px;
+        min-height: 115px;
+    }
+
+    .league-heading-container h2,
+    .league-standings-heading-container h2,
+    .team-stats-season-container h2 {
+        font-size: 24px;
     }
 
     .league-standings-heading-container div:last-of-type {
@@ -1385,6 +1380,12 @@ header h1 {
     .teams-dropdown-list li:hover {
         background-color: #fff;
     }
+
+    .shield-logo {
+        margin-left: 0;
+        margin-right: 10px;
+        width: 60px;
+    }
 }
 
 @media (max-width: 400px) {
@@ -1393,14 +1394,9 @@ header h1 {
     }
 
     .game-heading-container h2,
-    .league-heading-container h2,
     .player-heading-container h2,
     .team-heading-container h2 {
         font-size: 22px;
-    }
-
-    .league-schedule-shield-logo {
-        width: 65px;
     }
 
     .league-standings-selection-container {

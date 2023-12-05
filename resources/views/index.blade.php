@@ -3,27 +3,29 @@
   <div class="main-container">
     <div class="league-container">
       <div class="league-heading-container">
-        <h2>NHL Games</h2>
+        <div class="league-heading-logo-dropdown-container">
+          <h2>NHL Games</h2>
+          <div class="league-game-dates-dropdown-container">
+            <i class="fa-solid fa-caret-up" aria-hidden="true"></i>
+            <input type="button" class="league-game-dates-dropdown-button" value="Weekly Dates..." /><br />
+            <ul class="league-game-dates-dropdown-list">
+              @foreach ($weeklyGames as $weeklyGame)
+                <li>
+                  <form action={{ route('league.index') }} method="get">
+                    <input type="hidden" name="date" value="{{ $weeklyGame['date'] }}" />
+                    <button type="submit">
+                      <p>{{ $weeklyGame['dayAbbrev'] }}
+                        {{ \Carbon\Carbon::parse($weeklyGame['date'])->toFormattedDateString() }}</p>
+                      <p>Games : {{ $weeklyGame['numberOfGames'] }}</p>
+                    </button>
+                  </form>
+                </li>
+              @endforeach
+            </ul>
+          </div>
+        </div>
         <div class="shield-logo">
           <img src={{ asset('img/nhl-shield.png') }} alt="NHL Logo" width="100" height="100">
-        </div>
-        <div class="league-game-dates-dropdown-container">
-          <i class="fa-solid fa-caret-up" aria-hidden="true"></i>
-          <input type="button" class="league-game-dates-dropdown-button" value="Weekly Dates..." /><br />
-          <ul class="league-game-dates-dropdown-list">
-            @foreach ($weeklyGames as $weeklyGame)
-              <li>
-                <form action={{ route('league.index') }} method="get">
-                  <input type="hidden" name="date" value="{{ $weeklyGame['date'] }}" />
-                  <button type="submit">
-                    <p>{{ $weeklyGame['dayAbbrev'] }}
-                      {{ \Carbon\Carbon::parse($weeklyGame['date'])->toFormattedDateString() }}</p>
-                    <p>Games : {{ $weeklyGame['numberOfGames'] }}</p>
-                  </button>
-                </form>
-              </li>
-            @endforeach
-          </ul>
         </div>
       </div>
       @if (count($dailyGames) < 1)
