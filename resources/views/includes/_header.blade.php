@@ -135,13 +135,6 @@
               @endif
             </ul>
           </div>
-          {{-- <div class="team-summary-dropdown-container">
-            <i class="fa-solid fa-caret-up" aria-hidden="true"></i>
-            <input type="button" class="team-summary-dropdown-button" value="Team Summary..." /><br />
-            <div class="team-summary-dropdown-list">
-              <p class="roster-dropdown-name">Select a team first...</p>
-            </div>
-          </div> --}}
 
           <div class="how-to-dropdown-container">
             <i class="fa-solid fa-caret-up" aria-hidden="true"></i>

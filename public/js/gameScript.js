@@ -2,8 +2,6 @@ function loadGameScript() {
   let checkGameState = document.querySelectorAll('.game-state');
   const periods = document.querySelectorAll('.game-periods');
 
-  console.log('loaded');
-
   periods.forEach((period) => {
     // console.log(period.childNodes);
     if (period.childNodes.length === 13) {
