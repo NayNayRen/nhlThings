@@ -146,5 +146,5 @@
     </div>
   </div>
 </main>
-<script src="{{ asset('js/teamCarousel.js') }}"></script>
+<script src="{{ asset('js/teamScript.js') }}"></script>
 @include('includes._footer')

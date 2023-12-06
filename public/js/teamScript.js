@@ -1,4 +1,4 @@
-function loadCarousel() {
+function loadTeamScript() {
   const $upcomingGames = $('.upcoming-games');
   const $finishedGames = $('.finished-games');
   let checkGameState = document.querySelectorAll('.game-state');
@@ -144,5 +144,5 @@ function loadCarousel() {
 }
 
 window.addEventListener('load', () => {
-  loadCarousel();
+  loadTeamScript();
 });
