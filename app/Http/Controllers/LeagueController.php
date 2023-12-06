@@ -61,6 +61,7 @@ class LeagueController extends Controller
           $selectedGames[] = $weeklyGames[$i]['games'];
         }
       }
+      // dd($selectedGames[0]);
       return view('index', [
         'favIcon' => '../img/nhl-shield.png',
         'title' => 'NHL Teams, Stats & Things',

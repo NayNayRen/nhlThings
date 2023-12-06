@@ -3,14 +3,16 @@
   <div class="main-container">
     <div class="team-container">
       <div class="team-heading-container">
-        <h2>{{ $soloTeam['teamName']['default'] }}</h2>
+        <div class="team-heading-left">
+          <h2>{{ $soloTeam['teamName']['default'] }}</h2>
+          <div class="home-game-indicator-message">
+            <p>Home Game :</p>
+            <span></span>
+          </div>
+        </div>
         <div class="team-heading-logo">
           <img src={{ $soloTeam['teamLogo'] }} alt="{{ $soloTeam['teamName']['default'] }} Logo" width="100"
             height="100">
-        </div>
-        <div class="home-game-indicator-message">
-          <p>Home Game :</p>
-          <span></span>
         </div>
       </div>
       {{-- UPCOMING GAMES --}}
