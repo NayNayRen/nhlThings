@@ -17,7 +17,7 @@
             height="75">
         </span>
       </p>
-      <p class='game-team-record'>{{ $team['wins'] }}-{{ $team['losses'] }}-{{ $team['otLosses'] }}
+      <p class='game-team-record'>{{ $team['wins'] }}-{{ $team['losses'] }}-{{ $team['ties'] }}
         <span class="game-team-radio-link">
           {{-- <a href={{ $game['awayTeam']['radioLink'] }} aria-label='Away team radio link.' title="Away team radio link."
             target="_blank"> --}}
@@ -41,7 +41,7 @@
             height="75">
         </span>
       </p>
-      <p class='game-team-record'>{{ $team['wins'] }}-{{ $team['losses'] }}-{{ $team['otLosses'] }}
+      <p class='game-team-record'>{{ $team['wins'] }}-{{ $team['losses'] }}-{{ $team['ties'] }}
         <span class="game-team-radio-link">
           {{-- <a href={{ $game['homeTeam']['radioLink'] }} aria-label='Home team radio link.' title="Home team radio link."
             target="_blank"> --}}

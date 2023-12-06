@@ -330,6 +330,76 @@ footer {
     width: 100%;
 }
 
+.game-matchup-container,
+.league-container,
+.player-container,
+.team-container {
+    height: auto;
+    margin: 0 auto;
+    min-height: 675px;
+    overflow: hidden;
+    width: 100%;
+    /* outline: solid 1px blue; */
+}
+
+.game-matchup-heading-container {
+    -ms-flex-align: center;
+    -ms-flex-direction: row;
+    -ms-flex-pack: space-evenly;
+    -webkit-box-align: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -webkit-box-pack: space-evenly;
+    -webkit-box-shadow: 0 0 10px #808080;
+    align-items: center;
+    background-color: #dcdcdc;
+    box-shadow: 0 0 10px #808080;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    min-height: 130px;
+    padding: 10px 15px;
+    position: relative;
+}
+
+.game-matchup-heading-container h2 {
+    color: #000;
+    font-size: 26px;
+}
+
+.game-matchup-heading-center,
+.game-matchup-heading-left,
+.game-matchup-heading-right {
+    -ms-flex-align: center;
+    -ms-flex-direction: column;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-box-pack: center;
+    align-items: center;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* outline: solid 1px blue; */
+}
+
+.game-matchup-heading-logo {
+    height: auto;
+    width: 100px;
+}
+
+.game-matchup-heading-logo img {
+    -webkit-filter: drop-shadow(0 2px 2px #808080);
+    filter: drop-shadow(0 2px 2px #808080);
+    height: auto;
+    width: 100%;
+}
+
 header {
     -ms-flex-align: center;
     -ms-flex-direction: column;
@@ -412,64 +482,6 @@ header h1 {
     overflow-x: auto;
     padding: 20px 25px 20px 25px;
     scroll-behavior: smooth;
-    /* outline: solid 1px blue; */
-}
-
-.game-matchup-container,
-.league-container,
-.player-container,
-.team-container {
-    height: auto;
-    margin: 0 auto;
-    min-height: 675px;
-    overflow: hidden;
-    width: 100%;
-    /* outline: solid 1px blue; */
-}
-
-.game-matchup-heading-container {
-    -ms-flex-align: center;
-    -ms-flex-direction: row;
-    -ms-flex-pack: space-evenly;
-    -webkit-box-align: center;
-    -webkit-box-direction: normal;
-    -webkit-box-orient: horizontal;
-    -webkit-box-pack: space-evenly;
-    -webkit-box-shadow: 0 0 10px #808080;
-    align-items: center;
-    background-color: #dcdcdc;
-    box-shadow: 0 0 10px #808080;
-    display: -ms-flexbox;
-    display: -webkit-box;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    min-height: 130px;
-    padding: 10px 15px;
-    position: relative;
-}
-
-.game-matchup-heading-container h2 {
-    color: #000;
-    font-size: 26px;
-}
-
-.game-matchup-heading-center,
-.game-matchup-heading-left,
-.game-matchup-heading-right {
-    -ms-flex-align: center;
-    -ms-flex-direction: column;
-    -ms-flex-pack: center;
-    -webkit-box-align: center;
-    -webkit-box-direction: normal;
-    -webkit-box-orient: vertical;
-    -webkit-box-pack: center;
-    align-items: center;
-    display: -ms-flexbox;
-    display: -webkit-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     /* outline: solid 1px blue; */
 }
 
@@ -615,6 +627,8 @@ header h1 {
 }
 
 .league-standings-heading-container div:last-of-type img {
+    -webkit-filter: drop-shadow(0 2px 2px #808080);
+    filter: drop-shadow(0 2px 2px #808080);
     height: auto;
     width: 100%;
 }
@@ -1107,6 +1121,13 @@ header h1 {
     z-index: 1;
 }
 
+.team-heading-record {
+    border-bottom: solid 1px #000;
+    font-size: 16px;
+    font-weight: bold;
+    padding-right: 25px;
+}
+
 .team-site a {
     -webkit-transition: opacity 150ms ease;
     color: #1e90ff;
@@ -1407,6 +1428,10 @@ header h1 {
     .player-heading-container h2,
     .team-heading-container h2 {
         font-size: 22px;
+    }
+
+    .game-matchup-heading-logo {
+        width: 75px;
     }
 
     .league-heading-container,

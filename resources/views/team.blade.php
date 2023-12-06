@@ -5,6 +5,11 @@
       <div class="team-heading-container">
         <div class="team-heading-left">
           <h2>{{ $soloTeam['teamName']['default'] }}</h2>
+          <p class="team-heading-record">
+            {{ $soloTeam['wins'] }} -
+            {{ $soloTeam['losses'] }} -
+            {{ $soloTeam['ties'] }}
+          </p>
           <div class="home-game-indicator-message">
             <p>Home Game :</p>
             <span></span>

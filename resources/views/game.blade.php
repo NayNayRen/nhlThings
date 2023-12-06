@@ -7,6 +7,10 @@
         <div class="game-matchup-heading-container">
           <div class="game-matchup-heading-left">
             <h2>{{ $gameMatchup['awayTeam']['abbrev'] }}</h2>
+            <div class="game-matchup-heading-logo">
+              <img src={{ $gameMatchup['awayTeam']['logo'] }}
+                alt="{{ $gameMatchup['awayTeam']['name']['default'] }} Logo">
+            </div>
           </div>
           <div class="game-matchup-heading-center">
             <span>FINAL</span>
@@ -14,6 +18,10 @@
           </div>
           <div class="game-matchup-heading-right">
             <h2>{{ $gameMatchup['homeTeam']['abbrev'] }}</h2>
+            <div class="game-matchup-heading-logo">
+              <img src={{ $gameMatchup['homeTeam']['logo'] }}
+                alt="{{ $gameMatchup['homeTeam']['name']['default'] }} Logo">
+            </div>
           </div>
         </div>
       @endif
