@@ -226,6 +226,30 @@
           <p>{{ $gameData['matchup']['teamLeadersL5'][2]['homeLeader']['name']['default'] }}</p>
         </div>
       </li>
+      <li class='game-dropdown-goals'>
+        <div>
+          <p>{{ $gameData['matchup']['teamLeadersL5'][3]['awayLeader']['value'] }}</p>
+          <h3>+ / -</h3>
+          <p>{{ $gameData['matchup']['teamLeadersL5'][3]['homeLeader']['value'] }}</p>
+        </div>
+        <div>
+          <p>{{ $gameData['matchup']['teamLeadersL5'][3]['awayLeader']['name']['default'] }}</p>
+          <span></span>
+          <p>{{ $gameData['matchup']['teamLeadersL5'][3]['homeLeader']['name']['default'] }}</p>
+        </div>
+      </li>
+      <li class='game-dropdown-goals'>
+        <div>
+          <p>{{ $gameData['matchup']['goalieComparison']['awayTeam'][0]['record'] }}</p>
+          <h3>Goalies</h3>
+          <p>{{ $gameData['matchup']['goalieComparison']['homeTeam'][0]['record'] }}</p>
+        </div>
+        <div>
+          <p>{{ $gameData['matchup']['goalieComparison']['awayTeam'][0]['name']['default'] }}</p>
+          <span></span>
+          <p>{{ $gameData['matchup']['goalieComparison']['homeTeam'][0]['name']['default'] }}</p>
+        </div>
+      </li>
       <a href="{{ route('games.game', $game['id']) }}" class="game-stats-button" target="_blank">
         Match Up <i class='fa fa-arrow-right' aria-hidden='true'></i>
       </a>

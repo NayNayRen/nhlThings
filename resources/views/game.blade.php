@@ -5,6 +5,7 @@
       <div class="game-heading-container">
         <h2>{{ $gameMatchup['awayTeam']['abbrev'] }} vs {{ $gameMatchup['homeTeam']['abbrev'] }}</h2>
       </div>
+      <p>{{ $gameMatchup['gameState'] }}</p>
     </div>
   </div>
 </main>
