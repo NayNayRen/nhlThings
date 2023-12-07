@@ -39,23 +39,29 @@
           {{-- three stars --}}
           <h3>Three Stars</h3>
           <div class="game-matchup-three-stars">
-            <p aria-label="Game First Star">
-              <i class="fa-solid fa-star" aria-hidden="true"></i>
+            <p>
+              <span aria-label="Game First Star">
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+              </span>
               <span>
                 {{ $gameMatchup['summary']['threeStars'][0]['name'] }}
               </span>
             </p>
-            <p aria-label="Game Second Star">
-              <i class="fa-solid fa-star" aria-hidden="true"></i>
-              <i class="fa-solid fa-star" aria-hidden="true"></i>
+            <p>
+              <span aria-label="Game Second Star">
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+              </span>
               <span>
                 {{ $gameMatchup['summary']['threeStars'][1]['name'] }}
               </span>
             </p>
-            <p aria-label="Game Third Star">
-              <i class="fa-solid fa-star" aria-hidden="true"></i>
-              <i class="fa-solid fa-star" aria-hidden="true"></i>
-              <i class="fa-solid fa-star" aria-hidden="true"></i>
+            <p>
+              <span aria-label="Game Third Star">
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+              </span>
               <span>
                 {{ $gameMatchup['summary']['threeStars'][2]['name'] }}
               </span>

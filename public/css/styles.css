@@ -525,10 +525,10 @@ footer {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    font-size: 16px;
     height: auto;
-    justify-content: space-evenly;
+    justify-content: space-around;
     width: 100%;
+    /* outline: solid 1px blue; */
 }
 
 .game-matchup-three-stars i {
@@ -537,13 +537,24 @@ footer {
 }
 
 .game-matchup-three-stars p {
+    -ms-flex-align: center;
+    -ms-flex-direction: column;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-box-pack: center;
+    align-items: center;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    justify-content: center;
+    min-width: 150px;
     padding: 0 10px;
     text-align: center;
     /* outline: solid 1px blue; */
-}
-
-.game-matchup-three-stars p span {
-    display: block;
 }
 
 header {
