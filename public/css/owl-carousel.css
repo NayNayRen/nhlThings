@@ -479,7 +479,7 @@
 
 .game-location {
     color: #1e90ff;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .game-number {
@@ -533,14 +533,14 @@
 }
 
 .game-stats-button {
-    -webkit-box-shadow: none;
+    -webkit-box-shadow: 0 2px 2px #808080;
     -webkit-transform: translateX(-50%);
     -webkit-transition: all 150ms ease;
     background-color: #fff;
     border-radius: 50px;
     border: none;
     bottom: 20px;
-    box-shadow: none;
+    box-shadow: 0 2px 2px #808080;
     color: #000;
     cursor: pointer;
     font-size: 14px;
@@ -555,8 +555,8 @@
 }
 
 .game-stats-button:hover {
-    -webkit-box-shadow: 0 0 5px #1e90ff;
-    box-shadow: 0 0 5px #1e90ff;
+    -webkit-box-shadow: 0 2px 5px #1e90ff;
+    box-shadow: 0 2px 5px #1e90ff;
 }
 
 .game-slideout-officials div:first-of-type p:first-of-type,

@@ -142,23 +142,31 @@
             <div class="how-to-dropdown-list">
               <p>
                 <span>Games :</span>
-                - Daily games are what loads by default. The dropdown
-                of dates is a weekly schedule provided via the NHL api. The dates are auto-updated by the NHL, so the
+                - Daily games load by default. The dropdown
+                of dates is a weekly schedule provided via the NHL API. The dates are auto-updated by the NHL, so the
                 dropdown updates from that. I slimmed it down to weekly games to limit the amount of data requested.
                 Just
-                below the game's section you can view League,
+                below the game section you can view League,
                 Conference, and Division standings.
+              </p>
+              <p>
+                <span>Cards :</span>
+                - The cards for 'day of' games will have a button display from PREGAME 30 minutes before and on. This
+                button controls a dropdown of data that will update as the games go on. Games that are LIVE will have
+                progressing goals, shots and times. Games that go FINAL will have the final score with winner
+                highlighted. Each dropdown has a button to lead to more in depth stats for PREGAME, LIVE and FINAL
+                games.
               </p>
               <p>
                 <span>Teams :</span>
                 - Select a team from above and you'll be redirected to see that
-                team's regular and preseason schedules. Day of and upcoming games are on top. Finished games are below
-                and will have the dropdown summary visible. Preseason games and team stats below that.
+                team's regular season schedule. Day of and upcoming games are on top. Finished games are below, and soon
+                to be team stats below that. You'll be able to see finished game stats from their dropdown.
               </p>
               <p>
                 <span>Players :</span>
                 - Once a team is chosen, a current rostered player is available. Select a player and be redirected to
-                their stats, including this season and playing history.
+                their stats, soon to have season and career stats, and maybe their playing history too.
               </p>
             </div>
           </div>
@@ -183,21 +191,27 @@
               <ul>
                 <span>Creators :</span>
                 <li>
-                  My Portfolio<br />
+                  - My Portfolio<br />
                   <a href="https://naynayren.github.io/" target="_blank" title="My Portfolio"
                     aria-label="My Portfolio Link">Nate M.
                     <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="false"></i></a>
                 </li>
                 <li>
-                  API Maintained By<br />
+                  - API Maintained By<br />
                   <a href="https://gitlab.com/dword4" target="_blank" title="API Maintainer"
                     aria-label="API Maintainer Link">Drew Hynes
                     <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="false"></i></a>
                 </li>
                 <li>
-                  NHL API Docs<br />
-                  <a href="https://gitlab.com/dword4/nhlapi/-/blob/master/new-api.md" target="_blank"
-                    title="NHL API Link" aria-label="NHL API Link">nhlapi/new-api.md
+                  - NHL API Docs<br />
+                  <a href="https://gitlab.com/dword4/nhlapi/-/blob/master/new-api.md" target="_blank" title="NHL API"
+                    aria-label="NHL API Link">nhlapi/new-api.md
+                    <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="false"></i></a>
+                </li>
+                <li>
+                  - In Depth Endpoints<br />
+                  <a href="https://github.com/Zmalski/NHL-API-Reference" target="_blank" title="In Depth Endpoints"
+                    aria-label="In Depth Endpoints Link">NHL-API-Reference
                     <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="false"></i></a>
                 </li>
               </ul>
