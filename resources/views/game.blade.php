@@ -34,6 +34,34 @@
           <span class="game-matchup-away-team-indicator">Away</span>
           <span class="game-matchup-home-team-indicator">Home</span>
         </div>
+        {{-- matchup stats --}}
+        <div class="game-matchup-main-container">
+          {{-- three stars --}}
+          <h3>Three Stars</h3>
+          <div class="game-matchup-three-stars">
+            <p aria-label="Game First Star">
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <span>
+                {{ $gameMatchup['summary']['threeStars'][0]['name'] }}
+              </span>
+            </p>
+            <p aria-label="Game Second Star">
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <span>
+                {{ $gameMatchup['summary']['threeStars'][1]['name'] }}
+              </span>
+            </p>
+            <p aria-label="Game Third Star">
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <span>
+                {{ $gameMatchup['summary']['threeStars'][2]['name'] }}
+              </span>
+            </p>
+          </div>
+        </div>
       @endif
       {{-- LIVE GAME --}}
       @if ($gameMatchup['gameState'] === 'CRIT' || $gameMatchup['gameState'] === 'LIVE')
@@ -81,6 +109,9 @@
           <span class="game-matchup-away-team-indicator">Away</span>
           <span class="game-matchup-home-team-indicator">Home</span>
         </div>
+        <div class="game-matchup-main-container">
+          <h3>Live Head to Head</h3>
+        </div>
       @endif
       {{-- PREGAME HEAD TO HEAD --}}
       @if ($gameMatchup['gameState'] === 'PRE')
@@ -107,6 +138,9 @@
           </div>
           <span class="game-matchup-away-team-indicator">Away</span>
           <span class="game-matchup-home-team-indicator">Home</span>
+        </div>
+        <div class="game-matchup-main-container">
+          <h3>Pregame Head to Head</h3>
         </div>
       @endif
       {{-- used to highlight game winner --}}

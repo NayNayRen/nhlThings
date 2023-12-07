@@ -482,6 +482,59 @@ footer {
     transform: translateX(-50%);
 }
 
+.game-matchup-main-container {
+    -ms-flex-align: start;
+    -ms-flex-direction: column;
+    -webkit-box-align: start;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    align-items: flex-start;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+    /* outline: solid 1px blue; */
+}
+
+.game-matchup-main-container h3 {
+    font-size: 18px;
+    text-align: center;
+    padding: 5px 15px;
+    width: 100%;
+}
+
+.game-matchup-three-stars {
+    -ms-flex-align: start;
+    -ms-flex-direction: row;
+    -ms-flex-pack: space-evenly;
+    -ms-flex-wrap: wrap;
+    -webkit-box-align: start;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -webkit-box-pack: space-evenly;
+    align-items: flex-start;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-size: 16px;
+    height: auto;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.game-matchup-three-stars i {
+    color: #ffa500;
+    text-shadow: 0 0 1px #000;
+}
+
+.game-matchup-three-stars p {
+    padding: 0 10px;
+}
+
 header {
     -ms-flex-align: center;
     -ms-flex-direction: column;
