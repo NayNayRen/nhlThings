@@ -325,6 +325,21 @@ footer {
     width: 100%;
 }
 
+.game-matchup-away-team-indicator,
+.game-matchup-home-team-indicator {
+    bottom: 5px;
+    color: #b22222;
+    font-size: 12px;
+    font-weight: bold;
+    position: absolute;
+}
+.game-matchup-away-team-indicator {
+    left: 10px;
+}
+.game-matchup-home-team-indicator {
+    right: 10px;
+}
+
 .game-matchup-container,
 .league-container,
 .player-container,
@@ -335,17 +350,6 @@ footer {
     overflow: hidden;
     width: 100%;
     /* outline: solid 1px blue; */
-}
-
-.game-matchup-heading-date {
-    -webkit-transform: translateX(-50%);
-    border-bottom: solid 1px #1e90ff;
-    font-size: 14px;
-    left: 50%;
-    padding: 0 10px;
-    position: absolute;
-    top: 5px;
-    transform: translateX(-50%);
 }
 
 .game-matchup-heading-container {
@@ -398,6 +402,17 @@ footer {
     font-size: 16px;
     text-align: center;
     width: 100%;
+}
+
+.game-matchup-heading-date {
+    -webkit-transform: translateX(-50%);
+    border-bottom: solid 1px #1e90ff;
+    font-size: 14px;
+    left: 50%;
+    padding: 0 10px;
+    position: absolute;
+    top: 5px;
+    transform: translateX(-50%);
 }
 
 .game-matchup-heading-goals {
@@ -454,6 +469,17 @@ footer {
     color: #b22222;
     font-size: 24px;
     margin: 0 10px;
+}
+
+.game-matchup-heading-venue {
+    -webkit-transform: translateX(-50%);
+    border-top: solid 1px #1e90ff;
+    font-size: 14px;
+    left: 50%;
+    padding: 0 10px;
+    position: absolute;
+    bottom: 5px;
+    transform: translateX(-50%);
 }
 
 header {
@@ -1393,7 +1419,7 @@ header h1 {
     .league-standings-heading-container,
     .team-heading-container,
     .player-heading-container {
-        min-height: 115px;
+        min-height: 120px;
     }
 
     .game-matchup-heading-container h2,
@@ -1502,7 +1528,7 @@ header h1 {
     }
 
     .game-matchup-heading-container {
-        padding: 15px 10px 0 10px;
+        padding: 15px 10px;
     }
 
     .game-matchup-heading-container h2,

@@ -20,6 +20,7 @@
             <h3 class="game-matchup-heading-period">FINAL</h3>
             <p class="game-matchup-heading-clock">00:00</p>
           </div>
+          <p class="game-matchup-heading-venue">{{ $gameMatchup['venue']['default'] }}</p>
           {{-- home team --}}
           <div class="game-matchup-heading-goals">
             <p>{{ $gameMatchup['homeTeam']['score'] }}</p>
@@ -30,6 +31,8 @@
                 alt="{{ $gameMatchup['homeTeam']['name']['default'] }} Logo">
             </div>
           </div>
+          <span class="game-matchup-away-team-indicator">Away</span>
+          <span class="game-matchup-home-team-indicator">Home</span>
         </div>
       @endif
       {{-- LIVE GAME --}}
@@ -64,6 +67,7 @@
               <p class="game-matchup-heading-clock">{{ $gameMatchup['clock']['timeRemaining'] }}</p>
             </div>
           </div>
+          <p class="game-matchup-heading-venue">{{ $gameMatchup['venue']['default'] }}</p>
           {{-- home team --}}
           <div class="game-matchup-heading-goals">
             <p>{{ $gameMatchup['homeTeam']['score'] }}</p>
@@ -74,6 +78,8 @@
                 alt="{{ $gameMatchup['homeTeam']['name']['default'] }} Logo">
             </div>
           </div>
+          <span class="game-matchup-away-team-indicator">Away</span>
+          <span class="game-matchup-home-team-indicator">Home</span>
         </div>
       @endif
       {{-- PREGAME HEAD TO HEAD --}}
@@ -91,6 +97,7 @@
             <h3 class="game-matchup-heading-period">{{ $formattedGameTime }} EST</h3>
             <p class="game-matchup-heading-clock">Stats Leaders</p>
           </div>
+          <p class="game-matchup-heading-venue">{{ $gameMatchup['venue']['default'] }}</p>
           {{-- home team --}}
           <div class="game-matchup-heading-right">
             <div class="game-matchup-heading-logo">
@@ -98,6 +105,8 @@
                 alt="{{ $gameMatchup['homeTeam']['name']['default'] }} Logo">
             </div>
           </div>
+          <span class="game-matchup-away-team-indicator">Away</span>
+          <span class="game-matchup-home-team-indicator">Home</span>
         </div>
       @endif
       {{-- used to highlight game winner --}}
