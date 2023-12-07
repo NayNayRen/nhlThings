@@ -21,11 +21,14 @@ class GameController extends Controller
     $secondHalfSeason[] = $season[4] . $season[5] . $season[6] . $season[7];
     $gameBoxscores = ApiController::getBoxscores($id);
     $gameMatchup = ApiController::getGameMatchup($id);
+    $formattedGameTime = Carbon::create($gameMatchup['startTimeUTC'])->tz('America/New_York');
     // dd($gameMatchup);
     return view('game', [
       'favIcon' => '../img/nhl-shield.png',
       'title' => $gameMatchup['awayTeam']['abbrev'] . ' vs ' . $gameMatchup['homeTeam']['abbrev'],
       'formattedSeason' => $firstHalfSeason[0] . '/' . $secondHalfSeason[0],
+      'formattedGameDate' => $formattedGameTime->format('D M j, Y'),
+      'formattedGameTime' => $formattedGameTime->format('h:i A'),
       'gameBoxscores' => $gameBoxscores,
       'gameMatchup' => $gameMatchup,
       'currentDate' => $currentDate,

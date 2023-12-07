@@ -1,6 +1,6 @@
 function loadGameScript() {
   let checkGameState = document.querySelectorAll('.game-state');
-  const periods = document.querySelectorAll('.game-periods');
+  const periods = document.querySelectorAll('.game-matchup-periods');
 
   periods.forEach((period) => {
     // console.log(period.childNodes);
