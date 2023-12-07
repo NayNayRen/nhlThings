@@ -20,7 +20,6 @@
             <h3 class="game-matchup-heading-period">FINAL</h3>
             <p class="game-matchup-heading-clock">00:00</p>
           </div>
-          <p class="game-matchup-heading-venue">{{ $gameMatchup['venue']['default'] }}</p>
           {{-- home team --}}
           <div class="game-matchup-heading-goals">
             <p>{{ $gameMatchup['homeTeam']['score'] }}</p>
@@ -36,6 +35,7 @@
         </div>
         {{-- matchup stats --}}
         <div class="game-matchup-main-container">
+          <p class="game-matchup-main-container-venue">{{ $gameMatchup['venue']['default'] }}</p>
           {{-- three stars --}}
           <h3>Three Stars</h3>
           <div class="game-matchup-three-stars">
@@ -95,7 +95,6 @@
               <p class="game-matchup-heading-clock">{{ $gameMatchup['clock']['timeRemaining'] }}</p>
             </div>
           </div>
-          <p class="game-matchup-heading-venue">{{ $gameMatchup['venue']['default'] }}</p>
           {{-- home team --}}
           <div class="game-matchup-heading-goals">
             <p>{{ $gameMatchup['homeTeam']['score'] }}</p>
@@ -109,7 +108,9 @@
           <span class="game-matchup-away-team-indicator">Away</span>
           <span class="game-matchup-home-team-indicator">Home</span>
         </div>
+        {{-- matchup stats --}}
         <div class="game-matchup-main-container">
+          <p class="game-matchup-main-container-venue">{{ $gameMatchup['venue']['default'] }}</p>
           <h3>Live Head to Head</h3>
         </div>
       @endif
@@ -139,7 +140,9 @@
           <span class="game-matchup-away-team-indicator">Away</span>
           <span class="game-matchup-home-team-indicator">Home</span>
         </div>
+        {{-- matchup stats --}}
         <div class="game-matchup-main-container">
+          <p class="game-matchup-main-container-venue">{{ $gameMatchup['venue']['default'] }}</p>
           <h3>Pregame Head to Head</h3>
         </div>
       @endif
