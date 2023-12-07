@@ -176,8 +176,7 @@
 .league-button:hover,
 .metro-button:hover,
 .pacific-button:hover,
-.west-button:hover,
-.player-history-button:hover {
+.west-button:hover {
     -webkit-box-shadow: 0 2px 5px #1e90ff;
     box-shadow: 0 2px 5px #1e90ff;
 }
@@ -273,6 +272,11 @@ body {
 
 .burger-overlay-dim {
     width: 100%;
+}
+
+.conference-button-container,
+.division-button-container {
+    margin-top: 10px;
 }
 
 .current-date-time-container {
@@ -720,7 +724,7 @@ header h1 {
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: flex-start;
-    padding: 15px 0 15px 20px;
+    padding: 5px 0 20px 20px;
     /* outline: solid 1px blue; */
 }
 
@@ -1373,8 +1377,7 @@ header h1 {
     .league-button:hover,
     .metro-button:hover,
     .pacific-button:hover,
-    .west-button:hover,
-    .player-history-button:hover {
+    .west-button:hover {
         -webkit-box-shadow: none;
         box-shadow: none;
     }
@@ -1445,7 +1448,7 @@ header h1 {
     }
 
     .league-standings-selection-container {
-        padding: 15px 0 15px 10px;
+        padding: 5px 0 20px 10px;
     }
 
     .league-standings-heading-container div:last-of-type,
@@ -1474,10 +1477,10 @@ header h1 {
         width: 100%;
     }
 
-    .roster-dropdown-list li:hover,
+    /* .roster-dropdown-list li:hover,
     .teams-dropdown-list li:hover {
         background-color: #fff;
-    }
+    } */
 
     .shield-logo {
         width: 60px;
@@ -1496,6 +1499,10 @@ header h1 {
         -webkit-box-pack: justify;
         -ms-flex-pack: justify;
         justify-content: space-between;
+    }
+
+    .game-matchup-heading-container {
+        padding: 15px 10px 0 10px;
     }
 
     .game-matchup-heading-container h2,
@@ -1531,7 +1538,7 @@ header h1 {
     }
 
     .league-standings-selection-container {
-        padding: 10px 0 10px 5px;
+        padding: 5px 0 20px 5px;
     }
 
     .main {
