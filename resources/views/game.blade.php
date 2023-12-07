@@ -7,7 +7,6 @@
         <div class="game-matchup-heading-container">
           {{-- away team --}}
           <div class="game-matchup-heading-left">
-            <h2>{{ $gameMatchup['awayTeam']['abbrev'] }}</h2>
             <div class="game-matchup-heading-logo">
               <img src={{ $gameMatchup['awayTeam']['logo'] }}
                 alt="{{ $gameMatchup['awayTeam']['name']['default'] }} Logo">
@@ -15,26 +14,25 @@
           </div>
           <div class="game-matchup-heading-shots-goals">
             <p class="game-matchup-heading-goals">{{ $gameMatchup['awayTeam']['score'] }}</p>
-            <div class="game-matchup-heading-shots">
+            {{-- <div class="game-matchup-heading-shots">
               <p>SOG</p>
               <p>{{ $gameMatchup['awayTeam']['sog'] }}</p>
-            </div>
+            </div> --}}
           </div>
           <p class="game-matchup-heading-date">{{ $formattedGameDate }}</p>
           <div class="game-matchup-heading-center">
             <h3 class="game-matchup-heading-period">FINAL</h3>
-            <p>00:00</p>
+            <p class="game-matchup-heading-clock">00:00</p>
           </div>
           {{-- home team --}}
           <div class="game-matchup-heading-shots-goals">
             <p class="game-matchup-heading-goals">{{ $gameMatchup['homeTeam']['score'] }}</p>
-            <div class="game-matchup-heading-shots">
+            {{-- <div class="game-matchup-heading-shots">
               <p>SOG</p>
               <p>{{ $gameMatchup['homeTeam']['sog'] }}</p>
-            </div>
+            </div> --}}
           </div>
           <div class="game-matchup-heading-right">
-            <h2>{{ $gameMatchup['homeTeam']['abbrev'] }}</h2>
             <div class="game-matchup-heading-logo">
               <img src={{ $gameMatchup['homeTeam']['logo'] }}
                 alt="{{ $gameMatchup['homeTeam']['name']['default'] }} Logo">
@@ -47,7 +45,6 @@
         <div class="game-matchup-heading-container">
           {{-- away team --}}
           <div class="game-matchup-heading-left">
-            <h2>{{ $gameMatchup['awayTeam']['abbrev'] }}</h2>
             <div class="game-matchup-heading-logo">
               <img src={{ $gameMatchup['awayTeam']['logo'] }}
                 alt="{{ $gameMatchup['awayTeam']['name']['default'] }} Logo">
@@ -55,10 +52,10 @@
           </div>
           <div class="game-matchup-heading-shots-goals">
             <p class="game-matchup-heading-goals">{{ $gameMatchup['awayTeam']['score'] }}</p>
-            <div class="game-matchup-heading-shots">
+            {{-- <div class="game-matchup-heading-shots">
               <p>SOG</p>
               <p>{{ $gameMatchup['awayTeam']['sog'] }}</p>
-            </div>
+            </div> --}}
           </div>
           <p class="game-matchup-heading-date">{{ $formattedGameDate }}</p>
           <div class="game-matchup-heading-center">
@@ -76,19 +73,18 @@
                   <h3 class="game-matchup-heading-period">1st</h3>
                 @endif
               @endforeach
-              <p>{{ $gameMatchup['clock']['timeRemaining'] }}</p>
+              <p class="game-matchup-heading-clock">{{ $gameMatchup['clock']['timeRemaining'] }}</p>
             </div>
           </div>
           {{-- home team --}}
           <div class="game-matchup-heading-shots-goals">
             <p class="game-matchup-heading-goals">{{ $gameMatchup['homeTeam']['score'] }}</p>
-            <div class="game-matchup-heading-shots">
+            {{-- <div class="game-matchup-heading-shots">
               <p>SOG</p>
               <p>{{ $gameMatchup['homeTeam']['sog'] }}</p>
-            </div>
+            </div> --}}
           </div>
           <div class="game-matchup-heading-right">
-            <h2>{{ $gameMatchup['homeTeam']['abbrev'] }}</h2>
             <div class="game-matchup-heading-logo">
               <img src={{ $gameMatchup['homeTeam']['logo'] }}
                 alt="{{ $gameMatchup['homeTeam']['name']['default'] }} Logo">
@@ -101,7 +97,6 @@
         <div class="game-matchup-heading-container">
           {{-- away team --}}
           <div class="game-matchup-heading-left">
-            <h2>{{ $gameMatchup['awayTeam']['abbrev'] }}</h2>
             <div class="game-matchup-heading-logo">
               <img src={{ $gameMatchup['awayTeam']['logo'] }}
                 alt="{{ $gameMatchup['awayTeam']['name']['default'] }} Logo">
@@ -110,11 +105,10 @@
           <p class="game-matchup-heading-date">{{ $formattedGameDate }}</p>
           <div class="game-matchup-heading-center">
             <h3 class="game-matchup-heading-period">{{ $formattedGameTime }} EST</h3>
-            <p>Stats Leaders</p>
+            <p class="game-matchup-heading-clock">Stats Leaders</p>
           </div>
           {{-- home team --}}
           <div class="game-matchup-heading-right">
-            <h2>{{ $gameMatchup['homeTeam']['abbrev'] }}</h2>
             <div class="game-matchup-heading-logo">
               <img src={{ $gameMatchup['homeTeam']['logo'] }}
                 alt="{{ $gameMatchup['homeTeam']['name']['default'] }} Logo">

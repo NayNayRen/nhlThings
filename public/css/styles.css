@@ -280,7 +280,6 @@ body {
 }
 
 .burger-overlay-dim {
-    /* opacity: 1; */
     width: 100%;
 }
 
@@ -343,7 +342,9 @@ footer {
 }
 
 .game-matchup-heading-date {
+    -webkit-transform: translateX(-50%);
     border-bottom: solid 1px #1e90ff;
+    font-size: 14px;
     left: 50%;
     padding: 0 10px;
     position: absolute;
@@ -397,20 +398,36 @@ footer {
     /* outline: solid 1px blue; */
 }
 
+.game-matchup-heading-clock {
+    font-size: 16px;
+    text-align: center;
+    width: 100%;
+}
+
 .game-matchup-heading-goals {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
     font-size: 30px;
     font-weight: bold;
-    justify-content: center;
-    margin: 0 10px;
+    padding: 0 15px;
     /* outline: solid 1px blue; */
 }
 
 .game-matchup-heading-logo {
+    -ms-flex-align: center;
+    -ms-flex-direction: column;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-box-pack: center;
+    align-items: center;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    flex-direction: column;
     height: auto;
+    justify-content: center;
     width: 100px;
+    /* outline: solid 1px blue; */
 }
 
 .game-matchup-heading-logo img {
@@ -422,19 +439,38 @@ footer {
 
 .game-matchup-heading-period {
     color: #b22222;
-    font-size: 26px;
+    font-size: 24px;
+    margin: 0 10px;
 }
 
 .game-matchup-heading-shots-goals {
+    -ms-flex-align: center;
+    -ms-flex-direction: column;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-box-pack: center;
     align-items: center;
+    display: -ms-flexbox;
+    display: -webkit-box;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
 .game-matchup-heading-shots {
+    -ms-flex-align: center;
+    -ms-flex-direction: column;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-box-pack: center;
     align-items: center;
     border-radius: 5px;
+    display: -ms-flexbox;
+    display: -webkit-box;
     display: flex;
     flex-direction: column;
     font-size: 16px;
@@ -443,7 +479,7 @@ footer {
 }
 
 .game-matchup-heading-shots p {
-    padding: 2px 10px;
+    padding: 2px 15px;
     text-align: center;
     width: 100%;
 }
@@ -1280,8 +1316,12 @@ header h1 {
 }
 
 @media (max-width: 1000px) {
+    .game-matchup-heading-container {
+        min-height: 125px;
+    }
+
     .game-matchup-heading-container h2,
-    .game-matchup-heading-period,
+    .game-matchup-heading-goals,
     .league-heading-container h2,
     .league-standings-heading-container h2,
     .player-heading-container h2,
@@ -1290,15 +1330,28 @@ header h1 {
         font-size: 24px;
     }
 
-    .game-matchup-heading-goals {
-        font-size: 24px;
-        margin: 0 10px;
-        /* outline: solid 1px blue; */
+    .game-matchup-heading-logo {
+        width: 85px;
+    }
+
+    .game-matchup-heading-period {
+        font-size: 22px;
     }
 
     header h1 {
         font-size: 26px;
         padding: 25px 30px 10px 30px;
+    }
+
+    .league-heading-container,
+    .league-standings-heading-container,
+    .team-heading-container,
+    .player-heading-container {
+        min-height: 125px;
+    }
+
+    .league-standings-heading-container div:last-of-type {
+        width: 80px;
     }
 
     .main {
@@ -1373,19 +1426,22 @@ header h1 {
         justify-content: center;
     }
 
-    /* .game-matchup-heading-container {
+    .game-matchup-heading-container,
+    .league-heading-container,
+    .league-standings-heading-container,
+    .team-heading-container,
+    .player-heading-container {
         min-height: 115px;
-    } */
+    }
 
-    /* .game-matchup-heading-container h2,
-    .game-matchup-heading-period,
+    .game-matchup-heading-container h2,
     .league-heading-container h2,
     .league-standings-heading-container h2,
     .player-heading-container h2,
     .team-stats-season-container h2,
     .team-heading-container h2 {
-        font-size: 24px;
-    } */
+        font-size: 22px;
+    }
 
     .header-nav {
         padding: 25px 35px 120px 0;
@@ -1433,21 +1489,12 @@ header h1 {
         padding: 15px 0 15px 10px;
     }
 
-    /* .league-heading-container,
-    .league-standings-heading-container,
-    .team-heading-container,
-    .player-heading-container {
-        -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-        justify-content: space-between;
-        min-height: 115px;
+    .league-standings-heading-container div:last-of-type,
+    .player-heading-logo,
+    .player-number-position-container,
+    .team-heading-logo {
+        width: 75px;
     }
-
-    .league-standings-heading-container div:last-of-type {
-        margin-left: 0;
-        margin-right: 10px;
-        width: 80px;
-    } */
 
     .main {
         padding: 75px 0 0 0;
@@ -1468,49 +1515,19 @@ header h1 {
         width: 100%;
     }
 
-    /* .player-heading-logo,
-    .team-heading-logo {
-        margin-right: 10px;
-        width: 75px;
-    }
-
-    .player-number-position-container {
-        width: 75px;
-    } */
-
     .roster-dropdown-list li:hover,
     .teams-dropdown-list li:hover {
         background-color: #fff;
     }
 
-    /* .shield-logo {
-        margin-left: 0;
-        margin-right: 10px;
+    .shield-logo {
         width: 60px;
-    } */
+    }
 }
 
 @media (max-width: 400px) {
     .daily-games-date span {
         font-size: 16px;
-    }
-
-    .game-matchup-heading-container {
-        min-height: 115px;
-    }
-
-    .game-matchup-heading-container h2,
-    .game-matchup-heading-period,
-    .league-heading-container h2,
-    .league-standings-heading-container h2,
-    .player-heading-container h2,
-    .team-stats-season-container h2,
-    .team-heading-container h2 {
-        font-size: 20px;
-    }
-
-    .game-matchup-heading-logo {
-        width: 75px;
     }
 
     .league-heading-container,
@@ -1520,23 +1537,34 @@ header h1 {
         -webkit-box-pack: justify;
         -ms-flex-pack: justify;
         justify-content: space-between;
-        min-height: 115px;
+    }
+
+    .game-matchup-heading-container h2,
+    .game-matchup-heading-goals,
+    .league-heading-container h2,
+    .league-standings-heading-container h2,
+    .player-heading-container h2,
+    .team-stats-season-container h2,
+    .team-heading-container h2 {
+        font-size: 20px;
+    }
+
+    .game-matchup-heading-logo {
+        width: 65px;
+    }
+
+    .game-matchup-heading-period {
+        font-size: 20px;
     }
 
     .league-standings-heading-container div:last-of-type {
         margin-left: 0;
-        margin-right: 10px;
-        width: 80px;
+        margin-right: 15px;
     }
 
     .league-standings-selection-container {
         padding: 10px 0 10px 5px;
     }
-
-    /* .league-standings-heading-container h2,
-    .team-stats-season-container h2 {
-        font-size: 20px;
-    } */
 
     .main {
         padding: 115px 0 0 0;
@@ -1548,17 +1576,11 @@ header h1 {
 
     .player-heading-logo,
     .team-heading-logo {
-        margin-right: 10px;
-        width: 75px;
-    }
-
-    .player-number-position-container {
-        width: 75px;
+        margin-right: 15px;
     }
 
     .shield-logo {
         margin-left: 0;
-        margin-right: 10px;
-        width: 60px;
+        margin-right: 15px;
     }
 }
