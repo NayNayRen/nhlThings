@@ -12,12 +12,8 @@
                 alt="{{ $gameMatchup['awayTeam']['name']['default'] }} Logo">
             </div>
           </div>
-          <div class="game-matchup-heading-shots-goals">
-            <p class="game-matchup-heading-goals">{{ $gameMatchup['awayTeam']['score'] }}</p>
-            {{-- <div class="game-matchup-heading-shots">
-              <p>SOG</p>
-              <p>{{ $gameMatchup['awayTeam']['sog'] }}</p>
-            </div> --}}
+          <div class="game-matchup-heading-goals">
+            <p>{{ $gameMatchup['awayTeam']['score'] }}</p>
           </div>
           <p class="game-matchup-heading-date">{{ $formattedGameDate }}</p>
           <div class="game-matchup-heading-center">
@@ -25,12 +21,8 @@
             <p class="game-matchup-heading-clock">00:00</p>
           </div>
           {{-- home team --}}
-          <div class="game-matchup-heading-shots-goals">
-            <p class="game-matchup-heading-goals">{{ $gameMatchup['homeTeam']['score'] }}</p>
-            {{-- <div class="game-matchup-heading-shots">
-              <p>SOG</p>
-              <p>{{ $gameMatchup['homeTeam']['sog'] }}</p>
-            </div> --}}
+          <div class="game-matchup-heading-goals">
+            <p>{{ $gameMatchup['homeTeam']['score'] }}</p>
           </div>
           <div class="game-matchup-heading-right">
             <div class="game-matchup-heading-logo">
@@ -50,12 +42,8 @@
                 alt="{{ $gameMatchup['awayTeam']['name']['default'] }} Logo">
             </div>
           </div>
-          <div class="game-matchup-heading-shots-goals">
-            <p class="game-matchup-heading-goals">{{ $gameMatchup['awayTeam']['score'] }}</p>
-            {{-- <div class="game-matchup-heading-shots">
-              <p>SOG</p>
-              <p>{{ $gameMatchup['awayTeam']['sog'] }}</p>
-            </div> --}}
+          <div class="game-matchup-heading-goals">
+            <p>{{ $gameMatchup['awayTeam']['score'] }}</p>
           </div>
           <p class="game-matchup-heading-date">{{ $formattedGameDate }}</p>
           <div class="game-matchup-heading-center">
@@ -77,12 +65,8 @@
             </div>
           </div>
           {{-- home team --}}
-          <div class="game-matchup-heading-shots-goals">
-            <p class="game-matchup-heading-goals">{{ $gameMatchup['homeTeam']['score'] }}</p>
-            {{-- <div class="game-matchup-heading-shots">
-              <p>SOG</p>
-              <p>{{ $gameMatchup['homeTeam']['sog'] }}</p>
-            </div> --}}
+          <div class="game-matchup-heading-goals">
+            <p>{{ $gameMatchup['homeTeam']['score'] }}</p>
           </div>
           <div class="game-matchup-heading-right">
             <div class="game-matchup-heading-logo">
@@ -116,6 +100,8 @@
           </div>
         </div>
       @endif
+      {{-- used to highlight game winner --}}
+      <div class="game-state" hidden>{{ $gameMatchup['gameState'] }}</div>
     </div>
   </div>
 </main>

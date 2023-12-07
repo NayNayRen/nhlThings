@@ -1,5 +1,5 @@
 function loadGameScript() {
-  let checkGameState = document.querySelectorAll('.game-state');
+  const checkGameState = document.querySelector('.game-state');
   const periods = document.querySelectorAll('.game-matchup-periods');
 
   periods.forEach((period) => {
@@ -23,6 +23,19 @@ function loadGameScript() {
       period.childNodes[1].style.display = 'none';
     }
   });
+
+  if (checkGameState.innerText === 'OFF' || checkGameState.innerText === 'FINAL') {
+    if (checkGameState.parentElement.childNodes[1].childNodes[3].innerText > checkGameState.parentElement.childNodes[1].childNodes[9].innerText) {
+      checkGameState.parentElement.childNodes[1].childNodes[3].style.color = '#fff';
+      checkGameState.parentElement.childNodes[1].childNodes[3].style.backgroundColor = '#1e90ff';
+    }
+    else if (checkGameState.parentElement.childNodes[1].childNodes[3].innerText < checkGameState.parentElement.childNodes[1].childNodes[9].innerText) {
+      checkGameState.parentElement.childNodes[1].childNodes[9].style.color = '#fff';
+      checkGameState.parentElement.childNodes[1].childNodes[9].style.backgroundColor = '#1e90ff';
+    }
+  }
+
+  // console.log(checkGameState.parentElement.childNodes);
 }
 
 window.addEventListener('load', () => {

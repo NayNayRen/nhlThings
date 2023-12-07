@@ -405,9 +405,26 @@ footer {
 }
 
 .game-matchup-heading-goals {
+    -ms-flex-align: center;
+    -ms-flex-direction: column;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-box-pack: center;
+    align-items: center;
+    border-radius: 50%;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    flex-direction: column;
     font-size: 30px;
     font-weight: bold;
-    padding: 0 15px;
+    height: 45px;
+    justify-content: center;
+    margin: 0 5px;
+    text-align: center;
+    width: 45px;
     /* outline: solid 1px blue; */
 }
 
@@ -443,7 +460,7 @@ footer {
     margin: 0 10px;
 }
 
-.game-matchup-heading-shots-goals {
+/* .game-matchup-heading-shots-goals {
     -ms-flex-align: center;
     -ms-flex-direction: column;
     -ms-flex-pack: center;
@@ -457,42 +474,7 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
-
-.game-matchup-heading-shots {
-    -ms-flex-align: center;
-    -ms-flex-direction: column;
-    -ms-flex-pack: center;
-    -webkit-box-align: center;
-    -webkit-box-direction: normal;
-    -webkit-box-orient: vertical;
-    -webkit-box-pack: center;
-    align-items: center;
-    border-radius: 5px;
-    display: -ms-flexbox;
-    display: -webkit-box;
-    display: flex;
-    flex-direction: column;
-    font-size: 16px;
-    justify-content: center;
-    outline: solid 1px #000;
-}
-
-.game-matchup-heading-shots p {
-    padding: 2px 15px;
-    text-align: center;
-    width: 100%;
-}
-
-.game-matchup-heading-shots p:first-of-type {
-    background-color: #000;
-    color: #fff;
-}
-
-.game-matchup-heading-shots p:last-of-type {
-    background-color: #fff;
-    color: #000;
-}
+} */
 
 header {
     -ms-flex-align: center;
@@ -1321,13 +1303,18 @@ header h1 {
     }
 
     .game-matchup-heading-container h2,
-    .game-matchup-heading-goals,
     .league-heading-container h2,
     .league-standings-heading-container h2,
     .player-heading-container h2,
     .team-stats-season-container h2,
     .team-heading-container h2 {
         font-size: 24px;
+    }
+
+    .game-matchup-heading-goals {
+        font-size: 24px;
+        height: 40px;
+        width: 40px;
     }
 
     .game-matchup-heading-logo {
@@ -1540,13 +1527,18 @@ header h1 {
     }
 
     .game-matchup-heading-container h2,
-    .game-matchup-heading-goals,
     .league-heading-container h2,
     .league-standings-heading-container h2,
     .player-heading-container h2,
     .team-stats-season-container h2,
     .team-heading-container h2 {
         font-size: 20px;
+    }
+
+    .game-matchup-heading-goals {
+        font-size: 20px;
+        height: 35px;
+        width: 35px;
     }
 
     .game-matchup-heading-logo {
