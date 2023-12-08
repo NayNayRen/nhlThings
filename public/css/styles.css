@@ -527,6 +527,11 @@ footer {
     width: 100%;
     /* outline: solid 1px blue; */
 }
+.game-matchup-main-container-penalties li {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
 .game-matchup-main-container-goals li p,
 .game-matchup-main-container-penalties li p,
 .game-matchup-main-container-shots li p {
@@ -534,6 +539,11 @@ footer {
     text-align: center;
     width: 100%;
     /* outline: solid 1px blue; */
+}
+.game-matchup-main-container-penalties li p {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
 }
 
 .game-matchup-main-container-goals li:first-of-type p,
@@ -544,6 +554,9 @@ footer {
     box-shadow: 0 0 1px #000;
     margin-bottom: 5px;
     padding: 2px 0;
+}
+.game-matchup-main-container-penalties li:first-of-type p {
+    width: 100%;
 }
 
 .game-matchup-main-container-goals li:first-of-type p:first-of-type,
