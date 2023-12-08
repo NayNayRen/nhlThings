@@ -503,16 +503,31 @@ footer {
     width: 100%;
 }
 
+.game-matchup-main-container-bshots,
+.game-matchup-main-container-faceoff,
+.game-matchup-main-container-hits,
+.game-matchup-main-container-gaways,
 .game-matchup-main-container-goals,
 .game-matchup-main-container-penalties,
-.game-matchup-main-container-shots {
+.game-matchup-main-container-pim,
+.game-matchup-main-container-pp,
+.game-matchup-main-container-shots,
+.game-matchup-main-container-taways {
     margin: 0 auto 15px auto;
     width: 90%;
     /* outline: solid 1px blue; */
 }
+
+.game-matchup-main-container-bshots li,
+.game-matchup-main-container-faceoff li,
+.game-matchup-main-container-hits li,
+.game-matchup-main-container-gaways li,
 .game-matchup-main-container-goals li,
 .game-matchup-main-container-penalties li,
-.game-matchup-main-container-shots li {
+.game-matchup-main-container-pim li,
+.game-matchup-main-container-pp li,
+.game-matchup-main-container-shots li,
+.game-matchup-main-container-taways li {
     -ms-flex-direction: row;
     -ms-flex-pack: space-evenly;
     -webkit-box-direction: normal;
@@ -532,14 +547,22 @@ footer {
     flex-wrap: wrap;
 }
 
+.game-matchup-main-container-bshots li p,
+.game-matchup-main-container-faceoff li p,
+.game-matchup-main-container-hits li p,
+.game-matchup-main-container-gaways li p,
 .game-matchup-main-container-goals li p,
 .game-matchup-main-container-penalties li p,
-.game-matchup-main-container-shots li p {
+.game-matchup-main-container-pim li p,
+.game-matchup-main-container-pp li p,
+.game-matchup-main-container-shots li p,
+.game-matchup-main-container-taways li p {
     font-size: 16px;
     text-align: center;
     width: 100%;
     /* outline: solid 1px blue; */
 }
+
 .game-matchup-main-container-penalties li p {
     width: -webkit-fit-content;
     width: -moz-fit-content;
@@ -551,9 +574,16 @@ footer {
     padding: 0 10px;
 }
 
+.game-matchup-main-container-bshots li:first-of-type p,
+.game-matchup-main-container-faceoff li:first-of-type p,
+.game-matchup-main-container-hits li:first-of-type p,
+.game-matchup-main-container-gaways li:first-of-type p,
 .game-matchup-main-container-goals li:first-of-type p,
 .game-matchup-main-container-penalties li:first-of-type p,
-.game-matchup-main-container-shots li:first-of-type p {
+.game-matchup-main-container-pim li:first-of-type p,
+.game-matchup-main-container-pp li:first-of-type p,
+.game-matchup-main-container-shots li:first-of-type p,
+.game-matchup-main-container-taways li:first-of-type p {
     -webkit-box-shadow: 0 0 1px #000;
     background-color: #d8d8d8;
     box-shadow: 0 0 1px #000;
@@ -564,22 +594,43 @@ footer {
     width: 100%;
 }
 
+.game-matchup-main-container-bshots li:first-of-type p:first-of-type,
+.game-matchup-main-container-faceoff li:first-of-type p:first-of-type,
+.game-matchup-main-container-hits li:first-of-type p:first-of-type,
+.game-matchup-main-container-gaways li:first-of-type p:first-of-type,
 .game-matchup-main-container-goals li:first-of-type p:first-of-type,
 .game-matchup-main-container-penalties li:first-of-type p:first-of-type,
-.game-matchup-main-container-shots li:first-of-type p:first-of-type {
+.game-matchup-main-container-pim li:first-of-type p:first-of-type,
+.game-matchup-main-container-pp li:first-of-type p:first-of-type,
+.game-matchup-main-container-shots li:first-of-type p:first-of-type,
+.game-matchup-main-container-taways li:first-of-type p:first-of-type {
     border-bottom-left-radius: 5px;
     border-top-left-radius: 5px;
 }
 
+.game-matchup-main-container-bshots li:last-of-type p:last-of-type,
+.game-matchup-main-container-faceoff li:last-of-type p:last-of-type,
+.game-matchup-main-container-hits li:last-of-type p:last-of-type,
+.game-matchup-main-container-gaways li:last-of-type p:last-of-type,
 .game-matchup-main-container-goals li:first-of-type p:last-of-type,
 .game-matchup-main-container-penalties li:first-of-type p:last-of-type,
-.game-matchup-main-container-shots li:first-of-type p:last-of-type {
+.game-matchup-main-container-pim li:last-of-type p:last-of-type,
+.game-matchup-main-container-pp li:last-of-type p:last-of-type,
+.game-matchup-main-container-shots li:last-of-type p:last-of-type,
+.game-matchup-main-container-taways li:last-of-type p:last-of-type {
     border-bottom-right-radius: 5px;
     border-top-right-radius: 5px;
 }
 
+.game-matchup-main-container-bshots li p:nth-of-type(2),
+.game-matchup-main-container-faceoff li p:nth-of-type(2),
+.game-matchup-main-container-hits li p:nth-of-type(2),
+.game-matchup-main-container-gaways li p:nth-of-type(2),
 .game-matchup-main-container-goals li p:nth-of-type(2),
-.game-matchup-main-container-shots li p:nth-of-type(2) {
+.game-matchup-main-container-pim li p:nth-of-type(2),
+.game-matchup-main-container-pp li p:nth-of-type(2),
+.game-matchup-main-container-shots li p:nth-of-type(2),
+.game-matchup-main-container-taways li p:nth-of-type(2) {
     margin-left: 5px;
     margin-right: 5px;
 }
@@ -1697,9 +1748,16 @@ header h1 {
         justify-content: space-between;
     }
 
+    .game-matchup-main-container-bshots,
+    .game-matchup-main-container-faceoff,
+    .game-matchup-main-container-gaways,
     .game-matchup-main-container-goals,
+    .game-matchup-main-container-hits,
     .game-matchup-main-container-penalties,
+    .game-matchup-main-container-pim,
+    .game-matchup-main-container-pp,
     .game-matchup-main-container-shots,
+    .game-matchup-main-container-taways,
     .game-matchup-main-container-three-stars {
         width: 100%;
     }
