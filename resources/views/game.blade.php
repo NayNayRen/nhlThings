@@ -146,12 +146,20 @@
                   <li>
                     @foreach ($penalty['penalties'] as $infraction)
                       @php
-                        $formattedInfraction = str_replace('-', ' ', $infraction['descKey']);
+                        $formattedInfraction = explode('-', $infraction['descKey']);
                       @endphp
-                      <p>
-                        {{ $infraction['committedByPlayer'] }} - {{ $infraction['timeInPeriod'] }} -
-                        {{ ucwords($formattedInfraction) }}
-                      </p>
+                      @if (count($formattedInfraction) >= 2)
+                        <p class="game-matchup-penalty">
+                          {{ $infraction['committedByPlayer'] }} -
+                          {{ ucwords($formattedInfraction[0]) }} {{ ucwords($formattedInfraction[1]) }} -
+                          {{ $infraction['timeInPeriod'] }}
+                        </p>
+                      @else
+                        <p class="game-matchup-penalty">
+                          {{ $infraction['committedByPlayer'] }} -
+                          {{ ucwords($formattedInfraction[0]) }} - {{ $infraction['timeInPeriod'] }}
+                        </p>
+                      @endif
                     @endforeach
                   </li>
                 @endif
@@ -163,12 +171,20 @@
                   <li>
                     @foreach ($penalty['penalties'] as $infraction)
                       @php
-                        $formattedInfraction = str_replace('-', ' ', $infraction['descKey']);
+                        $formattedInfraction = explode('-', $infraction['descKey']);
                       @endphp
-                      <p>
-                        {{ $infraction['committedByPlayer'] }} - {{ $infraction['timeInPeriod'] }} -
-                        {{ ucwords($formattedInfraction) }}
-                      </p>
+                      @if (count($formattedInfraction) >= 2)
+                        <p class="game-matchup-penalty">
+                          {{ $infraction['committedByPlayer'] }} -
+                          {{ ucwords($formattedInfraction[0]) }} {{ ucwords($formattedInfraction[1]) }} -
+                          {{ $infraction['timeInPeriod'] }}
+                        </p>
+                      @else
+                        <p class="game-matchup-penalty">
+                          {{ $infraction['committedByPlayer'] }} -
+                          {{ ucwords($formattedInfraction[0]) }} - {{ $infraction['timeInPeriod'] }}
+                        </p>
+                      @endif
                     @endforeach
                   </li>
                 @endif
@@ -180,12 +196,20 @@
                   <li>
                     @foreach ($penalty['penalties'] as $infraction)
                       @php
-                        $formattedInfraction = str_replace('-', ' ', $infraction['descKey']);
+                        $formattedInfraction = explode('-', $infraction['descKey']);
                       @endphp
-                      <p>
-                        {{ $infraction['committedByPlayer'] }} - {{ $infraction['timeInPeriod'] }} -
-                        {{ ucwords($formattedInfraction) }}
-                      </p>
+                      @if (count($formattedInfraction) >= 2)
+                        <p class="game-matchup-penalty">
+                          {{ $infraction['committedByPlayer'] }} -
+                          {{ ucwords($formattedInfraction[0]) }} {{ ucwords($formattedInfraction[1]) }} -
+                          {{ $infraction['timeInPeriod'] }}
+                        </p>
+                      @else
+                        <p class="game-matchup-penalty">
+                          {{ $infraction['committedByPlayer'] }} -
+                          {{ ucwords($formattedInfraction[0]) }} - {{ $infraction['timeInPeriod'] }}
+                        </p>
+                      @endif
                     @endforeach
                   </li>
                 @endif
@@ -197,12 +221,20 @@
                   <li>
                     @foreach ($penalty['penalties'] as $infraction)
                       @php
-                        $formattedInfraction = str_replace('-', ' ', $infraction['descKey']);
+                        $formattedInfraction = explode('-', $infraction['descKey']);
                       @endphp
-                      <p>
-                        {{ $infraction['committedByPlayer'] }} - {{ $infraction['timeInPeriod'] }} -
-                        {{ ucwords($formattedInfraction) }}
-                      </p>
+                      @if (count($formattedInfraction) >= 2)
+                        <p class="game-matchup-penalty">
+                          {{ $infraction['committedByPlayer'] }} -
+                          {{ ucwords($formattedInfraction[0]) }} {{ ucwords($formattedInfraction[1]) }} -
+                          {{ $infraction['timeInPeriod'] }}
+                        </p>
+                      @else
+                        <p class="game-matchup-penalty">
+                          {{ $infraction['committedByPlayer'] }} -
+                          {{ ucwords($formattedInfraction[0]) }} - {{ $infraction['timeInPeriod'] }}
+                        </p>
+                      @endif
                     @endforeach
                   </li>
                 @endif
@@ -342,12 +374,20 @@
                   <li>
                     @foreach ($penalty['penalties'] as $infraction)
                       @php
-                        $formattedInfraction = str_replace('-', ' ', $infraction['descKey']);
+                        $formattedInfraction = explode('-', $infraction['descKey']);
                       @endphp
-                      <p>
-                        {{ $infraction['committedByPlayer'] }} - {{ $infraction['timeInPeriod'] }} -
-                        {{ ucwords($formattedInfraction) }}
-                      </p>
+                      @if (count($formattedInfraction) >= 2)
+                        <p class="game-matchup-penalty">
+                          {{ $infraction['committedByPlayer'] }} -
+                          {{ ucwords($formattedInfraction[0]) }} {{ ucwords($formattedInfraction[1]) }} -
+                          {{ $infraction['timeInPeriod'] }}
+                        </p>
+                      @else
+                        <p class="game-matchup-penalty">
+                          {{ $infraction['committedByPlayer'] }} -
+                          {{ ucwords($formattedInfraction[0]) }} - {{ $infraction['timeInPeriod'] }}
+                        </p>
+                      @endif
                     @endforeach
                   </li>
                 @endif
@@ -359,12 +399,20 @@
                   <li>
                     @foreach ($penalty['penalties'] as $infraction)
                       @php
-                        $formattedInfraction = str_replace('-', ' ', $infraction['descKey']);
+                        $formattedInfraction = explode('-', $infraction['descKey']);
                       @endphp
-                      <p>
-                        {{ $infraction['committedByPlayer'] }} - {{ $infraction['timeInPeriod'] }} -
-                        {{ ucwords($formattedInfraction) }}
-                      </p>
+                      @if (count($formattedInfraction) >= 2)
+                        <p class="game-matchup-penalty">
+                          {{ $infraction['committedByPlayer'] }} -
+                          {{ ucwords($formattedInfraction[0]) }} {{ ucwords($formattedInfraction[1]) }} -
+                          {{ $infraction['timeInPeriod'] }}
+                        </p>
+                      @else
+                        <p class="game-matchup-penalty">
+                          {{ $infraction['committedByPlayer'] }} -
+                          {{ ucwords($formattedInfraction[0]) }} - {{ $infraction['timeInPeriod'] }}
+                        </p>
+                      @endif
                     @endforeach
                   </li>
                 @endif
@@ -376,12 +424,20 @@
                   <li>
                     @foreach ($penalty['penalties'] as $infraction)
                       @php
-                        $formattedInfraction = str_replace('-', ' ', $infraction['descKey']);
+                        $formattedInfraction = explode('-', $infraction['descKey']);
                       @endphp
-                      <p>
-                        {{ $infraction['committedByPlayer'] }} - {{ $infraction['timeInPeriod'] }} -
-                        {{ ucwords($formattedInfraction) }}
-                      </p>
+                      @if (count($formattedInfraction) >= 2)
+                        <p class="game-matchup-penalty">
+                          {{ $infraction['committedByPlayer'] }} -
+                          {{ ucwords($formattedInfraction[0]) }} {{ ucwords($formattedInfraction[1]) }} -
+                          {{ $infraction['timeInPeriod'] }}
+                        </p>
+                      @else
+                        <p class="game-matchup-penalty">
+                          {{ $infraction['committedByPlayer'] }} -
+                          {{ ucwords($formattedInfraction[0]) }} - {{ $infraction['timeInPeriod'] }}
+                        </p>
+                      @endif
                     @endforeach
                   </li>
                 @endif
@@ -393,12 +449,20 @@
                   <li>
                     @foreach ($penalty['penalties'] as $infraction)
                       @php
-                        $formattedInfraction = str_replace('-', ' ', $infraction['descKey']);
+                        $formattedInfraction = explode('-', $infraction['descKey']);
                       @endphp
-                      <p>
-                        {{ $infraction['committedByPlayer'] }} - {{ $infraction['timeInPeriod'] }} -
-                        {{ ucwords($formattedInfraction) }}
-                      </p>
+                      @if (count($formattedInfraction) >= 2)
+                        <p class="game-matchup-penalty">
+                          {{ $infraction['committedByPlayer'] }} -
+                          {{ ucwords($formattedInfraction[0]) }} {{ ucwords($formattedInfraction[1]) }} -
+                          {{ $infraction['timeInPeriod'] }}
+                        </p>
+                      @else
+                        <p class="game-matchup-penalty">
+                          {{ $infraction['committedByPlayer'] }} -
+                          {{ ucwords($formattedInfraction[0]) }} - {{ $infraction['timeInPeriod'] }}
+                        </p>
+                      @endif
                     @endforeach
                   </li>
                 @endif
