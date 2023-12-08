@@ -352,32 +352,6 @@ footer {
     /* outline: solid 1px blue; */
 }
 
-.game-matchup-goals {
-    margin: 0 auto;
-    width: 90%;
-    /* outline: solid 1px blue; */
-}
-.game-matchup-goals li {
-    -ms-flex-direction: row;
-    -ms-flex-pack: space-evenly;
-    -webkit-box-direction: normal;
-    -webkit-box-orient: horizontal;
-    -webkit-box-pack: space-evenly;
-    display: -ms-flexbox;
-    display: -webkit-box;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    width: 100%;
-    /* outline: solid 1px blue; */
-}
-.game-matchup-goals li p {
-    font-size: 16px;
-    min-width: 75px;
-    text-align: center;
-    /* outline: solid 1px blue; */
-}
-
 .game-matchup-heading-container {
     -ms-flex-align: center;
     -ms-flex-direction: row;
@@ -529,21 +503,70 @@ footer {
     width: 100%;
 }
 
-.game-matchup-main-container-venue {
-    -webkit-transform: translateX(-50%);
-    border-bottom: solid 1px #1e90ff;
-    font-size: 14px;
-    left: 50%;
-    padding: 0 10px;
-    position: absolute;
+.game-matchup-main-container-goals,
+.game-matchup-main-container-penalties,
+.game-matchup-main-container-shots {
+    margin: 0 auto 15px auto;
+    width: 90%;
+    /* outline: solid 1px blue; */
+}
+.game-matchup-main-container-goals li,
+.game-matchup-main-container-penalties li,
+.game-matchup-main-container-shots li {
+    -ms-flex-direction: row;
+    -ms-flex-pack: space-evenly;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -webkit-box-pack: space-evenly;
+    color: #000;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    /* outline: solid 1px blue; */
+}
+.game-matchup-main-container-goals li p,
+.game-matchup-main-container-penalties li p,
+.game-matchup-main-container-shots li p {
+    font-size: 18px;
     text-align: center;
-    top: 10px;
-    transform: translateX(-50%);
-    min-width: 200px;
+    width: 100%;
     /* outline: solid 1px blue; */
 }
 
-.game-matchup-three-stars {
+.game-matchup-main-container-goals li:first-of-type p,
+.game-matchup-main-container-penalties li:first-of-type p,
+.game-matchup-main-container-shots li:first-of-type p {
+    -webkit-box-shadow: 0 0 1px #000;
+    background-color: #d8d8d8;
+    box-shadow: 0 0 1px #000;
+    margin-bottom: 5px;
+    padding: 2px 0;
+}
+
+.game-matchup-main-container-goals li:first-of-type p:first-of-type,
+.game-matchup-main-container-penalties li:first-of-type p:first-of-type,
+.game-matchup-main-container-shots li:first-of-type p:first-of-type {
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.game-matchup-main-container-goals li:first-of-type p:last-of-type,
+.game-matchup-main-container-penalties li:first-of-type p:last-of-type,
+.game-matchup-main-container-shots li:first-of-type p:last-of-type {
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.game-matchup-main-container-goals li p:nth-of-type(2),
+.game-matchup-main-container-shots li p:nth-of-type(2) {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.game-matchup-main-container-three-stars {
     -ms-flex-align: start;
     -ms-flex-direction: row;
     -ms-flex-pack: space-evenly;
@@ -560,16 +583,17 @@ footer {
     flex-wrap: wrap;
     height: auto;
     justify-content: space-around;
-    width: 100%;
+    margin: 0 auto;
+    width: 90%;
     /* outline: solid 1px blue; */
 }
 
-.game-matchup-three-stars i {
+.game-matchup-main-container-three-stars i {
     color: #ffa500;
     text-shadow: 0 0 1px #000;
 }
 
-.game-matchup-three-stars p {
+.game-matchup-main-container-three-stars p {
     -ms-flex-align: center;
     -ms-flex-direction: column;
     -ms-flex-pack: center;
@@ -587,6 +611,20 @@ footer {
     min-width: 150px;
     padding: 0 10px;
     text-align: center;
+    /* outline: solid 1px blue; */
+}
+
+.game-matchup-main-container-venue {
+    -webkit-transform: translateX(-50%);
+    border-bottom: solid 1px #1e90ff;
+    font-size: 14px;
+    left: 50%;
+    padding: 0 10px;
+    position: absolute;
+    text-align: center;
+    top: 10px;
+    transform: translateX(-50%);
+    min-width: 200px;
     /* outline: solid 1px blue; */
 }
 
@@ -1539,6 +1577,12 @@ header h1 {
         font-size: 22px;
     }
 
+    .game-matchup-main-container-goals li p,
+    .game-matchup-main-container-penalties li p,
+    .game-matchup-main-container-shots li p {
+        font-size: 16px;
+    }
+
     .header-nav {
         padding: 25px 35px 120px 0;
     }
@@ -1635,9 +1679,18 @@ header h1 {
         justify-content: space-between;
     }
 
-    .game-matchup-goals {
+    .game-matchup-main-container-goals,
+    .game-matchup-main-container-penalties,
+    .game-matchup-main-container-shots,
+    .game-matchup-main-container-three-stars {
         width: 100%;
     }
+
+    /* .game-matchup-main-container-goals li p,
+    .game-matchup-main-container-penalties li p,
+    .game-matchup-main-container-shots li p {
+        font-size: 14px;
+    } */
 
     .game-matchup-heading-container {
         padding: 20px 10px 15px 10px;

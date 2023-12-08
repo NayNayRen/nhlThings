@@ -38,7 +38,7 @@
           <p class="game-matchup-main-container-venue">{{ $gameMatchup['venue']['default'] }}</p>
           {{-- three stars --}}
           <h3>Three Stars</h3>
-          <div class="game-matchup-three-stars">
+          <div class="game-matchup-main-container-three-stars">
             <p>
               <span aria-label="Game First Star">
                 <i class="fa-solid fa-star" aria-hidden="true"></i>
@@ -117,9 +117,14 @@
         {{-- matchup stats --}}
         <div class="game-matchup-main-container">
           <p class="game-matchup-main-container-venue">{{ $gameMatchup['venue']['default'] }}</p>
-          <h3>Goals</h3>
-          <ul class="game-matchup-goals">
-            @foreach ($gameBoxscores['boxscore']['linescore']['byPeriod'] as $goals)
+          <h3>Head to Head</h3>
+          <ul class="game-matchup-main-container-goals">
+            <li>
+              <p>{{ $gameMatchup['awayTeam']['score'] }}</p>
+              <p>Goals</p>
+              <p>{{ $gameMatchup['homeTeam']['score'] }}</p>
+            </li>
+            @foreach ($gameMatchup['summary']['linescore']['byPeriod'] as $goals)
               <li>
                 <p>{{ $goals['away'] }}</p>
                 @if ($goals['period'] === 1)
@@ -140,6 +145,112 @@
                 <p>{{ $goals['home'] }}</p>
               </li>
             @endforeach
+          </ul>
+          <ul class="game-matchup-main-container-shots">
+            <li>
+              <p>{{ $gameMatchup['awayTeam']['sog'] }}</p>
+              <p>Shots</p>
+              <p>{{ $gameMatchup['homeTeam']['sog'] }}</p>
+            </li>
+            @foreach ($gameMatchup['summary']['shotsByPeriod'] as $shots)
+              <li>
+                @if ($shots['period'] === 1)
+                  <p>{{ $shots['away'] }}</p>
+                  <p>{{ $shots['period'] }}st</p>
+                  <p>{{ $shots['home'] }}</p>
+                @endif
+                @if ($shots['period'] === 2)
+                  <p>{{ $shots['away'] }}</p>
+                  <p>{{ $shots['period'] }}nd</p>
+                  <p>{{ $shots['home'] }}</p>
+                @endif
+                @if ($shots['period'] === 3)
+                  <p>{{ $shots['away'] }}</p>
+                  <p>{{ $shots['period'] }}rd</p>
+                  <p>{{ $shots['home'] }}</p>
+                @endif
+                @if ($shots['period'] === 4)
+                  <p>{{ $shots['away'] }}</p>
+                  <p>OT</p>
+                  <p>{{ $shots['home'] }}</p>
+                @endif
+                @if ($shots['period'] >= 5)
+                  <p></p>
+                @endif
+              </li>
+            @endforeach
+          </ul>
+          <ul class="game-matchup-main-container-penalties">
+            <li>
+              <p>Penalties</p>
+            </li>
+            @if (count($gameMatchup['summary']['penalties']) > 0)
+              @foreach ($gameMatchup['summary']['penalties'] as $penalty)
+                @if ($penalty['period'] === 1)
+                  <li>
+                    <p>{{ $penalty['period'] }}st</p>
+                  </li>
+                  @foreach ($penalty['penalties'] as $infraction)
+                    <li>
+                      <p>
+                        {{ $infraction['committedByPlayer'] }} - {{ $infraction['timeInPeriod'] }} -
+                        {{ ucwords($infraction['descKey']) }}
+                      </p>
+                    </li>
+                  @endforeach
+                @endif
+
+                @if ($penalty['period'] === 2)
+                  <li>
+                    <p>{{ $penalty['period'] }}nd</p>
+                  </li>
+                  @foreach ($penalty['penalties'] as $infraction)
+                    <li>
+                      <p>
+                        {{ $infraction['committedByPlayer'] }} - {{ $infraction['timeInPeriod'] }} -
+                        {{ ucwords($infraction['descKey']) }}
+                      </p>
+                    </li>
+                  @endforeach
+                @endif
+
+                @if ($penalty['period'] === 3)
+                  <li>
+                    <p></p>
+                    <p>{{ $penalty['period'] }}rd</p>
+                    <p></p>
+                  </li>
+                  @foreach ($penalty['penalties'] as $infraction)
+                    <li>
+                      <p>
+                        {{ $infraction['committedByPlayer'] }} - {{ $infraction['timeInPeriod'] }} -
+                        {{ ucwords($infraction['descKey']) }}
+                      </p>
+                    </li>
+                  @endforeach
+                @endif
+
+                @if ($penalty['period'] === 4)
+                  <li>
+                    <p></p>
+                    <p>OT</p>
+                    <p></p>
+                  </li>
+                  @foreach ($penalty['penalties'] as $infraction)
+                    <li>
+                      <p>
+                        {{ $infraction['committedByPlayer'] }} - {{ $infraction['timeInPeriod'] }} -
+                        {{ ucwords($infraction['descKey']) }}
+                      </p>
+                    </li>
+                  @endforeach
+                @endif
+
+                @if ($shots['period'] >= 5)
+                  <p></p>
+                @endif
+              @endforeach
+            @endif
           </ul>
         </div>
       @endif
