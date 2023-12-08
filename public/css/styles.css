@@ -352,6 +352,32 @@ footer {
     /* outline: solid 1px blue; */
 }
 
+.game-matchup-goals {
+    margin: 0 auto;
+    width: 90%;
+    /* outline: solid 1px blue; */
+}
+.game-matchup-goals li {
+    -ms-flex-direction: row;
+    -ms-flex-pack: space-evenly;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -webkit-box-pack: space-evenly;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    /* outline: solid 1px blue; */
+}
+.game-matchup-goals li p {
+    font-size: 16px;
+    min-width: 75px;
+    text-align: center;
+    /* outline: solid 1px blue; */
+}
+
 .game-matchup-heading-container {
     -ms-flex-align: center;
     -ms-flex-direction: row;
@@ -370,7 +396,7 @@ footer {
     flex-direction: row;
     justify-content: space-evenly;
     min-height: 130px;
-    padding: 10px 15px;
+    padding: 15px;
     position: relative;
 }
 
@@ -411,7 +437,7 @@ footer {
     left: 50%;
     padding: 0 10px;
     position: absolute;
-    top: 5px;
+    top: 8px;
     transform: translateX(-50%);
 }
 
@@ -468,7 +494,14 @@ footer {
 .game-matchup-heading-period {
     color: #b22222;
     font-size: 24px;
-    margin: 0 10px;
+    margin: 10px 10px 0 10px;
+}
+
+.game-matchup-heading-live-period {
+    color: #b22222;
+    display: none;
+    font-size: 24px;
+    margin: 10px 10px 0 10px;
 }
 
 .game-matchup-main-container {
@@ -1602,8 +1635,12 @@ header h1 {
         justify-content: space-between;
     }
 
+    .game-matchup-goals {
+        width: 100%;
+    }
+
     .game-matchup-heading-container {
-        padding: 15px 10px;
+        padding: 20px 10px 15px 10px;
     }
 
     .game-matchup-heading-container h2,

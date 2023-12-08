@@ -87,15 +87,15 @@
             <div class="game-matchup-periods">
               @foreach ($gameMatchup['summary']['linescore']['byPeriod'] as $period)
                 @if ($period['period'] >= 5)
-                  <h3 class="game-matchup-heading-period">SO</h3>
+                  <h3 class="game-matchup-heading-live-period">SO</h3>
                 @elseif ($period['period'] === 4)
-                  <h3 class="game-matchup-heading-period">OT</h3>
+                  <h3 class="game-matchup-heading-live-period">OT</h3>
                 @elseif ($period['period'] === 3)
-                  <h3 class="game-matchup-heading-period">3rd</h3>
+                  <h3 class="game-matchup-heading-live-period">3rd</h3>
                 @elseif ($period['period'] === 2)
-                  <h3 class="game-matchup-heading-period">2nd</h3>
+                  <h3 class="game-matchup-heading-live-period">2nd</h3>
                 @elseif ($period['period'] === 1)
-                  <h3 class="game-matchup-heading-period">1st</h3>
+                  <h3 class="game-matchup-heading-live-period">1st</h3>
                 @endif
               @endforeach
               <p class="game-matchup-heading-clock">{{ $gameMatchup['clock']['timeRemaining'] }}</p>
@@ -117,7 +117,30 @@
         {{-- matchup stats --}}
         <div class="game-matchup-main-container">
           <p class="game-matchup-main-container-venue">{{ $gameMatchup['venue']['default'] }}</p>
-          <h3>Live Head to Head</h3>
+          <h3>Goals</h3>
+          <ul class="game-matchup-goals">
+            @foreach ($gameBoxscores['boxscore']['linescore']['byPeriod'] as $goals)
+              <li>
+                <p>{{ $goals['away'] }}</p>
+                @if ($goals['period'] === 1)
+                  <p>{{ $goals['period'] }}st</p>
+                @endif
+                @if ($goals['period'] === 2)
+                  <p>{{ $goals['period'] }}nd</p>
+                @endif
+                @if ($goals['period'] === 3)
+                  <p>{{ $goals['period'] }}rd</p>
+                @endif
+                @if ($goals['period'] === 4)
+                  <p>OT</p>
+                @endif
+                @if ($goals['period'] >= 5)
+                  <p>SO</p>
+                @endif
+                <p>{{ $goals['home'] }}</p>
+              </li>
+            @endforeach
+          </ul>
         </div>
       @endif
       {{-- PREGAME HEAD TO HEAD --}}
@@ -135,7 +158,6 @@
             <h3 class="game-matchup-heading-period">{{ $formattedGameTime }} EST</h3>
             <p class="game-matchup-heading-clock">Stats Leaders</p>
           </div>
-          <p class="game-matchup-heading-venue">{{ $gameMatchup['venue']['default'] }}</p>
           {{-- home team --}}
           <div class="game-matchup-heading-right">
             <div class="game-matchup-heading-logo">
