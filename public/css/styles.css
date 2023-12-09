@@ -671,6 +671,11 @@ footer {
     margin-right: 5px;
 }
 
+/* .game-matchup-main-container-goals-scoredBy li p {
+    min-width: fit-content;
+    outline: solid 1px #000;
+} */
+
 .game-matchup-main-container-three-stars {
     -ms-flex-align: start;
     -ms-flex-direction: row;
@@ -807,15 +812,15 @@ header h1 {
     text-decoration: none;
 }
 
-/* surrounds player stats and team history tables */
+/* used for stats tables, goals scored by */
 .horizontal-scrolling-container {
     display: -ms-grid;
     display: grid;
     grid-auto-flow: row;
     overflow-x: auto;
-    padding: 20px 25px 20px 25px;
+    padding: 10px 15px;
     scroll-behavior: smooth;
-    /* outline: solid 1px blue; */
+    outline: solid 1px blue;
 }
 
 .league-game-dates-dropdown-container {

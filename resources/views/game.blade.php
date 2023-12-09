@@ -97,6 +97,17 @@
               </li>
             @endforeach
           </ul>
+          {{-- <h3>Scored By</h3> --}}
+          {{-- goals scored by --}}
+          {{-- <ul class="horizontal-scrolling-container">
+            <li>
+              @foreach ($gameMatchup['summary']['scoring'] as $scoredBy)
+                @foreach ($scoredBy['goals'] as $player)
+                  <p>{{ $player['name'] }}</p>
+                @endforeach
+              @endforeach
+            </li>
+          </ul> --}}
           {{-- shots --}}
           <ul class="game-matchup-main-container-shots">
             <li>
