@@ -67,7 +67,7 @@
               </span>
             </p>
           </div>
-          <h3>Head to Head</h3>
+          <h3>Final</h3>
           {{-- goals --}}
           <ul class="game-matchup-main-container-goals">
             <li>
@@ -79,13 +79,13 @@
               <li>
                 <p>{{ $goals['away'] }}</p>
                 @if ($goals['period'] === 1)
-                  <p>{{ $goals['period'] }}st</p>
+                  <p>{{ $goals['period'] }}st Period</p>
                 @endif
                 @if ($goals['period'] === 2)
-                  <p>{{ $goals['period'] }}nd</p>
+                  <p>{{ $goals['period'] }}nd Period</p>
                 @endif
                 @if ($goals['period'] === 3)
-                  <p>{{ $goals['period'] }}rd</p>
+                  <p>{{ $goals['period'] }}rd Period</p>
                 @endif
                 @if ($goals['period'] === 4)
                   <p>OT</p>
@@ -108,17 +108,17 @@
               <li>
                 @if ($shots['period'] === 1)
                   <p>{{ $shots['away'] }}</p>
-                  <p>{{ $shots['period'] }}st</p>
+                  <p>{{ $shots['period'] }}st Period</p>
                   <p>{{ $shots['home'] }}</p>
                 @endif
                 @if ($shots['period'] === 2)
                   <p>{{ $shots['away'] }}</p>
-                  <p>{{ $shots['period'] }}nd</p>
+                  <p>{{ $shots['period'] }}nd Period</p>
                   <p>{{ $shots['home'] }}</p>
                 @endif
                 @if ($shots['period'] === 3)
                   <p>{{ $shots['away'] }}</p>
-                  <p>{{ $shots['period'] }}rd</p>
+                  <p>{{ $shots['period'] }}rd Period</p>
                   <p>{{ $shots['home'] }}</p>
                 @endif
                 @if ($shots['period'] === 4)
@@ -171,7 +171,7 @@
               @foreach ($gameMatchup['summary']['penalties'] as $penalty)
                 @if ($penalty['period'] === 1)
                   <li>
-                    <p>{{ $penalty['period'] }}st</p>
+                    <p>{{ $penalty['period'] }}st Period</p>
                   </li>
                   <li>
                     @foreach ($penalty['penalties'] as $infraction)
@@ -211,7 +211,7 @@
 
                 @if ($penalty['period'] === 2)
                   <li>
-                    <p>{{ $penalty['period'] }}nd</p>
+                    <p>{{ $penalty['period'] }}nd Period</p>
                   </li>
                   <li>
                     @foreach ($penalty['penalties'] as $infraction)
@@ -251,7 +251,7 @@
 
                 @if ($penalty['period'] === 3)
                   <li>
-                    <p>{{ $penalty['period'] }}rd</p>
+                    <p>{{ $penalty['period'] }}rd Period</p>
                   </li>
                   <li>
                     @foreach ($penalty['penalties'] as $infraction)
@@ -425,7 +425,7 @@
         {{-- matchup stats --}}
         <div class="game-matchup-main-container">
           <p class="game-matchup-main-container-venue">{{ $gameMatchup['venue']['default'] }}</p>
-          <h3>Head to Head</h3>
+          <h3>Live</h3>
           {{-- goals --}}
           <ul class="game-matchup-main-container-goals">
             <li>
@@ -437,13 +437,13 @@
               <li>
                 <p>{{ $goals['away'] }}</p>
                 @if ($goals['period'] === 1)
-                  <p>{{ $goals['period'] }}st</p>
+                  <p>{{ $goals['period'] }}st Period</p>
                 @endif
                 @if ($goals['period'] === 2)
-                  <p>{{ $goals['period'] }}nd</p>
+                  <p>{{ $goals['period'] }}nd Period</p>
                 @endif
                 @if ($goals['period'] === 3)
-                  <p>{{ $goals['period'] }}rd</p>
+                  <p>{{ $goals['period'] }}rd Period</p>
                 @endif
                 @if ($goals['period'] === 4)
                   <p>OT</p>
@@ -466,17 +466,17 @@
               <li>
                 @if ($shots['period'] === 1)
                   <p>{{ $shots['away'] }}</p>
-                  <p>{{ $shots['period'] }}st</p>
+                  <p>{{ $shots['period'] }}st Period</p>
                   <p>{{ $shots['home'] }}</p>
                 @endif
                 @if ($shots['period'] === 2)
                   <p>{{ $shots['away'] }}</p>
-                  <p>{{ $shots['period'] }}nd</p>
+                  <p>{{ $shots['period'] }}nd Period</p>
                   <p>{{ $shots['home'] }}</p>
                 @endif
                 @if ($shots['period'] === 3)
                   <p>{{ $shots['away'] }}</p>
-                  <p>{{ $shots['period'] }}rd</p>
+                  <p>{{ $shots['period'] }}rd Period</p>
                   <p>{{ $shots['home'] }}</p>
                 @endif
                 @if ($shots['period'] === 4)
@@ -529,7 +529,7 @@
               @foreach ($gameMatchup['summary']['penalties'] as $penalty)
                 @if ($penalty['period'] === 1)
                   <li>
-                    <p>{{ $penalty['period'] }}st</p>
+                    <p>{{ $penalty['period'] }}st Period</p>
                   </li>
                   <li>
                     @foreach ($penalty['penalties'] as $infraction)
@@ -569,7 +569,7 @@
 
                 @if ($penalty['period'] === 2)
                   <li>
-                    <p>{{ $penalty['period'] }}nd</p>
+                    <p>{{ $penalty['period'] }}nd Period</p>
                   </li>
                   <li>
                     @foreach ($penalty['penalties'] as $infraction)
@@ -609,7 +609,7 @@
 
                 @if ($penalty['period'] === 3)
                   <li>
-                    <p>{{ $penalty['period'] }}rd</p>
+                    <p>{{ $penalty['period'] }}rd Period</p>
                   </li>
                   <li>
                     @foreach ($penalty['penalties'] as $infraction)
@@ -763,7 +763,7 @@
         {{-- matchup stats --}}
         <div class="game-matchup-main-container">
           <p class="game-matchup-main-container-venue">{{ $gameMatchup['venue']['default'] }}</p>
-          <h3>Pregame Head to Head</h3>
+          <h3>Head to Head</h3>
         </div>
       @endif
       {{-- used to highlight game winner --}}

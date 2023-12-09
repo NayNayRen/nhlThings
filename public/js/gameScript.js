@@ -30,6 +30,10 @@ function loadGameScript() {
       // period.childNodes[1].style.display = 'none';
       period.childNodes[3].style.display = 'block';
     }
+    // shows 1st period
+    else if (period.childNodes.length === 5) {
+      period.childNodes[1].style.display = 'block';
+    }
   });
   // highlights game winner
   if (checkGameState.innerText === 'OFF' || checkGameState.innerText === 'FINAL') {

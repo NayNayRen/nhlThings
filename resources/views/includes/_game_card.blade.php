@@ -19,10 +19,12 @@
       </p>
       <p class='game-team-record'>{{ $team['wins'] }}-{{ $team['losses'] }}-{{ $team['ties'] }}
         <span class="game-team-radio-link">
-          {{-- <a href={{ $game['awayTeam']['radioLink'] }} aria-label='Away team radio link.' title="Away team radio link."
+          @if (array_key_exists('radioLink', $game['awayTeam']))
+            {{-- <a href={{ $game['awayTeam']['radioLink'] }} aria-label='Away team radio link.' title="Away team radio link."
             target="_blank"> --}}
-          <i class="fa-solid fa-headphones" aria-hidden="false" title="Link under construction."></i>
-          {{-- </a> --}}
+            <i class="fa-solid fa-headphones" aria-hidden="false" title="Link under construction."></i>
+            {{-- </a> --}}
+          @endif
         </span>
       </p>
     @endif
@@ -43,10 +45,12 @@
       </p>
       <p class='game-team-record'>{{ $team['wins'] }}-{{ $team['losses'] }}-{{ $team['ties'] }}
         <span class="game-team-radio-link">
-          {{-- <a href={{ $game['homeTeam']['radioLink'] }} aria-label='Home team radio link.' title="Home team radio link."
+          @if (array_key_exists('radioLink', $game['homeTeam']))
+            {{-- <a href={{ $game['homeTeam']['radioLink'] }} aria-label='Home team radio link.' title="Home team radio link."
             target="_blank"> --}}
-          <i class="fa-solid fa-headphones" aria-hidden="false" title="Link under construction."></i>
-          {{-- </a> --}}
+            <i class="fa-solid fa-headphones" aria-hidden="false" title="Link under construction."></i>
+            {{-- </a> --}}
+          @endif
         </span>
       </p>
     @endif
