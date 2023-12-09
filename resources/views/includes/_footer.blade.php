@@ -11,7 +11,7 @@
       Rights Reserved. Any other third party trademarks or
       copyrights are the property of their respective owners. All rights reserved. </p>
   </div>
-  <span>&copy; Nov 2023</span>
+  <span>&copy; Dec 2023</span>
   <div class="footer-logo">
     <img src="{{ asset('img/logo.png') }}" alt="Personal Logo" title="Personal Logo" width="153" height="100" />
   </div>

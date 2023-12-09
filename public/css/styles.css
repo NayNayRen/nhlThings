@@ -514,7 +514,7 @@ footer {
 .game-matchup-main-container-shots,
 .game-matchup-main-container-taways {
     margin: 0 auto 15px auto;
-    width: 90%;
+    width: 80%;
     /* outline: solid 1px blue; */
 }
 
@@ -661,6 +661,7 @@ footer {
     font-weight: bold;
     margin-left: 5px;
     margin-right: 5px;
+    padding: 2px 0;
     outline: solid 1px #333333;
 }
 .game-matchup-main-container-goals li p:nth-of-type(2),
@@ -1681,6 +1682,20 @@ header h1 {
         font-size: 22px;
     }
 
+    .game-matchup-main-container-bshots,
+    .game-matchup-main-container-faceoff,
+    .game-matchup-main-container-hits,
+    .game-matchup-main-container-gaways,
+    .game-matchup-main-container-goals,
+    .game-matchup-main-container-penalties,
+    .game-matchup-main-container-pim,
+    .game-matchup-main-container-pp,
+    .game-matchup-main-container-shots,
+    .game-matchup-main-container-taways {
+        margin: 0 auto 10px auto;
+        width: 90%;
+    }
+
     .game-matchup-main-container-bshots li p,
     .game-matchup-main-container-faceoff li p,
     .game-matchup-main-container-hits li p,
@@ -1803,12 +1818,6 @@ header h1 {
     .game-matchup-main-container-three-stars {
         width: 100%;
     }
-
-    /* .game-matchup-main-container-goals li p,
-    .game-matchup-main-container-penalties li p,
-    .game-matchup-main-container-shots li p {
-        font-size: 14px;
-    } */
 
     .game-matchup-heading-container {
         padding: 20px 10px 15px 10px;

@@ -205,8 +205,6 @@
           {{-- penalties --}}
           <ul class="game-matchup-main-container-penalties">
             <h3>Penalties</h3>
-            {{-- <li> --}}
-            {{-- </li> --}}
             @if (count($gameMatchup['summary']['penalties']) > 0)
               @foreach ($gameMatchup['summary']['penalties'] as $penalty)
                 @if ($penalty['period'] === 1)
@@ -562,9 +560,7 @@
           @endif
           {{-- penalties --}}
           <ul class="game-matchup-main-container-penalties">
-            <p>Penalties</p>
-            {{-- <li>
-            </li> --}}
+            <h3>Penalties</h3>
             @if (count($gameMatchup['summary']['penalties']) > 0)
               @foreach ($gameMatchup['summary']['penalties'] as $penalty)
                 @if ($penalty['period'] === 1)
