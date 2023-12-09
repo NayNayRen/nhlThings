@@ -162,11 +162,51 @@
               </li>
             </ul>
           @endif
+          {{-- hits --}}
+          @if (count($gameMatchup['summary']['teamGameStats'][4]) > 0)
+            <ul class="game-matchup-main-container-hits">
+              <li>
+                <p>{{ $gameMatchup['summary']['teamGameStats'][4]['awayValue'] }}</p>
+                <p>Hits</p>
+                <p>{{ $gameMatchup['summary']['teamGameStats'][4]['homeValue'] }}</p>
+              </li>
+            </ul>
+          @endif
+          {{-- blocked shots --}}
+          @if (count($gameMatchup['summary']['teamGameStats'][5]) > 0)
+            <ul class="game-matchup-main-container-bshots">
+              <li>
+                <p>{{ $gameMatchup['summary']['teamGameStats'][5]['awayValue'] }}</p>
+                <p>B Shots</p>
+                <p>{{ $gameMatchup['summary']['teamGameStats'][5]['homeValue'] }}</p>
+              </li>
+            </ul>
+          @endif
+          {{-- giveaways --}}
+          @if (count($gameMatchup['summary']['teamGameStats'][6]) > 0)
+            <ul class="game-matchup-main-container-gaways">
+              <li>
+                <p>{{ $gameMatchup['summary']['teamGameStats'][6]['awayValue'] }}</p>
+                <p>G Aways</p>
+                <p>{{ $gameMatchup['summary']['teamGameStats'][6]['homeValue'] }}</p>
+              </li>
+            </ul>
+          @endif
+          {{-- takeaways --}}
+          @if (count($gameMatchup['summary']['teamGameStats'][7]) > 0)
+            <ul class="game-matchup-main-container-taways">
+              <li>
+                <p>{{ $gameMatchup['summary']['teamGameStats'][7]['awayValue'] }}</p>
+                <p>T Aways</p>
+                <p>{{ $gameMatchup['summary']['teamGameStats'][7]['homeValue'] }}</p>
+              </li>
+            </ul>
+          @endif
           {{-- penalties --}}
           <ul class="game-matchup-main-container-penalties">
-            <li>
-              <p>Penalties</p>
-            </li>
+            <h3>Penalties</h3>
+            {{-- <li> --}}
+            {{-- </li> --}}
             @if (count($gameMatchup['summary']['penalties']) > 0)
               @foreach ($gameMatchup['summary']['penalties'] as $penalty)
                 @if ($penalty['period'] === 1)
@@ -335,46 +375,6 @@
               @endforeach
             @endif
           </ul>
-          {{-- hits --}}
-          @if (count($gameMatchup['summary']['teamGameStats'][4]) > 0)
-            <ul class="game-matchup-main-container-hits">
-              <li>
-                <p>{{ $gameMatchup['summary']['teamGameStats'][4]['awayValue'] }}</p>
-                <p>Hits</p>
-                <p>{{ $gameMatchup['summary']['teamGameStats'][4]['homeValue'] }}</p>
-              </li>
-            </ul>
-          @endif
-          {{-- blocked shots --}}
-          @if (count($gameMatchup['summary']['teamGameStats'][5]) > 0)
-            <ul class="game-matchup-main-container-bshots">
-              <li>
-                <p>{{ $gameMatchup['summary']['teamGameStats'][5]['awayValue'] }}</p>
-                <p>B Shots</p>
-                <p>{{ $gameMatchup['summary']['teamGameStats'][5]['homeValue'] }}</p>
-              </li>
-            </ul>
-          @endif
-          {{-- giveaways --}}
-          @if (count($gameMatchup['summary']['teamGameStats'][6]) > 0)
-            <ul class="game-matchup-main-container-gaways">
-              <li>
-                <p>{{ $gameMatchup['summary']['teamGameStats'][6]['awayValue'] }}</p>
-                <p>G Aways</p>
-                <p>{{ $gameMatchup['summary']['teamGameStats'][6]['homeValue'] }}</p>
-              </li>
-            </ul>
-          @endif
-          {{-- takeaways --}}
-          @if (count($gameMatchup['summary']['teamGameStats'][7]) > 0)
-            <ul class="game-matchup-main-container-taways">
-              <li>
-                <p>{{ $gameMatchup['summary']['teamGameStats'][7]['awayValue'] }}</p>
-                <p>T Aways</p>
-                <p>{{ $gameMatchup['summary']['teamGameStats'][7]['homeValue'] }}</p>
-              </li>
-            </ul>
-          @endif
         </div>
       @endif
       {{-- LIVE GAME --}}
@@ -520,11 +520,51 @@
               </li>
             </ul>
           @endif
+          {{-- hits --}}
+          @if (count($gameMatchup['summary']['teamGameStats'][4]) > 0)
+            <ul class="game-matchup-main-container-hits">
+              <li>
+                <p>{{ $gameMatchup['summary']['teamGameStats'][4]['awayValue'] }}</p>
+                <p>Hits</p>
+                <p>{{ $gameMatchup['summary']['teamGameStats'][4]['homeValue'] }}</p>
+              </li>
+            </ul>
+          @endif
+          {{-- blocked shots --}}
+          @if (count($gameMatchup['summary']['teamGameStats'][5]) > 0)
+            <ul class="game-matchup-main-container-bshots">
+              <li>
+                <p>{{ $gameMatchup['summary']['teamGameStats'][5]['awayValue'] }}</p>
+                <p>B Shots</p>
+                <p>{{ $gameMatchup['summary']['teamGameStats'][5]['homeValue'] }}</p>
+              </li>
+            </ul>
+          @endif
+          {{-- giveaways --}}
+          @if (count($gameMatchup['summary']['teamGameStats'][6]) > 0)
+            <ul class="game-matchup-main-container-gaways">
+              <li>
+                <p>{{ $gameMatchup['summary']['teamGameStats'][6]['awayValue'] }}</p>
+                <p>G Aways</p>
+                <p>{{ $gameMatchup['summary']['teamGameStats'][6]['homeValue'] }}</p>
+              </li>
+            </ul>
+          @endif
+          {{-- takeaways --}}
+          @if (count($gameMatchup['summary']['teamGameStats'][7]) > 0)
+            <ul class="game-matchup-main-container-taways">
+              <li>
+                <p>{{ $gameMatchup['summary']['teamGameStats'][7]['awayValue'] }}</p>
+                <p>T Aways</p>
+                <p>{{ $gameMatchup['summary']['teamGameStats'][7]['homeValue'] }}</p>
+              </li>
+            </ul>
+          @endif
           {{-- penalties --}}
           <ul class="game-matchup-main-container-penalties">
-            <li>
-              <p>Penalties</p>
-            </li>
+            <p>Penalties</p>
+            {{-- <li>
+            </li> --}}
             @if (count($gameMatchup['summary']['penalties']) > 0)
               @foreach ($gameMatchup['summary']['penalties'] as $penalty)
                 @if ($penalty['period'] === 1)
@@ -693,46 +733,6 @@
               @endforeach
             @endif
           </ul>
-          {{-- hits --}}
-          @if (count($gameMatchup['summary']['teamGameStats'][4]) > 0)
-            <ul class="game-matchup-main-container-hits">
-              <li>
-                <p>{{ $gameMatchup['summary']['teamGameStats'][4]['awayValue'] }}</p>
-                <p>Hits</p>
-                <p>{{ $gameMatchup['summary']['teamGameStats'][4]['homeValue'] }}</p>
-              </li>
-            </ul>
-          @endif
-          {{-- blocked shots --}}
-          @if (count($gameMatchup['summary']['teamGameStats'][5]) > 0)
-            <ul class="game-matchup-main-container-bshots">
-              <li>
-                <p>{{ $gameMatchup['summary']['teamGameStats'][5]['awayValue'] }}</p>
-                <p>B Shots</p>
-                <p>{{ $gameMatchup['summary']['teamGameStats'][5]['homeValue'] }}</p>
-              </li>
-            </ul>
-          @endif
-          {{-- giveaways --}}
-          @if (count($gameMatchup['summary']['teamGameStats'][6]) > 0)
-            <ul class="game-matchup-main-container-gaways">
-              <li>
-                <p>{{ $gameMatchup['summary']['teamGameStats'][6]['awayValue'] }}</p>
-                <p>G Aways</p>
-                <p>{{ $gameMatchup['summary']['teamGameStats'][6]['homeValue'] }}</p>
-              </li>
-            </ul>
-          @endif
-          {{-- takeaways --}}
-          @if (count($gameMatchup['summary']['teamGameStats'][7]) > 0)
-            <ul class="game-matchup-main-container-taways">
-              <li>
-                <p>{{ $gameMatchup['summary']['teamGameStats'][7]['awayValue'] }}</p>
-                <p>T Aways</p>
-                <p>{{ $gameMatchup['summary']['teamGameStats'][7]['homeValue'] }}</p>
-              </li>
-            </ul>
-          @endif
         </div>
       @endif
       {{-- PREGAME HEAD TO HEAD --}}

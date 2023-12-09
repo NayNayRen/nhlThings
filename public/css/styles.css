@@ -536,6 +536,7 @@ footer {
     -webkit-box-pack: space-evenly;
     align-items: center;
     color: #000;
+    cursor: default;
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
@@ -555,6 +556,7 @@ footer {
     -webkit-box-pack: center;
     align-items: center;
     color: #000;
+    cursor: default;
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
@@ -586,7 +588,8 @@ footer {
     /* outline: solid 1px blue; */
 }
 .game-matchup-penalty {
-    border-bottom: solid 1px #1e90ff;
+    border-left: solid 1px #000;
+    border-right: solid 1px #000;
     padding: 0 10px;
 }
 
@@ -595,7 +598,6 @@ footer {
 .game-matchup-main-container-hits li:first-of-type p,
 .game-matchup-main-container-gaways li:first-of-type p,
 .game-matchup-main-container-goals li:first-of-type p,
-/* .game-matchup-main-container-penalties li:first-of-type p, */
 .game-matchup-main-container-pim li:first-of-type p,
 .game-matchup-main-container-pp li:first-of-type p,
 .game-matchup-main-container-shots li:first-of-type p,
@@ -606,10 +608,12 @@ footer {
     margin-bottom: 5px;
     padding: 2px 0;
 }
-.game-matchup-main-container-penalties li:first-of-type p {
-    background-color: #333333;
+.game-matchup-main-container-penalties li:nth-of-type(odd) p {
+    background-color: #008080;
+    border-radius: 5px;
     color: #fff;
-    margin-bottom: 5px;
+    font-weight: bold;
+    margin: 5px 0;
     outline: solid 1px #333333;
     padding: 2px 0;
     width: 100%;
@@ -620,7 +624,6 @@ footer {
 .game-matchup-main-container-hits li:first-of-type p:first-of-type,
 .game-matchup-main-container-gaways li:first-of-type p:first-of-type,
 .game-matchup-main-container-goals li:first-of-type p:first-of-type,
-.game-matchup-main-container-penalties li:first-of-type p:first-of-type,
 .game-matchup-main-container-pim li:first-of-type p:first-of-type,
 .game-matchup-main-container-pp li:first-of-type p:first-of-type,
 .game-matchup-main-container-shots li:first-of-type p:first-of-type,
@@ -634,7 +637,6 @@ footer {
 .game-matchup-main-container-hits li:last-of-type p:last-of-type,
 .game-matchup-main-container-gaways li:last-of-type p:last-of-type,
 .game-matchup-main-container-goals li:first-of-type p:last-of-type,
-.game-matchup-main-container-penalties li:first-of-type p:last-of-type,
 .game-matchup-main-container-pim li:last-of-type p:last-of-type,
 .game-matchup-main-container-pp li:last-of-type p:last-of-type,
 .game-matchup-main-container-shots li:last-of-type p:last-of-type,
@@ -653,15 +655,17 @@ footer {
 .game-matchup-main-container-shots li:first-of-type p:nth-of-type(2),
 .game-matchup-main-container-taways li p:nth-of-type(2) {
     -webkit-box-shadow: none;
-    background-color: #333333;
+    background-color: #008080;
     box-shadow: none;
     color: #fff;
+    font-weight: bold;
     margin-left: 5px;
     margin-right: 5px;
     outline: solid 1px #333333;
 }
 .game-matchup-main-container-goals li p:nth-of-type(2),
 .game-matchup-main-container-shots li p:nth-of-type(2) {
+    font-weight: bold;
     margin-left: 5px;
     margin-right: 5px;
 }
