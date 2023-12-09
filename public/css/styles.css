@@ -639,7 +639,7 @@ footer {
 .game-matchup-main-container-goals li:first-of-type p:last-of-type,
 .game-matchup-main-container-pim li:last-of-type p:last-of-type,
 .game-matchup-main-container-pp li:last-of-type p:last-of-type,
-.game-matchup-main-container-shots li:last-of-type p:last-of-type,
+.game-matchup-main-container-shots li:first-of-type p:last-of-type,
 .game-matchup-main-container-taways li:last-of-type p:last-of-type {
     border-bottom-right-radius: 5px;
     border-top-right-radius: 5px;
