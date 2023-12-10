@@ -67,7 +67,7 @@
               </span>
             </p>
           </div>
-          <h3>Final</h3>
+          <h3>Final Numbers</h3>
           {{-- goals --}}
           <ul class="game-matchup-main-container-goals">
             <li>
@@ -97,17 +97,27 @@
               </li>
             @endforeach
           </ul>
-          {{-- <h3>Scored By</h3> --}}
-          {{-- goals scored by --}}
-          {{-- <ul class="horizontal-scrolling-container">
-            <li>
-              @foreach ($gameMatchup['summary']['scoring'] as $scoredBy)
-                @foreach ($scoredBy['goals'] as $player)
-                  <p>{{ $player['name'] }}</p>
+          @if (count($gameMatchup['summary']['scoring']) > 0)
+            <h3>Goals By</h3>
+            {{-- goals scored by --}}
+            <ul class="game-matchup-main-container-scored-by-outer">
+              <li class="game-matchup-main-container-scored-by">
+                @foreach ($gameMatchup['summary']['scoring'] as $scoredBy)
+                  @foreach ($scoredBy['goals'] as $tally)
+                    <p>
+                      <span>
+                        {{ $tally['name'] }}
+                        {{ $tally['awayScore'] }} - {{ $tally['homeScore'] }}
+                      </span>
+                      <span>
+                        {{ $tally['timeInPeriod'] }} in period {{ $scoredBy['period'] }}
+                      </span>
+                    </p>
+                  @endforeach
                 @endforeach
-              @endforeach
-            </li>
-          </ul> --}}
+              </li>
+            </ul>
+          @endif
           {{-- shots --}}
           <ul class="game-matchup-main-container-shots">
             <li>
@@ -215,8 +225,8 @@
           @endif
           {{-- penalties --}}
           <ul class="game-matchup-main-container-penalties">
-            <h3>Penalties</h3>
             @if (count($gameMatchup['summary']['penalties']) > 0)
+              <h3>Penalties</h3>
               @foreach ($gameMatchup['summary']['penalties'] as $penalty)
                 @if ($penalty['period'] === 1)
                   <li>
@@ -434,7 +444,7 @@
         {{-- matchup stats --}}
         <div class="game-matchup-main-container">
           <p class="game-matchup-main-container-venue">{{ $gameMatchup['venue']['default'] }}</p>
-          <h3>Live</h3>
+          <h3>Live Stats</h3>
           {{-- goals --}}
           <ul class="game-matchup-main-container-goals">
             <li>
@@ -464,6 +474,27 @@
               </li>
             @endforeach
           </ul>
+          @if (count($gameMatchup['summary']['scoring']) > 0)
+            <h3>Goals By</h3>
+            {{-- goals scored by --}}
+            <ul class="game-matchup-main-container-scored-by-outer">
+              <li class="game-matchup-main-container-scored-by">
+                @foreach ($gameMatchup['summary']['scoring'] as $scoredBy)
+                  @foreach ($scoredBy['goals'] as $tally)
+                    <p>
+                      <span>
+                        {{ $tally['name'] }}
+                        {{ $tally['awayScore'] }} - {{ $tally['homeScore'] }}
+                      </span>
+                      <span>
+                        {{ $tally['timeInPeriod'] }} in period {{ $scoredBy['period'] }}
+                      </span>
+                    </p>
+                  @endforeach
+                @endforeach
+              </li>
+            </ul>
+          @endif
           {{-- shots --}}
           <ul class="game-matchup-main-container-shots">
             <li>
@@ -571,8 +602,8 @@
           @endif
           {{-- penalties --}}
           <ul class="game-matchup-main-container-penalties">
-            <h3>Penalties</h3>
             @if (count($gameMatchup['summary']['penalties']) > 0)
+              <h3>Penalties</h3>
               @foreach ($gameMatchup['summary']['penalties'] as $penalty)
                 @if ($penalty['period'] === 1)
                   <li>

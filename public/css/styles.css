@@ -406,7 +406,7 @@ footer {
 
 .game-matchup-heading-date {
     -webkit-transform: translateX(-50%);
-    border-bottom: solid 1px #1e90ff;
+    border-bottom: solid 1px #4169e1;
     font-size: 14px;
     left: 50%;
     padding: 0 10px;
@@ -511,6 +511,7 @@ footer {
 .game-matchup-main-container-penalties,
 .game-matchup-main-container-pim,
 .game-matchup-main-container-pp,
+.game-matchup-main-container-scored-by-outer,
 .game-matchup-main-container-shots,
 .game-matchup-main-container-taways {
     margin: 0 auto 15px auto;
@@ -545,33 +546,12 @@ footer {
     width: 100%;
     /* outline: solid 1px blue; */
 }
-.game-matchup-main-container-penalties li {
-    -ms-flex-align: center;
-    -ms-flex-direction: row;
-    -ms-flex-pack: center;
-    -ms-flex-wrap: wrap;
-    -webkit-box-align: center;
-    -webkit-box-direction: normal;
-    -webkit-box-orient: horizontal;
-    -webkit-box-pack: center;
-    align-items: center;
-    color: #000;
-    cursor: default;
-    display: -ms-flexbox;
-    display: -webkit-box;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-}
 
 .game-matchup-main-container-bshots li p,
 .game-matchup-main-container-faceoff li p,
 .game-matchup-main-container-hits li p,
 .game-matchup-main-container-gaways li p,
 .game-matchup-main-container-goals li p,
-.game-matchup-main-container-penalties li p,
 .game-matchup-main-container-pim li p,
 .game-matchup-main-container-pp li p,
 .game-matchup-main-container-shots li p,
@@ -580,17 +560,6 @@ footer {
     text-align: center;
     width: 100%;
     /* outline: solid 1px blue; */
-}
-.game-matchup-main-container-penalties li p {
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
-    /* outline: solid 1px blue; */
-}
-.game-matchup-penalty {
-    border-left: solid 1px #000;
-    border-right: solid 1px #000;
-    padding: 0 10px;
 }
 
 .game-matchup-main-container-bshots li:first-of-type p,
@@ -607,16 +576,6 @@ footer {
     box-shadow: 0 0 1px #000;
     margin-bottom: 5px;
     padding: 2px 0;
-}
-.game-matchup-main-container-penalties li:nth-of-type(odd) p {
-    background-color: #008080;
-    border-radius: 5px;
-    color: #fff;
-    font-weight: bold;
-    margin: 5px 0;
-    outline: solid 1px #333333;
-    padding: 2px 0;
-    width: 100%;
 }
 
 .game-matchup-main-container-bshots li:first-of-type p:first-of-type,
@@ -655,7 +614,8 @@ footer {
 .game-matchup-main-container-shots li:first-of-type p:nth-of-type(2),
 .game-matchup-main-container-taways li p:nth-of-type(2) {
     -webkit-box-shadow: none;
-    background-color: #008080;
+    /* background-color: #008080; */
+    background-color: #4682b4;
     box-shadow: none;
     color: #fff;
     font-weight: bold;
@@ -666,15 +626,100 @@ footer {
 }
 .game-matchup-main-container-goals li p:nth-of-type(2),
 .game-matchup-main-container-shots li p:nth-of-type(2) {
-    font-weight: bold;
+    /* font-weight: bold; */
     margin-left: 5px;
     margin-right: 5px;
 }
 
-/* .game-matchup-main-container-goals-scoredBy li p {
+.game-matchup-main-container-penalties li {
+    -ms-flex-align: center;
+    -ms-flex-direction: row;
+    -ms-flex-pack: center;
+    -ms-flex-wrap: wrap;
+    -webkit-box-align: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -webkit-box-pack: center;
+    align-items: center;
+    color: #000;
+    cursor: default;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+.game-matchup-penalty {
+    background-color: #fff;
+    border-radius: 5px;
+    font-size: 14px;
+    margin: 5px 2px;
+    min-width: -moz-fit-content;
+    min-width: -webkit-fit-content;
     min-width: fit-content;
     outline: solid 1px #000;
-} */
+    padding: 2px 10px;
+}
+
+.game-matchup-main-container-penalties li:nth-of-type(odd) p {
+    background-color: #4682b4;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+    margin: 5px 0;
+    outline: solid 1px #333333;
+    padding: 2px 0;
+    text-align: center;
+    width: 75%;
+}
+
+.game-matchup-main-container-scored-by {
+    align-items: center;
+    cursor: default;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    overflow: auto;
+    padding: 5px 10px 20px 10px;
+    width: 100%;
+}
+.game-matchup-main-container-scored-by::after,
+.game-matchup-main-container-scored-by::before {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    content: "";
+    flex: 1;
+    /* outline: solid 1px blue; */
+}
+
+.game-matchup-main-container-scored-by p {
+    -ms-flex-direction: column;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    background-color: #fff;
+    border-radius: 5px;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    margin: 0 5px;
+    min-width: -moz-fit-content;
+    min-width: -webkit-fit-content;
+    min-width: fit-content;
+    outline: solid 1px #000;
+    padding: 2px 10px;
+}
+
+.game-matchup-main-container-scored-by p img {
+    height: auto;
+    width: 25px;
+}
 
 .game-matchup-main-container-three-stars {
     -ms-flex-align: start;
@@ -818,9 +863,9 @@ header h1 {
     display: grid;
     grid-auto-flow: row;
     overflow-x: auto;
-    padding: 10px 15px;
+    padding: 20px 15px;
     scroll-behavior: smooth;
-    outline: solid 1px blue;
+    /* outline: solid 1px blue; */
 }
 
 .league-game-dates-dropdown-container {
@@ -1587,6 +1632,10 @@ header h1 {
         font-size: 22px;
     }
 
+    .game-matchup-main-container-penalties li:nth-of-type(odd) p {
+        width: 80%;
+    }
+
     header h1 {
         font-size: 26px;
         padding: 25px 30px 10px 30px;
@@ -1695,6 +1744,7 @@ header h1 {
     .game-matchup-main-container-penalties,
     .game-matchup-main-container-pim,
     .game-matchup-main-container-pp,
+    .game-matchup-main-container-scored-by-outer,
     .game-matchup-main-container-shots,
     .game-matchup-main-container-taways {
         margin: 0 auto 10px auto;
@@ -1712,6 +1762,10 @@ header h1 {
     .game-matchup-main-container-shots li p,
     .game-matchup-main-container-taways li p {
         font-size: 14px;
+    }
+
+    .game-matchup-main-container-penalties li:nth-of-type(odd) p {
+        width: 90%;
     }
 
     .header-nav {
@@ -1818,6 +1872,7 @@ header h1 {
     .game-matchup-main-container-penalties,
     .game-matchup-main-container-pim,
     .game-matchup-main-container-pp,
+    .game-matchup-main-container-scored-by-outer,
     .game-matchup-main-container-shots,
     .game-matchup-main-container-taways,
     .game-matchup-main-container-three-stars {
@@ -1853,6 +1908,10 @@ header h1 {
 
     .game-matchup-main-container-venue {
         min-width: 75%;
+    }
+
+    .game-matchup-main-container-penalties li:nth-of-type(odd) p {
+        width: 100%;
     }
 
     .header-nav {
