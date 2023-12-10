@@ -107,7 +107,7 @@
                     <p>
                       <span>
                         {{ $tally['name'] }}
-                        {{ $tally['awayScore'] }} - {{ $tally['homeScore'] }}
+                        {{ '(' . $tally['awayScore'] }} - {{ $tally['homeScore'] . ')' }}
                       </span>
                       <span>
                         {{ $tally['timeInPeriod'] }} in period {{ $scoredBy['period'] }}
@@ -484,7 +484,7 @@
                     <p>
                       <span>
                         {{ $tally['name'] }}
-                        {{ $tally['awayScore'] }} - {{ $tally['homeScore'] }}
+                        {{ '(' . $tally['awayScore'] }} - {{ $tally['homeScore'] . ')' }}
                       </span>
                       <span>
                         {{ $tally['timeInPeriod'] }} in period {{ $scoredBy['period'] }}
