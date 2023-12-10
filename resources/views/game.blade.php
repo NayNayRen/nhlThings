@@ -45,6 +45,7 @@
               </span>
               <span>
                 {{ $gameMatchup['summary']['threeStars'][0]['name'] }}
+                {{ '(' . $gameMatchup['summary']['threeStars'][0]['teamAbbrev'] . ')' }}
               </span>
             </p>
             <p>
@@ -54,6 +55,7 @@
               </span>
               <span>
                 {{ $gameMatchup['summary']['threeStars'][1]['name'] }}
+                {{ '(' . $gameMatchup['summary']['threeStars'][1]['teamAbbrev'] . ')' }}
               </span>
             </p>
             <p>
@@ -64,6 +66,7 @@
               </span>
               <span>
                 {{ $gameMatchup['summary']['threeStars'][2]['name'] }}
+                {{ '(' . $gameMatchup['summary']['threeStars'][2]['teamAbbrev'] . ')' }}
               </span>
             </p>
           </div>
