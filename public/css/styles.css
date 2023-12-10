@@ -660,7 +660,7 @@ footer {
     min-width: -moz-fit-content;
     min-width: -webkit-fit-content;
     min-width: fit-content;
-    outline: solid 1px #000;
+    outline: solid 1px #808080;
     padding: 2px 10px;
 }
 
@@ -697,23 +697,51 @@ footer {
     /* outline: solid 1px blue; */
 }
 
-.game-matchup-main-container-scored-by p {
-    -ms-flex-direction: column;
+.game-matchup-main-container-scored-by-info {
+    -ms-flex-direction: row;
     -webkit-box-direction: normal;
-    -webkit-box-orient: vertical;
+    -webkit-box-orient: horizontal;
+    align-items: center;
     background-color: #fff;
     border-radius: 5px;
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     font-size: 14px;
     margin: 0 5px;
     min-width: -moz-fit-content;
     min-width: -webkit-fit-content;
     min-width: fit-content;
-    outline: solid 1px #000;
+    outline: solid 1px #808080;
     padding: 2px 10px;
+}
+
+.game-matchup-main-container-scored-by-info p {
+    -ms-flex-direction: column;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    flex-direction: column;
+    min-width: -moz-fit-content;
+    min-width: -webkit-fit-content;
+    min-width: fit-content;
+}
+
+.game-matchup-main-container-scored-by-info div {
+    height: auto;
+    margin-left: 5px;
+    width: 40px;
+    /* outline: solid 1px blue; */
+}
+
+.game-matchup-main-container-scored-by-info div img {
+    -webkit-filter: drop-shadow(0 2px 2px #808080);
+    filter: drop-shadow(0 2px 2px #808080);
+    height: auto;
+    width: 100%;
 }
 
 .game-matchup-main-container-three-stars {
@@ -752,16 +780,21 @@ footer {
     -webkit-box-orient: vertical;
     -webkit-box-pack: center;
     align-items: center;
+    background-color: #fff;
+    border-radius: 5px;
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
     flex-direction: column;
     font-size: 16px;
     justify-content: center;
-    min-width: 150px;
-    padding: 0 10px;
+    margin: 5px;
+    min-width: -moz-fit-content;
+    min-width: -webkit-fit-content;
+    min-width: fit-content;
+    padding: 2px 10px;
     text-align: center;
-    /* outline: solid 1px blue; */
+    outline: solid 1px #808080;
 }
 
 .game-matchup-main-container-venue {

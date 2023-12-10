@@ -104,15 +104,20 @@
               <li class="game-matchup-main-container-scored-by">
                 @foreach ($gameMatchup['summary']['scoring'] as $scoredBy)
                   @foreach ($scoredBy['goals'] as $tally)
-                    <p>
-                      <span>
-                        {{ $tally['name'] }}
-                        {{ '(' . $tally['awayScore'] }} - {{ $tally['homeScore'] . ')' }}
-                      </span>
-                      <span>
-                        {{ $tally['timeInPeriod'] }} in period {{ $scoredBy['period'] }}
-                      </span>
-                    </p>
+                    <div class="game-matchup-main-container-scored-by-info">
+                      <p>
+                        <span>
+                          {{ $tally['name'] }}
+                          {{ '(' . $tally['awayScore'] }} - {{ $tally['homeScore'] . ')' }}
+                        </span>
+                        <span>
+                          {{ $tally['timeInPeriod'] }} in period {{ $scoredBy['period'] }}
+                        </span>
+                      </p>
+                      <div>
+                        <img src={{ $tally['headshot'] }} alt="{{ $tally['name'] }}">
+                      </div>
+                    </div>
                   @endforeach
                 @endforeach
               </li>
@@ -482,15 +487,20 @@
               <li class="game-matchup-main-container-scored-by">
                 @foreach ($gameMatchup['summary']['scoring'] as $scoredBy)
                   @foreach ($scoredBy['goals'] as $tally)
-                    <p>
-                      <span>
-                        {{ $tally['name'] }}
-                        {{ '(' . $tally['awayScore'] }} - {{ $tally['homeScore'] . ')' }}
-                      </span>
-                      <span>
-                        {{ $tally['timeInPeriod'] }} in period {{ $scoredBy['period'] }}
-                      </span>
-                    </p>
+                    <div class="game-matchup-main-container-scored-by-info">
+                      <p>
+                        <span>
+                          {{ $tally['name'] }}
+                          {{ '(' . $tally['awayScore'] }} - {{ $tally['homeScore'] . ')' }}
+                        </span>
+                        <span>
+                          {{ $tally['timeInPeriod'] }} in period {{ $scoredBy['period'] }}
+                        </span>
+                      </p>
+                      <div>
+                        <img src={{ $tally['headshot'] }} alt="{{ $tally['name'] }}">
+                      </div>
+                    </div>
                   @endforeach
                 @endforeach
               </li>
