@@ -97,8 +97,8 @@
               </li>
             @endforeach
           </ul>
-          @if (count($gameMatchup['summary']['scoring']) > 0)
-            <h3>Goals By</h3>
+          @if ($gameMatchup['awayTeam']['score'] > 0 || $gameMatchup['homeTeam']['score'] > 0)
+            <h3>Scoring Summary</h3>
             {{-- goals scored by --}}
             <ul class="game-matchup-main-container-scored-by-outer">
               <li class="game-matchup-main-container-scored-by">
@@ -474,8 +474,9 @@
               </li>
             @endforeach
           </ul>
-          @if (count($gameMatchup['summary']['scoring']) > 0)
-            <h3>Goals By</h3>
+
+          @if ($gameMatchup['awayTeam']['score'] > 0 || $gameMatchup['homeTeam']['score'] > 0)
+            <h3>Scoring Summary</h3>
             {{-- goals scored by --}}
             <ul class="game-matchup-main-container-scored-by-outer">
               <li class="game-matchup-main-container-scored-by">

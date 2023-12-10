@@ -39,11 +39,11 @@ function loadGameScript() {
   if (checkGameState.innerText === 'OFF' || checkGameState.innerText === 'FINAL') {
     if (checkGameState.parentElement.childNodes[1].childNodes[3].innerText > checkGameState.parentElement.childNodes[1].childNodes[9].innerText) {
       checkGameState.parentElement.childNodes[1].childNodes[3].style.color = '#fff';
-      checkGameState.parentElement.childNodes[1].childNodes[3].style.backgroundColor = '#4682B4';
+      checkGameState.parentElement.childNodes[1].childNodes[3].style.backgroundColor = '#4682b4';
     }
     else if (checkGameState.parentElement.childNodes[1].childNodes[3].innerText < checkGameState.parentElement.childNodes[1].childNodes[9].innerText) {
       checkGameState.parentElement.childNodes[1].childNodes[9].style.color = '#fff';
-      checkGameState.parentElement.childNodes[1].childNodes[9].style.backgroundColor = '#4682B4';
+      checkGameState.parentElement.childNodes[1].childNodes[9].style.backgroundColor = '#4682b4';
     }
   }
   // console.log(checkGameState.parentElement.childNodes);
