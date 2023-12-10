@@ -30,6 +30,7 @@ class GameController extends Controller
       'formattedGameDate' => $formattedGameTime->format('D M j, Y'),
       'formattedGameTime' => $formattedGameTime->format('h:i A'),
       'gameBoxscores' => $gameBoxscores,
+      'allTeams' => $allTeams,
       'gameMatchup' => $gameMatchup,
       'currentDate' => $currentDate,
       'teamRoster' => $teamRoster,
