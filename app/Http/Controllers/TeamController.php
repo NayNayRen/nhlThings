@@ -13,6 +13,7 @@ class TeamController extends Controller
     $team = [];
     $teamSchedule = [];
     $teamRoster = [];
+    $defensemen = [];
     $firstHalfSeason = [];
     $secondHalfSeason = [];
     $today = Carbon::today();
@@ -29,7 +30,10 @@ class TeamController extends Controller
         $teamRoster[] = ApiController::getTeamRoster($teamAbbr);
       }
     }
-    // dd($teamRoster[0]);
+    for ($i = 0; $i < count($teamRoster[0]['defensemen']); $i++) {
+      $defensemen[] = ApiController::getPlayer($teamRoster[0]['defensemen'][$i]['id']);
+    }
+    // dd($defensemen);
     return view('team', [
       'currentDate' => $currentDate,
       'favIcon' => $team[0]['teamLogo'],
