@@ -129,19 +129,19 @@
                   </li>
                 </ul>
                 {{-- @foreach (collect($teamRoster['defensemen'])->sortBy('sweaterNumber') as $defensemen) --}}
-                @foreach ($teamRoster['defensemen'] as $defensemen)
+                @foreach ($teamRoster['defensemen'] as $defender)
                   <li>
-                    <a href="{{ route('players.player', $defensemen['id']) }}" target="_blank">
-                      <p class="roster-dropdown-name">{{ $defensemen['firstName']['default'] }}
-                        {{ $defensemen['lastName']['default'] }}</p>
-                      @if (array_key_exists('sweaterNumber', $defensemen))
-                        <span class='roster-dropdown-position'>{{ $defensemen['sweaterNumber'] }}</span>
+                    <a href="{{ route('players.player', $defender['id']) }}" target="_blank">
+                      <p class="roster-dropdown-name">{{ $defender['firstName']['default'] }}
+                        {{ $defender['lastName']['default'] }}</p>
+                      @if (array_key_exists('sweaterNumber', $defender))
+                        <span class='roster-dropdown-position'>{{ $defender['sweaterNumber'] }}</span>
                       @else
                         <span class='roster-dropdown-position'>00</span>
                       @endif
                       <div class="roster-dropdown-photo-container">
-                        <img src={{ $defensemen['headshot'] }}
-                          alt="{{ $defensemen['firstName']['default'] }} {{ $defensemen['lastName']['default'] }}"
+                        <img src={{ $defender['headshot'] }}
+                          alt="{{ $defender['firstName']['default'] }} {{ $defender['lastName']['default'] }}"
                           width="75" height="75">
                       </div>
                     </a>
