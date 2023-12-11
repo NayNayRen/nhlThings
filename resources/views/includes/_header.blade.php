@@ -78,8 +78,8 @@
                     <p>Goalies</p>
                   </li>
                 </ul>
-                {{-- @foreach (collect($teamRoster['goalies'])->sortBy('sweaterNumber') as $goalie) --}}
-                @foreach ($teamRoster['goalies'] as $goalie)
+                @foreach (collect($teamRoster['goalies'])->sortBy('sweaterNumber') as $goalie)
+                  {{-- @foreach ($teamRoster['goalies'] as $goalie) --}}
                   <li>
                     <a href="{{ route('players.player', $goalie['id']) }}" target="_blank">
                       <p class="roster-dropdown-name">{{ $goalie['firstName']['default'] }}
@@ -87,7 +87,7 @@
                       @if (array_key_exists('sweaterNumber', $goalie))
                         <span class='roster-dropdown-position'>{{ $goalie['sweaterNumber'] }}</span>
                       @else
-                        <span class='roster-dropdown-position'>00</span>
+                        <span class='roster-dropdown-position'>0</span>
                       @endif
                       <div class="roster-dropdown-photo-container">
                         <img src={{ $goalie['headshot'] }}
@@ -103,8 +103,8 @@
                     <p>Forwards</p>
                   </li>
                 </ul>
-                {{-- @foreach (collect($teamRoster['forwards'])->sortBy('sweaterNumber') as $forward) --}}
-                @foreach ($teamRoster['forwards'] as $forward)
+                @foreach (collect($teamRoster['forwards'])->sortBy('sweaterNumber') as $forward)
+                  {{-- @foreach ($teamRoster['forwards'] as $forward) --}}
                   <li>
                     <a href="{{ route('players.player', $forward['id']) }}" target="_blank">
                       <p class="roster-dropdown-name">{{ $forward['firstName']['default'] }}
@@ -112,7 +112,7 @@
                       @if (array_key_exists('sweaterNumber', $forward))
                         <span class='roster-dropdown-position'>{{ $forward['sweaterNumber'] }}</span>
                       @else
-                        <span class='roster-dropdown-position'>00</span>
+                        <span class='roster-dropdown-position'>0</span>
                       @endif
                       <div class="roster-dropdown-photo-container">
                         <img src={{ $forward['headshot'] }}
@@ -128,8 +128,8 @@
                     <p>Defense</p>
                   </li>
                 </ul>
-                {{-- @foreach (collect($teamRoster['defensemen'])->sortBy('sweaterNumber') as $defensemen) --}}
-                @foreach ($teamRoster['defensemen'] as $defender)
+                @foreach (collect($teamRoster['defensemen'])->sortBy('sweaterNumber') as $defender)
+                  {{-- @foreach ($teamRoster['defensemen'] as $defender) --}}
                   <li>
                     <a href="{{ route('players.player', $defender['id']) }}" target="_blank">
                       <p class="roster-dropdown-name">{{ $defender['firstName']['default'] }}
@@ -137,7 +137,7 @@
                       @if (array_key_exists('sweaterNumber', $defender))
                         <span class='roster-dropdown-position'>{{ $defender['sweaterNumber'] }}</span>
                       @else
-                        <span class='roster-dropdown-position'>00</span>
+                        <span class='roster-dropdown-position'>0</span>
                       @endif
                       <div class="roster-dropdown-photo-container">
                         <img src={{ $defender['headshot'] }}
