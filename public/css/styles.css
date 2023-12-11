@@ -670,7 +670,10 @@ footer {
     min-width: -webkit-fit-content;
     min-width: fit-content;
     outline: solid 1px #808080;
-    padding: 2px 10px;
+    padding: 5px 10px;
+}
+.game-matchup-penalty span {
+    color: #b22222;
 }
 
 .game-matchup-main-container-penalties li:nth-of-type(odd) p {
@@ -725,7 +728,7 @@ footer {
     min-width: -webkit-fit-content;
     min-width: fit-content;
     outline: solid 1px #808080;
-    padding: 2px 10px;
+    padding: 5px 10px;
 }
 
 .game-matchup-main-container-scored-by-info p {
@@ -806,7 +809,7 @@ footer {
     min-width: -moz-fit-content;
     min-width: -webkit-fit-content;
     min-width: fit-content;
-    padding: 2px 10px;
+    padding: 5px 10px;
     text-align: center;
     outline: solid 1px #808080;
 }

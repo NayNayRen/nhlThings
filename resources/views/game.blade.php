@@ -260,27 +260,45 @@
                       @if (count($formattedInfraction) >= 2)
                         @if (array_key_exists('committedByPlayer', $infraction))
                           <p class="game-matchup-penalty">
-                            {{ $infraction['committedByPlayer'] }} -
-                            {{ ucwords($formattedInfraction[0]) }} {{ ucwords($formattedInfraction[1]) }} -
+                            {{ $infraction['committedByPlayer'] }}
+                            -
+                            <span>
+                              {{ ucwords($formattedInfraction[0]) }} {{ ucwords($formattedInfraction[1]) }}
+                            </span>
+                            -
                             {{ $infraction['timeInPeriod'] }}
                           </p>
                         @else
                           <p class="game-matchup-penalty">
-                            Bench Minor -
-                            {{ ucwords($formattedInfraction[0]) }} {{ ucwords($formattedInfraction[1]) }} -
+                            Bench Minor
+                            -
+                            <span>
+                              {{ ucwords($formattedInfraction[0]) }} {{ ucwords($formattedInfraction[1]) }}
+                            </span>
+                            -
                             {{ $infraction['timeInPeriod'] }}
                           </p>
                         @endif
                       @else
                         @if (array_key_exists('committedByPlayer', $infraction))
                           <p class="game-matchup-penalty">
-                            {{ $infraction['committedByPlayer'] }} -
-                            {{ ucwords($formattedInfraction[0]) }} - {{ $infraction['timeInPeriod'] }}
+                            {{ $infraction['committedByPlayer'] }}
+                            -
+                            <span>
+                              {{ ucwords($formattedInfraction[0]) }}
+                            </span>
+                            -
+                            {{ $infraction['timeInPeriod'] }}
                           </p>
                         @else
                           <p class="game-matchup-penalty">
-                            Bench Minor -
-                            {{ ucwords($formattedInfraction[0]) }} - {{ $infraction['timeInPeriod'] }}
+                            Bench Minor
+                            -
+                            <span>
+                              {{ ucwords($formattedInfraction[0]) }}
+                            </span>
+                            -
+                            {{ $infraction['timeInPeriod'] }}
                           </p>
                         @endif
                       @endif
@@ -300,27 +318,45 @@
                       @if (count($formattedInfraction) >= 2)
                         @if (array_key_exists('committedByPlayer', $infraction))
                           <p class="game-matchup-penalty">
-                            {{ $infraction['committedByPlayer'] }} -
-                            {{ ucwords($formattedInfraction[0]) }} {{ ucwords($formattedInfraction[1]) }} -
+                            {{ $infraction['committedByPlayer'] }}
+                            -
+                            <span>
+                              {{ ucwords($formattedInfraction[0]) }} {{ ucwords($formattedInfraction[1]) }}
+                            </span>
+                            -
                             {{ $infraction['timeInPeriod'] }}
                           </p>
                         @else
                           <p class="game-matchup-penalty">
-                            Bench Minor -
-                            {{ ucwords($formattedInfraction[0]) }} {{ ucwords($formattedInfraction[1]) }} -
+                            Bench Minor
+                            -
+                            <span>
+                              {{ ucwords($formattedInfraction[0]) }} {{ ucwords($formattedInfraction[1]) }}
+                            </span>
+                            -
                             {{ $infraction['timeInPeriod'] }}
                           </p>
                         @endif
                       @else
                         @if (array_key_exists('committedByPlayer', $infraction))
                           <p class="game-matchup-penalty">
-                            {{ $infraction['committedByPlayer'] }} -
-                            {{ ucwords($formattedInfraction[0]) }} - {{ $infraction['timeInPeriod'] }}
+                            {{ $infraction['committedByPlayer'] }}
+                            -
+                            <span>
+                              {{ ucwords($formattedInfraction[0]) }}
+                            </span>
+                            -
+                            {{ $infraction['timeInPeriod'] }}
                           </p>
                         @else
                           <p class="game-matchup-penalty">
-                            Bench Minor -
-                            {{ ucwords($formattedInfraction[0]) }} - {{ $infraction['timeInPeriod'] }}
+                            Bench Minor
+                            -
+                            <span>
+                              {{ ucwords($formattedInfraction[0]) }}
+                            </span>
+                            -
+                            {{ $infraction['timeInPeriod'] }}
                           </p>
                         @endif
                       @endif
@@ -340,27 +376,45 @@
                       @if (count($formattedInfraction) >= 2)
                         @if (array_key_exists('committedByPlayer', $infraction))
                           <p class="game-matchup-penalty">
-                            {{ $infraction['committedByPlayer'] }} -
-                            {{ ucwords($formattedInfraction[0]) }} {{ ucwords($formattedInfraction[1]) }} -
+                            {{ $infraction['committedByPlayer'] }}
+                            -
+                            <span>
+                              {{ ucwords($formattedInfraction[0]) }} {{ ucwords($formattedInfraction[1]) }}
+                            </span>
+                            -
                             {{ $infraction['timeInPeriod'] }}
                           </p>
                         @else
                           <p class="game-matchup-penalty">
-                            Bench Minor -
-                            {{ ucwords($formattedInfraction[0]) }} {{ ucwords($formattedInfraction[1]) }} -
+                            Bench Minor
+                            -
+                            <span>
+                              {{ ucwords($formattedInfraction[0]) }} {{ ucwords($formattedInfraction[1]) }}
+                            </span>
+                            -
                             {{ $infraction['timeInPeriod'] }}
                           </p>
                         @endif
                       @else
                         @if (array_key_exists('committedByPlayer', $infraction))
                           <p class="game-matchup-penalty">
-                            {{ $infraction['committedByPlayer'] }} -
-                            {{ ucwords($formattedInfraction[0]) }} - {{ $infraction['timeInPeriod'] }}
+                            {{ $infraction['committedByPlayer'] }}
+                            -
+                            <span>
+                              {{ ucwords($formattedInfraction[0]) }}
+                            </span>
+                            -
+                            {{ $infraction['timeInPeriod'] }}
                           </p>
                         @else
                           <p class="game-matchup-penalty">
-                            Bench Minor -
-                            {{ ucwords($formattedInfraction[0]) }} - {{ $infraction['timeInPeriod'] }}
+                            Bench Minor
+                            -
+                            <span>
+                              {{ ucwords($formattedInfraction[0]) }}
+                            </span>
+                            -
+                            {{ $infraction['timeInPeriod'] }}
                           </p>
                         @endif
                       @endif
@@ -380,27 +434,45 @@
                       @if (count($formattedInfraction) >= 2)
                         @if (array_key_exists('committedByPlayer', $infraction))
                           <p class="game-matchup-penalty">
-                            {{ $infraction['committedByPlayer'] }} -
-                            {{ ucwords($formattedInfraction[0]) }} {{ ucwords($formattedInfraction[1]) }} -
+                            {{ $infraction['committedByPlayer'] }}
+                            -
+                            <span>
+                              {{ ucwords($formattedInfraction[0]) }} {{ ucwords($formattedInfraction[1]) }}
+                            </span>
+                            -
                             {{ $infraction['timeInPeriod'] }}
                           </p>
                         @else
                           <p class="game-matchup-penalty">
-                            Bench Minor -
-                            {{ ucwords($formattedInfraction[0]) }} {{ ucwords($formattedInfraction[1]) }} -
+                            Bench Minor
+                            -
+                            <span>
+                              {{ ucwords($formattedInfraction[0]) }} {{ ucwords($formattedInfraction[1]) }}
+                            </span>
+                            -
                             {{ $infraction['timeInPeriod'] }}
                           </p>
                         @endif
                       @else
                         @if (array_key_exists('committedByPlayer', $infraction))
                           <p class="game-matchup-penalty">
-                            {{ $infraction['committedByPlayer'] }} -
-                            {{ ucwords($formattedInfraction[0]) }} - {{ $infraction['timeInPeriod'] }}
+                            {{ $infraction['committedByPlayer'] }}
+                            -
+                            <span>
+                              {{ ucwords($formattedInfraction[0]) }}
+                            </span>
+                            -
+                            {{ $infraction['timeInPeriod'] }}
                           </p>
                         @else
                           <p class="game-matchup-penalty">
-                            Bench Minor -
-                            {{ ucwords($formattedInfraction[0]) }} - {{ $infraction['timeInPeriod'] }}
+                            Bench Minor
+                            -
+                            <span>
+                              {{ ucwords($formattedInfraction[0]) }}
+                            </span>
+                            -
+                            {{ $infraction['timeInPeriod'] }}
                           </p>
                         @endif
                       @endif
@@ -655,27 +727,45 @@
                       @if (count($formattedInfraction) >= 2)
                         @if (array_key_exists('committedByPlayer', $infraction))
                           <p class="game-matchup-penalty">
-                            {{ $infraction['committedByPlayer'] }} -
-                            {{ ucwords($formattedInfraction[0]) }} {{ ucwords($formattedInfraction[1]) }} -
+                            {{ $infraction['committedByPlayer'] }}
+                            -
+                            <span>
+                              {{ ucwords($formattedInfraction[0]) }} {{ ucwords($formattedInfraction[1]) }}
+                            </span>
+                            -
                             {{ $infraction['timeInPeriod'] }}
                           </p>
                         @else
                           <p class="game-matchup-penalty">
-                            Bench Minor -
-                            {{ ucwords($formattedInfraction[0]) }} {{ ucwords($formattedInfraction[1]) }} -
+                            Bench Minor
+                            -
+                            <span>
+                              {{ ucwords($formattedInfraction[0]) }} {{ ucwords($formattedInfraction[1]) }}
+                            </span>
+                            -
                             {{ $infraction['timeInPeriod'] }}
                           </p>
                         @endif
                       @else
                         @if (array_key_exists('committedByPlayer', $infraction))
                           <p class="game-matchup-penalty">
-                            {{ $infraction['committedByPlayer'] }} -
-                            {{ ucwords($formattedInfraction[0]) }} - {{ $infraction['timeInPeriod'] }}
+                            {{ $infraction['committedByPlayer'] }}
+                            -
+                            <span>
+                              {{ ucwords($formattedInfraction[0]) }}
+                            </span>
+                            -
+                            {{ $infraction['timeInPeriod'] }}
                           </p>
                         @else
                           <p class="game-matchup-penalty">
-                            Bench Minor -
-                            {{ ucwords($formattedInfraction[0]) }} - {{ $infraction['timeInPeriod'] }}
+                            Bench Minor
+                            -
+                            <span>
+                              {{ ucwords($formattedInfraction[0]) }}
+                            </span>
+                            -
+                            {{ $infraction['timeInPeriod'] }}
                           </p>
                         @endif
                       @endif
@@ -695,27 +785,45 @@
                       @if (count($formattedInfraction) >= 2)
                         @if (array_key_exists('committedByPlayer', $infraction))
                           <p class="game-matchup-penalty">
-                            {{ $infraction['committedByPlayer'] }} -
-                            {{ ucwords($formattedInfraction[0]) }} {{ ucwords($formattedInfraction[1]) }} -
+                            {{ $infraction['committedByPlayer'] }}
+                            -
+                            <span>
+                              {{ ucwords($formattedInfraction[0]) }} {{ ucwords($formattedInfraction[1]) }}
+                            </span>
+                            -
                             {{ $infraction['timeInPeriod'] }}
                           </p>
                         @else
                           <p class="game-matchup-penalty">
-                            Bench Minor -
-                            {{ ucwords($formattedInfraction[0]) }} {{ ucwords($formattedInfraction[1]) }} -
+                            Bench Minor
+                            -
+                            <span>
+                              {{ ucwords($formattedInfraction[0]) }} {{ ucwords($formattedInfraction[1]) }}
+                            </span>
+                            -
                             {{ $infraction['timeInPeriod'] }}
                           </p>
                         @endif
                       @else
                         @if (array_key_exists('committedByPlayer', $infraction))
                           <p class="game-matchup-penalty">
-                            {{ $infraction['committedByPlayer'] }} -
-                            {{ ucwords($formattedInfraction[0]) }} - {{ $infraction['timeInPeriod'] }}
+                            {{ $infraction['committedByPlayer'] }}
+                            -
+                            <span>
+                              {{ ucwords($formattedInfraction[0]) }}
+                            </span>
+                            -
+                            {{ $infraction['timeInPeriod'] }}
                           </p>
                         @else
                           <p class="game-matchup-penalty">
-                            Bench Minor -
-                            {{ ucwords($formattedInfraction[0]) }} - {{ $infraction['timeInPeriod'] }}
+                            Bench Minor
+                            -
+                            <span>
+                              {{ ucwords($formattedInfraction[0]) }}
+                            </span>
+                            -
+                            {{ $infraction['timeInPeriod'] }}
                           </p>
                         @endif
                       @endif
@@ -735,27 +843,45 @@
                       @if (count($formattedInfraction) >= 2)
                         @if (array_key_exists('committedByPlayer', $infraction))
                           <p class="game-matchup-penalty">
-                            {{ $infraction['committedByPlayer'] }} -
-                            {{ ucwords($formattedInfraction[0]) }} {{ ucwords($formattedInfraction[1]) }} -
+                            {{ $infraction['committedByPlayer'] }}
+                            -
+                            <span>
+                              {{ ucwords($formattedInfraction[0]) }} {{ ucwords($formattedInfraction[1]) }}
+                            </span>
+                            -
                             {{ $infraction['timeInPeriod'] }}
                           </p>
                         @else
                           <p class="game-matchup-penalty">
-                            Bench Minor -
-                            {{ ucwords($formattedInfraction[0]) }} {{ ucwords($formattedInfraction[1]) }} -
+                            Bench Minor
+                            -
+                            <span>
+                              {{ ucwords($formattedInfraction[0]) }} {{ ucwords($formattedInfraction[1]) }}
+                            </span>
+                            -
                             {{ $infraction['timeInPeriod'] }}
                           </p>
                         @endif
                       @else
                         @if (array_key_exists('committedByPlayer', $infraction))
                           <p class="game-matchup-penalty">
-                            {{ $infraction['committedByPlayer'] }} -
-                            {{ ucwords($formattedInfraction[0]) }} - {{ $infraction['timeInPeriod'] }}
+                            {{ $infraction['committedByPlayer'] }}
+                            -
+                            <span>
+                              {{ ucwords($formattedInfraction[0]) }}
+                            </span>
+                            -
+                            {{ $infraction['timeInPeriod'] }}
                           </p>
                         @else
                           <p class="game-matchup-penalty">
-                            Bench Minor -
-                            {{ ucwords($formattedInfraction[0]) }} - {{ $infraction['timeInPeriod'] }}
+                            Bench Minor
+                            -
+                            <span>
+                              {{ ucwords($formattedInfraction[0]) }}
+                            </span>
+                            -
+                            {{ $infraction['timeInPeriod'] }}
                           </p>
                         @endif
                       @endif
@@ -775,27 +901,45 @@
                       @if (count($formattedInfraction) >= 2)
                         @if (array_key_exists('committedByPlayer', $infraction))
                           <p class="game-matchup-penalty">
-                            {{ $infraction['committedByPlayer'] }} -
-                            {{ ucwords($formattedInfraction[0]) }} {{ ucwords($formattedInfraction[1]) }} -
+                            {{ $infraction['committedByPlayer'] }}
+                            -
+                            <span>
+                              {{ ucwords($formattedInfraction[0]) }} {{ ucwords($formattedInfraction[1]) }}
+                            </span>
+                            -
                             {{ $infraction['timeInPeriod'] }}
                           </p>
                         @else
                           <p class="game-matchup-penalty">
-                            Bench Minor -
-                            {{ ucwords($formattedInfraction[0]) }} {{ ucwords($formattedInfraction[1]) }} -
+                            Bench Minor
+                            -
+                            <span>
+                              {{ ucwords($formattedInfraction[0]) }} {{ ucwords($formattedInfraction[1]) }}
+                            </span>
+                            -
                             {{ $infraction['timeInPeriod'] }}
                           </p>
                         @endif
                       @else
                         @if (array_key_exists('committedByPlayer', $infraction))
                           <p class="game-matchup-penalty">
-                            {{ $infraction['committedByPlayer'] }} -
-                            {{ ucwords($formattedInfraction[0]) }} - {{ $infraction['timeInPeriod'] }}
+                            {{ $infraction['committedByPlayer'] }}
+                            -
+                            <span>
+                              {{ ucwords($formattedInfraction[0]) }}
+                            </span>
+                            -
+                            {{ $infraction['timeInPeriod'] }}
                           </p>
                         @else
                           <p class="game-matchup-penalty">
-                            Bench Minor -
-                            {{ ucwords($formattedInfraction[0]) }} - {{ $infraction['timeInPeriod'] }}
+                            Bench Minor
+                            -
+                            <span>
+                              {{ ucwords($formattedInfraction[0]) }}
+                            </span>
+                            -
+                            {{ $infraction['timeInPeriod'] }}
                           </p>
                         @endif
                       @endif
