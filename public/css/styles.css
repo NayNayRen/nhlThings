@@ -340,6 +340,13 @@ footer {
     right: 10px;
 }
 
+.game-matchup-away-team-indicator span,
+.game-matchup-home-team-indicator span {
+    color: #000;
+    font-size: 16px;
+    font-weight: bold;
+}
+
 .game-matchup-container,
 .league-container,
 .player-container,
@@ -515,7 +522,7 @@ footer {
 .game-matchup-main-container-shots,
 .game-matchup-main-container-taways {
     margin: 0 auto 15px auto;
-    width: 80%;
+    width: 1000px;
     /* outline: solid 1px blue; */
 }
 
@@ -653,8 +660,10 @@ footer {
 }
 
 .game-matchup-penalty {
+    -webkit-box-shadow: 0 2px 5px #808080;
     background-color: #fff;
     border-radius: 5px;
+    box-shadow: 0 2px 5px #808080;
     font-size: 14px;
     margin: 5px;
     min-width: -moz-fit-content;
@@ -673,7 +682,7 @@ footer {
     outline: solid 1px #333333;
     padding: 2px 0;
     text-align: center;
-    width: 75%;
+    width: 500px;
 }
 
 .game-matchup-main-container-scored-by {
@@ -701,9 +710,11 @@ footer {
     -ms-flex-direction: row;
     -webkit-box-direction: normal;
     -webkit-box-orient: horizontal;
+    -webkit-box-shadow: 0 2px 5px #808080;
     align-items: center;
     background-color: #fff;
     border-radius: 5px;
+    box-shadow: 0 2px 5px #808080;
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
@@ -762,7 +773,7 @@ footer {
     height: auto;
     justify-content: space-around;
     margin: 0 auto;
-    width: 90%;
+    width: 1000px;
     /* outline: solid 1px blue; */
 }
 
@@ -780,9 +791,11 @@ footer {
     -webkit-box-direction: normal;
     -webkit-box-orient: vertical;
     -webkit-box-pack: center;
+    -webkit-box-shadow: 0 2px 5px #808080;
     align-items: center;
     background-color: #fff;
     border-radius: 5px;
+    box-shadow: 0 2px 5px #808080;
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
@@ -1631,6 +1644,20 @@ header h1 {
 }
 
 @media (max-width: 1300px) {
+    .game-matchup-main-container-bshots,
+    .game-matchup-main-container-faceoff,
+    .game-matchup-main-container-hits,
+    .game-matchup-main-container-gaways,
+    .game-matchup-main-container-goals,
+    .game-matchup-main-container-penalties,
+    .game-matchup-main-container-pim,
+    .game-matchup-main-container-pp,
+    .game-matchup-main-container-scored-by-outer,
+    .game-matchup-main-container-shots,
+    .game-matchup-main-container-taways,
+    .game-matchup-main-container-three-stars {
+        width: 700px;
+    }
 }
 
 @media (max-width: 1000px) {
@@ -1661,9 +1688,24 @@ header h1 {
         font-size: 22px;
     }
 
-    .game-matchup-main-container-penalties li:nth-of-type(odd) p {
+    .game-matchup-main-container-bshots,
+    .game-matchup-main-container-faceoff,
+    .game-matchup-main-container-hits,
+    .game-matchup-main-container-gaways,
+    .game-matchup-main-container-goals,
+    .game-matchup-main-container-penalties,
+    .game-matchup-main-container-pim,
+    .game-matchup-main-container-pp,
+    .game-matchup-main-container-scored-by-outer,
+    .game-matchup-main-container-shots,
+    .game-matchup-main-container-taways,
+    .game-matchup-main-container-three-stars {
         width: 80%;
     }
+
+    /* .game-matchup-main-container-penalties li:nth-of-type(odd) p {
+        width: 80%;
+    } */
 
     header h1 {
         font-size: 26px;
@@ -1775,7 +1817,8 @@ header h1 {
     .game-matchup-main-container-pp,
     .game-matchup-main-container-scored-by-outer,
     .game-matchup-main-container-shots,
-    .game-matchup-main-container-taways {
+    .game-matchup-main-container-taways,
+    .game-matchup-main-container-three-stars {
         margin: 0 auto 10px auto;
         width: 90%;
     }
@@ -1794,7 +1837,7 @@ header h1 {
     }
 
     .game-matchup-main-container-penalties li:nth-of-type(odd) p {
-        width: 90%;
+        width: 300px;
     }
 
     .header-nav {
@@ -1868,11 +1911,6 @@ header h1 {
         border-right: none;
         width: 100%;
     }
-
-    /* .roster-dropdown-list li:hover,
-    .teams-dropdown-list li:hover {
-        background-color: #fff;
-    } */
 
     .shield-logo {
         width: 60px;

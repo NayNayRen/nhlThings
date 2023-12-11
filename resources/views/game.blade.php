@@ -33,8 +33,8 @@
           @foreach ($allTeams as $team)
             @if ($gameMatchup['awayTeam']['abbrev'] === $team['teamAbbrev']['default'])
               <span class="game-matchup-away-team-indicator">
-                Away
                 <span>{{ $team['wins'] }}-{{ $team['losses'] }}-{{ $team['ties'] }}</span>
+                Away
               </span>
             @endif
             @if ($gameMatchup['homeTeam']['abbrev'] === $team['teamAbbrev']['default'])
@@ -461,8 +461,8 @@
           @foreach ($allTeams as $team)
             @if ($gameMatchup['awayTeam']['abbrev'] === $team['teamAbbrev']['default'])
               <span class="game-matchup-away-team-indicator">
-                Away
                 <span>{{ $team['wins'] }}-{{ $team['losses'] }}-{{ $team['ties'] }}</span>
+                Away
               </span>
             @endif
             @if ($gameMatchup['homeTeam']['abbrev'] === $team['teamAbbrev']['default'])
@@ -833,8 +833,20 @@
                 alt="{{ $gameMatchup['homeTeam']['name']['default'] }} Logo">
             </div>
           </div>
-          <span class="game-matchup-away-team-indicator">Away</span>
-          <span class="game-matchup-home-team-indicator">Home</span>
+          @foreach ($allTeams as $team)
+            @if ($gameMatchup['awayTeam']['abbrev'] === $team['teamAbbrev']['default'])
+              <span class="game-matchup-away-team-indicator">
+                <span>{{ $team['wins'] }}-{{ $team['losses'] }}-{{ $team['ties'] }}</span>
+                Away
+              </span>
+            @endif
+            @if ($gameMatchup['homeTeam']['abbrev'] === $team['teamAbbrev']['default'])
+              <span class="game-matchup-home-team-indicator">
+                Home
+                <span>{{ $team['wins'] }}-{{ $team['losses'] }}-{{ $team['ties'] }}</span>
+              </span>
+            @endif
+          @endforeach
         </div>
         {{-- matchup stats --}}
         <div class="game-matchup-main-container">

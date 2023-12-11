@@ -45,7 +45,7 @@
       @else
         <div class="regular-season-container">
           <h2>Games on {{ $currentDate }}</h2>
-          <ul class="league-regular-season owl-carousel owl-theme league-carousel">
+          <ul class="league-regular-season owl-carousel owl-theme league-carousel transition-container">
             @foreach ($dailyGames as $key => $game)
               @php
                 $gameDateTime = Carbon\Carbon::create($game['startTimeUTC'])->tz('America/New_York');

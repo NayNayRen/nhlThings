@@ -2,6 +2,7 @@ function loadLeagueScript() {
   const leagueGameDatesDropdownContainer = document.querySelector('.league-game-dates-dropdown-container');
   const leagueGameDatesDropdownButton = document.querySelector('.league-game-dates-dropdown-button');
   const leagueGameDatesDropdownList = document.querySelector('.league-game-dates-dropdown-list');
+  const transitionContainer = document.querySelector('.transition-container');
   // gets and formats the season
   const season = document.querySelector('.current-season').innerText;
   const firstHalfSeason = season.slice(0, 4);
@@ -348,6 +349,8 @@ function loadLeagueScript() {
     $(this)[0].lastElementChild.classList.toggle('rotate');
     $(this)[0].parentElement.childNodes[3].classList.toggle('game-dropdown-toggle');
   });
+
+  transitionContainer.style.opacity = 1;
 }
 
 window.addEventListener('load', () => {

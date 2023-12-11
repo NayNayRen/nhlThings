@@ -3,6 +3,7 @@ function loadTeamScript() {
   const $finishedGames = $('.finished-games');
   let checkGameState = document.querySelectorAll('.game-state');
   const periods = document.querySelectorAll('.game-periods');
+  const transitionContainer = document.querySelectorAll('.transition-container');
 
   const carouselOptions = {
     loop: false,
@@ -140,6 +141,9 @@ function loadTeamScript() {
     // console.log($(this)[0].parentElement.childNodes);
     $(this)[0].lastElementChild.classList.toggle('rotate');
     $(this)[0].parentElement.childNodes[3].classList.toggle('game-dropdown-toggle');
+  });
+  transitionContainer.forEach((container) => {
+    container.style.opacity = 1;
   });
 }
 

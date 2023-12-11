@@ -38,7 +38,7 @@
       @else
         <div class="regular-season-container">
           <h2>Upcoming Games</h2>
-          <ul class="league-regular-season owl-carousel owl-theme upcoming-games">
+          <ul class="league-regular-season owl-carousel owl-theme upcoming-games transition-container">
             @foreach ($upcomingGames as $key => $game)
               @php
                 $gameDateTime = Carbon\Carbon::create($game['startTimeUTC'])->tz('America/New_York');
@@ -82,7 +82,7 @@
       @else
         <div class="regular-season-container">
           <h2>Finished Games</h2>
-          <ul class="league-regular-season owl-carousel owl-theme finished-games">
+          <ul class="league-regular-season owl-carousel owl-theme finished-games transition-container">
             @foreach ($finishedGames as $key => $game)
               @php
                 $gameDateTime = Carbon\Carbon::create($game['startTimeUTC'])->tz('America/New_York');

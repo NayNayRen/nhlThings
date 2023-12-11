@@ -29,7 +29,7 @@ class TeamController extends Controller
         $teamRoster[] = ApiController::getTeamRoster($teamAbbr);
       }
     }
-    // dd($team[0]);
+    // dd($teamRoster[0]);
     return view('team', [
       'currentDate' => $currentDate,
       'favIcon' => $team[0]['teamLogo'],
