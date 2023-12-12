@@ -2,11 +2,11 @@
 function stickHeading() {
   const scrollPoint = document.querySelector('.game-matchup-scroll-point');
   const stickyHeading = document.querySelector('.sticky-heading');
-  if (document.documentElement.scrollTop > 95 && window.innerWidth > 1000) {
+  if (document.documentElement.scrollTop > 85 && window.innerWidth > 1000) {
     stickyHeading.style.position = "fixed";
     stickyHeading.style.width = "calc(85% - 34px)";
     stickyHeading.style.top = "95px";
-    scrollPoint.style.paddingTop = "150px";
+    scrollPoint.style.paddingTop = "145px";
   }
   else if (document.documentElement.scrollTop > 55 && window.innerWidth < 1000 &&
     window.innerWidth > 700) {
