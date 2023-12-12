@@ -38,12 +38,10 @@ function loadGameScript() {
   // highlights game winner
   if (checkGameState.innerText === 'OFF' || checkGameState.innerText === 'FINAL') {
     if (checkGameState.parentElement.childNodes[1].childNodes[3].innerText > checkGameState.parentElement.childNodes[1].childNodes[9].innerText) {
-      checkGameState.parentElement.childNodes[1].childNodes[3].style.color = '#fff';
-      checkGameState.parentElement.childNodes[1].childNodes[3].style.backgroundColor = '#b22222';
+      checkGameState.parentElement.childNodes[1].childNodes[3].classList.add('game-matchup-winner');
     }
     else if (checkGameState.parentElement.childNodes[1].childNodes[3].innerText < checkGameState.parentElement.childNodes[1].childNodes[9].innerText) {
-      checkGameState.parentElement.childNodes[1].childNodes[9].style.color = '#fff';
-      checkGameState.parentElement.childNodes[1].childNodes[9].style.backgroundColor = '#b22222';
+      checkGameState.parentElement.childNodes[1].childNodes[9].classList.add('game-matchup-winner');
     }
   }
   // console.log(checkGameState.parentElement.childNodes);

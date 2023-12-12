@@ -325,28 +325,6 @@ footer {
     width: 100%;
 }
 
-.game-matchup-away-team-indicator,
-.game-matchup-home-team-indicator {
-    bottom: 5px;
-    color: #b22222;
-    font-size: 12px;
-    font-weight: bold;
-    position: absolute;
-}
-.game-matchup-away-team-indicator {
-    left: 10px;
-}
-.game-matchup-home-team-indicator {
-    right: 10px;
-}
-
-.game-matchup-away-team-indicator span,
-.game-matchup-home-team-indicator span {
-    color: #000;
-    font-size: 16px;
-    font-weight: bold;
-}
-
 .game-matchup-container,
 .league-container,
 .player-container,
@@ -418,7 +396,7 @@ footer {
     left: 50%;
     padding: 0 10px;
     position: absolute;
-    top: 8px;
+    top: 10px;
     transform: translateX(-50%);
 }
 
@@ -826,6 +804,25 @@ footer {
     transform: translateX(-50%);
     min-width: 200px;
     /* outline: solid 1px blue; */
+}
+
+.game-matchup-team-record {
+    color: #000;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.game-matchup-team-indicator {
+    color: #b22222;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.game-matchup-winner {
+    -webkit-box-shadow: 0 2px 2px #808080;
+    background-color: #b22222;
+    box-shadow: 0 2px 2px #808080;
+    color: #fff;
 }
 
 header {
