@@ -345,18 +345,19 @@ footer {
     -webkit-box-direction: normal;
     -webkit-box-orient: horizontal;
     -webkit-box-pack: space-evenly;
-    -webkit-box-shadow: 0 0 10px #808080;
+    -webkit-box-shadow: 0 0 10px #000;
     align-items: center;
     background-color: #dcdcdc;
-    box-shadow: 0 0 10px #808080;
+    box-shadow: 0 0 10px #000;
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     min-height: 130px;
-    padding: 15px;
+    padding: 10px 15px;
     position: relative;
+    z-index: 1;
 }
 
 .game-matchup-heading-container h2 {
@@ -647,7 +648,7 @@ footer {
     min-width: -moz-fit-content;
     min-width: -webkit-fit-content;
     min-width: fit-content;
-    outline: solid 1px #808080;
+    /* outline: solid 1px #808080; */
     padding: 5px 10px;
 }
 .game-matchup-penalty span {
@@ -705,7 +706,7 @@ footer {
     min-width: -moz-fit-content;
     min-width: -webkit-fit-content;
     min-width: fit-content;
-    outline: solid 1px #808080;
+    /* outline: solid 1px #808080; */
     padding: 5px 10px;
 }
 
@@ -789,7 +790,7 @@ footer {
     min-width: fit-content;
     padding: 5px 10px;
     text-align: center;
-    outline: solid 1px #808080;
+    /* outline: solid 1px #808080; */
 }
 
 .game-matchup-main-container-venue {
@@ -808,7 +809,7 @@ footer {
 
 .game-matchup-team-record {
     color: #000;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold;
 }
 
@@ -818,19 +819,14 @@ footer {
     font-weight: bold;
 }
 
-/* .game-matchup-winner {
-    -webkit-box-shadow: 0 2px 2px #808080;
-    background-color: #b22222;
-    box-shadow: 0 2px 2px #808080;
-    color: #fff;
-} */
-
 header {
     -ms-flex-align: center;
     -ms-flex-direction: column;
+    -ms-flex-pack: justify;
     -webkit-box-align: center;
     -webkit-box-direction: normal;
     -webkit-box-orient: vertical;
+    -webkit-box-pack: justify;
     -webkit-box-shadow: 0 0 10px #000;
     align-items: center;
     background-color: #000;
@@ -840,6 +836,8 @@ header {
     display: -webkit-box;
     display: flex;
     flex-direction: column;
+    min-height: 100px;
+    justify-content: space-between;
     position: fixed;
     text-align: center;
     top: 0;
@@ -851,7 +849,7 @@ header h1 {
     background-color: #000;
     font-size: 30px;
     margin: 0 auto;
-    padding: 25px 35px 20px 35px;
+    padding: 25px 35px;
     width: 100%;
     /* outline: solid 1px blue; */
 }
@@ -860,6 +858,7 @@ header h1 {
     height: 0;
     width: 100%;
     position: relative;
+    /* outline: solid 1px blue; */
 }
 
 .header-nav {
@@ -1707,11 +1706,6 @@ header h1 {
         width: 80%;
     } */
 
-    header h1 {
-        font-size: 26px;
-        padding: 25px 30px 10px 30px;
-    }
-
     .league-heading-container,
     .league-standings-heading-container,
     .team-heading-container,
@@ -1840,6 +1834,18 @@ header h1 {
         width: 300px;
     }
 
+    .game-matchup-team-record {
+        font-size: 14px;
+    }
+
+    header {
+        min-height: 85px;
+    }
+
+    header h1 {
+        font-size: 26px;
+    }
+
     .header-nav {
         padding: 25px 35px 120px 0;
     }
@@ -1894,7 +1900,7 @@ header h1 {
     }
 
     .main {
-        padding: 75px 0 0 0;
+        padding: 85px 0 0 0;
     }
 
     .main-container {
@@ -1981,6 +1987,10 @@ header h1 {
         width: 100%;
     }
 
+    header h1 {
+        padding: 25px 35px 10px 35px;
+    }
+
     .header-nav {
         width: 100%;
     }
@@ -1995,7 +2005,7 @@ header h1 {
     }
 
     .main {
-        padding: 115px 0 0 0;
+        padding: 110px 0 0 0;
     }
 
     .nhl-copyright-container {

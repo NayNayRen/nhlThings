@@ -429,7 +429,7 @@
     justify-content: flex-start;
     margin: 5px auto 10px auto;
     min-height: 200px;
-    outline: solid 1px #808080;
+    /* outline: solid 1px #000; */
     overflow: hidden;
     padding: 0 0 55px 0;
     position: relative;

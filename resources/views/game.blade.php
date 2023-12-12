@@ -1,10 +1,10 @@
 @include('includes._header')
 <main class="main">
   <div class="main-container">
-    <div class="game-matchup-container">
+    <div class="game-matchup-container game-matchup-scroll-point">
       {{-- FINISHED GAME --}}
       @if ($gameMatchup['gameState'] === 'OFF' || $gameMatchup['gameState'] === 'FINAL')
-        <div class="game-matchup-heading-container">
+        <div class="game-matchup-heading-container sticky-heading">
           {{-- away team --}}
           <div class="game-matchup-heading-left">
             <span class="game-matchup-team-indicator">Away</span>
@@ -134,7 +134,7 @@
       @endif
       {{-- LIVE GAME --}}
       @if ($gameMatchup['gameState'] === 'CRIT' || $gameMatchup['gameState'] === 'LIVE')
-        <div class="game-matchup-heading-container">
+        <div class="game-matchup-heading-container sticky-heading">
           {{-- away team --}}
           <div class="game-matchup-heading-left">
             <span class="game-matchup-team-indicator">Away</span>
@@ -243,7 +243,7 @@
       @endif
       {{-- PREGAME HEAD TO HEAD --}}
       @if ($gameMatchup['gameState'] === 'PRE')
-        <div class="game-matchup-heading-container">
+        <div class="game-matchup-heading-container sticky-heading">
           {{-- away team --}}
           <div class="game-matchup-heading-left">
             <span class="game-matchup-team-indicator">Away</span>
