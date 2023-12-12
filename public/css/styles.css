@@ -818,12 +818,12 @@ footer {
     font-weight: bold;
 }
 
-.game-matchup-winner {
+/* .game-matchup-winner {
     -webkit-box-shadow: 0 2px 2px #808080;
     background-color: #b22222;
     box-shadow: 0 2px 2px #808080;
     color: #fff;
-}
+} */
 
 header {
     -ms-flex-align: center;
