@@ -385,9 +385,11 @@ footer {
 }
 
 .game-matchup-heading-clock {
+    color: #000;
     font-size: 16px;
     text-align: center;
     width: 100%;
+    /* outline: solid 1px blue; */
 }
 
 .game-matchup-heading-date {
@@ -1967,8 +1969,8 @@ header h1 {
 
     .game-matchup-heading-goals {
         font-size: 20px;
-        height: 35px;
-        width: 35px;
+        height: 30px;
+        width: 30px;
     }
 
     .game-matchup-heading-logo {

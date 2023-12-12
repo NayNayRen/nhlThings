@@ -698,7 +698,7 @@
     z-index: 1;
 } */
 .regular-season-container {
-    min-height: 475px;
+    min-height: 525px;
     /* outline: solid 1px blue; */
 }
 
@@ -809,4 +809,8 @@
     .owl-carousel {
         padding: 0;
     }
+
+    /* .regular-season-container {
+        min-height: 570px;
+    } */
 }
