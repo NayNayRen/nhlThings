@@ -70,6 +70,7 @@
       @endif
       <!-- container with league stats -->
       <div class="main-data-container">
+        {{--         
         <div class="league-standings-selection-container">
           <button type="button" class="league-button active-standings-selection">
             League
@@ -91,9 +92,11 @@
             </div>
           </div>
         </div>
-        <span class="current-season" hidden>{{ $season }}</span>
+        <span class="current-season" hidden>{{ $season }}</span> --}}
+
         <!-- league stats -->
         <div class="league-data-container">
+
           <div class="league-standings-heading-container">
             <div>
               <h2>League Standings</h2>
@@ -103,6 +106,30 @@
               <img src={{ asset('img/nhl-logo.png') }} alt="NHL Logo" width="100" height="100">
             </div>
           </div>
+
+          <div class="league-standings-selection-container">
+            <button type="button" class="league-button active-standings-selection">
+              League
+            </button>
+            <div class="conference-button-container">
+              <p>Conference</p>
+              <div>
+                <button type="button" class="east-button">Eastern</button>
+                <button type="button" class="west-button">Western</button>
+              </div>
+            </div>
+            <div class="division-button-container">
+              <p>Division</p>
+              <div>
+                <button type="button" class="atlantic-button">Atlantic</button>
+                <button type="button" class="central-button">Central</button>
+                <button type="button" class="metro-button">Metro</button>
+                <button type="button" class="pacific-button">Pacific</button>
+              </div>
+            </div>
+          </div>
+          <span class="current-season" hidden>{{ $season }}</span>
+
           <div class="horizontal-scrolling-container">
             <ul class="league-standings-table league-table">
               {{-- league standings header --}}
