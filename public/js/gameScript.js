@@ -2,30 +2,30 @@
 function stickHeading() {
   const scrollPoint = document.querySelector('.game-matchup-scroll-point');
   const stickyHeading = document.querySelector('.sticky-heading');
-  if (document.documentElement.scrollTop > 85 && window.innerWidth > 1000) {
+  if (document.documentElement.scrollTop > 90 && window.innerWidth > 1000) {
     stickyHeading.style.position = "fixed";
     stickyHeading.style.width = "calc(85% - 34px)";
     stickyHeading.style.top = "95px";
-    scrollPoint.style.paddingTop = "145px";
+    scrollPoint.style.paddingTop = "140px";
   }
-  else if (document.documentElement.scrollTop > 55 && window.innerWidth < 1000 &&
+  else if (document.documentElement.scrollTop > 50 && window.innerWidth < 1000 &&
     window.innerWidth > 700) {
     stickyHeading.style.position = "fixed";
     stickyHeading.style.width = "calc(100% - 40px)";
     stickyHeading.style.top = "95px";
-    scrollPoint.style.paddingTop = "145px";
+    scrollPoint.style.paddingTop = "140px";
   }
   else if (document.documentElement.scrollTop > 0 && window.innerWidth < 700 && window.innerWidth > 400) {
     stickyHeading.style.position = "fixed";
     stickyHeading.style.width = "100%";
     stickyHeading.style.top = "85px";
-    scrollPoint.style.paddingTop = "125px";
+    scrollPoint.style.paddingTop = "120px";
   }
   else if (document.documentElement.scrollTop > 0 && window.innerWidth < 400) {
     stickyHeading.style.position = "fixed";
     stickyHeading.style.width = "100%";
     stickyHeading.style.top = "110px";
-    scrollPoint.style.paddingTop = "125px";
+    scrollPoint.style.paddingTop = "120px";
   }
   else {
     stickyHeading.style.position = "relative";
