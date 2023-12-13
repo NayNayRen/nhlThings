@@ -14,6 +14,8 @@ class PlayerController extends Controller
     $firstHalfSeason = [];
     $secondHalfSeason = [];
     $regularSeason = [];
+    $regularSeasonTotalTime = [];
+    $playoffTotalTime = [];
     $playoffSeason = [];
     $proCareer = [];
     $player = ApiController::getPlayer($id);
@@ -23,6 +25,20 @@ class PlayerController extends Controller
     $season = (string)$allTeams[0]['seasonId'];
     $firstHalfSeason[] = $season[0] . $season[1] . $season[2] . $season[3];
     $secondHalfSeason[] = $season[4] . $season[5] . $season[6] . $season[7];
+
+    function minutesToSeconds($time)
+    {
+      $parts = explode(':', $time);
+      $seconds = ($parts[0] * 60) + $parts[1];
+      return $seconds;
+    }
+    function secondsToMinutes($secondsArray)
+    {
+      $totalSeconds = array_sum($secondsArray);
+      $secondsToMinutes = gmdate("H:i:s", $totalSeconds);
+      return $secondsToMinutes;
+    }
+
     for ($i = 0; $i < count($allTeams); $i++) {
       if ($allTeams[$i]['teamAbbrev']['default'] === $player['currentTeamAbbrev']) {
         $team[] = $allTeams[$i];
@@ -35,12 +51,14 @@ class PlayerController extends Controller
       }
       if ($player['seasonTotals'][$i]['leagueAbbrev'] === 'NHL' && $player['seasonTotals'][$i]['gameTypeId'] === 2) {
         $regularSeason[] = $player['seasonTotals'][$i];
+        $regularSeasonTotalTime[] = minutesToSeconds($player['seasonTotals'][$i]['timeOnIce']);
       }
       if ($player['seasonTotals'][$i]['leagueAbbrev'] === 'NHL' && $player['seasonTotals'][$i]['gameTypeId'] === 3) {
         $playoffSeason[] = $player['seasonTotals'][$i];
+        $playoffTotalTime[] = minutesToSeconds($player['seasonTotals'][$i]['timeOnIce']);
       }
     }
-    // dd($player);
+    // dd(secondsToMinutes($regularSeasonTotalTime));
     return view('player', [
       'favIcon' => $team[0]['teamLogo'],
       'title' => $playerName,
