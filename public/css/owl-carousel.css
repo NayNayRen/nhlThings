@@ -396,15 +396,16 @@
 }
 
 .home-game-indicator-message p {
-    font-size: 16px;
+    font-size: 14px;
+    font-weight: bold;
     margin-right: 10px;
 }
 
 .home-game-indicator-message span {
     background-color: #1e90ff;
     border-radius: 50%;
-    height: 15px;
-    width: 15px;
+    height: 10px;
+    width: 10px;
 }
 
 .league-game-card {

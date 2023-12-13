@@ -20,27 +20,38 @@
       {{-- player data --}}
       <div class="player-data-container">
         @if ($player['position'] === 'G')
+
           {{-- goalie stuff --}}
-          <h2>Regular Season</h2>
+          <h2>
+            Regular Season
+            <p>
+              Made Playoffs :
+              <span></span>
+            </p>
+          </h2>
           <div class="horizontal-scrolling-container">
             <ul class="player-stats">
               {{-- goalie regular season --}}
               @include('includes._goalie_header')
               {{-- stats --}}
-              @foreach ($nhlRegularCareer as $key => $stat)
-                @include('includes._goalie_table')
+              @foreach ($regularSeason as $key => $stat)
+                <li class="regular-season-row">
+                  @include('includes._goalie_table')
+                </li>
               @endforeach
             </ul>
           </div>
-          @if (count($nhlPlayoffCareer) > 0)
+          @if (count($playoffSeason) > 0)
             <h2>Playoffs</h2>
             <div class="horizontal-scrolling-container">
               <ul class="player-stats">
                 {{-- goalie playoffs --}}
                 @include('includes._goalie_header')
                 {{-- stats --}}
-                @foreach ($nhlPlayoffCareer as $key => $stat)
-                  @include('includes._goalie_table')
+                @foreach ($playoffSeason as $key => $stat)
+                  <li class="playoff-season-row">
+                    @include('includes._goalie_table')
+                  </li>
                 @endforeach
               </ul>
             </div>
@@ -49,26 +60,36 @@
           @endif
         @else
           {{-- skater stuff --}}
-          <h2>Regular Season</h2>
+          <h2>
+            Regular Season
+            <p>
+              Made Playoffs :
+              <span></span>
+            </p>
+          </h2>
           <div class="horizontal-scrolling-container">
             <ul class="player-stats">
               {{-- player regular season --}}
               @include('includes._player_header')
               {{-- stats --}}
-              @foreach ($nhlRegularCareer as $key => $stat)
-                @include('includes._player_table')
+              @foreach ($regularSeason as $key => $stat)
+                <li class="regular-season-row">
+                  @include('includes._player_table')
+                </li>
               @endforeach
             </ul>
           </div>
-          @if (count($nhlPlayoffCareer) > 0)
+          @if (count($playoffSeason) > 0)
             <h2>Playoffs</h2>
             <div class="horizontal-scrolling-container">
               <ul class="player-stats">
                 {{-- player playoffs --}}
                 @include('includes._player_header')
                 {{-- stats --}}
-                @foreach ($nhlPlayoffCareer as $key => $stat)
-                  @include('includes._player_table')
+                @foreach ($playoffSeason as $key => $stat)
+                  <li class="playoff-season-row">
+                    @include('includes._player_table')
+                  </li>
                 @endforeach
               </ul>
             </div>
@@ -81,4 +102,5 @@
     </div>
   </div>
 </main>
+<script src="{{ asset('js/playerScript.js') }}"></script>
 @include('includes._footer')

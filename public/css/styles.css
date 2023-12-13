@@ -1210,7 +1210,7 @@ header h1 {
 }
 
 .league-standings-table li span,
-.player-stats li span {
+.player-stats li span:first-of-type {
     -webkit-transform: translateY(-50%);
     color: #b22222;
     font-size: 14px;
@@ -1352,6 +1352,19 @@ header h1 {
     /* outline: solid 1px blue; */
 }
 
+.player-data-container h2 p {
+    color: #000;
+    font-size: 14px;
+}
+
+.player-data-container h2 p span {
+    background-color: #1e90ff;
+    border-radius: 50%;
+    display: inline-block;
+    height: 8px;
+    width: 8px;
+}
+
 .player-heading-logo,
 .team-heading-logo {
     -webkit-box-align: center;
@@ -1430,6 +1443,18 @@ header h1 {
 }
 .player-stats p:nth-of-type(2) {
     min-width: 215px;
+}
+
+.playoff-season-marker {
+    -webkit-transform: translateY(-50%);
+    background-color: #1e90ff;
+    border-radius: 50%;
+    height: 8px;
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
 }
 
 .preseason-scrolling-container {
