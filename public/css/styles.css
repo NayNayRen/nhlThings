@@ -1166,6 +1166,11 @@ header h1 {
     /* outline: solid 1px blue; */
 }
 
+.league-standings-table li:nth-of-type(odd),
+.player-stats li:nth-of-type(odd) {
+    background-color: rgba(220, 220, 220, 0.5);
+}
+
 .league-standings-table p,
 .player-stats p,
 .player-team-history p,
@@ -1189,7 +1194,7 @@ header h1 {
 }
 
 .league-standings-table p:first-of-type {
-    background-color: rgba(220, 220, 220, 0.5);
+    /* background-color: rgba(220, 220, 220, 0.5); */
     color: #000;
     font-weight: bold;
     min-width: 225px;
@@ -1375,29 +1380,36 @@ header h1 {
 .player-number-position-container {
     -ms-flex-align: center;
     -ms-flex-direction: row;
-    -ms-flex-pack: space-evenly;
+    -ms-flex-pack: start;
     -webkit-box-align: center;
     -webkit-box-direction: normal;
     -webkit-box-orient: horizontal;
-    -webkit-box-pack: space-evenly;
+    -webkit-box-pack: start;
     align-items: center;
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
     flex-direction: row;
     font-size: 24px;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     width: 100px;
     /* outline: solid 1px blue; */
 }
 
 .player-number {
     color: #000;
-    margin: 0;
+    margin: 0 20px 0 0;
 }
 
 .player-position {
     color: #b22222;
+    margin: 0 20px 0 0;
+}
+
+.player-team {
+    color: #000;
+    font-size: 16px;
+    font-weight: bold;
     margin: 0;
 }
 
@@ -1409,7 +1421,7 @@ header h1 {
 }
 
 .player-stats p:first-of-type {
-    background-color: rgba(220, 220, 220, 0.5);
+    /* background-color: rgba(220, 220, 220, 0.5); */
     color: #000;
     font-weight: bold;
     min-width: 125px;
@@ -1941,6 +1953,10 @@ header h1 {
 
     .nhl-copyright-container {
         width: 400px;
+    }
+
+    .player-team {
+        font-size: 14px;
     }
 
     .shield-logo {

@@ -5,6 +5,7 @@
       <div class="player-heading-container">
         <div class="player-heading-left">
           <h2>{{ $player['firstName']['default'] }} {{ $player['lastName']['default'] }}</h2>
+          <p class="player-team">{{ $player['fullTeamName']['default'] }}</p>
           <div class="player-number-position-container">
             <p class="player-number">{{ $player['sweaterNumber'] }}</p>
             <p class="player-position">{{ $player['position'] }}</p>

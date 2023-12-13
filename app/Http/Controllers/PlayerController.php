@@ -40,7 +40,7 @@ class PlayerController extends Controller
         $nhlPlayoffCareer[] = $player['seasonTotals'][$i];
       }
     }
-    // dd($proCareer);
+    // dd($player);
     return view('player', [
       'favIcon' => $team[0]['teamLogo'],
       'title' => $playerName,
