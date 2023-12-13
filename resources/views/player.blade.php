@@ -24,7 +24,7 @@
           <h2>Regular Season</h2>
           <div class="horizontal-scrolling-container">
             <ul class="player-stats">
-              {{-- goalie stuff regular season --}}
+              {{-- goalie regular season --}}
               @include('includes._goalie_header')
               {{-- stats --}}
               @foreach ($nhlRegularCareer as $key => $stat)
@@ -36,7 +36,7 @@
           <h2>Playoffs</h2>
           <div class="horizontal-scrolling-container">
             <ul class="player-stats">
-              {{-- goalie stuff playoffs --}}
+              {{-- goalie playoffs --}}
               @include('includes._goalie_header')
               {{-- stats --}}
               @foreach ($nhlPlayoffCareer as $key => $stat)
@@ -49,7 +49,7 @@
           <h2>Regular Season</h2>
           <div class="horizontal-scrolling-container">
             <ul class="player-stats">
-              {{-- player stuff regular season --}}
+              {{-- player regular season --}}
               @include('includes._player_header')
               {{-- stats --}}
               @foreach ($nhlRegularCareer as $key => $stat)
@@ -61,7 +61,7 @@
           <h2>Playoffs</h2>
           <div class="horizontal-scrolling-container">
             <ul class="player-stats">
-              {{-- player stuff playoffs --}}
+              {{-- player playoffs --}}
               @include('includes._player_header')
               {{-- stats --}}
               @foreach ($nhlPlayoffCareer as $key => $stat)
