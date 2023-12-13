@@ -51,14 +51,14 @@ class PlayerController extends Controller
       }
       if ($player['seasonTotals'][$i]['leagueAbbrev'] === 'NHL' && $player['seasonTotals'][$i]['gameTypeId'] === 2) {
         $regularSeason[] = $player['seasonTotals'][$i];
-        $regularSeasonTotalTime[] = minutesToSeconds($player['seasonTotals'][$i]['timeOnIce']);
+        // $regularSeasonTotalTime[] = minutesToSeconds($player['seasonTotals'][$i]['timeOnIce']);
       }
       if ($player['seasonTotals'][$i]['leagueAbbrev'] === 'NHL' && $player['seasonTotals'][$i]['gameTypeId'] === 3) {
         $playoffSeason[] = $player['seasonTotals'][$i];
-        $playoffTotalTime[] = minutesToSeconds($player['seasonTotals'][$i]['timeOnIce']);
+        // $playoffTotalTime[] = minutesToSeconds($player['seasonTotals'][$i]['timeOnIce']);
       }
     }
-    // dd(secondsToMinutes($regularSeasonTotalTime));
+    // dd($player);
     return view('player', [
       'favIcon' => $team[0]['teamLogo'],
       'title' => $playerName,
