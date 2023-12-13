@@ -32,18 +32,21 @@
               @endforeach
             </ul>
           </div>
-
-          <h2>Playoffs</h2>
-          <div class="horizontal-scrolling-container">
-            <ul class="player-stats">
-              {{-- goalie playoffs --}}
-              @include('includes._goalie_header')
-              {{-- stats --}}
-              @foreach ($nhlPlayoffCareer as $key => $stat)
-                @include('includes._goalie_table')
-              @endforeach
-            </ul>
-          </div>
+          @if (count($nhlPlayoffCareer) > 0)
+            <h2>Playoffs</h2>
+            <div class="horizontal-scrolling-container">
+              <ul class="player-stats">
+                {{-- goalie playoffs --}}
+                @include('includes._goalie_header')
+                {{-- stats --}}
+                @foreach ($nhlPlayoffCareer as $key => $stat)
+                  @include('includes._goalie_table')
+                @endforeach
+              </ul>
+            </div>
+          @else
+            <h2>No Playoffs Yet...</h2>
+          @endif
         @else
           {{-- skater stuff --}}
           <h2>Regular Season</h2>
@@ -57,18 +60,22 @@
               @endforeach
             </ul>
           </div>
+          @if (count($nhlPlayoffCareer) > 0)
+            <h2>Playoffs</h2>
+            <div class="horizontal-scrolling-container">
+              <ul class="player-stats">
+                {{-- player playoffs --}}
+                @include('includes._player_header')
+                {{-- stats --}}
+                @foreach ($nhlPlayoffCareer as $key => $stat)
+                  @include('includes._player_table')
+                @endforeach
+              </ul>
+            </div>
+          @else
+            <h2>No Playoffs Yet...</h2>
+          @endif
 
-          <h2>Playoffs</h2>
-          <div class="horizontal-scrolling-container">
-            <ul class="player-stats">
-              {{-- player playoffs --}}
-              @include('includes._player_header')
-              {{-- stats --}}
-              @foreach ($nhlPlayoffCareer as $key => $stat)
-                @include('includes._player_table')
-              @endforeach
-            </ul>
-          </div>
         @endif
       </div>
     </div>
