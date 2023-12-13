@@ -75,20 +75,25 @@
             width="75" height="75">
         </div>
         <div class="game-periods">
-          @foreach ($gameData['summary']['linescore']['byPeriod'] as $period)
-            @if ($period['period'] >= 5)
-              <h3 class="game-period">SO</h3>
-            @elseif ($period['period'] === 4)
-              <h3 class="game-period">OT</h3>
-            @elseif ($period['period'] === 3)
-              <h3 class="game-period">3rd</h3>
-            @elseif ($period['period'] === 2)
-              <h3 class="game-period">2nd</h3>
-            @elseif ($period['period'] === 1)
-              <h3 class="game-period">1st</h3>
-            @endif
-          @endforeach
-          <span>{{ $gameClock['clock']['timeRemaining'] }}</span>
+          @if ($gameClock['clock']['inIntermission'] === true)
+            <h3 class="game-period">INT</h3>
+            <span>{{ $gameClock['clock']['timeRemaining'] }}</span>
+          @else
+            @foreach ($gameData['summary']['linescore']['byPeriod'] as $period)
+              @if ($period['period'] >= 5)
+                <h3 class="game-period">SO</h3>
+              @elseif ($period['period'] === 4)
+                <h3 class="game-period">OT</h3>
+              @elseif ($period['period'] === 3)
+                <h3 class="game-period">3rd</h3>
+              @elseif ($period['period'] === 2)
+                <h3 class="game-period">2nd</h3>
+              @elseif ($period['period'] === 1)
+                <h3 class="game-period">1st</h3>
+              @endif
+            @endforeach
+            <span>{{ $gameClock['clock']['timeRemaining'] }}</span>
+          @endif
         </div>
         <div class="game-dropdown-team-logo">
           <img src={{ $game['homeTeam']['logo'] }} alt='{{ $game['homeTeam']['placeName']['default'] }} Logo'

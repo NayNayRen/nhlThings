@@ -13,6 +13,9 @@ class PlayerController extends Controller
     $teamRoster = [];
     $firstHalfSeason = [];
     $secondHalfSeason = [];
+    $nhlRegularCareer = [];
+    $nhlPlayoffCareer = [];
+    $proCareer = [];
     $player = ApiController::getPlayer($id);
     $playerName = $player['firstName']['default'] . ' ' . $player['lastName']['default'];
     $allTeams = ApiController::getAllTeams();
@@ -26,12 +29,26 @@ class PlayerController extends Controller
         $teamRoster[] = ApiController::getTeamRoster($player['currentTeamAbbrev']);
       }
     }
-    // dd($player);
+    for ($i = 0; $i < count($player['seasonTotals']); $i++) {
+      if ($player['seasonTotals'][$i]['leagueAbbrev'] === 'NHL') {
+        $proCareer[] = $player['seasonTotals'][$i];
+      }
+      if ($player['seasonTotals'][$i]['leagueAbbrev'] === 'NHL' && $player['seasonTotals'][$i]['gameTypeId'] === 2) {
+        $nhlRegularCareer[] = $player['seasonTotals'][$i];
+      }
+      if ($player['seasonTotals'][$i]['leagueAbbrev'] === 'NHL' && $player['seasonTotals'][$i]['gameTypeId'] === 3) {
+        $nhlPlayoffCareer[] = $player['seasonTotals'][$i];
+      }
+    }
+    // dd($proCareer);
     return view('player', [
       'favIcon' => $team[0]['teamLogo'],
       'title' => $playerName,
       'formattedSeason' => $firstHalfSeason[0] . '/' . $secondHalfSeason[0],
       'player' => $player,
+      'proCareer' => array_reverse($proCareer),
+      'nhlRegularCareer' => array_reverse($nhlRegularCareer),
+      'nhlPlayoffCareer' => array_reverse($nhlPlayoffCareer),
       'teamRoster' => $teamRoster[0],
       'soloTeam' => $team[0],
       'allTeams' => $allTeams,

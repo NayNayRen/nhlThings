@@ -399,7 +399,7 @@ footer {
     left: 50%;
     padding: 0 10px;
     position: absolute;
-    top: 10px;
+    top: 12px;
     transform: translateX(-50%);
 }
 
@@ -1205,7 +1205,7 @@ header h1 {
 }
 
 .league-standings-table li span,
-.player-team-history li span {
+.player-stats li span {
     -webkit-transform: translateY(-50%);
     color: #b22222;
     font-size: 14px;
@@ -1388,6 +1388,25 @@ header h1 {
 .player-position {
     color: #b22222;
     margin: 0;
+}
+
+.player-stats h3:first-of-type {
+    min-width: 125px;
+}
+.player-stats h3:nth-of-type(2) {
+    min-width: 215px;
+}
+
+.player-stats p:first-of-type {
+    background-color: rgba(220, 220, 220, 0.5);
+    color: #000;
+    font-weight: bold;
+    min-width: 125px;
+    padding: 3px 5px;
+    width: auto;
+}
+.player-stats p:nth-of-type(2) {
+    min-width: 215px;
 }
 
 .preseason-scrolling-container {

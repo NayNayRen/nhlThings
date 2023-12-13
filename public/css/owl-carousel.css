@@ -212,7 +212,7 @@
 
 .game-dropdown-team-logo {
     height: auto;
-    width: 50px;
+    width: 60px;
     /* outline: solid 1px blue; */
 }
 
@@ -298,7 +298,7 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 70px;
+    width: 75px;
 }
 
 .game-team-logo img {

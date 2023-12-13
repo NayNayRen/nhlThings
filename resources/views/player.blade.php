@@ -20,51 +20,62 @@
       <div class="horizontal-scrolling-container">
         <ul class="player-stats">
           @if ($player['position'] === 'G')
+            {{-- goalie stuff --}}
             <li>
               <h3 title="Season">Season</h3>
+              <h3 title="Team Rostered">Team</h3>
               <h3 title="Games Played">GP</h3>
               <h3 title="Games Started">GS</h3>
               <h3 title="Wins">W</h3>
               <h3 title="Losses">L</h3>
-              <h3 title="Ties">T</h3>
               <h3 title="Shut Outs">SO</h3>
-              <h3 title="Overtime Losses">OTL</h3>
               <h3 title="Shots Against">SA</h3>
               <h3 title="Saves">SV</h3>
               <h3 title="Save %">SV%</h3>
-              <h3 title="Goals Allowed">GA</h3>
+              <h3 title="Goals Against">GA</h3>
               <h3 title="Goals Against Average %">GAA%</h3>
               <h3 title="Total TOI">TTOI</h3>
               <h3 title="Goals">G</h3>
               <h3 title="Assists">A</h3>
               <h3 title="Penalty Minutes">PIM</h3>
             </li>
-
-            <li>
-              <p title="Current Season">{{ $formattedSeason }}</p>
-              <p>{{ $player['seasonTotals'][count($player['seasonTotals']) - 1]['gamesPlayed'] }}</p>
-              <p>{{ $player['seasonTotals'][count($player['seasonTotals']) - 1]['gamesStarted'] }}</p>
-              <p>{{ $player['seasonTotals'][count($player['seasonTotals']) - 1]['wins'] }}</p>
-              <p>{{ $player['seasonTotals'][count($player['seasonTotals']) - 1]['losses'] }}</p>
-              <p>{{ $player['seasonTotals'][count($player['seasonTotals']) - 1]['ties'] }}</p>
-              <p>{{ $player['seasonTotals'][count($player['seasonTotals']) - 1]['shutouts'] }}</p>
-              <p>{{ $player['seasonTotals'][count($player['seasonTotals']) - 1]['otLosses'] }}</p>
-              <p>{{ $player['seasonTotals'][count($player['seasonTotals']) - 1]['shotsAgainst'] }}</p>
-              <p>
-                {{ $player['seasonTotals'][count($player['seasonTotals']) - 1]['shotsAgainst'] - $player['seasonTotals'][count($player['seasonTotals']) - 1]['goalsAgainst'] }}
-              </p>
-              <p>{{ round((float) $player['seasonTotals'][count($player['seasonTotals']) - 1]['savePctg'], 3) }}%
-              </p>
-              <p>{{ $player['seasonTotals'][count($player['seasonTotals']) - 1]['goalsAgainst'] }}</p>
-              <p>
-                {{ round((float) $player['seasonTotals'][count($player['seasonTotals']) - 1]['goalsAgainstAvg'] * 1, 2) }}%
-              </p>
-              <p>{{ $player['seasonTotals'][count($player['seasonTotals']) - 1]['timeOnIce'] }}</p>
-              <p>{{ $player['seasonTotals'][count($player['seasonTotals']) - 1]['goals'] }}</p>
-              <p>{{ $player['seasonTotals'][count($player['seasonTotals']) - 1]['assists'] }}</p>
-              <p>{{ $player['seasonTotals'][count($player['seasonTotals']) - 1]['pim'] }}</p>
-            </li>
+            {{-- stats --}}
+            @foreach ($proCareer as $key => $stat)
+              @php
+                $firstHalfSeason = [];
+                $secondHalfSeason = [];
+                $season = (string) $stat['season'];
+                $firstHalfSeason[] = $season[0] . $season[1] . $season[2] . $season[3];
+                $secondHalfSeason[] = $season[4] . $season[5] . $season[6] . $season[7];
+              @endphp
+              <li>
+                <p title="Current Season">
+                  <span>{{ $key + 1 }}.</span>{{ $firstHalfSeason[0] }}/{{ $secondHalfSeason[0] }}
+                </p>
+                <p>{{ $stat['teamName']['default'] }}</p>
+                <p>{{ $stat['gamesPlayed'] }}</p>
+                <p>{{ $stat['gamesStarted'] }}</p>
+                <p>{{ $stat['wins'] }}</p>
+                <p>{{ $stat['losses'] }}</p>
+                <p>{{ $stat['shutouts'] }}</p>
+                <p>{{ $stat['shotsAgainst'] }}</p>
+                <p>
+                  {{ $stat['shotsAgainst'] - $stat['goalsAgainst'] }}
+                </p>
+                <p>{{ round((float) $stat['savePctg'], 3) }}%
+                </p>
+                <p>{{ $stat['goalsAgainst'] }}</p>
+                <p>
+                  {{ round((float) $stat['goalsAgainstAvg'] * 1, 2) }}%
+                </p>
+                <p>{{ $stat['timeOnIce'] }}</p>
+                <p>{{ $stat['goals'] }}</p>
+                <p>{{ $stat['assists'] }}</p>
+                <p>{{ $stat['pim'] }}</p>
+              </li>
+            @endforeach
           @else
+            {{-- skater stuff --}}
             <li>
               <h3 title="Season">Season</h3>
               <h3 title="Games Played">GP</h3>
@@ -83,7 +94,7 @@
               <h3 title="Avg Time on Ice">TOI</h3>
               <h3 title="Faceoff %">FO%</h3>
             </li>
-
+            {{-- stats --}}
             <li>
               <p title="Regular Season">{{ $formattedSeason }}</p>
               <p>{{ $player['seasonTotals'][count($player['seasonTotals']) - 1]['gamesPlayed'] }}</p>

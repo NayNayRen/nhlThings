@@ -155,20 +155,25 @@
           <p class="game-matchup-heading-date">{{ $formattedGameDate }}</p>
           <div class="game-matchup-heading-center">
             <div class="game-matchup-periods">
-              @foreach ($gameMatchup['summary']['linescore']['byPeriod'] as $period)
-                @if ($period['period'] >= 5)
-                  <h3 class="game-matchup-heading-live-period">SO</h3>
-                @elseif ($period['period'] === 4)
-                  <h3 class="game-matchup-heading-live-period">OT</h3>
-                @elseif ($period['period'] === 3)
-                  <h3 class="game-matchup-heading-live-period">3rd</h3>
-                @elseif ($period['period'] === 2)
-                  <h3 class="game-matchup-heading-live-period">2nd</h3>
-                @elseif ($period['period'] === 1)
-                  <h3 class="game-matchup-heading-live-period">1st</h3>
-                @endif
-              @endforeach
-              <p class="game-matchup-heading-clock">{{ $gameMatchup['clock']['timeRemaining'] }}</p>
+              @if ($gameMatchup['clock']['inIntermission'] === true)
+                <h3 class="game-matchup-heading-live-period">INT</h3>
+                <p class="game-matchup-heading-clock">{{ $gameMatchup['clock']['timeRemaining'] }}</p>
+              @else
+                @foreach ($gameMatchup['summary']['linescore']['byPeriod'] as $period)
+                  @if ($period['period'] >= 5)
+                    <h3 class="game-matchup-heading-live-period">SO</h3>
+                  @elseif ($period['period'] === 4)
+                    <h3 class="game-matchup-heading-live-period">OT</h3>
+                  @elseif ($period['period'] === 3)
+                    <h3 class="game-matchup-heading-live-period">3rd</h3>
+                  @elseif ($period['period'] === 2)
+                    <h3 class="game-matchup-heading-live-period">2nd</h3>
+                  @elseif ($period['period'] === 1)
+                    <h3 class="game-matchup-heading-live-period">1st</h3>
+                  @endif
+                @endforeach
+                <p class="game-matchup-heading-clock">{{ $gameMatchup['clock']['timeRemaining'] }}</p>
+              @endif
             </div>
           </div>
           {{-- home team --}}

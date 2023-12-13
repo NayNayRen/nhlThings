@@ -5,15 +5,15 @@ function stickHeading() {
   if (document.documentElement.scrollTop > 90 && window.innerWidth > 1000) {
     stickyHeading.style.position = "fixed";
     stickyHeading.style.width = "calc(85% - 34px)";
-    stickyHeading.style.top = "95px";
+    stickyHeading.style.top = "97px";
     scrollPoint.style.paddingTop = "140px";
   }
   else if (document.documentElement.scrollTop > 50 && window.innerWidth < 1000 &&
     window.innerWidth > 700) {
     stickyHeading.style.position = "fixed";
     stickyHeading.style.width = "calc(100% - 40px)";
-    stickyHeading.style.top = "95px";
-    scrollPoint.style.paddingTop = "140px";
+    stickyHeading.style.top = "97px";
+    scrollPoint.style.paddingTop = "135px";
   }
   else if (document.documentElement.scrollTop > 0 && window.innerWidth < 700 && window.innerWidth > 400) {
     stickyHeading.style.position = "fixed";
@@ -25,7 +25,7 @@ function stickHeading() {
     stickyHeading.style.position = "fixed";
     stickyHeading.style.width = "100%";
     stickyHeading.style.top = "110px";
-    scrollPoint.style.paddingTop = "120px";
+    scrollPoint.style.paddingTop = "122px";
   }
   else {
     stickyHeading.style.position = "relative";
