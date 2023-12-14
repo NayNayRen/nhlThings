@@ -1117,10 +1117,12 @@ header h1 {
     -webkit-box-direction: normal;
     -webkit-box-orient: vertical;
     -webkit-box-pack: start;
+    -webkit-box-shadow: 0 2px 5px #808080;
     align-items: flex-start;
     background-color: #fff;
     border: 1px solid #000;
-    border-radius: 5px;
+    /* border-radius: 10px; */
+    box-shadow: 0 2px 5px #808080;
     cursor: default;
     display: -ms-flexbox;
     display: -webkit-box;
@@ -1191,7 +1193,6 @@ header h1 {
 }
 
 .league-standings-table p:first-of-type {
-    /* background-color: rgba(220, 220, 220, 0.5); */
     color: #000;
     font-weight: bold;
     min-width: 225px;
@@ -1210,7 +1211,6 @@ header h1 {
     -webkit-transform: translateY(-50%);
     color: #b22222;
     font-size: 14px;
-    /* font-weight: bold; */
     left: 6px;
     position: absolute;
     top: 50%;
@@ -1229,6 +1229,29 @@ header h1 {
     text-align: center;
     width: 100%;
 }
+
+/* .league-standings-table li:first-of-type h3:first-of-type,
+.player-stats li:first-of-type h3:first-of-type,
+.team-stats li:first-of-type h3:first-of-type {
+    border-top-left-radius: 7px;
+}
+.league-standings-table li:first-of-type h3:last-of-type,
+.player-stats li:first-of-type h3:last-of-type,
+.team-stats li:first-of-type h3:last-of-type {
+    border-top-right-radius: 10px;
+}
+.league-standings-table li:last-of-type p:first-of-type,
+.player-stats li:last-of-type p:first-of-type,
+.team-stats li:last-of-type h3:first-of-type {
+    background-color: #1e90ff;
+    border-bottom-left-radius: 5px;
+}
+.league-standings-table li:last-of-type p:last-of-type,
+.player-stats li:last-of-type p:last-of-type,
+.team-stats li:last-of-type h3:last-of-type {
+    background-color: #1e90ff;
+    border-top-right-radius: 5px;
+} */
 
 .main {
     -ms-flex-align: center;
@@ -1270,7 +1293,7 @@ header h1 {
 
 .main-container {
     -webkit-box-shadow: 0 0 20px #000;
-    background-color: #fff;
+    background-color: #808080;
     background-attachment: fixed;
     background-image: -webkit-gradient(
             linear,
@@ -1334,6 +1357,64 @@ header h1 {
     text-align: center;
     width: 500px;
     /* outline: solid 1px blue; */
+}
+
+.player-awards {
+    -ms-flex-direction: row;
+    -ms-flex-pack: space-evenly;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -webkit-box-pack: space-evenly;
+    cursor: default;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    /* display: flex; */
+    display: none;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 0;
+    max-width: 100%;
+    min-width: 825px;
+    padding: 0 25px;
+    /* outline: solid 1px red; */
+}
+
+.player-awards li {
+    -webkit-box-shadow: 0 2px 5px #808080;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px #808080;
+    font-size: 14px;
+    margin: 0 15px 0 0;
+    overflow: hidden;
+    min-width: -moz-fit-content;
+    min-width: -webkit-fit-content;
+    min-width: fit-content;
+    text-align: center;
+    /* outline: solid 1px red; */
+}
+
+.player-awards li:last-of-type {
+    margin: 0 0 0 0;
+    /* outline: solid 1px red; */
+}
+
+.player-awards li h3 {
+    background-color: #000;
+    /* background-color: #4682b4; */
+    color: #fff;
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 3px 20px;
+}
+
+.player-awards li p {
+    color: #000;
+    /* padding: 3px 20px; */
+    min-width: -moz-fit-content;
+    min-width: -webkit-fit-content;
+    min-width: fit-content;
 }
 
 .player-data-container h2 {
@@ -1445,13 +1526,14 @@ header h1 {
 }
 
 .player-stats li:last-of-type {
-    background-color: #ffebcd;
+    background-color: #4682b4;
+    color: #fff;
+    font-weight: bold;
 }
 
 .player-stats p:first-of-type {
     /* background-color: rgba(220, 220, 220, 0.5); */
-    color: #000;
-    font-weight: bold;
+    /* color: #000; */
     min-width: 125px;
     padding: 3px 5px;
     width: auto;
