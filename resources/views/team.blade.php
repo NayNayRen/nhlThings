@@ -150,6 +150,7 @@
           </div>
         </div>
       @endif --}}
+      <div class="team-logo-image" hidden>{{ $soloTeam['teamLogo'] }}</div>
     </div>
   </div>
 </main>

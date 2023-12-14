@@ -186,6 +186,7 @@
     background-color: #1e90ff;
     box-shadow: none;
     color: #fff;
+    /* outline-color: #000; */
 }
 
 .active-standings-selection:hover {
@@ -1244,13 +1245,13 @@ header h1 {
             linear,
             left top,
             left bottom,
-            from(rgba(0, 0, 0, 0.75)),
+            from(rgba(0, 0, 0, 0.85)),
             to(rgba(0, 0, 0, 0.5))
         ),
         url("../img/nhl-logo.webp");
     background-image: linear-gradient(
             180deg,
-            rgba(0, 0, 0, 0.75),
+            rgba(0, 0, 0, 0.85),
             rgba(0, 0, 0, 0.5)
         ),
         url("../img/nhl-logo.webp");
@@ -1385,27 +1386,46 @@ header h1 {
 }
 
 .player-draft-container {
+    -ms-flex-align: start;
+    -ms-flex-direction: column;
+    -ms-flex-pack: center;
+    -webkit-box-align: start;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-box-pack: center;
     align-items: flex-start;
     border-bottom: solid 1px #000;
+    display: -ms-flexbox;
+    display: -webkit-box;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    font-size: 14px;
-    justify-content: flex-start;
-    width: 235px;
+    flex-direction: column;
+    font-size: 12px;
+    justify-content: center;
+    padding-right: 15px;
+    width: auto;
     /* outline: solid 1px blue; */
 }
 
 .player-draft-container li {
+    -ms-flex-direction: row;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    flex-direction: row;
+    /* outline: solid 1px blue; */
+}
+
+.player-draft-container span {
+    display: inline-block;
     margin-right: 10px;
+    min-width: -moz-fit-content;
+    min-width: -webkit-fit-content;
+    min-width: fit-content;
 }
 
-.player-draft-container li:first-of-type {
-    font-weight: bold;
-}
-
-.player-draft-container li:last-of-type,
-.player-draft-container li:nth-of-type(3) {
+.player-draft-container span:last-of-type {
     margin-right: 0;
 }
 
@@ -1425,7 +1445,7 @@ header h1 {
 }
 
 .player-stats li:last-of-type {
-    background-color: #ffdead;
+    background-color: #ffebcd;
 }
 
 .player-stats p:first-of-type {
@@ -1468,7 +1488,6 @@ header h1 {
     max-width: 100%;
     min-width: 825px;
     padding: 0 25px;
-    text-align: center;
     /* outline: solid 1px red; */
 }
 
@@ -1483,7 +1502,7 @@ header h1 {
     min-width: -moz-fit-content;
     min-width: -webkit-fit-content;
     min-width: fit-content;
-    z-index: 1;
+    text-align: center;
     /* outline: solid 1px red; */
 }
 
@@ -1494,6 +1513,7 @@ header h1 {
 
 .player-summary li h3 {
     background-color: #000;
+    /* background-color: #4682b4; */
     color: #fff;
     display: block;
     font-size: 14px;

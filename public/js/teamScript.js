@@ -3,6 +3,9 @@ function loadTeamScript() {
   const $finishedGames = $('.finished-games');
   let checkGameState = document.querySelectorAll('.game-state');
   const periods = document.querySelectorAll('.game-periods');
+  const main = document.querySelector('.main');
+  const mainContainer = document.querySelector('.main-container');
+  const teamLogo = document.querySelector('.team-logo-image').innerText;
   const transitionContainer = document.querySelectorAll('.transition-container');
 
   const carouselOptions = {
@@ -145,6 +148,20 @@ function loadTeamScript() {
   transitionContainer.forEach((container) => {
     container.style.opacity = 1;
   });
+  main.style.backgroundImage = `
+  linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.85),
+    rgba(0, 0, 0, 0.5)
+),
+  url(${teamLogo})`;
+  mainContainer.style.backgroundImage = `
+  linear-gradient(
+      180deg,
+      rgba(245, 245, 245, 1),
+      rgba(245, 245, 245, 0.85)
+  ),
+  url(${teamLogo})`;
 }
 
 window.addEventListener('load', () => {

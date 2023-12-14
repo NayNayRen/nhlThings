@@ -8,12 +8,15 @@
           <p class="player-team">{{ $player['fullTeamName']['default'] }}</p>
           @if (array_key_exists('draftDetails', $player))
             <ul class="player-draft-container">
-              <li>Draft</li>
-              <li>Year : {{ $player['draftDetails']['year'] }}</li>
-              <li>By : {{ $player['draftDetails']['teamAbbrev'] }}</li>
-              <li>Round : {{ $player['draftDetails']['round'] }}</li>
-              <li>Picked : {{ $player['draftDetails']['pickInRound'] }}</li>
-              <li>Overall : {{ $player['draftDetails']['overallPick'] }}</li>
+              <li>
+                <span>Year : {{ $player['draftDetails']['year'] }}</span>
+                <span>By : {{ $player['draftDetails']['teamAbbrev'] }}</span>
+              </li>
+              <li>
+                <span>Round : {{ $player['draftDetails']['round'] }}</span>
+                <span>Picked : {{ $player['draftDetails']['pickInRound'] }}</span>
+                <span>Overall : {{ $player['draftDetails']['overallPick'] }}</span>
+              </li>
             </ul>
           @else
             <ul class="player-draft-container">
@@ -66,7 +69,7 @@
           <h2>
             Regular Season
             <p>
-              Made Playoffs :
+              Playoffs :
               <span></span>
             </p>
           </h2>
@@ -189,7 +192,7 @@
           <h2>
             Regular Season
             <p>
-              Made Playoffs :
+              Playoffs :
               <span></span>
             </p>
           </h2>
@@ -273,6 +276,7 @@
 
         @endif
       </div>
+      <div class="player-hero-image" hidden>{{ $player['heroImage'] }}</div>
     </div>
   </div>
 </main>
