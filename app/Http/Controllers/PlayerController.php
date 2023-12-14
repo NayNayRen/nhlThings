@@ -14,8 +14,6 @@ class PlayerController extends Controller
     $firstHalfSeason = [];
     $secondHalfSeason = [];
     $regularSeason = [];
-    $regularSeasonTotalTime = [];
-    $playoffTotalTime = [];
     $playoffSeason = [];
     $proCareer = [];
     $player = ApiController::getPlayer($id);
@@ -51,11 +49,9 @@ class PlayerController extends Controller
       }
       if ($player['seasonTotals'][$i]['leagueAbbrev'] === 'NHL' && $player['seasonTotals'][$i]['gameTypeId'] === 2) {
         $regularSeason[] = $player['seasonTotals'][$i];
-        // $regularSeasonTotalTime[] = minutesToSeconds($player['seasonTotals'][$i]['timeOnIce']);
       }
       if ($player['seasonTotals'][$i]['leagueAbbrev'] === 'NHL' && $player['seasonTotals'][$i]['gameTypeId'] === 3) {
         $playoffSeason[] = $player['seasonTotals'][$i];
-        // $playoffTotalTime[] = minutesToSeconds($player['seasonTotals'][$i]['timeOnIce']);
       }
     }
     // dd($player);

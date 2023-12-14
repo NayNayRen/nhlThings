@@ -6,10 +6,20 @@
         <div class="player-heading-left">
           <h2>{{ $player['firstName']['default'] }} {{ $player['lastName']['default'] }}</h2>
           <p class="player-team">{{ $player['fullTeamName']['default'] }}</p>
-          <div class="player-number-position-container">
-            <p class="player-number">{{ $player['sweaterNumber'] }}</p>
-            <p class="player-position">{{ $player['position'] }}</p>
-          </div>
+          @if (array_key_exists('draftDetails', $player))
+            <ul class="player-draft-container">
+              <li>Draft</li>
+              <li>Year : {{ $player['draftDetails']['year'] }}</li>
+              <li>By : {{ $player['draftDetails']['teamAbbrev'] }}</li>
+              <li>Round : {{ $player['draftDetails']['round'] }}</li>
+              <li>Picked : {{ $player['draftDetails']['pickInRound'] }}</li>
+              <li>Overall : {{ $player['draftDetails']['overallPick'] }}</li>
+            </ul>
+          @else
+            <ul class="player-draft-container">
+              <li>Undrafted</li>
+            </ul>
+          @endif
         </div>
         <div class="player-heading-logo">
           <img src={{ $player['headshot'] }}
@@ -21,6 +31,38 @@
       <div class="player-data-container">
         @if ($player['position'] === 'G')
           {{-- goalie stuff --}}
+          <div class="horizontal-scrolling-container">
+            <ul class="player-summary">
+              <li>
+                <h3>Height</h3>
+                <p>{{ $player['heightInInches'] }}"</p>
+              </li>
+              <li>
+                <h3>Weight</h3>
+                <p>{{ $player['weightInPounds'] }}lbs.</p>
+              </li>
+              <li>
+                <h3>Number</h3>
+                <p>{{ $player['sweaterNumber'] }}</p>
+              </li>
+              <li>
+                <h3>Position</h3>
+                <p>{{ $player['position'] }}</p>
+              </li>
+              <li>
+                <h3>Shoots</h3>
+                <p>{{ $player['shootsCatches'] }}</p>
+              </li>
+              <li>
+                <h3>DOB</h3>
+                <p>{{ $player['birthDate'] }}</p>
+              </li>
+              <li>
+                <h3>Birthplace</h3>
+                <p>{{ $player['birthCity']['default'] }}, {{ $player['birthCountry'] }}</p>
+              </li>
+            </ul>
+          </div>
           <h2>
             Regular Season
             <p>
@@ -38,40 +80,35 @@
                   @include('includes._goalie_table')
                 </li>
               @endforeach
-            </ul>
-          </div>
-          {{-- goalie career regular season --}}
-          <h2>Career Regular Season</h2>
-          <div class="horizontal-scrolling-container">
-            <ul class="player-stats">
+              {{-- goalie career regular season --}}
               @include('includes._goalie_header')
-              {{-- stats --}}
               <li>
                 <p title="Season">Career</p>
                 <p>Regular Season</p>
-                <p>{{ array_sum(array_column($regularSeason, 'gamesPlayed')) }}</p>
-                <p>{{ array_sum(array_column($regularSeason, 'gamesStarted')) }}</p>
-                <p>{{ array_sum(array_column($regularSeason, 'wins')) }}</p>
-                <p>{{ array_sum(array_column($regularSeason, 'losses')) }}</p>
-                <p>{{ array_sum(array_column($regularSeason, 'shutouts')) }}</p>
-                <p>{{ array_sum(array_column($regularSeason, 'shotsAgainst')) }}</p>
+                <p>{{ $player['careerTotals']['regularSeason']['gamesPlayed'] }}</p>
+                <p>{{ $player['careerTotals']['regularSeason']['gamesStarted'] }}</p>
+                <p>{{ $player['careerTotals']['regularSeason']['wins'] }}</p>
+                <p>{{ $player['careerTotals']['regularSeason']['losses'] }}</p>
+                <p>{{ $player['careerTotals']['regularSeason']['shutouts'] }}</p>
+                <p>{{ $player['careerTotals']['regularSeason']['shotsAgainst'] }}</p>
                 <p>
-                  {{ array_sum(array_column($regularSeason, 'shotsAgainst')) - array_sum(array_column($regularSeason, 'goalsAgainst')) }}
+                  {{ $player['careerTotals']['regularSeason']['shotsAgainst'] - $player['careerTotals']['regularSeason']['goalsAgainst'] }}
                 </p>
                 <p>
-                  {{ round((float) ((array_sum(array_column($regularSeason, 'shotsAgainst')) - array_sum(array_column($regularSeason, 'goalsAgainst'))) / array_sum(array_column($regularSeason, 'shotsAgainst'))), 3) }}%
+                  {{ round((float) (($player['careerTotals']['regularSeason']['shotsAgainst'] - $player['careerTotals']['regularSeason']['goalsAgainst']) / $player['careerTotals']['regularSeason']['shotsAgainst']), 3) }}%
                 </p>
-                <p>{{ array_sum(array_column($regularSeason, 'goalsAgainst')) }}</p>
+                <p>{{ $player['careerTotals']['regularSeason']['goalsAgainst'] }}</p>
                 <p>
-                  {{ round((float) (array_sum(array_column($regularSeason, 'goalsAgainst')) / array_sum(array_column($regularSeason, 'gamesPlayed'))) * 1, 2) }}%
+                  {{ round((float) ($player['careerTotals']['regularSeason']['goalsAgainst'] / $player['careerTotals']['regularSeason']['gamesPlayed']) * 1, 2) }}%
                 </p>
-                <p>{{ array_sum(array_column($regularSeason, 'timeOnIce')) }}</p>
-                <p>{{ array_sum(array_column($regularSeason, 'goals')) }}</p>
-                <p>{{ array_sum(array_column($regularSeason, 'assists')) }}</p>
-                <p>{{ array_sum(array_column($regularSeason, 'pim')) }}</p>
+                <p>{{ $player['careerTotals']['regularSeason']['timeOnIce'] }}</p>
+                <p>{{ $player['careerTotals']['regularSeason']['goals'] }}</p>
+                <p>{{ $player['careerTotals']['regularSeason']['assists'] }}</p>
+                <p>{{ $player['careerTotals']['regularSeason']['pim'] }}</p>
               </li>
             </ul>
           </div>
+
           @if (count($playoffSeason) > 0)
             {{-- goalie playoffs --}}
             <h2>Playoffs</h2>
@@ -84,46 +121,71 @@
                     @include('includes._goalie_table')
                   </li>
                 @endforeach
-              </ul>
-            </div>
-            {{-- goalie career playoffs --}}
-            <h2>Career Playoffs</h2>
-            <div class="horizontal-scrolling-container">
-              <ul class="player-stats">
+                {{-- goalie career playoffs --}}
                 @include('includes._goalie_header')
-                {{-- stats --}}
                 <li>
                   <p title="Season">Career</p>
                   <p>Playoffs</p>
-                  <p>{{ array_sum(array_column($playoffSeason, 'gamesPlayed')) }}</p>
-                  <p>{{ array_sum(array_column($playoffSeason, 'gamesStarted')) }}</p>
-                  <p>{{ array_sum(array_column($playoffSeason, 'wins')) }}</p>
-                  <p>{{ array_sum(array_column($playoffSeason, 'losses')) }}</p>
-                  <p>{{ array_sum(array_column($playoffSeason, 'shutouts')) }}</p>
-                  <p>{{ array_sum(array_column($playoffSeason, 'shotsAgainst')) }}</p>
+                  <p>{{ $player['careerTotals']['playoffs']['gamesPlayed'] }}</p>
+                  <p>{{ $player['careerTotals']['playoffs']['gamesStarted'] }}</p>
+                  <p>{{ $player['careerTotals']['playoffs']['wins'] }}</p>
+                  <p>{{ $player['careerTotals']['playoffs']['losses'] }}</p>
+                  <p>{{ $player['careerTotals']['playoffs']['shutouts'] }}</p>
+                  <p>{{ $player['careerTotals']['playoffs']['shotsAgainst'] }}</p>
                   <p>
-                    {{ array_sum(array_column($playoffSeason, 'shotsAgainst')) - array_sum(array_column($playoffSeason, 'goalsAgainst')) }}
+                    {{ $player['careerTotals']['playoffs']['shotsAgainst'] - $player['careerTotals']['playoffs']['goalsAgainst'] }}
                   </p>
                   <p>
-                    {{ round((float) ((array_sum(array_column($playoffSeason, 'shotsAgainst')) - array_sum(array_column($playoffSeason, 'goalsAgainst'))) / array_sum(array_column($playoffSeason, 'shotsAgainst'))), 3) }}%
+                    {{ round((float) (($player['careerTotals']['playoffs']['shotsAgainst'] - $player['careerTotals']['playoffs']['goalsAgainst']) / $player['careerTotals']['playoffs']['shotsAgainst']), 3) }}%
                   </p>
-                  <p>{{ array_sum(array_column($playoffSeason, 'goalsAgainst')) }}</p>
+                  <p>{{ $player['careerTotals']['playoffs']['goalsAgainst'] }}</p>
                   <p>
-                    {{ round((float) (array_sum(array_column($playoffSeason, 'goalsAgainst')) / array_sum(array_column($playoffSeason, 'gamesPlayed'))) * 1, 2) }}%
+                    {{ round((float) ($player['careerTotals']['playoffs']['goalsAgainst'] / $player['careerTotals']['playoffs']['gamesPlayed']) * 1, 2) }}%
                   </p>
-                  <p>{{ array_sum(array_column($playoffSeason, 'timeOnIce')) }}</p>
-                  <p>{{ array_sum(array_column($playoffSeason, 'goals')) }}</p>
-                  <p>{{ array_sum(array_column($playoffSeason, 'assists')) }}</p>
-                  <p>{{ array_sum(array_column($playoffSeason, 'pim')) }}</p>
+                  <p>{{ $player['careerTotals']['playoffs']['timeOnIce'] }}</p>
+                  <p>{{ $player['careerTotals']['playoffs']['goals'] }}</p>
+                  <p>{{ $player['careerTotals']['playoffs']['assists'] }}</p>
+                  <p>{{ $player['careerTotals']['playoffs']['pim'] }}</p>
                 </li>
               </ul>
             </div>
           @else
             <h2>No Playoffs Yet...</h2>
           @endif
-
-          {{-- skater stuff --}}
         @else
+          {{-- skater stuff --}}
+          <div class="horizontal-scrolling-container">
+            <ul class="player-summary">
+              <li>
+                <h3>Height</h3>
+                <p>{{ $player['heightInInches'] }}"</p>
+              </li>
+              <li>
+                <h3>Weight</h3>
+                <p>{{ $player['weightInPounds'] }}lbs.</p>
+              </li>
+              <li>
+                <h3>Number</h3>
+                <p>{{ $player['sweaterNumber'] }}</p>
+              </li>
+              <li>
+                <h3>Position</h3>
+                <p>{{ $player['position'] }}</p>
+              </li>
+              <li>
+                <h3>Shoots</h3>
+                <p>{{ $player['shootsCatches'] }}</p>
+              </li>
+              <li>
+                <h3>DOB</h3>
+                <p>{{ $player['birthDate'] }}</p>
+              </li>
+              <li>
+                <h3>Birthplace</h3>
+                <p>{{ $player['birthCity']['default'] }}, {{ $player['birthCountry'] }}</p>
+              </li>
+            </ul>
+          </div>
           <h2>
             Regular Season
             <p>
@@ -141,6 +203,30 @@
                   @include('includes._player_table')
                 </li>
               @endforeach
+              @include('includes._player_header')
+              <li>
+                <p title="Season">Career</p>
+                <p>Regular Season</p>
+                <p>{{ $player['careerTotals']['regularSeason']['gamesPlayed'] }}</p>
+                <p>{{ $player['careerTotals']['regularSeason']['goals'] }}</p>
+                <p>{{ $player['careerTotals']['regularSeason']['assists'] }}</p>
+                <p>{{ $player['careerTotals']['regularSeason']['points'] }}</p>
+                <p>{{ $player['careerTotals']['regularSeason']['plusMinus'] }}</p>
+                <p>{{ $player['careerTotals']['regularSeason']['pim'] }}</p>
+                <p>{{ $player['careerTotals']['regularSeason']['powerPlayGoals'] }}</p>
+                <p>{{ $player['careerTotals']['regularSeason']['powerPlayPoints'] }}</p>
+                <p>{{ $player['careerTotals']['regularSeason']['shorthandedGoals'] }}</p>
+                <p>{{ $player['careerTotals']['regularSeason']['gameWinningGoals'] }}</p>
+                <p>{{ $player['careerTotals']['regularSeason']['otGoals'] }}</p>
+                <p>{{ $player['careerTotals']['regularSeason']['shots'] }}</p>
+                <p>
+                  {{ round((float) $player['careerTotals']['regularSeason']['shootingPctg'] * 100, 2) }}%
+                </p>
+                <p>{{ $player['careerTotals']['regularSeason']['avgToi'] }}</p>
+                <p>
+                  {{ round((float) $player['careerTotals']['regularSeason']['faceoffWinningPctg'] * 100, 2) }}%
+                </p>
+              </li>
             </ul>
           </div>
           @if (count($playoffSeason) > 0)
@@ -155,6 +241,30 @@
                     @include('includes._player_table')
                   </li>
                 @endforeach
+                @include('includes._player_header')
+                <li>
+                  <p title="Season">Career</p>
+                  <p>Playoffs</p>
+                  <p>{{ $player['careerTotals']['playoffs']['gamesPlayed'] }}</p>
+                  <p>{{ $player['careerTotals']['playoffs']['goals'] }}</p>
+                  <p>{{ $player['careerTotals']['playoffs']['assists'] }}</p>
+                  <p>{{ $player['careerTotals']['playoffs']['points'] }}</p>
+                  <p>{{ $player['careerTotals']['playoffs']['plusMinus'] }}</p>
+                  <p>{{ $player['careerTotals']['playoffs']['pim'] }}</p>
+                  <p>{{ $player['careerTotals']['playoffs']['powerPlayGoals'] }}</p>
+                  <p>{{ $player['careerTotals']['playoffs']['powerPlayPoints'] }}</p>
+                  <p>{{ $player['careerTotals']['playoffs']['shorthandedGoals'] }}</p>
+                  <p>{{ $player['careerTotals']['playoffs']['gameWinningGoals'] }}</p>
+                  <p>{{ $player['careerTotals']['playoffs']['otGoals'] }}</p>
+                  <p>{{ $player['careerTotals']['playoffs']['shots'] }}</p>
+                  <p>
+                    {{ round((float) $player['careerTotals']['playoffs']['shootingPctg'] * 100, 2) }}%
+                  </p>
+                  <p>{{ $player['careerTotals']['playoffs']['avgToi'] }}</p>
+                  <p>
+                    {{ round((float) $player['careerTotals']['playoffs']['faceoffWinningPctg'] * 100, 2) }}%
+                  </p>
+                </li>
               </ul>
             </div>
           @else

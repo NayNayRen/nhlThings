@@ -14,6 +14,6 @@
   <h3 title="Over Time Goals">OTG</h3>
   <h3 title="Shots">Shots</h3>
   <h3 title="Shot %">Shot%</h3>
-  <h3 title="Avg Time on Ice">TOI</h3>
+  <h3 title="Avg Time on Ice">ATOI</h3>
   <h3 title="Faceoff %">FO%</h3>
 </li>
