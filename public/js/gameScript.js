@@ -38,6 +38,8 @@ function stickHeading() {
 function loadGameScript() {
   const checkGameState = document.querySelector('.game-state');
   const periods = document.querySelectorAll('.game-matchup-periods');
+  const main = document.querySelector('.main');
+  const mainContainer = document.querySelector('.main-container');
   periods.forEach((period) => {
     // console.log(period);
     if (period.childNodes.length === 13) {
@@ -72,6 +74,7 @@ function loadGameScript() {
     }
   });
   // highlights game winner
+  // console.log(checkGameState.parentElement.childNodes);
   if (checkGameState.innerText === 'OFF' || checkGameState.innerText === 'FINAL') {
     if (checkGameState.parentElement.childNodes[1].childNodes[3].innerText > checkGameState.parentElement.childNodes[1].childNodes[9].innerText) {
       checkGameState.parentElement.childNodes[1].childNodes[3].style.color = '#fff';
@@ -83,7 +86,39 @@ function loadGameScript() {
     }
   }
 
-  // console.log(checkGameState.parentElement.childNodes);
+  main.style.backgroundImage = `
+  -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(rgba(0, 0, 0, 0.9)),
+    to(rgba(0, 0, 0, 0.5))
+  ),
+  url("../img/nhl-logo.webp")`;
+  main.style.backgroundImage = `
+  linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.9),
+    rgba(0, 0, 0, 0.5)
+  ),
+  url("../img/nhl-logo.webp")`;
+
+  mainContainer.style.backgroundImage = `
+  -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(rgba(245, 245, 245, 1)),
+    to(rgba(245, 245, 245, 0.75))
+  ),
+  url("../img/nhl-logo.webp")`;
+  mainContainer.style.backgroundImage = `
+  linear-gradient(
+    90deg,
+    rgba(245, 245, 245, 1),
+    rgba(245, 245, 245, 0.75)
+  ),
+  url("../img/nhl-logo.webp")`;
 
 }
 window.addEventListener('resize', () => {

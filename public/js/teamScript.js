@@ -172,14 +172,14 @@ url(${teamLogo})`;
     left top,
     right top,
     from(rgba(245, 245, 245, 1)),
-    to(rgba(245, 245, 245, 0.75))
+    to(rgba(245, 245, 245, 0.65))
 ),
 url(${teamLogo})`;
   mainContainer.style.backgroundImage = `
   linear-gradient(
       90deg,
       rgba(245, 245, 245, 1),
-      rgba(245, 245, 245, 0.75)
+      rgba(245, 245, 245, 0.65)
   ),
   url(${teamLogo})`;
 }

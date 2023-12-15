@@ -8,6 +8,8 @@ function loadLeagueScript() {
   const firstHalfSeason = season.slice(0, 4);
   const secondHalfSeason = season.slice(4);
   const periods = document.querySelectorAll('.game-periods');
+  const main = document.querySelector('.main');
+  const mainContainer = document.querySelector('.main-container');
   // standings selection buttons
   const leagueButton = document.querySelector('.league-button');
   const eastButton = document.querySelector('.east-button');
@@ -351,6 +353,40 @@ function loadLeagueScript() {
   });
 
   transitionContainer.style.opacity = 1;
+
+  main.style.backgroundImage = `
+  -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(rgba(0, 0, 0, 0.9)),
+    to(rgba(0, 0, 0, 0.5))
+  ),
+  url("../img/nhl-logo.webp")`;
+  main.style.backgroundImage = `
+  linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.9),
+    rgba(0, 0, 0, 0.5)
+  ),
+  url("../img/nhl-logo.webp")`;
+
+  mainContainer.style.backgroundImage = `
+  -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(rgba(245, 245, 245, 1)),
+    to(rgba(245, 245, 245, 0.75))
+  ),
+  url("../img/nhl-logo.webp")`;
+  mainContainer.style.backgroundImage = `
+  linear-gradient(
+    90deg,
+    rgba(245, 245, 245, 1),
+    rgba(245, 245, 245, 0.75)
+  ),
+  url("../img/nhl-logo.webp")`;
 }
 
 window.addEventListener('load', () => {

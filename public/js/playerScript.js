@@ -24,6 +24,7 @@ function loadPlayerScript() {
     $(this)[0].parentElement.childNodes[6].classList.toggle('player-award-toggle');
   });
 
+  main.style.backgroundPosition = 'top';
   main.style.backgroundSize = 'cover';
   main.style.backgroundImage = `
   -webkit-gradient(
@@ -42,6 +43,7 @@ url(${playerHeroImage})`;
 ),
   url(${playerHeroImage})`;
 
+  mainContainer.style.backgroundPosition = 'top';
   mainContainer.style.backgroundSize = 'cover';
   mainContainer.style.backgroundImage = `
   -webkit-gradient(
