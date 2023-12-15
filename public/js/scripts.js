@@ -14,11 +14,6 @@ function loadScript() {
   const rosterDropdownButton = document.querySelector('.roster-dropdown-button');
   const rosterDropdownList = document.querySelector('.roster-dropdown-list');
 
-  // team summary dropdown containers
-  // const teamSummaryDropdownContainer = document.querySelector('.team-summary-dropdown-container');
-  // const teamSummaryDropdownButton = document.querySelector('.team-summary-dropdown-button');
-  // const teamSummaryDropdownList = document.querySelector('.team-summary-dropdown-list');
-
   // about dropdown containers
   const aboutDropdownContainer = document.querySelector('.about-dropdown-container');
   const aboutDropdownButton = document.querySelector('.about-dropdown-button');
@@ -78,10 +73,6 @@ function loadScript() {
     rosterDropdownContainer.children[0].classList.toggle('rotate');
     rosterDropdownList.classList.toggle('dropdown-list-toggle');
   });
-  // teamSummaryDropdownButton.addEventListener('click', () => {
-  //   teamSummaryDropdownContainer.children[0].classList.toggle('rotate');
-  //   teamSummaryDropdownList.classList.toggle('dropdown-list-toggle');
-  // });
   howToDropdownButton.addEventListener('click', () => {
     howToDropdownContainer.children[0].classList.toggle('rotate');
     howToDropdownList.classList.toggle('dropdown-list-toggle');

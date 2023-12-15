@@ -36,11 +36,19 @@
           <div class="game-matchup-main-container-scored-by-info">
             <p>
               <span>
-                {{ $tally['name'] }}
+                <span>
+                  {{ $tally['name'] }}
+                </span>
                 {{ '(' . $tally['awayScore'] }} - {{ $tally['homeScore'] . ')' }}
               </span>
               <span>
-                {{ $tally['timeInPeriod'] }} in period {{ $scoredBy['period'] }}
+                @if ($scoredBy['period'] === 4)
+                  {{ $tally['timeInPeriod'] }} of OT
+                @elseif($scoredBy['period'] >= 5)
+                  SO winner
+                @else
+                  {{ $tally['timeInPeriod'] }} of period {{ $scoredBy['period'] }}
+                @endif
               </span>
             </p>
             <div>

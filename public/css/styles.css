@@ -723,6 +723,13 @@ footer {
     min-width: fit-content;
 }
 
+.game-matchup-main-container-scored-by-info
+    p
+    span:first-of-type
+    span:first-of-type {
+    color: #b22222;
+}
+
 .game-matchup-main-container-scored-by-info div {
     height: auto;
     margin-left: 5px;
@@ -1021,7 +1028,7 @@ header h1 {
     flex-direction: row;
     justify-content: flex-start;
     min-height: 130px;
-    padding: 15px 0 15px 15px;
+    padding: 15px 0 10px 15px;
 }
 
 .league-heading-logo-dropdown-container,
@@ -1047,7 +1054,7 @@ header h1 {
 .league-standings-heading-container div:last-of-type {
     height: 100%;
     margin-left: 25px;
-    width: 100px;
+    width: 90px;
 }
 
 .league-standings-heading-container div:last-of-type img {
@@ -1227,29 +1234,6 @@ header h1 {
     width: 100%;
 }
 
-/* .league-standings-table li:first-of-type h3:first-of-type,
-.player-stats li:first-of-type h3:first-of-type,
-.team-stats li:first-of-type h3:first-of-type {
-    border-top-left-radius: 7px;
-}
-.league-standings-table li:first-of-type h3:last-of-type,
-.player-stats li:first-of-type h3:last-of-type,
-.team-stats li:first-of-type h3:last-of-type {
-    border-top-right-radius: 10px;
-}
-.league-standings-table li:last-of-type p:first-of-type,
-.player-stats li:last-of-type p:first-of-type,
-.team-stats li:last-of-type h3:first-of-type {
-    background-color: #1e90ff;
-    border-bottom-left-radius: 5px;
-}
-.league-standings-table li:last-of-type p:last-of-type,
-.player-stats li:last-of-type p:last-of-type,
-.team-stats li:last-of-type h3:last-of-type {
-    background-color: #1e90ff;
-    border-top-right-radius: 5px;
-} */
-
 .main {
     -ms-flex-align: center;
     -ms-flex-direction: column;
@@ -1264,14 +1248,14 @@ header h1 {
     background-image: -webkit-gradient(
             linear,
             left top,
-            left bottom,
-            from(rgba(0, 0, 0, 0.85)),
+            right top,
+            from(rgba(0, 0, 0, 0.9)),
             to(rgba(0, 0, 0, 0.5))
         ),
         url("../img/nhl-logo.webp");
     background-image: linear-gradient(
-            180deg,
-            rgba(0, 0, 0, 0.85),
+            90deg,
+            rgba(0, 0, 0, 0.9),
             rgba(0, 0, 0, 0.5)
         ),
         url("../img/nhl-logo.webp");
@@ -1295,15 +1279,15 @@ header h1 {
     background-image: -webkit-gradient(
             linear,
             left top,
-            left bottom,
+            right top,
             from(rgba(245, 245, 245, 1)),
-            to(rgba(245, 245, 245, 0.85))
+            to(rgba(245, 245, 245, 0.75))
         ),
         url("../img/nhl-logo.webp");
     background-image: linear-gradient(
-            180deg,
+            90deg,
             rgba(245, 245, 245, 1),
-            rgba(245, 245, 245, 0.85)
+            rgba(245, 245, 245, 0.75)
         ),
         url("../img/nhl-logo.webp");
     background-position: center;
@@ -1365,8 +1349,8 @@ header h1 {
     cursor: default;
     display: -ms-flexbox;
     display: -webkit-box;
-    /* display: flex; */
-    display: none;
+    display: flex;
+    /* display: none; */
     flex-direction: row;
     justify-content: space-evenly;
     margin: 0;
@@ -1529,8 +1513,6 @@ header h1 {
 }
 
 .player-stats p:first-of-type {
-    /* background-color: rgba(220, 220, 220, 0.5); */
-    /* color: #000; */
     min-width: 125px;
     padding: 3px 5px;
     width: auto;
@@ -1766,10 +1748,10 @@ header h1 {
 }
 
 .team-heading-record {
-    border-bottom: solid 1px #000;
+    /* border-bottom: solid 1px #000; */
     font-size: 16px;
     font-weight: bold;
-    padding-right: 25px;
+    /* padding-right: 25px; */
 }
 
 .team-site a {
@@ -2004,13 +1986,13 @@ header h1 {
         justify-content: center;
     }
 
-    /* .game-matchup-heading-container,
+    .game-matchup-heading-container,
     .league-heading-container,
     .league-standings-heading-container,
     .team-heading-container,
     .player-heading-container {
         min-height: 120px;
-    } */
+    }
 
     .game-matchup-heading-container h2,
     .league-heading-container h2,
@@ -2112,9 +2094,9 @@ header h1 {
         padding: 20px 0 0 10px;
     }
 
-    .league-standings-heading-container div:last-of-type {
+    /* .league-standings-heading-container div:last-of-type {
         width: 75px;
-    }
+    } */
 
     .main {
         padding: 85px 0 0 0;

@@ -388,7 +388,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-top: 5px;
+    position: relative;
     width: -moz-fit-content;
     width: -webkit-fit-content;
     width: fit-content;
@@ -396,15 +396,21 @@
 }
 
 .home-game-indicator-message p {
+    border-bottom: solid 1px #000;
     font-size: 14px;
     font-weight: bold;
-    margin-right: 10px;
+    padding-right: 25px;
 }
 
 .home-game-indicator-message span {
+    -webkit-transform: translateY(-50%);
     background-color: #1e90ff;
     border-radius: 50%;
     height: 10px;
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
     width: 10px;
 }
 

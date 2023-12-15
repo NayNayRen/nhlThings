@@ -110,7 +110,7 @@
 
           @if (count($playoffSeason) > 0)
             {{-- goalie playoffs --}}
-            <h2>Playoffs</h2>
+            <h2>Post Season</h2>
             <div class="horizontal-scrolling-container">
               <ul class="player-stats">
                 @include('includes._goalie_header')
@@ -124,7 +124,7 @@
                 @include('includes._goalie_header')
                 <li>
                   <p title="Season">Career</p>
-                  <p>Playoffs</p>
+                  <p>Post Season</p>
                   <p>{{ $player['careerTotals']['playoffs']['gamesPlayed'] }}</p>
                   <p>{{ $player['careerTotals']['playoffs']['gamesStarted'] }}</p>
                   <p>{{ $player['careerTotals']['playoffs']['wins'] }}</p>
@@ -233,7 +233,7 @@
           </div>
           @if (count($playoffSeason) > 0)
             {{-- player playoffs --}}
-            <h2>Playoffs</h2>
+            <h2>Post Season</h2>
             <div class="horizontal-scrolling-container">
               <ul class="player-stats">
                 @include('includes._player_header')
@@ -246,7 +246,7 @@
                 @include('includes._player_header')
                 <li>
                   <p title="Season">Career</p>
-                  <p>Playoffs</p>
+                  <p>Post Season</p>
                   <p>{{ $player['careerTotals']['playoffs']['gamesPlayed'] }}</p>
                   <p>{{ $player['careerTotals']['playoffs']['goals'] }}</p>
                   <p>{{ $player['careerTotals']['playoffs']['assists'] }}</p>

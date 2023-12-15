@@ -148,18 +148,38 @@ function loadTeamScript() {
   transitionContainer.forEach((container) => {
     container.style.opacity = 1;
   });
+
+  main.style.backgroundImage = `
+  -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(rgba(0, 0, 0, 0.9)),
+    to(rgba(0, 0, 0, 0.5))
+),
+url(${teamLogo})`;
   main.style.backgroundImage = `
   linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.85),
+    90deg,
+    rgba(0, 0, 0, 0.9),
     rgba(0, 0, 0, 0.5)
 ),
   url(${teamLogo})`;
+
+  mainContainer.style.backgroundImage = `
+  -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(rgba(245, 245, 245, 1)),
+    to(rgba(245, 245, 245, 0.75))
+),
+url(${teamLogo})`;
   mainContainer.style.backgroundImage = `
   linear-gradient(
-      180deg,
+      90deg,
       rgba(245, 245, 245, 1),
-      rgba(245, 245, 245, 0.85)
+      rgba(245, 245, 245, 0.75)
   ),
   url(${teamLogo})`;
 }
