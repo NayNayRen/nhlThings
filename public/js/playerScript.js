@@ -16,7 +16,14 @@ function loadPlayerScript() {
       }
     });
   });
-  // main.style.backgroundPosition = 'center';
+
+  // each player awards dropdown button
+  $(document).on('click', '.player-award-dropdown-button', function () {
+    // console.log($(this)[0].parentElement.childNodes);
+    $(this)[0].parentElement.childNodes[1].classList.toggle('rotate');
+    $(this)[0].parentElement.childNodes[6].classList.toggle('player-award-toggle');
+  });
+
   main.style.backgroundSize = 'cover';
   main.style.backgroundImage = `
   -webkit-gradient(
@@ -35,7 +42,6 @@ url(${playerHeroImage})`;
 ),
   url(${playerHeroImage})`;
 
-  // mainContainer.style.backgroundPosition = 'center';
   mainContainer.style.backgroundSize = 'cover';
   mainContainer.style.backgroundImage = `
   -webkit-gradient(

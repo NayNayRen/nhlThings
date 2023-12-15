@@ -1,3 +1,79 @@
+.player-awards-container {
+    -ms-flex-direction: row;
+    -ms-flex-pack: space-evenly;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -webkit-box-pack: space-evenly;
+    cursor: default;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    /* display: flex; */
+    display: none;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 0;
+    max-width: 100%;
+    min-width: 825px;
+    padding: 0 25px;
+    outline: solid 1px red;
+}
+
+.player-award-dropdown-button {
+    -webkit-transition: color 150ms ease;
+    background-color: #fff;
+    border: none;
+    border-radius: 5px;
+    color: #000;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 5px 30px 5px 8px;
+    text-align: left;
+    transition: color 150ms ease;
+    width: 100%;
+}
+
+.player-award-dropdown-button:hover {
+    color: #808080;
+}
+
+.player-award-dropdown-container {
+    color: #000;
+    position: relative;
+    width: fit-content;
+}
+
+.player-award-dropdown-container i {
+    -webkit-transition: -webkit-transform 250ms ease;
+    font-size: 18px;
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    transition: -webkit-transform 250ms ease;
+    transition: transform 250ms ease, -webkit-transform 250ms ease;
+    transition: transform 250ms ease;
+}
+
+.player-award-dropdown-list {
+    -webkit-transition: height 500ms ease, margin-bottom 500ms ease;
+    background-color: #fff;
+    border-radius: 5px;
+    height: 0;
+    left: 0;
+    opacity: 1;
+    overflow-y: scroll;
+    position: absolute;
+    text-align: left;
+    top: calc(100% + 5px);
+    transition: height 500ms ease, margin-bottom 500ms ease;
+    width: 100%;
+}
+
+.player-award-toggle {
+    height: 150px;
+}
+
 .about-dropdown-button,
 .how-to-dropdown-button,
 .roster-dropdown-button,
@@ -669,6 +745,13 @@ footer {
 }
 
 .game-matchup-main-container-scored-by {
+    -ms-flex-align: center;
+    -ms-flex-direction: row;
+    -ms-flex-pack: start;
+    -webkit-box-align: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -webkit-box-pack: start;
     align-items: center;
     cursor: default;
     display: -ms-flexbox;
@@ -912,7 +995,6 @@ header h1 {
     grid-auto-flow: row;
     overflow-x: auto;
     padding: 20px 15px;
-    scroll-behavior: smooth;
     /* outline: solid 1px blue; */
 }
 
@@ -1338,64 +1420,6 @@ header h1 {
     text-align: center;
     width: 500px;
     /* outline: solid 1px blue; */
-}
-
-.player-awards {
-    -ms-flex-direction: row;
-    -ms-flex-pack: space-evenly;
-    -webkit-box-direction: normal;
-    -webkit-box-orient: horizontal;
-    -webkit-box-pack: space-evenly;
-    cursor: default;
-    display: -ms-flexbox;
-    display: -webkit-box;
-    display: flex;
-    /* display: none; */
-    flex-direction: row;
-    justify-content: space-evenly;
-    margin: 0;
-    max-width: 100%;
-    min-width: 825px;
-    padding: 0 25px;
-    /* outline: solid 1px red; */
-}
-
-.player-awards li {
-    -webkit-box-shadow: 0 2px 5px #808080;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px #808080;
-    font-size: 14px;
-    margin: 0 15px 0 0;
-    overflow: hidden;
-    min-width: -moz-fit-content;
-    min-width: -webkit-fit-content;
-    min-width: fit-content;
-    text-align: center;
-    /* outline: solid 1px red; */
-}
-
-.player-awards li:last-of-type {
-    margin: 0 0 0 0;
-    /* outline: solid 1px red; */
-}
-
-.player-awards li h3 {
-    background-color: #000;
-    /* background-color: #4682b4; */
-    color: #fff;
-    display: block;
-    font-size: 14px;
-    font-weight: bold;
-    padding: 3px 20px;
-}
-
-.player-awards li p {
-    color: #000;
-    /* padding: 3px 20px; */
-    min-width: -moz-fit-content;
-    min-width: -webkit-fit-content;
-    min-width: fit-content;
 }
 
 .player-data-container h2 {
