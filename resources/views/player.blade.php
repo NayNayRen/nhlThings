@@ -37,48 +37,49 @@
           <div class="horizontal-scrolling-container">
             {{-- goalie summary --}}
             @include('includes._player_summary')
-
+            {{-- goalie awards --}}
+            @if (array_key_exists('awards', $player))
+              <div class="player-awards-container">
+                @foreach ($player['awards'] as $award)
+                  <div class="player-award-dropdown-container">
+                    <button type="button" class="player-award-dropdown-button">
+                      {{ $award['trophy']['default'] }}
+                      <i class="fa-solid fa-caret-up" aria-hidden="true"></i>
+                    </button>
+                    <div class="transition-height-container">
+                      <ul class="player-award-dropdown-list">
+                        <li>
+                          <h3>Season</h3>
+                          <h3>Goals</h3>
+                          <h3>Wins</h3>
+                          <h3>Losses</h3>
+                          <h3>Save %</h3>
+                          <h3>Goals AA</h3>
+                        </li>
+                        @foreach ($award['seasons'] as $awardSeasonStat)
+                          @php
+                            $firstHalfSeason = [];
+                            $secondHalfSeason = [];
+                            $season = (string) $awardSeasonStat['seasonId'];
+                            $firstHalfSeason[] = $season[0] . $season[1] . $season[2] . $season[3];
+                            $secondHalfSeason[] = $season[4] . $season[5] . $season[6] . $season[7];
+                          @endphp
+                          <li>
+                            <p>{{ $firstHalfSeason[0] }}/{{ $secondHalfSeason[0] }}</p>
+                            <p>{{ $awardSeasonStat['gamesPlayed'] }}</p>
+                            <p>{{ $awardSeasonStat['wins'] }}</p>
+                            <p>{{ $awardSeasonStat['losses'] }}</p>
+                            <p>{{ round((float) $awardSeasonStat['savePctg'], 3) }}%</p>
+                            <p>{{ round((float) $awardSeasonStat['gaa'] * 1, 2) }}%</p>
+                          </li>
+                        @endforeach
+                      </ul>
+                    </div>
+                  </div>
+                @endforeach
+              </div>
+            @endif
           </div>
-          @if (array_key_exists('awards', $player))
-            <div class="player-awards-container">
-              @foreach ($player['awards'] as $award)
-                <div class="player-award-dropdown-container">
-                  <i class="fa-solid fa-caret-up" aria-hidden="true"></i>
-                  <input type="button" class="player-award-dropdown-button"
-                    value="{{ $award['trophy']['default'] }}" /><br />
-                  <ul class="player-award-dropdown-list">
-                    @foreach ($award['seasons'] as $awardSeasonStat)
-                      @php
-                        $firstHalfSeason = [];
-                        $secondHalfSeason = [];
-                        $season = (string) $awardSeasonStat['seasonId'];
-                        $firstHalfSeason[] = $season[0] . $season[1] . $season[2] . $season[3];
-                        $secondHalfSeason[] = $season[4] . $season[5] . $season[6] . $season[7];
-                      @endphp
-                      <li>
-                        <p class="player-award-season">{{ $firstHalfSeason[0] }}/{{ $secondHalfSeason[0] }}</p>
-                      </li>
-                      <li>
-                        <p><span>Games :</span> {{ $awardSeasonStat['gamesPlayed'] }}</p>
-                      </li>
-                      <li>
-                        <p><span>Wins :</span> {{ $awardSeasonStat['wins'] }}</p>
-                      </li>
-                      <li>
-                        <p><span>Losses :</span> {{ $awardSeasonStat['losses'] }}</p>
-                      </li>
-                      <li>
-                        <p><span>Save % :</span> {{ round((float) $awardSeasonStat['savePctg'], 3) }}%</p>
-                      </li>
-                      <li>
-                        <p><span>Goals AA :</span> {{ round((float) $awardSeasonStat['gaa'] * 1, 2) }}%</p>
-                      </li>
-                    @endforeach
-                  </ul>
-                </div>
-              @endforeach
-            </div>
-          @endif
           <h2>
             Regular Season
             <p>
@@ -173,54 +174,53 @@
           <div class="horizontal-scrolling-container">
             {{-- skater summary --}}
             @include('includes._player_summary')
-
+            {{-- skater awards --}}
+            @if (array_key_exists('awards', $player))
+              <div class="player-awards-container">
+                @foreach ($player['awards'] as $award)
+                  <div class="player-award-dropdown-container">
+                    <button type="button" class="player-award-dropdown-button">
+                      {{ $award['trophy']['default'] }}
+                      <i class="fa-solid fa-caret-up" aria-hidden="true"></i>
+                    </button>
+                    <div class="transition-height-container">
+                      <ul class="player-award-dropdown-list">
+                        <li>
+                          <h3>Season</h3>
+                          <h3>Goals</h3>
+                          <h3>Assists</h3>
+                          <h3>Points</h3>
+                          <h3>+/-</h3>
+                          <h3>Hits</h3>
+                          <h3>B Shots</h3>
+                          <h3>PIM</h3>
+                        </li>
+                        @foreach ($award['seasons'] as $awardSeasonStat)
+                          @php
+                            $firstHalfSeason = [];
+                            $secondHalfSeason = [];
+                            $season = (string) $awardSeasonStat['seasonId'];
+                            $firstHalfSeason[] = $season[0] . $season[1] . $season[2] . $season[3];
+                            $secondHalfSeason[] = $season[4] . $season[5] . $season[6] . $season[7];
+                          @endphp
+                          <li>
+                            <p>{{ $firstHalfSeason[0] }}/{{ $secondHalfSeason[0] }}</p>
+                            <p>{{ $awardSeasonStat['goals'] }}</p>
+                            <p>{{ $awardSeasonStat['assists'] }}</p>
+                            <p>{{ $awardSeasonStat['points'] }}</p>
+                            <p>{{ $awardSeasonStat['plusMinus'] }}</p>
+                            <p>{{ $awardSeasonStat['hits'] }}</p>
+                            <p>{{ $awardSeasonStat['blockedShots'] }}</p>
+                            <p>{{ $awardSeasonStat['pim'] }}</p>
+                          </li>
+                        @endforeach
+                      </ul>
+                    </div>
+                  </div>
+                @endforeach
+              </div>
+            @endif
           </div>
-          @if (array_key_exists('awards', $player))
-            <div class="player-awards-container">
-              @foreach ($player['awards'] as $award)
-                <div class="player-award-dropdown-container">
-                  <i class="fa-solid fa-caret-up" aria-hidden="true"></i>
-                  <input type="button" class="player-award-dropdown-button"
-                    value="{{ $award['trophy']['default'] }}" /><br />
-                  <ul class="player-award-dropdown-list">
-                    @foreach ($award['seasons'] as $awardSeasonStat)
-                      @php
-                        $firstHalfSeason = [];
-                        $secondHalfSeason = [];
-                        $season = (string) $awardSeasonStat['seasonId'];
-                        $firstHalfSeason[] = $season[0] . $season[1] . $season[2] . $season[3];
-                        $secondHalfSeason[] = $season[4] . $season[5] . $season[6] . $season[7];
-                      @endphp
-                      <li>
-                        <p class="player-award-season">{{ $firstHalfSeason[0] }}/{{ $secondHalfSeason[0] }}</p>
-                      </li>
-                      <li>
-                        <p><span>Goals :</span> {{ $awardSeasonStat['goals'] }}</p>
-                      </li>
-                      <li>
-                        <p><span>Assists :</span> {{ $awardSeasonStat['assists'] }}</p>
-                      </li>
-                      <li>
-                        <p><span>Points :</span> {{ $awardSeasonStat['points'] }}</p>
-                      </li>
-                      <li>
-                        <p><span>+/- :</span> {{ $awardSeasonStat['plusMinus'] }}</p>
-                      </li>
-                      <li>
-                        <p><span>Hits :</span> {{ $awardSeasonStat['hits'] }}</p>
-                      </li>
-                      <li>
-                        <p><span>B Shots :</span> {{ $awardSeasonStat['blockedShots'] }}</p>
-                      </li>
-                      <li>
-                        <p><span>PIM :</span> {{ $awardSeasonStat['pim'] }}</p>
-                      </li>
-                    @endforeach
-                  </ul>
-                </div>
-              @endforeach
-            </div>
-          @endif
           <h2>
             Regular Season
             <p>

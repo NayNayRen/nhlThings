@@ -1131,7 +1131,6 @@ header h1 {
     align-items: flex-start;
     background-color: #fff;
     border: 1px solid #000;
-    /* border-radius: 10px; */
     box-shadow: 0 2px 5px #808080;
     cursor: default;
     display: -ms-flexbox;
@@ -1157,6 +1156,7 @@ header h1 {
 }
 
 .league-standings-table li,
+.player-award-dropdown-list li,
 .player-stats li,
 .team-stats li {
     -ms-flex-align: center;
@@ -1178,11 +1178,13 @@ header h1 {
 }
 
 .league-standings-table li:nth-of-type(odd),
+.player-award-dropdown-list li:nth-of-type(odd),
 .player-stats li:nth-of-type(odd) {
     background-color: rgba(220, 220, 220, 0.5);
 }
 
 .league-standings-table p,
+.player-award-dropdown-list p,
 .player-stats p,
 .team-stats p {
     border-right: 1px solid #000;
@@ -1211,6 +1213,7 @@ header h1 {
 }
 
 .league-standings-table p:last-of-type,
+.player-award-dropdown-list p:last-of-type,
 .player-stats p:last-of-type,
 .team-stats p:last-of-type {
     border-right: none;
@@ -1229,6 +1232,7 @@ header h1 {
 }
 
 .league-standings-table h3,
+.player-award-dropdown-list h3,
 .player-stats h3,
 .team-stats h3 {
     background-color: #000;
@@ -1347,23 +1351,27 @@ header h1 {
 }
 
 .player-awards-container {
-    -ms-flex-direction: row;
-    -ms-flex-pack: start;
+    -ms-flex-align: center;
+    -ms-flex-direction: column;
+    -ms-flex-pack: center;
     -ms-flex-wrap: wrap;
+    -webkit-box-align: center;
     -webkit-box-direction: normal;
-    -webkit-box-orient: horizontal;
-    -webkit-box-pack: start;
+    -webkit-box-orient: vertical;
+    -webkit-box-pack: center;
+    align-items: center;
     cursor: default;
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
-    justify-content: flex-start;
-    margin: 10px auto;
-    padding: 0 15px;
-    width: 85%;
-    /* outline: solid 1px red; */
+    height: 100%;
+    justify-content: center;
+    margin: 20px 0 0 0;
+    max-width: 100%;
+    min-width: 825px;
+    /* outline: solid 1px blue; */
 }
 
 .player-award-dropdown-button {
@@ -1376,28 +1384,22 @@ header h1 {
     color: #000;
     cursor: pointer;
     font-weight: bold;
+    margin: 0 auto;
     outline: solid 1px #000;
     padding: 5px 30px 5px 8px;
+    position: relative;
     text-align: left;
     transition: color 150ms ease;
-    width: 100%;
+    width: -moz-fit-content;
+    width: -webkit-fit-content;
+    width: fit-content;
 }
 
 .player-award-dropdown-button:hover {
     color: #808080;
 }
 
-.player-award-dropdown-container {
-    font-size: 14px;
-    margin: 5px;
-    min-width: -moz-fit-content;
-    min-width: -webkit-fit-content;
-    min-width: fit-content;
-    padding-bottom: 5px;
-    position: relative;
-}
-
-.player-award-dropdown-container i {
+.player-award-dropdown-button i {
     -webkit-transition: -webkit-transform 250ms ease;
     font-size: 16px;
     position: absolute;
@@ -1408,51 +1410,30 @@ header h1 {
     transition: transform 250ms ease;
 }
 
+.player-award-dropdown-container {
+    -ms-flex-direction: column;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    width: -moz-fit-content;
+    width: -webkit-fit-content;
+    width: fit-content;
+    /* outline: solid 1px red; */
+}
+
 .player-award-dropdown-list {
     -webkit-box-shadow: 0 2px 5px #808080;
-    -webkit-transition: height 250ms ease, opacity 250ms ease;
     background-color: #fff;
-    border-radius: 5px;
     box-shadow: 0 2px 5px #808080;
-    height: 0;
-    left: 0;
-    opacity: 0;
+    height: auto;
+    margin-top: 10px;
+    overflow: hidden;
     outline: solid 1px #000;
-    overflow-y: scroll;
-    padding: 0 10px;
-    /* padding: 0 50px 0 10px; */
-    position: absolute;
-    text-align: left;
-    top: 100%;
-    transition: height 250ms ease, opacity 250ms ease;
-    width: 85%;
-    /* width: -moz-fit-content;
-    width: -webkit-fit-content;
-    width: fit-content; */
-    z-index: 1;
-}
-
-.player-award-dropdown-list p {
-    padding: 0 0 5px 0;
-    /* outline: solid 1px blue; */
-}
-.player-award-dropdown-list p:first-of-type {
-    padding: 5px 0;
-}
-
-.player-award-dropdown-list span {
-    font-weight: bold;
-}
-
-.player-award-season {
-    border-bottom: solid 1px #000;
-    color: #b22222;
-    font-weight: bold;
-}
-
-.player-award-toggle {
-    height: 200px;
-    opacity: 1;
+    width: 100%;
 }
 
 .player-data-container h2 {
@@ -1548,14 +1529,6 @@ header h1 {
     margin-right: 0;
 }
 
-.player-team {
-    color: #b22222;
-    font-size: 16px;
-    font-weight: bold;
-    margin: 0;
-    padding-right: 15px;
-}
-
 .player-stats h3:first-of-type {
     min-width: 125px;
 }
@@ -1645,6 +1618,14 @@ header h1 {
     min-width: -moz-fit-content;
     min-width: -webkit-fit-content;
     min-width: fit-content;
+}
+
+.player-team {
+    color: #b22222;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+    padding-right: 15px;
 }
 
 .preseason-scrolling-container {
@@ -1872,6 +1853,36 @@ header h1 {
     width: 100%;
 }
 
+/* container that does the auto height transition */
+.transition-height-container {
+    -webkit-transition: grid-template-rows 250ms ease, margin-bottom 250ms ease,
+        opacity 250ms ease;
+    display: -ms-grid;
+    display: grid;
+    grid-template-rows: 0fr;
+    margin-bottom: 0;
+    opacity: 0;
+    transition: grid-template-rows 250ms ease, margin-bottom 250ms ease,
+        opacity 250ms ease, -ms-grid-rows 250ms ease;
+    transition: grid-template-rows 250ms ease, margin-bottom 250ms ease,
+        opacity 250ms ease;
+    width: 100%;
+}
+
+/* has to be under the above class to work */
+/* toggles center container of player stuff */
+.transition-container-toggle {
+    -webkit-transition: grid-template-rows 250ms ease, margin-bottom 250ms ease,
+        opacity 250ms ease;
+    grid-template-rows: 1fr;
+    margin-bottom: 10px;
+    opacity: 1;
+    transition: grid-template-rows 250ms ease, margin-bottom 250ms ease,
+        opacity 250ms ease, -ms-grid-rows 250ms ease;
+    transition: grid-template-rows 250ms ease, margin-bottom 250ms ease,
+        opacity 250ms ease;
+}
+
 .up-arrow {
     -ms-flex-align: center;
     -ms-flex-pack: center;
@@ -1982,10 +1993,6 @@ header h1 {
 
     .main-container {
         width: 100%;
-    }
-
-    .player-awards-container {
-        width: 90%;
     }
 }
 
@@ -2155,10 +2162,6 @@ header h1 {
         padding: 20px 0 0 10px;
     }
 
-    /* .league-standings-heading-container div:last-of-type {
-        width: 75px;
-    } */
-
     .main {
         padding: 85px 0 0 0;
     }
@@ -2169,10 +2172,6 @@ header h1 {
 
     .nhl-copyright-container {
         width: 400px;
-    }
-
-    .player-awards-container {
-        width: 100%;
     }
 
     .player-heading-logo,

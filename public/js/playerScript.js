@@ -20,8 +20,8 @@ function loadPlayerScript() {
   // each player awards dropdown button
   $(document).on('click', '.player-award-dropdown-button', function () {
     // console.log($(this)[0].parentElement.childNodes);
-    $(this)[0].parentElement.childNodes[1].classList.toggle('rotate');
-    $(this)[0].parentElement.childNodes[6].classList.toggle('player-award-toggle');
+    $(this)[0].parentElement.childNodes[1].childNodes[1].classList.toggle('rotate');
+    $(this)[0].parentElement.childNodes[3].classList.toggle('transition-container-toggle');
   });
 
   main.style.backgroundPosition = 'top';
