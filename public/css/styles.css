@@ -479,7 +479,7 @@ footer {
     display: flex;
     flex-direction: column;
     height: auto;
-    padding: 35px 10px 0 10px;
+    padding: 40px 10px 0 10px;
     position: relative;
     width: 100%;
     /* outline: solid 1px blue; */
@@ -603,7 +603,6 @@ footer {
 .game-matchup-main-container-shots li:first-of-type p:nth-of-type(2),
 .game-matchup-main-container-taways li p:nth-of-type(2) {
     -webkit-box-shadow: none;
-    /* background-color: #008080; */
     background-color: #4682b4;
     box-shadow: none;
     color: #fff;
@@ -651,7 +650,6 @@ footer {
     min-width: -moz-fit-content;
     min-width: -webkit-fit-content;
     min-width: fit-content;
-    /* outline: solid 1px #808080; */
     padding: 5px 10px;
 }
 .game-matchup-penalty span {
@@ -709,7 +707,6 @@ footer {
     min-width: -moz-fit-content;
     min-width: -webkit-fit-content;
     min-width: fit-content;
-    /* outline: solid 1px #808080; */
     padding: 5px 10px;
 }
 
@@ -804,7 +801,7 @@ footer {
     padding: 0 10px;
     position: absolute;
     text-align: center;
-    top: 10px;
+    top: 15px;
     transform: translateX(-50%);
     min-width: 200px;
     /* outline: solid 1px blue; */
@@ -1024,7 +1021,7 @@ header h1 {
     flex-direction: row;
     justify-content: flex-start;
     min-height: 130px;
-    padding: 10px 0 10px 15px;
+    padding: 15px 0 15px 15px;
 }
 
 .league-heading-logo-dropdown-container,
@@ -2007,13 +2004,13 @@ header h1 {
         justify-content: center;
     }
 
-    .game-matchup-heading-container,
+    /* .game-matchup-heading-container,
     .league-heading-container,
     .league-standings-heading-container,
     .team-heading-container,
     .player-heading-container {
         min-height: 120px;
-    }
+    } */
 
     .game-matchup-heading-container h2,
     .league-heading-container h2,
@@ -2184,7 +2181,7 @@ header h1 {
     .player-heading-container h2,
     .team-stats-season-container h2,
     .team-heading-container h2 {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .game-matchup-heading-goals {

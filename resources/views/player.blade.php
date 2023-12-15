@@ -65,7 +65,7 @@
           <h2>
             Regular Season
             <p>
-              Playoffs :
+              Playoffs Below :
               <span></span>
             </p>
           </h2>
@@ -187,7 +187,7 @@
           <h2>
             Regular Season
             <p>
-              Playoffs :
+              Playoffs Below :
               <span></span>
             </p>
           </h2>
@@ -221,9 +221,13 @@
                   {{ round((float) $player['careerTotals']['regularSeason']['shootingPctg'] * 100, 2) }}%
                 </p>
                 <p>{{ $player['careerTotals']['regularSeason']['avgToi'] }}</p>
-                <p>
-                  {{ round((float) $player['careerTotals']['regularSeason']['faceoffWinningPctg'] * 100, 2) }}%
-                </p>
+
+                @if (array_key_exists('faceoffWinningPctg', $player['careerTotals']['regularSeason']))
+                  <p>
+                    {{ round((float) $player['careerTotals']['regularSeason']['faceoffWinningPctg'] * 100, 2) }}%
+                  </p>
+                @endif
+
               </li>
             </ul>
           </div>
@@ -259,9 +263,13 @@
                     {{ round((float) $player['careerTotals']['playoffs']['shootingPctg'] * 100, 2) }}%
                   </p>
                   <p>{{ $player['careerTotals']['playoffs']['avgToi'] }}</p>
-                  <p>
-                    {{ round((float) $player['careerTotals']['playoffs']['faceoffWinningPctg'] * 100, 2) }}%
-                  </p>
+
+                  @if (array_key_exists('faceoffWinningPctg', $player['careerTotals']['regularSeason']))
+                    <p>
+                      {{ round((float) $player['careerTotals']['regularSeason']['faceoffWinningPctg'] * 100, 2) }}%
+                    </p>
+                  @endif
+
                 </li>
               </ul>
             </div>

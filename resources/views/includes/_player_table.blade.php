@@ -29,7 +29,9 @@
   {{ round((float) $stat['shootingPctg'] * 100, 2) }}%
 </p>
 <p>{{ $stat['avgToi'] }}</p>
-<p>
-  {{ round((float) $stat['faceoffWinningPctg'] * 100, 2) }}%
-</p>
+@if (array_key_exists('faceoffWinningPctg', $stat))
+  <p>
+    {{ round((float) $stat['faceoffWinningPctg'] * 100, 2) }}%
+  </p>
+@endif
 {{-- </li> --}}

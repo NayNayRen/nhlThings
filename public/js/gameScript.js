@@ -5,26 +5,26 @@ function stickHeading() {
   if (document.documentElement.scrollTop > 90 && window.innerWidth > 1000) {
     stickyHeading.style.position = "fixed";
     stickyHeading.style.width = "calc(85% - 34px)";
-    stickyHeading.style.top = "97px";
+    stickyHeading.style.top = "98px";
     scrollPoint.style.paddingTop = "140px";
   }
   else if (document.documentElement.scrollTop > 50 && window.innerWidth < 1000 &&
     window.innerWidth > 700) {
     stickyHeading.style.position = "fixed";
     stickyHeading.style.width = "calc(100% - 40px)";
-    stickyHeading.style.top = "97px";
+    stickyHeading.style.top = "98px";
     scrollPoint.style.paddingTop = "135px";
   }
   else if (document.documentElement.scrollTop > 0 && window.innerWidth < 700 && window.innerWidth > 400) {
     stickyHeading.style.position = "fixed";
     stickyHeading.style.width = "100%";
-    stickyHeading.style.top = "85px";
+    stickyHeading.style.top = "86px";
     scrollPoint.style.paddingTop = "120px";
   }
   else if (document.documentElement.scrollTop > 0 && window.innerWidth < 400) {
     stickyHeading.style.position = "fixed";
     stickyHeading.style.width = "100%";
-    stickyHeading.style.top = "110px";
+    stickyHeading.style.top = "111px";
     scrollPoint.style.paddingTop = "122px";
   }
   else {
