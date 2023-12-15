@@ -1409,26 +1409,49 @@ header h1 {
 }
 
 .player-award-dropdown-list {
-    -webkit-box-shadow: 0 2px 2px #808080;
+    -webkit-box-shadow: 0 2px 5px #808080;
     -webkit-transition: height 250ms ease, opacity 250ms ease;
     background-color: #fff;
     border-radius: 5px;
-    box-shadow: 0 2px 2px #808080;
+    box-shadow: 0 2px 5px #808080;
     height: 0;
     left: 0;
     opacity: 0;
     outline: solid 1px #000;
     overflow-y: scroll;
+    padding: 0 10px;
+    /* padding: 0 50px 0 10px; */
     position: absolute;
     text-align: left;
     top: 100%;
     transition: height 250ms ease, opacity 250ms ease;
-    width: 100%;
+    width: 85%;
+    /* width: -moz-fit-content;
+    width: -webkit-fit-content;
+    width: fit-content; */
     z-index: 1;
 }
 
+.player-award-dropdown-list p {
+    padding: 0 0 5px 0;
+    /* outline: solid 1px blue; */
+}
+.player-award-dropdown-list p:first-of-type {
+    padding: 5px 0;
+}
+
+.player-award-dropdown-list span {
+    font-weight: bold;
+}
+
+.player-award-season {
+    border-bottom: solid 1px #000;
+    color: #b22222;
+    font-weight: bold;
+}
+
 .player-award-toggle {
-    height: 150px;
+    height: 200px;
     opacity: 1;
 }
 

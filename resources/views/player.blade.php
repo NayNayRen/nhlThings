@@ -56,22 +56,22 @@
                         $secondHalfSeason[] = $season[4] . $season[5] . $season[6] . $season[7];
                       @endphp
                       <li>
-                        <p>{{ $firstHalfSeason[0] }}/{{ $secondHalfSeason[0] }}</p>
+                        <p class="player-award-season">{{ $firstHalfSeason[0] }}/{{ $secondHalfSeason[0] }}</p>
                       </li>
                       <li>
-                        <p>Games : {{ $awardSeasonStat['gamesPlayed'] }}</p>
+                        <p><span>Games :</span> {{ $awardSeasonStat['gamesPlayed'] }}</p>
                       </li>
                       <li>
-                        <p>Wins : {{ $awardSeasonStat['wins'] }}</p>
+                        <p><span>Wins :</span> {{ $awardSeasonStat['wins'] }}</p>
                       </li>
                       <li>
-                        <p>Losses : {{ $awardSeasonStat['losses'] }}</p>
+                        <p><span>Losses :</span> {{ $awardSeasonStat['losses'] }}</p>
                       </li>
                       <li>
-                        <p>Save % : {{ round((float) $awardSeasonStat['savePctg'], 3) }}%</p>
+                        <p><span>Save % :</span> {{ round((float) $awardSeasonStat['savePctg'], 3) }}%</p>
                       </li>
                       <li>
-                        <p>Goals AA : {{ round((float) $awardSeasonStat['gaa'] * 1, 2) }}%</p>
+                        <p><span>Goals AA :</span> {{ round((float) $awardSeasonStat['gaa'] * 1, 2) }}%</p>
                       </li>
                     @endforeach
                   </ul>
@@ -192,28 +192,28 @@
                         $secondHalfSeason[] = $season[4] . $season[5] . $season[6] . $season[7];
                       @endphp
                       <li>
-                        <p>{{ $firstHalfSeason[0] }}/{{ $secondHalfSeason[0] }}</p>
+                        <p class="player-award-season">{{ $firstHalfSeason[0] }}/{{ $secondHalfSeason[0] }}</p>
                       </li>
                       <li>
-                        Goals : {{ $awardSeasonStat['goals'] }}
+                        <p><span>Goals :</span> {{ $awardSeasonStat['goals'] }}</p>
                       </li>
                       <li>
-                        <p>Assists : {{ $awardSeasonStat['assists'] }}</p>
+                        <p><span>Assists :</span> {{ $awardSeasonStat['assists'] }}</p>
                       </li>
                       <li>
-                        <p>Points : {{ $awardSeasonStat['points'] }}</p>
+                        <p><span>Points :</span> {{ $awardSeasonStat['points'] }}</p>
                       </li>
                       <li>
-                        <p>+/- : {{ $awardSeasonStat['plusMinus'] }}</p>
+                        <p><span>+/- :</span> {{ $awardSeasonStat['plusMinus'] }}</p>
                       </li>
                       <li>
-                        <p>Hits : {{ $awardSeasonStat['hits'] }}</p>
+                        <p><span>Hits :</span> {{ $awardSeasonStat['hits'] }}</p>
                       </li>
                       <li>
-                        <p>B Shots : {{ $awardSeasonStat['blockedShots'] }}</p>
+                        <p><span>B Shots :</span> {{ $awardSeasonStat['blockedShots'] }}</p>
                       </li>
                       <li>
-                        <p>PIM : {{ $awardSeasonStat['pim'] }}</p>
+                        <p><span>PIM :</span> {{ $awardSeasonStat['pim'] }}</p>
                       </li>
                     @endforeach
                   </ul>
