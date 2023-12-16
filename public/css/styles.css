@@ -1354,7 +1354,7 @@ header h1 {
 .player-draft-container {
     left: 0;
     position: absolute;
-    top: 0;
+    top: 1px;
     width: auto;
     z-index: 2;
     /* outline: solid 1px blue; */
@@ -1407,11 +1407,13 @@ header h1 {
     -webkit-box-direction: normal;
     -webkit-box-orient: vertical;
     -webkit-box-pack: start;
-    -webkit-box-shadow: 0 2px 5px #808080;
+    -webkit-box-shadow: 0 2px 5px #000;
     background-color: #4682b4;
+    border-bottom-right-radius: 5px;
     border-bottom: solid 1px #000;
     border-right: solid 1px #000;
-    box-shadow: 0 2px 5px #808080;
+    box-shadow: 0 2px 5px #000;
+    cursor: default;
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
@@ -1437,7 +1439,7 @@ header h1 {
 
 .player-award-tile,
 .player-draft-tile {
-    color: #000;
+    color: #fff;
     margin-top: 10px;
     width: -moz-fit-content;
     width: -webkit-fit-content;

@@ -40,12 +40,12 @@
                     <h3 class="player-award-tile">{{ $award['trophy']['default'] }}</h3>
                     <ul class="player-award-dropdown-list">
                       <li>
-                        <h3>Season</h3>
-                        <h3>Goals</h3>
-                        <h3>Wins</h3>
-                        <h3>Losses</h3>
-                        <h3>Save %</h3>
-                        <h3>Goals AA</h3>
+                        <h3 title="Season">Season</h3>
+                        <h3 title="Goals">Goals</h3>
+                        <h3 title="Wins">Wins</h3>
+                        <h3 title="Losses">Losses</h3>
+                        <h3 title="Save %">SV%</h3>
+                        <h3 title="Goals Against Average %">GAA%</h3>
                       </li>
                       @foreach ($award['seasons'] as $awardSeasonStat)
                         @php
@@ -71,7 +71,8 @@
             @else
               <div class="transition-height-container awards">
                 <div class="player-award-dropdown-container">
-                  <h3 class="player-award-tile">No awards yet...</h3>
+                  <h3 class="player-award-tile">{{ $player['firstName']['default'] }}
+                    {{ $player['lastName']['default'] }} has no awards yet...</h3>
                 </div>
               </div>
             @endif
@@ -98,7 +99,8 @@
             @else
               <div class="transition-height-container draft">
                 <div class="player-draft-dropdown-container">
-                  <h3 class="player-draft-tile">Undrafted...</h3>
+                  <h3 class="player-draft-tile">{{ $player['firstName']['default'] }}
+                    {{ $player['lastName']['default'] }} went undrafted...</h3>
                 </div>
               </div>
             @endif
@@ -208,14 +210,14 @@
                     <h3 class="player-award-tile">{{ $award['trophy']['default'] }}</h3>
                     <ul class="player-award-dropdown-list">
                       <li>
-                        <h3>Season</h3>
-                        <h3>Goals</h3>
-                        <h3>Assists</h3>
-                        <h3>Points</h3>
-                        <h3>+/-</h3>
-                        <h3>Hits</h3>
-                        <h3>B Shots</h3>
-                        <h3>PIM</h3>
+                        <h3 title="Season">Season</h3>
+                        <h3 title="Goals">Goals</h3>
+                        <h3 title="Assists">Assists</h3>
+                        <h3 title="Points">Points</h3>
+                        <h3 title="Plus Minus">+/-</h3>
+                        <h3 title="Hits">Hits</h3>
+                        <h3 title="Blocked Shots">B Shots</h3>
+                        <h3 title="Penalty Minutes">PIM</h3>
                       </li>
                       @foreach ($award['seasons'] as $awardSeasonStat)
                         @php
@@ -243,7 +245,8 @@
             @else
               <div class="transition-height-container awards">
                 <div class="player-award-dropdown-container">
-                  <h3 class="player-award-tile">No awards yet...</h3>
+                  <h3 class="player-award-tile">{{ $player['firstName']['default'] }}
+                    {{ $player['lastName']['default'] }} has no awards yet...</h3>
                 </div>
               </div>
             @endif
@@ -270,7 +273,8 @@
             @else
               <div class="transition-height-container draft">
                 <div class="player-draft-dropdown-container">
-                  <h3 class="player-draft-tile">Undrafted...</h3>
+                  <h3 class="player-draft-tile">{{ $player['firstName']['default'] }}
+                    {{ $player['lastName']['default'] }} went undrafted...</h3>
                 </div>
               </div>
             @endif
