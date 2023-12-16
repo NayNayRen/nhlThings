@@ -6,27 +6,16 @@
         <div class="player-heading-left">
           <h2>{{ $player['firstName']['default'] }} {{ $player['lastName']['default'] }}</h2>
           <p class="player-team">{{ $player['fullTeamName']['default'] }}</p>
-          @if (array_key_exists('draftDetails', $player))
-            <ul class="player-draft-container">
-              <li>
-                <span>Year : {{ $player['draftDetails']['year'] }}</span>
-                <span>By : {{ $player['draftDetails']['teamAbbrev'] }}</span>
-              </li>
-              <li>
-                <span>Round : {{ $player['draftDetails']['round'] }}</span>
-                <span>Picked : {{ $player['draftDetails']['pickInRound'] }}</span>
-                <span>Overall : {{ $player['draftDetails']['overallPick'] }}</span>
-              </li>
-            </ul>
-          @else
-            <ul class="player-draft-container">
-              <li>Undrafted</li>
-            </ul>
-          @endif
-          <button type="button" class="player-award-dropdown-button">
-            Award(s)
-            <i class="fa-solid fa-caret-up" aria-hidden="true"></i>
-          </button>
+          <div class="player-button-container">
+            <button type="button" class="player-award-dropdown-button">
+              Award(s)
+              <i class="fa-solid fa-caret-up" aria-hidden="true"></i>
+            </button>
+            <button type="button" class="player-draft-dropdown-button">
+              Draft
+              <i class="fa-solid fa-caret-up" aria-hidden="true"></i>
+            </button>
+          </div>
         </div>
         <div class="player-heading-logo">
           <img src={{ $player['headshot'] }}
@@ -45,9 +34,10 @@
           {{-- goalie awards --}}
           <div class="player-awards-container">
             @if (array_key_exists('awards', $player))
-              <div class="transition-height-container">
+              <div class="transition-height-container awards">
                 <div class="player-award-dropdown-container">
                   @foreach ($player['awards'] as $award)
+                    <h3 class="player-award-tile">{{ $award['trophy']['default'] }}</h3>
                     <ul class="player-award-dropdown-list">
                       <li>
                         <h3>Season</h3>
@@ -79,17 +69,41 @@
                 </div>
               </div>
             @else
-              <div class="transition-height-container">
+              <div class="transition-height-container awards">
                 <div class="player-award-dropdown-container">
-                  <ul class="player-award-dropdown-list">
-                    <li>
-                      <p>No awards yet...</p>
-                    </li>
-                  </ul>
+                  <h3 class="player-award-tile">No awards yet...</h3>
                 </div>
               </div>
             @endif
           </div>
+          {{-- goalie draft --}}
+          <div class="player-draft-container">
+            @if (array_key_exists('draftDetails', $player))
+              <div class="transition-height-container draft">
+                <div class="player-draft-dropdown-container">
+                  <h3 class="player-draft-tile">Draft Details</h3>
+                  <ul class="player-draft-dropdown-list">
+                    <li>
+                      <p><span>Year :</span> {{ $player['draftDetails']['year'] }}</p>
+                      <p><span>By :</span> {{ $player['draftDetails']['teamAbbrev'] }}</p>
+                    </li>
+                    <li>
+                      <p><span>Round :</span> {{ $player['draftDetails']['round'] }}</p>
+                      <p><span>Picked :</span> {{ $player['draftDetails']['pickInRound'] }}</p>
+                      <p><span>Overall :</span> {{ $player['draftDetails']['overallPick'] }}</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            @else
+              <div class="transition-height-container draft">
+                <div class="player-draft-dropdown-container">
+                  <h3 class="player-draft-tile">Undrafted...</h3>
+                </div>
+              </div>
+            @endif
+          </div>
+
           <h2>
             Regular Season
             <p>
@@ -188,9 +202,10 @@
           {{-- skater awards --}}
           <div class="player-awards-container">
             @if (array_key_exists('awards', $player))
-              <div class="transition-height-container">
+              <div class="transition-height-container awards">
                 <div class="player-award-dropdown-container">
                   @foreach ($player['awards'] as $award)
+                    <h3 class="player-award-tile">{{ $award['trophy']['default'] }}</h3>
                     <ul class="player-award-dropdown-list">
                       <li>
                         <h3>Season</h3>
@@ -226,13 +241,36 @@
                 </div>
               </div>
             @else
-              <div class="transition-height-container">
+              <div class="transition-height-container awards">
                 <div class="player-award-dropdown-container">
-                  <ul class="player-award-dropdown-list">
+                  <h3 class="player-award-tile">No awards yet...</h3>
+                </div>
+              </div>
+            @endif
+          </div>
+          {{-- skater draft details --}}
+          <div class="player-draft-container">
+            @if (array_key_exists('draftDetails', $player))
+              <div class="transition-height-container draft">
+                <div class="player-draft-dropdown-container">
+                  <h3 class="player-draft-tile">Draft Details</h3>
+                  <ul class="player-draft-dropdown-list">
                     <li>
-                      <p>No awards yet...</p>
+                      <p><span>Year :</span> {{ $player['draftDetails']['year'] }}</p>
+                      <p><span>By :</span> {{ $player['draftDetails']['teamAbbrev'] }}</p>
+                    </li>
+                    <li>
+                      <p><span>Round :</span> {{ $player['draftDetails']['round'] }}</p>
+                      <p><span>Picked :</span> {{ $player['draftDetails']['pickInRound'] }}</p>
+                      <p><span>Overall :</span> {{ $player['draftDetails']['overallPick'] }}</p>
                     </li>
                   </ul>
+                </div>
+              </div>
+            @else
+              <div class="transition-height-container draft">
+                <div class="player-draft-dropdown-container">
+                  <h3 class="player-draft-tile">Undrafted...</h3>
                 </div>
               </div>
             @endif

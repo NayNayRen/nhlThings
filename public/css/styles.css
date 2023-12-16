@@ -1191,7 +1191,7 @@ header h1 {
     border-top: 1px solid #000;
     font-size: 14px;
     height: 100%;
-    min-width: 75px;
+    min-width: 80px;
     padding: 3px 2px;
     position: relative;
     text-align: center;
@@ -1238,7 +1238,7 @@ header h1 {
     background-color: #000;
     color: #fff;
     font-size: 14px;
-    min-width: 75px;
+    min-width: 80px;
     padding: 3px 2px;
     text-align: center;
     width: 100%;
@@ -1255,7 +1255,7 @@ header h1 {
     align-items: center;
     background-attachment: fixed;
     background-color: #808080;
-    /* background-image: -webkit-gradient(
+    background-image: -webkit-gradient(
             linear,
             left top,
             right top,
@@ -1268,7 +1268,7 @@ header h1 {
             rgba(0, 0, 0, 0.9),
             rgba(0, 0, 0, 0.5)
         ),
-        url("../img/nhl-logo.webp"); */
+        url("../img/nhl-logo.webp");
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -1286,7 +1286,7 @@ header h1 {
     -webkit-box-shadow: 0 0 20px #000;
     background-color: #808080;
     background-attachment: fixed;
-    /* background-image: -webkit-gradient(
+    background-image: -webkit-gradient(
             linear,
             left top,
             right top,
@@ -1299,7 +1299,7 @@ header h1 {
             rgba(245, 245, 245, 1),
             rgba(245, 245, 245, 0.75)
         ),
-        url("../img/nhl-logo.webp"); */
+        url("../img/nhl-logo.webp");
     background-position: center;
     border-radius: 15px;
     background-repeat: no-repeat;
@@ -1350,7 +1350,8 @@ header h1 {
     /* outline: solid 1px blue; */
 }
 
-.player-awards-container {
+.player-awards-container,
+.player-draft-container {
     left: 0;
     position: absolute;
     top: 0;
@@ -1359,7 +1360,8 @@ header h1 {
     /* outline: solid 1px blue; */
 }
 
-.player-award-dropdown-button {
+.player-award-dropdown-button,
+.player-draft-dropdown-button {
     -webkit-box-shadow: 0 2px 2px #000;
     -webkit-transition: color 150ms ease;
     background-color: #fff;
@@ -1370,7 +1372,7 @@ header h1 {
     cursor: pointer;
     font-size: 14px;
     font-weight: bold;
-    margin: 0 auto;
+    margin-right: 10px;
     outline: solid 1px #000;
     padding: 5px 30px 5px 8px;
     position: relative;
@@ -1381,11 +1383,13 @@ header h1 {
     width: fit-content;
 }
 
-.player-award-dropdown-button:hover {
+.player-award-dropdown-button:hover,
+.player-draft-dropdown-button:hover {
     color: #808080;
 }
 
-.player-award-dropdown-button i {
+.player-award-dropdown-button i,
+.player-draft-dropdown-button i {
     -webkit-transition: -webkit-transform 250ms ease;
     font-size: 16px;
     position: absolute;
@@ -1396,7 +1400,8 @@ header h1 {
     transition: transform 250ms ease;
 }
 
-.player-award-dropdown-container {
+.player-award-dropdown-container,
+.player-draft-dropdown-container {
     -ms-flex-direction: column;
     -ms-flex-pack: start;
     -webkit-box-direction: normal;
@@ -1411,23 +1416,37 @@ header h1 {
     display: -webkit-box;
     display: flex;
     flex-direction: column;
-    font-size: 14px;
     height: auto;
     justify-content: flex-start;
+    min-width: 250px;
     overflow-x: scroll;
     overflow-y: hidden;
-    padding: 0 15px 15px 15px;
+    padding: 5px 15px 15px 15px;
     width: auto;
 }
 
 .player-award-dropdown-list {
     background-color: #fff;
+    font-size: 14px;
     height: auto;
-    margin-top: 10px;
     outline: solid 1px #000;
     width: -moz-fit-content;
     width: -webkit-fit-content;
     width: fit-content;
+}
+
+.player-award-tile,
+.player-draft-tile {
+    color: #000;
+    margin-top: 10px;
+    width: -moz-fit-content;
+    width: -webkit-fit-content;
+    width: fit-content;
+}
+
+.player-button-container {
+    margin-top: 5px;
+    /* outline: solid 1px blue; */
 }
 
 .player-data-container {
@@ -1458,6 +1477,32 @@ header h1 {
     width: 8px;
 }
 
+.player-draft-dropdown-list {
+    background-color: #fff;
+    font-size: 16px;
+    height: auto;
+    outline: solid 1px #000;
+    padding: 10px 15px;
+    width: 100%;
+}
+
+.player-draft-dropdown-list li {
+    -ms-flex-direction: row;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    flex-direction: row;
+}
+
+.player-draft-dropdown-list p {
+    margin-right: 15px;
+}
+.player-draft-dropdown-list span {
+    font-weight: bold;
+}
+
 .player-heading-logo,
 .team-heading-logo {
     -webkit-box-align: center;
@@ -1483,55 +1528,11 @@ header h1 {
     width: 100%;
 }
 
-.player-draft-container {
-    -ms-flex-align: start;
-    -ms-flex-direction: column;
-    -ms-flex-pack: center;
-    -webkit-box-align: start;
-    -webkit-box-direction: normal;
-    -webkit-box-orient: vertical;
-    -webkit-box-pack: center;
-    align-items: flex-start;
-    border-bottom: solid 1px #000;
-    display: -ms-flexbox;
-    display: -webkit-box;
-    display: flex;
-    flex-direction: column;
-    font-size: 12px;
-    justify-content: center;
-    padding-right: 15px;
-    width: auto;
-    /* outline: solid 1px blue; */
-}
-
-.player-draft-container li {
-    -ms-flex-direction: row;
-    -webkit-box-direction: normal;
-    -webkit-box-orient: horizontal;
-    display: -ms-flexbox;
-    display: -webkit-box;
-    display: flex;
-    flex-direction: row;
-    /* outline: solid 1px blue; */
-}
-
-.player-draft-container span {
-    display: inline-block;
-    margin-right: 10px;
-    min-width: -moz-fit-content;
-    min-width: -webkit-fit-content;
-    min-width: fit-content;
-}
-
-.player-draft-container span:last-of-type {
-    margin-right: 0;
-}
-
-.player-award-dropdown-list h3:first-of-type,
-.player-stats h3:first-of-type {
+.player-award-dropdown-list li h3:first-of-type,
+.player-stats li h3:first-of-type {
     min-width: 125px;
 }
-.player-stats h3:nth-of-type(2) {
+.player-stats li h3:nth-of-type(2) {
     min-width: 215px;
 }
 
@@ -1541,13 +1542,13 @@ header h1 {
     font-weight: bold;
 }
 
-.player-award-dropdown-list p:first-of-type,
-.player-stats p:first-of-type {
+.player-award-dropdown-list li p:first-of-type,
+.player-stats li p:first-of-type {
     min-width: 125px;
     padding: 3px 5px;
     width: auto;
 }
-.player-stats p:nth-of-type(2) {
+.player-stats li p:nth-of-type(2) {
     min-width: 215px;
 }
 

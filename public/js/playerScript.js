@@ -5,7 +5,10 @@ function loadPlayerScript() {
   const mainContainer = document.querySelector('.main-container');
   const playerHeroImage = document.querySelector('.player-hero-image').innerText;
   const awardsButton = document.querySelector('.player-award-dropdown-button');
-  const awardsDropdownContainer = document.querySelector('.transition-height-container');
+  const awardsDropdownContainer = document.querySelector('.awards');
+  const draftButton = document.querySelector('.player-draft-dropdown-button');
+  const draftDropdownContainer = document.querySelector('.draft');
+
 
   rsRows.forEach((rsRow) => {
     // console.log(rsRow);
@@ -61,6 +64,12 @@ url(${playerHeroImage})`;
   awardsButton.addEventListener('click', () => {
     awardsButton.childNodes[1].classList.toggle('rotate');
     awardsDropdownContainer.classList.toggle('transition-container-toggle');
+    // console.log(awardsDropdownContainer);
+  });
+  // each player draft dropdown button
+  draftButton.addEventListener('click', () => {
+    draftButton.childNodes[1].classList.toggle('rotate');
+    draftDropdownContainer.classList.toggle('transition-container-toggle');
     // console.log(awardsDropdownContainer);
   });
 }
