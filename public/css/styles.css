@@ -1351,26 +1351,11 @@ header h1 {
 }
 
 .player-awards-container {
-    -ms-flex-align: center;
-    -ms-flex-direction: column;
-    -ms-flex-pack: center;
-    -ms-flex-wrap: wrap;
-    -webkit-box-align: center;
-    -webkit-box-direction: normal;
-    -webkit-box-orient: vertical;
-    -webkit-box-pack: center;
-    align-items: center;
-    cursor: default;
-    display: -ms-flexbox;
-    display: -webkit-box;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    height: 100%;
-    justify-content: center;
-    margin: 20px 0 0 0;
-    max-width: 100%;
-    min-width: 825px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: auto;
+    z-index: 2;
     /* outline: solid 1px blue; */
 }
 
@@ -1383,6 +1368,7 @@ header h1 {
     box-shadow: 0 2px 2px #000;
     color: #000;
     cursor: pointer;
+    font-size: 14px;
     font-weight: bold;
     margin: 0 auto;
     outline: solid 1px #000;
@@ -1412,28 +1398,40 @@ header h1 {
 
 .player-award-dropdown-container {
     -ms-flex-direction: column;
+    -ms-flex-pack: start;
     -webkit-box-direction: normal;
     -webkit-box-orient: vertical;
+    -webkit-box-pack: start;
+    -webkit-box-shadow: 0 2px 5px #808080;
+    background-color: #4682b4;
+    border-bottom: solid 1px #000;
+    border-right: solid 1px #000;
+    box-shadow: 0 2px 5px #808080;
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
     flex-direction: column;
     font-size: 14px;
-    width: -moz-fit-content;
-    width: -webkit-fit-content;
-    width: fit-content;
-    /* outline: solid 1px red; */
+    height: auto;
+    justify-content: flex-start;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    padding: 0 15px 15px 15px;
+    width: auto;
 }
 
 .player-award-dropdown-list {
-    -webkit-box-shadow: 0 2px 5px #808080;
     background-color: #fff;
-    box-shadow: 0 2px 5px #808080;
     height: auto;
     margin-top: 10px;
-    overflow: hidden;
     outline: solid 1px #000;
-    width: 100%;
+    width: -moz-fit-content;
+    width: -webkit-fit-content;
+    width: fit-content;
+}
+
+.player-data-container {
+    position: relative;
 }
 
 .player-data-container h2 {
@@ -1529,6 +1527,7 @@ header h1 {
     margin-right: 0;
 }
 
+.player-award-dropdown-list h3:first-of-type,
 .player-stats h3:first-of-type {
     min-width: 125px;
 }
@@ -1542,6 +1541,7 @@ header h1 {
     font-weight: bold;
 }
 
+.player-award-dropdown-list p:first-of-type,
 .player-stats p:first-of-type {
     min-width: 125px;
     padding: 3px 5px;
@@ -1855,32 +1855,26 @@ header h1 {
 
 /* container that does the auto height transition */
 .transition-height-container {
-    -webkit-transition: grid-template-rows 250ms ease, margin-bottom 250ms ease,
-        opacity 250ms ease;
+    -webkit-transition: grid-template-rows 250ms ease, opacity 250ms ease;
     display: -ms-grid;
     display: grid;
     grid-template-rows: 0fr;
-    margin-bottom: 0;
     opacity: 0;
-    transition: grid-template-rows 250ms ease, margin-bottom 250ms ease,
-        opacity 250ms ease, -ms-grid-rows 250ms ease;
-    transition: grid-template-rows 250ms ease, margin-bottom 250ms ease,
-        opacity 250ms ease;
+    transition: grid-template-rows 250ms ease, opacity 250ms ease,
+        -ms-grid-rows 250ms ease;
+    transition: grid-template-rows 250ms ease, opacity 250ms ease;
     width: 100%;
 }
 
 /* has to be under the above class to work */
-/* toggles center container of player stuff */
+/* toggles player awards and draft info */
 .transition-container-toggle {
-    -webkit-transition: grid-template-rows 250ms ease, margin-bottom 250ms ease,
-        opacity 250ms ease;
+    -webkit-transition: grid-template-rows 250ms ease, opacity 250ms ease;
     grid-template-rows: 1fr;
-    margin-bottom: 10px;
     opacity: 1;
-    transition: grid-template-rows 250ms ease, margin-bottom 250ms ease,
-        opacity 250ms ease, -ms-grid-rows 250ms ease;
-    transition: grid-template-rows 250ms ease, margin-bottom 250ms ease,
-        opacity 250ms ease;
+    transition: grid-template-rows 250ms ease, opacity 250ms ease,
+        -ms-grid-rows 250ms ease;
+    transition: grid-template-rows 250ms ease, opacity 250ms ease;
 }
 
 .up-arrow {

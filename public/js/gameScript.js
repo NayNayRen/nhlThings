@@ -25,7 +25,7 @@ function stickHeading() {
     stickyHeading.style.position = "fixed";
     stickyHeading.style.width = "100%";
     stickyHeading.style.top = "111px";
-    scrollPoint.style.paddingTop = "122px";
+    scrollPoint.style.paddingTop = "120px";
   }
   else {
     stickyHeading.style.position = "relative";

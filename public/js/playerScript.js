@@ -4,6 +4,8 @@ function loadPlayerScript() {
   const main = document.querySelector('.main');
   const mainContainer = document.querySelector('.main-container');
   const playerHeroImage = document.querySelector('.player-hero-image').innerText;
+  const awardsButton = document.querySelector('.player-award-dropdown-button');
+  const awardsDropdownContainer = document.querySelector('.transition-height-container');
 
   rsRows.forEach((rsRow) => {
     // console.log(rsRow);
@@ -15,13 +17,6 @@ function loadPlayerScript() {
         rsRow.childNodes[1].appendChild(poMarker);
       }
     });
-  });
-
-  // each player awards dropdown button
-  $(document).on('click', '.player-award-dropdown-button', function () {
-    // console.log($(this)[0].parentElement.childNodes);
-    $(this)[0].parentElement.childNodes[1].childNodes[1].classList.toggle('rotate');
-    $(this)[0].parentElement.childNodes[3].classList.toggle('transition-container-toggle');
   });
 
   main.style.backgroundPosition = 'top';
@@ -61,6 +56,13 @@ url(${playerHeroImage})`;
       rgba(245, 245, 245, 0.65)
   ),
   url(${playerHeroImage})`;
+
+  // each player awards dropdown button
+  awardsButton.addEventListener('click', () => {
+    awardsButton.childNodes[1].classList.toggle('rotate');
+    awardsDropdownContainer.classList.toggle('transition-container-toggle');
+    // console.log(awardsDropdownContainer);
+  });
 }
 window.addEventListener('load', () => {
   loadPlayerScript();
