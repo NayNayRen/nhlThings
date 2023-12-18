@@ -18,9 +18,10 @@
     /* outline: solid 1px blue; */
 }
 
-/* .owl-theme .owl-nav {
-  outline: solid 1px blue;
-} */
+.owl-theme .owl-nav {
+    margin-top: 10px;
+    /* outline: solid 1px blue; */
+}
 
 .owl-theme .owl-nav [class*="owl-"] {
     color: #fff;

@@ -1408,7 +1408,7 @@ header h1 {
     -webkit-box-orient: vertical;
     -webkit-box-pack: start;
     -webkit-box-shadow: 0 2px 5px #808080;
-    background-color: #808080;
+    background-color: #024e98;
     border-bottom-right-radius: 5px;
     border-top-right-radius: 5px;
     border-bottom: solid 1px #000;
@@ -1479,7 +1479,7 @@ header h1 {
 }
 
 .player-data-container h2 p span {
-    background-color: #024e98;
+    background-color: #1e90ff;
     border-radius: 50%;
     display: inline-block;
     height: 10px;
@@ -1563,7 +1563,7 @@ header h1 {
 
 .playoff-season-marker {
     -webkit-transform: translateY(-50%);
-    background-color: #024e98;
+    background-color: #1e90ff;
     border-radius: 50%;
     height: 8px;
     position: absolute;

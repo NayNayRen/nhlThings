@@ -8,7 +8,7 @@
     background-color: #000;
     border-radius: 15px;
     border: none;
-    bottom: -10px;
+    bottom: 0;
     box-shadow: 0 2px 2px #808080;
     color: #1e90ff;
     cursor: pointer;
@@ -366,7 +366,7 @@
 }
 
 .home-game-indicator {
-    background-color: #024e98;
+    background-color: #1e90ff;
     border-radius: 50%;
     bottom: 10px;
     display: inline;
@@ -407,7 +407,7 @@
 
 .home-game-indicator-message span {
     -webkit-transform: translateY(-50%);
-    background-color: #024e98;
+    background-color: #1e90ff;
     border-radius: 50%;
     height: 10px;
     position: absolute;
@@ -448,7 +448,7 @@
 
 .owl-carousel .owl-item {
     -webkit-tap-highlight-color: transparent;
-    padding: 5px 0 15px 0;
+    padding: 5px 0 5px 0;
     position: relative;
     /* outline: solid 1px blue; */
 }
@@ -456,7 +456,6 @@
 .owl-carousel {
     display: none;
     height: auto;
-    /* min-height: 400px; */
     padding: 0 20px;
     position: relative;
     width: 100%;
