@@ -25,12 +25,8 @@
       </div>
       {{-- player data --}}
       <div class="player-data-container">
+        {{-- goalie stuff --}}
         @if ($player['position'] === 'G')
-          {{-- goalie stuff --}}
-          <div class="horizontal-scrolling-container">
-            {{-- goalie summary --}}
-            @include('includes._player_summary')
-          </div>
           {{-- goalie awards --}}
           <div class="player-awards-container">
             @if (array_key_exists('awards', $player))
@@ -72,7 +68,12 @@
               <div class="transition-height-container awards">
                 <div class="player-award-dropdown-container">
                   <h3 class="player-award-tile">{{ $player['firstName']['default'] }}
-                    {{ $player['lastName']['default'] }} hasn't won any awards yet...</h3>
+                    {{ $player['lastName']['default'] }}</h3>
+                  <ul class="player-draft-dropdown-list">
+                    <li>
+                      <p>hasn't won any awards yet...</p>
+                    </li>
+                  </ul>
                 </div>
               </div>
             @endif
@@ -100,10 +101,19 @@
               <div class="transition-height-container draft">
                 <div class="player-draft-dropdown-container">
                   <h3 class="player-draft-tile">{{ $player['firstName']['default'] }}
-                    {{ $player['lastName']['default'] }} went undrafted...</h3>
+                    {{ $player['lastName']['default'] }}</h3>
+                  <ul class="player-draft-dropdown-list">
+                    <li>
+                      <p>went undrafted...</p>
+                    </li>
+                  </ul>
                 </div>
               </div>
             @endif
+          </div>
+          <div class="horizontal-scrolling-container">
+            {{-- goalie summary --}}
+            @include('includes._player_summary')
           </div>
 
           <h2>
@@ -195,12 +205,8 @@
           @else
             <h2>No Playoff Stats Yet...</h2>
           @endif
-        @else
           {{-- skater stuff --}}
-          <div class="horizontal-scrolling-container">
-            {{-- skater summary --}}
-            @include('includes._player_summary')
-          </div>
+        @else
           {{-- skater awards --}}
           <div class="player-awards-container">
             @if (array_key_exists('awards', $player))
@@ -246,7 +252,12 @@
               <div class="transition-height-container awards">
                 <div class="player-award-dropdown-container">
                   <h3 class="player-award-tile">{{ $player['firstName']['default'] }}
-                    {{ $player['lastName']['default'] }} hasn't won any awards yet...</h3>
+                    {{ $player['lastName']['default'] }}</h3>
+                  <ul class="player-draft-dropdown-list">
+                    <li>
+                      <p>hasn't won any awards yet...</p>
+                    </li>
+                  </ul>
                 </div>
               </div>
             @endif
@@ -274,10 +285,19 @@
               <div class="transition-height-container draft">
                 <div class="player-draft-dropdown-container">
                   <h3 class="player-draft-tile">{{ $player['firstName']['default'] }}
-                    {{ $player['lastName']['default'] }} went undrafted...</h3>
+                    {{ $player['lastName']['default'] }}</h3>
+                  <ul class="player-draft-dropdown-list">
+                    <li>
+                      <p>went undrafted...</p>
+                    </li>
+                  </ul>
                 </div>
               </div>
             @endif
+          </div>
+          <div class="horizontal-scrolling-container">
+            {{-- skater summary --}}
+            @include('includes._player_summary')
           </div>
           <h2>
             Regular Season

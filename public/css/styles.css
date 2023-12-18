@@ -1407,14 +1407,14 @@ header h1 {
     -webkit-box-direction: normal;
     -webkit-box-orient: vertical;
     -webkit-box-pack: start;
-    -webkit-box-shadow: 0 2px 5px #808080;
-    background-color: #024e98;
+    -webkit-box-shadow: 0 2px 5px #000;
+    background-color: #808080;
     border-bottom-right-radius: 5px;
     border-top-right-radius: 5px;
     border-bottom: solid 1px #000;
     border-right: solid 1px #000;
     border-top: solid 1px #000;
-    box-shadow: 0 2px 5px #808080;
+    box-shadow: 0 2px 5px #000;
     cursor: default;
     display: -ms-flexbox;
     display: -webkit-box;
