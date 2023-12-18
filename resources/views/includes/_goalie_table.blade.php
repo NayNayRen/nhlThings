@@ -5,7 +5,6 @@
   $firstHalfSeason[] = $season[0] . $season[1] . $season[2] . $season[3];
   $secondHalfSeason[] = $season[4] . $season[5] . $season[6] . $season[7];
 @endphp
-{{-- <li> --}}
 <p title="Season">
   <span>{{ $key + 1 }}.</span>
   <span>
@@ -15,7 +14,7 @@
 <p>{{ $stat['teamName']['default'] }}</p>
 <p>{{ $stat['gamesPlayed'] }}</p>
 <p>{{ $stat['gamesStarted'] }}</p>
-<p>{{ $stat['wins'] }}</p>
+<p class='table-column-focus'>{{ $stat['wins'] }}</p>
 <p>{{ $stat['losses'] }}</p>
 <p>{{ $stat['shutouts'] }}</p>
 <p>{{ $stat['shotsAgainst'] }}</p>
@@ -32,4 +31,3 @@
 <p>{{ $stat['goals'] }}</p>
 <p>{{ $stat['assists'] }}</p>
 <p>{{ $stat['pim'] }}</p>
-{{-- </li> --}}

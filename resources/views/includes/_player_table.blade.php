@@ -16,7 +16,7 @@
 <p>{{ $stat['gamesPlayed'] }}</p>
 <p>{{ $stat['goals'] }}</p>
 <p>{{ $stat['assists'] }}</p>
-<p>{{ $stat['points'] }}</p>
+<p class='table-column-focus'>{{ $stat['points'] }}</p>
 <p>{{ $stat['plusMinus'] }}</p>
 <p>{{ $stat['pim'] }}</p>
 <p>{{ $stat['powerPlayGoals'] }}</p>

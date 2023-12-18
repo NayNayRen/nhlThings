@@ -1084,11 +1084,6 @@ header h1 {
     text-align: left;
 }
 
-.league-standings-points {
-    color: #b22222;
-    font-weight: bold;
-}
-
 .league-standings-selection-container {
     -ms-flex-align: start;
     -ms-flex-direction: column;
@@ -1118,6 +1113,7 @@ header h1 {
 }
 
 .league-standings-table,
+.player-last-five,
 .player-stats,
 .team-stats {
     -ms-flex-align: start;
@@ -1157,6 +1153,7 @@ header h1 {
 
 .league-standings-table li,
 .player-award-dropdown-list li,
+.player-last-five li,
 .player-stats li,
 .team-stats li {
     -ms-flex-align: center;
@@ -1179,12 +1176,14 @@ header h1 {
 
 .league-standings-table li:nth-of-type(odd),
 .player-award-dropdown-list li:nth-of-type(odd),
+.player-last-five li:nth-of-type(odd),
 .player-stats li:nth-of-type(odd) {
     background-color: rgba(220, 220, 220, 0.75);
 }
 
 .league-standings-table p,
 .player-award-dropdown-list p,
+.player-last-five p,
 .player-stats p,
 .team-stats p {
     border-right: 1px solid #000;
@@ -1214,12 +1213,14 @@ header h1 {
 
 .league-standings-table p:last-of-type,
 .player-award-dropdown-list p:last-of-type,
+.player-last-five p:last-of-type,
 .player-stats p:last-of-type,
 .team-stats p:last-of-type {
     border-right: none;
 }
 
 .league-standings-table li span,
+.player-last-five li span:first-of-type,
 .player-stats li span:first-of-type {
     -webkit-transform: translateY(-50%);
     color: #b22222;
@@ -1233,6 +1234,7 @@ header h1 {
 
 .league-standings-table h3,
 .player-award-dropdown-list h3,
+.player-last-five h3,
 .player-stats h3,
 .team-stats h3 {
     background-color: #000;
@@ -1538,6 +1540,7 @@ header h1 {
 }
 
 .player-award-dropdown-list li h3:first-of-type,
+.player-last-five li h3:first-of-type,
 .player-stats li h3:first-of-type {
     min-width: 125px;
 }
@@ -1552,10 +1555,10 @@ header h1 {
 }
 
 .player-award-dropdown-list li p:first-of-type,
+.player-last-five li p:first-of-type,
 .player-stats li p:first-of-type {
     min-width: 125px;
     padding: 3px 5px;
-    width: auto;
 }
 .player-stats li p:nth-of-type(2) {
     min-width: 215px;
@@ -1622,6 +1625,7 @@ header h1 {
 }
 
 .player-summary li p {
+    /* background-color: #024e98; */
     color: #000;
     padding: 3px 20px;
     min-width: -moz-fit-content;
@@ -1630,11 +1634,30 @@ header h1 {
 }
 
 .player-team {
-    color: #b22222;
+    color: #000;
     font-size: 16px;
     font-weight: bold;
     margin: 0;
-    padding-right: 15px;
+    padding-right: 5px;
+    position: relative;
+    /* outline: solid 1px red; */
+}
+
+.player-team span {
+    -webkit-transform: translateY(-50%);
+    height: auto;
+    left: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+}
+
+.player-team span img {
+    -webkit-filter: drop-shadow(0 2px 2px #808080);
+    filter: drop-shadow(0 2px 2px #808080);
+    height: auto;
+    width: 100%;
 }
 
 .preseason-scrolling-container {
@@ -1781,8 +1804,12 @@ header h1 {
     width: 100%;
 }
 
+.table-column-focus {
+    color: #b22222;
+    font-weight: bold;
+}
+
 .team-data-container {
-    /* background-color: #f5f5f5; */
     border-radius: 5px;
     height: auto;
     margin: 0 auto 0 auto;
@@ -2187,6 +2214,10 @@ header h1 {
 
     .player-team {
         font-size: 14px;
+    }
+
+    .player-team span {
+        width: 35px;
     }
 
     .shield-logo {

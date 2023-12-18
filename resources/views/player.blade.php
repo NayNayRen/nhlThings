@@ -5,7 +5,12 @@
       <div class="player-heading-container">
         <div class="player-heading-left">
           <h2>{{ $player['firstName']['default'] }} {{ $player['lastName']['default'] }}</h2>
-          <p class="player-team">{{ $player['fullTeamName']['default'] }}</p>
+          <p class="player-team">
+            {{ $player['fullTeamName']['default'] }}
+            <span>
+              <img src={{ $player['teamLogo'] }} alt="{{ $player['currentTeamAbbrev'] }} Logo">
+            </span>
+          </p>
           <div class="player-button-container">
             <button type="button" class="player-award-dropdown-button">
               Award(s)
@@ -115,7 +120,48 @@
             {{-- goalie summary --}}
             @include('includes._player_summary')
           </div>
-
+          {{-- goalie last 5 --}}
+          <h2>
+            Last 5 Games
+            <p>
+              Home Game :
+              <span></span>
+            </p>
+          </h2>
+          <div class="horizontal-scrolling-container">
+            <ul class="player-last-five">
+              <li>
+                <h3 title="Date">Date</h3>
+                <h3 title="Against">Against</h3>
+                <h3 title="Games Started">GS</h3>
+                <h3 title="Decision">Decision</h3>
+                <h3 title="Shots Against">SA</h3>
+                <h3 title="Goals Against">GA</h3>
+                <h3 title="Save %">SV%</h3>
+                <h3 title="Penalty Minutes">PIM</h3>
+                <h3 title="Time On Ice">TOI</h3>
+              </li>
+              @foreach ($player['last5Games'] as $key => $game)
+                <li>
+                  <p>
+                    <span>{{ $key + 1 }}.</span>
+                    {{ $game['gameDate'] }}
+                    @if ($game['homeRoadFlag'] === 'H')
+                      <span class="playoff-season-marker"></span>
+                    @endif
+                  </p>
+                  <p>{{ $game['opponentAbbrev'] }}</p>
+                  <p>{{ $game['gamesStarted'] }}</p>
+                  <p class='table-column-focus'>{{ $game['decision'] }}</p>
+                  <p>{{ $game['shotsAgainst'] }}</p>
+                  <p>{{ $game['goalsAgainst'] }}</p>
+                  <p>{{ round((float) $game['savePctg'], 3) }}%</p>
+                  <p>{{ $game['penaltyMins'] }}</p>
+                  <p>{{ $game['toi'] }}</p>
+                </li>
+              @endforeach
+            </ul>
+          </div>
           <h2>
             Regular Season
             <p>
@@ -298,6 +344,54 @@
           <div class="horizontal-scrolling-container">
             {{-- skater summary --}}
             @include('includes._player_summary')
+          </div>
+          {{-- skater last 5 --}}
+          <h2>
+            Last 5 Games
+            <p>
+              Home Game :
+              <span></span>
+            </p>
+          </h2>
+          <div class="horizontal-scrolling-container">
+            <ul class="player-last-five">
+              <li>
+                <h3 title="Date">Date</h3>
+                <h3 title="Against">Against</h3>
+                <h3 title="Goals">Goals</h3>
+                <h3 title="Assists">Assists</h3>
+                <h3 title="Points">Points</h3>
+                <h3 title="Plus Minus">+/-</h3>
+                <h3 title="Power Play Goals">PPG</h3>
+                <h3 title="Shots">Shots</h3>
+                <h3 title="Shifts">Shifts</h3>
+                <h3 title="Short Handed Goals">SHG</h3>
+                <h3 title="Penalty Minutes">PIM</h3>
+                <h3 title="Time On Ice">TOI</h3>
+              </li>
+              @foreach ($player['last5Games'] as $key => $game)
+                <li>
+                  <p>
+                    <span>{{ $key + 1 }}.</span>
+                    {{ $game['gameDate'] }}
+                    @if ($game['homeRoadFlag'] === 'H')
+                      <span class="playoff-season-marker"></span>
+                    @endif
+                  </p>
+                  <p>{{ $game['opponentAbbrev'] }}</p>
+                  <p>{{ $game['goals'] }}</p>
+                  <p>{{ $game['assists'] }}</p>
+                  <p class='table-column-focus'>{{ $game['points'] }}</p>
+                  <p>{{ $game['plusMinus'] }}</p>
+                  <p>{{ $game['powerPlayGoals'] }}</p>
+                  <p>{{ $game['shots'] }}</p>
+                  <p>{{ $game['shifts'] }}</p>
+                  <p>{{ $game['shorthandedGoals'] }}</p>
+                  <p>{{ $game['pim'] }}</p>
+                  <p>{{ $game['toi'] }}</p>
+                </li>
+              @endforeach
+            </ul>
           </div>
           <h2>
             Regular Season
