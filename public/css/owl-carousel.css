@@ -4,10 +4,12 @@
  * Licensed under: SEE LICENSE IN https://github.com/OwlCarousel2/OwlCarousel2/blob/master/LICENSE
  */
 .arrow {
+    -webkit-box-shadow: 0 2px 2px #808080;
     background-color: #000;
-    border-radius: 5px;
+    border-radius: 15px;
     border: none;
     bottom: -10px;
+    box-shadow: 0 2px 2px #808080;
     color: #1e90ff;
     cursor: pointer;
     font-size: 20px;
@@ -225,7 +227,7 @@
 
 .game-finished-date {
     -webkit-transform: translateX(-50%);
-    border-bottom: solid 1px #1e90ff;
+    border-bottom: solid 1px #58adff;
     font-size: 14px;
     font-weight: bold;
     left: 50%;
@@ -237,7 +239,7 @@
 }
 
 .game-location {
-    color: #1e90ff;
+    color: #58adff;
     font-size: 18px;
 }
 
@@ -275,8 +277,8 @@
 }
 
 .game-stats-button:hover {
-    -webkit-box-shadow: 0 2px 5px #1e90ff;
-    box-shadow: 0 2px 5px #1e90ff;
+    -webkit-box-shadow: 0 2px 5px #024e98;
+    box-shadow: 0 2px 5px #024e98;
 }
 
 /* container for each team on each card */
@@ -321,6 +323,7 @@
     color: #1e90ff;
     font-size: 22px;
     margin-left: 20px;
+    text-shadow: 0 2px 2px #808080;
 }
 
 .game-team-radio-link i {
@@ -341,7 +344,7 @@
 }
 
 .game-winning-player h3 {
-    border-bottom: solid 1px #1e90ff;
+    border-bottom: solid 1px #58adff;
     font-size: 16px;
     margin: 10px auto 0 auto;
     padding: 0 10px;
@@ -363,7 +366,7 @@
 }
 
 .home-game-indicator {
-    background-color: #1e90ff;
+    background-color: #024e98;
     border-radius: 50%;
     bottom: 10px;
     display: inline;
@@ -404,7 +407,7 @@
 
 .home-game-indicator-message span {
     -webkit-transform: translateY(-50%);
-    background-color: #1e90ff;
+    background-color: #024e98;
     border-radius: 50%;
     height: 10px;
     position: absolute;

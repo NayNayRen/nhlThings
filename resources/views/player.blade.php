@@ -72,7 +72,7 @@
               <div class="transition-height-container awards">
                 <div class="player-award-dropdown-container">
                   <h3 class="player-award-tile">{{ $player['firstName']['default'] }}
-                    {{ $player['lastName']['default'] }} has no awards yet...</h3>
+                    {{ $player['lastName']['default'] }} hasn't won any awards yet...</h3>
                 </div>
               </div>
             @endif
@@ -109,7 +109,7 @@
           <h2>
             Regular Season
             <p>
-              Playoffs Below :
+              Playoffs :
               <span></span>
             </p>
           </h2>
@@ -193,7 +193,7 @@
               </ul>
             </div>
           @else
-            <h2>No Playoffs Yet...</h2>
+            <h2>No Playoff Stats Yet...</h2>
           @endif
         @else
           {{-- skater stuff --}}
@@ -246,7 +246,7 @@
               <div class="transition-height-container awards">
                 <div class="player-award-dropdown-container">
                   <h3 class="player-award-tile">{{ $player['firstName']['default'] }}
-                    {{ $player['lastName']['default'] }} has no awards yet...</h3>
+                    {{ $player['lastName']['default'] }} hasn't won any awards yet...</h3>
                 </div>
               </div>
             @endif
@@ -282,7 +282,7 @@
           <h2>
             Regular Season
             <p>
-              Playoffs Below :
+              Playoffs :
               <span></span>
             </p>
           </h2>
@@ -369,7 +369,7 @@
               </ul>
             </div>
           @else
-            <h2>No Playoffs Yet...</h2>
+            <h2>No Playoff Stats Yet...</h2>
           @endif
 
         @endif
