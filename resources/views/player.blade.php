@@ -101,12 +101,7 @@ url('{{ $player['heroImage'] }}'); background-size: cover; background-position: 
               <div class="transition-height-container awards">
                 <div class="player-award-dropdown-container">
                   <h3 class="player-award-tile">{{ $player['firstName']['default'] }}
-                    {{ $player['lastName']['default'] }}</h3>
-                  <ul class="player-draft-dropdown-list">
-                    <li>
-                      <p>hasn't won any awards yet...</p>
-                    </li>
-                  </ul>
+                    {{ $player['lastName']['default'] }} hasn't won any awards yet...</h3>
                 </div>
               </div>
             @endif
@@ -139,12 +134,7 @@ url('{{ $player['heroImage'] }}'); background-size: cover; background-position: 
               <div class="transition-height-container draft">
                 <div class="player-draft-dropdown-container">
                   <h3 class="player-draft-tile">{{ $player['firstName']['default'] }}
-                    {{ $player['lastName']['default'] }}</h3>
-                  <ul class="player-draft-dropdown-list">
-                    <li>
-                      <p>went undrafted...</p>
-                    </li>
-                  </ul>
+                    {{ $player['lastName']['default'] }} went undrafted...</h3>
                 </div>
               </div>
             @endif
@@ -185,7 +175,11 @@ url('{{ $player['heroImage'] }}'); background-size: cover; background-position: 
                   </p>
                   <p>{{ $game['opponentAbbrev'] }}</p>
                   <p>{{ $game['gamesStarted'] }}</p>
-                  <p class='table-column-focus'>{{ $game['decision'] }}</p>
+                  @if (array_key_exists('decision', $game))
+                    <p class='table-column-focus'>{{ $game['decision'] }}</p>
+                  @else
+                    <p class='table-column-focus'>N/A</p>
+                  @endif
                   <p>{{ $game['shotsAgainst'] }}</p>
                   <p>{{ $game['goalsAgainst'] }}</p>
                   <p>{{ round((float) $game['savePctg'], 3) }}%</p>
@@ -331,12 +325,7 @@ url('{{ $player['heroImage'] }}'); background-size: cover; background-position: 
               <div class="transition-height-container awards">
                 <div class="player-award-dropdown-container">
                   <h3 class="player-award-tile">{{ $player['firstName']['default'] }}
-                    {{ $player['lastName']['default'] }}</h3>
-                  <ul class="player-draft-dropdown-list">
-                    <li>
-                      <p>hasn't won any awards yet...</p>
-                    </li>
-                  </ul>
+                    {{ $player['lastName']['default'] }} hasn't won any awards yet...</h3>
                 </div>
               </div>
             @endif
@@ -369,12 +358,7 @@ url('{{ $player['heroImage'] }}'); background-size: cover; background-position: 
               <div class="transition-height-container draft">
                 <div class="player-draft-dropdown-container">
                   <h3 class="player-draft-tile">{{ $player['firstName']['default'] }}
-                    {{ $player['lastName']['default'] }}</h3>
-                  <ul class="player-draft-dropdown-list">
-                    <li>
-                      <p>went undrafted...</p>
-                    </li>
-                  </ul>
+                    {{ $player['lastName']['default'] }} went undrafted...</h3>
                 </div>
               </div>
             @endif
