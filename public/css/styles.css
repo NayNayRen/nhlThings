@@ -2209,6 +2209,7 @@ header h1 {
 
     .player-award-dropdown-container {
         border-bottom-right-radius: 0;
+        border-top-right-radius: 0;
     }
 
     .player-heading-logo,
