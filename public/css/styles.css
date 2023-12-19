@@ -186,8 +186,7 @@
     -webkit-box-shadow: none;
     background-color: #1e90ff;
     box-shadow: none;
-    color: #fff;
-    /* outline-color: #000; */
+    color: #000;
 }
 
 .active-standings-selection:hover {
@@ -396,7 +395,7 @@ footer {
 
 .game-matchup-heading-date {
     -webkit-transform: translateX(-50%);
-    border-bottom: solid 1px #58adff;
+    border-bottom: solid 1px #1e90ff;
     font-size: 14px;
     left: 50%;
     padding: 0 10px;
@@ -810,7 +809,7 @@ footer {
 
 .game-matchup-main-container-venue {
     -webkit-transform: translateX(-50%);
-    border-bottom: solid 1px #58adff;
+    border-bottom: solid 1px #1e90ff;
     font-size: 14px;
     left: 50%;
     padding: 0 10px;
@@ -1147,12 +1146,9 @@ header h1 {
     display: none;
 }
 
-.league-standings-table h3:first-of-type {
-    min-width: 220px;
-}
-
 .league-standings-table li,
 .player-award-dropdown-list li,
+.player-draft-dropdown-list li,
 .player-last-five li,
 .player-stats li,
 .team-stats li {
@@ -1178,11 +1174,12 @@ header h1 {
 .player-award-dropdown-list li:nth-of-type(odd),
 .player-last-five li:nth-of-type(odd),
 .player-stats li:nth-of-type(odd) {
-    background-color: rgba(220, 220, 220, 0.75);
+    background-color: rgba(220, 220, 220, 0.65);
 }
 
 .league-standings-table p,
 .player-award-dropdown-list p,
+.player-draft-dropdown-list p,
 .player-last-five p,
 .player-stats p,
 .team-stats p {
@@ -1191,7 +1188,7 @@ header h1 {
     font-size: 14px;
     height: 100%;
     min-width: 80px;
-    padding: 3px 2px;
+    padding: 2px 3px;
     position: relative;
     text-align: center;
     width: 100%;
@@ -1203,16 +1200,17 @@ header h1 {
     font-size: 12px;
 }
 
-.league-standings-table p:first-of-type {
+.league-standings-table li p:first-of-type {
     color: #000;
     font-weight: bold;
     min-width: 225px;
-    padding: 3px 5px;
+    padding: 2px 5px;
     width: auto;
 }
 
 .league-standings-table p:last-of-type,
 .player-award-dropdown-list p:last-of-type,
+.player-draft-dropdown-list p:last-of-type,
 .player-last-five p:last-of-type,
 .player-stats p:last-of-type,
 .team-stats p:last-of-type {
@@ -1234,16 +1232,22 @@ header h1 {
 
 .league-standings-table h3,
 .player-award-dropdown-list h3,
+.player-draft-dropdown-list h3,
 .player-last-five h3,
 .player-stats h3,
 .team-stats h3 {
     background-color: #000;
     color: #fff;
     font-size: 14px;
+    height: 100%;
     min-width: 80px;
-    padding: 3px 2px;
+    padding: 2px 3px;
     text-align: center;
     width: 100%;
+}
+
+.league-standings-table h3:first-of-type {
+    min-width: 220px;
 }
 
 .main {
@@ -1257,7 +1261,7 @@ header h1 {
     align-items: center;
     background-attachment: fixed;
     background-color: #808080;
-    background-image: -webkit-gradient(
+    /* background-image: -webkit-gradient(
             linear,
             left top,
             right top,
@@ -1270,10 +1274,10 @@ header h1 {
             rgba(0, 0, 0, 0.9),
             rgba(0, 0, 0, 0.5)
         ),
-        url("../img/nhl-logo.webp");
-    background-position: center;
+        url("../img/nhl-logo.webp"); */
+    /* background-position: center; */
     background-repeat: no-repeat;
-    background-size: contain;
+    /* background-size: contain; */
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
@@ -1288,7 +1292,7 @@ header h1 {
     -webkit-box-shadow: 0 0 20px #000;
     background-color: #808080;
     background-attachment: fixed;
-    background-image: -webkit-gradient(
+    /* background-image: -webkit-gradient(
             linear,
             left top,
             right top,
@@ -1301,11 +1305,11 @@ header h1 {
             rgba(245, 245, 245, 1),
             rgba(245, 245, 245, 0.75)
         ),
-        url("../img/nhl-logo.webp");
-    background-position: center;
+        url("../img/nhl-logo.webp"); */
+    /* background-position: center; */
     border-radius: 15px;
     background-repeat: no-repeat;
-    background-size: contain;
+    /* background-size: contain; */
     box-shadow: 0 0 20px #000;
     height: 100%;
     overflow: hidden;
@@ -1336,7 +1340,7 @@ header h1 {
     -webkit-box-orient: vertical;
     -webkit-box-pack: center;
     align-items: center;
-    border-bottom: solid 1px #58adff;
+    border-bottom: solid 1px #1e90ff;
     color: #fff;
     display: -ms-flexbox;
     display: -webkit-box;
@@ -1356,7 +1360,7 @@ header h1 {
 .player-draft-container {
     left: 0;
     position: absolute;
-    top: -5px;
+    top: 0;
     width: auto;
     z-index: 2;
     /* outline: solid 1px blue; */
@@ -1409,14 +1413,14 @@ header h1 {
     -webkit-box-direction: normal;
     -webkit-box-orient: vertical;
     -webkit-box-pack: start;
-    -webkit-box-shadow: 0 2px 5px #000;
-    background-color: #808080;
+    -webkit-box-shadow: 0 2px 5px #808080;
+    background-color: #fff;
     border-bottom-right-radius: 5px;
     border-top-right-radius: 5px;
     border-bottom: solid 1px #000;
     border-right: solid 1px #000;
     border-top: solid 1px #000;
-    box-shadow: 0 2px 5px #000;
+    box-shadow: 0 2px 5px #808080;
     cursor: default;
     display: -ms-flexbox;
     display: -webkit-box;
@@ -1432,9 +1436,9 @@ header h1 {
     /* width: auto; */
 }
 
-.player-award-dropdown-list {
+.player-award-dropdown-list,
+.player-draft-dropdown-list {
     background-color: #fff;
-    font-size: 14px;
     height: auto;
     outline: solid 1px #000;
     width: -moz-fit-content;
@@ -1444,8 +1448,8 @@ header h1 {
 
 .player-award-tile,
 .player-draft-tile {
-    background-color: #fff;
-    color: #b22222;
+    background-color: #024e98;
+    color: #fff;
     font-size: 14px;
     margin-top: 10px;
     outline: solid 1px #000;
@@ -1488,7 +1492,7 @@ header h1 {
     width: 10px;
 }
 
-.player-draft-dropdown-list {
+/* .player-draft-dropdown-list {
     background-color: #fff;
     font-size: 14px;
     height: auto;
@@ -1512,7 +1516,7 @@ header h1 {
 }
 .player-draft-dropdown-list span {
     font-weight: bold;
-}
+} */
 
 .player-heading-logo,
 .team-heading-logo {
@@ -1557,8 +1561,9 @@ header h1 {
 .player-award-dropdown-list li p:first-of-type,
 .player-last-five li p:first-of-type,
 .player-stats li p:first-of-type {
+    font-weight: bold;
     min-width: 125px;
-    padding: 3px 5px;
+    padding: 2px 5px;
 }
 .player-stats li p:nth-of-type(2) {
     min-width: 215px;
@@ -1607,7 +1612,7 @@ header h1 {
     min-width: -webkit-fit-content;
     min-width: fit-content;
     text-align: center;
-    /* outline: solid 1px red; */
+    outline: solid 1px #000;
 }
 
 .player-summary li:last-of-type {
@@ -1620,13 +1625,13 @@ header h1 {
     color: #fff;
     display: block;
     font-size: 14px;
-    font-weight: bold;
     padding: 3px 20px;
 }
 
 .player-summary li p {
-    /* background-color: #024e98; */
-    color: #000;
+    background-color: #024e98;
+    color: #fff;
+    font-weight: bold;
     padding: 3px 20px;
     min-width: -moz-fit-content;
     min-width: -webkit-fit-content;
@@ -1935,7 +1940,6 @@ header h1 {
     position: fixed;
     right: -60px;
     text-decoration: none;
-    text-shadow: none;
     transition: all 150ms ease;
     width: 50px;
     z-index: 3;

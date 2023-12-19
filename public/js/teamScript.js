@@ -3,9 +3,9 @@ function loadTeamScript() {
   const $finishedGames = $('.finished-games');
   let checkGameState = document.querySelectorAll('.game-state');
   const periods = document.querySelectorAll('.game-periods');
-  const main = document.querySelector('.main');
-  const mainContainer = document.querySelector('.main-container');
-  const teamLogo = document.querySelector('.team-logo-image').innerText;
+  // const main = document.querySelector('.main');
+  // const mainContainer = document.querySelector('.main-container');
+  // const teamLogo = document.querySelector('.team-logo-image').innerText;
   const transitionContainer = document.querySelectorAll('.transition-container');
 
   const carouselOptions = {
@@ -149,39 +149,39 @@ function loadTeamScript() {
     container.style.opacity = 1;
   });
 
-  main.style.backgroundImage = `
-  -webkit-gradient(
-    linear,
-    left top,
-    right top,
-    from(rgba(0, 0, 0, 0.9)),
-    to(rgba(0, 0, 0, 0.5))
-),
-url(${teamLogo})`;
-  main.style.backgroundImage = `
-  linear-gradient(
-    90deg,
-    rgba(0, 0, 0, 0.9),
-    rgba(0, 0, 0, 0.5)
-),
-  url(${teamLogo})`;
+  //   main.style.backgroundImage = `
+  //   -webkit-gradient(
+  //     linear,
+  //     left top,
+  //     right top,
+  //     from(rgba(0, 0, 0, 0.9)),
+  //     to(rgba(0, 0, 0, 0.5))
+  // ),
+  // url(${teamLogo})`;
+  //   main.style.backgroundImage = `
+  //   linear-gradient(
+  //     90deg,
+  //     rgba(0, 0, 0, 0.9),
+  //     rgba(0, 0, 0, 0.5)
+  // ),
+  //   url(${teamLogo})`;
 
-  mainContainer.style.backgroundImage = `
-  -webkit-gradient(
-    linear,
-    left top,
-    right top,
-    from(rgba(245, 245, 245, 1)),
-    to(rgba(245, 245, 245, 0.65))
-),
-url(${teamLogo})`;
-  mainContainer.style.backgroundImage = `
-  linear-gradient(
-      90deg,
-      rgba(245, 245, 245, 1),
-      rgba(245, 245, 245, 0.65)
-  ),
-  url(${teamLogo})`;
+  //   mainContainer.style.backgroundImage = `
+  //   -webkit-gradient(
+  //     linear,
+  //     left top,
+  //     right top,
+  //     from(rgba(245, 245, 245, 1)),
+  //     to(rgba(245, 245, 245, 0.65))
+  // ),
+  // url(${teamLogo})`;
+  //   mainContainer.style.backgroundImage = `
+  //   linear-gradient(
+  //       90deg,
+  //       rgba(245, 245, 245, 1),
+  //       rgba(245, 245, 245, 0.65)
+  //   ),
+  //   url(${teamLogo})`;
 }
 
 window.addEventListener('load', () => {

@@ -1,6 +1,34 @@
 @include('includes._header')
-<main class="main">
-  <div class="main-container">
+<main class="main"
+  style="background-image: -webkit-gradient(
+  linear,
+  left top,
+  right top,
+  from(rgba(0, 0, 0, 0.9)),
+  to(rgba(0, 0, 0, 0.5))
+),
+url('{{ $player['heroImage'] }}');
+background-image: linear-gradient(
+  90deg,
+  rgba(0, 0, 0, 0.9),
+  rgba(0, 0, 0, 0.5)
+),
+url('{{ $player['heroImage'] }}'); background-size: cover; background-position: top;">
+  <div class="main-container"
+    style="background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(rgba(245, 245, 245, 1)),
+    to(rgba(245, 245, 245, 0.75))
+),
+url('{{ $player['heroImage'] }}');
+background-image: linear-gradient(
+    90deg,
+    rgba(245, 245, 245, 1),
+    rgba(245, 245, 245, 0.75)
+),
+url('{{ $player['heroImage'] }}'); background-size: cover; background-position: top;">
     <div class="player-container">
       <div class="player-heading-container">
         <div class="player-heading-left">
@@ -91,13 +119,18 @@
                   <h3 class="player-draft-tile">Draft Details</h3>
                   <ul class="player-draft-dropdown-list">
                     <li>
-                      <p><span>Year :</span> {{ $player['draftDetails']['year'] }}</p>
-                      <p><span>By :</span> {{ $player['draftDetails']['teamAbbrev'] }}</p>
+                      <h3>Year</h3>
+                      <h3>By</h3>
+                      <h3>Round</h3>
+                      <h3>Picked</h3>
+                      <h3>Overall</h3>
                     </li>
                     <li>
-                      <p><span>Round :</span> {{ $player['draftDetails']['round'] }}</p>
-                      <p><span>Picked :</span> {{ $player['draftDetails']['pickInRound'] }}</p>
-                      <p><span>Overall :</span> {{ $player['draftDetails']['overallPick'] }}</p>
+                      <p>{{ $player['draftDetails']['year'] }}</p>
+                      <p>{{ $player['draftDetails']['teamAbbrev'] }}</p>
+                      <p>{{ $player['draftDetails']['round'] }}</p>
+                      <p>{{ $player['draftDetails']['pickInRound'] }}</p>
+                      <p>{{ $player['draftDetails']['overallPick'] }}</p>
                     </li>
                   </ul>
                 </div>
@@ -182,8 +215,8 @@
               {{-- goalie career regular season --}}
               @include('includes._goalie_header')
               <li>
-                <p title="Season">Career</p>
-                <p>Regular Season</p>
+                <p title="Season">Regular</p>
+                <p>Career</p>
                 <p>{{ $player['careerTotals']['regularSeason']['gamesPlayed'] }}</p>
                 <p>{{ $player['careerTotals']['regularSeason']['gamesStarted'] }}</p>
                 <p>{{ $player['careerTotals']['regularSeason']['wins'] }}</p>
@@ -223,8 +256,8 @@
                 {{-- goalie career playoffs --}}
                 @include('includes._goalie_header')
                 <li>
-                  <p title="Season">Career</p>
-                  <p>Post Season</p>
+                  <p title="Season">Post</p>
+                  <p>Career</p>
                   <p>{{ $player['careerTotals']['playoffs']['gamesPlayed'] }}</p>
                   <p>{{ $player['careerTotals']['playoffs']['gamesStarted'] }}</p>
                   <p>{{ $player['careerTotals']['playoffs']['wins'] }}</p>
@@ -316,13 +349,18 @@
                   <h3 class="player-draft-tile">Draft Details</h3>
                   <ul class="player-draft-dropdown-list">
                     <li>
-                      <p><span>Year :</span> {{ $player['draftDetails']['year'] }}</p>
-                      <p><span>By :</span> {{ $player['draftDetails']['teamAbbrev'] }}</p>
+                      <h3>Year</h3>
+                      <h3>By</h3>
+                      <h3>Round</h3>
+                      <h3>Picked</h3>
+                      <h3>Overall</h3>
                     </li>
                     <li>
-                      <p><span>Round :</span> {{ $player['draftDetails']['round'] }}</p>
-                      <p><span>Picked :</span> {{ $player['draftDetails']['pickInRound'] }}</p>
-                      <p><span>Overall :</span> {{ $player['draftDetails']['overallPick'] }}</p>
+                      <p>{{ $player['draftDetails']['year'] }}</p>
+                      <p>{{ $player['draftDetails']['teamAbbrev'] }}</p>
+                      <p>{{ $player['draftDetails']['round'] }}</p>
+                      <p>{{ $player['draftDetails']['pickInRound'] }}</p>
+                      <p>{{ $player['draftDetails']['overallPick'] }}</p>
                     </li>
                   </ul>
                 </div>
@@ -412,8 +450,8 @@
               @endforeach
               @include('includes._player_header')
               <li>
-                <p title="Season">Career</p>
-                <p>Regular Season</p>
+                <p title="Season">Regular</p>
+                <p>Career</p>
                 <p>{{ $player['careerTotals']['regularSeason']['gamesPlayed'] }}</p>
                 <p>{{ $player['careerTotals']['regularSeason']['goals'] }}</p>
                 <p>{{ $player['careerTotals']['regularSeason']['assists'] }}</p>
@@ -454,8 +492,8 @@
                 @endforeach
                 @include('includes._player_header')
                 <li>
-                  <p title="Season">Career</p>
-                  <p>Post Season</p>
+                  <p title="Season">Post</p>
+                  <p>Career</p>
                   <p>{{ $player['careerTotals']['playoffs']['gamesPlayed'] }}</p>
                   <p>{{ $player['careerTotals']['playoffs']['goals'] }}</p>
                   <p>{{ $player['careerTotals']['playoffs']['assists'] }}</p>
