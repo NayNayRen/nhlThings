@@ -178,7 +178,7 @@ url('{{ $player['heroImage'] }}'); background-size: cover; background-position: 
                   @if (array_key_exists('decision', $game))
                     <p class='table-column-focus'>{{ $game['decision'] }}</p>
                   @else
-                    <p class='table-column-focus'>N/A</p>
+                    <p class='table-column-focus'>--</p>
                   @endif
                   <p>{{ $game['shotsAgainst'] }}</p>
                   <p>{{ $game['goalsAgainst'] }}</p>
@@ -275,8 +275,8 @@ url('{{ $player['heroImage'] }}'); background-size: cover; background-position: 
                 </li>
               </ul>
             </div>
-          @else
-            <h2>No Playoff Stats Yet...</h2>
+            {{-- @else
+            <h2>No Playoff Stats Yet...</h2> --}}
           @endif
           {{-- skater stuff --}}
         @else
@@ -500,12 +500,11 @@ url('{{ $player['heroImage'] }}'); background-size: cover; background-position: 
                       {{ round((float) $player['careerTotals']['regularSeason']['faceoffWinningPctg'] * 100, 2) }}%
                     </p>
                   @endif
-
                 </li>
               </ul>
             </div>
-          @else
-            <h2>No Playoff Stats Yet...</h2>
+            {{-- @else
+            <h2>No Playoff Stats Yet...</h2> --}}
           @endif
 
         @endif
