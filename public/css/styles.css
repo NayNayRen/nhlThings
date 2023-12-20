@@ -1172,7 +1172,8 @@ header h1 {
 .league-standings-table li:nth-of-type(odd),
 .player-award-dropdown-list li:nth-of-type(odd),
 .player-last-five li:nth-of-type(odd),
-.player-stats li:nth-of-type(odd) {
+.player-stats li:nth-of-type(odd),
+.team-stats li:nth-of-type(odd) {
     background-color: rgba(220, 220, 220, 0.75);
 }
 
@@ -1193,11 +1194,11 @@ header h1 {
     width: 100%;
 }
 
-.league-standings-table p i,
+/* .league-standings-table p i,
 .player-stats p i,
 .team-stats p i {
     font-size: 12px;
-}
+} */
 
 .league-standings-table li p:first-of-type {
     color: #000;
@@ -1489,7 +1490,8 @@ header h1 {
 
 .player-award-dropdown-list li h3:first-of-type,
 .player-last-five li h3:first-of-type,
-.player-stats li h3:first-of-type {
+.player-stats li h3:first-of-type,
+.team-stats li h3:first-of-type {
     min-width: 125px;
 }
 .player-stats li h3:nth-of-type(2) {
@@ -1504,7 +1506,8 @@ header h1 {
 
 .player-award-dropdown-list li p:first-of-type,
 .player-last-five li p:first-of-type,
-.player-stats li p:first-of-type {
+.player-stats li p:first-of-type,
+.team-stats li p:first-of-type {
     font-weight: bold;
     min-width: 125px;
     padding: 2px 5px;
@@ -1525,7 +1528,8 @@ header h1 {
     width: 8px;
 }
 
-.player-summary {
+.player-summary,
+.team-summary {
     -ms-flex-direction: row;
     -ms-flex-pack: space-evenly;
     -webkit-box-direction: normal;
@@ -1544,7 +1548,8 @@ header h1 {
     /* outline: solid 1px red; */
 }
 
-.player-summary li {
+.player-summary li,
+.team-summary li {
     -webkit-box-shadow: 0 2px 5px #808080;
     background-color: #fff;
     border-radius: 5px;
@@ -1556,15 +1561,17 @@ header h1 {
     min-width: -webkit-fit-content;
     min-width: fit-content;
     text-align: center;
-    outline: solid 1px #000;
+    /* outline: solid 1px #000; */
 }
 
-.player-summary li:last-of-type {
+.player-summary li:last-of-type,
+.team-summary li:last-of-type {
     margin: 0 0 0 0;
     /* outline: solid 1px red; */
 }
 
-.player-summary li h3 {
+.player-summary li h3,
+.team-summary li h3 {
     background-color: #000;
     color: #fff;
     display: block;
@@ -1572,9 +1579,12 @@ header h1 {
     padding: 3px 20px;
 }
 
-.player-summary li p {
-    background-color: #024e98;
-    color: #fff;
+.player-summary li p,
+.team-summary li p {
+    /* background-color: #024e98; */
+    background-color: #fff;
+    /* color: #fff; */
+    color: #000;
     font-weight: bold;
     padding: 3px 20px;
     min-width: -moz-fit-content;

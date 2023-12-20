@@ -48,6 +48,31 @@ url('{{ $soloTeam['teamLogo'] }}'); background-size: contain; background-positio
             height="100">
         </div>
       </div>
+      {{-- team summary --}}
+      <div class="horizontal-scrolling-container">
+        <ul class="team-summary">
+          <li>
+            <h3>Conference</h3>
+            <p>{{ $soloTeam['conferenceName'] }}</p>
+          </li>
+          <li>
+            <h3>Division</h3>
+            <p>{{ $soloTeam['divisionName'] }}</p>
+          </li>
+          <li>
+            <h3>Streak {{ '(' . $soloTeam['streakCode'] . ')' }}</h3>
+            <p>{{ $soloTeam['streakCount'] }}</p>
+          </li>
+          <li>
+            <h3>Common Name</h3>
+            <p>{{ $soloTeam['teamCommonName']['default'] }}</p>
+          </li>
+          <li>
+            <h3>Abbrev</h3>
+            <p>{{ $soloTeam['teamAbbrev']['default'] }}</p>
+          </li>
+        </ul>
+      </div>
       {{-- UPCOMING GAMES --}}
       @if (count($upcomingGames) < 1)
         <div class="regular-season-container">
@@ -136,6 +161,135 @@ url('{{ $soloTeam['teamLogo'] }}'); background-size: contain; background-positio
           </ul>
         </div>
       @endif
+      <div class="regular-season-container">
+        <h2>Regular Season</h2>
+        <div class="horizontal-scrolling-container">
+          <ul class="team-stats">
+            <li>
+              <h3 title="Seaon">Season</h3>
+              <h3 title="Games Played">GP</h3>
+              <h3 title="Wins">W</h3>
+              <h3 title="Losses">L</h3>
+              <h3 title="Regulation Wins">RW</h3>
+              <h3 title="OT Losses">OTL</h3>
+              <h3 title="Shootout Wins">SOW</h3>
+              <h3 title="Shootout Losses">SOL</h3>
+              <h3 title="Points">PTS</h3>
+              <h3 title="Point %">PT%</h3>
+              <h3 title="Goals For">GF</h3>
+              <h3 title="Goals Against">GA</h3>
+              <h3 title="Goals For %">GF%</h3>
+              <h3 title="Goal Differential">GD</h3>
+            </li>
+            <li>
+              <p>{{ $formattedSeason }}</p>
+              <p>{{ $soloTeam['gamesPlayed'] }}</p>
+              <p class='table-column-focus'>{{ $soloTeam['wins'] }}</p>
+              <p>{{ $soloTeam['losses'] }}</p>
+              <p>{{ $soloTeam['regulationWins'] }}</p>
+              <p>{{ $soloTeam['otLosses'] }}</p>
+              <p>{{ $soloTeam['shootoutWins'] }}</p>
+              <p>{{ $soloTeam['shootoutLosses'] }}</p>
+              <p class='table-column-focus'>{{ $soloTeam['points'] }}</p>
+              <p>{{ round((float) $soloTeam['pointPctg'] * 100, 1) }}%</p>
+              <p>{{ $soloTeam['goalFor'] }}</p>
+              <p>{{ $soloTeam['goalAgainst'] }}</p>
+              <p>{{ round((float) $soloTeam['goalsForPctg'] * 1, 2) }}%</p>
+              <p>{{ $soloTeam['goalDifferential'] }}</p>
+            </li>
+          </ul>
+        </div>
+
+        <h2>Home Record</h2>
+        <div class="horizontal-scrolling-container">
+          <ul class="team-stats">
+            <li>
+              <h3 title="Seaon">Season</h3>
+              <h3 title="Games Played">H GP</h3>
+              <h3 title="Wins">H W</h3>
+              <h3 title="Losses">H L</h3>
+              <h3 title="Regulation Wins">H RW</h3>
+              <h3 title="OT Losses">H OTL</h3>
+              <h3 title="Points">H PTS</h3>
+              <h3 title="Goals For">H GF</h3>
+              <h3 title="Goals Against">H GA</h3>
+              <h3 title="Goal Differential">H GD</h3>
+            </li>
+            <li>
+              <p>{{ $formattedSeason }}</p>
+              <p>{{ $soloTeam['homeGamesPlayed'] }}</p>
+              <p class='table-column-focus'>{{ $soloTeam['homeWins'] }}</p>
+              <p>{{ $soloTeam['homeLosses'] }}</p>
+              <p>{{ $soloTeam['homeRegulationWins'] }}</p>
+              <p>{{ $soloTeam['homeOtLosses'] }}</p>
+              <p class='table-column-focus'>{{ $soloTeam['homePoints'] }}</p>
+              <p>{{ $soloTeam['homeGoalsFor'] }}</p>
+              <p>{{ $soloTeam['homeGoalsAgainst'] }}</p>
+              <p>{{ $soloTeam['homeGoalDifferential'] }}</p>
+            </li>
+          </ul>
+        </div>
+
+        <h2>Road Record</h2>
+        <div class="horizontal-scrolling-container">
+          <ul class="team-stats">
+            <li>
+              <h3 title="Seaon">Season</h3>
+              <h3 title="Games Played">R GP</h3>
+              <h3 title="Wins">R W</h3>
+              <h3 title="Losses">R L</h3>
+              <h3 title="Regulation Wins">R RW</h3>
+              <h3 title="OT Losses">R OTL</h3>
+              <h3 title="Points">R PTS</h3>
+              <h3 title="Goals For">R GF</h3>
+              <h3 title="Goals Against">R GA</h3>
+              <h3 title="Goal Differential">R GD</h3>
+            </li>
+            <li>
+              <p>{{ $formattedSeason }}</p>
+              <p>{{ $soloTeam['roadGamesPlayed'] }}</p>
+              <p class='table-column-focus'>{{ $soloTeam['roadWins'] }}</p>
+              <p>{{ $soloTeam['roadLosses'] }}</p>
+              <p>{{ $soloTeam['roadRegulationWins'] }}</p>
+              <p>{{ $soloTeam['roadOtLosses'] }}</p>
+              <p class='table-column-focus'>{{ $soloTeam['roadPoints'] }}</p>
+              <p>{{ $soloTeam['roadGoalsFor'] }}</p>
+              <p>{{ $soloTeam['roadGoalsAgainst'] }}</p>
+              <p>{{ $soloTeam['roadGoalDifferential'] }}</p>
+            </li>
+          </ul>
+        </div>
+
+        <h2>Last 10 Games</h2>
+        <div class="horizontal-scrolling-container">
+          <ul class="team-stats">
+            <li>
+              <h3 title="Season">Season</h3>
+              <h3 title="Games Played">L10 GP</h3>
+              <h3 title="Wins">L10 W</h3>
+              <h3 title="Losses">L10 L</h3>
+              <h3 title="Regulation Wins">L10 RW</h3>
+              <h3 title="OT Losses">L10 OTL</h3>
+              <h3 title="Points">L10 PTS</h3>
+              <h3 title="Goals For">L10 GF</h3>
+              <h3 title="Goals Against">L10 GA</h3>
+              <h3 title="Goal Differential">L10 GD</h3>
+            </li>
+            <li>
+              <p>{{ $formattedSeason }}</p>
+              <p>{{ $soloTeam['l10GamesPlayed'] }}</p>
+              <p class='table-column-focus'>{{ $soloTeam['l10Wins'] }}</p>
+              <p>{{ $soloTeam['l10Losses'] }}</p>
+              <p>{{ $soloTeam['l10RegulationWins'] }}</p>
+              <p>{{ $soloTeam['l10OtLosses'] }}</p>
+              <p class='table-column-focus'>{{ $soloTeam['l10Points'] }}</p>
+              <p>{{ $soloTeam['l10GoalsFor'] }}</p>
+              <p>{{ $soloTeam['l10GoalsAgainst'] }}</p>
+              <p>{{ $soloTeam['l10GoalDifferential'] }}</p>
+            </li>
+          </ul>
+        </div>
+      </div>
       {{-- PRESEASON GAMES --}}
       {{-- @if (count($preseason) < 1)
         <div class="horizontal-scrolling-container preseason-scrolling-container">

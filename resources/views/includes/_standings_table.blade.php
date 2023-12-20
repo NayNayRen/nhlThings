@@ -1,10 +1,10 @@
 <li class="league-standings-row">
   <p><span>{{ $key + 1 }}.</span>{{ $team['teamName']['default'] }}</p>
   <p>{{ $team['gamesPlayed'] }}</p>
-  <p>{{ $team['wins'] }}</p>
+  <p class='table-column-focus'>{{ $team['wins'] }}</p>
   <p>{{ $team['losses'] }}</p>
-  <p>{{ $team['otLosses'] }}</p>
   <p>{{ $team['regulationWins'] }}</p>
+  <p>{{ $team['otLosses'] }}</p>
   <p>{{ $team['shootoutWins'] }}</p>
   <p>{{ $team['shootoutLosses'] }}</p>
   <p class='table-column-focus'>{{ $team['points'] }}</p>
