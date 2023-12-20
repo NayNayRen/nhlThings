@@ -38,10 +38,7 @@ url('{{ $soloTeam['teamLogo'] }}'); background-size: contain; background-positio
             {{ $soloTeam['losses'] }} -
             {{ $soloTeam['ties'] }}
           </p>
-          <div class="home-game-indicator-message">
-            <p>Home Game :</p>
-            <span></span>
-          </div>
+          <a href="#team-stats" class="team-stats-button">Team Stats</a>
         </div>
         <div class="team-heading-logo">
           <img src={{ $soloTeam['teamLogo'] }} alt="{{ $soloTeam['teamName']['default'] }} Logo" width="100"
@@ -90,7 +87,11 @@ url('{{ $soloTeam['teamLogo'] }}'); background-size: contain; background-positio
         </div>
       @else
         <div class="regular-season-container">
-          <h2>Upcoming Games</h2>
+          <h2>Upcoming Games
+            <p>Home Game :
+              <span></span>
+            </p>
+          </h2>
           <ul class="league-regular-season owl-carousel owl-theme upcoming-games transition-container">
             @foreach ($upcomingGames as $key => $game)
               @php
@@ -134,7 +135,11 @@ url('{{ $soloTeam['teamLogo'] }}'); background-size: contain; background-positio
         </div>
       @else
         <div class="regular-season-container">
-          <h2>Finished Games</h2>
+          <h2>Finished Games
+            <p>Home Game :
+              <span></span>
+            </p>
+          </h2>
           <ul class="league-regular-season owl-carousel owl-theme finished-games transition-container">
             @foreach ($finishedGames as $key => $game)
               @php
@@ -161,7 +166,8 @@ url('{{ $soloTeam['teamLogo'] }}'); background-size: contain; background-positio
           </ul>
         </div>
       @endif
-      <div class="regular-season-container">
+      <div class="team-stats-container">
+        <div id="team-stats"></div>
         <h2>Regular Season</h2>
         <div class="horizontal-scrolling-container">
           <ul class="team-stats">
@@ -259,52 +265,51 @@ url('{{ $soloTeam['teamLogo'] }}'); background-size: contain; background-positio
             </li>
           </ul>
         </div>
-      </div>
-      {{-- PRESEASON GAMES --}}
-      {{-- @if (count($preseason) < 1)
-        <div class="horizontal-scrolling-container preseason-scrolling-container">
-          <div class="team-preseason-container">
-            <h2>Preseason Games</h2>
-            <ul class="team-preseason">
-              <li class="team-preseason">
-                <div class="game-date-location">
-                  {{ $currentDate }}
-                </div>
-                <div class="game-team-container">
-                  <p>No games today...</p>
-                </div>
-              </li>
-            </ul>
-          </div>
-        @else
+        {{-- PRESEASON GAMES --}}
+        {{-- @if (count($preseason) < 1)
           <div class="horizontal-scrolling-container preseason-scrolling-container">
             <div class="team-preseason-container">
               <h2>Preseason Games</h2>
               <ul class="team-preseason">
-                @foreach ($preseason as $key => $game)
-                  @php
-                    $gameDateTime = Carbon\Carbon::create($game['startTimeUTC'])->tz('America/New_York');
-                    $formattedGameDate = $gameDateTime->format('D M j, Y');
-                    $formattedGameTime = $gameDateTime->format('h:i A');
-                  @endphp
-                  <li class="team-preseason-card">
-                    @include('includes._game_card')
-                    <span class='game-number'>
-                      {{ $key + 1 }} of {{ count($preseason) }}
-                    </span>
-                    @if ($game['homeTeam']['abbrev'] === $soloTeam['teamAbbrev']['default'])
-                      <span class="home-game-indicator"></span>
-                    @endif
-                  </li>
-                @endforeach
+                <li class="team-preseason">
+                  <div class="game-date-location">
+                    {{ $currentDate }}
+                  </div>
+                  <div class="game-team-container">
+                    <p>No games today...</p>
+                  </div>
+                </li>
               </ul>
             </div>
+          @else
+            <div class="horizontal-scrolling-container preseason-scrolling-container">
+              <div class="team-preseason-container">
+                <h2>Preseason Games</h2>
+                <ul class="team-preseason">
+                  @foreach ($preseason as $key => $game)
+                    @php
+                      $gameDateTime = Carbon\Carbon::create($game['startTimeUTC'])->tz('America/New_York');
+                      $formattedGameDate = $gameDateTime->format('D M j, Y');
+                      $formattedGameTime = $gameDateTime->format('h:i A');
+                    @endphp
+                    <li class="team-preseason-card">
+                      @include('includes._game_card')
+                      <span class='game-number'>
+                        {{ $key + 1 }} of {{ count($preseason) }}
+                      </span>
+                      @if ($game['homeTeam']['abbrev'] === $soloTeam['teamAbbrev']['default'])
+                        <span class="home-game-indicator"></span>
+                      @endif
+                    </li>
+                  @endforeach
+                </ul>
+              </div>
+            </div>
           </div>
-        </div>
-      @endif --}}
-      <div class="team-logo-image" hidden>{{ $soloTeam['teamLogo'] }}</div>
+        @endif --}}
+
+      </div>
     </div>
-  </div>
 </main>
 <script src="{{ asset('js/teamScript.js') }}"></script>
 @include('includes._footer')

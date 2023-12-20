@@ -706,21 +706,6 @@
     width: 100%;
     z-index: 1;
 } */
-.regular-season-container {
-    min-height: 525px;
-    /* outline: solid 1px blue; */
-}
-
-.regular-season-container h2 {
-    border-bottom: solid 1px #000;
-    color: #b22222;
-    display: inline-block;
-    font-size: 18px;
-    margin-left: 20px;
-    padding: 10px 25px 0 0;
-    width: auto;
-    /* outline: solid 1px blue; */
-}
 
 .team-preseason-container {
     background-color: #dcdcdc;
@@ -818,8 +803,4 @@
     .owl-carousel {
         padding: 0;
     }
-
-    /* .regular-season-container {
-        min-height: 570px;
-    } */
 }
