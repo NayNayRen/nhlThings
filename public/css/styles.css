@@ -1538,6 +1538,7 @@ header h1 {
     width: 8px;
 }
 
+.officials-container,
 .player-summary,
 .team-summary {
     -ms-flex-direction: row;
@@ -1558,6 +1559,7 @@ header h1 {
     /* outline: solid 1px red; */
 }
 
+.officials-container li,
 .player-summary li,
 .team-summary li {
     -webkit-box-shadow: 0 2px 5px #808080;
@@ -1574,12 +1576,14 @@ header h1 {
     /* outline: solid 1px #000; */
 }
 
+.officials-container li:last-of-type,
 .player-summary li:last-of-type,
 .team-summary li:last-of-type {
     margin: 0 0 0 0;
     /* outline: solid 1px red; */
 }
 
+.officials-container li h3,
 .player-summary li h3,
 .team-summary li h3 {
     background-color: #000;
@@ -1589,6 +1593,7 @@ header h1 {
     padding: 3px 20px;
 }
 
+.officials-container li p,
 .player-summary li p,
 .team-summary li p {
     /* background-color: #024e98; */

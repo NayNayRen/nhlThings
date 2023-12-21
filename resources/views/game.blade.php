@@ -158,6 +158,9 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
           {{-- penalties --}}
           @include('includes._matchup_game_penalties')
 
+          {{-- officials --}}
+          @include('includes._matchup_game_officials')
+
         </div>
       @endif
       {{-- LIVE GAME --}}
@@ -271,6 +274,9 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
 
           {{-- penalties --}}
           @include('includes._matchup_game_penalties')
+
+          {{-- officials --}}
+          @include('includes._matchup_game_officials')
 
         </div>
       @endif
