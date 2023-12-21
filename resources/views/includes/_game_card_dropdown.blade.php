@@ -243,18 +243,34 @@
           <p>{{ $gameData['matchup']['teamLeadersL5'][3]['homeLeader']['name']['default'] }}</p>
         </div>
       </li>
-      <li class='game-dropdown-goals'>
-        <div>
-          <p>{{ $gameData['matchup']['goalieComparison']['awayTeam'][0]['record'] }}</p>
-          <h3>Goalies</h3>
-          <p>{{ $gameData['matchup']['goalieComparison']['homeTeam'][0]['record'] }}</p>
-        </div>
-        <div>
-          <p>{{ $gameData['matchup']['goalieComparison']['awayTeam'][0]['name']['default'] }}</p>
-          <span></span>
-          <p>{{ $gameData['matchup']['goalieComparison']['homeTeam'][0]['name']['default'] }}</p>
-        </div>
-      </li>
+      @if (array_key_exists('goalieComparison', $gameData['matchup']))
+        <li class='game-dropdown-goals'>
+          <div>
+            <p>{{ $gameData['matchup']['goalieComparison']['awayTeam'][0]['record'] }}</p>
+            <h3>Goalies</h3>
+            <p>{{ $gameData['matchup']['goalieComparison']['homeTeam'][0]['record'] }}</p>
+          </div>
+          <div>
+            <p>{{ $gameData['matchup']['goalieComparison']['awayTeam'][0]['name']['default'] }}</p>
+            <span></span>
+            <p>{{ $gameData['matchup']['goalieComparison']['homeTeam'][0]['name']['default'] }}</p>
+          </div>
+        </li>
+      @else
+        <li class='game-dropdown-goals'>
+          <div>
+            <p>No Data</p>
+            <h3>Goalies</h3>
+            <p>No Data</p>
+          </div>
+          <div>
+            <p>No Data</p>
+            <span></span>
+            <p>No Data</p>
+          </div>
+        </li>
+      @endif
+
       <a href="{{ route('games.game', $game['id']) }}" class="game-stats-button" target="_blank">
         Match Up <i class='fa fa-arrow-right' aria-hidden='true'></i>
       </a>

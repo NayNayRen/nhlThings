@@ -164,6 +164,7 @@
     box-shadow: 0 2px 2px #808080;
     color: #000;
     cursor: pointer;
+    display: inline-block;
     font-size: 14px;
     font-weight: bold;
     margin: 2px 0 2px 2px;
@@ -919,8 +920,10 @@ header h1 {
     display: -ms-grid;
     display: grid;
     grid-auto-flow: row;
+    margin: 0 auto;
     overflow-x: auto;
     padding: 20px 15px;
+    width: 85%;
     /* outline: solid 1px blue; */
 }
 
@@ -1190,7 +1193,7 @@ header h1 {
     border-top: 1px solid #000;
     font-size: 14px;
     height: 100%;
-    min-width: 80px;
+    min-width: 75px;
     padding: 2px 3px;
     position: relative;
     text-align: center;
@@ -1243,7 +1246,7 @@ header h1 {
     color: #fff;
     font-size: 14px;
     height: 100%;
-    min-width: 80px;
+    min-width: 75px;
     padding: 2px 3px;
     text-align: center;
     width: 100%;
@@ -1632,19 +1635,9 @@ header h1 {
 
 .regular-season-container {
     min-height: 525px;
+    position: relative;
     /* outline: solid 1px blue; */
 }
-
-/* .regular-season-container h2 {
-  border-bottom: solid 1px #000;
-  color: #b22222;
-  display: inline-block;
-  font-size: 18px;
-  margin-left: 20px;
-  padding: 10px 25px 0 0;
-  width: auto;
-  outline: solid 1px blue;
-} */
 
 .roster-dropdown-container {
     margin-right: 0;
@@ -1803,10 +1796,17 @@ header h1 {
     z-index: 1;
 }
 
+.team-heading-left div {
+    margin: 5px 0;
+    width: 100%;
+    /* outline: solid 1px red; */
+}
+
 .team-heading-record {
-    color: #b22222;
+    color: #000;
     font-size: 16px;
     font-weight: bold;
+    /* outline: solid 1px red; */
 }
 
 .team-site a {
@@ -1840,7 +1840,8 @@ header h1 {
 .team-stats-container {
     position: relative;
 }
-#team-stats {
+#team-finished,
+#team-upcoming {
     left: 0;
     position: absolute;
     top: -150px;
@@ -1946,6 +1947,10 @@ header h1 {
     .game-matchup-main-container-three-stars {
         width: 700px;
     }
+
+    .horizontal-scrolling-container {
+        width: 90%;
+    }
 }
 
 @media (max-width: 1000px) {
@@ -1991,9 +1996,9 @@ header h1 {
         width: 80%;
     }
 
-    /* .game-matchup-main-container-penalties li:nth-of-type(odd) p {
-        width: 80%;
-    } */
+    .horizontal-scrolling-container {
+        width: 95%;
+    }
 
     .league-heading-container,
     .league-standings-heading-container,
@@ -2064,8 +2069,8 @@ header h1 {
     .pacific-button:hover,
     .team-stats-button:hover,
     .west-button:hover {
-        -webkit-box-shadow: none;
-        box-shadow: none;
+        -webkit-box-shadow: 0 2px 2px #808080;
+        box-shadow: 0 2px 2px #808080;
     }
 
     .current-date-time-container {
@@ -2138,6 +2143,10 @@ header h1 {
 
     .header-nav {
         padding: 25px 35px 120px 0;
+    }
+
+    .horizontal-scrolling-container {
+        width: 100%;
     }
 
     .league-data-container,
@@ -2311,10 +2320,6 @@ header h1 {
     .nhl-copyright-container {
         width: 100%;
     }
-
-    /* .player-draft-dropdown-container {
-        border-bottom-right-radius: 0;
-    } */
 
     .player-heading-logo,
     .team-heading-logo {

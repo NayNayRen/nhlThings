@@ -33,12 +33,11 @@ url('{{ $soloTeam['teamLogo'] }}'); background-size: contain; background-positio
       <div class="team-heading-container">
         <div class="team-heading-left">
           <h2>{{ $soloTeam['teamName']['default'] }}</h2>
-          <p class="team-heading-record">
-            {{ $soloTeam['wins'] }} -
-            {{ $soloTeam['losses'] }} -
-            {{ $soloTeam['ties'] }}
-          </p>
-          <a href="#team-stats" class="team-stats-button">Team Stats</a>
+          <div>
+            <a href="#team-upcoming" class="team-stats-button">Upcoming</a>
+            <a href="#team-finished" class="team-stats-button">Finished</a>
+          </div>
+
         </div>
         <div class="team-heading-logo">
           <img src={{ $soloTeam['teamLogo'] }} alt="{{ $soloTeam['teamName']['default'] }} Logo" width="100"
@@ -70,105 +69,15 @@ url('{{ $soloTeam['teamLogo'] }}'); background-size: contain; background-positio
           </li>
         </ul>
       </div>
-      {{-- UPCOMING GAMES --}}
-      @if (count($upcomingGames) < 1)
-        <div class="regular-season-container">
-          <h2>Upcoming Games</h2>
-          <ul class="league-regular-season owl-carousel upcoming owl-theme upcoming-games">
-            <li class="league-game-card">
-              <div class="game-date-location">
-                {{ $currentDate }}
-              </div>
-              <div class="game-team-container">
-                <p>No games today...</p>
-              </div>
-            </li>
-          </ul>
-        </div>
-      @else
-        <div class="regular-season-container">
-          <h2>Upcoming Games
-            <p>Home Game :
-              <span></span>
-            </p>
-          </h2>
-          <ul class="league-regular-season owl-carousel owl-theme upcoming-games transition-container">
-            @foreach ($upcomingGames as $key => $game)
-              @php
-                $gameDateTime = Carbon\Carbon::create($game['startTimeUTC'])->tz('America/New_York');
-                $formattedGameDate = $gameDateTime->format('D M j, Y');
-                $formattedGameTime = $gameDateTime->format('h:i A');
-              @endphp
-              {{-- GAME CARDS --}}
-              <li class="league-game-card">
-                {{-- dropdown menus --}}
-                @include('includes._game_card_dropdown')
-                {{-- game card --}}
-                @include('includes._game_card')
-                <span class='game-number'>
-                  {{ count($finishedGames) + 1 + $key }} of {{ count($upcomingGames) + count($finishedGames) }}
-                </span>
-                @if ($game['homeTeam']['abbrev'] === $soloTeam['teamAbbrev']['default'])
-                  <span class="home-game-indicator"></span>
-                @endif
-                {{-- used to auto open dropdowns --}}
-                <div class="game-state" hidden>{{ $game['gameState'] }}</div>
-              </li>
-            @endforeach
-          </ul>
-        </div>
-      @endif
-      {{-- FINISHED GAMES --}}
-      @if (count($finishedGames) < 1)
-        <div class="regular-season-container">
-          <h2>Finished Games</h2>
-          <ul class="league-regular-season owl-carousel owl-theme finished-games">
-            <li class="league-game-card">
-              <div class="game-date-location">
-                {{ $currentDate }}
-              </div>
-              <div class="game-team-container">
-                <p>No games today...</p>
-              </div>
-            </li>
-          </ul>
-        </div>
-      @else
-        <div class="regular-season-container">
-          <h2>Finished Games
-            <p>Home Game :
-              <span></span>
-            </p>
-          </h2>
-          <ul class="league-regular-season owl-carousel owl-theme finished-games transition-container">
-            @foreach ($finishedGames as $key => $game)
-              @php
-                $gameDateTime = Carbon\Carbon::create($game['startTimeUTC'])->tz('America/New_York');
-                $formattedGameDate = $gameDateTime->format('D M j, Y');
-                $formattedGameTime = $gameDateTime->format('h:i A');
-              @endphp
-              {{-- GAME CARDS --}}
-              <li class="league-game-card">
-                {{-- dropdown menu --}}
-                @include('includes._game_card_dropdown')
-                {{-- game card --}}
-                @include('includes._game_card')
-                <span class='game-number'>
-                  {{ count($finishedGames) - $key }} of {{ count($upcomingGames) + count($finishedGames) }}
-                </span>
-                @if ($game['homeTeam']['abbrev'] === $soloTeam['teamAbbrev']['default'])
-                  <span class="home-game-indicator"></span>
-                @endif
-                {{-- used to auto open dropdowns --}}
-                <div class="game-state" hidden>{{ $game['gameState'] }}</div>
-              </li>
-            @endforeach
-          </ul>
-        </div>
-      @endif
+      {{-- season stats --}}
       <div class="team-stats-container">
-        <div id="team-stats"></div>
-        <h2>Regular Season</h2>
+        <h2>Regular Season
+          <p class="team-heading-record">
+            {{ $soloTeam['wins'] }} -
+            {{ $soloTeam['losses'] }} -
+            {{ $soloTeam['ties'] }}
+          </p>
+        </h2>
         <div class="horizontal-scrolling-container">
           <ul class="team-stats">
             <li>
@@ -265,8 +174,111 @@ url('{{ $soloTeam['teamLogo'] }}'); background-size: contain; background-positio
             </li>
           </ul>
         </div>
-        {{-- PRESEASON GAMES --}}
-        {{-- @if (count($preseason) < 1)
+      </div>
+
+      {{-- UPCOMING GAMES --}}
+      @if (count($upcomingGames) < 1)
+        <div class="regular-season-container">
+          <div id="team-upcoming"></div>
+          <h2>Upcoming Games</h2>
+          <ul class="league-regular-season owl-carousel upcoming owl-theme upcoming-games">
+            <li class="league-game-card">
+              <div class="game-date-location">
+                {{ $currentDate }}
+              </div>
+              <div class="game-team-container">
+                <p>No games today...</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      @else
+        <div class="regular-season-container">
+          <div id="team-upcoming"></div>
+          <h2>Upcoming Games
+            <p>Home Game :
+              <span></span>
+            </p>
+          </h2>
+          <ul class="league-regular-season owl-carousel owl-theme upcoming-games transition-container">
+            @foreach ($upcomingGames as $key => $game)
+              @php
+                $gameDateTime = Carbon\Carbon::create($game['startTimeUTC'])->tz('America/New_York');
+                $formattedGameDate = $gameDateTime->format('D M j, Y');
+                $formattedGameTime = $gameDateTime->format('h:i A');
+              @endphp
+              {{-- GAME CARDS --}}
+              <li class="league-game-card">
+                {{-- dropdown menus --}}
+                @include('includes._game_card_dropdown')
+                {{-- game card --}}
+                @include('includes._game_card')
+                <span class='game-number'>
+                  {{ count($finishedGames) + 1 + $key }} of {{ count($upcomingGames) + count($finishedGames) }}
+                </span>
+                @if ($game['homeTeam']['abbrev'] === $soloTeam['teamAbbrev']['default'])
+                  <span class="home-game-indicator"></span>
+                @endif
+                {{-- used to auto open dropdowns --}}
+                <div class="game-state" hidden>{{ $game['gameState'] }}</div>
+              </li>
+            @endforeach
+          </ul>
+        </div>
+      @endif
+      {{-- FINISHED GAMES --}}
+      @if (count($finishedGames) < 1)
+        <div class="regular-season-container">
+          <div id="team-finished"></div>
+          <h2>Finished Games</h2>
+          <ul class="league-regular-season owl-carousel owl-theme finished-games">
+            <li class="league-game-card">
+              <div class="game-date-location">
+                {{ $currentDate }}
+              </div>
+              <div class="game-team-container">
+                <p>No games today...</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      @else
+        <div class="regular-season-container">
+          <div id="team-finished"></div>
+          <h2>Finished Games
+            <p>Home Game :
+              <span></span>
+            </p>
+          </h2>
+          <ul class="league-regular-season owl-carousel owl-theme finished-games transition-container">
+            @foreach ($finishedGames as $key => $game)
+              @php
+                $gameDateTime = Carbon\Carbon::create($game['startTimeUTC'])->tz('America/New_York');
+                $formattedGameDate = $gameDateTime->format('D M j, Y');
+                $formattedGameTime = $gameDateTime->format('h:i A');
+              @endphp
+              {{-- GAME CARDS --}}
+              <li class="league-game-card">
+                {{-- dropdown menu --}}
+                @include('includes._game_card_dropdown')
+                {{-- game card --}}
+                @include('includes._game_card')
+                <span class='game-number'>
+                  {{ count($finishedGames) - $key }} of {{ count($upcomingGames) + count($finishedGames) }}
+                </span>
+                @if ($game['homeTeam']['abbrev'] === $soloTeam['teamAbbrev']['default'])
+                  <span class="home-game-indicator"></span>
+                @endif
+                {{-- used to auto open dropdowns --}}
+                <div class="game-state" hidden>{{ $game['gameState'] }}</div>
+              </li>
+            @endforeach
+          </ul>
+        </div>
+      @endif
+
+      {{-- PRESEASON GAMES --}}
+      {{-- @if (count($preseason) < 1)
           <div class="horizontal-scrolling-container preseason-scrolling-container">
             <div class="team-preseason-container">
               <h2>Preseason Games</h2>
@@ -308,7 +320,7 @@ url('{{ $soloTeam['teamLogo'] }}'); background-size: contain; background-positio
           </div>
         @endif --}}
 
-      </div>
+
     </div>
 </main>
 <script src="{{ asset('js/teamScript.js') }}"></script>
