@@ -1864,11 +1864,13 @@ header h1 {
 }
 
 .team-lineup-away-container {
+    -webkit-box-shadow: 0 2px 2px #808080;
     -webkit-transition: height 250ms ease, opacity 250ms ease;
     background-color: #fff;
     border-bottom: solid 1px #000;
     border-right: solid 1px #000;
     border-bottom-right-radius: 5px;
+    box-shadow: 0 2px 2px #808080;
     cursor: default;
     height: 0;
     left: 0;
@@ -1901,11 +1903,13 @@ header h1 {
 }
 
 .team-lineup-home-container {
+    -webkit-box-shadow: 0 2px 2px #808080;
     -webkit-transition: height 250ms ease, opacity 250ms ease;
     background-color: #fff;
     border-bottom: solid 1px #000;
     border-left: solid 1px #000;
     border-bottom-left-radius: 5px;
+    box-shadow: 0 2px 2px #808080;
     cursor: default;
     height: 0;
     opacity: 0;
