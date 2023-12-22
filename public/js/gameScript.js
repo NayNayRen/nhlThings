@@ -18,13 +18,13 @@ function stickHeading() {
   else if (document.documentElement.scrollTop > 0 && window.innerWidth < 700 && window.innerWidth > 400) {
     stickyHeading.style.position = "fixed";
     stickyHeading.style.width = "100%";
-    stickyHeading.style.top = "86px";
+    stickyHeading.style.top = "85px";
     scrollPoint.style.paddingTop = "120px";
   }
   else if (document.documentElement.scrollTop > 0 && window.innerWidth < 400) {
     stickyHeading.style.position = "fixed";
     stickyHeading.style.width = "100%";
-    stickyHeading.style.top = "111px";
+    stickyHeading.style.top = "110px";
     scrollPoint.style.paddingTop = "120px";
   }
   else {
@@ -38,6 +38,10 @@ function stickHeading() {
 function loadGameScript() {
   const checkGameState = document.querySelector('.game-state');
   const periods = document.querySelectorAll('.game-matchup-periods');
+  const awayLineupButton = document.querySelector('.team-lineup-away-button');
+  const awayLineupContainer = document.querySelector('.team-lineup-away-container');
+  const homeLineupButton = document.querySelector('.team-lineup-home-button');
+  const homeLineupContainer = document.querySelector('.team-lineup-home-container');
   periods.forEach((period) => {
     // console.log(period);
     if (period.childNodes.length === 13) {
@@ -83,6 +87,15 @@ function loadGameScript() {
       checkGameState.parentElement.childNodes[1].childNodes[9].style.backgroundColor = '#b22222';
     }
   }
+
+  awayLineupButton.addEventListener('click', () => {
+    // console.log(awayLineupButton);
+    awayLineupButton.childNodes[13].classList.toggle('rotate');
+  });
+  homeLineupButton.addEventListener('click', () => {
+    // console.log(homeLineupButton);
+    homeLineupButton.childNodes[13].classList.toggle('rotate');
+  });
 
 }
 window.addEventListener('resize', () => {
