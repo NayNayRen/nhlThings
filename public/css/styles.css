@@ -71,12 +71,6 @@
     width: 100%;
 }
 
-/* has to be after the lists above to work */
-.dropdown-list-toggle {
-    height: 300px;
-    opacity: 1;
-}
-
 .about-dropdown-list a {
     -webkit-transition: opacity 150ms ease;
     color: #1e90ff;
@@ -757,12 +751,11 @@ footer {
 .game-matchup-main-container-three-stars {
     -ms-flex-align: start;
     -ms-flex-direction: row;
-    -ms-flex-pack: space-evenly;
+    -ms-flex-pack: distribute;
     -ms-flex-wrap: wrap;
     -webkit-box-align: start;
     -webkit-box-direction: normal;
     -webkit-box-orient: horizontal;
-    -webkit-box-pack: space-evenly;
     align-items: flex-start;
     display: -ms-flexbox;
     display: -webkit-box;
@@ -1848,7 +1841,8 @@ header h1 {
     color: #808080;
 }
 
-.team-lineup-away-button i {
+.team-lineup-away-button i,
+.team-lineup-home-button i {
     -webkit-transition: transform 150ms ease;
     bottom: 5px;
     position: absolute;
@@ -1870,29 +1864,33 @@ header h1 {
 }
 
 .team-lineup-away-container {
+    -webkit-transition: height 250ms ease, opacity 250ms ease;
     background-color: #fff;
     border-bottom: solid 1px #000;
     border-right: solid 1px #000;
-    display: none;
-    height: 300px;
+    border-bottom-right-radius: 5px;
+    cursor: default;
+    height: 0;
     left: 0;
+    opacity: 0;
     overflow-y: scroll;
-    padding: 5px;
+    padding: 10px;
     position: absolute;
     top: 100%;
     width: 200px;
+    transition: height 250ms ease, opacity 250ms ease;
+}
+
+.team-lineup-away-container h4,
+.team-lineup-home-container h4 {
+    color: #b22222;
+    border-bottom: solid 1px #000;
+    width: 80%;
 }
 
 .team-lineup-away-container p,
 .team-lineup-home-container p {
     font-size: 14px;
-}
-
-.team-lineup-home-button i {
-    -webkit-transition: transform 150ms ease;
-    bottom: 5px;
-    position: absolute;
-    transition: transform 150ms ease;
 }
 
 .team-lineup-home-button-container {
@@ -1903,17 +1901,21 @@ header h1 {
 }
 
 .team-lineup-home-container {
+    -webkit-transition: height 250ms ease, opacity 250ms ease;
     background-color: #fff;
     border-bottom: solid 1px #000;
     border-left: solid 1px #000;
-    display: none;
-    height: 300px;
+    border-bottom-left-radius: 5px;
+    cursor: default;
+    height: 0;
+    opacity: 0;
     overflow-y: scroll;
-    padding: 5px;
+    padding: 10px;
     position: absolute;
     right: 0;
     top: 100%;
     width: 200px;
+    transition: height 250ms ease, opacity 250ms ease;
 }
 
 .team-site a {
@@ -2037,6 +2039,12 @@ header h1 {
     transition: all 150ms ease;
     width: 50px;
     z-index: 3;
+}
+
+/* has to be after containers its added to to work */
+.dropdown-list-toggle {
+    height: 300px;
+    opacity: 1;
 }
 
 @media (max-width: 1300px) {
@@ -2192,6 +2200,10 @@ header h1 {
     .team-heading-container,
     .player-heading-container {
         min-height: 120px;
+    }
+
+    .game-matchup-heading-container {
+        padding: 30px 10px 15px 10px;
     }
 
     .game-matchup-heading-container h2,
@@ -2372,7 +2384,7 @@ header h1 {
         -ms-flex-pack: center;
         -webkit-box-pack: center;
         justify-content: center;
-        padding: 20px 10px 15px 10px;
+        /* padding: 20px 10px 15px 10px; */
     }
 
     .game-matchup-heading-container h2,

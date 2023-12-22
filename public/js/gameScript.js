@@ -19,13 +19,13 @@ function stickHeading() {
     stickyHeading.style.position = "fixed";
     stickyHeading.style.width = "100%";
     stickyHeading.style.top = "85px";
-    scrollPoint.style.paddingTop = "120px";
+    scrollPoint.style.paddingTop = "140px";
   }
   else if (document.documentElement.scrollTop > 0 && window.innerWidth < 400) {
     stickyHeading.style.position = "fixed";
     stickyHeading.style.width = "100%";
     stickyHeading.style.top = "110px";
-    scrollPoint.style.paddingTop = "120px";
+    scrollPoint.style.paddingTop = "130px";
   }
   else {
     stickyHeading.style.position = "relative";
@@ -89,12 +89,14 @@ function loadGameScript() {
   }
 
   awayLineupButton.addEventListener('click', () => {
-    // console.log(awayLineupButton);
+    // console.log(awayLineupContainer);
     awayLineupButton.childNodes[13].classList.toggle('rotate');
+    awayLineupContainer.classList.toggle('dropdown-list-toggle');
   });
   homeLineupButton.addEventListener('click', () => {
     // console.log(homeLineupButton);
     homeLineupButton.childNodes[13].classList.toggle('rotate');
+    homeLineupContainer.classList.toggle('dropdown-list-toggle');
   });
 
 }

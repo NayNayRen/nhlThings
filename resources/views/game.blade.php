@@ -84,7 +84,6 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
             </button>
           </div>
           <div class="team-lineup-away-container">
-            <h3>Away</h3>
             <h4>Forwards</h4>
             @foreach ($gameBoxscores['boxscore']['playerByGameStats']['awayTeam']['forwards'] as $forward)
               <p>{{ $forward['name']['default'] }}</p>
@@ -111,7 +110,6 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
             </button>
           </div>
           <div class="team-lineup-home-container">
-            <h3>Home</h3>
             <h4>Forwards</h4>
             @foreach ($gameBoxscores['boxscore']['playerByGameStats']['homeTeam']['forwards'] as $forward)
               <p>{{ $forward['name']['default'] }}</p>
@@ -289,7 +287,6 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
             </button>
           </div>
           <div class="team-lineup-away-container">
-            <h3>Away</h3>
             <h4>Forwards</h4>
             @foreach ($gameBoxscores['boxscore']['playerByGameStats']['awayTeam']['forwards'] as $forward)
               <p>{{ $forward['name']['default'] }}</p>
@@ -316,7 +313,6 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
             </button>
           </div>
           <div class="team-lineup-home-container">
-            <h3>Home</h3>
             <h4>Forwards</h4>
             @foreach ($gameBoxscores['boxscore']['playerByGameStats']['homeTeam']['forwards'] as $forward)
               <p>{{ $forward['name']['default'] }}</p>
