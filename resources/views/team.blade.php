@@ -121,7 +121,7 @@ url('{{ $soloTeam['teamLogo'] }}'); background-size: contain; background-positio
         <div class="horizontal-scrolling-container">
           <ul class="team-stats">
             <li>
-              <h3 title="Record Type">Record Type</h3>
+              <h3 title="Record">Record</h3>
               <h3 title="Games Played">GP</h3>
               <h3 title="Wins">W</h3>
               <h3 title="Losses">L</h3>

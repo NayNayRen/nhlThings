@@ -1151,6 +1151,26 @@ header h1 {
     display: none;
 }
 
+.league-standings-table h3,
+.player-award-dropdown-list h3,
+.player-draft-dropdown-list h3,
+.player-last-five h3,
+.player-stats h3,
+.team-stats h3 {
+    background-color: #000;
+    color: #fff;
+    font-size: 14px;
+    height: 100%;
+    min-width: 75px;
+    padding: 2px 3px;
+    text-align: center;
+    width: 100%;
+}
+
+.league-standings-table h3:first-of-type {
+    min-width: 220px;
+}
+
 .league-standings-table li,
 .player-award-dropdown-list li,
 .player-draft-dropdown-list li,
@@ -1183,6 +1203,27 @@ header h1 {
     background-color: rgba(220, 220, 220, 0.75);
 }
 
+.league-standings-table li p:first-of-type {
+    color: #000;
+    font-weight: bold;
+    min-width: 220px;
+    padding: 2px 5px;
+    width: auto;
+}
+
+.league-standings-table li span,
+.player-last-five li span:first-of-type,
+.player-stats li span:first-of-type {
+    -webkit-transform: translateY(-50%);
+    color: #b22222;
+    font-size: 14px;
+    left: 6px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
 .league-standings-table p,
 .player-award-dropdown-list p,
 .player-draft-dropdown-list p,
@@ -1200,20 +1241,6 @@ header h1 {
     width: 100%;
 }
 
-/* .league-standings-table p i,
-.player-stats p i,
-.team-stats p i {
-    font-size: 12px;
-} */
-
-.league-standings-table li p:first-of-type {
-    color: #000;
-    font-weight: bold;
-    min-width: 225px;
-    padding: 2px 5px;
-    width: auto;
-}
-
 .league-standings-table p:last-of-type,
 .player-award-dropdown-list p:last-of-type,
 .player-draft-dropdown-list p:last-of-type,
@@ -1223,38 +1250,11 @@ header h1 {
     border-right: none;
 }
 
-.league-standings-table li span,
-.player-last-five li span:first-of-type,
-.player-stats li span:first-of-type {
-    -webkit-transform: translateY(-50%);
-    color: #b22222;
-    font-size: 14px;
-    left: 6px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1;
-}
-
-.league-standings-table h3,
-.player-award-dropdown-list h3,
-.player-draft-dropdown-list h3,
-.player-last-five h3,
-.player-stats h3,
-.team-stats h3 {
-    background-color: #000;
-    color: #fff;
-    font-size: 14px;
-    height: 100%;
-    min-width: 75px;
-    padding: 2px 3px;
-    text-align: center;
-    width: 100%;
-}
-
-.league-standings-table h3:first-of-type {
-    min-width: 220px;
-}
+/* .league-standings-table p i,
+.player-stats p i,
+.team-stats p i {
+    font-size: 12px;
+} */
 
 .main {
     -ms-flex-align: center;
@@ -1328,6 +1328,75 @@ header h1 {
     text-align: center;
     width: 500px;
     /* outline: solid 1px blue; */
+}
+
+.officials-container,
+.player-summary,
+.team-summary {
+    -ms-flex-direction: row;
+    -ms-flex-pack: space-evenly;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -webkit-box-pack: space-evenly;
+    cursor: default;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 0;
+    max-width: 100%;
+    min-width: 825px;
+    padding: 0 25px;
+    /* outline: solid 1px red; */
+}
+
+.officials-container li,
+.player-summary li,
+.team-summary li {
+    -webkit-box-shadow: 0 2px 5px #808080;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px #808080;
+    font-size: 14px;
+    margin: 0 15px 0 0;
+    overflow: hidden;
+    min-width: -moz-fit-content;
+    min-width: -webkit-fit-content;
+    min-width: fit-content;
+    text-align: center;
+    /* outline: solid 1px #000; */
+}
+
+.officials-container li:last-of-type,
+.player-summary li:last-of-type,
+.team-summary li:last-of-type {
+    margin: 0 0 0 0;
+    /* outline: solid 1px red; */
+}
+
+.officials-container li h3,
+.player-summary li h3,
+.team-summary li h3 {
+    background-color: #000;
+    color: #fff;
+    display: block;
+    font-size: 14px;
+    padding: 3px 20px;
+}
+
+.officials-container li p,
+.player-summary li p,
+.team-summary li p {
+    /* background-color: #024e98; */
+    background-color: #fff;
+    /* color: #fff; */
+    color: #000;
+    font-weight: bold;
+    padding: 3px 20px;
+    min-width: -moz-fit-content;
+    min-width: -webkit-fit-content;
+    min-width: fit-content;
 }
 
 .player-awards-container,
@@ -1485,7 +1554,7 @@ header h1 {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    margin-left: 25px;
+    margin-left: 20px;
     width: 100px;
     /* outline: solid 1px blue; */
 }
@@ -1536,75 +1605,6 @@ header h1 {
     top: 50%;
     transform: translateY(-50%);
     width: 8px;
-}
-
-.officials-container,
-.player-summary,
-.team-summary {
-    -ms-flex-direction: row;
-    -ms-flex-pack: space-evenly;
-    -webkit-box-direction: normal;
-    -webkit-box-orient: horizontal;
-    -webkit-box-pack: space-evenly;
-    cursor: default;
-    display: -ms-flexbox;
-    display: -webkit-box;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    margin: 0;
-    max-width: 100%;
-    min-width: 825px;
-    padding: 0 25px;
-    /* outline: solid 1px red; */
-}
-
-.officials-container li,
-.player-summary li,
-.team-summary li {
-    -webkit-box-shadow: 0 2px 5px #808080;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px #808080;
-    font-size: 14px;
-    margin: 0 15px 0 0;
-    overflow: hidden;
-    min-width: -moz-fit-content;
-    min-width: -webkit-fit-content;
-    min-width: fit-content;
-    text-align: center;
-    /* outline: solid 1px #000; */
-}
-
-.officials-container li:last-of-type,
-.player-summary li:last-of-type,
-.team-summary li:last-of-type {
-    margin: 0 0 0 0;
-    /* outline: solid 1px red; */
-}
-
-.officials-container li h3,
-.player-summary li h3,
-.team-summary li h3 {
-    background-color: #000;
-    color: #fff;
-    display: block;
-    font-size: 14px;
-    padding: 3px 20px;
-}
-
-.officials-container li p,
-.player-summary li p,
-.team-summary li p {
-    /* background-color: #024e98; */
-    background-color: #fff;
-    /* color: #fff; */
-    color: #000;
-    font-weight: bold;
-    padding: 3px 20px;
-    min-width: -moz-fit-content;
-    min-width: -webkit-fit-content;
-    min-width: fit-content;
 }
 
 .player-team {
