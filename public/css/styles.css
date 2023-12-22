@@ -2457,6 +2457,12 @@ header h1 {
         margin-right: 15px;
     }
 
+    .team-lineup-away-button,
+    .team-lineup-home-button {
+        justify-content: flex-end;
+        padding: 0 0 30px 0;
+    }
+
     .team-lineup-away-container,
     .team-lineup-home-container {
         width: calc(50% - 2px);
