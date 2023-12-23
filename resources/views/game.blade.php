@@ -182,7 +182,11 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                     <p>{{ $goalie['evenStrengthGoalsAgainst'] }}</p>
                     <p>{{ $goalie['powerPlayGoalsAgainst'] }}</p>
                     <p>{{ $goalie['shorthandedGoalsAgainst'] }}</p>
-                    <p>{{ $goalie['pim'] }}</p>
+                    @if (array_key_exists('pim', $goalie))
+                      <p>{{ $goalie['pim'] }}</p>
+                    @else
+                      <p>No Data</p>
+                    @endif
                     @if (array_key_exists('toi', $goalie))
                       <p>{{ $goalie['toi'] }}</p>
                     @else
@@ -237,7 +241,11 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                     <p>{{ $forward['blockedShots'] }}</p>
                     <p>{{ $forward['shots'] }}</p>
                     <p>{{ $forward['faceoffs'] }}</p>
-                    <p>{{ $forward['toi'] }}</p>
+                    @if (array_key_exists('toi', $forward))
+                      <p>{{ $forward['toi'] }}</p>
+                    @else
+                      <p>No Data</p>
+                    @endif
                   </li>
                 @endforeach
               </ul>
@@ -266,7 +274,11 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                     <p>{{ $defender['blockedShots'] }}</p>
                     <p>{{ $defender['shots'] }}</p>
                     <p>{{ $defender['faceoffs'] }}</p>
-                    <p>{{ $defender['toi'] }}</p>
+                    @if (array_key_exists('toi', $defender))
+                      <p>{{ $defender['toi'] }}</p>
+                    @else
+                      <p>No Data</p>
+                    @endif
                   </li>
                 @endforeach
               </ul>
@@ -296,8 +308,16 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                     <p>{{ $goalie['evenStrengthGoalsAgainst'] }}</p>
                     <p>{{ $goalie['powerPlayGoalsAgainst'] }}</p>
                     <p>{{ $goalie['shorthandedGoalsAgainst'] }}</p>
-                    <p>{{ $goalie['pim'] }}</p>
-                    <p>{{ $goalie['toi'] }}</p>
+                    @if (array_key_exists('pim', $goalie))
+                      <p>{{ $goalie['pim'] }}</p>
+                    @else
+                      <p>No Data</p>
+                    @endif
+                    @if (array_key_exists('toi', $goalie))
+                      <p>{{ $goalie['toi'] }}</p>
+                    @else
+                      <p>No Data</p>
+                    @endif
                   </li>
                 @endforeach
               </ul>
@@ -564,7 +584,11 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                     <p>{{ $goalie['evenStrengthGoalsAgainst'] }}</p>
                     <p>{{ $goalie['powerPlayGoalsAgainst'] }}</p>
                     <p>{{ $goalie['shorthandedGoalsAgainst'] }}</p>
-                    <p>{{ $goalie['pim'] }}</p>
+                    @if (array_key_exists('pim', $goalie))
+                      <p>{{ $goalie['pim'] }}</p>
+                    @else
+                      <p>No Data</p>
+                    @endif
                     @if (array_key_exists('toi', $goalie))
                       <p>{{ $goalie['toi'] }}</p>
                     @else
@@ -619,7 +643,11 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                     <p>{{ $forward['blockedShots'] }}</p>
                     <p>{{ $forward['shots'] }}</p>
                     <p>{{ $forward['faceoffs'] }}</p>
-                    <p>{{ $forward['toi'] }}</p>
+                    @if (array_key_exists('toi', $forward))
+                      <p>{{ $forward['toi'] }}</p>
+                    @else
+                      <p>No Data</p>
+                    @endif
                   </li>
                 @endforeach
               </ul>
@@ -648,7 +676,11 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                     <p>{{ $defender['blockedShots'] }}</p>
                     <p>{{ $defender['shots'] }}</p>
                     <p>{{ $defender['faceoffs'] }}</p>
-                    <p>{{ $defender['toi'] }}</p>
+                    @if (array_key_exists('toi', $defender))
+                      <p>{{ $defender['toi'] }}</p>
+                    @else
+                      <p>No Data</p>
+                    @endif
                   </li>
                 @endforeach
               </ul>
@@ -678,8 +710,16 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                     <p>{{ $goalie['evenStrengthGoalsAgainst'] }}</p>
                     <p>{{ $goalie['powerPlayGoalsAgainst'] }}</p>
                     <p>{{ $goalie['shorthandedGoalsAgainst'] }}</p>
-                    <p>{{ $goalie['pim'] }}</p>
-                    <p>{{ $goalie['toi'] }}</p>
+                    @if (array_key_exists('pim', $goalie))
+                      <p>{{ $goalie['pim'] }}</p>
+                    @else
+                      <p>No Data</p>
+                    @endif
+                    @if (array_key_exists('toi', $goalie))
+                      <p>{{ $goalie['toi'] }}</p>
+                    @else
+                      <p>No Data</p>
+                    @endif
                   </li>
                 @endforeach
               </ul>
