@@ -84,20 +84,102 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
             </button>
           </div>
           <div class="team-lineup-away-container">
-            <h4>Head Coach</h4>
-            <p>{{ $gameBoxscores['boxscore']['gameInfo']['awayTeam']['headCoach']['default'] }}</p>
-            <h4>Forwards</h4>
-            @foreach ($gameBoxscores['boxscore']['playerByGameStats']['awayTeam']['forwards'] as $forward)
-              <p>{{ $forward['name']['default'] }}</p>
-            @endforeach
-            <h4>Defense</h4>
-            @foreach ($gameBoxscores['boxscore']['playerByGameStats']['awayTeam']['defense'] as $defender)
-              <p>{{ $defender['name']['default'] }}</p>
-            @endforeach
-            <h4>Goalies</h4>
-            @foreach ($gameBoxscores['boxscore']['playerByGameStats']['awayTeam']['goalies'] as $goalie)
-              <p>{{ $goalie['name']['default'] }}</p>
-            @endforeach
+            <h4>Head Coach :
+              <span>
+                {{ $gameBoxscores['boxscore']['gameInfo']['awayTeam']['headCoach']['default'] }}
+              </span>
+            </h4>
+            <div class="team-lineup-scrolling-container">
+              {{-- forwards --}}
+              <ul class="team-lineup-forwards">
+                <li>
+                  <h3 title="Forwards">Forwards</h3>
+                  <h3 title="Goals">G</h3>
+                  <h3 title="Assists">A</h3>
+                  <h3 title="Points">P</h3>
+                  <h3 title="Penalty Minutes">PIM</h3>
+                  <h3 title="Hits">H</h3>
+                  <h3 title="Blocked Shots">B Shots</h3>
+                  <h3 title="Shots">S</h3>
+                  <h3 title="Faceoffs">FO</h3>
+                  <h3 title="Time on Ice">TOI</h3>
+                </li>
+                @foreach ($gameBoxscores['boxscore']['playerByGameStats']['awayTeam']['forwards'] as $forward)
+                  <li>
+                    <p>{{ $forward['name']['default'] }}</p>
+                    <p>{{ $forward['goals'] }}</p>
+                    <p>{{ $forward['assists'] }}</p>
+                    <p>{{ $forward['points'] }}</p>
+                    <p>{{ $forward['pim'] }}</p>
+                    <p>{{ $forward['hits'] }}</p>
+                    <p>{{ $forward['blockedShots'] }}</p>
+                    <p>{{ $forward['shots'] }}</p>
+                    <p>{{ $forward['faceoffs'] }}</p>
+                    <p>{{ $forward['toi'] }}</p>
+                  </li>
+                @endforeach
+              </ul>
+              {{-- defense --}}
+              <ul class="team-lineup-defense">
+                <li>
+                  <h3 title="Defense">Defense</h3>
+                  <h3 title="Goals">G</h3>
+                  <h3 title="Assists">A</h3>
+                  <h3 title="Points">P</h3>
+                  <h3 title="Penalty Minutes">PIM</h3>
+                  <h3 title="Hits">H</h3>
+                  <h3 title="Blocked Shots">B Shots</h3>
+                  <h3 title="Shots">S</h3>
+                  <h3 title="Faceoffs">FO</h3>
+                  <h3 title="Time on Ice">TOI</h3>
+                </li>
+                @foreach ($gameBoxscores['boxscore']['playerByGameStats']['awayTeam']['defense'] as $defender)
+                  <li>
+                    <p>{{ $defender['name']['default'] }}</p>
+                    <p>{{ $defender['goals'] }}</p>
+                    <p>{{ $defender['assists'] }}</p>
+                    <p>{{ $defender['points'] }}</p>
+                    <p>{{ $defender['pim'] }}</p>
+                    <p>{{ $defender['hits'] }}</p>
+                    <p>{{ $defender['blockedShots'] }}</p>
+                    <p>{{ $defender['shots'] }}</p>
+                    <p>{{ $defender['faceoffs'] }}</p>
+                    <p>{{ $defender['toi'] }}</p>
+                  </li>
+                @endforeach
+              </ul>
+              {{-- goalies --}}
+              <ul class="team-lineup-goalies">
+                <li>
+                  <h3 title="Goalies">Goalies</h3>
+                  <h3 title="Goals Allowed">GA</h3>
+                  <h3 title="Even Strength Shots">ESS</h3>
+                  <h3 title="Power Play Shots">PPS</h3>
+                  <h3 title="Short Handedy Shots">SHS</h3>
+                  <h3 title="Saves - Shots">Sv-S</h3>
+                  <h3 title="Even Strength Goals">ESG</h3>
+                  <h3 title="Power Play Goals">PPG</h3>
+                  <h3 title="Short Handedy Goals">SHG</h3>
+                  <h3 title="Penalty Minutes">PIM</h3>
+                  <h3 title="Time on Ice">TOI</h3>
+                </li>
+                @foreach ($gameBoxscores['boxscore']['playerByGameStats']['awayTeam']['goalies'] as $goalie)
+                  <li>
+                    <p>{{ $goalie['name']['default'] }}</p>
+                    <p>{{ $goalie['goalsAgainst'] }}</p>
+                    <p>{{ $goalie['evenStrengthShotsAgainst'] }}</p>
+                    <p>{{ $goalie['powerPlayShotsAgainst'] }}</p>
+                    <p>{{ $goalie['shorthandedShotsAgainst'] }}</p>
+                    <p>{{ $goalie['saveShotsAgainst'] }}</p>
+                    <p>{{ $goalie['evenStrengthGoalsAgainst'] }}</p>
+                    <p>{{ $goalie['powerPlayGoalsAgainst'] }}</p>
+                    <p>{{ $goalie['shorthandedGoalsAgainst'] }}</p>
+                    <p>{{ $goalie['pim'] }}</p>
+                    <p>{{ $goalie['toi'] }}</p>
+                  </li>
+                @endforeach
+              </ul>
+            </div>
           </div>
 
           <div class="team-lineup-home-button-container">
@@ -112,20 +194,102 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
             </button>
           </div>
           <div class="team-lineup-home-container">
-            <h4>Head Coach</h4>
-            <p>{{ $gameBoxscores['boxscore']['gameInfo']['homeTeam']['headCoach']['default'] }}</p>
-            <h4>Forwards</h4>
-            @foreach ($gameBoxscores['boxscore']['playerByGameStats']['homeTeam']['forwards'] as $forward)
-              <p>{{ $forward['name']['default'] }}</p>
-            @endforeach
-            <h4>Defense</h4>
-            @foreach ($gameBoxscores['boxscore']['playerByGameStats']['homeTeam']['defense'] as $defender)
-              <p>{{ $defender['name']['default'] }}</p>
-            @endforeach
-            <h4>Goalies</h4>
-            @foreach ($gameBoxscores['boxscore']['playerByGameStats']['homeTeam']['goalies'] as $goalie)
-              <p>{{ $goalie['name']['default'] }}</p>
-            @endforeach
+            <h4>Head Coach :
+              <span>
+                {{ $gameBoxscores['boxscore']['gameInfo']['homeTeam']['headCoach']['default'] }}
+              </span>
+            </h4>
+            <div class="team-lineup-scrolling-container">
+              {{-- forwards --}}
+              <ul class="team-lineup-forwards">
+                <li>
+                  <h3 title="Forwards">Forwards</h3>
+                  <h3 title="Goals">G</h3>
+                  <h3 title="Assists">A</h3>
+                  <h3 title="Points">P</h3>
+                  <h3 title="Penalty Minutes">PIM</h3>
+                  <h3 title="Hits">H</h3>
+                  <h3 title="Blocked Shots">B Shots</h3>
+                  <h3 title="Shots">S</h3>
+                  <h3 title="Faceoffs">FO</h3>
+                  <h3 title="Time on Ice">TOI</h3>
+                </li>
+                @foreach ($gameBoxscores['boxscore']['playerByGameStats']['homeTeam']['forwards'] as $forward)
+                  <li>
+                    <p>{{ $forward['name']['default'] }}</p>
+                    <p>{{ $forward['goals'] }}</p>
+                    <p>{{ $forward['assists'] }}</p>
+                    <p>{{ $forward['points'] }}</p>
+                    <p>{{ $forward['pim'] }}</p>
+                    <p>{{ $forward['hits'] }}</p>
+                    <p>{{ $forward['blockedShots'] }}</p>
+                    <p>{{ $forward['shots'] }}</p>
+                    <p>{{ $forward['faceoffs'] }}</p>
+                    <p>{{ $forward['toi'] }}</p>
+                  </li>
+                @endforeach
+              </ul>
+              {{-- defense --}}
+              <ul class="team-lineup-defense">
+                <li>
+                  <h3 title="Defense">Defense</h3>
+                  <h3 title="Goals">G</h3>
+                  <h3 title="Assists">A</h3>
+                  <h3 title="Points">P</h3>
+                  <h3 title="Penalty Minutes">PIM</h3>
+                  <h3 title="Hits">H</h3>
+                  <h3 title="Blocked Shots">B Shots</h3>
+                  <h3 title="Shots">S</h3>
+                  <h3 title="Faceoffs">FO</h3>
+                  <h3 title="Time on Ice">TOI</h3>
+                </li>
+                @foreach ($gameBoxscores['boxscore']['playerByGameStats']['homeTeam']['defense'] as $defender)
+                  <li>
+                    <p>{{ $defender['name']['default'] }}</p>
+                    <p>{{ $defender['goals'] }}</p>
+                    <p>{{ $defender['assists'] }}</p>
+                    <p>{{ $defender['points'] }}</p>
+                    <p>{{ $defender['pim'] }}</p>
+                    <p>{{ $defender['hits'] }}</p>
+                    <p>{{ $defender['blockedShots'] }}</p>
+                    <p>{{ $defender['shots'] }}</p>
+                    <p>{{ $defender['faceoffs'] }}</p>
+                    <p>{{ $defender['toi'] }}</p>
+                  </li>
+                @endforeach
+              </ul>
+              {{-- goalies --}}
+              <ul class="team-lineup-goalies">
+                <li>
+                  <h3 title="Goalies">Goalies</h3>
+                  <h3 title="Goals Allowed">GA</h3>
+                  <h3 title="Even Strength Shots">ESS</h3>
+                  <h3 title="Power Play Shots">PPS</h3>
+                  <h3 title="Short Handedy Shots">SHS</h3>
+                  <h3 title="Saves - Shots">Sv-S</h3>
+                  <h3 title="Even Strength Goals">ESG</h3>
+                  <h3 title="Power Play Goals">PPG</h3>
+                  <h3 title="Short Handedy Goals">SHG</h3>
+                  <h3 title="Penalty Minutes">PIM</h3>
+                  <h3 title="Time on Ice">TOI</h3>
+                </li>
+                @foreach ($gameBoxscores['boxscore']['playerByGameStats']['homeTeam']['goalies'] as $goalie)
+                  <li>
+                    <p>{{ $goalie['name']['default'] }}</p>
+                    <p>{{ $goalie['goalsAgainst'] }}</p>
+                    <p>{{ $goalie['evenStrengthShotsAgainst'] }}</p>
+                    <p>{{ $goalie['powerPlayShotsAgainst'] }}</p>
+                    <p>{{ $goalie['shorthandedShotsAgainst'] }}</p>
+                    <p>{{ $goalie['saveShotsAgainst'] }}</p>
+                    <p>{{ $goalie['evenStrengthGoalsAgainst'] }}</p>
+                    <p>{{ $goalie['powerPlayGoalsAgainst'] }}</p>
+                    <p>{{ $goalie['shorthandedGoalsAgainst'] }}</p>
+                    <p>{{ $goalie['pim'] }}</p>
+                    <p>{{ $goalie['toi'] }}</p>
+                  </li>
+                @endforeach
+              </ul>
+            </div>
           </div>
 
         </div>
@@ -291,20 +455,101 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
             </button>
           </div>
           <div class="team-lineup-away-container">
-            <h4>Head Coach</h4>
-            <p>{{ $gameBoxscores['boxscore']['gameInfo']['awayTeam']['headCoach']['default'] }}</p>
-            <h4>Forwards</h4>
-            @foreach ($gameBoxscores['boxscore']['playerByGameStats']['awayTeam']['forwards'] as $forward)
-              <p>{{ $forward['name']['default'] }}</p>
-            @endforeach
-            <h4>Defense</h4>
-            @foreach ($gameBoxscores['boxscore']['playerByGameStats']['awayTeam']['defense'] as $defender)
-              <p>{{ $defender['name']['default'] }}</p>
-            @endforeach
-            <h4>Goalies</h4>
-            @foreach ($gameBoxscores['boxscore']['playerByGameStats']['awayTeam']['goalies'] as $goalie)
-              <p>{{ $goalie['name']['default'] }}</p>
-            @endforeach
+            <h4>Head Coach :
+              <span>
+                {{ $gameBoxscores['boxscore']['gameInfo']['awayTeam']['headCoach']['default'] }}
+              </span>
+            </h4>
+            <div class="team-lineup-scrolling-container">
+              <ul class="team-lineup-forwards">
+                <li>
+                  <h3 title="Forwards">Forwards</h3>
+                  <h3 title="Goals">G</h3>
+                  <h3 title="Assists">A</h3>
+                  <h3 title="Points">P</h3>
+                  <h3 title="Penalty Minutes">PIM</h3>
+                  <h3 title="Hits">H</h3>
+                  <h3 title="Blocked Shots">B Shots</h3>
+                  <h3 title="Shots">S</h3>
+                  <h3 title="Faceoffs">FO</h3>
+                  <h3 title="Time on Ice">TOI</h3>
+                </li>
+                @foreach ($gameBoxscores['boxscore']['playerByGameStats']['awayTeam']['forwards'] as $forward)
+                  <li>
+                    <p>{{ $forward['name']['default'] }}</p>
+                    <p>{{ $forward['goals'] }}</p>
+                    <p>{{ $forward['assists'] }}</p>
+                    <p>{{ $forward['points'] }}</p>
+                    <p>{{ $forward['pim'] }}</p>
+                    <p>{{ $forward['hits'] }}</p>
+                    <p>{{ $forward['blockedShots'] }}</p>
+                    <p>{{ $forward['shots'] }}</p>
+                    <p>{{ $forward['faceoffs'] }}</p>
+                    <p>{{ $forward['toi'] }}</p>
+                  </li>
+                @endforeach
+              </ul>
+
+              <ul class="team-lineup-defense">
+                <li>
+                  <h3 title="Defense">Defense</h3>
+                  <h3 title="Goals">G</h3>
+                  <h3 title="Assists">A</h3>
+                  <h3 title="Points">P</h3>
+                  <h3 title="Penalty Minutes">PIM</h3>
+                  <h3 title="Hits">H</h3>
+                  <h3 title="Blocked Shots">B Shots</h3>
+                  <h3 title="Shots">S</h3>
+                  <h3 title="Faceoffs">FO</h3>
+                  <h3 title="Time on Ice">TOI</h3>
+                </li>
+                @foreach ($gameBoxscores['boxscore']['playerByGameStats']['awayTeam']['defense'] as $defender)
+                  <li>
+                    <p>{{ $defender['name']['default'] }}</p>
+                    <p>{{ $defender['goals'] }}</p>
+                    <p>{{ $defender['assists'] }}</p>
+                    <p>{{ $defender['points'] }}</p>
+                    <p>{{ $defender['pim'] }}</p>
+                    <p>{{ $defender['hits'] }}</p>
+                    <p>{{ $defender['blockedShots'] }}</p>
+                    <p>{{ $defender['shots'] }}</p>
+                    <p>{{ $defender['faceoffs'] }}</p>
+                    <p>{{ $defender['toi'] }}</p>
+                  </li>
+                @endforeach
+              </ul>
+              {{-- goalies --}}
+              <ul class="team-lineup-goalies">
+                <li>
+                  <h3 title="Goalies">Goalies</h3>
+                  <h3 title="Goals Allowed">GA</h3>
+                  <h3 title="Even Strength Shots">ESS</h3>
+                  <h3 title="Power Play Shots">PPS</h3>
+                  <h3 title="Short Handedy Shots">SHS</h3>
+                  <h3 title="Saves - Shots">Sv-S</h3>
+                  <h3 title="Even Strength Goals">ESG</h3>
+                  <h3 title="Power Play Goals">PPG</h3>
+                  <h3 title="Short Handedy Goals">SHG</h3>
+                  <h3 title="Penalty Minutes">PIM</h3>
+                  <h3 title="Time on Ice">TOI</h3>
+                </li>
+                @foreach ($gameBoxscores['boxscore']['playerByGameStats']['awayTeam']['goalies'] as $goalie)
+                  <li>
+                    <p>{{ $goalie['name']['default'] }}</p>
+                    <p>{{ $goalie['goalsAgainst'] }}</p>
+                    <p>{{ $goalie['evenStrengthShotsAgainst'] }}</p>
+                    <p>{{ $goalie['powerPlayShotsAgainst'] }}</p>
+                    <p>{{ $goalie['shorthandedShotsAgainst'] }}</p>
+                    <p>{{ $goalie['saveShotsAgainst'] }}</p>
+                    <p>{{ $goalie['evenStrengthGoalsAgainst'] }}</p>
+                    <p>{{ $goalie['powerPlayGoalsAgainst'] }}</p>
+                    <p>{{ $goalie['shorthandedGoalsAgainst'] }}</p>
+                    <p>{{ $goalie['pim'] }}</p>
+                    <p>{{ $goalie['toi'] }}</p>
+                  </li>
+                @endforeach
+              </ul>
+            </div>
           </div>
 
           <div class="team-lineup-home-button-container">
@@ -319,20 +564,102 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
             </button>
           </div>
           <div class="team-lineup-home-container">
-            <h4>Head Coach</h4>
-            <p>{{ $gameBoxscores['boxscore']['gameInfo']['homeTeam']['headCoach']['default'] }}</p>
-            <h4>Forwards</h4>
-            @foreach ($gameBoxscores['boxscore']['playerByGameStats']['homeTeam']['forwards'] as $forward)
-              <p>{{ $forward['name']['default'] }}</p>
-            @endforeach
-            <h4>Defense</h4>
-            @foreach ($gameBoxscores['boxscore']['playerByGameStats']['homeTeam']['defense'] as $defender)
-              <p>{{ $defender['name']['default'] }}</p>
-            @endforeach
-            <h4>Goalies</h4>
-            @foreach ($gameBoxscores['boxscore']['playerByGameStats']['homeTeam']['goalies'] as $goalie)
-              <p>{{ $goalie['name']['default'] }}</p>
-            @endforeach
+            <h4>Head Coach :
+              <span>
+                {{ $gameBoxscores['boxscore']['gameInfo']['homeTeam']['headCoach']['default'] }}
+              </span>
+            </h4>
+            <div class="team-lineup-scrolling-container">
+              {{-- forwards --}}
+              <ul class="team-lineup-forwards">
+                <li>
+                  <h3 title="Forwards">Forwards</h3>
+                  <h3 title="Goals">G</h3>
+                  <h3 title="Assists">A</h3>
+                  <h3 title="Points">P</h3>
+                  <h3 title="Penalty Minutes">PIM</h3>
+                  <h3 title="Hits">H</h3>
+                  <h3 title="Blocked Shots">B Shots</h3>
+                  <h3 title="Shots">S</h3>
+                  <h3 title="Faceoffs">FO</h3>
+                  <h3 title="Time on Ice">TOI</h3>
+                </li>
+                @foreach ($gameBoxscores['boxscore']['playerByGameStats']['homeTeam']['forwards'] as $forward)
+                  <li>
+                    <p>{{ $forward['name']['default'] }}</p>
+                    <p>{{ $forward['goals'] }}</p>
+                    <p>{{ $forward['assists'] }}</p>
+                    <p>{{ $forward['points'] }}</p>
+                    <p>{{ $forward['pim'] }}</p>
+                    <p>{{ $forward['hits'] }}</p>
+                    <p>{{ $forward['blockedShots'] }}</p>
+                    <p>{{ $forward['shots'] }}</p>
+                    <p>{{ $forward['faceoffs'] }}</p>
+                    <p>{{ $forward['toi'] }}</p>
+                  </li>
+                @endforeach
+              </ul>
+              {{-- defense --}}
+              <ul class="team-lineup-defense">
+                <li>
+                  <h3 title="Defense">Defense</h3>
+                  <h3 title="Goals">G</h3>
+                  <h3 title="Assists">A</h3>
+                  <h3 title="Points">P</h3>
+                  <h3 title="Penalty Minutes">PIM</h3>
+                  <h3 title="Hits">H</h3>
+                  <h3 title="Blocked Shots">B Shots</h3>
+                  <h3 title="Shots">S</h3>
+                  <h3 title="Faceoffs">FO</h3>
+                  <h3 title="Time on Ice">TOI</h3>
+                </li>
+                @foreach ($gameBoxscores['boxscore']['playerByGameStats']['homeTeam']['defense'] as $defender)
+                  <li>
+                    <p>{{ $defender['name']['default'] }}</p>
+                    <p>{{ $defender['goals'] }}</p>
+                    <p>{{ $defender['assists'] }}</p>
+                    <p>{{ $defender['points'] }}</p>
+                    <p>{{ $defender['pim'] }}</p>
+                    <p>{{ $defender['hits'] }}</p>
+                    <p>{{ $defender['blockedShots'] }}</p>
+                    <p>{{ $defender['shots'] }}</p>
+                    <p>{{ $defender['faceoffs'] }}</p>
+                    <p>{{ $defender['toi'] }}</p>
+                  </li>
+                @endforeach
+              </ul>
+              {{-- goalies --}}
+              <ul class="team-lineup-goalies">
+                <li>
+                  <h3 title="Goalies">Goalies</h3>
+                  <h3 title="Goals Allowed">GA</h3>
+                  <h3 title="Even Strength Shots">ESS</h3>
+                  <h3 title="Power Play Shots">PPS</h3>
+                  <h3 title="Short Handedy Shots">SHS</h3>
+                  <h3 title="Saves - Shots">Sv-S</h3>
+                  <h3 title="Even Strength Goals">ESG</h3>
+                  <h3 title="Power Play Goals">PPG</h3>
+                  <h3 title="Short Handedy Goals">SHG</h3>
+                  <h3 title="Penalty Minutes">PIM</h3>
+                  <h3 title="Time on Ice">TOI</h3>
+                </li>
+                @foreach ($gameBoxscores['boxscore']['playerByGameStats']['homeTeam']['goalies'] as $goalie)
+                  <li>
+                    <p>{{ $goalie['name']['default'] }}</p>
+                    <p>{{ $goalie['goalsAgainst'] }}</p>
+                    <p>{{ $goalie['evenStrengthShotsAgainst'] }}</p>
+                    <p>{{ $goalie['powerPlayShotsAgainst'] }}</p>
+                    <p>{{ $goalie['shorthandedShotsAgainst'] }}</p>
+                    <p>{{ $goalie['saveShotsAgainst'] }}</p>
+                    <p>{{ $goalie['evenStrengthGoalsAgainst'] }}</p>
+                    <p>{{ $goalie['powerPlayGoalsAgainst'] }}</p>
+                    <p>{{ $goalie['shorthandedGoalsAgainst'] }}</p>
+                    <p>{{ $goalie['pim'] }}</p>
+                    <p>{{ $goalie['toi'] }}</p>
+                  </li>
+                @endforeach
+              </ul>
+            </div>
           </div>
 
         </div>

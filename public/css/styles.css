@@ -1112,6 +1112,9 @@ header h1 {
 .league-standings-table,
 .player-last-five,
 .player-stats,
+.team-lineup-defense,
+.team-lineup-forwards,
+.team-lineup-goalies,
 .team-stats {
     -ms-flex-align: start;
     -ms-flex-direction: column;
@@ -1149,11 +1152,14 @@ header h1 {
 .player-draft-dropdown-list h3,
 .player-last-five h3,
 .player-stats h3,
+.team-lineup-defense h3,
+.team-lineup-forwards h3,
+.team-lineup-goalies h3,
 .team-stats h3 {
     background-color: #000;
     color: #fff;
     font-size: 14px;
-    height: 100%;
+    /* height: 100%; */
     min-width: 75px;
     padding: 2px 3px;
     text-align: center;
@@ -1169,6 +1175,9 @@ header h1 {
 .player-draft-dropdown-list li,
 .player-last-five li,
 .player-stats li,
+.team-lineup-defense li,
+.team-lineup-forwards li,
+.team-lineup-goalies li,
 .team-stats li {
     -ms-flex-align: center;
     -ms-flex-direction: row;
@@ -1192,6 +1201,9 @@ header h1 {
 .player-award-dropdown-list li:nth-of-type(odd),
 .player-last-five li:nth-of-type(odd),
 .player-stats li:nth-of-type(odd),
+.team-lineup-defense li:nth-of-type(odd),
+.team-lineup-forwards li:nth-of-type(odd),
+.team-lineup-goalies li:nth-of-type(odd),
 .team-stats li:nth-of-type(odd) {
     background-color: rgba(220, 220, 220, 0.75);
 }
@@ -1222,6 +1234,9 @@ header h1 {
 .player-draft-dropdown-list p,
 .player-last-five p,
 .player-stats p,
+.team-lineup-defense p,
+.team-lineup-forwards p,
+.team-lineup-goalies p,
 .team-stats p {
     border-right: 1px solid #000;
     border-top: 1px solid #000;
@@ -1239,15 +1254,12 @@ header h1 {
 .player-draft-dropdown-list p:last-of-type,
 .player-last-five p:last-of-type,
 .player-stats p:last-of-type,
+.team-lineup-defense p:last-of-type,
+.team-lineup-forwards p:last-of-type,
+.team-lineup-goalies p:last-of-type,
 .team-stats p:last-of-type {
     border-right: none;
 }
-
-/* .league-standings-table p i,
-.player-stats p i,
-.team-stats p i {
-    font-size: 12px;
-} */
 
 .main {
     -ms-flex-align: center;
@@ -1563,6 +1575,9 @@ header h1 {
 .player-award-dropdown-list li h3:first-of-type,
 .player-last-five li h3:first-of-type,
 .player-stats li h3:first-of-type,
+.team-lineup-defense li h3:first-of-type,
+.team-lineup-forwards li h3:first-of-type,
+.team-lineup-goalies li h3:first-of-type,
 .team-stats li h3:first-of-type {
     min-width: 125px;
 }
@@ -1579,6 +1594,9 @@ header h1 {
 .player-award-dropdown-list li p:first-of-type,
 .player-last-five li p:first-of-type,
 .player-stats li p:first-of-type,
+.team-lineup-defense li p:first-of-type,
+.team-lineup-forwards li p:first-of-type,
+.team-lineup-goalies li p:first-of-type,
 .team-stats li p:first-of-type {
     font-weight: bold;
     min-width: 125px;
@@ -1875,25 +1893,31 @@ header h1 {
     height: 0;
     left: 0;
     opacity: 0;
-    overflow-y: scroll;
+    overflow: scroll;
     padding: 10px;
     position: absolute;
     top: 100%;
-    width: 200px;
+    width: calc(50% - 5px);
     transition: height 250ms ease, opacity 250ms ease;
 }
 
 .team-lineup-away-container h4,
 .team-lineup-home-container h4 {
     color: #b22222;
-    border-bottom: solid 1px #000;
-    font-size: 16px;
-    width: 80%;
+    font-size: 14px;
+    width: -moz-fit-content;
+    width: -webkit-fit-content;
+    width: fit-content;
+}
+
+.team-lineup-away-container h4 span,
+.team-lineup-home-container h4 span {
+    color: #000;
 }
 
 .team-lineup-away-container p,
 .team-lineup-home-container p {
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .team-lineup-home-button-container {
@@ -1914,41 +1938,21 @@ header h1 {
     cursor: default;
     height: 0;
     opacity: 0;
-    overflow-y: scroll;
+    overflow: scroll;
     padding: 10px;
     position: absolute;
     right: 0;
     top: 100%;
-    width: 200px;
+    width: calc(50% - 5px);
     transition: height 250ms ease, opacity 250ms ease;
 }
 
-.team-site a {
-    -webkit-transition: opacity 150ms ease;
-    color: #1e90ff;
-    font-weight: bold;
-    opacity: 1;
-    position: relative;
-    text-decoration: none;
-    transition: opacity 150ms ease;
+.team-lineup-scrolling-container {
+    padding: 0 15px 10px 0;
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
-    /* outline: solid 1px red; */
-}
-
-.team-site a:hover {
-    opacity: 0.5;
-}
-
-.team-site i {
-    -webkit-transform: translateY(-50%);
-    -webkit-transition: none;
-    left: calc(100% + 5px);
-    right: auto;
-    top: 50%;
-    transform: translateY(-50%);
-    transition: none;
+    /* outline: solid 1px blue; */
 }
 
 .team-stats-container {
