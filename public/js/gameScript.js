@@ -24,7 +24,7 @@ function stickHeading() {
   else if (document.documentElement.scrollTop > 0 && window.innerWidth < 400) {
     stickyHeading.style.position = "fixed";
     stickyHeading.style.width = "100%";
-    stickyHeading.style.top = "110px";
+    stickyHeading.style.top = "100px";
     scrollPoint.style.paddingTop = "130px";
   }
   else {

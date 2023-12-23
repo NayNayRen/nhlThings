@@ -84,6 +84,8 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
             </button>
           </div>
           <div class="team-lineup-away-container">
+            <h4>Head Coach</h4>
+            <p>{{ $gameBoxscores['boxscore']['gameInfo']['awayTeam']['headCoach']['default'] }}</p>
             <h4>Forwards</h4>
             @foreach ($gameBoxscores['boxscore']['playerByGameStats']['awayTeam']['forwards'] as $forward)
               <p>{{ $forward['name']['default'] }}</p>
@@ -110,6 +112,8 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
             </button>
           </div>
           <div class="team-lineup-home-container">
+            <h4>Head Coach</h4>
+            <p>{{ $gameBoxscores['boxscore']['gameInfo']['homeTeam']['headCoach']['default'] }}</p>
             <h4>Forwards</h4>
             @foreach ($gameBoxscores['boxscore']['playerByGameStats']['homeTeam']['forwards'] as $forward)
               <p>{{ $forward['name']['default'] }}</p>
@@ -287,6 +291,8 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
             </button>
           </div>
           <div class="team-lineup-away-container">
+            <h4>Head Coach</h4>
+            <p>{{ $gameBoxscores['boxscore']['gameInfo']['awayTeam']['headCoach']['default'] }}</p>
             <h4>Forwards</h4>
             @foreach ($gameBoxscores['boxscore']['playerByGameStats']['awayTeam']['forwards'] as $forward)
               <p>{{ $forward['name']['default'] }}</p>
@@ -313,6 +319,8 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
             </button>
           </div>
           <div class="team-lineup-home-container">
+            <h4>Head Coach</h4>
+            <p>{{ $gameBoxscores['boxscore']['gameInfo']['homeTeam']['headCoach']['default'] }}</p>
             <h4>Forwards</h4>
             @foreach ($gameBoxscores['boxscore']['playerByGameStats']['homeTeam']['forwards'] as $forward)
               <p>{{ $forward['name']['default'] }}</p>

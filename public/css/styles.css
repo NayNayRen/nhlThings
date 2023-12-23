@@ -1864,13 +1864,13 @@ header h1 {
 }
 
 .team-lineup-away-container {
-    -webkit-box-shadow: 0 2px 2px #808080;
+    -webkit-box-shadow: 0 2px 5px #000;
     -webkit-transition: height 250ms ease, opacity 250ms ease;
     background-color: #fff;
-    border-bottom: solid 1px #000;
-    border-right: solid 1px #000;
+    /* border-bottom: solid 1px #000;
+    border-right: solid 1px #000; */
     border-bottom-right-radius: 5px;
-    box-shadow: 0 2px 2px #808080;
+    box-shadow: 0 2px 5px #000;
     cursor: default;
     height: 0;
     left: 0;
@@ -1887,6 +1887,7 @@ header h1 {
 .team-lineup-home-container h4 {
     color: #b22222;
     border-bottom: solid 1px #000;
+    font-size: 16px;
     width: 80%;
 }
 
@@ -1903,13 +1904,13 @@ header h1 {
 }
 
 .team-lineup-home-container {
-    -webkit-box-shadow: 0 2px 2px #808080;
+    -webkit-box-shadow: 0 2px 5px #000;
     -webkit-transition: height 250ms ease, opacity 250ms ease;
     background-color: #fff;
-    border-bottom: solid 1px #000;
-    border-left: solid 1px #000;
+    /* border-bottom: solid 1px #000;
+    border-left: solid 1px #000; */
     border-bottom-left-radius: 5px;
-    box-shadow: 0 2px 2px #808080;
+    box-shadow: 0 2px 5px #000;
     cursor: default;
     height: 0;
     opacity: 0;
@@ -2423,6 +2424,7 @@ header h1 {
     }
 
     header h1 {
+        font-size: 22px;
         padding: 25px 35px 10px 35px;
     }
 
@@ -2440,7 +2442,7 @@ header h1 {
     }
 
     .main {
-        padding: 110px 0 0 0;
+        padding: 100px 0 0 0;
     }
 
     .nhl-copyright-container {
@@ -2460,7 +2462,7 @@ header h1 {
     .team-lineup-away-button,
     .team-lineup-home-button {
         justify-content: flex-end;
-        padding: 0 0 30px 0;
+        padding: 0 0 25px 0;
     }
 
     .team-lineup-away-container,
