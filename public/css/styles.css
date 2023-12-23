@@ -1393,9 +1393,7 @@ header h1 {
 .officials-container li p,
 .player-summary li p,
 .team-summary li p {
-    /* background-color: #024e98; */
     background-color: #fff;
-    /* color: #fff; */
     color: #000;
     font-weight: bold;
     padding: 3px 20px;
@@ -1466,7 +1464,6 @@ header h1 {
     border-bottom-right-radius: 5px;
     border-bottom: solid 1px #000;
     border-right: solid 1px #000;
-    /* border-top: solid 1px #000; */
     box-shadow: 0 2px 2px #808080;
     cursor: default;
     display: -ms-flexbox;
@@ -1885,8 +1882,6 @@ header h1 {
     -webkit-box-shadow: 0 2px 5px #000;
     -webkit-transition: height 250ms ease, opacity 250ms ease;
     background-color: #fff;
-    /* border-bottom: solid 1px #000;
-    border-right: solid 1px #000; */
     border-bottom-right-radius: 5px;
     box-shadow: 0 2px 5px #000;
     cursor: default;
@@ -1920,6 +1915,12 @@ header h1 {
     font-size: 12px;
 }
 
+.team-lineup-defense h3,
+.team-lineup-forwards h3,
+.team-lineup-goalies h3 {
+    font-size: 12px;
+}
+
 .team-lineup-home-button-container {
     bottom: 0;
     height: 100%;
@@ -1931,8 +1932,6 @@ header h1 {
     -webkit-box-shadow: 0 2px 5px #000;
     -webkit-transition: height 250ms ease, opacity 250ms ease;
     background-color: #fff;
-    /* border-bottom: solid 1px #000;
-    border-left: solid 1px #000; */
     border-bottom-left-radius: 5px;
     box-shadow: 0 2px 5px #000;
     cursor: default;
@@ -2357,6 +2356,11 @@ header h1 {
 
     .shield-logo {
         width: 60px;
+    }
+
+    .team-lineup-away-container h4 span,
+    .team-lineup-home-container h4 span {
+        display: block;
     }
 }
 
