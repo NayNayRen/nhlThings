@@ -1521,6 +1521,7 @@ header h1 {
 
 .player-data-container h2,
 .regular-season-container h2,
+.regular-season-container-no-games h2,
 .team-stats-container h2 {
     border-bottom: solid 1px #000;
     color: #b22222;
@@ -1653,6 +1654,12 @@ header h1 {
     min-height: 525px;
     position: relative;
     /* outline: solid 1px blue; */
+}
+
+.regular-season-container-no-games {
+    min-height: auto;
+    padding-bottom: 20px;
+    position: relative;
 }
 
 .roster-dropdown-container {

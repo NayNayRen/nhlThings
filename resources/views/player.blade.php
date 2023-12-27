@@ -141,7 +141,7 @@ url('{{ $player['heroImage'] }}'); background-size: cover; background-position: 
           </div>
           <div class="horizontal-scrolling-container">
             {{-- goalie summary --}}
-            @include('includes._player_summary')
+            @include('includes.player._player_summary')
           </div>
           {{-- goalie last 5 --}}
           <h2>
@@ -199,15 +199,15 @@ url('{{ $player['heroImage'] }}'); background-size: cover; background-position: 
           {{-- goalie regular season --}}
           <div class="horizontal-scrolling-container">
             <ul class="player-stats">
-              @include('includes._goalie_header')
+              @include('includes.player._goalie_header')
               {{-- stats --}}
               @foreach ($regularSeason as $key => $stat)
                 <li class="regular-season-row">
-                  @include('includes._goalie_table')
+                  @include('includes.player._goalie_table')
                 </li>
               @endforeach
               {{-- goalie career regular season --}}
-              @include('includes._goalie_header')
+              @include('includes.player._goalie_header')
               <li>
                 <p title="Season">Regular</p>
                 <p>Career</p>
@@ -240,15 +240,15 @@ url('{{ $player['heroImage'] }}'); background-size: cover; background-position: 
             <h2>Post Season</h2>
             <div class="horizontal-scrolling-container">
               <ul class="player-stats">
-                @include('includes._goalie_header')
+                @include('includes.player._goalie_header')
                 {{-- stats --}}
                 @foreach ($playoffSeason as $key => $stat)
                   <li class="playoff-season-row">
-                    @include('includes._goalie_table')
+                    @include('includes.player._goalie_table')
                   </li>
                 @endforeach
                 {{-- goalie career playoffs --}}
-                @include('includes._goalie_header')
+                @include('includes.player._goalie_header')
                 <li>
                   <p title="Season">Post</p>
                   <p>Career</p>
@@ -365,7 +365,7 @@ url('{{ $player['heroImage'] }}'); background-size: cover; background-position: 
           </div>
           <div class="horizontal-scrolling-container">
             {{-- skater summary --}}
-            @include('includes._player_summary')
+            @include('includes.player._player_summary')
           </div>
           {{-- skater last 5 --}}
           <h2>
@@ -425,14 +425,14 @@ url('{{ $player['heroImage'] }}'); background-size: cover; background-position: 
           {{-- player regular season --}}
           <div class="horizontal-scrolling-container">
             <ul class="player-stats">
-              @include('includes._player_header')
+              @include('includes.player._skater_header')
               {{-- stats --}}
               @foreach ($regularSeason as $key => $stat)
                 <li class="regular-season-row">
-                  @include('includes._player_table')
+                  @include('includes.player._skater_table')
                 </li>
               @endforeach
-              @include('includes._player_header')
+              @include('includes.player._skater_header')
               <li>
                 <p title="Season">Regular</p>
                 <p>Career</p>
@@ -467,14 +467,14 @@ url('{{ $player['heroImage'] }}'); background-size: cover; background-position: 
             <h2>Post Season</h2>
             <div class="horizontal-scrolling-container">
               <ul class="player-stats">
-                @include('includes._player_header')
+                @include('includes.player._skater_header')
                 {{-- stats --}}
                 @foreach ($playoffSeason as $key => $stat)
                   <li class="playoff-season-row">
-                    @include('includes._player_table')
+                    @include('includes.player._skater_table')
                   </li>
                 @endforeach
-                @include('includes._player_header')
+                @include('includes.player._skater_header')
                 <li>
                   <p title="Season">Post</p>
                   <p>Career</p>

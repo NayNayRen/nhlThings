@@ -60,7 +60,11 @@ url('{{ $soloTeam['teamLogo'] }}'); background-size: contain; background-positio
             <p>{{ $soloTeam['streakCount'] }}</p>
           </li>
           <li>
-            <h3>Common Name</h3>
+            <h3>City</h3>
+            <p>{{ $soloTeam['placeName']['default'] }}</p>
+          </li>
+          <li>
+            <h3>Name</h3>
             <p>{{ $soloTeam['teamCommonName']['default'] }}</p>
           </li>
           <li>
@@ -117,7 +121,7 @@ url('{{ $soloTeam['teamLogo'] }}'); background-size: contain; background-positio
           </ul>
         </div>
 
-        <h2>Statistic Types</h2>
+        <h2>Record Types</h2>
         <div class="horizontal-scrolling-container">
           <ul class="team-stats">
             <li>
@@ -178,7 +182,7 @@ url('{{ $soloTeam['teamLogo'] }}'); background-size: contain; background-positio
 
       {{-- UPCOMING GAMES --}}
       @if (count($upcomingGames) < 1)
-        <div class="regular-season-container">
+        <div class="regular-season-container-no-games">
           <div id="team-upcoming"></div>
           <h2>Upcoming Games</h2>
           <ul class="league-regular-season owl-carousel upcoming owl-theme upcoming-games">
@@ -187,7 +191,7 @@ url('{{ $soloTeam['teamLogo'] }}'); background-size: contain; background-positio
                 {{ $currentDate }}
               </div>
               <div class="game-team-container">
-                <p>No games today...</p>
+                <p>No games yet...</p>
               </div>
             </li>
           </ul>
@@ -228,7 +232,7 @@ url('{{ $soloTeam['teamLogo'] }}'); background-size: contain; background-positio
       @endif
       {{-- FINISHED GAMES --}}
       @if (count($finishedGames) < 1)
-        <div class="regular-season-container">
+        <div class="regular-season-container-no-games">
           <div id="team-finished"></div>
           <h2>Finished Games</h2>
           <ul class="league-regular-season owl-carousel owl-theme finished-games">
@@ -237,7 +241,7 @@ url('{{ $soloTeam['teamLogo'] }}'); background-size: contain; background-positio
                 {{ $currentDate }}
               </div>
               <div class="game-team-container">
-                <p>No games today...</p>
+                <p>No finished games yet...</p>
               </div>
             </li>
           </ul>
@@ -319,7 +323,6 @@ url('{{ $soloTeam['teamLogo'] }}'); background-size: contain; background-positio
             </div>
           </div>
         @endif --}}
-
 
     </div>
 </main>
