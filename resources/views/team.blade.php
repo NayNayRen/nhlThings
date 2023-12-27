@@ -48,6 +48,14 @@ url('{{ $soloTeam['teamLogo'] }}'); background-size: contain; background-positio
       <div class="horizontal-scrolling-container">
         <ul class="team-summary">
           <li>
+            <h3>Record</h3>
+            <p>
+              {{ $soloTeam['wins'] }} -
+              {{ $soloTeam['losses'] }} -
+              {{ $soloTeam['ties'] }}
+            </p>
+          </li>
+          <li>
             <h3>Conference</h3>
             <p>{{ $soloTeam['conferenceName'] }}</p>
           </li>
@@ -60,11 +68,7 @@ url('{{ $soloTeam['teamLogo'] }}'); background-size: contain; background-positio
             <p>{{ $soloTeam['streakCount'] }}</p>
           </li>
           <li>
-            <h3>City</h3>
-            <p>{{ $soloTeam['placeName']['default'] }}</p>
-          </li>
-          <li>
-            <h3>Name</h3>
+            <h3>Common</h3>
             <p>{{ $soloTeam['teamCommonName']['default'] }}</p>
           </li>
           <li>
@@ -75,13 +79,7 @@ url('{{ $soloTeam['teamLogo'] }}'); background-size: contain; background-positio
       </div>
       {{-- season stats --}}
       <div class="team-stats-container">
-        <h2>Regular Season
-          <p class="team-heading-record">
-            {{ $soloTeam['wins'] }} -
-            {{ $soloTeam['losses'] }} -
-            {{ $soloTeam['ties'] }}
-          </p>
-        </h2>
+        <h2>Regular Season</h2>
         <div class="horizontal-scrolling-container">
           <ul class="team-stats">
             <li>
@@ -185,7 +183,7 @@ url('{{ $soloTeam['teamLogo'] }}'); background-size: contain; background-positio
         <div class="regular-season-container-no-games">
           <div id="team-upcoming"></div>
           <h2>Upcoming Games</h2>
-          <ul class="league-regular-season owl-carousel upcoming owl-theme upcoming-games">
+          <ul class="league-regular-season owl-carousel upcoming owl-theme upcoming-games transition-container">
             <li class="league-game-card">
               <div class="game-date-location">
                 {{ $currentDate }}
@@ -235,7 +233,7 @@ url('{{ $soloTeam['teamLogo'] }}'); background-size: contain; background-positio
         <div class="regular-season-container-no-games">
           <div id="team-finished"></div>
           <h2>Finished Games</h2>
-          <ul class="league-regular-season owl-carousel owl-theme finished-games">
+          <ul class="league-regular-season owl-carousel owl-theme finished-games transition-container">
             <li class="league-game-card">
               <div class="game-date-location">
                 {{ $currentDate }}

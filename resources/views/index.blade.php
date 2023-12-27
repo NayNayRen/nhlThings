@@ -59,7 +59,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
       @if (count($dailyGames) < 1)
         <div class="regular-season-container-no-games">
           <h2>Today's Games</h2>
-          <ul class="league-regular-season owl-carousel owl-theme league-carousel">
+          <ul class="league-regular-season owl-carousel owl-theme league-carousel transition-container">
             <li class="league-game-card">
               <div class="game-date-location">
                 {{ $currentDate }}

@@ -84,7 +84,8 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
             </button>
           </div>
           <div class="team-lineup-away-container">
-            <h4>Head Coach :
+            <h4>
+              Head Coach
               <span>
                 {{ $gameBoxscores['boxscore']['gameInfo']['awayTeam']['headCoach']['default'] }}
               </span>
@@ -160,7 +161,8 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
             </button>
           </div>
           <div class="team-lineup-home-container">
-            <h4>Head Coach :
+            <h4>
+              Head Coach
               <span>
                 {{ $gameBoxscores['boxscore']['gameInfo']['homeTeam']['headCoach']['default'] }}
               </span>
@@ -363,7 +365,8 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
             </button>
           </div>
           <div class="team-lineup-away-container">
-            <h4>Head Coach :
+            <h4>
+              Head Coach
               <span>
                 {{ $gameBoxscores['boxscore']['gameInfo']['awayTeam']['headCoach']['default'] }}
               </span>
@@ -438,7 +441,8 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
             </button>
           </div>
           <div class="team-lineup-home-container">
-            <h4>Head Coach :
+            <h4>
+              Head Coach
               <span>
                 {{ $gameBoxscores['boxscore']['gameInfo']['homeTeam']['headCoach']['default'] }}
               </span>
