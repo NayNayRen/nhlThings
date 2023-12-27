@@ -105,22 +105,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                   <h3 title="Time on Ice">TOI</h3>
                 </li>
                 @foreach ($gameBoxscores['boxscore']['playerByGameStats']['awayTeam']['forwards'] as $forward)
-                  <li>
-                    <p>{{ $forward['name']['default'] }}</p>
-                    <p>{{ $forward['goals'] }}</p>
-                    <p>{{ $forward['assists'] }}</p>
-                    <p>{{ $forward['points'] }}</p>
-                    <p>{{ $forward['pim'] }}</p>
-                    <p>{{ $forward['hits'] }}</p>
-                    <p>{{ $forward['blockedShots'] }}</p>
-                    <p>{{ $forward['shots'] }}</p>
-                    <p>{{ $forward['faceoffs'] }}</p>
-                    @if (array_key_exists('toi', $forward))
-                      <p>{{ $forward['toi'] }}</p>
-                    @else
-                      <p>No Data</p>
-                    @endif
-                  </li>
+                  @include('includes.matchup._matchup_game_forward')
                 @endforeach
               </ul>
               {{-- defense --}}
@@ -138,22 +123,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                   <h3 title="Time on Ice">TOI</h3>
                 </li>
                 @foreach ($gameBoxscores['boxscore']['playerByGameStats']['awayTeam']['defense'] as $defender)
-                  <li>
-                    <p>{{ $defender['name']['default'] }}</p>
-                    <p>{{ $defender['goals'] }}</p>
-                    <p>{{ $defender['assists'] }}</p>
-                    <p>{{ $defender['points'] }}</p>
-                    <p>{{ $defender['pim'] }}</p>
-                    <p>{{ $defender['hits'] }}</p>
-                    <p>{{ $defender['blockedShots'] }}</p>
-                    <p>{{ $defender['shots'] }}</p>
-                    <p>{{ $defender['faceoffs'] }}</p>
-                    @if (array_key_exists('toi', $defender))
-                      <p>{{ $defender['toi'] }}</p>
-                    @else
-                      <p>No Data</p>
-                    @endif
-                  </li>
+                  @include('includes.matchup._matchup_game_defender')
                 @endforeach
               </ul>
               {{-- goalies --}}
@@ -172,27 +142,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                   <h3 title="Time on Ice">TOI</h3>
                 </li>
                 @foreach ($gameBoxscores['boxscore']['playerByGameStats']['awayTeam']['goalies'] as $goalie)
-                  <li>
-                    <p>{{ $goalie['name']['default'] }}</p>
-                    <p>{{ $goalie['goalsAgainst'] }}</p>
-                    <p>{{ $goalie['evenStrengthShotsAgainst'] }}</p>
-                    <p>{{ $goalie['powerPlayShotsAgainst'] }}</p>
-                    <p>{{ $goalie['shorthandedShotsAgainst'] }}</p>
-                    <p>{{ $goalie['saveShotsAgainst'] }}</p>
-                    <p>{{ $goalie['evenStrengthGoalsAgainst'] }}</p>
-                    <p>{{ $goalie['powerPlayGoalsAgainst'] }}</p>
-                    <p>{{ $goalie['shorthandedGoalsAgainst'] }}</p>
-                    @if (array_key_exists('pim', $goalie))
-                      <p>{{ $goalie['pim'] }}</p>
-                    @else
-                      <p>No Data</p>
-                    @endif
-                    @if (array_key_exists('toi', $goalie))
-                      <p>{{ $goalie['toi'] }}</p>
-                    @else
-                      <p>No Data</p>
-                    @endif
-                  </li>
+                  @include('includes.matchup._matchup_game_goalie')
                 @endforeach
               </ul>
             </div>
@@ -231,22 +181,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                   <h3 title="Time on Ice">TOI</h3>
                 </li>
                 @foreach ($gameBoxscores['boxscore']['playerByGameStats']['homeTeam']['forwards'] as $forward)
-                  <li>
-                    <p>{{ $forward['name']['default'] }}</p>
-                    <p>{{ $forward['goals'] }}</p>
-                    <p>{{ $forward['assists'] }}</p>
-                    <p>{{ $forward['points'] }}</p>
-                    <p>{{ $forward['pim'] }}</p>
-                    <p>{{ $forward['hits'] }}</p>
-                    <p>{{ $forward['blockedShots'] }}</p>
-                    <p>{{ $forward['shots'] }}</p>
-                    <p>{{ $forward['faceoffs'] }}</p>
-                    @if (array_key_exists('toi', $forward))
-                      <p>{{ $forward['toi'] }}</p>
-                    @else
-                      <p>No Data</p>
-                    @endif
-                  </li>
+                  @include('includes.matchup._matchup_game_forward')
                 @endforeach
               </ul>
               {{-- defense --}}
@@ -264,22 +199,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                   <h3 title="Time on Ice">TOI</h3>
                 </li>
                 @foreach ($gameBoxscores['boxscore']['playerByGameStats']['homeTeam']['defense'] as $defender)
-                  <li>
-                    <p>{{ $defender['name']['default'] }}</p>
-                    <p>{{ $defender['goals'] }}</p>
-                    <p>{{ $defender['assists'] }}</p>
-                    <p>{{ $defender['points'] }}</p>
-                    <p>{{ $defender['pim'] }}</p>
-                    <p>{{ $defender['hits'] }}</p>
-                    <p>{{ $defender['blockedShots'] }}</p>
-                    <p>{{ $defender['shots'] }}</p>
-                    <p>{{ $defender['faceoffs'] }}</p>
-                    @if (array_key_exists('toi', $defender))
-                      <p>{{ $defender['toi'] }}</p>
-                    @else
-                      <p>No Data</p>
-                    @endif
-                  </li>
+                  @include('includes.matchup._matchup_game_defender')
                 @endforeach
               </ul>
               {{-- goalies --}}
@@ -298,27 +218,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                   <h3 title="Time on Ice">TOI</h3>
                 </li>
                 @foreach ($gameBoxscores['boxscore']['playerByGameStats']['homeTeam']['goalies'] as $goalie)
-                  <li>
-                    <p>{{ $goalie['name']['default'] }}</p>
-                    <p>{{ $goalie['goalsAgainst'] }}</p>
-                    <p>{{ $goalie['evenStrengthShotsAgainst'] }}</p>
-                    <p>{{ $goalie['powerPlayShotsAgainst'] }}</p>
-                    <p>{{ $goalie['shorthandedShotsAgainst'] }}</p>
-                    <p>{{ $goalie['saveShotsAgainst'] }}</p>
-                    <p>{{ $goalie['evenStrengthGoalsAgainst'] }}</p>
-                    <p>{{ $goalie['powerPlayGoalsAgainst'] }}</p>
-                    <p>{{ $goalie['shorthandedGoalsAgainst'] }}</p>
-                    @if (array_key_exists('pim', $goalie))
-                      <p>{{ $goalie['pim'] }}</p>
-                    @else
-                      <p>No Data</p>
-                    @endif
-                    @if (array_key_exists('toi', $goalie))
-                      <p>{{ $goalie['toi'] }}</p>
-                    @else
-                      <p>No Data</p>
-                    @endif
-                  </li>
+                  @include('includes.matchup._matchup_game_goalie')
                 @endforeach
               </ul>
             </div>
@@ -365,7 +265,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
           <h3>Final Numbers</h3>
 
           {{-- scoring summary --}}
-          @include('includes._matchup_game_scoring')
+          @include('includes.matchup._matchup_game_scoring')
 
           {{-- shots --}}
           <ul class="game-matchup-main-container-shots">
@@ -375,42 +275,18 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
               <p>{{ $gameMatchup['homeTeam']['sog'] }}</p>
             </li>
             @foreach ($gameMatchup['summary']['shotsByPeriod'] as $shots)
-              <li>
-                @if ($shots['period'] === 1)
-                  <p>{{ $shots['away'] }}</p>
-                  <p>{{ $shots['period'] }}st Period</p>
-                  <p>{{ $shots['home'] }}</p>
-                @endif
-                @if ($shots['period'] === 2)
-                  <p>{{ $shots['away'] }}</p>
-                  <p>{{ $shots['period'] }}nd Period</p>
-                  <p>{{ $shots['home'] }}</p>
-                @endif
-                @if ($shots['period'] === 3)
-                  <p>{{ $shots['away'] }}</p>
-                  <p>{{ $shots['period'] }}rd Period</p>
-                  <p>{{ $shots['home'] }}</p>
-                @endif
-                @if ($shots['period'] === 4)
-                  <p>{{ $shots['away'] }}</p>
-                  <p>OT</p>
-                  <p>{{ $shots['home'] }}</p>
-                @endif
-                @if ($shots['period'] >= 5)
-                  <p></p>
-                @endif
-              </li>
+              @include('includes.matchup._matchup_game_shots')
             @endforeach
           </ul>
 
           {{-- matchup stats --}}
-          @include('includes._matchup_game_stats')
+          @include('includes.matchup._matchup_game_stats')
 
           {{-- penalties --}}
-          @include('includes._matchup_game_penalties')
+          @include('includes.matchup._matchup_game_penalties')
 
           {{-- officials --}}
-          @include('includes._matchup_game_officials')
+          @include('includes.matchup._matchup_game_officials')
 
         </div>
       @endif
@@ -507,22 +383,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                   <h3 title="Time on Ice">TOI</h3>
                 </li>
                 @foreach ($gameBoxscores['boxscore']['playerByGameStats']['awayTeam']['forwards'] as $forward)
-                  <li>
-                    <p>{{ $forward['name']['default'] }}</p>
-                    <p>{{ $forward['goals'] }}</p>
-                    <p>{{ $forward['assists'] }}</p>
-                    <p>{{ $forward['points'] }}</p>
-                    <p>{{ $forward['pim'] }}</p>
-                    <p>{{ $forward['hits'] }}</p>
-                    <p>{{ $forward['blockedShots'] }}</p>
-                    <p>{{ $forward['shots'] }}</p>
-                    <p>{{ $forward['faceoffs'] }}</p>
-                    @if (array_key_exists('toi', $forward))
-                      <p>{{ $forward['toi'] }}</p>
-                    @else
-                      <p>No Data</p>
-                    @endif
-                  </li>
+                  @include('includes.matchup._matchup_game_forward')
                 @endforeach
               </ul>
 
@@ -540,22 +401,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                   <h3 title="Time on Ice">TOI</h3>
                 </li>
                 @foreach ($gameBoxscores['boxscore']['playerByGameStats']['awayTeam']['defense'] as $defender)
-                  <li>
-                    <p>{{ $defender['name']['default'] }}</p>
-                    <p>{{ $defender['goals'] }}</p>
-                    <p>{{ $defender['assists'] }}</p>
-                    <p>{{ $defender['points'] }}</p>
-                    <p>{{ $defender['pim'] }}</p>
-                    <p>{{ $defender['hits'] }}</p>
-                    <p>{{ $defender['blockedShots'] }}</p>
-                    <p>{{ $defender['shots'] }}</p>
-                    <p>{{ $defender['faceoffs'] }}</p>
-                    @if (array_key_exists('toi', $defender))
-                      <p>{{ $defender['toi'] }}</p>
-                    @else
-                      <p>No Data</p>
-                    @endif
-                  </li>
+                  @include('includes.matchup._matchup_game_defender')
                 @endforeach
               </ul>
               {{-- goalies --}}
@@ -574,27 +420,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                   <h3 title="Time on Ice">TOI</h3>
                 </li>
                 @foreach ($gameBoxscores['boxscore']['playerByGameStats']['awayTeam']['goalies'] as $goalie)
-                  <li>
-                    <p>{{ $goalie['name']['default'] }}</p>
-                    <p>{{ $goalie['goalsAgainst'] }}</p>
-                    <p>{{ $goalie['evenStrengthShotsAgainst'] }}</p>
-                    <p>{{ $goalie['powerPlayShotsAgainst'] }}</p>
-                    <p>{{ $goalie['shorthandedShotsAgainst'] }}</p>
-                    <p>{{ $goalie['saveShotsAgainst'] }}</p>
-                    <p>{{ $goalie['evenStrengthGoalsAgainst'] }}</p>
-                    <p>{{ $goalie['powerPlayGoalsAgainst'] }}</p>
-                    <p>{{ $goalie['shorthandedGoalsAgainst'] }}</p>
-                    @if (array_key_exists('pim', $goalie))
-                      <p>{{ $goalie['pim'] }}</p>
-                    @else
-                      <p>No Data</p>
-                    @endif
-                    @if (array_key_exists('toi', $goalie))
-                      <p>{{ $goalie['toi'] }}</p>
-                    @else
-                      <p>No Data</p>
-                    @endif
-                  </li>
+                  @include('includes.matchup._matchup_game_goalie')
                 @endforeach
               </ul>
             </div>
@@ -633,22 +459,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                   <h3 title="Time on Ice">TOI</h3>
                 </li>
                 @foreach ($gameBoxscores['boxscore']['playerByGameStats']['homeTeam']['forwards'] as $forward)
-                  <li>
-                    <p>{{ $forward['name']['default'] }}</p>
-                    <p>{{ $forward['goals'] }}</p>
-                    <p>{{ $forward['assists'] }}</p>
-                    <p>{{ $forward['points'] }}</p>
-                    <p>{{ $forward['pim'] }}</p>
-                    <p>{{ $forward['hits'] }}</p>
-                    <p>{{ $forward['blockedShots'] }}</p>
-                    <p>{{ $forward['shots'] }}</p>
-                    <p>{{ $forward['faceoffs'] }}</p>
-                    @if (array_key_exists('toi', $forward))
-                      <p>{{ $forward['toi'] }}</p>
-                    @else
-                      <p>No Data</p>
-                    @endif
-                  </li>
+                  @include('includes.matchup._matchup_game_forward')
                 @endforeach
               </ul>
               {{-- defense --}}
@@ -666,22 +477,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                   <h3 title="Time on Ice">TOI</h3>
                 </li>
                 @foreach ($gameBoxscores['boxscore']['playerByGameStats']['homeTeam']['defense'] as $defender)
-                  <li>
-                    <p>{{ $defender['name']['default'] }}</p>
-                    <p>{{ $defender['goals'] }}</p>
-                    <p>{{ $defender['assists'] }}</p>
-                    <p>{{ $defender['points'] }}</p>
-                    <p>{{ $defender['pim'] }}</p>
-                    <p>{{ $defender['hits'] }}</p>
-                    <p>{{ $defender['blockedShots'] }}</p>
-                    <p>{{ $defender['shots'] }}</p>
-                    <p>{{ $defender['faceoffs'] }}</p>
-                    @if (array_key_exists('toi', $defender))
-                      <p>{{ $defender['toi'] }}</p>
-                    @else
-                      <p>No Data</p>
-                    @endif
-                  </li>
+                  @include('includes.matchup._matchup_game_defender')
                 @endforeach
               </ul>
               {{-- goalies --}}
@@ -700,27 +496,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                   <h3 title="Time on Ice">TOI</h3>
                 </li>
                 @foreach ($gameBoxscores['boxscore']['playerByGameStats']['homeTeam']['goalies'] as $goalie)
-                  <li>
-                    <p>{{ $goalie['name']['default'] }}</p>
-                    <p>{{ $goalie['goalsAgainst'] }}</p>
-                    <p>{{ $goalie['evenStrengthShotsAgainst'] }}</p>
-                    <p>{{ $goalie['powerPlayShotsAgainst'] }}</p>
-                    <p>{{ $goalie['shorthandedShotsAgainst'] }}</p>
-                    <p>{{ $goalie['saveShotsAgainst'] }}</p>
-                    <p>{{ $goalie['evenStrengthGoalsAgainst'] }}</p>
-                    <p>{{ $goalie['powerPlayGoalsAgainst'] }}</p>
-                    <p>{{ $goalie['shorthandedGoalsAgainst'] }}</p>
-                    @if (array_key_exists('pim', $goalie))
-                      <p>{{ $goalie['pim'] }}</p>
-                    @else
-                      <p>No Data</p>
-                    @endif
-                    @if (array_key_exists('toi', $goalie))
-                      <p>{{ $goalie['toi'] }}</p>
-                    @else
-                      <p>No Data</p>
-                    @endif
-                  </li>
+                  @include('includes.matchup._matchup_game_goalie')
                 @endforeach
               </ul>
             </div>
@@ -733,7 +509,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
           <h3>Live Stats</h3>
 
           {{-- scoring Summary --}}
-          @include('includes._matchup_game_scoring')
+          @include('includes.matchup._matchup_game_scoring')
 
           {{-- shots --}}
           <ul class="game-matchup-main-container-shots">
@@ -743,42 +519,18 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
               <p>{{ $gameMatchup['homeTeam']['sog'] }}</p>
             </li>
             @foreach ($gameMatchup['summary']['shotsByPeriod'] as $shots)
-              <li>
-                @if ($shots['period'] === 1)
-                  <p>{{ $shots['away'] }}</p>
-                  <p>{{ $shots['period'] }}st Period</p>
-                  <p>{{ $shots['home'] }}</p>
-                @endif
-                @if ($shots['period'] === 2)
-                  <p>{{ $shots['away'] }}</p>
-                  <p>{{ $shots['period'] }}nd Period</p>
-                  <p>{{ $shots['home'] }}</p>
-                @endif
-                @if ($shots['period'] === 3)
-                  <p>{{ $shots['away'] }}</p>
-                  <p>{{ $shots['period'] }}rd Period</p>
-                  <p>{{ $shots['home'] }}</p>
-                @endif
-                @if ($shots['period'] === 4)
-                  <p>{{ $shots['away'] }}</p>
-                  <p>OT</p>
-                  <p>{{ $shots['home'] }}</p>
-                @endif
-                @if ($shots['period'] >= 5)
-                  <p></p>
-                @endif
-              </li>
+              @include('includes.matchup._matchup_game_shots')
             @endforeach
           </ul>
 
           {{-- matchup stats --}}
-          @include('includes._matchup_game_stats')
+          @include('includes.matchup._matchup_game_stats')
 
           {{-- penalties --}}
-          @include('includes._matchup_game_penalties')
+          @include('includes.matchup._matchup_game_penalties')
 
           {{-- officials --}}
-          @include('includes._matchup_game_officials')
+          @include('includes.matchup._matchup_game_officials')
 
         </div>
       @endif

@@ -81,7 +81,7 @@ class LeagueController extends Controller
         'pacific' => $pacific
       ]);
     } else {
-      // dd($dailyGames[0]);
+      // dd($allTeams);
       return view('index', [
         'favIcon' => '../img/nhl-shield.png',
         'title' => 'NHL Teams, Stats & Things',

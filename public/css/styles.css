@@ -1209,11 +1209,14 @@ header h1 {
 }
 
 .league-standings-table li p:first-of-type {
-    color: #000;
     font-weight: bold;
     min-width: 220px;
     padding: 2px 5px;
     width: auto;
+}
+
+.league-standings-table li p:first-of-type a {
+    color: #000;
 }
 
 .league-standings-table li span,
@@ -1919,6 +1922,30 @@ header h1 {
 .team-lineup-forwards h3,
 .team-lineup-goalies h3 {
     font-size: 12px;
+}
+
+.team-lineup-defense li p:first-of-type,
+.team-lineup-forwards li p:first-of-type,
+.team-lineup-goalies li p:first-of-type {
+    position: relative;
+    text-align: left;
+}
+
+.team-lineup-defense li p:first-of-type a,
+.team-lineup-forwards li p:first-of-type a,
+.team-lineup-goalies li p:first-of-type a {
+    color: #000;
+}
+
+.team-lineup-defense li p:first-of-type span,
+.team-lineup-forwards li p:first-of-type span,
+.team-lineup-goalies li p:first-of-type span {
+    -webkit-transform: translateY(-50%);
+    color: #b22222;
+    right: 5px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .team-lineup-home-button-container {

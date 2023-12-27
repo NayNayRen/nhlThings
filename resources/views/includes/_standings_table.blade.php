@@ -1,5 +1,10 @@
 <li class="league-standings-row">
-  <p><span>{{ $key + 1 }}.</span>{{ $team['teamName']['default'] }}</p>
+  <p>
+    <span>{{ $key + 1 }}.</span>
+    <a href="{{ route('teams.team', $team['teamAbbrev']['default']) }}">
+      {{ $team['teamName']['default'] }}
+    </a>
+  </p>
   <p>{{ $team['gamesPlayed'] }}</p>
   <p class='table-column-focus'>{{ $team['wins'] }}</p>
   <p>{{ $team['losses'] }}</p>
