@@ -135,7 +135,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                   <h3 title="Even Strength Shots">ESS</h3>
                   <h3 title="Power Play Shots">PPS</h3>
                   <h3 title="Short Handedy Shots">SHS</h3>
-                  <h3 title="Saves - Shots">Sv-S</h3>
+                  <h3 title="Saves / Shots">Sv/S</h3>
                   <h3 title="Even Strength Goals">ESG</h3>
                   <h3 title="Power Play Goals">PPG</h3>
                   <h3 title="Short Handedy Goals">SHG</h3>
@@ -212,7 +212,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                   <h3 title="Even Strength Shots">ESS</h3>
                   <h3 title="Power Play Shots">PPS</h3>
                   <h3 title="Short Handedy Shots">SHS</h3>
-                  <h3 title="Saves - Shots">Sv-S</h3>
+                  <h3 title="Saves / Shots">Sv/S</h3>
                   <h3 title="Even Strength Goals">ESG</h3>
                   <h3 title="Power Play Goals">PPG</h3>
                   <h3 title="Short Handedy Goals">SHG</h3>
@@ -415,7 +415,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                   <h3 title="Even Strength Shots">ESS</h3>
                   <h3 title="Power Play Shots">PPS</h3>
                   <h3 title="Short Handedy Shots">SHS</h3>
-                  <h3 title="Saves - Shots">Sv-S</h3>
+                  <h3 title="Saves / Shots">Sv/S</h3>
                   <h3 title="Even Strength Goals">ESG</h3>
                   <h3 title="Power Play Goals">PPG</h3>
                   <h3 title="Short Handedy Goals">SHG</h3>
@@ -492,7 +492,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                   <h3 title="Even Strength Shots">ESS</h3>
                   <h3 title="Power Play Shots">PPS</h3>
                   <h3 title="Short Handedy Shots">SHS</h3>
-                  <h3 title="Saves - Shots">Sv-S</h3>
+                  <h3 title="Saves / Shots">Sv/S</h3>
                   <h3 title="Even Strength Goals">ESG</h3>
                   <h3 title="Power Play Goals">PPG</h3>
                   <h3 title="Short Handedy Goals">SHG</h3>
@@ -578,7 +578,75 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
         {{-- matchup stats --}}
         <div class="game-matchup-main-container">
           <p class="game-matchup-main-container-venue">{{ $gameMatchup['venue']['default'] }}</p>
-          <h3>Head to Head</h3>
+          <h3>Leaders of the Last 5</h3>
+          <ul class="game-matchup-main-container-team-leaders">
+            <li>
+              <div>
+                <p>{{ $gameMatchup['matchup']['teamLeadersL5'][0]['awayLeader']['value'] }}</p>
+                <p>Points</p>
+                <p>{{ $gameMatchup['matchup']['teamLeadersL5'][0]['homeLeader']['value'] }}</p>
+              </div>
+              <div>
+                <p>{{ $gameMatchup['matchup']['teamLeadersL5'][0]['awayLeader']['name']['default'] }}</p>
+                <span></span>
+                <p>{{ $gameMatchup['matchup']['teamLeadersL5'][0]['homeLeader']['name']['default'] }}</p>
+              </div>
+            </li>
+            <li>
+              <div>
+                <p>{{ $gameMatchup['matchup']['teamLeadersL5'][1]['awayLeader']['value'] }}</p>
+                <p>Goals</p>
+                <p>{{ $gameMatchup['matchup']['teamLeadersL5'][1]['homeLeader']['value'] }}</p>
+              </div>
+              <div>
+                <p>{{ $gameMatchup['matchup']['teamLeadersL5'][1]['awayLeader']['name']['default'] }}</p>
+                <span></span>
+                <p>{{ $gameMatchup['matchup']['teamLeadersL5'][1]['homeLeader']['name']['default'] }}</p>
+              </div>
+            </li>
+            <li>
+              <div>
+                <p>{{ $gameMatchup['matchup']['teamLeadersL5'][2]['awayLeader']['value'] }}</p>
+                <p>Assists</p>
+                <p>{{ $gameMatchup['matchup']['teamLeadersL5'][2]['homeLeader']['value'] }}</p>
+              </div>
+              <div>
+                <p>{{ $gameMatchup['matchup']['teamLeadersL5'][2]['awayLeader']['name']['default'] }}</p>
+                <span></span>
+                <p>{{ $gameMatchup['matchup']['teamLeadersL5'][2]['homeLeader']['name']['default'] }}</p>
+              </div>
+            </li>
+            <li>
+              <div>
+                <p>{{ $gameMatchup['matchup']['teamLeadersL5'][3]['awayLeader']['value'] }}</p>
+                <p>+ / -</p>
+                <p>{{ $gameMatchup['matchup']['teamLeadersL5'][3]['homeLeader']['value'] }}</p>
+              </div>
+              <div>
+                <p>{{ $gameMatchup['matchup']['teamLeadersL5'][3]['awayLeader']['name']['default'] }}</p>
+                <span></span>
+                <p>{{ $gameMatchup['matchup']['teamLeadersL5'][3]['homeLeader']['name']['default'] }}</p>
+              </div>
+            </li>
+          </ul>
+
+          <h3>Officials</h3>
+          <div class="horizontal-scrolling-container">
+            <ul class="officials-container">
+              @foreach ($gameMatchup['matchup']['gameInfo']['referees'] as $referee)
+                <li>
+                  <h3>Referee</h3>
+                  <p>{{ $referee['default'] }}</p>
+                </li>
+              @endforeach
+              @foreach ($gameMatchup['matchup']['gameInfo']['linesmen'] as $linesman)
+                <li>
+                  <h3>Linesman</h3>
+                  <p>{{ $linesman['default'] }}</p>
+                </li>
+              @endforeach
+            </ul>
+          </div>
         </div>
       @endif
       {{-- used to highlight game winner --}}

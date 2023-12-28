@@ -500,7 +500,8 @@ footer {
 .game-matchup-main-container-pp,
 .game-matchup-main-container-scored-by-outer,
 .game-matchup-main-container-shots,
-.game-matchup-main-container-taways {
+.game-matchup-main-container-taways,
+.game-matchup-main-container-team-leaders {
     margin: 0 auto 15px auto;
     width: 1000px;
     /* outline: solid 1px blue; */
@@ -2101,6 +2102,7 @@ header h1 {
     .game-matchup-main-container-scored-by-outer,
     .game-matchup-main-container-shots,
     .game-matchup-main-container-taways,
+    .game-matchup-main-container-team-leaders,
     .game-matchup-main-container-three-stars {
         width: 700px;
     }
@@ -2149,6 +2151,7 @@ header h1 {
     .game-matchup-main-container-scored-by-outer,
     .game-matchup-main-container-shots,
     .game-matchup-main-container-taways,
+    .game-matchup-main-container-team-leaders,
     .game-matchup-main-container-three-stars {
         width: 80%;
     }
@@ -2268,6 +2271,7 @@ header h1 {
     .game-matchup-main-container-scored-by-outer,
     .game-matchup-main-container-shots,
     .game-matchup-main-container-taways,
+    .game-matchup-main-container-team-leaders,
     .game-matchup-main-container-three-stars {
         margin: 0 auto 10px auto;
         width: 90%;
@@ -2423,6 +2427,7 @@ header h1 {
     .game-matchup-main-container-scored-by-outer,
     .game-matchup-main-container-shots,
     .game-matchup-main-container-taways,
+    .game-matchup-main-container-team-leaders,
     .game-matchup-main-container-three-stars {
         width: 100%;
     }
