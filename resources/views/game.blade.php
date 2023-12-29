@@ -574,11 +574,167 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
               @endif
             @endforeach
           </div>
+          {{-- away team dropdown --}}
+          <div class="team-lineup-away-button-container">
+            <button type="button" class="team-lineup-away-button">
+              <span>L</span>
+              <span>i</span>
+              <span>n</span>
+              <span>e</span>
+              <span>u</span>
+              <span>p</span>
+              <i class="fa-solid fa-caret-up" aria-hidden="true"></i>
+            </button>
+          </div>
+          <div class="team-lineup-away-container">
+            <h4>
+              Head Coach
+              <span>
+                {{ $gameMatchup['matchup']['gameInfo']['awayTeam']['headCoach']['default'] }}
+              </span>
+            </h4>
+            <div class="team-lineup-scrolling-container">
+              {{-- goalies --}}
+              <ul class="team-lineup-goalies">
+                <li>
+                  <h3 title="Goalies">Goalies</h3>
+                  <h3 title="Games Played">GP</h3>
+                  <h3 title="Record">Rec</h3>
+                  <h3 title="Goals Against Average">GAA</h3>
+                  <h3 title="Save %">Sv%</h3>
+                  <h3 title="Shutouts">SO</h3>
+                </li>
+                @foreach ($gameMatchup['matchup']['goalieComparisonL5']['awayTeam'] as $goalie)
+                  <li>
+                    <p>
+                      <span>{{ $goalie['sweaterNumber'] }}</span>
+                      <a href="{{ route('players.player', $goalie['playerId']) }}" target="_blank">
+                        {{ $goalie['name']['default'] }}
+                      </a>
+                    </p>
+                    <p>{{ $goalie['gamesPlayed'] }}</p>
+                    <p>{{ $goalie['record'] }}</p>
+                    <p>{{ $goalie['gaa'] }}</p>
+                    <p>{{ $goalie['savePctg'] }}%</p>
+                    <p>{{ $goalie['shutouts'] }}</p>
+                  </li>
+                @endforeach
+              </ul>
+              <h4>Scratches</h4>
+              <ul>
+                @if (count($gameMatchup['matchup']['gameInfo']['awayTeam']['scratches']) > 0)
+                  @foreach ($gameMatchup['matchup']['gameInfo']['awayTeam']['scratches'] as $scratchedPlayer)
+                    <li>
+                      <p>
+                        <a href="{{ route('players.player', $scratchedPlayer['id']) }}" target="_blank">
+                          {{ $scratchedPlayer['firstName']['default'] }} {{ $scratchedPlayer['lastName']['default'] }}
+                        </a>
+                      </p>
+                    </li>
+                  @endforeach
+                  <li>
+                    <p>
+                      Full lineup not announced yet...
+                    </p>
+                  </li>
+                @else
+                  <li>
+                    <p>
+                      No scratches...
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Full lineup not announced yet...
+                    </p>
+                  </li>
+                @endif
+              </ul>
+            </div>
+          </div>
+          {{-- home team dropdown --}}
+          <div class="team-lineup-home-button-container">
+            <button type="button" class="team-lineup-home-button">
+              <span>L</span>
+              <span>i</span>
+              <span>n</span>
+              <span>e</span>
+              <span>u</span>
+              <span>p</span>
+              <i class="fa-solid fa-caret-up" aria-hidden="true"></i>
+            </button>
+          </div>
+          <div class="team-lineup-home-container">
+            <h4>
+              Head Coach
+              <span>
+                {{ $gameMatchup['matchup']['gameInfo']['homeTeam']['headCoach']['default'] }}
+              </span>
+            </h4>
+            <div class="team-lineup-scrolling-container">
+              {{-- goalies --}}
+              <ul class="team-lineup-goalies">
+                <li>
+                  <h3 title="Goalies">Goalies</h3>
+                  <h3 title="Games Played">GP</h3>
+                  <h3 title="Record">Rec</h3>
+                  <h3 title="Goals Against Average">GAA</h3>
+                  <h3 title="Save %">Sv%</h3>
+                  <h3 title="Shutouts">SO</h3>
+                </li>
+                @foreach ($gameMatchup['matchup']['goalieComparisonL5']['homeTeam'] as $goalie)
+                  <li>
+                    <p>
+                      <span>{{ $goalie['sweaterNumber'] }}</span>
+                      <a href="{{ route('players.player', $goalie['playerId']) }}" target="_blank">
+                        {{ $goalie['name']['default'] }}
+                      </a>
+                    </p>
+                    <p>{{ $goalie['gamesPlayed'] }}</p>
+                    <p>{{ $goalie['record'] }}</p>
+                    <p>{{ $goalie['gaa'] }}</p>
+                    <p>{{ $goalie['savePctg'] }}%</p>
+                    <p>{{ $goalie['shutouts'] }}</p>
+                  </li>
+                @endforeach
+              </ul>
+              <h4>Scratches</h4>
+              <ul>
+                @if (count($gameMatchup['matchup']['gameInfo']['homeTeam']['scratches']) > 0)
+                  @foreach ($gameMatchup['matchup']['gameInfo']['homeTeam']['scratches'] as $scratchedPlayer)
+                    <li>
+                      <p>
+                        <a href="{{ route('players.player', $scratchedPlayer['id']) }}" target="_blank">
+                          {{ $scratchedPlayer['firstName']['default'] }} {{ $scratchedPlayer['lastName']['default'] }}
+                        </a>
+                      </p>
+                    </li>
+                  @endforeach
+                  <li>
+                    <p>
+                      Full lineup not announced yet...
+                    </p>
+                  </li>
+                @else
+                  <li>
+                    <p>
+                      No scratches...
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Full lineup not announced yet...
+                    </p>
+                  </li>
+                @endif
+              </ul>
+            </div>
+          </div>
         </div>
         {{-- matchup stats --}}
         <div class="game-matchup-main-container">
           <p class="game-matchup-main-container-venue">{{ $gameMatchup['venue']['default'] }}</p>
-          <h3>Leaders of the Last 5</h3>
+          <h3>Last 5 Games</h3>
           <ul class="game-matchup-main-container-team-leaders">
             <li>
               <div>
@@ -588,7 +744,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
               </div>
               <div>
                 <p>{{ $gameMatchup['matchup']['teamLeadersL5'][0]['awayLeader']['name']['default'] }}</p>
-                <span></span>
+                <p></p>
                 <p>{{ $gameMatchup['matchup']['teamLeadersL5'][0]['homeLeader']['name']['default'] }}</p>
               </div>
             </li>
@@ -600,7 +756,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
               </div>
               <div>
                 <p>{{ $gameMatchup['matchup']['teamLeadersL5'][1]['awayLeader']['name']['default'] }}</p>
-                <span></span>
+                <p></p>
                 <p>{{ $gameMatchup['matchup']['teamLeadersL5'][1]['homeLeader']['name']['default'] }}</p>
               </div>
             </li>
@@ -612,7 +768,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
               </div>
               <div>
                 <p>{{ $gameMatchup['matchup']['teamLeadersL5'][2]['awayLeader']['name']['default'] }}</p>
-                <span></span>
+                <p></p>
                 <p>{{ $gameMatchup['matchup']['teamLeadersL5'][2]['homeLeader']['name']['default'] }}</p>
               </div>
             </li>
@@ -624,7 +780,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
               </div>
               <div>
                 <p>{{ $gameMatchup['matchup']['teamLeadersL5'][3]['awayLeader']['name']['default'] }}</p>
-                <span></span>
+                <p></p>
                 <p>{{ $gameMatchup['matchup']['teamLeadersL5'][3]['homeLeader']['name']['default'] }}</p>
               </div>
             </li>
