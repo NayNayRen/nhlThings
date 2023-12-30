@@ -678,7 +678,8 @@ footer {
     justify-content: center;
 }
 
-.game-matchup-main-last-ten-games ul {
+.game-matchup-away-last-ten,
+.game-matchup-home-last-ten {
     -ms-flex-align: center;
     -ms-flex-direction: column;
     -ms-flex-pack: center;
@@ -693,6 +694,13 @@ footer {
     flex-direction: column;
     justify-content: center;
     width: 50%;
+}
+
+.game-matchup-away-last-ten {
+    padding-right: 5px;
+}
+.game-matchup-home-last-ten {
+    padding-left: 5px;
 }
 
 .game-matchup-penalty {
@@ -1170,6 +1178,7 @@ header h1 {
 .league-standings-table,
 .player-last-five,
 .player-stats,
+.team-last-ten-results,
 .team-lineup-defense,
 .team-lineup-forwards,
 .team-lineup-goalies,
@@ -1210,6 +1219,7 @@ header h1 {
 .player-draft-dropdown-list h3,
 .player-last-five h3,
 .player-stats h3,
+.team-last-ten-results h3,
 .team-lineup-defense h3,
 .team-lineup-forwards h3,
 .team-lineup-goalies h3,
@@ -1217,7 +1227,6 @@ header h1 {
     background-color: #000;
     color: #fff;
     font-size: 14px;
-    /* height: 100%; */
     min-width: 75px;
     padding: 2px 3px;
     text-align: center;
@@ -1233,6 +1242,7 @@ header h1 {
 .player-draft-dropdown-list li,
 .player-last-five li,
 .player-stats li,
+.team-last-ten-results li,
 .team-lineup-defense li,
 .team-lineup-forwards li,
 .team-lineup-goalies li,
@@ -1259,6 +1269,7 @@ header h1 {
 .player-award-dropdown-list li:nth-of-type(odd),
 .player-last-five li:nth-of-type(odd),
 .player-stats li:nth-of-type(odd),
+.team-last-ten-results li:nth-of-type(odd),
 .team-lineup-defense li:nth-of-type(odd),
 .team-lineup-forwards li:nth-of-type(odd),
 .team-lineup-goalies li:nth-of-type(odd),
@@ -1295,6 +1306,7 @@ header h1 {
 .player-draft-dropdown-list p,
 .player-last-five p,
 .player-stats p,
+.team-last-ten-results p,
 .team-lineup-defense p,
 .team-lineup-forwards p,
 .team-lineup-goalies p,
@@ -1315,6 +1327,7 @@ header h1 {
 .player-draft-dropdown-list p:last-of-type,
 .player-last-five p:last-of-type,
 .player-stats p:last-of-type,
+.team-last-ten-results p:last-of-type,
 .team-lineup-defense p:last-of-type,
 .team-lineup-forwards p:last-of-type,
 .team-lineup-goalies p:last-of-type,
@@ -1608,15 +1621,15 @@ header h1 {
 
 .player-heading-logo,
 .team-heading-logo {
-    -webkit-box-align: center;
     -ms-flex-align: center;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
     align-items: center;
-    display: -webkit-box;
     display: -ms-flexbox;
+    display: -webkit-box;
     display: flex;
     height: auto;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center;
     margin-left: 20px;
     width: 100px;
@@ -1887,6 +1900,18 @@ header h1 {
     color: #000;
     font-size: 16px;
     font-weight: bold;
+    /* outline: solid 1px red; */
+}
+
+.team-last-ten-record {
+    width: 100%;
+}
+
+.team-last-ten-record li {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
     /* outline: solid 1px red; */
 }
 
@@ -2475,6 +2500,13 @@ header h1 {
         -webkit-box-pack: justify;
         -ms-flex-pack: justify;
         justify-content: space-between;
+    }
+
+    .game-matchup-away-last-ten {
+        padding-right: 2px;
+    }
+    .game-matchup-home-last-ten {
+        padding-left: 2px;
     }
 
     .game-matchup-main-container-bshots,

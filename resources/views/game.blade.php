@@ -558,7 +558,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
           <p class="game-matchup-heading-date">{{ $formattedGameDate }}</p>
           <div class="game-matchup-heading-center">
             <h3 class="game-matchup-heading-period">{{ $formattedGameTime }} EST</h3>
-            <p class="game-matchup-heading-clock">Stats Leaders</p>
+            <p class="game-matchup-heading-clock">Head to Head</p>
           </div>
           {{-- home team --}}
           <div class="game-matchup-heading-right">
@@ -594,6 +594,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
               </span>
             </h4>
             <div class="team-lineup-scrolling-container">
+              <h4>Goalie Comparison</h4>
               {{-- goalies --}}
               <ul class="team-lineup-goalies">
                 <li>
@@ -674,6 +675,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
               </span>
             </h4>
             <div class="team-lineup-scrolling-container">
+              <h4>Goalie Comparison</h4>
               {{-- goalies --}}
               <ul class="team-lineup-goalies">
                 <li>
@@ -792,29 +794,57 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
           <h3>Last 10 Games</h3>
           <div class="game-matchup-main-last-ten-games">
             <div class="game-matchup-away-last-ten">
-              <ul>
+              <ul class="team-last-ten-record">
                 <li>
                   <p>
-                    {{ $gameMatchup['matchup']['last10Record']['awayTeam']['record'] }}
+                    Record : {{ $gameMatchup['matchup']['last10Record']['awayTeam']['record'] }}
                   </p>
                   <p>
-                    Streak {{ $gameMatchup['matchup']['last10Record']['awayTeam']['streakType'] }} :
+                    Streak : {{ $gameMatchup['matchup']['last10Record']['awayTeam']['streakType'] }} -
                     {{ $gameMatchup['matchup']['last10Record']['awayTeam']['streak'] }}
                   </p>
                 </li>
               </ul>
+              <ul class="team-last-ten-results">
+                <li>
+                  <h3 title="Team">Team</h3>
+                  <h3 title="Results">Results</h3>
+                </li>
+                {{--  --}}
+                @foreach ($gameMatchup['matchup']['last10Record']['awayTeam']['pastGameResults'] as $key => $results)
+                  <li>
+                    <p>{{ $results['opponentAbbrev'] }}</p>
+                    <p>{{ $results['gameResult'] }}</p>
+                  </li>
+                @endforeach
+                {{--  --}}
+              </ul>
             </div>
             <div class="game-matchup-home-last-ten">
-              <ul>
+              <ul class="team-last-ten-record">
                 <li>
                   <p>
-                    {{ $gameMatchup['matchup']['last10Record']['homeTeam']['record'] }}
+                    Record : {{ $gameMatchup['matchup']['last10Record']['homeTeam']['record'] }}
                   </p>
                   <p>
-                    Streak{{ $gameMatchup['matchup']['last10Record']['homeTeam']['streakType'] }} :
+                    Streak : {{ $gameMatchup['matchup']['last10Record']['homeTeam']['streakType'] }} -
                     {{ $gameMatchup['matchup']['last10Record']['homeTeam']['streak'] }}
                   </p>
                 </li>
+              </ul>
+              <ul class="team-last-ten-results">
+                <li>
+                  <h3 title="Team">Team</h3>
+                  <h3 title="Results">Results</h3>
+                </li>
+                {{--  --}}
+                @foreach ($gameMatchup['matchup']['last10Record']['homeTeam']['pastGameResults'] as $key => $results)
+                  <li>
+                    <p>{{ $results['opponentAbbrev'] }}</p>
+                    <p>{{ $results['gameResult'] }}</p>
+                  </li>
+                @endforeach
+                {{--  --}}
               </ul>
             </div>
           </div>
