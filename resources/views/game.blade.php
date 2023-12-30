@@ -813,7 +813,10 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                 {{--  --}}
                 @foreach ($gameMatchup['matchup']['last10Record']['awayTeam']['pastGameResults'] as $key => $results)
                   <li>
-                    <p>{{ $results['opponentAbbrev'] }}</p>
+                    <p>
+                      <span>{{ $key + 1 }}.</span>
+                      {{ $results['opponentAbbrev'] }}
+                    </p>
                     <p>{{ $results['gameResult'] }}</p>
                   </li>
                 @endforeach
@@ -840,7 +843,10 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                 {{--  --}}
                 @foreach ($gameMatchup['matchup']['last10Record']['homeTeam']['pastGameResults'] as $key => $results)
                   <li>
-                    <p>{{ $results['opponentAbbrev'] }}</p>
+                    <p>
+                      <span>{{ $key + 1 }}.</span>
+                      {{ $results['opponentAbbrev'] }}
+                    </p>
                     <p>{{ $results['gameResult'] }}</p>
                   </li>
                 @endforeach

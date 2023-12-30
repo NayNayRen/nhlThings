@@ -150,12 +150,12 @@
 .pacific-button,
 .team-stats-button,
 .west-button {
-    -webkit-box-shadow: 0 2px 2px #808080;
+    -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
     -webkit-transition: all 150ms ease;
     background-color: #fff;
     border: none;
     border-radius: 50px;
-    box-shadow: 0 2px 2px #808080;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
     color: #000;
     cursor: pointer;
     display: inline-block;
@@ -344,10 +344,10 @@ footer {
     -webkit-box-direction: normal;
     -webkit-box-orient: horizontal;
     -webkit-box-pack: space-evenly;
-    -webkit-box-shadow: 0 0 10px #000;
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     align-items: center;
     background-color: #dcdcdc;
-    box-shadow: 0 0 10px #000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
@@ -446,8 +446,8 @@ footer {
 }
 
 .game-matchup-heading-logo img {
-    -webkit-filter: drop-shadow(0 2px 2px #808080);
-    filter: drop-shadow(0 2px 2px #808080);
+    -webkit-filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.75));
+    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.75));
     height: auto;
     width: 100%;
 }
@@ -704,10 +704,10 @@ footer {
 }
 
 .game-matchup-penalty {
-    -webkit-box-shadow: 0 2px 5px #808080;
+    -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
     background-color: #fff;
     border-radius: 5px;
-    box-shadow: 0 2px 5px #808080;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
     font-size: 14px;
     margin: 5px;
     min-width: -moz-fit-content;
@@ -763,11 +763,11 @@ footer {
     -ms-flex-direction: row;
     -webkit-box-direction: normal;
     -webkit-box-orient: horizontal;
-    -webkit-box-shadow: 0 2px 5px #808080;
+    -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
     align-items: center;
     background-color: #fff;
     border-radius: 5px;
-    box-shadow: 0 2px 5px #808080;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
@@ -808,8 +808,8 @@ footer {
 }
 
 .game-matchup-main-container-scored-by-info div img {
-    -webkit-filter: drop-shadow(0 2px 2px #808080);
-    filter: drop-shadow(0 2px 2px #808080);
+    -webkit-filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.75));
+    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.75));
     height: auto;
     width: 100%;
 }
@@ -849,11 +849,11 @@ footer {
     -webkit-box-direction: normal;
     -webkit-box-orient: vertical;
     -webkit-box-pack: center;
-    -webkit-box-shadow: 0 2px 5px #808080;
+    -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
     align-items: center;
     background-color: #fff;
     border-radius: 5px;
-    box-shadow: 0 2px 5px #808080;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
@@ -903,10 +903,10 @@ header {
     -webkit-box-direction: normal;
     -webkit-box-orient: vertical;
     -webkit-box-pack: justify;
-    -webkit-box-shadow: 0 0 10px #000;
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
     align-items: center;
     background-color: #000;
-    box-shadow: 0 0 10px #000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
     color: #fff;
     display: -ms-flexbox;
     display: -webkit-box;
@@ -987,12 +987,12 @@ header h1 {
 }
 
 .league-game-dates-dropdown-button {
-    -webkit-box-shadow: 0 2px 2px #000;
+    -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
     -webkit-transition: color 150ms ease;
     background-color: #fff;
     border: none;
     border-radius: 5px;
-    box-shadow: 0 2px 2px #000;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
     color: #000;
     cursor: pointer;
     font-size: 18px;
@@ -1028,11 +1028,11 @@ header h1 {
 }
 
 .league-game-dates-dropdown-list {
-    -webkit-box-shadow: 0 2px 5px #808080;
+    -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
     -webkit-transition: height 250ms ease, opacity 250ms ease;
     background-color: #fff;
     border-radius: 5px;
-    box-shadow: 0 2px 5px #808080;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
     height: 0;
     left: 0;
     opacity: 0;
@@ -1087,10 +1087,10 @@ header h1 {
     -webkit-box-direction: normal;
     -webkit-box-orient: horizontal;
     -webkit-box-pack: start;
-    -webkit-box-shadow: 0 0 10px #808080;
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     align-items: center;
     background-color: #dcdcdc;
-    box-shadow: 0 0 10px #808080;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
@@ -1127,8 +1127,8 @@ header h1 {
 }
 
 .league-standings-heading-container div:last-of-type img {
-    -webkit-filter: drop-shadow(0 2px 2px #808080);
-    filter: drop-shadow(0 2px 2px #808080);
+    -webkit-filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.75));
+    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.75));
     height: auto;
     width: 100%;
 }
@@ -1190,11 +1190,11 @@ header h1 {
     -webkit-box-direction: normal;
     -webkit-box-orient: vertical;
     -webkit-box-pack: start;
-    -webkit-box-shadow: 0 2px 5px #808080;
+    -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
     align-items: flex-start;
     background-color: #fff;
     border: 1px solid #000;
-    box-shadow: 0 2px 5px #808080;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
     cursor: default;
     display: -ms-flexbox;
     display: -webkit-box;
@@ -1290,11 +1290,12 @@ header h1 {
 
 .league-standings-table li span,
 .player-last-five li span:first-of-type,
-.player-stats li span:first-of-type {
+.player-stats li span:first-of-type,
+.team-last-ten-results li span {
     -webkit-transform: translateY(-50%);
     color: #b22222;
     font-size: 14px;
-    left: 6px;
+    left: 5px;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -1358,12 +1359,12 @@ header h1 {
 }
 
 .main-container {
-    -webkit-box-shadow: 0 0 20px #000;
+    -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     background-color: #808080;
     background-attachment: fixed;
     border-radius: 15px;
     background-repeat: no-repeat;
-    box-shadow: 0 0 20px #000;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     height: 100%;
     overflow: hidden;
     outline: solid 1px #000;
@@ -1433,10 +1434,10 @@ header h1 {
 .officials-container li,
 .player-summary li,
 .team-summary li {
-    -webkit-box-shadow: 0 2px 5px #808080;
+    -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
     background-color: #fff;
     border-radius: 5px;
-    box-shadow: 0 2px 5px #808080;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
     font-size: 14px;
     margin: 0 15px 0 0;
     overflow: hidden;
@@ -1488,12 +1489,12 @@ header h1 {
 
 .player-award-dropdown-button,
 .player-draft-dropdown-button {
-    -webkit-box-shadow: 0 2px 2px #000;
+    -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
     -webkit-transition: color 150ms ease;
     background-color: #fff;
     border-radius: 5px;
     border: none;
-    box-shadow: 0 2px 2px #000;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
     color: #000;
     cursor: pointer;
     font-size: 14px;
@@ -1533,12 +1534,12 @@ header h1 {
     -webkit-box-direction: normal;
     -webkit-box-orient: vertical;
     -webkit-box-pack: start;
-    -webkit-box-shadow: 0 2px 2px #808080;
+    -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
     background-color: #fff;
     border-bottom-right-radius: 5px;
     border-bottom: solid 1px #000;
     border-right: solid 1px #000;
-    box-shadow: 0 2px 2px #808080;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
     cursor: default;
     display: -ms-flexbox;
     display: -webkit-box;
@@ -1556,9 +1557,9 @@ header h1 {
 
 .player-award-dropdown-list,
 .player-draft-dropdown-list {
-    -webkit-box-shadow: 0 2px 5px #808080;
+    -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
     background-color: #fff;
-    box-shadow: 0 2px 5px #808080;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
     height: auto;
     outline: solid 1px #000;
     width: -moz-fit-content;
@@ -1568,9 +1569,9 @@ header h1 {
 
 .player-award-tile,
 .player-draft-tile {
-    -webkit-box-shadow: 0 2px 5px #808080;
+    -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
     background-color: #024e98;
-    box-shadow: 0 2px 5px #808080;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
     color: #fff;
     font-size: 14px;
     margin-top: 10px;
@@ -1638,8 +1639,8 @@ header h1 {
 
 .player-heading-logo img,
 .team-heading-logo img {
-    -webkit-filter: drop-shadow(0 2px 2px #808080);
-    filter: drop-shadow(0 2px 2px #808080);
+    -webkit-filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.75));
+    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.75));
     height: auto;
     width: 100%;
 }
@@ -1711,8 +1712,8 @@ header h1 {
 }
 
 .player-team span img {
-    -webkit-filter: drop-shadow(0 2px 2px #808080);
-    filter: drop-shadow(0 2px 2px #808080);
+    -webkit-filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.75));
+    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.75));
     height: auto;
     width: 100%;
 }
@@ -1820,8 +1821,8 @@ header h1 {
 }
 
 .roster-dropdown-photo-container img {
-    -webkit-filter: drop-shadow(0 2px 2px #808080);
-    filter: drop-shadow(0 2px 2px #808080);
+    -webkit-filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.75));
+    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.75));
     height: auto;
     width: 100%;
 }
@@ -1867,8 +1868,8 @@ header h1 {
 }
 
 .shield-logo img {
-    -webkit-filter: drop-shadow(0 2px 2px #808080);
-    filter: drop-shadow(0 2px 2px #808080);
+    -webkit-filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.75));
+    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.75));
     height: auto;
     width: 100%;
 }
@@ -1924,12 +1925,12 @@ header h1 {
     -webkit-box-direction: normal;
     -webkit-box-orient: vertical;
     -webkit-box-pack: center;
-    -webkit-box-shadow: 0 0 5px #808080;
+    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     -webkit-transition: color 150ms ease;
     align-items: center;
     background-color: #fff;
     border: none;
-    box-shadow: 0 0 5px #808080;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     cursor: pointer;
     display: -ms-flexbox;
     display: -webkit-box;
@@ -1972,11 +1973,13 @@ header h1 {
 }
 
 .team-lineup-away-container {
-    -webkit-box-shadow: 0 2px 5px #000;
+    -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
     -webkit-transition: height 250ms ease, opacity 250ms ease;
     background-color: #fff;
     border-bottom-right-radius: 5px;
-    box-shadow: 0 2px 5px #000;
+    border-bottom: solid 1px #000;
+    border-right: solid 1px #000;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
     cursor: default;
     height: 0;
     left: 0;
@@ -2046,11 +2049,13 @@ header h1 {
 }
 
 .team-lineup-home-container {
-    -webkit-box-shadow: 0 2px 5px #000;
+    -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
     -webkit-transition: height 250ms ease, opacity 250ms ease;
     background-color: #fff;
     border-bottom-left-radius: 5px;
-    box-shadow: 0 2px 5px #000;
+    border-bottom: solid 1px #000;
+    border-left: solid 1px #000;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
     cursor: default;
     height: 0;
     opacity: 0;
@@ -2103,13 +2108,13 @@ header h1 {
     flex-direction: column;
     height: auto;
     justify-content: center;
-    width: 70px;
+    width: 65px;
     /* outline: solid 1px blue; */
 }
 
 .teams-dropdown-logo img {
-    -webkit-filter: drop-shadow(0 2px 2px #808080);
-    filter: drop-shadow(0 2px 2px #808080);
+    -webkit-filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.75));
+    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.75));
     height: auto;
     width: 100%;
 }
@@ -2143,14 +2148,14 @@ header h1 {
     -ms-flex-pack: center;
     -webkit-box-align: center;
     -webkit-box-pack: center;
-    -webkit-box-shadow: 0 2px 2px #000;
+    -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
     -webkit-box-shadow: none;
     -webkit-transition: all 150ms ease;
     align-items: center;
     background-color: #fff;
     border-radius: 50%;
     bottom: 10px;
-    box-shadow: 0 2px 2px #000;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
     color: #1e90ff;
     display: -ms-flexbox;
     display: -webkit-box;
@@ -2313,8 +2318,8 @@ header h1 {
     .pacific-button:hover,
     .team-stats-button:hover,
     .west-button:hover {
-        -webkit-box-shadow: 0 2px 2px #808080;
-        box-shadow: 0 2px 2px #808080;
+        -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
     }
 
     .current-date-time-container {

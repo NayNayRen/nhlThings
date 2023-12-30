@@ -4,17 +4,17 @@
  * Licensed under: SEE LICENSE IN https://github.com/OwlCarousel2/OwlCarousel2/blob/master/LICENSE
  */
 .arrow {
-    -webkit-box-shadow: 0 2px 2px #808080;
+    -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
     background-color: #000;
     border-radius: 15px;
     border: none;
     bottom: 0;
-    box-shadow: 0 2px 2px #808080;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
     color: #1e90ff;
     cursor: pointer;
     font-size: 20px;
     opacity: 1;
-    padding: 5px 12px;
+    padding: 5px 15px;
     position: absolute;
     z-index: 2;
 }
@@ -64,11 +64,11 @@
     -ms-flex-pack: center;
     -webkit-box-align: center;
     -webkit-box-pack: center;
-    -webkit-box-shadow: 0 2px 2px #000;
+    -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
     align-items: center;
     background-color: #fff;
     border-bottom-left-radius: 5px;
-    box-shadow: 0 2px 2px #000;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
     cursor: pointer;
     display: -ms-flexbox;
     display: -webkit-box;
@@ -219,8 +219,8 @@
 }
 
 .game-dropdown-team-logo img {
-    -webkit-filter: drop-shadow(0 2px 2px #808080);
-    filter: drop-shadow(0 2px 2px #808080);
+    -webkit-filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.75));
+    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.75));
     height: auto;
     width: 100%;
 }
@@ -255,14 +255,14 @@
 }
 
 .game-stats-button {
-    -webkit-box-shadow: 0 2px 2px #808080;
+    -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
     -webkit-transform: translateX(-50%);
     -webkit-transition: all 150ms ease;
     background-color: #fff;
     border-radius: 50px;
     border: none;
     bottom: 20px;
-    box-shadow: 0 2px 2px #808080;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
     color: #000;
     cursor: pointer;
     font-size: 14px;
@@ -304,8 +304,8 @@
 }
 
 .game-team-logo img {
-    -webkit-filter: drop-shadow(0 2px 2px #808080);
-    filter: drop-shadow(0 2px 2px #808080);
+    -webkit-filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.75));
+    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.75));
     height: auto;
     width: 100%;
 }
@@ -425,11 +425,11 @@
     -webkit-box-direction: normal;
     -webkit-box-orient: vertical;
     -webkit-box-pack: start;
-    -webkit-box-shadow: 0 2px 5px #808080;
+    -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
     align-items: flex-start;
     background-color: #fff;
     border-radius: 10px;
-    box-shadow: 0 2px 5px #808080;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
@@ -751,11 +751,11 @@
     -webkit-box-direction: normal;
     -webkit-box-orient: vertical;
     -webkit-box-pack: start;
-    -webkit-box-shadow: 0 2px 2px #808080;
+    -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
     align-items: flex-start;
     background-color: #fff;
     border-radius: 15px;
-    box-shadow: 0 2px 2px #808080;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
     display: -ms-flexbox;
     display: -webkit-box;
     display: flex;
