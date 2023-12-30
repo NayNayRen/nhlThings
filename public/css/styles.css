@@ -501,7 +501,8 @@ footer {
 .game-matchup-main-container-scored-by-outer,
 .game-matchup-main-container-shots,
 .game-matchup-main-container-taways,
-.game-matchup-main-container-team-leaders {
+.game-matchup-main-container-team-leaders,
+.game-matchup-main-last-ten-games {
     margin: 0 auto 15px auto;
     width: 1000px;
     /* outline: solid 1px blue; */
@@ -659,6 +660,39 @@ footer {
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
+}
+
+.game-matchup-main-last-ten-games {
+    -ms-flex-align: center;
+    -ms-flex-direction: row;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -webkit-box-pack: center;
+    align-items: center;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.game-matchup-main-last-ten-games ul {
+    -ms-flex-align: center;
+    -ms-flex-direction: column;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-box-pack: center;
+    align-items: center;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
 }
 
 .game-matchup-penalty {
@@ -1946,13 +1980,13 @@ header h1 {
 
 .team-lineup-away-container p,
 .team-lineup-home-container p {
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .team-lineup-defense h3,
 .team-lineup-forwards h3,
 .team-lineup-goalies h3 {
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .team-lineup-defense li p:first-of-type,
@@ -2126,7 +2160,8 @@ header h1 {
     .game-matchup-main-container-shots,
     .game-matchup-main-container-taways,
     .game-matchup-main-container-team-leaders,
-    .game-matchup-main-container-three-stars {
+    .game-matchup-main-container-three-stars,
+    .game-matchup-main-last-ten-games {
         width: 700px;
     }
 
@@ -2175,7 +2210,8 @@ header h1 {
     .game-matchup-main-container-shots,
     .game-matchup-main-container-taways,
     .game-matchup-main-container-team-leaders,
-    .game-matchup-main-container-three-stars {
+    .game-matchup-main-container-three-stars,
+    .game-matchup-main-last-ten-games {
         width: 80%;
     }
 
@@ -2295,7 +2331,8 @@ header h1 {
     .game-matchup-main-container-shots,
     .game-matchup-main-container-taways,
     .game-matchup-main-container-team-leaders,
-    .game-matchup-main-container-three-stars {
+    .game-matchup-main-container-three-stars,
+    .game-matchup-main-last-ten-games {
         margin: 0 auto 10px auto;
         width: 90%;
     }
@@ -2452,7 +2489,8 @@ header h1 {
     .game-matchup-main-container-shots,
     .game-matchup-main-container-taways,
     .game-matchup-main-container-team-leaders,
-    .game-matchup-main-container-three-stars {
+    .game-matchup-main-container-three-stars,
+    .game-matchup-main-last-ten-games {
         width: 100%;
     }
 
