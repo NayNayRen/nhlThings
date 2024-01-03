@@ -1294,7 +1294,7 @@ header h1 {
 .team-last-ten-results li span {
     -webkit-transform: translateY(-50%);
     color: #b22222;
-    font-size: 14px;
+    font-size: 12px;
     left: 5px;
     position: absolute;
     top: 50%;

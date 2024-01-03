@@ -37,7 +37,7 @@
             <p>
               <span>
                 <span>
-                  {{ $tally['name'] }}
+                  {{ $tally['name']['default'] }}
                 </span>
                 {{ '(' . $tally['awayScore'] }} - {{ $tally['homeScore'] . ')' }}
               </span>
