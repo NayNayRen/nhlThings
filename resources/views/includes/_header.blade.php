@@ -85,7 +85,7 @@
                       <p class="roster-dropdown-name">{{ $goalie['firstName']['default'] }}
                         {{ $goalie['lastName']['default'] }}</p>
                       @if (array_key_exists('sweaterNumber', $goalie))
-                        <span class='roster-dropdown-position'>{{ $goalie['sweaterNumber'] }}</span>
+                        <span class='roster-dropdown-position'>#{{ $goalie['sweaterNumber'] }}</span>
                       @else
                         <span class='roster-dropdown-position'>0</span>
                       @endif
@@ -110,7 +110,7 @@
                       <p class="roster-dropdown-name">{{ $forward['firstName']['default'] }}
                         {{ $forward['lastName']['default'] }}</p>
                       @if (array_key_exists('sweaterNumber', $forward))
-                        <span class='roster-dropdown-position'>{{ $forward['sweaterNumber'] }}</span>
+                        <span class='roster-dropdown-position'>#{{ $forward['sweaterNumber'] }}</span>
                       @else
                         <span class='roster-dropdown-position'>0</span>
                       @endif
@@ -135,7 +135,7 @@
                       <p class="roster-dropdown-name">{{ $defender['firstName']['default'] }}
                         {{ $defender['lastName']['default'] }}</p>
                       @if (array_key_exists('sweaterNumber', $defender))
-                        <span class='roster-dropdown-position'>{{ $defender['sweaterNumber'] }}</span>
+                        <span class='roster-dropdown-position'>#{{ $defender['sweaterNumber'] }}</span>
                       @else
                         <span class='roster-dropdown-position'>0</span>
                       @endif

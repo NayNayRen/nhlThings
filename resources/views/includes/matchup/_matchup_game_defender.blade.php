@@ -1,10 +1,11 @@
 <li>
   <p>
-    <span>{{ $defender['sweaterNumber'] }}</span>
+    <span>{{ $key + 1 }}.</span>
     <a href="{{ route('players.player', $defender['playerId']) }}" target="_blank">
       {{ $defender['name']['default'] }}
     </a>
   </p>
+  <p>#{{ $defender['sweaterNumber'] }}</p>
   <p>{{ $defender['goals'] }}</p>
   <p>{{ $defender['assists'] }}</p>
   <p>{{ $defender['points'] }}</p>

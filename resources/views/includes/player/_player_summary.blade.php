@@ -9,7 +9,7 @@
   </li>
   <li>
     <h3>Number</h3>
-    <p>{{ $player['sweaterNumber'] }}</p>
+    <p>#{{ $player['sweaterNumber'] }}</p>
   </li>
   <li>
     <h3>Position</h3>

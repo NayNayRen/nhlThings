@@ -90,12 +90,12 @@ function loadGameScript() {
 
   awayLineupButton.addEventListener('click', () => {
     // console.log(awayLineupContainer);
-    awayLineupButton.childNodes[13].classList.toggle('rotate');
+    awayLineupButton.childNodes[9].classList.toggle('rotate');
     awayLineupContainer.classList.toggle('dropdown-list-toggle');
   });
   homeLineupButton.addEventListener('click', () => {
     // console.log(homeLineupButton);
-    homeLineupButton.childNodes[13].classList.toggle('rotate');
+    homeLineupButton.childNodes[9].classList.toggle('rotate');
     homeLineupContainer.classList.toggle('dropdown-list-toggle');
   });
 

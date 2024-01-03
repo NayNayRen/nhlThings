@@ -1,10 +1,11 @@
 <li>
   <p>
-    <span>{{ $forward['sweaterNumber'] }}</span>
+    <span>{{ $key + 1 }}.</span>
     <a href="{{ route('players.player', $forward['playerId']) }}" target="_blank">
       {{ $forward['name']['default'] }}
     </a>
   </p>
+  <p>#{{ $forward['sweaterNumber'] }}</p>
   <p>{{ $forward['goals'] }}</p>
   <p>{{ $forward['assists'] }}</p>
   <p>{{ $forward['points'] }}</p>

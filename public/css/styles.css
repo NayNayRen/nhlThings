@@ -1652,7 +1652,7 @@ header h1 {
 .team-lineup-forwards li h3:first-of-type,
 .team-lineup-goalies li h3:first-of-type,
 .team-stats li h3:first-of-type {
-    min-width: 125px;
+    min-width: 130px;
 }
 .player-stats li h3:nth-of-type(2) {
     min-width: 215px;
@@ -1672,7 +1672,7 @@ header h1 {
 .team-lineup-goalies li p:first-of-type,
 .team-stats li p:first-of-type {
     font-weight: bold;
-    min-width: 125px;
+    min-width: 130px;
     padding: 2px 5px;
 }
 .player-stats li p:nth-of-type(2) {
@@ -1939,10 +1939,11 @@ header h1 {
     font-size: 14px;
     height: 100%;
     justify-content: center;
-    line-height: 1;
+    /* line-height: 1; */
     padding: 0 0 20px 0;
     position: relative;
     transition: color 150ms ease;
+    width: 30px;
 }
 
 .team-lineup-away-button:hover,
@@ -1960,7 +1961,8 @@ header h1 {
 
 .team-lineup-away-button span,
 .team-lineup-home-button span {
-    padding: 0 10px 0 10px;
+    /* padding: 0 8px 0 8px; */
+    /* transform: rotate(90deg); */
     width: 100%;
     /* outline: solid 1px blue; */
 }
@@ -2021,7 +2023,7 @@ header h1 {
 .team-lineup-forwards li p:first-of-type,
 .team-lineup-goalies li p:first-of-type {
     position: relative;
-    text-align: left;
+    text-align: right;
 }
 
 .team-lineup-defense li p:first-of-type a,
@@ -2035,7 +2037,8 @@ header h1 {
 .team-lineup-goalies li p:first-of-type span {
     -webkit-transform: translateY(-50%);
     color: #b22222;
-    right: 5px;
+    font-size: 12px;
+    left: 5px;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -2266,6 +2269,11 @@ header h1 {
 
     .main-container {
         width: 100%;
+    }
+
+    .team-lineup-away-container,
+    .team-lineup-home-container {
+        width: 75%;
     }
 }
 
@@ -2607,12 +2615,11 @@ header h1 {
 
     .team-lineup-away-button,
     .team-lineup-home-button {
-        justify-content: flex-end;
-        padding: 0 0 25px 0;
+        width: 25px;
     }
 
-    .team-lineup-away-container,
+    /* .team-lineup-away-container,
     .team-lineup-home-container {
         width: calc(50% - 2px);
-    }
+    } */
 }

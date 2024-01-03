@@ -52,7 +52,7 @@
               </span>
             </p>
             <div>
-              <img src={{ $tally['headshot'] }} alt="{{ $tally['name'] }}">
+              <img src={{ $tally['headshot'] }} alt="{{ $tally['name']['default'] }}">
             </div>
           </div>
         @endforeach

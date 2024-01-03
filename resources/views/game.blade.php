@@ -74,18 +74,16 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
           </div>
           <div class="team-lineup-away-button-container">
             <button type="button" class="team-lineup-away-button">
-              <span>L</span>
-              <span>i</span>
-              <span>n</span>
-              <span>e</span>
-              <span>u</span>
-              <span>p</span>
+              <span>A</span>
+              <span>w</span>
+              <span>a</span>
+              <span>y</span>
               <i class="fa-solid fa-caret-up" aria-hidden="true"></i>
             </button>
           </div>
           <div class="team-lineup-away-container">
             <h4>
-              Head Coach
+              Away HC :
               <span>
                 {{ $gameBoxscores['boxscore']['gameInfo']['awayTeam']['headCoach']['default'] }}
               </span>
@@ -95,6 +93,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
               <ul class="team-lineup-forwards">
                 <li>
                   <h3 title="Forwards">Forwards</h3>
+                  <h3 title="Sweater Number">Num</h3>
                   <h3 title="Goals">G</h3>
                   <h3 title="Assists">A</h3>
                   <h3 title="Points">P</h3>
@@ -105,7 +104,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                   <h3 title="Faceoffs">FO</h3>
                   <h3 title="Time on Ice">TOI</h3>
                 </li>
-                @foreach ($gameBoxscores['boxscore']['playerByGameStats']['awayTeam']['forwards'] as $forward)
+                @foreach ($gameBoxscores['boxscore']['playerByGameStats']['awayTeam']['forwards'] as $key => $forward)
                   @include('includes.matchup._matchup_game_forward')
                 @endforeach
               </ul>
@@ -113,6 +112,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
               <ul class="team-lineup-defense">
                 <li>
                   <h3 title="Defense">Defense</h3>
+                  <h3 title="Sweater Number">Num</h3>
                   <h3 title="Goals">G</h3>
                   <h3 title="Assists">A</h3>
                   <h3 title="Points">P</h3>
@@ -123,7 +123,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                   <h3 title="Faceoffs">FO</h3>
                   <h3 title="Time on Ice">TOI</h3>
                 </li>
-                @foreach ($gameBoxscores['boxscore']['playerByGameStats']['awayTeam']['defense'] as $defender)
+                @foreach ($gameBoxscores['boxscore']['playerByGameStats']['awayTeam']['defense'] as $key => $defender)
                   @include('includes.matchup._matchup_game_defender')
                 @endforeach
               </ul>
@@ -131,6 +131,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
               <ul class="team-lineup-goalies">
                 <li>
                   <h3 title="Goalies">Goalies</h3>
+                  <h3 title="Sweater Number">Num</h3>
                   <h3 title="Goals Allowed">GA</h3>
                   <h3 title="Even Strength Shots">ESS</h3>
                   <h3 title="Power Play Shots">PPS</h3>
@@ -142,7 +143,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                   <h3 title="Penalty Minutes">PIM</h3>
                   <h3 title="Time on Ice">TOI</h3>
                 </li>
-                @foreach ($gameBoxscores['boxscore']['playerByGameStats']['awayTeam']['goalies'] as $goalie)
+                @foreach ($gameBoxscores['boxscore']['playerByGameStats']['awayTeam']['goalies'] as $key => $goalie)
                   @include('includes.matchup._matchup_game_goalie')
                 @endforeach
               </ul>
@@ -151,18 +152,16 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
 
           <div class="team-lineup-home-button-container">
             <button type="button" class="team-lineup-home-button">
-              <span>L</span>
-              <span>i</span>
-              <span>n</span>
+              <span>H</span>
+              <span>o</span>
+              <span>m</span>
               <span>e</span>
-              <span>u</span>
-              <span>p</span>
               <i class="fa-solid fa-caret-up" aria-hidden="true"></i>
             </button>
           </div>
           <div class="team-lineup-home-container">
             <h4>
-              Head Coach
+              Home HC :
               <span>
                 {{ $gameBoxscores['boxscore']['gameInfo']['homeTeam']['headCoach']['default'] }}
               </span>
@@ -172,6 +171,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
               <ul class="team-lineup-forwards">
                 <li>
                   <h3 title="Forwards">Forwards</h3>
+                  <h3 title="Sweater Number">Num</h3>
                   <h3 title="Goals">G</h3>
                   <h3 title="Assists">A</h3>
                   <h3 title="Points">P</h3>
@@ -182,7 +182,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                   <h3 title="Faceoffs">FO</h3>
                   <h3 title="Time on Ice">TOI</h3>
                 </li>
-                @foreach ($gameBoxscores['boxscore']['playerByGameStats']['homeTeam']['forwards'] as $forward)
+                @foreach ($gameBoxscores['boxscore']['playerByGameStats']['homeTeam']['forwards'] as $key => $forward)
                   @include('includes.matchup._matchup_game_forward')
                 @endforeach
               </ul>
@@ -190,6 +190,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
               <ul class="team-lineup-defense">
                 <li>
                   <h3 title="Defense">Defense</h3>
+                  <h3 title="Sweater Number">Num</h3>
                   <h3 title="Goals">G</h3>
                   <h3 title="Assists">A</h3>
                   <h3 title="Points">P</h3>
@@ -200,7 +201,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                   <h3 title="Faceoffs">FO</h3>
                   <h3 title="Time on Ice">TOI</h3>
                 </li>
-                @foreach ($gameBoxscores['boxscore']['playerByGameStats']['homeTeam']['defense'] as $defender)
+                @foreach ($gameBoxscores['boxscore']['playerByGameStats']['homeTeam']['defense'] as $key => $defender)
                   @include('includes.matchup._matchup_game_defender')
                 @endforeach
               </ul>
@@ -208,6 +209,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
               <ul class="team-lineup-goalies">
                 <li>
                   <h3 title="Goalies">Goalies</h3>
+                  <h3 title="Sweater Number">Num</h3>
                   <h3 title="Goals Allowed">GA</h3>
                   <h3 title="Even Strength Shots">ESS</h3>
                   <h3 title="Power Play Shots">PPS</h3>
@@ -219,7 +221,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                   <h3 title="Penalty Minutes">PIM</h3>
                   <h3 title="Time on Ice">TOI</h3>
                 </li>
-                @foreach ($gameBoxscores['boxscore']['playerByGameStats']['homeTeam']['goalies'] as $goalie)
+                @foreach ($gameBoxscores['boxscore']['playerByGameStats']['homeTeam']['goalies'] as $key => $goalie)
                   @include('includes.matchup._matchup_game_goalie')
                 @endforeach
               </ul>
@@ -355,18 +357,16 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
           </div>
           <div class="team-lineup-away-button-container">
             <button type="button" class="team-lineup-away-button">
-              <span>L</span>
-              <span>i</span>
-              <span>n</span>
-              <span>e</span>
-              <span>u</span>
-              <span>p</span>
+              <span>A</span>
+              <span>w</span>
+              <span>a</span>
+              <span>y</span>
               <i class="fa-solid fa-caret-up" aria-hidden="true"></i>
             </button>
           </div>
           <div class="team-lineup-away-container">
             <h4>
-              Head Coach
+              Away HC :
               <span>
                 {{ $gameBoxscores['boxscore']['gameInfo']['awayTeam']['headCoach']['default'] }}
               </span>
@@ -375,6 +375,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
               <ul class="team-lineup-forwards">
                 <li>
                   <h3 title="Forwards">Forwards</h3>
+                  <h3 title="Sweater Number">Num</h3>
                   <h3 title="Goals">G</h3>
                   <h3 title="Assists">A</h3>
                   <h3 title="Points">P</h3>
@@ -385,7 +386,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                   <h3 title="Faceoffs">FO</h3>
                   <h3 title="Time on Ice">TOI</h3>
                 </li>
-                @foreach ($gameBoxscores['boxscore']['playerByGameStats']['awayTeam']['forwards'] as $forward)
+                @foreach ($gameBoxscores['boxscore']['playerByGameStats']['awayTeam']['forwards'] as $key => $forward)
                   @include('includes.matchup._matchup_game_forward')
                 @endforeach
               </ul>
@@ -393,6 +394,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
               <ul class="team-lineup-defense">
                 <li>
                   <h3 title="Defense">Defense</h3>
+                  <h3 title="Sweater Number">Num</h3>
                   <h3 title="Goals">G</h3>
                   <h3 title="Assists">A</h3>
                   <h3 title="Points">P</h3>
@@ -403,7 +405,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                   <h3 title="Faceoffs">FO</h3>
                   <h3 title="Time on Ice">TOI</h3>
                 </li>
-                @foreach ($gameBoxscores['boxscore']['playerByGameStats']['awayTeam']['defense'] as $defender)
+                @foreach ($gameBoxscores['boxscore']['playerByGameStats']['awayTeam']['defense'] as $key => $defender)
                   @include('includes.matchup._matchup_game_defender')
                 @endforeach
               </ul>
@@ -411,6 +413,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
               <ul class="team-lineup-goalies">
                 <li>
                   <h3 title="Goalies">Goalies</h3>
+                  <h3 title="Sweater Number">Num</h3>
                   <h3 title="Goals Allowed">GA</h3>
                   <h3 title="Even Strength Shots">ESS</h3>
                   <h3 title="Power Play Shots">PPS</h3>
@@ -422,7 +425,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                   <h3 title="Penalty Minutes">PIM</h3>
                   <h3 title="Time on Ice">TOI</h3>
                 </li>
-                @foreach ($gameBoxscores['boxscore']['playerByGameStats']['awayTeam']['goalies'] as $goalie)
+                @foreach ($gameBoxscores['boxscore']['playerByGameStats']['awayTeam']['goalies'] as $key => $goalie)
                   @include('includes.matchup._matchup_game_goalie')
                 @endforeach
               </ul>
@@ -431,18 +434,16 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
 
           <div class="team-lineup-home-button-container">
             <button type="button" class="team-lineup-home-button">
-              <span>L</span>
-              <span>i</span>
-              <span>n</span>
+              <span>H</span>
+              <span>o</span>
+              <span>m</span>
               <span>e</span>
-              <span>u</span>
-              <span>p</span>
               <i class="fa-solid fa-caret-up" aria-hidden="true"></i>
             </button>
           </div>
           <div class="team-lineup-home-container">
             <h4>
-              Head Coach
+              Home HC :
               <span>
                 {{ $gameBoxscores['boxscore']['gameInfo']['homeTeam']['headCoach']['default'] }}
               </span>
@@ -452,6 +453,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
               <ul class="team-lineup-forwards">
                 <li>
                   <h3 title="Forwards">Forwards</h3>
+                  <h3 title="Sweater Number">Num</h3>
                   <h3 title="Goals">G</h3>
                   <h3 title="Assists">A</h3>
                   <h3 title="Points">P</h3>
@@ -462,7 +464,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                   <h3 title="Faceoffs">FO</h3>
                   <h3 title="Time on Ice">TOI</h3>
                 </li>
-                @foreach ($gameBoxscores['boxscore']['playerByGameStats']['homeTeam']['forwards'] as $forward)
+                @foreach ($gameBoxscores['boxscore']['playerByGameStats']['homeTeam']['forwards'] as $key => $forward)
                   @include('includes.matchup._matchup_game_forward')
                 @endforeach
               </ul>
@@ -470,6 +472,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
               <ul class="team-lineup-defense">
                 <li>
                   <h3 title="Defense">Defense</h3>
+                  <h3 title="Sweater Number">Num</h3>
                   <h3 title="Goals">G</h3>
                   <h3 title="Assists">A</h3>
                   <h3 title="Points">P</h3>
@@ -480,7 +483,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                   <h3 title="Faceoffs">FO</h3>
                   <h3 title="Time on Ice">TOI</h3>
                 </li>
-                @foreach ($gameBoxscores['boxscore']['playerByGameStats']['homeTeam']['defense'] as $defender)
+                @foreach ($gameBoxscores['boxscore']['playerByGameStats']['homeTeam']['defense'] as $key => $defender)
                   @include('includes.matchup._matchup_game_defender')
                 @endforeach
               </ul>
@@ -488,6 +491,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
               <ul class="team-lineup-goalies">
                 <li>
                   <h3 title="Goalies">Goalies</h3>
+                  <h3 title="Sweater Number">Num</h3>
                   <h3 title="Goals Allowed">GA</h3>
                   <h3 title="Even Strength Shots">ESS</h3>
                   <h3 title="Power Play Shots">PPS</h3>
@@ -499,7 +503,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                   <h3 title="Penalty Minutes">PIM</h3>
                   <h3 title="Time on Ice">TOI</h3>
                 </li>
-                @foreach ($gameBoxscores['boxscore']['playerByGameStats']['homeTeam']['goalies'] as $goalie)
+                @foreach ($gameBoxscores['boxscore']['playerByGameStats']['homeTeam']['goalies'] as $key => $goalie)
                   @include('includes.matchup._matchup_game_goalie')
                 @endforeach
               </ul>
@@ -577,18 +581,16 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
           {{-- away team dropdown --}}
           <div class="team-lineup-away-button-container">
             <button type="button" class="team-lineup-away-button">
-              <span>L</span>
-              <span>i</span>
-              <span>n</span>
-              <span>e</span>
-              <span>u</span>
-              <span>p</span>
+              <span>A</span>
+              <span>w</span>
+              <span>a</span>
+              <span>y</span>
               <i class="fa-solid fa-caret-up" aria-hidden="true"></i>
             </button>
           </div>
           <div class="team-lineup-away-container">
             <h4>
-              Head Coach
+              Away HC :
               <span>
                 {{ $gameMatchup['matchup']['gameInfo']['awayTeam']['headCoach']['default'] }}
               </span>
@@ -605,16 +607,17 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                   <h3 title="Save %">Sv%</h3>
                   <h3 title="Shutouts">SO</h3>
                 </li>
-                @foreach ($gameMatchup['matchup']['goalieComparisonL5']['awayTeam'] as $goalie)
+                @foreach ($gameMatchup['matchup']['goalieComparisonL5']['awayTeam'] as $key => $goalie)
                   @if (array_key_exists('gamesPlayed', $goalie))
                     <li>
                       <p>
-                        <span>{{ $goalie['sweaterNumber'] }}</span>
+                        <span>{{ $key + 1 }}.</span>
                         <a href="{{ route('players.player', $goalie['playerId']) }}" target="_blank">
                           {{ $goalie['name']['default'] }}
                         </a>
                       </p>
                       <p>{{ $goalie['gamesPlayed'] }}</p>
+                      <p>{{ $goalie['sweaterNumber'] }}</p>
                       <p>{{ $goalie['record'] }}</p>
                       <p>{{ $goalie['gaa'] }}</p>
                       <p>{{ $goalie['savePctg'] }}%</p>
@@ -658,18 +661,16 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
           {{-- home team dropdown --}}
           <div class="team-lineup-home-button-container">
             <button type="button" class="team-lineup-home-button">
-              <span>L</span>
-              <span>i</span>
-              <span>n</span>
+              <span>H</span>
+              <span>o</span>
+              <span>m</span>
               <span>e</span>
-              <span>u</span>
-              <span>p</span>
               <i class="fa-solid fa-caret-up" aria-hidden="true"></i>
             </button>
           </div>
           <div class="team-lineup-home-container">
             <h4>
-              Head Coach
+              Home HC :
               <span>
                 {{ $gameMatchup['matchup']['gameInfo']['homeTeam']['headCoach']['default'] }}
               </span>
@@ -680,22 +681,24 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
               <ul class="team-lineup-goalies">
                 <li>
                   <h3 title="Goalies">Goalies</h3>
+                  <h3 title="Sweater Number">Num</h3>
                   <h3 title="Games Played">GP</h3>
                   <h3 title="Record">Rec</h3>
                   <h3 title="Goals Against Average">GAA</h3>
                   <h3 title="Save %">Sv%</h3>
                   <h3 title="Shutouts">SO</h3>
                 </li>
-                @foreach ($gameMatchup['matchup']['goalieComparisonL5']['homeTeam'] as $goalie)
+                @foreach ($gameMatchup['matchup']['goalieComparisonL5']['homeTeam'] as $key => $goalie)
                   @if (array_key_exists('gamesPlayed', $goalie))
                     <li>
                       <p>
-                        <span>{{ $goalie['sweaterNumber'] }}</span>
+                        <span>{{ $key + 1 }}.</span>
                         <a href="{{ route('players.player', $goalie['playerId']) }}" target="_blank">
                           {{ $goalie['name']['default'] }}
                         </a>
                       </p>
                       <p>{{ $goalie['gamesPlayed'] }}</p>
+                      <p>{{ $goalie['sweaterNumber'] }}</p>
                       <p>{{ $goalie['record'] }}</p>
                       <p>{{ $goalie['gaa'] }}</p>
                       <p>{{ $goalie['savePctg'] }}%</p>

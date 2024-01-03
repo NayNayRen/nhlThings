@@ -1,10 +1,11 @@
 <li>
   <p>
-    <span>{{ $goalie['sweaterNumber'] }}</span>
+    <span>{{ $key + 1 }}.</span>
     <a href="{{ route('players.player', $goalie['playerId']) }}" target="_blank">
       {{ $goalie['name']['default'] }}
     </a>
   </p>
+  <p>#{{ $goalie['sweaterNumber'] }}</p>
   <p>{{ $goalie['goalsAgainst'] }}</p>
   <p>{{ $goalie['evenStrengthShotsAgainst'] }}</p>
   <p>{{ $goalie['powerPlayShotsAgainst'] }}</p>
