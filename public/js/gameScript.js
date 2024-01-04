@@ -21,10 +21,10 @@ function stickHeading() {
     stickyHeading.style.top = "85px";
     scrollPoint.style.paddingTop = "140px";
   }
-  else if (document.documentElement.scrollTop > 0 && window.innerWidth < 400) {
+  else if (document.documentElement.scrollTop > 0 && window.innerWidth <= 400) {
     stickyHeading.style.position = "fixed";
     stickyHeading.style.width = "100%";
-    stickyHeading.style.top = "100px";
+    stickyHeading.style.top = "105px";
     scrollPoint.style.paddingTop = "130px";
   }
   else {
