@@ -2344,7 +2344,10 @@ header h1 {
     }
 
     .game-matchup-heading-container {
-        padding: 30px 10px 15px 10px;
+        padding: 20px 10px 10px 10px;
+        position: fixed;
+        top: 85px;
+        width: 100%;
     }
 
     .game-matchup-heading-container h2,
@@ -2354,6 +2357,11 @@ header h1 {
     .team-stats-season-container h2,
     .team-heading-container h2 {
         font-size: 22px;
+    }
+
+    .game-matchup-main-container {
+        padding: 35px 10px 0 10px;
+        /* outline: solid 1px blue; */
     }
 
     .game-matchup-main-container-bshots,
@@ -2390,6 +2398,10 @@ header h1 {
 
     .game-matchup-main-container-penalties li:nth-of-type(odd) p {
         width: 300px;
+    }
+
+    .game-matchup-main-container-venue {
+        top: 10px;
     }
 
     .game-matchup-team-record {
@@ -2455,7 +2467,7 @@ header h1 {
     }
 
     .main {
-        padding: 85px 0 0 0;
+        padding: 80px 0 0 0;
     }
 
     .main-container {
@@ -2505,15 +2517,6 @@ header h1 {
         font-size: 16px;
     }
 
-    .league-heading-container,
-    .league-standings-heading-container,
-    .team-heading-container,
-    .player-heading-container {
-        -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-        justify-content: space-between;
-    }
-
     .game-matchup-away-last-ten {
         padding-right: 2px;
     }
@@ -2542,6 +2545,9 @@ header h1 {
         -ms-flex-pack: center;
         -webkit-box-pack: center;
         justify-content: center;
+        position: fixed;
+        top: 100px;
+        width: 100%;
     }
 
     .game-matchup-heading-container h2,
@@ -2584,6 +2590,15 @@ header h1 {
         width: 100%;
     }
 
+    .league-heading-container,
+    .league-standings-heading-container,
+    .team-heading-container,
+    .player-heading-container {
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+    }
+
     .league-standings-heading-container div:last-of-type {
         margin-left: 0;
         margin-right: 15px;
@@ -2594,7 +2609,7 @@ header h1 {
     }
 
     .main {
-        padding: 105px 0 0 0;
+        padding: 100px 0 0 0;
     }
 
     .nhl-copyright-container {
@@ -2617,6 +2632,6 @@ header h1 {
         -ms-flex-pack: end;
         justify-content: flex-end;
         padding: 0 0 30px 0;
-        width: 25px;
+        width: 22px;
     }
 }
