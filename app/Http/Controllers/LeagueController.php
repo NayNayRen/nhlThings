@@ -62,6 +62,7 @@ class LeagueController extends Controller
         }
       }
       // dd($selectedGames[0]);
+      // SELECTED GAMES
       return view('index', [
         'favIcon' => '../img/nhl-shield.png',
         'title' => 'NHL Teams, Stats & Things',
@@ -81,7 +82,8 @@ class LeagueController extends Controller
         'pacific' => $pacific
       ]);
     } else {
-      // dd($allTeams);
+      // dd($allTeams[0]);
+      // DEFAULT LOAD
       return view('index', [
         'favIcon' => '../img/nhl-shield.png',
         'title' => 'NHL Teams, Stats & Things',

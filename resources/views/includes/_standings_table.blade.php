@@ -4,6 +4,9 @@
     <a href="{{ route('teams.team', $team['teamAbbrev']['default']) }}">
       {{ $team['teamName']['default'] }}
     </a>
+    <span>
+      <img src="{{ $team['teamLogo'] }}" alt="{{ $team['teamCommonName']['default'] }} Logo">
+    </span>
   </p>
   <p>{{ $team['gamesPlayed'] }}</p>
   <p class='table-column-focus'>{{ $team['wins'] }}</p>
