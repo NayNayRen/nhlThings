@@ -82,6 +82,16 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
             </button>
           </div>
           <div class="team-lineup-away-container">
+            @foreach ($allTeams as $team)
+              @if ($gameMatchup['awayTeam']['abbrev'] === $team['teamAbbrev']['default'])
+                <h4>
+                  Away Team :
+                  <span>
+                    {{ $team['teamName']['default'] }}
+                  </span>
+                </h4>
+              @endif
+            @endforeach
             <h4>
               Away HC :
               <span>
@@ -160,6 +170,16 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
             </button>
           </div>
           <div class="team-lineup-home-container">
+            @foreach ($allTeams as $team)
+              @if ($gameMatchup['homeTeam']['abbrev'] === $team['teamAbbrev']['default'])
+                <h4>
+                  Home Team :
+                  <span>
+                    {{ $team['teamName']['default'] }}
+                  </span>
+                </h4>
+              @endif
+            @endforeach
             <h4>
               Home HC :
               <span>
@@ -365,6 +385,16 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
             </button>
           </div>
           <div class="team-lineup-away-container">
+            @foreach ($allTeams as $team)
+              @if ($gameMatchup['awayTeam']['abbrev'] === $team['teamAbbrev']['default'])
+                <h4>
+                  Away Team :
+                  <span>
+                    {{ $team['teamName']['default'] }}
+                  </span>
+                </h4>
+              @endif
+            @endforeach
             <h4>
               Away HC :
               <span>
@@ -442,6 +472,16 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
             </button>
           </div>
           <div class="team-lineup-home-container">
+            @foreach ($allTeams as $team)
+              @if ($gameMatchup['homeTeam']['abbrev'] === $team['teamAbbrev']['default'])
+                <h4>
+                  Home Team :
+                  <span>
+                    {{ $team['teamName']['default'] }}
+                  </span>
+                </h4>
+              @endif
+            @endforeach
             <h4>
               Home HC :
               <span>
@@ -589,6 +629,16 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
             </button>
           </div>
           <div class="team-lineup-away-container">
+            @foreach ($allTeams as $team)
+              @if ($gameMatchup['awayTeam']['abbrev'] === $team['teamAbbrev']['default'])
+                <h4>
+                  Away Team :
+                  <span>
+                    {{ $team['teamName']['default'] }}
+                  </span>
+                </h4>
+              @endif
+            @endforeach
             <h4>
               Away HC :
               <span>
@@ -669,6 +719,16 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
             </button>
           </div>
           <div class="team-lineup-home-container">
+            @foreach ($allTeams as $team)
+              @if ($gameMatchup['homeTeam']['abbrev'] === $team['teamAbbrev']['default'])
+                <h4>
+                  Home Team :
+                  <span>
+                    {{ $team['teamName']['default'] }}
+                  </span>
+                </h4>
+              @endif
+            @endforeach
             <h4>
               Home HC :
               <span>

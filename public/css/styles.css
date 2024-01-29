@@ -1303,6 +1303,7 @@ header h1 {
 }
 
 .league-standings-table li span:last-of-type {
+    -webkit-transform: translateY(-50%);
     height: auto;
     position: absolute;
     right: 0;
@@ -2012,10 +2013,20 @@ header h1 {
 .team-lineup-home-container h4 {
     color: #b22222;
     font-size: 14px;
-    padding: 2px 0 2px 5px;
     width: -moz-fit-content;
     width: -webkit-fit-content;
     width: fit-content;
+    /* outline: solid 1px blue; */
+}
+
+.team-lineup-away-container h4:first-of-type,
+.team-lineup-home-container h4:first-of-type {
+    padding: 2px 0 0 5px;
+}
+
+.team-lineup-away-container h4:last-of-type,
+.team-lineup-home-container h4:last-of-type {
+    padding: 0 0 2px 5px;
 }
 
 .team-lineup-away-container h4 span,
@@ -2522,10 +2533,15 @@ header h1 {
         width: 60px;
     }
 
-    .team-lineup-away-container h4 span,
+    .team-lineup-away-container,
+    .team-lineup-home-container {
+        width: 90%;
+    }
+
+    /* .team-lineup-away-container h4 span,
     .team-lineup-home-container h4 span {
         display: block;
-    }
+    } */
 }
 
 @media (max-width: 400px) {
@@ -2649,5 +2665,10 @@ header h1 {
         justify-content: flex-end;
         padding: 0 0 30px 0;
         width: 25px;
+    }
+
+    .team-lineup-away-container h4 span,
+    .team-lineup-home-container h4 span {
+        display: block;
     }
 }
