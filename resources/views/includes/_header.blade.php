@@ -43,6 +43,7 @@
           <div id="burger-bars-3" class="burger-bars"></div>
         </div>
         <div class="header-nav">
+          {{-- TEAMS --}}
           <div class="teams-dropdown-container">
             <i class="fa-solid fa-caret-up" aria-hidden="true"></i>
             <input type="button" class="teams-dropdown-button" value="Teams..." /><br />
