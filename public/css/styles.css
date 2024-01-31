@@ -306,6 +306,41 @@ body {
     margin: 0 2px;
 }
 
+.error-response-container {
+    -ms-flex-align: center;
+    -ms-flex-direction: column;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-box-pack: center;
+    align-items: center;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 200px;
+    width: 100%;
+}
+
+.error-response-container h2 {
+    font-size: 32px;
+    padding: 0 25px 10px 25px;
+    text-align: center;
+    width: 100%;
+    /* outline: solid 1px blue; */
+}
+
+.error-response-container p {
+    border-bottom: solid 1px #1e90ff;
+    font-size: 18px;
+    padding: 0 25px;
+    text-align: center;
+    width: auto;
+    /* outline: solid 1px blue; */
+}
+
 footer {
     background-color: #000;
     color: #fff;
@@ -2360,6 +2395,10 @@ header h1 {
         -webkit-box-pack: center;
         -ms-flex-pack: center;
         justify-content: center;
+    }
+
+    .error-response-container h2 {
+        font-size: 26px;
     }
 
     .game-matchup-heading-container,

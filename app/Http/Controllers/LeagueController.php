@@ -111,14 +111,14 @@ class LeagueController extends Controller
       if ($code === 404) {
         return view('errors/404', [
           'favIcon' => '../img/nhl-shield.png',
-          'title' => $code . ' Resource Not Found',
-          'message' => $code . " : We can't seem to find that resource or page..."
+          'title' => 'Resource Not Found',
+          'message' => "We can't seem to find that resource or page..."
         ]);
       } elseif ($code != 404) {
         return view('errors/404', [
           'favIcon' => '../img/nhl-shield.png',
-          'title' => $code . ' Internal Server Error',
-          'message' => $code . " : We seem to be having an internal server error..."
+          'title' => 'Internal Server Error',
+          'message' => "We seem to be having an internal server error..."
         ]);
       }
     }
