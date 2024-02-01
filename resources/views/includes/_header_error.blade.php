@@ -32,7 +32,7 @@
         <p class="current-date"></p>
         <p class="current-time"></p>
       </div>
-      <a href="{{ route('league.index') }}" class="home-link" title="Home" aria-label="Home Link">
+      <a href="{{ url()->previous() }}" class="home-link" title="Previous Page" aria-label="Previous Page Link">
         <i class="fa-solid fa-house" aria-hidden="false"></i>
       </a>
 
