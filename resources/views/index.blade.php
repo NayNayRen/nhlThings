@@ -65,7 +65,8 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                 {{ $currentDate }}
               </div>
               <div class="game-team-container">
-                <p>No games today...</p>
+                <h3>No games today...</h3>
+                <p>Check the dropdown of weekly dates above for one with games listed.</p>
               </div>
             </li>
           </ul>
@@ -207,4 +208,17 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
   </div>
 </main>
 <script src="{{ asset('js/leagueScript.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"
+  integrity="sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+  $(document).ready(function() {
+    $.ajaxSetup({
+      headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+      }
+    });
+    // console.log('loaded');
+  });
+</script>
 @include('includes._footer')

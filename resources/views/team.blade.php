@@ -189,7 +189,8 @@ url('{{ $soloTeam['teamLogo'] }}'); background-size: contain; background-positio
                 {{ $currentDate }}
               </div>
               <div class="game-team-container">
-                <p>No games yet...</p>
+                <h3>No games yet...</h3>
+                <p>Soon, there will be hockey.</p>
               </div>
             </li>
           </ul>
@@ -239,7 +240,8 @@ url('{{ $soloTeam['teamLogo'] }}'); background-size: contain; background-positio
                 {{ $currentDate }}
               </div>
               <div class="game-team-container">
-                <p>No finished games yet...</p>
+                <h3>No finished games yet...</h3>
+                <p>The season does not get shorter.</p>
               </div>
             </li>
           </ul>
@@ -325,4 +327,7 @@ url('{{ $soloTeam['teamLogo'] }}'); background-size: contain; background-positio
     </div>
 </main>
 <script src="{{ asset('js/teamScript.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"
+  integrity="sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 @include('includes._footer')
