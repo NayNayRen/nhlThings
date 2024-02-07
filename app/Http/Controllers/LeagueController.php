@@ -106,19 +106,20 @@ class LeagueController extends Controller
         ]);
       }
     } catch (Exception $error) {
-      // dd($th);
+      // dd($error);
+      $message = $error->getMessage();
       $code = $error->getCode();
       if ($code === 404) {
         return view('errors/404', [
           'favIcon' => '../img/nhl-shield.png',
           'title' => 'Resource Not Found',
-          'message' => "We can't seem to find that resource or page..."
+          'message' => 'Code ' . $code . " : We can't seem to find that resource..."
         ]);
       } elseif ($code != 404) {
         return view('errors/404', [
           'favIcon' => '../img/nhl-shield.png',
           'title' => 'Internal Server Error',
-          'message' => "We seem to be having an internal server error..."
+          'message' => 'Code ' . $code . ' : ' . $message
         ]);
       }
     }
