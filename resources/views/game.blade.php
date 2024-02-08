@@ -53,7 +53,13 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
           <p class="game-matchup-heading-date">{{ $formattedGameDate }}</p>
           <div class="game-matchup-heading-center">
             <h3 class="game-matchup-heading-period">FINAL</h3>
-            <p class="game-matchup-heading-clock">00:00</p>
+            @if ($gameBoxscores['gameOutcome']['lastPeriodType'] === 'SO')
+              <p class="game-matchup-heading-clock">SO</p>
+            @elseif ($gameBoxscores['gameOutcome']['lastPeriodType'] === 'OT')
+              <p class="game-matchup-heading-clock">OT</p>
+            @elseif ($gameBoxscores['gameOutcome']['lastPeriodType'] === 'REG')
+              <p class="game-matchup-heading-clock">REG</p>
+            @endif
           </div>
           {{-- home team --}}
           <div class="game-matchup-heading-goals">

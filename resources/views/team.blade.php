@@ -241,7 +241,7 @@ url('{{ $soloTeam['teamLogo'] }}'); background-size: contain; background-positio
               </div>
               <div class="game-team-container">
                 <h3>No finished games yet...</h3>
-                <p>The season does not get shorter.</p>
+                <p>The season does not yet get shorter.</p>
               </div>
             </li>
           </ul>

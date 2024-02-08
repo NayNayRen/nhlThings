@@ -15,7 +15,13 @@
         </div>
         <div>
           <h3>FINAL</h3>
-          <span>00:00</span>
+          @if ($game['gameOutcome']['lastPeriodType'] === 'SO')
+            <span>SO</span>
+          @elseif ($game['gameOutcome']['lastPeriodType'] === 'OT')
+            <span>OT</span>
+          @elseif ($game['gameOutcome']['lastPeriodType'] === 'REG')
+            <span>REG</span>
+          @endif
         </div>
         <div class="game-dropdown-team-logo">
           <img src={{ $game['homeTeam']['logo'] }} alt='{{ $game['homeTeam']['placeName']['default'] }} Logo'
