@@ -7,19 +7,19 @@
   @foreach ($gameMatchup['summary']['linescore']['byPeriod'] as $goals)
     <li>
       <p>{{ $goals['away'] }}</p>
-      @if ($goals['period'] === 1)
-        <p>{{ $goals['period'] }}st Period</p>
+      @if ($goals['periodDescriptor']['number'] === 1)
+        <p>1st Period</p>
       @endif
-      @if ($goals['period'] === 2)
-        <p>{{ $goals['period'] }}nd Period</p>
+      @if ($goals['periodDescriptor']['number'] === 2)
+        <p>2nd Period</p>
       @endif
-      @if ($goals['period'] === 3)
-        <p>{{ $goals['period'] }}rd Period</p>
+      @if ($goals['periodDescriptor']['number'] === 3)
+        <p>3rd Period</p>
       @endif
-      @if ($goals['period'] === 4)
+      @if ($goals['periodDescriptor']['number'] === 4)
         <p>OT</p>
       @endif
-      @if ($goals['period'] >= 5)
+      @if ($goals['periodDescriptor']['number'] >= 5)
         <p>SO</p>
       @endif
       <p>{{ $goals['home'] }}</p>
