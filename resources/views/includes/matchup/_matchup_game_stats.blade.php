@@ -2,9 +2,13 @@
 @if (count($gameMatchup['summary']['teamGameStats'][1]) > 0)
   <ul class="game-matchup-main-container-faceoff">
     <li>
-      <p>{{ $gameMatchup['summary']['teamGameStats'][1]['awayValue'] }}%</p>
+      @php
+        $formattedAwayFaceoff = round((float) $gameMatchup['summary']['teamGameStats'][1]['awayValue'] * 100);
+        $formattedHomeFaceoff = round((float) $gameMatchup['summary']['teamGameStats'][1]['homeValue'] * 100);
+      @endphp
+      <p>{{ $formattedAwayFaceoff }}%</p>
       <p>Faceoff</p>
-      <p>{{ $gameMatchup['summary']['teamGameStats'][1]['homeValue'] }}%</p>
+      <p>{{ $formattedHomeFaceoff }}%</p>
     </li>
   </ul>
 @endif
