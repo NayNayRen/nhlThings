@@ -115,19 +115,19 @@
         @foreach ($gameData['summary']['linescore']['byPeriod'] as $goals)
           <div>
             <p>{{ $goals['away'] }}</p>
-            @if ($period['periodDescriptor']['number'] === 1)
+            @if ($goals['periodDescriptor']['number'] === 1)
               <span>1st</span>
             @endif
-            @if ($period['periodDescriptor']['number'] === 2)
+            @if ($goals['periodDescriptor']['number'] === 2)
               <span>2nd</span>
             @endif
-            @if ($period['periodDescriptor']['number'] === 3)
+            @if ($goals['periodDescriptor']['number'] === 3)
               <span>3rd</span>
             @endif
-            @if ($period['periodDescriptor']['number'] === 4)
+            @if ($goals['periodDescriptor']['number'] === 4)
               <span>OT</span>
             @endif
-            @if ($period['periodDescriptor']['number'] >= 5)
+            @if ($goals['periodDescriptor']['number'] >= 5)
               <span>SO</span>
             @endif
             <p>{{ $goals['home'] }}</p>
@@ -142,27 +142,27 @@
         </div>
         @foreach ($gameData['summary']['shotsByPeriod'] as $shots)
           <div>
-            @if ($period['periodDescriptor']['number'] === 1)
+            @if ($shots['periodDescriptor']['number'] === 1)
               <p>{{ $shots['away'] }}</p>
               <span>1st</span>
               <p>{{ $shots['home'] }}</p>
             @endif
-            @if ($period['periodDescriptor']['number'] === 2)
+            @if ($shots['periodDescriptor']['number'] === 2)
               <p>{{ $shots['away'] }}</p>
               <span>2nd</span>
               <p>{{ $shots['home'] }}</p>
             @endif
-            @if ($period['periodDescriptor']['number'] === 3)
+            @if ($shots['periodDescriptor']['number'] === 3)
               <p>{{ $shots['away'] }}</p>
               <span>3rd</span>
               <p>{{ $shots['home'] }}</p>
             @endif
-            @if ($period['periodDescriptor']['number'] === 4)
+            @if ($shots['periodDescriptor']['number'] === 4)
               <p>{{ $shots['away'] }}</p>
               <span>OT</span>
               <p>{{ $shots['home'] }}</p>
             @endif
-            @if ($period['periodDescriptor']['number'] >= 5)
+            @if ($shots['periodDescriptor']['number'] >= 5)
               <p></p>
             @endif
           </div>
