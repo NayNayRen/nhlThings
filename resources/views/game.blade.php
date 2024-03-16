@@ -348,15 +348,15 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                 <p class="game-matchup-heading-clock">{{ $gameMatchup['clock']['timeRemaining'] }}</p>
               @else
                 @foreach ($gameMatchup['summary']['linescore']['byPeriod'] as $period)
-                  @if ($period['period'] >= 5)
+                  @if ($period['periodDescriptor']['number'] >= 5)
                     <h3 class="game-matchup-heading-live-period">SO</h3>
-                  @elseif ($period['period'] === 4)
+                  @elseif ($period['periodDescriptor']['number'] === 4)
                     <h3 class="game-matchup-heading-live-period">OT</h3>
-                  @elseif ($period['period'] === 3)
+                  @elseif ($period['periodDescriptor']['number'] === 3)
                     <h3 class="game-matchup-heading-live-period">3rd</h3>
-                  @elseif ($period['period'] === 2)
+                  @elseif ($period['periodDescriptor']['number'] === 2)
                     <h3 class="game-matchup-heading-live-period">2nd</h3>
-                  @elseif ($period['period'] === 1)
+                  @elseif ($period['periodDescriptor']['number'] === 1)
                     <h3 class="game-matchup-heading-live-period">1st</h3>
                   @endif
                 @endforeach

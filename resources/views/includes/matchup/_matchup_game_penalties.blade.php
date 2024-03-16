@@ -234,7 +234,7 @@
         </li>
       @endif
 
-      @if ($shots['period'] >= 5)
+      @if ($shots['periodDescriptor']['number'] >= 5)
         <p></p>
       @endif
     @endforeach
