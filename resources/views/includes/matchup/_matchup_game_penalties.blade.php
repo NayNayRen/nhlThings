@@ -2,9 +2,9 @@
   @if (count($gameMatchup['summary']['penalties']) > 0)
     <h3>Penalties</h3>
     @foreach ($gameMatchup['summary']['penalties'] as $penalty)
-      @if ($penalty['period'] === 1)
+      @if ($penalty['periodDescriptor']['number'] === 1)
         <li>
-          <p>{{ $penalty['period'] }}st Period</p>
+          <p>1st Period</p>
         </li>
         <li>
           @foreach ($penalty['penalties'] as $infraction)
@@ -60,9 +60,9 @@
         </li>
       @endif
 
-      @if ($penalty['period'] === 2)
+      @if ($penalty['periodDescriptor']['number'] === 2)
         <li>
-          <p>{{ $penalty['period'] }}nd Period</p>
+          <p>2nd Period</p>
         </li>
         <li>
           @foreach ($penalty['penalties'] as $infraction)
@@ -118,9 +118,9 @@
         </li>
       @endif
 
-      @if ($penalty['period'] === 3)
+      @if ($penalty['periodDescriptor']['number'] === 3)
         <li>
-          <p>{{ $penalty['period'] }}rd Period</p>
+          <p>3rd Period</p>
         </li>
         <li>
           @foreach ($penalty['penalties'] as $infraction)
@@ -176,7 +176,7 @@
         </li>
       @endif
 
-      @if ($penalty['period'] === 4)
+      @if ($penalty['periodDescriptor']['number'] === 4)
         <li>
           <p>OT</p>
         </li>
