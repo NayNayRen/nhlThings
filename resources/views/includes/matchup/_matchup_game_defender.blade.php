@@ -1,4 +1,7 @@
 <li>
+  @php
+    $formattedFaceoff = round((float) $defender['faceoffWinningPctg'] * 100);
+  @endphp
   <p>
     <span>{{ $key + 1 }}.</span>
     <a href="{{ route('players.player', $defender['playerId']) }}" target="_blank">
@@ -13,7 +16,7 @@
   <p>{{ $defender['hits'] }}</p>
   <p>{{ $defender['plusMinus'] }}</p>
   <p>{{ $defender['shots'] }}</p>
-  <p>{{ $defender['faceoffWinningPctg'] }}%</p>
+  <p>{{ $formattedFaceoff }}%</p>
   @if (array_key_exists('toi', $defender))
     <p>{{ $defender['toi'] }}</p>
   @else
