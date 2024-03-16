@@ -86,15 +86,15 @@
             <span>{{ $gameClock['clock']['timeRemaining'] }}</span>
           @else
             @foreach ($gameData['summary']['linescore']['byPeriod'] as $period)
-              @if ($period['period'] >= 5)
+              @if ($periodDescriptor['number'] >= 5)
                 <h3 class="game-period">SO</h3>
-              @elseif ($period['period'] === 4)
+              @elseif ($periodDescriptor['number'] === 4)
                 <h3 class="game-period">OT</h3>
-              @elseif ($period['period'] === 3)
+              @elseif ($periodDescriptor['number'] === 3)
                 <h3 class="game-period">3rd</h3>
-              @elseif ($period['period'] === 2)
+              @elseif ($periodDescriptor['number'] === 2)
                 <h3 class="game-period">2nd</h3>
-              @elseif ($period['period'] === 1)
+              @elseif ($periodDescriptor['number'] === 1)
                 <h3 class="game-period">1st</h3>
               @endif
             @endforeach
@@ -115,19 +115,19 @@
         @foreach ($gameData['summary']['linescore']['byPeriod'] as $goals)
           <div>
             <p>{{ $goals['away'] }}</p>
-            @if ($goals['period'] === 1)
-              <span>{{ $goals['period'] }}st</span>
+            @if ($periodDescriptor['number'] === 1)
+              <span>1st</span>
             @endif
-            @if ($goals['period'] === 2)
-              <span>{{ $goals['period'] }}nd</span>
+            @if ($periodDescriptor['number'] === 2)
+              <span>2nd</span>
             @endif
-            @if ($goals['period'] === 3)
-              <span>{{ $goals['period'] }}rd</span>
+            @if ($periodDescriptor['number'] === 3)
+              <span>3rd</span>
             @endif
-            @if ($goals['period'] === 4)
+            @if ($periodDescriptor['number'] === 4)
               <span>OT</span>
             @endif
-            @if ($goals['period'] >= 5)
+            @if ($periodDescriptor['number'] >= 5)
               <span>SO</span>
             @endif
             <p>{{ $goals['home'] }}</p>
@@ -142,27 +142,27 @@
         </div>
         @foreach ($gameData['summary']['shotsByPeriod'] as $shots)
           <div>
-            @if ($shots['period'] === 1)
+            @if ($periodDescriptor['number'] === 1)
               <p>{{ $shots['away'] }}</p>
-              <span>{{ $shots['period'] }}st</span>
+              <span>1st</span>
               <p>{{ $shots['home'] }}</p>
             @endif
-            @if ($shots['period'] === 2)
+            @if ($periodDescriptor['number'] === 2)
               <p>{{ $shots['away'] }}</p>
-              <span>{{ $shots['period'] }}nd</span>
+              <span>2nd</span>
               <p>{{ $shots['home'] }}</p>
             @endif
-            @if ($shots['period'] === 3)
+            @if ($periodDescriptor['number'] === 3)
               <p>{{ $shots['away'] }}</p>
-              <span>{{ $shots['period'] }}rd</span>
+              <span>3rd</span>
               <p>{{ $shots['home'] }}</p>
             @endif
-            @if ($shots['period'] === 4)
+            @if ($periodDescriptor['number'] === 4)
               <p>{{ $shots['away'] }}</p>
               <span>OT</span>
               <p>{{ $shots['home'] }}</p>
             @endif
-            @if ($shots['period'] >= 5)
+            @if ($periodDescriptor['number'] >= 5)
               <p></p>
             @endif
           </div>
