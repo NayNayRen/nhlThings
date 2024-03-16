@@ -796,7 +796,7 @@
 @media (max-width: 400px) {
     .league-game-card,
     .team-preseason-card {
-        max-width: 100%;
+        max-width: 90%;
         min-width: 250px;
     }
 

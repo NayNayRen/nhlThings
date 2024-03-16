@@ -1263,7 +1263,7 @@ header h1 {
     color: #fff;
     font-size: 14px;
     min-width: 75px;
-    padding: 2px 3px;
+    padding: 3px;
     text-align: center;
     width: 100%;
 }
@@ -1315,7 +1315,7 @@ header h1 {
 .league-standings-table li p:first-of-type {
     font-weight: bold;
     min-width: 225px;
-    padding: 2px 5px;
+    padding: 3px 5px;
     width: auto;
 }
 
@@ -1334,7 +1334,7 @@ header h1 {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 1;
+    z-index: inherit;
 }
 
 .league-standings-table li span:last-of-type {
@@ -1369,7 +1369,7 @@ header h1 {
     font-size: 14px;
     height: 100%;
     min-width: 75px;
-    padding: 2px 3px;
+    padding: 3px;
     position: relative;
     text-align: center;
     width: 100%;
@@ -1725,7 +1725,7 @@ header h1 {
 .team-stats li p:first-of-type {
     font-weight: bold;
     min-width: 130px;
-    padding: 2px 5px;
+    padding: 3px 5px;
 }
 .player-stats li p:nth-of-type(2) {
     min-width: 215px;
@@ -1988,14 +1988,14 @@ header h1 {
     display: -webkit-box;
     display: flex;
     flex-direction: column;
-    font-size: 14px;
+    font-size: 12px;
     height: 100%;
     justify-content: center;
     line-height: 1.25;
     padding: 0 0 20px 0;
     position: relative;
     transition: color 150ms ease;
-    width: 30px;
+    width: 28px;
 }
 
 .team-lineup-away-button:hover,
@@ -2641,7 +2641,7 @@ header h1 {
     }
 
     .game-matchup-heading-period {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .game-matchup-main-container-venue {
@@ -2703,7 +2703,7 @@ header h1 {
         -ms-flex-pack: end;
         justify-content: flex-end;
         padding: 0 0 30px 0;
-        width: 25px;
+        width: 22px;
     }
 
     .team-lineup-away-container h4 span,

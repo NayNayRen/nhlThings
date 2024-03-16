@@ -35,17 +35,16 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
         <div class="game-matchup-heading-container sticky-heading">
           {{-- away team --}}
           <div class="game-matchup-heading-left">
-            <span class="game-matchup-team-indicator">Away</span>
-            <div class="game-matchup-heading-logo">
-              <img src={{ $gameMatchup['awayTeam']['logo'] }}
-                alt="{{ $gameMatchup['awayTeam']['name']['default'] }} Logo">
-            </div>
             @foreach ($allTeams as $team)
               @if ($gameMatchup['awayTeam']['abbrev'] === $team['teamAbbrev']['default'])
                 <span
                   class="game-matchup-team-record">{{ $team['wins'] }}-{{ $team['losses'] }}-{{ $team['ties'] }}</span>
               @endif
             @endforeach
+            <div class="game-matchup-heading-logo">
+              <img src={{ $gameMatchup['awayTeam']['logo'] }}
+                alt="{{ $gameMatchup['awayTeam']['name']['default'] }} Logo">
+            </div>
           </div>
           <div class="game-matchup-heading-goals">
             <p>{{ $gameMatchup['awayTeam']['score'] }}</p>
@@ -66,17 +65,16 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
             <p>{{ $gameMatchup['homeTeam']['score'] }}</p>
           </div>
           <div class="game-matchup-heading-right">
-            <span class="game-matchup-team-indicator">Home</span>
-            <div class="game-matchup-heading-logo">
-              <img src={{ $gameMatchup['homeTeam']['logo'] }}
-                alt="{{ $gameMatchup['homeTeam']['name']['default'] }} Logo">
-            </div>
             @foreach ($allTeams as $team)
               @if ($gameMatchup['homeTeam']['abbrev'] === $team['teamAbbrev']['default'])
                 <span
                   class="game-matchup-team-record">{{ $team['wins'] }}-{{ $team['losses'] }}-{{ $team['ties'] }}</span>
               @endif
             @endforeach
+            <div class="game-matchup-heading-logo">
+              <img src={{ $gameMatchup['homeTeam']['logo'] }}
+                alt="{{ $gameMatchup['homeTeam']['name']['default'] }} Logo">
+            </div>
           </div>
           <div class="team-lineup-away-button-container">
             <button type="button" class="team-lineup-away-button">
@@ -115,7 +113,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                   <h3 title="Points">P</h3>
                   <h3 title="Penalty Minutes">PIM</h3>
                   <h3 title="Hits">H</h3>
-                  <h3 title="Plus Minus">+-</h3>
+                  <h3 title="Plus Minus">+/-</h3>
                   <h3 title="Shots">S</h3>
                   <h3 title="Faceoff %">FO %</h3>
                   <h3 title="Time on Ice">TOI</h3>
@@ -134,7 +132,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                   <h3 title="Points">P</h3>
                   <h3 title="Penalty Minutes">PIM</h3>
                   <h3 title="Hits">H</h3>
-                  <h3 title="Plus Minus">+-</h3>
+                  <h3 title="Plus Minus">+/-</h3>
                   <h3 title="Shots">S</h3>
                   <h3 title="Faceoff %">FO %</h3>
                   <h3 title="Time on Ice">TOI</h3>
@@ -203,7 +201,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                   <h3 title="Points">P</h3>
                   <h3 title="Penalty Minutes">PIM</h3>
                   <h3 title="Hits">H</h3>
-                  <h3 title="Plus Minus">+-</h3>
+                  <h3 title="Plus Minus">+/-</h3>
                   <h3 title="Shots">S</h3>
                   <h3 title="Faceoff %">FO %</h3>
                   <h3 title="Time on Ice">TOI</h3>
@@ -222,7 +220,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                   <h3 title="Points">P</h3>
                   <h3 title="Penalty Minutes">PIM</h3>
                   <h3 title="Hits">H</h3>
-                  <h3 title="Plus Minus">+-</h3>
+                  <h3 title="Plus Minus">+/-</h3>
                   <h3 title="Shots">S</h3>
                   <h3 title="Faceoff %">FO %</h3>
                   <h3 title="Time on Ice">TOI</h3>
@@ -265,20 +263,28 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
               <span aria-label="Game First Star">
                 <i class="fa-solid fa-star" aria-hidden="true"></i>
               </span>
-              <span>
-                {{ $gameMatchup['summary']['threeStars'][0]['name'] }}
-                {{ '(' . $gameMatchup['summary']['threeStars'][0]['teamAbbrev'] . ')' }}
-              </span>
+              @if (count($gameMatchup['summary']['threeStars']) > 0)
+                <span>
+                  {{ $gameMatchup['summary']['threeStars'][0]['name'] }}
+                  {{ '(' . $gameMatchup['summary']['threeStars'][0]['teamAbbrev'] . ')' }}
+                </span>
+              @else
+                <span>Soon...</span>
+              @endif
             </p>
             <p>
               <span aria-label="Game Second Star">
                 <i class="fa-solid fa-star" aria-hidden="true"></i>
                 <i class="fa-solid fa-star" aria-hidden="true"></i>
               </span>
-              <span>
-                {{ $gameMatchup['summary']['threeStars'][1]['name'] }}
-                {{ '(' . $gameMatchup['summary']['threeStars'][1]['teamAbbrev'] . ')' }}
-              </span>
+              @if (count($gameMatchup['summary']['threeStars']) > 0)
+                <span>
+                  {{ $gameMatchup['summary']['threeStars'][1]['name'] }}
+                  {{ '(' . $gameMatchup['summary']['threeStars'][1]['teamAbbrev'] . ')' }}
+                </span>
+              @else
+                <span>Soon...</span>
+              @endif
             </p>
             <p>
               <span aria-label="Game Third Star">
@@ -286,10 +292,14 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                 <i class="fa-solid fa-star" aria-hidden="true"></i>
                 <i class="fa-solid fa-star" aria-hidden="true"></i>
               </span>
-              <span>
-                {{ $gameMatchup['summary']['threeStars'][2]['name'] }}
-                {{ '(' . $gameMatchup['summary']['threeStars'][2]['teamAbbrev'] . ')' }}
-              </span>
+              @if (count($gameMatchup['summary']['threeStars']) > 0)
+                <span>
+                  {{ $gameMatchup['summary']['threeStars'][2]['name'] }}
+                  {{ '(' . $gameMatchup['summary']['threeStars'][2]['teamAbbrev'] . ')' }}
+                </span>
+              @else
+                <span>Soon...</span>
+              @endif
             </p>
           </div>
           <h3>Final Numbers</h3>
@@ -325,17 +335,16 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
         <div class="game-matchup-heading-container sticky-heading">
           {{-- away team --}}
           <div class="game-matchup-heading-left">
-            <span class="game-matchup-team-indicator">Away</span>
-            <div class="game-matchup-heading-logo">
-              <img src={{ $gameMatchup['awayTeam']['logo'] }}
-                alt="{{ $gameMatchup['awayTeam']['name']['default'] }} Logo">
-            </div>
             @foreach ($allTeams as $team)
               @if ($gameMatchup['awayTeam']['abbrev'] === $team['teamAbbrev']['default'])
                 <span
                   class="game-matchup-team-record">{{ $team['wins'] }}-{{ $team['losses'] }}-{{ $team['ties'] }}</span>
               @endif
             @endforeach
+            <div class="game-matchup-heading-logo">
+              <img src={{ $gameMatchup['awayTeam']['logo'] }}
+                alt="{{ $gameMatchup['awayTeam']['name']['default'] }} Logo">
+            </div>
           </div>
           <div class="game-matchup-heading-goals">
             <p>{{ $gameMatchup['awayTeam']['score'] }}</p>
@@ -369,17 +378,16 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
             <p>{{ $gameMatchup['homeTeam']['score'] }}</p>
           </div>
           <div class="game-matchup-heading-right">
-            <span class="game-matchup-team-indicator">Home</span>
-            <div class="game-matchup-heading-logo">
-              <img src={{ $gameMatchup['homeTeam']['logo'] }}
-                alt="{{ $gameMatchup['homeTeam']['name']['default'] }} Logo">
-            </div>
             @foreach ($allTeams as $team)
               @if ($gameMatchup['homeTeam']['abbrev'] === $team['teamAbbrev']['default'])
                 <span
                   class="game-matchup-team-record">{{ $team['wins'] }}-{{ $team['losses'] }}-{{ $team['ties'] }}</span>
               @endif
             @endforeach
+            <div class="game-matchup-heading-logo">
+              <img src={{ $gameMatchup['homeTeam']['logo'] }}
+                alt="{{ $gameMatchup['homeTeam']['name']['default'] }} Logo">
+            </div>
           </div>
           <div class="team-lineup-away-button-container">
             <button type="button" class="team-lineup-away-button">
@@ -417,7 +425,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                   <h3 title="Points">P</h3>
                   <h3 title="Penalty Minutes">PIM</h3>
                   <h3 title="Hits">H</h3>
-                  <h3 title="Plus Minus">+-</h3>
+                  <h3 title="Plus Minus">+/-</h3>
                   <h3 title="Shots">S</h3>
                   <h3 title="Faceoff %">FO %</h3>
                   <h3 title="Time on Ice">TOI</h3>
@@ -436,7 +444,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                   <h3 title="Points">P</h3>
                   <h3 title="Penalty Minutes">PIM</h3>
                   <h3 title="Hits">H</h3>
-                  <h3 title="Plus Minus">+-</h3>
+                  <h3 title="Plus Minus">+/-</h3>
                   <h3 title="Shots">S</h3>
                   <h3 title="Faceoff %">FO %</h3>
                   <h3 title="Time on Ice">TOI</h3>
@@ -505,7 +513,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                   <h3 title="Points">P</h3>
                   <h3 title="Penalty Minutes">PIM</h3>
                   <h3 title="Hits">H</h3>
-                  <h3 title="Plus Minus">+-</h3>
+                  <h3 title="Plus Minus">+/-</h3>
                   <h3 title="Shots">S</h3>
                   <h3 title="Faceoff %">FO %</h3>
                   <h3 title="Time on Ice">TOI</h3>
@@ -524,7 +532,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                   <h3 title="Points">P</h3>
                   <h3 title="Penalty Minutes">PIM</h3>
                   <h3 title="Hits">H</h3>
-                  <h3 title="Plus Minus">+-</h3>
+                  <h3 title="Plus Minus">+/-</h3>
                   <h3 title="Shots">S</h3>
                   <h3 title="Faceoff %">FO %</h3>
                   <h3 title="Time on Ice">TOI</h3>
@@ -593,17 +601,16 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
         <div class="game-matchup-heading-container sticky-heading">
           {{-- away team --}}
           <div class="game-matchup-heading-left">
-            <span class="game-matchup-team-indicator">Away</span>
-            <div class="game-matchup-heading-logo">
-              <img src={{ $gameMatchup['awayTeam']['logo'] }}
-                alt="{{ $gameMatchup['awayTeam']['name']['default'] }} Logo">
-            </div>
             @foreach ($allTeams as $team)
               @if ($gameMatchup['awayTeam']['abbrev'] === $team['teamAbbrev']['default'])
                 <span
                   class="game-matchup-team-record">{{ $team['wins'] }}-{{ $team['losses'] }}-{{ $team['ties'] }}</span>
               @endif
             @endforeach
+            <div class="game-matchup-heading-logo">
+              <img src={{ $gameMatchup['awayTeam']['logo'] }}
+                alt="{{ $gameMatchup['awayTeam']['name']['default'] }} Logo">
+            </div>
           </div>
           <p class="game-matchup-heading-date">{{ $formattedGameDate }}</p>
           <div class="game-matchup-heading-center">
@@ -612,17 +619,16 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
           </div>
           {{-- home team --}}
           <div class="game-matchup-heading-right">
-            <span class="game-matchup-team-indicator">Home</span>
-            <div class="game-matchup-heading-logo">
-              <img src={{ $gameMatchup['homeTeam']['logo'] }}
-                alt="{{ $gameMatchup['homeTeam']['name']['default'] }} Logo">
-            </div>
             @foreach ($allTeams as $team)
               @if ($gameMatchup['homeTeam']['abbrev'] === $team['teamAbbrev']['default'])
                 <span
                   class="game-matchup-team-record">{{ $team['wins'] }}-{{ $team['losses'] }}-{{ $team['ties'] }}</span>
               @endif
             @endforeach
+            <div class="game-matchup-heading-logo">
+              <img src={{ $gameMatchup['homeTeam']['logo'] }}
+                alt="{{ $gameMatchup['homeTeam']['name']['default'] }} Logo">
+            </div>
           </div>
           {{-- away team dropdown --}}
           <div class="team-lineup-away-button-container">
@@ -657,13 +663,14 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
               <ul class="team-lineup-goalies">
                 <li>
                   <h3 title="Goalies">Goalies</h3>
+                  <h3 title="Sweater Number">Num</h3>
                   <h3 title="Games Played">GP</h3>
                   <h3 title="Record">Rec</h3>
                   <h3 title="Goals Against Average">GAA</h3>
                   <h3 title="Save %">Sv%</h3>
                   <h3 title="Shutouts">SO</h3>
                 </li>
-                @foreach ($gameMatchup['matchup']['goalieComparisonL5']['awayTeam'] as $key => $goalie)
+                @foreach ($gameMatchup['matchup']['goalieComparison']['awayTeam'] as $key => $goalie)
                   @if (array_key_exists('gamesPlayed', $goalie))
                     <li>
                       <p>
@@ -672,8 +679,8 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                           {{ $goalie['name']['default'] }}
                         </a>
                       </p>
-                      <p>{{ $goalie['gamesPlayed'] }}</p>
                       <p>{{ $goalie['sweaterNumber'] }}</p>
+                      <p>{{ $goalie['gamesPlayed'] }}</p>
                       <p>{{ $goalie['record'] }}</p>
                       <p>{{ $goalie['gaa'] }}</p>
                       <p>{{ $goalie['savePctg'] }}%</p>
@@ -754,7 +761,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                   <h3 title="Save %">Sv%</h3>
                   <h3 title="Shutouts">SO</h3>
                 </li>
-                @foreach ($gameMatchup['matchup']['goalieComparisonL5']['homeTeam'] as $key => $goalie)
+                @foreach ($gameMatchup['matchup']['goalieComparison']['homeTeam'] as $key => $goalie)
                   @if (array_key_exists('gamesPlayed', $goalie))
                     <li>
                       <p>
@@ -763,8 +770,8 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                           {{ $goalie['name']['default'] }}
                         </a>
                       </p>
-                      <p>{{ $goalie['gamesPlayed'] }}</p>
                       <p>{{ $goalie['sweaterNumber'] }}</p>
+                      <p>{{ $goalie['gamesPlayed'] }}</p>
                       <p>{{ $goalie['record'] }}</p>
                       <p>{{ $goalie['gaa'] }}</p>
                       <p>{{ $goalie['savePctg'] }}%</p>
