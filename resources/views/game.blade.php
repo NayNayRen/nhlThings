@@ -679,7 +679,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                           {{ $goalie['name']['default'] }}
                         </a>
                       </p>
-                      <p>{{ $goalie['sweaterNumber'] }}</p>
+                      <p>#{{ $goalie['sweaterNumber'] }}</p>
                       <p>{{ $goalie['gamesPlayed'] }}</p>
                       <p>{{ $goalie['record'] }}</p>
                       <p>{{ $goalie['gaa'] }}</p>
@@ -770,7 +770,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                           {{ $goalie['name']['default'] }}
                         </a>
                       </p>
-                      <p>{{ $goalie['sweaterNumber'] }}</p>
+                      <p>#{{ $goalie['sweaterNumber'] }}</p>
                       <p>{{ $goalie['gamesPlayed'] }}</p>
                       <p>{{ $goalie['record'] }}</p>
                       <p>{{ $goalie['gaa'] }}</p>
