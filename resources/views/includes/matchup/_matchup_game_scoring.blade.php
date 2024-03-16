@@ -42,12 +42,12 @@
                 {{ '(' . $tally['awayScore'] }} - {{ $tally['homeScore'] . ')' }}
               </span>
               <span>
-                @if ($scoredBy['period'] === 4)
+                @if ($scoredBy['periodDescriptor']['number'] === 4)
                   {{ $tally['timeInPeriod'] }} of OT
-                @elseif($scoredBy['period'] >= 5)
+                @elseif($scoredBy['periodDescriptor']['number'] >= 5)
                   SO winner
                 @else
-                  {{ $tally['timeInPeriod'] }} of period {{ $scoredBy['period'] }}
+                  {{ $tally['timeInPeriod'] }} of period {{ $scoredBy['periodDescriptor']['number'] }}
                 @endif
               </span>
             </p>
