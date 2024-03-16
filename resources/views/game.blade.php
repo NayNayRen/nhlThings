@@ -115,9 +115,9 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                   <h3 title="Points">P</h3>
                   <h3 title="Penalty Minutes">PIM</h3>
                   <h3 title="Hits">H</h3>
-                  <h3 title="Blocked Shots">B Shots</h3>
+                  <h3 title="Plus Minus">+-</h3>
                   <h3 title="Shots">S</h3>
-                  <h3 title="Faceoffs">FO</h3>
+                  <h3 title="Faceoff %">FO %</h3>
                   <h3 title="Time on Ice">TOI</h3>
                 </li>
                 @foreach ($gameBoxscores['boxscore']['playerByGameStats']['awayTeam']['forwards'] as $key => $forward)
@@ -134,9 +134,9 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                   <h3 title="Points">P</h3>
                   <h3 title="Penalty Minutes">PIM</h3>
                   <h3 title="Hits">H</h3>
-                  <h3 title="Blocked Shots">B Shots</h3>
+                  <h3 title="Plus Minus">+-</h3>
                   <h3 title="Shots">S</h3>
-                  <h3 title="Faceoffs">FO</h3>
+                  <h3 title="Faceoff %">FO %</h3>
                   <h3 title="Time on Ice">TOI</h3>
                 </li>
                 @foreach ($gameBoxscores['boxscore']['playerByGameStats']['awayTeam']['defense'] as $key => $defender)
@@ -203,9 +203,9 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                   <h3 title="Points">P</h3>
                   <h3 title="Penalty Minutes">PIM</h3>
                   <h3 title="Hits">H</h3>
-                  <h3 title="Blocked Shots">B Shots</h3>
+                  <h3 title="Plus Minus">+-</h3>
                   <h3 title="Shots">S</h3>
-                  <h3 title="Faceoffs">FO</h3>
+                  <h3 title="Faceoff %">FO %</h3>
                   <h3 title="Time on Ice">TOI</h3>
                 </li>
                 @foreach ($gameBoxscores['boxscore']['playerByGameStats']['homeTeam']['forwards'] as $key => $forward)
@@ -222,9 +222,9 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                   <h3 title="Points">P</h3>
                   <h3 title="Penalty Minutes">PIM</h3>
                   <h3 title="Hits">H</h3>
-                  <h3 title="Blocked Shots">B Shots</h3>
+                  <h3 title="Plus Minus">+-</h3>
                   <h3 title="Shots">S</h3>
-                  <h3 title="Faceoffs">FO</h3>
+                  <h3 title="Faceoff %">FO %</h3>
                   <h3 title="Time on Ice">TOI</h3>
                 </li>
                 @foreach ($gameBoxscores['boxscore']['playerByGameStats']['homeTeam']['defense'] as $key => $defender)
@@ -417,9 +417,9 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                   <h3 title="Points">P</h3>
                   <h3 title="Penalty Minutes">PIM</h3>
                   <h3 title="Hits">H</h3>
-                  <h3 title="Blocked Shots">B Shots</h3>
+                  <h3 title="Plus Minus">+-</h3>
                   <h3 title="Shots">S</h3>
-                  <h3 title="Faceoffs">FO</h3>
+                  <h3 title="Faceoff %">FO %</h3>
                   <h3 title="Time on Ice">TOI</h3>
                 </li>
                 @foreach ($gameBoxscores['boxscore']['playerByGameStats']['awayTeam']['forwards'] as $key => $forward)
@@ -436,9 +436,9 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                   <h3 title="Points">P</h3>
                   <h3 title="Penalty Minutes">PIM</h3>
                   <h3 title="Hits">H</h3>
-                  <h3 title="Blocked Shots">B Shots</h3>
+                  <h3 title="Plus Minus">+-</h3>
                   <h3 title="Shots">S</h3>
-                  <h3 title="Faceoffs">FO</h3>
+                  <h3 title="Faceoff %">FO %</h3>
                   <h3 title="Time on Ice">TOI</h3>
                 </li>
                 @foreach ($gameBoxscores['boxscore']['playerByGameStats']['awayTeam']['defense'] as $key => $defender)
@@ -505,9 +505,9 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                   <h3 title="Points">P</h3>
                   <h3 title="Penalty Minutes">PIM</h3>
                   <h3 title="Hits">H</h3>
-                  <h3 title="Blocked Shots">B Shots</h3>
+                  <h3 title="Plus Minus">+-</h3>
                   <h3 title="Shots">S</h3>
-                  <h3 title="Faceoffs">FO</h3>
+                  <h3 title="Faceoff %">FO %</h3>
                   <h3 title="Time on Ice">TOI</h3>
                 </li>
                 @foreach ($gameBoxscores['boxscore']['playerByGameStats']['homeTeam']['forwards'] as $key => $forward)
@@ -524,9 +524,9 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                   <h3 title="Points">P</h3>
                   <h3 title="Penalty Minutes">PIM</h3>
                   <h3 title="Hits">H</h3>
-                  <h3 title="Blocked Shots">B Shots</h3>
+                  <h3 title="Plus Minus">+-</h3>
                   <h3 title="Shots">S</h3>
-                  <h3 title="Faceoffs">FO</h3>
+                  <h3 title="Faceoff %">FO %</h3>
                   <h3 title="Time on Ice">TOI</h3>
                 </li>
                 @foreach ($gameBoxscores['boxscore']['playerByGameStats']['homeTeam']['defense'] as $key => $defender)

@@ -11,9 +11,9 @@
   <p>{{ $forward['points'] }}</p>
   <p>{{ $forward['pim'] }}</p>
   <p>{{ $forward['hits'] }}</p>
-  <p>{{ $forward['blockedShots'] }}</p>
+  <p>{{ $forward['plusMinus'] }}</p>
   <p>{{ $forward['shots'] }}</p>
-  <p>{{ $forward['faceoffs'] }}</p>
+  <p>{{ $forward['faceoffWinningPctg'] }}%</p>
   @if (array_key_exists('toi', $forward))
     <p>{{ $forward['toi'] }}</p>
   @else

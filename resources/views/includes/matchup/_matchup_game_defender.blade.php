@@ -11,9 +11,9 @@
   <p>{{ $defender['points'] }}</p>
   <p>{{ $defender['pim'] }}</p>
   <p>{{ $defender['hits'] }}</p>
-  <p>{{ $defender['blockedShots'] }}</p>
+  <p>{{ $defender['plusMinus'] }}</p>
   <p>{{ $defender['shots'] }}</p>
-  <p>{{ $defender['faceoffs'] }}</p>
+  <p>{{ $defender['faceoffWinningPctg'] }}%</p>
   @if (array_key_exists('toi', $defender))
     <p>{{ $defender['toi'] }}</p>
   @else
