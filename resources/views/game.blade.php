@@ -96,12 +96,12 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                 </h4>
               @endif
             @endforeach
-            <h4>
+            {{-- <h4>
               Away HC :
               <span>
                 {{ $gameBoxscores['boxscore']['gameInfo']['awayTeam']['headCoach']['default'] }}
               </span>
-            </h4>
+            </h4> --}}
             <div class="team-lineup-scrolling-container">
               {{-- forwards --}}
               <ul class="team-lineup-forwards">
@@ -118,7 +118,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                   <h3 title="Faceoff %">FO %</h3>
                   <h3 title="Time on Ice">TOI</h3>
                 </li>
-                @foreach ($gameBoxscores['boxscore']['playerByGameStats']['awayTeam']['forwards'] as $key => $forward)
+                @foreach ($gameBoxscores['playerByGameStats']['awayTeam']['forwards'] as $key => $forward)
                   @include('includes.matchup._matchup_game_forward')
                 @endforeach
               </ul>
@@ -137,7 +137,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                   <h3 title="Faceoff %">FO %</h3>
                   <h3 title="Time on Ice">TOI</h3>
                 </li>
-                @foreach ($gameBoxscores['boxscore']['playerByGameStats']['awayTeam']['defense'] as $key => $defender)
+                @foreach ($gameBoxscores['playerByGameStats']['awayTeam']['defense'] as $key => $defender)
                   @include('includes.matchup._matchup_game_defender')
                 @endforeach
               </ul>
@@ -157,7 +157,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                   <h3 title="Penalty Minutes">PIM</h3>
                   <h3 title="Time on Ice">TOI</h3>
                 </li>
-                @foreach ($gameBoxscores['boxscore']['playerByGameStats']['awayTeam']['goalies'] as $key => $goalie)
+                @foreach ($gameBoxscores['playerByGameStats']['awayTeam']['goalies'] as $key => $goalie)
                   @include('includes.matchup._matchup_game_goalie')
                 @endforeach
               </ul>
@@ -184,12 +184,12 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                 </h4>
               @endif
             @endforeach
-            <h4>
+            {{-- <h4>
               Home HC :
               <span>
                 {{ $gameBoxscores['boxscore']['gameInfo']['homeTeam']['headCoach']['default'] }}
               </span>
-            </h4>
+            </h4> --}}
             <div class="team-lineup-scrolling-container">
               {{-- forwards --}}
               <ul class="team-lineup-forwards">
@@ -206,7 +206,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                   <h3 title="Faceoff %">FO %</h3>
                   <h3 title="Time on Ice">TOI</h3>
                 </li>
-                @foreach ($gameBoxscores['boxscore']['playerByGameStats']['homeTeam']['forwards'] as $key => $forward)
+                @foreach ($gameBoxscores['playerByGameStats']['homeTeam']['forwards'] as $key => $forward)
                   @include('includes.matchup._matchup_game_forward')
                 @endforeach
               </ul>
@@ -225,7 +225,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                   <h3 title="Faceoff %">FO %</h3>
                   <h3 title="Time on Ice">TOI</h3>
                 </li>
-                @foreach ($gameBoxscores['boxscore']['playerByGameStats']['homeTeam']['defense'] as $key => $defender)
+                @foreach ($gameBoxscores['playerByGameStats']['homeTeam']['defense'] as $key => $defender)
                   @include('includes.matchup._matchup_game_defender')
                 @endforeach
               </ul>
@@ -245,7 +245,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
                   <h3 title="Penalty Minutes">PIM</h3>
                   <h3 title="Time on Ice">TOI</h3>
                 </li>
-                @foreach ($gameBoxscores['boxscore']['playerByGameStats']['homeTeam']['goalies'] as $key => $goalie)
+                @foreach ($gameBoxscores['playerByGameStats']['homeTeam']['goalies'] as $key => $goalie)
                   @include('includes.matchup._matchup_game_goalie')
                 @endforeach
               </ul>
