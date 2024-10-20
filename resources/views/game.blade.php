@@ -314,9 +314,9 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
               <p>Shots</p>
               <p>{{ $gameMatchup['homeTeam']['sog'] }}</p>
             </li>
-            @foreach ($gameMatchup['summary']['shotsByPeriod'] as $shots)
+            {{-- @foreach ($gameMatchup['summary']['shotsByPeriod'] as $shots)
               @include('includes.matchup._matchup_game_shots')
-            @endforeach
+            @endforeach --}}
           </ul>
 
           {{-- matchup stats --}}
