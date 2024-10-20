@@ -6,7 +6,13 @@
   </li>
   @foreach ($gameMatchup['summary']['scoring'] as $goals)
     <li>
-      <p>{{ $goals['away'] }}</p>
+      @if (count($goals["goals"]) > 0)
+        @foreach ($goals["goals"] as $away)
+        <p>{{ $away['awayScore'] }}</p>
+        @endforeach
+      @else
+        <p>0</p>
+      @endif
       @if ($goals['periodDescriptor']['number'] === 1)
         <p>1st Period</p>
       @endif
@@ -22,7 +28,13 @@
       @if ($goals['periodDescriptor']['number'] >= 5)
         <p>SO</p>
       @endif
-      <p>{{ $goals['home'] }}</p>
+      @if (count($goals["goals"]) > 0)
+        @foreach ($goals["goals"] as $home)
+        <p>{{ $home['homeScore'] }}</p>
+        @endforeach
+      @else
+        <p>0</p>
+      @endif
     </li>
   @endforeach
 </ul>
