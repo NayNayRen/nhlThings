@@ -4,7 +4,7 @@
     <p>Goals</p>
     <p>{{ $gameMatchup['homeTeam']['score'] }}</p>
   </li>
-  @foreach ($gameMatchup['summary']['linescore']['byPeriod'] as $goals)
+  @foreach ($gameMatchup['summary']['scoring'] as $goals)
     <li>
       <p>{{ $goals['away'] }}</p>
       @if ($goals['periodDescriptor']['number'] === 1)
