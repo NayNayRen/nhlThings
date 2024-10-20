@@ -15,7 +15,7 @@
   <p>{{ $forward['pim'] }}</p>
   <p>{{ $forward['hits'] }}</p>
   <p>{{ $forward['plusMinus'] }}</p>
-  <p>{{ $forward['shots'] }}</p>
+  <p>{{ $forward['sog'] }}</p>
   <p>{{ $formattedFaceoff }}%</p>
   @if (array_key_exists('toi', $forward))
     <p>{{ $forward['toi'] }}</p>
