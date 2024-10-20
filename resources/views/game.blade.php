@@ -320,13 +320,13 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
           </ul>
 
           {{-- matchup stats --}}
-          @include('includes.matchup._matchup_game_stats')
+          {{-- @include('includes.matchup._matchup_game_stats') --}}
 
           {{-- penalties --}}
           @include('includes.matchup._matchup_game_penalties')
 
           {{-- officials --}}
-          @include('includes.matchup._matchup_game_officials')
+          {{-- @include('includes.matchup._matchup_game_officials') --}}
 
         </div>
       @endif
