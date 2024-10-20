@@ -265,7 +265,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
               </span>
               @if (count($gameMatchup['summary']['threeStars']) > 0)
                 <span>
-                  {{ $gameMatchup['summary']['threeStars'][0]['name'] }}
+                  {{ $gameMatchup['summary']['threeStars'][0]['name']['default'] }}
                   {{ '(' . $gameMatchup['summary']['threeStars'][0]['teamAbbrev'] . ')' }}
                 </span>
               @else
@@ -279,7 +279,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
               </span>
               @if (count($gameMatchup['summary']['threeStars']) > 0)
                 <span>
-                  {{ $gameMatchup['summary']['threeStars'][1]['name'] }}
+                  {{ $gameMatchup['summary']['threeStars'][1]['name']['default'] }}
                   {{ '(' . $gameMatchup['summary']['threeStars'][1]['teamAbbrev'] . ')' }}
                 </span>
               @else
@@ -294,7 +294,7 @@ url('{{ asset('img/nhl-logo.webp') }}'); background-size: contain; background-po
               </span>
               @if (count($gameMatchup['summary']['threeStars']) > 0)
                 <span>
-                  {{ $gameMatchup['summary']['threeStars'][2]['name'] }}
+                  {{ $gameMatchup['summary']['threeStars'][2]['name']['default'] }}
                   {{ '(' . $gameMatchup['summary']['threeStars'][2]['teamAbbrev'] . ')' }}
                 </span>
               @else
