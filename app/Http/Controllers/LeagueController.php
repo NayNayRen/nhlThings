@@ -7,10 +7,8 @@ use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
-class LeagueController extends Controller
-{
-  public function index(Request $request)
-  {
+class LeagueController extends Controller {
+  public function index(Request $request) {
     try {
       $dailyGames = [];
       $selectedGames = [];
@@ -32,7 +30,7 @@ class LeagueController extends Controller
       $season = (string)$allTeams[0]['seasonId'];
       $firstHalfSeason[] = $season[0] . $season[1] . $season[2] . $season[3];
       $secondHalfSeason[] = $season[4] . $season[5] . $season[6] . $season[7];
-      $test = ApiController::getGameMatchup(2023021057);
+      // $test = ApiController::getGameMatchup(2023021057);
       for ($i = 0; $i < count($weeklyGames); $i++) {
         if ($weeklyGames[$i]['date'] === $today->toDateString()) {
           $dailyGames[] = $weeklyGames[$i]['games'];
@@ -85,7 +83,7 @@ class LeagueController extends Controller
           'pacific' => $pacific
         ]);
       } else {
-        // dd($test);
+        // dd($dailyGames[0]);
         // DEFAULT LOAD
         return view('index', [
           'favIcon' => '../img/nhl-shield.png',
