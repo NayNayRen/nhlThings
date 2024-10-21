@@ -234,7 +234,7 @@
         </li>
       @endif
 
-      @if ($shots['periodDescriptor']['number'] >= 5)
+      @if ($penalty['periodDescriptor']['number'] >= 5)
         <p></p>
       @endif
     @endforeach
