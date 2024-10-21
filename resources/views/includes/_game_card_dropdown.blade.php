@@ -111,7 +111,7 @@
                     <p>{{ $game["homeTeam"]["score"] }}</p>
                 </div>
                 <div>
-                    @if (count($gameData["periodDescriptor"]["goals"]) > 0)
+                    @if (array_key_exists("goals", $gameData["periodDescriptor"]))
                         <p>{{ $gameData["periodDescriptor"]["goals"][count($goals["goals"] - 1)]["awayScore"] }}</p>
                     @else
                         <p>0</p>
@@ -131,7 +131,7 @@
                     @if ($gameData["periodDescriptor"]["number"] >= 5)
                         <span>SO</span>
                     @endif
-                    @if (count($gameData["periodDescriptor"]["goals"]) > 0)
+                    @if (array_key_exists("goals", $gameData["periodDescriptor"]))
                         <p>{{ $gameData["periodDescriptor"]["goals"][count($goals["goals"] - 1)]["homeScore"] }}</p>
                     @else
                         <p>0</p>
