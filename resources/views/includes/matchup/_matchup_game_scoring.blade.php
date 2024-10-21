@@ -7,7 +7,7 @@
     @foreach ($gameMatchup["summary"]["scoring"] as $goals)
         <li>
             @if (count($goals["goals"]) > 0)
-                <p>{{ $goals["goals"][count($goals["goals"] - 1)]["awayScore"] }}</p>
+                <p>{{ $goals["goals"][count($goals["goals"]) - 1]["awayScore"] }}</p>
             @else
                 <p>0</p>
             @endif
@@ -27,7 +27,7 @@
                 <p>SO</p>
             @endif
             @if (count($goals["goals"]) > 0)
-                <p>{{ $goals["goals"][count($goals["goals"] - 1)]["homeScore"] }}</p>
+                <p>{{ $goals["goals"][count($goals["goals"]) - 1]["homeScore"] }}</p>
             @else
                 <p>0</p>
             @endif
