@@ -144,33 +144,31 @@
                     <h3>Shots</h3>
                     <p>{{ $gameData["homeTeam"]["sog"] }}</p>
                 </div>
-                @foreach ($gameData["summary"]["shotsByPeriod"] as $shots)
-                    <div>
-                        @if ($shots["periodDescriptor"]["number"] === 1)
-                            <p>{{ $shots["away"] }}</p>
-                            <span>1st</span>
-                            <p>{{ $shots["home"] }}</p>
-                        @endif
-                        @if ($shots["periodDescriptor"]["number"] === 2)
-                            <p>{{ $shots["away"] }}</p>
-                            <span>2nd</span>
-                            <p>{{ $shots["home"] }}</p>
-                        @endif
-                        @if ($shots["periodDescriptor"]["number"] === 3)
-                            <p>{{ $shots["away"] }}</p>
-                            <span>3rd</span>
-                            <p>{{ $shots["home"] }}</p>
-                        @endif
-                        @if ($shots["periodDescriptor"]["number"] === 4)
-                            <p>{{ $shots["away"] }}</p>
-                            <span>OT</span>
-                            <p>{{ $shots["home"] }}</p>
-                        @endif
-                        @if ($shots["periodDescriptor"]["number"] >= 5)
-                            <p></p>
-                        @endif
-                    </div>
-                @endforeach
+                <div>
+                    @if ($gameData["periodDescriptor"]["number"] === 1)
+                        <p>{{ $gameData["awayTeam"]["sog"] }}</p>
+                        <span>1st</span>
+                        <p>{{ $gameData["homeTeam"]["sog"] }}</p>
+                    @endif
+                    @if ($gameData["periodDescriptor"]["number"] === 2)
+                        <p>{{ $gameData["awayTeam"]["sog"] }}</p>
+                        <span>2nd</span>
+                        <p>{{ $gameData["homeTeam"]["sog"] }}</p>
+                    @endif
+                    @if ($gameData["periodDescriptor"]["number"] === 3)
+                        <p>{{ $gameData["awayTeam"]["sog"] }}</p>
+                        <span>3rd</span>
+                        <p>{{ $gameData["homeTeam"]["sog"] }}</p>
+                    @endif
+                    @if ($gameData["periodDescriptor"]["number"] === 4)
+                        <p>{{ $gameData["awayTeam"]["sog"] }}</p>
+                        <span>OT</span>
+                        <p>{{ $gameData["homeTeam"]["sog"] }}</p>
+                    @endif
+                    @if ($gameData["periodDescriptor"]["number"] >= 5)
+                        <p></p>
+                    @endif
+                </div>
             </li>
             <a href="{{ route("games.game", $game["id"]) }}" class="game-stats-button" target="_blank">
                 Box Score <i class='fa fa-arrow-right' aria-hidden='true'></i>
