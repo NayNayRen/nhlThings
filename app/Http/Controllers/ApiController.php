@@ -41,6 +41,14 @@ class ApiController extends Controller {
     return $matchup;
   }
 
+  // has the head to head stats leaders
+  public static function getGameStory($id) {
+    $client = new \GuzzleHttp\Client();
+    $request = $client->get('https://api-web.nhle.com/v1/wsc/game-story/' . $id);
+    $gameStory = json_decode($request->getBody()->getContents(), true);
+    return $gameStory;
+  }
+
   // everything from shot time and coordinates to hit time and coordinates
   public static function getPlayByPlay($id) {
     $client = new \GuzzleHttp\Client();

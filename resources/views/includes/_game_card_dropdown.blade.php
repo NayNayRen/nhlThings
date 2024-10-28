@@ -180,6 +180,7 @@
 @if ($game["gameState"] === "PRE")
     @php
         $gameData = App\Http\Controllers\ApiController::getGameMatchup($game["id"]);
+        $teamLeaders = App\Http\Controllers\ApiController::getGameStory($game["id"]);
     @endphp
     <div class="game-dropdown-button">
         <i class="fa-solid fa-caret-up" aria-hidden="true"></i>
@@ -205,82 +206,178 @@
             </li>
             <li class='game-dropdown-goals'>
                 <div>
-                    {{-- <p>{{ $gameData['matchup']['teamLeadersL5'][0]['awayLeader']['value'] }}</p> --}}
-                    <p></p>
-                    <h3>Points</h3>
-                    {{-- <p>{{ $gameData['matchup']['teamLeadersL5'][0]['homeLeader']['value'] }}</p> --}}
-                    <p></p>
+                    <p>
+                        {{ $teamLeaders["preGameMatchup"]["skatingLeaders"]["leaders"][0]["awayLeader"]["name"]["default"] }}
+                    </p>
+                    <h3>
+                        <span>
+                            {{ $teamLeaders["preGameMatchup"]["skatingLeaders"]["leaders"][0]["awayLeader"]["value"] }}
+                        </span>
+                        Points
+                        <span>
+                            {{ $teamLeaders["preGameMatchup"]["skatingLeaders"]["leaders"][0]["homeLeader"]["value"] }}
+                        </span>
+                    </h3>
+                    <p>
+                        {{ $teamLeaders["preGameMatchup"]["skatingLeaders"]["leaders"][0]["homeLeader"]["name"]["default"] }}
+                    </p>
                 </div>
                 <div>
-                    {{-- <p>{{ $gameData['matchup']['teamLeadersL5'][0]['awayLeader']['name']['default'] }}</p> --}}
                     <p></p>
                     <span></span>
-                    {{-- <p>{{ $gameData['matchup']['teamLeadersL5'][0]['homeLeader']['name']['default'] }}</p> --}}
                     <p></p>
                 </div>
             </li>
             <li class='game-dropdown-goals'>
                 <div>
-                    {{-- <p>{{ $gameData['matchup']['teamLeadersL5'][1]['awayLeader']['value'] }}</p> --}}
-                    <p></p>
-                    <h3>Goals</h3>
-                    {{-- <p>{{ $gameData['matchup']['teamLeadersL5'][1]['homeLeader']['value'] }}</p> --}}
-                    <p></p>
+                    <p>
+                        {{ $teamLeaders["preGameMatchup"]["skatingLeaders"]["leaders"][1]["awayLeader"]["name"]["default"] }}
+                    </p>
+                    <h3>
+                        <span>
+                            {{ $teamLeaders["preGameMatchup"]["skatingLeaders"]["leaders"][1]["awayLeader"]["value"] }}
+                        </span>
+                        Goals
+                        <span>
+                            {{ $teamLeaders["preGameMatchup"]["skatingLeaders"]["leaders"][1]["homeLeader"]["value"] }}
+                        </span>
+                    </h3>
+                    <p>
+                        {{ $teamLeaders["preGameMatchup"]["skatingLeaders"]["leaders"][1]["homeLeader"]["name"]["default"] }}
+                    </p>
                 </div>
                 <div>
-                    {{-- <p>{{ $gameData['matchup']['teamLeadersL5'][1]['awayLeader']['name']['default'] }}</p> --}}
                     <p></p>
                     <span></span>
-                    {{-- <p>{{ $gameData['matchup']['teamLeadersL5'][1]['homeLeader']['name']['default'] }}</p> --}}
                     <p></p>
                 </div>
             </li>
             <li class='game-dropdown-goals'>
                 <div>
-                    {{-- <p>{{ $gameData['matchup']['teamLeadersL5'][2]['awayLeader']['value'] }}</p> --}}
-                    <p></p>
-                    <h3>Assists</h3>
-                    {{-- <p>{{ $gameData['matchup']['teamLeadersL5'][2]['homeLeader']['value'] }}</p> --}}
-                    <p></p>
+                    <p>
+                        {{ $teamLeaders["preGameMatchup"]["skatingLeaders"]["leaders"][2]["awayLeader"]["name"]["default"] }}
+                    </p>
+                    <h3>
+                        <span>
+                            {{ $teamLeaders["preGameMatchup"]["skatingLeaders"]["leaders"][2]["awayLeader"]["value"] }}
+                        </span>
+                        Assists
+                        <span>
+                            {{ $teamLeaders["preGameMatchup"]["skatingLeaders"]["leaders"][2]["homeLeader"]["value"] }}
+                        </span>
+                    </h3>
+                    <p>
+                        {{ $teamLeaders["preGameMatchup"]["skatingLeaders"]["leaders"][2]["homeLeader"]["name"]["default"] }}
+                    </p>
                 </div>
                 <div>
-                    {{-- <p>{{ $gameData['matchup']['teamLeadersL5'][2]['awayLeader']['name']['default'] }}</p> --}}
                     <p></p>
                     <span></span>
-                    {{-- <p>{{ $gameData['matchup']['teamLeadersL5'][2]['homeLeader']['name']['default'] }}</p> --}}
                     <p></p>
                 </div>
             </li>
             <li class='game-dropdown-goals'>
                 <div>
-                    {{-- <p>{{ $gameData['matchup']['teamLeadersL5'][3]['awayLeader']['value'] }}</p> --}}
-                    <p></p>
-                    <h3>+ / -</h3>
-                    {{-- <p>{{ $gameData['matchup']['teamLeadersL5'][3]['homeLeader']['value'] }}</p> --}}
-                    <p></p>
+                    <p>
+                        {{ $teamLeaders["preGameMatchup"]["skatingLeaders"]["leaders"][3]["awayLeader"]["name"]["default"] }}
+                    </p>
+                    <h3>
+                        <span>
+                            {{ $teamLeaders["preGameMatchup"]["skatingLeaders"]["leaders"][3]["awayLeader"]["value"] }}
+                        </span>
+                        + / -
+                        <span>
+                            {{ $teamLeaders["preGameMatchup"]["skatingLeaders"]["leaders"][3]["homeLeader"]["value"] }}
+                        </span>
+                    </h3>
+                    <p>
+                        {{ $teamLeaders["preGameMatchup"]["skatingLeaders"]["leaders"][3]["homeLeader"]["name"]["default"] }}
+                    </p>
                 </div>
                 <div>
-                    {{-- <p>{{ $gameData['matchup']['teamLeadersL5'][3]['awayLeader']['name']['default'] }}</p> --}}
                     <p></p>
                     <span></span>
-                    {{-- <p>{{ $gameData['matchup']['teamLeadersL5'][3]['homeLeader']['name']['default'] }}</p> --}}
                     <p></p>
                 </div>
             </li>
-            @if (array_key_exists("goalieComparison", $gameData["matchup"]))
+            @if (array_key_exists("goalieComparison", $teamLeaders["preGameMatchup"]))
                 <li class='game-dropdown-goals'>
                     <div>
-                        {{-- <p>{{ $gameData['matchup']['goalieComparison']['awayTeam'][0]['record'] }}</p> --}}
-                        <p></p>
+                        <p>
+                            {{ $teamLeaders["preGameMatchup"]["goalieComparison"]["awayTeam"][0]["name"]["default"] }}
+                        </p>
                         <h3>Goalies</h3>
-                        {{-- <p>{{ $gameData['matchup']['goalieComparison']['homeTeam'][0]['record'] }}</p> --}}
-                        <p></p>
+                        <p>
+                            {{ $teamLeaders["preGameMatchup"]["goalieComparison"]["homeTeam"][0]["name"]["default"] }}
+                        </p>
                     </div>
                     <div>
-                        {{-- <p>{{ $gameData['matchup']['goalieComparison']['awayTeam'][0]['name']['default'] }}</p> --}}
                         <p></p>
                         <span></span>
-                        {{-- <p>{{ $gameData['matchup']['goalieComparison']['homeTeam'][0]['name']['default'] }}</p> --}}
+                        <p></p>
+                    </div>
+                </li>
+                <li class='game-dropdown-goals'>
+                    <div>
+                        <p>
+                            {{ $teamLeaders["preGameMatchup"]["goalieComparison"]["awayTeam"][0]["record"] }}
+                        </p>
+                        <h3>Record</h3>
+                        <p>
+                            {{ $teamLeaders["preGameMatchup"]["goalieComparison"]["homeTeam"][0]["record"] }}
+                        </p>
+                    </div>
+                    <div>
+                        <p></p>
+                        <span></span>
+                        <p></p>
+                    </div>
+                </li>
+                <li class='game-dropdown-goals'>
+                    <div>
+                        <p>
+                            {{ $teamLeaders["preGameMatchup"]["goalieComparison"]["awayTeam"][0]["gaa"] }}
+                        </p>
+                        <h3>GA</h3>
+                        <p>
+                            {{ $teamLeaders["preGameMatchup"]["goalieComparison"]["homeTeam"][0]["gaa"] }}
+                        </p>
+                    </div>
+                    <div>
+                        <p></p>
+                        <span></span>
+                        <p></p>
+                    </div>
+                </li>
+                <li class='game-dropdown-goals'>
+                    <div>
+                        <p>
+                            {{ $teamLeaders["preGameMatchup"]["goalieComparison"]["awayTeam"][0]["savePctg"] }}
+                        </p>
+                        <h3>Sv %</h3>
+                        <p>
+                            {{ $teamLeaders["preGameMatchup"]["goalieComparison"]["homeTeam"][0]["savePctg"] }}
+                        </p>
+                    </div>
+                    <div>
+                        <p></p>
+                        <span></span>
+                        <p></p>
+                    </div>
+                </li>
+                <li class='game-dropdown-goals'>
+                    <div>
+                        <p>
+                            {{ $teamLeaders["preGameMatchup"]["goalieComparison"]["awayTeam"][0]["shutouts"] }}
+                        </p>
+                        <h3>SO</h3>
+                        <p>
+                            {{ $teamLeaders["preGameMatchup"]["goalieComparison"]["homeTeam"][0]["shutouts"] }}
+                        </p>
+                    </div>
+                    <div>
+                        <p></p>
+                        <span></span>
                         <p></p>
                     </div>
                 </li>

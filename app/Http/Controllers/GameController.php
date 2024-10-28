@@ -21,8 +21,9 @@ class GameController extends Controller {
       $secondHalfSeason[] = $season[4] . $season[5] . $season[6] . $season[7];
       $gameBoxscores = ApiController::getBoxscores($id);
       $gameMatchup = ApiController::getGameMatchup($id);
+      $gameStory = ApiController::getGameStory($id);
       $formattedGameTime = Carbon::create($gameMatchup['startTimeUTC'])->tz('America/New_York');
-      // dd($gameMatchup);
+      dd($gameStory);
       return view('game', [
         'favIcon' => '../img/nhl-shield.png',
         'title' => $gameMatchup['awayTeam']['abbrev'] . ' vs ' . $gameMatchup['homeTeam']['abbrev'],
@@ -34,6 +35,7 @@ class GameController extends Controller {
         'gameMatchup' => $gameMatchup,
         'currentDate' => $currentDate,
         'teamRoster' => $teamRoster,
+        'teamLeaders' => $gameStory,
         'sortedTeamsByName' => $sortedTeamsByName
       ]);
     } catch (Exception $error) {
