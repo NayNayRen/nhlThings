@@ -153,6 +153,19 @@
     /* outline: solid 1px blue; */
 }
 
+.game-dropdown-goals h3 {
+    -ms-flex-direction: row;
+    -ms-flex-pack: justify;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -webkit-box-pack: justify;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 .game-dropdown-goals p:first-of-type,
 .game-dropdown-shots p:first-of-type {
     border-bottom-left-radius: 5px;
