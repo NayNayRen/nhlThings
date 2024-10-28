@@ -320,11 +320,11 @@
                 <li class='game-dropdown-goals'>
                     <div>
                         <p>
-                            {{ $teamLeaders["preGameMatchup"]["goalieComparison"]["awayTeam"][0]["record"] }}
+                            {{-- {{ $teamLeaders["preGameMatchup"]["goalieComparison"]["awayTeam"][0]["record"] }} --}}
                         </p>
                         <h3>Record</h3>
                         <p>
-                            {{ $teamLeaders["preGameMatchup"]["goalieComparison"]["homeTeam"][0]["record"] }}
+                            {{-- {{ $teamLeaders["preGameMatchup"]["goalieComparison"]["homeTeam"][0]["record"] }} --}}
                         </p>
                     </div>
                     <div>
