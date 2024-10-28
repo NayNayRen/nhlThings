@@ -304,11 +304,19 @@
                 <li class='game-dropdown-goals'>
                     <div>
                         <p>
-                            {{ $teamLeaders["preGameMatchup"]["goalieComparison"]["awayTeam"][0]["name"]["default"] }}
+                            @if (count($teamLeaders["preGameMatchup"]["goalieComparison"]["awayTeam"][0]) > 7)
+                                {{ $teamLeaders["preGameMatchup"]["goalieComparison"]["awayTeam"][0]["name"]["default"] }}
+                            @else
+                                {{ $teamLeaders["preGameMatchup"]["goalieComparison"]["awayTeam"][1]["name"]["default"] }}
+                            @endif
                         </p>
                         <h3>Goalies</h3>
                         <p>
-                            {{ $teamLeaders["preGameMatchup"]["goalieComparison"]["homeTeam"][0]["name"]["default"] }}
+                            @if (count($teamLeaders["preGameMatchup"]["goalieComparison"]["homeTeam"][0]) > 7)
+                                {{ $teamLeaders["preGameMatchup"]["goalieComparison"]["homeTeam"][0]["name"]["default"] }}
+                            @else
+                                {{ $teamLeaders["preGameMatchup"]["goalieComparison"]["homeTeam"][1]["name"]["default"] }}
+                            @endif
                         </p>
                     </div>
                     <div>
@@ -320,11 +328,19 @@
                 <li class='game-dropdown-goals'>
                     <div>
                         <p>
-                            {{-- {{ $teamLeaders["preGameMatchup"]["goalieComparison"]["awayTeam"][0]["record"] }} --}}
+                            @if (count($teamLeaders["preGameMatchup"]["goalieComparison"]["awayTeam"][0]) > 7)
+                                {{ $teamLeaders["preGameMatchup"]["goalieComparison"]["awayTeam"][0]["record"] }}
+                            @else
+                                {{ $teamLeaders["preGameMatchup"]["goalieComparison"]["awayTeam"][1]["record"] }}
+                            @endif
                         </p>
                         <h3>Record</h3>
                         <p>
-                            {{-- {{ $teamLeaders["preGameMatchup"]["goalieComparison"]["homeTeam"][0]["record"] }} --}}
+                            @if (count($teamLeaders["preGameMatchup"]["goalieComparison"]["homeTeam"][0]) > 7)
+                                {{ $teamLeaders["preGameMatchup"]["goalieComparison"]["homeTeam"][0]["record"] }}
+                            @else
+                                {{ $teamLeaders["preGameMatchup"]["goalieComparison"]["homeTeam"][1]["record"] }}
+                            @endif
                         </p>
                     </div>
                     <div>
@@ -336,11 +352,20 @@
                 <li class='game-dropdown-goals'>
                     <div>
                         <p>
-                            {{ $teamLeaders["preGameMatchup"]["goalieComparison"]["awayTeam"][0]["gaa"] }}
+                            @if (count($teamLeaders["preGameMatchup"]["goalieComparison"]["awayTeam"][0]) > 7)
+                                {{ $teamLeaders["preGameMatchup"]["goalieComparison"]["awayTeam"][0]["gaa"] }}
+                            @else
+                                {{ $teamLeaders["preGameMatchup"]["goalieComparison"]["awayTeam"][1]["gaa"] }}
+                            @endif
+
                         </p>
                         <h3>GA</h3>
                         <p>
-                            {{ $teamLeaders["preGameMatchup"]["goalieComparison"]["homeTeam"][0]["gaa"] }}
+                            @if (count($teamLeaders["preGameMatchup"]["goalieComparison"]["homeTeam"][0]) > 7)
+                                {{ $teamLeaders["preGameMatchup"]["goalieComparison"]["homeTeam"][0]["gaa"] }}
+                            @else
+                                {{ $teamLeaders["preGameMatchup"]["goalieComparison"]["homeTeam"][1]["gaa"] }}
+                            @endif
                         </p>
                     </div>
                     <div>
@@ -352,11 +377,20 @@
                 <li class='game-dropdown-goals'>
                     <div>
                         <p>
-                            {{ $teamLeaders["preGameMatchup"]["goalieComparison"]["awayTeam"][0]["savePctg"] }}
+                            @if (count($teamLeaders["preGameMatchup"]["goalieComparison"]["awayTeam"][0]) > 7)
+                                {{ $teamLeaders["preGameMatchup"]["goalieComparison"]["awayTeam"][0]["savePctg"] }}
+                            @else
+                                {{ $teamLeaders["preGameMatchup"]["goalieComparison"]["awayTeam"][1]["savePctg"] }}
+                            @endif
+
                         </p>
-                        <h3>Sv %</h3>
+                        <h3>SV %</h3>
                         <p>
-                            {{ $teamLeaders["preGameMatchup"]["goalieComparison"]["homeTeam"][0]["savePctg"] }}
+                            @if (count($teamLeaders["preGameMatchup"]["goalieComparison"]["homeTeam"][0]) > 7)
+                                {{ $teamLeaders["preGameMatchup"]["goalieComparison"]["homeTeam"][0]["savePctg"] }}
+                            @else
+                                {{ $teamLeaders["preGameMatchup"]["goalieComparison"]["homeTeam"][1]["savePctg"] }}
+                            @endif
                         </p>
                     </div>
                     <div>
@@ -368,11 +402,19 @@
                 <li class='game-dropdown-goals'>
                     <div>
                         <p>
-                            {{ $teamLeaders["preGameMatchup"]["goalieComparison"]["awayTeam"][0]["shutouts"] }}
+                            @if (count($teamLeaders["preGameMatchup"]["goalieComparison"]["awayTeam"][0]) > 7)
+                                {{ $teamLeaders["preGameMatchup"]["goalieComparison"]["awayTeam"][0]["shutouts"] }}
+                            @else
+                                {{ $teamLeaders["preGameMatchup"]["goalieComparison"]["awayTeam"][1]["shutouts"] }}
+                            @endif
                         </p>
                         <h3>SO</h3>
                         <p>
-                            {{ $teamLeaders["preGameMatchup"]["goalieComparison"]["homeTeam"][0]["shutouts"] }}
+                            @if (count($teamLeaders["preGameMatchup"]["goalieComparison"]["homeTeam"][0]) > 7)
+                                {{ $teamLeaders["preGameMatchup"]["goalieComparison"]["homeTeam"][0]["shutouts"] }}
+                            @else
+                                {{ $teamLeaders["preGameMatchup"]["goalieComparison"]["homeTeam"][1]["shutouts"] }}
+                            @endif
                         </p>
                     </div>
                     <div>
