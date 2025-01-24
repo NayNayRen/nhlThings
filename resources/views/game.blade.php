@@ -669,23 +669,21 @@ url('{{ asset("img/nhl-logo.webp") }}'); background-size: contain; background-po
                                     <h3 title="Shutouts">SO</h3>
                                 </li>
                                 @foreach ($gameMatchup["matchup"]["goalieComparison"]["awayTeam"]["leaders"][0] as $key => $goalie)
-                                    @if (array_key_exists("gamesPlayed", $goalie))
-                                        <li>
-                                            <p>
-                                                <span>{{ $key + 1 }}.</span>
-                                                <a href="{{ route("players.player", $goalie["playerId"]) }}"
-                                                    target="_blank">
-                                                    {{ $goalie["name"]["default"] }}
-                                                </a>
-                                            </p>
-                                            <p>#{{ $goalie["sweaterNumber"] }}</p>
-                                            <p>{{ $goalie["gamesPlayed"] }}</p>
-                                            <p>{{ $goalie["record"] }}</p>
-                                            <p>{{ $goalie["gaa"] }}</p>
-                                            <p>{{ $goalie["savePctg"] }}%</p>
-                                            <p>{{ $goalie["shutouts"] }}</p>
-                                        </li>
-                                    @endif
+                                    <li>
+                                        <p>
+                                            <span>{{ $key + 1 }}.</span>
+                                            <a href="{{ route("players.player", $goalie["playerId"]) }}"
+                                                target="_blank">
+                                                {{ $goalie["name"]["default"] }}
+                                            </a>
+                                        </p>
+                                        <p>#{{ $goalie["sweaterNumber"] }}</p>
+                                        <p>{{ $goalie["gamesPlayed"] }}</p>
+                                        <p>{{ $goalie["record"] }}</p>
+                                        <p>{{ $goalie["gaa"] }}</p>
+                                        <p>{{ $goalie["savePctg"] }}%</p>
+                                        <p>{{ $goalie["shutouts"] }}</p>
+                                    </li>
                                 @endforeach
                             </ul>
                             <h4>Scratches</h4>
@@ -763,23 +761,21 @@ url('{{ asset("img/nhl-logo.webp") }}'); background-size: contain; background-po
                                     <h3 title="Shutouts">SO</h3>
                                 </li>
                                 @foreach ($gameMatchup["matchup"]["goalieComparison"]["homeTeam"]["leaders"][0] as $key => $goalie)
-                                    @if (array_key_exists("gamesPlayed", $goalie))
-                                        <li>
-                                            <p>
-                                                <span>{{ $key + 1 }}.</span>
-                                                <a href="{{ route("players.player", $goalie["playerId"]) }}"
-                                                    target="_blank">
-                                                    {{ $goalie["name"]["default"] }}
-                                                </a>
-                                            </p>
-                                            <p>#{{ $goalie["sweaterNumber"] }}</p>
-                                            <p>{{ $goalie["gamesPlayed"] }}</p>
-                                            <p>{{ $goalie["record"] }}</p>
-                                            <p>{{ $goalie["gaa"] }}</p>
-                                            <p>{{ $goalie["savePctg"] }}%</p>
-                                            <p>{{ $goalie["shutouts"] }}</p>
-                                        </li>
-                                    @endif
+                                    <li>
+                                        <p>
+                                            <span>{{ $key + 1 }}.</span>
+                                            <a href="{{ route("players.player", $goalie["playerId"]) }}"
+                                                target="_blank">
+                                                {{ $goalie["name"]["default"] }}
+                                            </a>
+                                        </p>
+                                        <p>#{{ $goalie["sweaterNumber"] }}</p>
+                                        <p>{{ $goalie["gamesPlayed"] }}</p>
+                                        <p>{{ $goalie["record"] }}</p>
+                                        <p>{{ $goalie["gaa"] }}</p>
+                                        <p>{{ $goalie["savePctg"] }}%</p>
+                                        <p>{{ $goalie["shutouts"] }}</p>
+                                    </li>
                                 @endforeach
                             </ul>
                             <h4>Scratches</h4>
