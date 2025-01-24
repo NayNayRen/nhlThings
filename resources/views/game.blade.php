@@ -668,10 +668,10 @@ url('{{ asset("img/nhl-logo.webp") }}'); background-size: contain; background-po
                                     <h3 title="Save %">Sv%</h3>
                                     <h3 title="Shutouts">SO</h3>
                                 </li>
-                                @foreach ($gameMatchup["matchup"]["goalieComparison"]["awayTeam"]["leaders"][0] as $key => $goalie)
+                                @foreach ($gameMatchup["matchup"]["goalieComparison"]["awayTeam"]["leaders"][0] as $goalie)
                                     <li>
                                         <p>
-                                            <span>{{ $key + 1 }}.</span>
+                                            {{-- <span>{{ $key + 1 }}.</span> --}}
                                             <a href="{{ route("players.player", $goalie["playerId"]) }}"
                                                 target="_blank">
                                                 {{ $goalie["name"]["default"] }}
@@ -760,10 +760,10 @@ url('{{ asset("img/nhl-logo.webp") }}'); background-size: contain; background-po
                                     <h3 title="Save %">Sv%</h3>
                                     <h3 title="Shutouts">SO</h3>
                                 </li>
-                                @foreach ($gameMatchup["matchup"]["goalieComparison"]["homeTeam"]["leaders"][0] as $key => $goalie)
+                                @foreach ($gameMatchup["matchup"]["goalieComparison"]["homeTeam"]["leaders"][0] as $goalie)
                                     <li>
                                         <p>
-                                            <span>{{ $key + 1 }}.</span>
+                                            {{-- <span>{{ $key + 1 }}.</span> --}}
                                             <a href="{{ route("players.player", $goalie["playerId"]) }}"
                                                 target="_blank">
                                                 {{ $goalie["name"]["default"] }}
