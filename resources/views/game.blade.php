@@ -343,7 +343,7 @@ url('{{ asset("img/nhl-logo.webp") }}'); background-size: contain; background-po
                         @endforeach
                         <div class="game-matchup-heading-logo">
                             <img src={{ $gameMatchup["awayTeam"]["logo"] }}
-                                alt="{{ $gameMatchup["awayTeam"]["name"]["default"] }} Logo">
+                                alt="{{ $gameMatchup["awayTeam"]["commonName"]["default"] }} Logo">
                         </div>
                     </div>
                     <div class="game-matchup-heading-goals">
@@ -384,7 +384,7 @@ url('{{ asset("img/nhl-logo.webp") }}'); background-size: contain; background-po
                         @endforeach
                         <div class="game-matchup-heading-logo">
                             <img src={{ $gameMatchup["homeTeam"]["logo"] }}
-                                alt="{{ $gameMatchup["homeTeam"]["name"]["default"] }} Logo">
+                                alt="{{ $gameMatchup["homeTeam"]["commonName"]["default"] }} Logo">
                         </div>
                     </div>
                     <div class="team-lineup-away-button-container">
@@ -607,7 +607,7 @@ url('{{ asset("img/nhl-logo.webp") }}'); background-size: contain; background-po
                         @endforeach
                         <div class="game-matchup-heading-logo">
                             <img src={{ $gameMatchup["awayTeam"]["logo"] }}
-                                alt="{{ $gameMatchup["awayTeam"]["name"]["default"] }} Logo">
+                                alt="{{ $gameMatchup["awayTeam"]["commonName"]["default"] }} Logo">
                         </div>
                     </div>
                     <p class="game-matchup-heading-date">{{ $formattedGameDate }}</p>
@@ -625,7 +625,7 @@ url('{{ asset("img/nhl-logo.webp") }}'); background-size: contain; background-po
                         @endforeach
                         <div class="game-matchup-heading-logo">
                             <img src={{ $gameMatchup["homeTeam"]["logo"] }}
-                                alt="{{ $gameMatchup["homeTeam"]["name"]["default"] }} Logo">
+                                alt="{{ $gameMatchup["homeTeam"]["commonName"]["default"] }} Logo">
                         </div>
                     </div>
                     {{-- away team dropdown --}}

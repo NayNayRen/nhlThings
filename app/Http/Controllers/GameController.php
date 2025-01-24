@@ -23,7 +23,7 @@ class GameController extends Controller {
       $gameMatchup = ApiController::getGameMatchup($id);
       $gameStory = ApiController::getGameStory($id);
       $formattedGameTime = Carbon::create($gameMatchup['startTimeUTC'])->tz('America/New_York');
-      // dd($gameStory);
+      // dd($gameMatchup);
       return view('game', [
         'favIcon' => '../img/nhl-shield.png',
         'title' => $gameMatchup['awayTeam']['abbrev'] . ' vs ' . $gameMatchup['homeTeam']['abbrev'],
