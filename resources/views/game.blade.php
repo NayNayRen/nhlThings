@@ -668,7 +668,7 @@ url('{{ asset("img/nhl-logo.webp") }}'); background-size: contain; background-po
                                     <h3 title="Save %">Sv%</h3>
                                     <h3 title="Shutouts">SO</h3>
                                 </li>
-                                @foreach ($gameMatchup["matchup"]["goalieComparison"]["awayTeam"] as $key => $goalie)
+                                @foreach ($gameMatchup["matchup"]["goalieComparison"]["awayTeam"]["leaders"][0] as $key => $goalie)
                                     @if (array_key_exists("gamesPlayed", $goalie))
                                         <li>
                                             <p>
@@ -762,7 +762,7 @@ url('{{ asset("img/nhl-logo.webp") }}'); background-size: contain; background-po
                                     <h3 title="Save %">Sv%</h3>
                                     <h3 title="Shutouts">SO</h3>
                                 </li>
-                                @foreach ($gameMatchup["matchup"]["goalieComparison"]["homeTeam"] as $key => $goalie)
+                                @foreach ($gameMatchup["matchup"]["goalieComparison"]["homeTeam"]["leaders"][0] as $key => $goalie)
                                     @if (array_key_exists("gamesPlayed", $goalie))
                                         <li>
                                             <p>
