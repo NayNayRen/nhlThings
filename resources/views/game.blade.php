@@ -43,7 +43,7 @@ url('{{ asset("img/nhl-logo.webp") }}'); background-size: contain; background-po
                         @endforeach
                         <div class="game-matchup-heading-logo">
                             <img src={{ $gameMatchup["awayTeam"]["logo"] }}
-                                alt="{{ $gameMatchup["awayTeam"]["name"]["default"] }} Logo">
+                                alt="{{ $gameMatchup["awayTeam"]["commonName"]["default"] }} Logo">
                         </div>
                     </div>
                     <div class="game-matchup-heading-goals">
@@ -73,7 +73,7 @@ url('{{ asset("img/nhl-logo.webp") }}'); background-size: contain; background-po
                         @endforeach
                         <div class="game-matchup-heading-logo">
                             <img src={{ $gameMatchup["homeTeam"]["logo"] }}
-                                alt="{{ $gameMatchup["homeTeam"]["name"]["default"] }} Logo">
+                                alt="{{ $gameMatchup["homeTeam"]["commonName"]["default"] }} Logo">
                         </div>
                     </div>
                     <div class="team-lineup-away-button-container">
@@ -671,7 +671,7 @@ url('{{ asset("img/nhl-logo.webp") }}'); background-size: contain; background-po
                                 @foreach ($gameMatchup["matchup"]["goalieComparison"]["awayTeam"]["leaders"] as $key => $goalie)
                                     <li>
                                         <p>
-                                            <span>{{ $key + 1 }}.</span>
+                                            {{-- <span>{{ $key + 1 }}.</span> --}}
                                             <a href="{{ route("players.player", $goalie["playerId"]) }}"
                                                 target="_blank">
                                                 {{ $goalie["name"]["default"] }}
@@ -763,7 +763,7 @@ url('{{ asset("img/nhl-logo.webp") }}'); background-size: contain; background-po
                                 @foreach ($gameMatchup["matchup"]["goalieComparison"]["homeTeam"]["leaders"] as $key => $goalie)
                                     <li>
                                         <p>
-                                            <span>{{ $key + 1 }}.</span>
+                                            {{-- <span>{{ $key + 1 }}.</span> --}}
                                             <a href="{{ route("players.player", $goalie["playerId"]) }}"
                                                 target="_blank">
                                                 {{ $goalie["name"]["default"] }}
@@ -899,7 +899,7 @@ url('{{ asset("img/nhl-logo.webp") }}'); background-size: contain; background-po
                                 @foreach ($gameMatchup["matchup"]["last10Record"]["awayTeam"]["pastGameResults"] as $key => $results)
                                     <li>
                                         <p>
-                                            <span>{{ $key + 1 }}.</span>
+                                            {{-- <span>{{ $key + 1 }}.</span> --}}
                                             {{ $results["opponentAbbrev"] }}
                                         </p>
                                         <p>{{ $results["gameResult"] }}</p>
@@ -930,7 +930,7 @@ url('{{ asset("img/nhl-logo.webp") }}'); background-size: contain; background-po
                                 @foreach ($gameMatchup["matchup"]["last10Record"]["homeTeam"]["pastGameResults"] as $key => $results)
                                     <li>
                                         <p>
-                                            <span>{{ $key + 1 }}.</span>
+                                            {{-- <span>{{ $key + 1 }}.</span> --}}
                                             {{ $results["opponentAbbrev"] }}
                                         </p>
                                         <p>{{ $results["gameResult"] }}</p>
