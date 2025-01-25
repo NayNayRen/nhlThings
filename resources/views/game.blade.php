@@ -97,11 +97,11 @@ url('{{ asset("img/nhl-logo.webp") }}'); background-size: contain; background-po
                             @endif
                         @endforeach
                         {{-- <h4>
-              Away HC :
-              <span>
-                {{ $gameBoxscores['boxscore']['gameInfo']['awayTeam']['headCoach']['default'] }}
-              </span>
-            </h4> --}}
+                            Away HC :
+                            <span>
+                                {{ $gameBoxscores["boxscore"]["gameInfo"]["awayTeam"]["headCoach"]["default"] }}
+                            </span>
+                        </h4> --}}
                         <div class="team-lineup-scrolling-container">
                             {{-- forwards --}}
                             <ul class="team-lineup-forwards">
@@ -185,11 +185,11 @@ url('{{ asset("img/nhl-logo.webp") }}'); background-size: contain; background-po
                             @endif
                         @endforeach
                         {{-- <h4>
-              Home HC :
-              <span>
-                {{ $gameBoxscores['boxscore']['gameInfo']['homeTeam']['headCoach']['default'] }}
-              </span>
-            </h4> --}}
+                            Home HC :
+                            <span>
+                                {{ $gameBoxscores['boxscore']['gameInfo']['homeTeam']['headCoach']['default'] }}
+                            </span>
+                        </h4> --}}
                         <div class="team-lineup-scrolling-container">
                             {{-- forwards --}}
                             <ul class="team-lineup-forwards">
